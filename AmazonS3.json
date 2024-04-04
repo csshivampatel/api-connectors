@@ -25,6 +25,7 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
+		"ui_category": "Misc"
       },
 	  {
         "name": "uploadId",
@@ -35,6 +36,7 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
+		"ui_category": "Misc"
       },
 	  {
         "name": "Body",
@@ -86,6 +88,7 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
+		"ui_category": "Misc"
       },
 	  {
         "name": "uploadId",
@@ -96,6 +99,7 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
+		"ui_category": "Misc"
       },
     ]
   },
@@ -125,6 +129,7 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
+		"ui_category": "Misc"
       },
 	  {
         "name": "uploadId",
@@ -135,6 +140,7 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
+		"ui_category": "Misc"
       },
     ]
   },
@@ -164,6 +170,7 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
+		"ui_category": "Misc"
       },
 	  {
         "name": "x-amz-copy-source",
@@ -174,6 +181,7 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
+		"ui_category": "Misc"
       },
     ]
   },
@@ -222,12 +230,14 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
+		"ui_category": "Misc"
       },
 	  {
         "name": "uploads",
         "value": "",
         "param_type": "UrlParam",
         "ui_source": "operation",
+		"ui_category": "Misc"
       },
     ]
   },
@@ -257,6 +267,7 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
+		"ui_category": "Misc"
       },
     ]
   },
@@ -286,6 +297,7 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
+		"ui_category": "Misc"
       },
     ]
   },
@@ -315,6 +327,7 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
+		"ui_category": "Misc"
       },
     ]
   },
@@ -344,12 +357,13 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
+		"ui_category": "Misc"
       },
 	  {
         "name": "Body",
         "value":"",
         "param_type": "Param",
-        "isVisible": true,
+        "isVisible": false,
         "bindable": true,
         "required": true,
         "datatype": "System.Byte[]",

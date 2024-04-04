@@ -15,8 +15,7 @@
         "value": "API"
       }
     ],
-    "parameters": [
-    ]
+    "parameters": []
   },
   {
     "operation": "Get Current Session  Vault",
@@ -34,8 +33,7 @@
         "value": "API"
       }
     ],
-    "parameters": [
-    ]
+    "parameters": []
   },
   {
     "operation": "Get Server Vaults",
@@ -53,8 +51,7 @@
         "value": "API"
       }
     ],
-    "parameters": [
-    ]
+    "parameters": []
   },
   {
     "operation": "Get Object Classes",
@@ -72,8 +69,7 @@
         "value": "API"
       }
     ],
-    "parameters": [
-    ]
+    "parameters": []
   },
   {
     "operation": "Get Object Class",
@@ -92,7 +88,7 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{classId}",
         "value": "",
         "param_type": "Path",
@@ -101,7 +97,8 @@
         "required": true,
         "datatype": "string",
         "ui_source": "operation",
-      },
+        "ui_category": "Misc"
+      }
     ]
   },
   {
@@ -121,7 +118,7 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{classId}",
         "value": "",
         "param_type": "Path",
@@ -130,7 +127,8 @@
         "required": true,
         "datatype": "string",
         "ui_source": "operation",
-      },
+        "ui_category": "Misc"
+      }
     ]
   },
   {
@@ -149,9 +147,7 @@
         "value": "API"
       }
     ],
-    "parameters": [
-	  
-    ]
+    "parameters": []
   },
   {
     "operation": "Get Object Type",
@@ -170,7 +166,7 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{objectTypeId}",
         "value": "",
         "param_type": "Path",
@@ -179,7 +175,8 @@
         "required": true,
         "datatype": "string",
         "ui_source": "operation",
-      },
+        "ui_category": "Misc"
+      }
     ]
   },
   {
@@ -199,7 +196,7 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{objectTypeId}",
         "value": "",
         "param_type": "Path",
@@ -208,7 +205,8 @@
         "required": true,
         "datatype": "string",
         "ui_source": "operation",
-      },
+        "ui_category": "Misc"
+      }
     ]
   },
   {
@@ -227,9 +225,7 @@
         "value": "API"
       }
     ],
-    "parameters": [
-	  
-    ]
+    "parameters": []
   },
   {
     "operation": "Get Value List",
@@ -248,36 +244,7 @@
       }
     ],
     "parameters": [
-	  {
-        "name": "{id}",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "string",
-        "ui_source": "operation",
-      },
-    ]
-  },
-  {
-    "operation": "Get Value List",
-    "description": "",
-    "operationId": "get_value_list",
-    "operationApiType": "GET",
-    "operationPath": "/valuelists/{id}",
-    "operationSummary": "Get Value List",
-    "operationDescription": "Retrieves information on a single value list.",
-    "deprecated": false,
-    "adapterProperties": [
       {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-      }
-    ],
-    "parameters": [
-	  {
         "name": "{id}",
         "value": "",
         "param_type": "Path",
@@ -286,7 +253,8 @@
         "required": true,
         "datatype": "string",
         "ui_source": "operation",
-      },
+        "ui_category": "Misc"
+      }
     ]
   },
   {
@@ -306,7 +274,7 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{id}",
         "value": "",
         "param_type": "Path",
@@ -315,7 +283,38 @@
         "required": true,
         "datatype": "string",
         "ui_source": "operation",
-      },
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Create Value List Item",
+    "description": "",
+    "operationId": "create_value_list_item",
+    "operationApiType": "POST",
+    "operationPath": "/valuelists/{id}/items",
+    "operationSummary": "Create Value List Item",
+    "operationDescription": "Creates a new value list item in the value list.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{id}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
     ]
   },
   {
@@ -335,7 +334,7 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{id}",
         "value": "",
         "param_type": "Path",
@@ -344,8 +343,9 @@
         "required": true,
         "datatype": "string",
         "ui_source": "operation",
+        "ui_category": "Misc"
       },
-	  {
+      {
         "name": "{objectId}",
         "value": "",
         "param_type": "Path",
@@ -354,7 +354,49 @@
         "required": true,
         "datatype": "string",
         "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Deletes a value list item",
+    "description": "",
+    "operationId": "delete_value_list_item",
+    "operationApiType": "DELETE",
+    "operationPath": "/valuelists/{id}/items/{objectId}",
+    "operationSummary": "Delete Value List Item",
+    "operationDescription": "Deletes a value list item.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{id}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
+      {
+        "name": "{objectId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
     ]
   },
   {
@@ -374,7 +416,7 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{id}",
         "value": "",
         "param_type": "Path",
@@ -382,9 +424,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation",
+        "ui_source": "operation"
       },
-	  {
+      {
         "name": "{objectId}",
         "value": "",
         "param_type": "Path",
@@ -392,8 +434,763 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation",
-      },
+        "ui_source": "operation"
+      }
     ]
   },
+  {
+    "operation": "Delete Shared File Link",
+    "description": "",
+    "operationId": "delete_shared_file_link",
+    "operationApiType": "DELETE",
+    "operationPath": "/sharedlinks/{SharePublicAccessKey}",
+    "operationSummary": "Delete Shared File Link",
+    "operationDescription": "Deletes an existing shared file link, causing it to become invalid.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{SharePublicAccessKey}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Get Collection of Objects in the Document Vault",
+    "description": "",
+    "operationId": "get_collection_of_objects_in_the_document_vault",
+    "operationApiType": "GET",
+    "operationPath": "/objects",
+    "operationSummary": "Get Collection of Objects in the Document Vault",
+    "operationDescription": "Retrieves objects. The amount of returned objects is limited by the server, by default to 500 items.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{SharePublicAccessKey}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Get Collection of Objects Filtered by Object Type",
+    "description": "",
+    "operationId": "get_collection_of_objects_filtered_by_object_type",
+    "operationApiType": "GET",
+    "operationPath": "/objects/{objType}",
+    "operationSummary": "Get Collection of Objects Filtered by Object Type",
+    "operationDescription": "Retrieves objects of the given type. The amount of returned objects is limited by the server.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objType}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Get a Single Object",
+    "description": "",
+    "operationId": "get_a_single_object",
+    "operationApiType": "GET",
+    "operationPath": "/objects/{objType}/{objId}",
+    "operationSummary": "Get a Single Object",
+    "operationDescription": "Retrieves objects of the given type. The amount of returned objects is limited by the server.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objType}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Get Files Belonging to an Object",
+    "description": "",
+    "operationId": "get_files_belonging_to_an_object",
+    "operationApiType": "GET",
+    "operationPath": "/objects/{objType}/{objId}/{objVersion}/files",
+    "operationSummary": "Get Files Belonging to an Object",
+    "operationDescription": "Retrieves the object file information for all the files on an object.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objType}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objVersion}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Get a Single File on an Object",
+    "description": "",
+    "operationId": "get_a_single_file_on_an_object",
+    "operationApiType": "GET",
+    "operationPath": "/objects/{objType}/{objId}/{objVersion}/files/{fileId}",
+    "operationSummary": "Get a Single File on an Object",
+    "operationDescription": "Retrieves the object file infromation for the object file.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objType}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objVersion}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{fileId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Get the Contents of a Single File",
+    "description": "",
+    "operationId": "get_the_contents_of_a_single_file",
+    "operationApiType": "GET",
+    "operationPath": "/objects/{objType}/{objId}/{objVersion}/files/{fileId}/content",
+    "operationSummary": "Get the Contents of a Single File",
+    "operationDescription": "Retrieves the object file contents.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objType}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objVersion}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{fileId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Get the File Name of an Object File",
+    "description": "",
+    "operationId": "get_the_filename_of_an_object_file",
+    "operationApiType": "GET",
+    "operationPath": "/objects/{objType}/{objId}/{objVersion}/files/{fileId}/title",
+    "operationSummary": "Get the File Name of an Object File",
+    "operationDescription": "Retrieves the current object file name.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objType}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objVersion}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{fileId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Change the Name on the Object File",
+    "description": "",
+    "operationId": "change_the_name_on_the_object_file",
+    "operationApiType": "PUT",
+    "operationPath": "/objects/{objType}/{objId}/{objVersion}/files/{fileId}/title",
+    "operationSummary": "Change the Name on the Object File",
+    "operationDescription": "Sets the name on the object file.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objType}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objVersion}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{fileId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Get the Deleted Status of the Object",
+    "description": "",
+    "operationId": "get_the_deleted_status_of_the_object",
+    "operationApiType": "GET",
+    "operationPath": "/objects/{objType}/{objId}/deleted",
+    "operationSummary": "Get the Deleted Status of the Object",
+    "operationDescription": "Retrieves the deleted status of the object.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objType}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Set the Deleted Status of the Object",
+    "description": "",
+    "operationId": "set_the_deleted_status_of_the_object",
+    "operationApiType": "PUT",
+    "operationPath": "/objects/{objType}/{objId}/deleted",
+    "operationSummary": "Set the Deleted Status of the Object",
+    "operationDescription": "Sets the deleted status of the object.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objType}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Get the Current Check Out Status of the Object",
+    "description": "",
+    "operationId": "get_the_current_checkout_status_of_the_object",
+    "operationApiType": "GET",
+    "operationPath": "/objects/{objType}/{objId}/{objVersion}/checkedout",
+    "operationSummary": "Get the Current Check Out Status of the Object",
+    "operationDescription": "Retrieves the current check out status.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objType}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Set the Check Out Status of the Object",
+    "description": "",
+    "operationId": "set_the_checkout_status_of_the_object",
+    "operationApiType": "PUT",
+    "operationPath": "/objects/{objType}/{objId}/{objVersion}/checkedout",
+    "operationSummary": "Set the Check Out Status of the Object",
+    "operationDescription": "Sets the check out status. This is allowed only when the object isn't checked out to someone else, that is when the check out status isn't CheckedOut.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objType}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objVersion}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Get Objects Filtered by Object Version",
+    "description": "",
+    "operationId": "get_objects_filtered_by_object_version",
+    "operationApiType": "GET",
+    "operationPath": "/objects/{objType}/{objId}/{objVersion}",
+    "operationSummary": "Get Objects Filtered by Object Version",
+    "operationDescription": "Retrieves the object information.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objType}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Destroy the Object Version",
+    "description": "",
+    "operationId": "destroy_the_object_version",
+    "operationApiType": "DELETE",
+    "operationPath": "/objects/{objType}/{objId}/{objVersion}",
+    "operationSummary": "Destroy the Object Version",
+    "operationDescription": "Destroys the object version. As checked in versions cannot be destroyed this can only be performed on a checked out version and is equivalent to an undo checkout. Returns the new ObjectVersion information if it is still visible to the user.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objType}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  },
+  {
+    "operation": "Create Collection of Temporary Uploads",
+    "description": "",
+    "operationId": "create_collection_of_temporary_uploads",
+    "operationApiType": "POST",
+    "operationPath": "/objects/{objType}/{objId}/{objVersion}",
+    "operationSummary": "Create Collection of Temporary Uploads",
+    "operationDescription": "Stores a temporary file on the server and assigns an ID for it.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objType}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objVersion}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      }
+    ]
+  }
 ]
