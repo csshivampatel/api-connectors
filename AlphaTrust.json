@@ -1,0 +1,142 @@
+[
+  {
+    "operation": "Update an existing User",
+    "description": "",
+    "operationId": "UpdateUsersAsync",
+    "operationApiType": "PUT",
+    "operationPath": "users",
+    "operationSummary": "Update an existing User.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+    ]
+  },
+  {
+	"operation": "Get User",
+    "description": "",
+    "operationId": "GetUsers",
+    "operationApiType": "POST",
+    "operationPath": "users",
+    "operationSummary": "Get User.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	{
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+		"required": true,
+		"isVisible": true,
+		"datatype": "System.String",
+        "ui_source": "operation"
+      },
+	  {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+		"required": true,
+		"isVisible": true,
+		"datatype": "System.String",
+        "ui_source": "operation"
+      },
+	  {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+		"required": true,
+		"isVisible": true,
+		"datatype": "System.String",
+        "ui_source": "operation"
+      },
+	  {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+		"required": true,
+		"isVisible": true,
+		"datatype": "System.String",
+        "ui_source": "operation"
+      },
+    ]
+  },
+  {
+	"operation": "Delete a User",
+    "description": "",
+    "operationId": "DeleteUsersAsync",
+    "operationApiType": "DELETE",
+    "operationPath": "users",
+    "operationSummary": "Delete a User.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+    ]
+  },
+  {
+	"operation": "Insert User",
+    "description": "",
+    "operationId": "InsertUsersAsync",
+    "operationApiType": "POST",
+    "operationPath": "users/insert",
+    "operationSummary": "Insert User.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+		"required": true,
+        "ui_source": "operation"
+      },
+	  {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+		"required": true,
+        "ui_source": "operation"
+      },
+	  {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+		"required": true,
+        "ui_source": "operation"
+      },
+	  {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+		"required": true,
+        "ui_source": "operation"
+      },
+    ]
+  }
+]

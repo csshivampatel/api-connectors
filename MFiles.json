@@ -1,0 +1,399 @@
+[
+  {
+    "operation": "Get Session Vaults",
+    "description": "",
+    "operationId": "get_vaults_accessible_by_current_user",
+    "operationApiType": "GET",
+    "operationPath": "/session/vaults",
+    "operationSummary": "Get Vaults Accessible by Current User",
+    "operationDescription": "Retrieves a list of vaults that are accessible by the current user.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+    ]
+  },
+  {
+    "operation": "Get Current Session  Vault",
+    "description": "",
+    "operationId": "get_current_vault",
+    "operationApiType": "GET",
+    "operationPath": "/session/vault",
+    "operationSummary": "Get Current Vault",
+    "operationDescription": "Fetch the document vault attached to the current session.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+    ]
+  },
+  {
+    "operation": "Get Server Vaults",
+    "description": "",
+    "operationId": "get_vaults",
+    "operationApiType": "GET",
+    "operationPath": "/session/vault",
+    "operationSummary": "Get Vaults",
+    "operationDescription": "Retrieves the vaults that are on-line and available for the user on the server.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+    ]
+  },
+  {
+    "operation": "Get Object Classes",
+    "description": "",
+    "operationId": "get_object_classes",
+    "operationApiType": "GET",
+    "operationPath": "/structure/classes",
+    "operationSummary": "Get Object Classes",
+    "operationDescription": "Retrieves information on all object classes.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+    ]
+  },
+  {
+    "operation": "Get Object Class",
+    "description": "",
+    "operationId": "get_object_class",
+    "operationApiType": "GET",
+    "operationPath": "/structure/classes/{classId}",
+    "operationSummary": "Get Object Class",
+    "operationDescription": "Retrieves information on an object class.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{classId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Get Class Icon",
+    "description": "",
+    "operationId": "get_class_icon",
+    "operationApiType": "GET",
+    "operationPath": "/structure/classes/{classId}/icon",
+    "operationSummary": "Get Class Icon",
+    "operationDescription": "Retrieves the icon for a single class.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{classId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Get Object Types",
+    "description": "",
+    "operationId": "get_object_types",
+    "operationApiType": "GET",
+    "operationPath": "/structure/objecttypes",
+    "operationSummary": "Get Object Types",
+    "operationDescription": "Retrieves information on real object types.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  
+    ]
+  },
+  {
+    "operation": "Get Object Type",
+    "description": "",
+    "operationId": "get_object_type",
+    "operationApiType": "GET",
+    "operationPath": "/structure/objecttypes/{objectTypeId}",
+    "operationSummary": "Get Object Type",
+    "operationDescription": "Retrieves information on an object type.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{objectTypeId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Get Object Type Classes",
+    "description": "",
+    "operationId": "get_object_type_classes",
+    "operationApiType": "GET",
+    "operationPath": "/structure/objecttypes/{objectTypeId}/classes",
+    "operationSummary": "Get Object Type Classes",
+    "operationDescription": "Retrieves a collection of object classes for the provided object type.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{objectTypeId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Get Value Lists",
+    "description": "",
+    "operationId": "get_value_lists",
+    "operationApiType": "GET",
+    "operationPath": "/valuelists",
+    "operationSummary": "Get Value Lists",
+    "operationDescription": "Retrieves information on all value lists.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  
+    ]
+  },
+  {
+    "operation": "Get Value List",
+    "description": "",
+    "operationId": "get_value_list",
+    "operationApiType": "GET",
+    "operationPath": "/valuelists/{id}",
+    "operationSummary": "Get Value List",
+    "operationDescription": "Retrieves information on a single value list.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{id}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Get Value List",
+    "description": "",
+    "operationId": "get_value_list",
+    "operationApiType": "GET",
+    "operationPath": "/valuelists/{id}",
+    "operationSummary": "Get Value List",
+    "operationDescription": "Retrieves information on a single value list.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{id}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Get Value List Items",
+    "description": "",
+    "operationId": "get_value_list_items",
+    "operationApiType": "GET",
+    "operationPath": "/valuelists/{id}/items",
+    "operationSummary": "Get Value List Items",
+    "operationDescription": "Retrieves information on a single value list.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{id}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Get Value List Item",
+    "description": "",
+    "operationId": "get_value_list_item",
+    "operationApiType": "GET",
+    "operationPath": "/valuelists/{id}/items/{objectId}",
+    "operationSummary": "Get Value List Item",
+    "operationDescription": "Retrieves a single value list item information.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{id}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+      },
+	  {
+        "name": "{objectId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Get Value List Item Title",
+    "description": "",
+    "operationId": "get_value_list_item_title",
+    "operationApiType": "GET",
+    "operationPath": "/valuelists/{id}/items/{objectId}/title",
+    "operationSummary": "Get Value List Item Title",
+    "operationDescription": "Retrieves the value list item title.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{id}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+      },
+	  {
+        "name": "{objectId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+      },
+    ]
+  },
+]

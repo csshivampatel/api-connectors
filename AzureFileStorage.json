@@ -1,0 +1,481 @@
+[
+  {
+    "operation": "List Shares",
+    "description": "",
+    "operationId": "Service_ListShares",
+    "operationApiType": "GET",
+    "operationPath": "/?comp=list",
+    "operationSummary": "List Shares",
+    "operationDescription": "The List Shares operation returns a list of the shares and share snapshots under the specified account. ",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+    ]
+  },
+  {
+    "operation": "List Directories and Files",
+    "description": "",
+    "operationId": "Directory_ListFilesAndDirectoriesSegment",
+    "operationApiType": "GET",
+    "operationPath": "/{shareName}/{directoryPath}?restype=directory&comp=list",
+    "operationSummary": "List Directories and Files",
+    "operationDescription": "The List Directories and Files operation returns a list of files or directories under the specified share or directory. It lists the contents only for a single level of the directory hierarchy.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name"
+      },
+	  {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder"
+      }
+	  {
+        "name": "x-ms-content-length",
+        "value": "",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+	  {
+        "name": "x-ms-type",
+        "value": "",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+	  {
+		"name": "x-ms-version",
+        "value": "2014-02-14",
+        "param_type": "Header",
+        "ui_source": "operation"
+	  },
+	  {
+		  "name": "Content-Type",
+        "value": "application/xml",
+		"isVisible": true,
+        "param_type": "Header",
+        "ui_source": "operation",
+		"datatype": "System.String",
+	  }
+    ]
+  },
+  {
+    "operation": "Create File",
+    "description": "",
+    "operationId": "File_Create",
+    "operationApiType": "PUT",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
+    "operationSummary": "Create File",
+    "operationDescription": "The Create File operation creates a new file or replaces a file. When you call Create File, you only initialize the file. To add content to a file, you call the Put Range operation.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name"
+      },
+	  {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder"
+      },
+	  {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name"
+      },
+	  {
+        "name": "x-ms-content-length",
+        "value": "",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+	  {
+        "name": "x-ms-type",
+        "value": "",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+	  {
+		  "name": "x-ms-version",
+        "value": "2014-02-14",
+        "param_type": "Header",
+        "ui_source": "operation"
+	  },
+	  {
+		  "name": "Content-Type",
+        "value": "application/xml",
+		"isVisible": true,
+        "param_type": "Header",
+        "ui_source": "operation",
+		"datatype": "System.String",
+	  }
+    ]
+  },
+  {
+    "operation": "Get File",
+    "description": "",
+    "operationId": "File_Download",
+    "operationApiType": "GET",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
+    "operationSummary": "Get File",
+    "operationDescription": "The Get File operation reads or downloads a file from the system, including its metadata and properties.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name"
+      },
+	  {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder"
+      },
+	  {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name"
+      }
+    ]
+  },
+  {
+    "operation": "Delete File",
+    "description": "",
+    "operationId": "File_Delete",
+    "operationApiType": "DELETE",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
+    "operationSummary": "Delete File",
+    "operationDescription": "The Delete File operation immediately removes the file from the storage account.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name"
+      },
+	  {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder"
+      },
+	  {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name"
+      }
+    ]
+  },
+  {
+    "operation": "Get File Properties",
+    "description": "",
+    "operationId": "File_Delete",
+    "operationApiType": "HEAD",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
+    "operationSummary": "Delete File",
+    "operationDescription": "The Delete File operation immediately removes the file from the storage account.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name"
+      },
+	  {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder"
+      },
+	  {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name"
+      }
+    ]
+  },
+  {
+    "operation": "Set File Metadata",
+    "description": "",
+    "operationId": "File_SetMetadata",
+    "operationApiType": "PUT",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}?comp=metadata",
+    "operationSummary": "Set File Metadata",
+    "operationDescription": "The Set File Metadata operation sets user-defined metadata for the specified file.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name"
+      },
+	  {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder"
+      },
+	  {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name"
+      }
+    ]
+  },
+  {
+    "operation": "Get File Metadata",
+    "description": "",
+    "operationId": "File_GetMetadata",
+    "operationApiType": "GET",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}?comp=metadata",
+    "operationSummary": "Set File Metadata",
+    "operationDescription": "The Get File Metadata operation returns all user-defined metadata for the specified file.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name"
+      },
+	  {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder"
+      },
+	  {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name"
+      }
+    ]
+  },
+  {
+    "operation": "Abort Copy File",
+    "description": "",
+    "operationId": "File_AbortCopy",
+    "operationApiType": "PUT",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}?comp=copy&copyid={id}",
+    "operationSummary": "Abort Copy File",
+    "operationDescription": "The Abort Copy File operation cancels a pending Copy File operation, and leaves a destination file with zero length and full metadata.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name"
+      },
+	  {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder"
+      },
+	  {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name"
+      },
+	  {
+        "name": "{id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Id"
+      }
+    ]
+  },
+]

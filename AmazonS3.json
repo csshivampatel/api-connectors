@@ -1,0 +1,469 @@
+[
+  {
+    "operation": "Aborts a multipart upload",
+    "description": "",
+    "operationId": "AbortMultipartUpload",
+    "operationApiType": "DELETE",
+    "operationPath": "/{Key}",
+    "operationSummary": "Aborts a multipart upload",
+    "operationDescription": "This action aborts a multipart upload. After a multipart upload is aborted, no additional parts can be uploaded using that upload ID. The storage consumed by any previously uploaded parts will be freed. However, if any part uploads are currently in progress, those part uploads might or might not succeed. As a result, it might be necessary to abort a given multipart upload multiple times in order to completely free all storage consumed by all parts.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{key}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+      },
+	  {
+        "name": "uploadId",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+      },
+	  {
+        "name": "Body",
+        "value":"",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "ui_source": "operation",
+      },
+	  {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Completes a multipart upload",
+    "description": "",
+    "operationId": "CompleteMultipartUpload",
+    "operationApiType": "POST",
+    "operationPath": "/{Key}",
+    "operationSummary": "Completes a multipart upload",
+    "operationDescription": "Completes a multipart upload by assembling previously uploaded parts.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{key}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+      },
+	  {
+        "name": "uploadId",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Lists  parts for multipart upload",
+    "description": "",
+    "operationId": "ListParts",
+    "operationApiType": "GET",
+    "operationPath": "/{Key}",
+    "operationSummary": "Lists  parts for  multipart upload",
+    "operationDescription": "Lists the parts that have been uploaded for a specific multipart upload. This operation must include the upload ID, which you obtain by sending the initiate multipart upload request",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{key}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+      },
+	  {
+        "name": "uploadId",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Copy object",
+    "description": "",
+    "operationId": "CopyObject",
+    "operationApiType": "PUT",
+    "operationPath": "/{Key}",
+    "operationSummary": "Copy object",
+    "operationDescription": "Creates a copy of an object that is already stored in Amazon S3.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{key}",
+         "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+      },
+	  {
+        "name": "x-amz-copy-source",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "List Objects",
+    "description": "",
+    "operationId": "ListObjects",
+    "operationApiType": "GET",
+    "operationPath": "/",
+    "operationSummary": "List Objects",
+    "operationDescription": "List Objects",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+    ]
+  },
+  {
+    "operation": "Initiates a multipart upload",
+    "description": "",
+    "operationId": "CreateMultipartUpload",
+    "operationApiType": "POST",
+    "operationPath": "/{Key}",
+    "operationSummary": "Initiates a multipart upload",
+    "operationDescription": "This action initiates a multipart upload and returns an upload ID. This upload ID is used to associate all of the parts in the specific multipart upload. You specify this upload ID in each of your subsequent upload part requests",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "{Key}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+      },
+	  {
+        "name": "uploads",
+        "value": "",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Delete Object",
+    "description": "",
+    "operationId": "DeleteObject",
+    "operationApiType": "DELETE",
+    "operationPath": "/{Key}",
+    "operationSummary": "Delete Object",
+    "operationDescription": "Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object. If there isn't a null version, Amazon S3 does not remove any objects but will still respond that the command was successful.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{key}",
+         "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Get Object",
+    "description": "",
+    "operationId": "GetObject",
+    "operationApiType": "GET",
+    "operationPath": "/{Key}",
+    "operationSummary": "Get Object",
+    "operationDescription": "Retrieves objects from Amazon S3. To use GET, you must have READ access to the object. If you grant READ access to the anonymous user, you can return the object without using an authorization header. An Amazon S3 bucket has no directory hierarchy such as you would find in a typical computer file system. You can, however, create a logical hierarchy by using object key names that imply a folder structure.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{key}",
+         "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Retrieves object metadata",
+    "description": "",
+    "operationId": "HeadObject",
+    "operationApiType": "HEAD",
+    "operationPath": "/{Key}",
+    "operationSummary": "Retrieves metadata of object",
+    "operationDescription": "The HEAD action retrieves metadata from an object without returning the object itself. This action is useful if you're only interested in an object's metadata. To use HEAD, you must have READ access to the object.HEAD request has the same options as a GET action on an object.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{key}",
+         "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Add object to bucket",
+    "description": "",
+    "operationId": "PutObject",
+    "operationApiType": "PUT",
+    "operationPath": "/{Key}",
+    "operationSummary": "Adds object to bucket",
+    "operationDescription": "Adds an object to a bucket. You must have WRITE permissions on a bucket to add an object to it.Amazon S3 never adds partial objects; if you receive a success response, Amazon S3 added the entire object to the bucketAmazon S3 is a distributed system. If it receives multiple write requests for the same object simultaneously, it overwrites all but the last object written.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{key}",
+         "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+      },
+	  {
+        "name": "Body",
+        "value":"",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "ui_source": "operation",
+      },
+	  {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Bucket Access Control List",
+    "description": "",
+    "operationId": "GetBucketAcl",
+    "operationApiType": "GET",
+    "operationPath": "/",
+    "operationSummary": "Get Access Control List Of Bucket",
+    "operationDescription": "This implementation of the GET action uses the acl subresource to return the access control list (ACL) of a bucket. To use GET to return the ACL of the bucket, you must have READ_ACP access to the bucket.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "acl",
+        "value": "",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+      },
+    ]
+  },
+  {
+    "operation": "Set Bucket Access Control List",
+    "description": "",
+    "operationId": "PutBucketAcl",
+    "operationApiType": "PUT",
+    "operationPath": "/",
+    "operationSummary": "Sets Access Control List Of Bucket",
+    "operationDescription": "Sets the permissions on an existing bucket using access control lists (ACL).",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+	  {
+        "name": "acl",
+        "value": "",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+      },
+      {
+        "name": "Body",
+        "value":"",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "ui_source": "operation",
+      },
+	  {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Multipart Uploads",
+    "description": "",
+    "operationId": "ListMultipartUploads",
+    "operationApiType": "GET",
+    "operationPath": "/",
+    "operationSummary": "List Multipart Uploads",
+    "operationDescription": "This action lists in-progress multipart uploads. An in-progress multipart upload is a multipart upload that has been initiated using the Initiate Multipart Upload request, but has not yet been completed or aborted.This action returns at most 1,000 multipart uploads in the response. 1,000 multipart uploads is the maximum number of uploads a response can include, which is also the default value. You can further limit the number of uploads in a response by specifying the max-uploads parameter in the response.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "uploads",
+        "value": "",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+      },
+    ]
+  },
+]
