@@ -40,7 +40,7 @@
     "description": "",
     "operationId": "get_vaults",
     "operationApiType": "GET",
-    "operationPath": "/session/vault",
+    "operationPath": "/server/vaults",
     "operationSummary": "Get Vaults",
     "operationDescription": "Retrieves the vaults that are on-line and available for the user on the server.",
     "deprecated": false,
@@ -314,6 +314,32 @@
         "datatype": "string",
         "ui_source": "operation",
         "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Value List Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
       }
     ]
   },
@@ -870,6 +896,32 @@
         "datatype": "string",
         "ui_source": "operation",
         "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
       }
     ]
   },
@@ -952,6 +1004,32 @@
         "datatype": "string",
         "ui_source": "operation",
         "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
       }
     ]
   },
@@ -995,7 +1073,7 @@
         "ui_category": "Misc"
       },
       {
-        "name": "{objId}",
+        "name": "{objVersion}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -1056,6 +1134,32 @@
         "datatype": "string",
         "ui_source": "operation",
         "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
       }
     ]
   },
@@ -1089,6 +1193,17 @@
       },
       {
         "name": "{objId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "string",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{objVersion}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -1138,47 +1253,6 @@
         "datatype": "string",
         "ui_source": "operation",
         "ui_category": "Misc"
-      }
-    ]
-  },
-  {
-    "operation": "Create Collection of Temporary Uploads",
-    "description": "",
-    "operationId": "create_collection_of_temporary_uploads",
-    "operationApiType": "POST",
-    "operationPath": "/objects/{objType}/{objId}/{objVersion}",
-    "operationSummary": "Create Collection of Temporary Uploads",
-    "operationDescription": "Stores a temporary file on the server and assigns an ID for it.",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "{objType}",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "string",
-        "ui_source": "operation",
-        "ui_category": "Misc"
-      },
-      {
-        "name": "{objId}",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "string",
-        "ui_source": "operation",
-        "ui_category": "Misc"
       },
       {
         "name": "{objVersion}",
@@ -1192,5 +1266,23 @@
         "ui_category": "Misc"
       }
     ]
+  },
+  {
+    "operation": "Create Collection of Temporary Uploads",
+    "description": "",
+    "operationId": "create_collection_of_temporary_uploads",
+    "operationApiType": "POST",
+    "operationPath": "/files",
+    "operationSummary": "Create Collection of Temporary Uploads",
+    "operationDescription": "Stores a temporary file on the server and assigns an ID for it.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
   }
 ]
