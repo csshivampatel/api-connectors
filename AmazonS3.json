@@ -25,9 +25,9 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+		"ui_category": "Misc"
       },
-      {
+	  {
         "name": "uploadId",
         "value": "",
         "param_type": "UrlParam",
@@ -36,19 +36,19 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+		"ui_category": "Misc"
       },
-      {
+	  {
         "name": "Body",
-        "value": "",
+        "value":"",
         "param_type": "Param",
         "isVisible": false,
         "bindable": true,
         "required": true,
         "datatype": "System.Byte[]",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "BodyType",
         "value": "Raw",
         "param_type": "Param",
@@ -88,9 +88,9 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+		"ui_category": "Misc"
       },
-      {
+	  {
         "name": "uploadId",
         "value": "",
         "param_type": "UrlParam",
@@ -99,8 +99,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
-      }
+		"ui_category": "Misc"
+      },
     ]
   },
   {
@@ -129,9 +129,9 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+		"ui_category": "Misc"
       },
-      {
+	  {
         "name": "uploadId",
         "value": "",
         "param_type": "UrlParam",
@@ -140,8 +140,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
-      }
+		"ui_category": "Misc"
+      },
     ]
   },
   {
@@ -163,16 +163,16 @@
     "parameters": [
       {
         "name": "{key}",
-        "value": "",
+         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+		"ui_category": "Misc"
       },
-      {
+	  {
         "name": "x-amz-copy-source",
         "value": "",
         "param_type": "UrlParam",
@@ -181,8 +181,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
-      }
+		"ui_category": "Misc"
+      },
     ]
   },
   {
@@ -201,7 +201,8 @@
         "value": "API"
       }
     ],
-    "parameters": []
+    "parameters": [
+    ]
   },
   {
     "operation": "Initiates a multipart upload",
@@ -220,7 +221,7 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "{Key}",
         "value": "",
         "param_type": "Path",
@@ -229,15 +230,15 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+		"ui_category": "Misc"
       },
-      {
+	  {
         "name": "uploads",
         "value": "",
         "param_type": "UrlParam",
         "ui_source": "operation",
-        "ui_category": "Misc"
-      }
+		"ui_category": "Misc"
+      },
     ]
   },
   {
@@ -259,15 +260,15 @@
     "parameters": [
       {
         "name": "{key}",
-        "value": "",
+         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
-      }
+		"ui_category": "Misc"
+      },
     ]
   },
   {
@@ -289,15 +290,15 @@
     "parameters": [
       {
         "name": "{key}",
-        "value": "",
+         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
-      }
+		"ui_category": "Misc"
+      },
     ]
   },
   {
@@ -319,15 +320,15 @@
     "parameters": [
       {
         "name": "{key}",
-        "value": "",
+         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
-      }
+		"ui_category": "Misc"
+      },
     ]
   },
   {
@@ -349,26 +350,26 @@
     "parameters": [
       {
         "name": "{key}",
-        "value": "",
+         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+		"ui_category": "Misc"
       },
-      {
+	  {
         "name": "Body",
-        "value": "",
+        "value":"",
         "param_type": "Param",
         "isVisible": false,
         "bindable": true,
         "required": true,
         "datatype": "System.Byte[]",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "BodyType",
         "value": "Raw",
         "param_type": "Param",
@@ -399,12 +400,12 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "acl",
         "value": "",
         "param_type": "UrlParam",
-        "ui_source": "operation"
-      }
+        "ui_source": "operation",
+      },
     ]
   },
   {
@@ -424,23 +425,23 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "acl",
         "value": "",
         "param_type": "UrlParam",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
       {
         "name": "Body",
-        "value": "",
+        "value":"",
         "param_type": "Param",
         "isVisible": false,
         "bindable": true,
         "required": true,
         "datatype": "System.Byte[]",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "BodyType",
         "value": "Raw",
         "param_type": "Param",
@@ -475,8 +476,8 @@
         "name": "uploads",
         "value": "",
         "param_type": "UrlParam",
-        "ui_source": "operation"
-      }
+        "ui_source": "operation",
+      },
     ]
-  }
+  },
 ]

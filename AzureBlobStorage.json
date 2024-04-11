@@ -1,0 +1,921 @@
+[
+  {
+    "operation": "List Containers",
+    "description": "The List Containers operation returns a list of the containers under the specified storage account.",
+    "operationId": "Service_ListContainers",
+    "operationApiType": "GET",
+    "operationPath": "/",
+    "operationSummary": "List Containers",
+    "operationDescription": "The List Containers operation returns a list of the containers under the specified storage account.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "comp",
+        "value": "list",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Set Blob Hot Tier",
+    "description": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
+    "operationId": "Blob_SetTier",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Set Blob Tier",
+    "operationDescription": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "x-ms-access-tier",
+        "value": "Hot",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "comp",
+        "value": "tier",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Set Blob Cool Tier",
+    "description": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
+    "operationId": "Blob_SetTier",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Set Blob Tier",
+    "operationDescription": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "x-ms-access-tier",
+        "value": "Cool",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "comp",
+        "value": "tier",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Set Blob Cold Tier",
+    "description": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
+    "operationId": "Blob_SetTier",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Set Blob Tier",
+    "operationDescription": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "x-ms-access-tier",
+        "value": "Cold",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-version",
+        "value": "2021-12-02",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "comp",
+        "value": "tier",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Set Blob Archive Tier",
+    "description": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
+    "operationId": "Blob_SetTier",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Set Blob Tier",
+    "operationDescription": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "x-ms-access-tier",
+        "value": "Archive",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-rehydrate-priority",
+        "value": "High/Standard",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-version",
+        "value": "2019-02-02",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "comp",
+        "value": "tier",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Blobs",
+    "description": "The List Blobs operation returns a list of the blobs under the specified container.",
+    "operationId": "Container_ListBlob",
+    "operationApiType": "GET",
+    "operationPath": "/{containerName}",
+    "operationSummary": "List Blobs",
+    "operationDescription": "The List Blobs operation returns a list of the blobs under the specified container.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "restype",
+        "value": "container",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "comp",
+        "value": "list",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Blob",
+    "description": "The Get Blob operation reads or downloads a blob from the system, including its metadata and properties. You can also call Get Blob to read a snapshot.",
+    "operationId": "Blob_Get",
+    "operationApiType": "GET",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Get Blob",
+    "operationDescription": "The Get Blob operation reads or downloads a blob from the system, including its metadata and properties. You can also call Get Blob to read a snapshot.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      }
+    ]
+  },
+  {
+    "operation": "Get Blob Properties",
+    "description": "The Get Properties operation returns all user-defined metadata, standard HTTP properties, and system properties for the blob. It does not return the content of the blob.",
+    "operationId": "Blob_GetProperties",
+    "operationApiType": "HEAD",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Get Blob Properties",
+    "operationDescription": "The Get Properties operation returns all user-defined metadata, standard HTTP properties, and system properties for the blob. It does not return the content of the blob.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Blob",
+    "description": "The Delete Blob operation marks the specified blob or snapshot for deletion. The blob is later deleted during garbage collection.",
+    "operationId": "Blob_Delete",
+    "operationApiType": "DELETE",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Delete Blob",
+    "operationDescription": "The Delete Blob operation marks the specified blob or snapshot for deletion. The blob is later deleted during garbage collection.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      }
+    ]
+  },
+  {
+    "operation": "Set Blob Metadata",
+    "description": "The Set Blob Metadata operation sets user-defined metadata for the specified blob as one or more name-value pairs.",
+    "operationId": "Blob_SetMetadata",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Set Blob Metadata",
+    "operationDescription": "The Set Blob Metadata operation sets user-defined metadata for the specified blob as one or more name-value pairs.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "comp",
+        "value": "metadata",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Blob Metadata",
+    "description": "The Get Blob Metadata operation returns all user-defined metadata for the specified blob or snapshot.",
+    "operationId": "Blob_GetMetadata",
+    "operationApiType": "GET",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Get Blob Metadata",
+    "operationDescription": "The Get Blob Metadata operation returns all user-defined metadata for the specified blob or snapshot.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "comp",
+        "value": "metadata",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Put Block",
+    "description": "The Put Block operation creates a new block to be committed as part of a blob.",
+    "operationId": "BlockBlob_PutBlock",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Put Block",
+    "operationDescription": "The Put Block operation creates a new block to be committed as part of a blob.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "blockid",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify block ID",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Block Id",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "comp",
+        "value": "block",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Length",
+        "value": "1048576",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Put Page",
+    "description": "The Put Page operation writes a range of pages to a page blob.",
+    "operationId": "PageBlob_PutPage",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Put Page",
+    "operationDescription": "The Put Page operation writes a range of pages to a page blob.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "description": "Specify name of the container to create.",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Container name"
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "x-ms-lease-id",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "specify the valid lease ID for this header",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Lease Id"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "description": "Specify the content of the blob to upload.",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "x-ms-page-write",
+        "value": "update",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Length",
+        "value": "512",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-range",
+        "value": "bytes=0-511",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "comp",
+        "value": "page",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+
+  },
+  {
+    "operation": "Copy Blob",
+    "description": "The Copy Blob operation copies a blob to a destination within the storage account. In version 2012-02-12 and later, the source for a Copy Blob operation can be a committed blob in any Azure storage account. Beginning with version 2015-02-21, the source for a Copy Blob operation can be an Azure file in any Azure storage account.",
+    "operationId": "Blob_Copy",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{copyToBlob}",
+    "operationSummary": "Copy Blob",
+    "operationDescription": "The Copy Blob operation copies a blob to a destination within the storage account. In version 2012-02-12 and later, the source for a Copy Blob operation can be a committed blob in any Azure storage account. Beginning with version 2015-02-21, the source for a Copy Blob operation can be an Azure file in any Azure storage account.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{copyToBlob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Copy Blob"
+      },
+      {
+        "name": "x-ms-copy-source",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify source to copy from ",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Header",
+        "ui_displayName": "Source ",
+        "ui_source": "operation"
+      }
+    ]
+
+  },
+  {
+    "operation": "Put Blob block blob",
+    "description": "This operation uploads a Block blob with content to Azure Blob Storage.",
+    "operationId": "CreateFile_V2",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Put Blob block blob",
+    "operationDescription": "The Put Blob operation creates a new block, page, or append blob, or updates the content of an existing block blob.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "description": "Specify the content of the blob to upload.",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "x-ms-blob-type",
+        "value": "BlockBlob",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-blob-content-type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Length",
+        "value": "2",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Put blob page blob",
+    "description": "This operation uploads a Page blob without content to Azure Blob Storage.",
+    "operationId": "CreateFile_V2",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Put Blob page blob",
+    "operationDescription": "The Put Blob operation creates a new block, page, or append blob, or updates the content of an existing block blob.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DsDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "DeleteMessageBody",
+        "value": true,
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-blob-type",
+        "value": "PageBlob",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-blob-content-length",
+        "value": "512",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]

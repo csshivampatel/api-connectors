@@ -16,19 +16,19 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "resource",
         "value": "filesystem",
         "param_type": "UrlParam",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "recursive",
         "value": "true",
         "param_type": "UrlParam",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -36,7 +36,7 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       }
     ]
   },
@@ -57,11 +57,11 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "resource",
         "value": "account",
         "param_type": "UrlParam",
-        "ui_source": "operation"
+        "ui_source": "operation",
       }
     ]
   },
@@ -71,7 +71,7 @@
     "operationId": "Path_Create",
     "operationApiType": "PUT",
     "operationPath": "/{filesystem}/{path}",
-    "operationSummary": "Create File",
+    "operationSummary": "Create File"
     "operationDescription": "Create a file. By default, the destination is overwritten and if the destination already exists and has a lease the lease is broken.",
     "deprecated": false,
     "adapterProperties": [
@@ -82,19 +82,19 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "resource",
         "value": "file",
         "param_type": "UrlParam",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "x-ms-version",
         "value": "2020-06-12",
         "param_type": "Header",
         "ui_source": "operation"
       },
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -102,9 +102,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -123,7 +123,7 @@
     "operationId": "Path_Create",
     "operationApiType": "PUT",
     "operationPath": "/{filesystem}/{path}",
-    "operationSummary": "Rename File | Rename Directory",
+    "operationSummary": "Rename File | Rename Directory"
     "operationDescription": "Rename a file or directory name. By default, the destination is overwritten and if the destination already exists and has a lease the lease is broken.",
     "deprecated": false,
     "adapterProperties": [
@@ -134,24 +134,24 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "x-ms-version",
         "value": "2020-06-12",
         "param_type": "Header",
         "ui_source": "operation"
       },
-      {
+	  {
         "name": "x-ms-rename-source",
         "value": "",
         "param_type": "Header",
         "ui_source": "operation",
-        "required": true,
-        "isVisible": true,
-        "datatype": "string",
-        "ui_source": "operation",
-        "ui_displayName": "Rename File Or Directory Name"
+		"required": true,
+		"isVisible": true,
+		"datatype": "string",
+		"ui_source": "operation",
+		"ui_displayName": "Rename File Or Directory Name"
       },
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -159,9 +159,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -191,19 +191,19 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "resource",
         "value": "directory",
         "param_type": "UrlParam",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "x-ms-version",
         "value": "2020-06-12",
         "param_type": "Header",
         "ui_source": "operation"
       },
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -211,9 +211,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -243,7 +243,7 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -251,9 +251,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -283,7 +283,7 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -291,9 +291,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -304,12 +304,12 @@
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder"
       },
-      {
+	  {
         "name": "recursive",
         "value": "true",
         "param_type": "UrlParam",
         "ui_source": "operation"
-      }
+      },
     ]
   },
   {
@@ -329,7 +329,7 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -337,9 +337,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -369,13 +369,13 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "action",
         "value": "getStatus",
         "param_type": "UrlParam",
         "ui_source": "operation"
       },
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -383,9 +383,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -415,13 +415,13 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "action",
         "value": "getAccessControl",
         "param_type": "UrlParam",
         "ui_source": "operation"
       },
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -429,9 +429,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -461,24 +461,24 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "x-ms-lease-action",
         "value": "renew",
         "param_type": "Header",
         "ui_source": "operation"
       },
-      {
+	  {
         "name": "x-ms-lease-id",
         "value": "",
         "param_type": "Header",
-        "ui_source": "operation",
-        "required": true,
-        "isVisible": true,
-        "datatype": "string",
-        "ui_source": "operation",
-        "ui_displayName": "Lease Id"
+        "ui_source": "operation"
+		"required": true,
+		"isVisible": true,
+		"datatype": "string",
+		"ui_source": "operation",
+		"ui_displayName": "Lease Id"
       },
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -486,9 +486,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -518,24 +518,24 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "x-ms-lease-action",
         "value": "release",
         "param_type": "Header",
         "ui_source": "operation"
       },
-      {
+	  {
         "name": "x-ms-lease-id",
         "value": "",
         "param_type": "Header",
-        "ui_source": "operation",
-        "required": true,
-        "isVisible": true,
-        "datatype": "string",
-        "ui_source": "operation",
-        "ui_displayName": "Lease Id"
+        "ui_source": "operation"
+		"required": true,
+		"isVisible": true,
+		"datatype": "string",
+		"ui_source": "operation",
+		"ui_displayName": "Lease Id"
       },
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -543,9 +543,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -575,35 +575,35 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "x-ms-lease-action",
         "value": "change",
         "param_type": "Header",
         "ui_source": "operation"
       },
-      {
+	  {
         "name": "x-ms-lease-id",
         "value": "",
         "param_type": "Header",
-        "ui_source": "operation",
-        "required": true,
-        "isVisible": true,
-        "datatype": "string",
-        "ui_source": "operation",
-        "ui_displayName": "Lease Id"
+        "ui_source": "operation"
+		"required": true,
+		"isVisible": true,
+		"datatype": "string",
+		"ui_source": "operation",
+		"ui_displayName": "Lease Id"
       },
-      {
+	  {
         "name": "x-ms-proposed-lease-id",
         "value": "",
         "param_type": "Header",
-        "ui_source": "operation",
-        "required": true,
-        "isVisible": true,
-        "datatype": "string",
-        "ui_source": "operation",
-        "ui_displayName": "Proposed Lease Id"
+        "ui_source": "operation"
+		"required": true,
+		"isVisible": true,
+		"datatype": "string",
+		"ui_source": "operation",
+		"ui_displayName": "Proposed Lease Id"
       },
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -611,9 +611,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -643,13 +643,13 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "x-ms-lease-action",
         "value": "break",
         "param_type": "Header",
         "ui_source": "operation"
       },
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -657,9 +657,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -689,7 +689,7 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -697,9 +697,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -710,7 +710,7 @@
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder"
       },
-      {
+	  {
         "name": "Body",
         "value": "",
         "param_type": "Param",
@@ -724,7 +724,7 @@
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Body content to append"
       },
-      {
+	  {
         "name": "BodyType",
         "value": "Raw",
         "param_type": "Param",
@@ -736,24 +736,24 @@
         "param_type": "Param",
         "ui_source": "operation"
       },
-      {
+	  {
         "name": "action",
         "value": "append",
         "param_type": "UrlParam",
         "ui_source": "operation"
       },
-      {
+	  {
         "name": "position",
         "value": "",
         "param_type": "UrlParam",
         "ui_source": "operation",
-        "required": true,
-        "isVisible": true,
-        "datatype": "string",
-        "ui_source": "operation",
-        "ui_displayName": "Append From Position"
-      }
-    ]
+		"required": true,
+		"isVisible": true,
+		"datatype": "string",
+		"ui_source": "operation",
+		"ui_displayName": "Append From Position"
+      },
+    ],
   },
   {
     "operation": "Flush Data",
@@ -772,7 +772,7 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -780,9 +780,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -793,42 +793,42 @@
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder"
       },
-      {
-        "name": "Content-Type",
+	  {
+		"name": "Content-Type",
         "value": "application/xml",
         "param_type": "Header",
-        "ui_source": "operation"
-      },
-      {
-        "name": "Content-Length",
+        "ui_source": "operation",
+	  },
+	  {
+		"name": "Content-Length",
         "value": "0",
         "param_type": "Header",
-        "ui_source": "operation"
-      },
-      {
+        "ui_source": "operation",
+	  },
+	  {
         "name": "action",
         "value": "flush",
         "param_type": "UrlParam",
         "ui_source": "operation"
       },
-      {
+	  {
         "name": "position",
         "value": "",
         "param_type": "UrlParam",
         "ui_source": "operation",
-        "required": true,
-        "isVisible": true,
-        "datatype": "string",
-        "ui_source": "operation",
-        "ui_displayName": "Flush From Position"
+		"required": true,
+		"isVisible": true,
+		"datatype": "string",
+		"ui_source": "operation",
+		"ui_displayName": "Flush From Position"
       },
-      {
+	  {
         "name": "flush",
         "value": "true",
         "param_type": "UrlParam",
         "ui_source": "operation"
-      }
-    ]
+      },
+    ],
   },
   {
     "operation": "Set Properties for a file or directory",
@@ -847,7 +847,7 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -855,9 +855,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -868,48 +868,48 @@
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder"
       },
-      {
-        "name": "x-ms-lease-action",
+	  {
+		"name": "x-ms-lease-action",
         "value": "acquire",
         "param_type": "Header",
-        "ui_source": "operation"
-      },
-      {
-        "name": "x-ms-properties",
+        "ui_source": "operation",
+	  },
+	  {
+		"name": "x-ms-properties",
         "value": "0",
         "param_type": "Header",
         "ui_source": "operation",
-        "isVisible": true,
+		"isVisible": true,
         "bindable": true,
         "required": true,
         "datatype": "string",
         "ui_source": "operation",
-        "ui_displayName": "File Properties"
-      },
-      {
+		"ui_displayName": "File Properties"
+	  },
+	  {
         "name": "action",
         "value": "setProperties",
         "param_type": "UrlParam",
         "ui_source": "operation"
       },
-      {
+	  {
         "name": "position",
         "value": "",
         "param_type": "UrlParam",
         "ui_source": "operation",
-        "required": true,
-        "isVisible": true,
-        "datatype": "string",
-        "ui_source": "operation",
-        "ui_displayName": "Flush From Position"
+		"required": true,
+		"isVisible": true,
+		"datatype": "string",
+		"ui_source": "operation",
+		"ui_displayName": "Flush From Position"
       },
-      {
+	  {
         "name": "flush",
         "value": "false",
         "param_type": "UrlParam",
         "ui_source": "operation"
-      }
-    ]
+      },
+    ],
   },
   {
     "operation": "Read File",
@@ -928,7 +928,7 @@
       }
     ],
     "parameters": [
-      {
+	  {
         "name": "{filesystem}",
         "value": "",
         "param_type": "Path",
@@ -936,9 +936,9 @@
         "bindable": true,
         "required": true,
         "datatype": "string",
-        "ui_source": "operation"
+        "ui_source": "operation",
       },
-      {
+	  {
         "name": "{path}",
         "value": "",
         "param_type": "Path",
@@ -950,5 +950,5 @@
         "sourceProperty": "ReceiveFolder"
       }
     ]
-  }
+  },
 ]

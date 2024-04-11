@@ -1,0 +1,482 @@
+[
+  {
+    "operation": "Abort upload of the specified document version",
+    "description": "",
+    "operationId": "AbortDocumentVersionUpload",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/v1/documents/{DocumentId}/versions/{VersionId}",
+    "operationSummary": "Abort upload of the specified document version",
+    "operationDescription": "Aborts the upload of the specified document version that was previously initiated by InitiateDocumentVersionUpload. The client should make this call only when it no longer intends to upload the document version, or fails to do so.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Change the status of the document version",
+    "description": "",
+    "operationId": "UpdateDocumentVersion",
+    "operationApiType": "PATCH",
+    "operationPath": "/api/v1/documents/{DocumentId}/versions/{VersionId}",
+    "operationSummary": "Change the status of the document version",
+    "operationDescription": "Changes the status of the document version to ACTIVE. Amazon WorkDocs also sets its document container to ACTIVE. his is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by InitiateDocumentVersionUpload.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Add custom properties to the specified resource",
+    "description": "",
+    "operationId": "CreateCustomMetadata",
+    "operationApiType": "PUT",
+    "operationPath": "/api/v1/resources/{ResourceId}/customMetadata?versionid",
+    "operationSummary": "Add custom properties to the specified resource",
+    "operationDescription": "Adds one or more custom properties to the specified resource (a folder, document, or version).",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Delete custom metadata",
+    "description": "",
+    "operationId": "DeleteCustomMetadata",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/v1/resources/{ResourceId}/customMetadata?deleteAll&keys&versionId",
+    "operationSummary": "Delete custom metadata",
+    "operationDescription": "Deletes custom metadata from the specified resource.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Create folder",
+    "description": "",
+    "operationId": "CreateFolder",
+    "operationApiType": "POST",
+    "operationPath": "/api/v1/folders",
+    "operationSummary": "Create folder",
+    "operationDescription": "Creates a folder with the specified name and parent folder.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Permanently delete the specified folder",
+    "description": "",
+    "operationId": "DeleteFolder",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/v1/folders/{FolderId}",
+    "operationSummary": "Permanently delete the specified folder",
+    "operationDescription": "Permanently deletes the specified folder and its contents.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Update the specified attributes of the specified folder",
+    "description": "",
+    "operationId": "UpdateFolder",
+    "operationApiType": "PATCH",
+    "operationPath": "/api/v1/folders/{FolderId}",
+    "operationSummary": "Update the specified attributes of the specified folder",
+    "operationDescription": "Updates the specified attributes of the specified folder. The user must have access to both the folder and its parent folder, if applicable.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Add labels to the given resource",
+    "description": "",
+    "operationId": "CreateLabels",
+    "operationApiType": "PUT",
+    "operationPath": "/api/v1/resources/{ResourceId}/labels",
+    "operationSummary": "Add labels to the given resource",
+    "operationDescription": "Adds the specified list of labels to the given resource (a document or folder)",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Delete labels from a resource",
+    "description": "",
+    "operationId": "DeleteLabels",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/v1/resources/{ResourceId}/labels?deleteAll&labels",
+    "operationSummary": "Delete labels from a resource",
+    "operationDescription": "Deletes the specified list of labels from a resource.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Configure Amazon WorkDocs to use Amazon SNS notifications",
+    "description": "",
+    "operationId": "CreateNotificationSubscription",
+    "operationApiType": "POST",
+    "operationPath": "/api/v1/organizations/{OrganizationId}/subscriptions",
+    "operationSummary": "Configure Amazon WorkDocs to use Amazon SNS notifications",
+    "operationDescription": "Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must confirm the subscription.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Delete the specified subscription",
+    "description": "",
+    "operationId": "DeleteNotificationSubscription",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/v1/organizations/{OrganizationId}/subscriptions/{SubscriptionId}",
+    "operationSummary": "Delete the specified subscription",
+    "operationDescription": "Deletes the specified subscription from the specified organization.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Permanently delete the specified document",
+    "description": "",
+    "operationId": "DeleteDocument",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/v1/documents/{DocumentId}",
+    "operationSummary": "Permanently delete the specified document",
+    "operationDescription": "Permanently deletes the specified document and its associated metadata.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Permanently delete the specified document",
+    "description": "",
+    "operationId": "DeleteDocument",
+    "operationApiType": "PATCH",
+    "operationPath": "/api/v1/documents/{DocumentId}",
+    "operationSummary": "Permanently delete the specified document",
+    "operationDescription": "Permanently deletes the specified document and its associated metadata.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Describe current user's special folders",
+    "description": "",
+    "operationId": "DescribeRootFolders",
+    "operationApiType": "GET",
+    "operationPath": "/api/v1/me/root?limit&marker",
+    "operationSummary": "Describe current user's special folders",
+    "operationDescription": "Describes the current user's special folders; the RootFolder and the RecycleBin. RootFolder is the root of user's files and folders and RecycleBin is the root of recycled items. This is not a valid action for SigV4 (administrative API) clients.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Describe the specified users",
+    "description": "",
+    "operationId": "DescribeUsers",
+    "operationApiType": "GET",
+    "operationPath": "/api/v1/users?fields&include&limit&marker&order&organizationId&query&sort&userIds",
+    "operationSummary": "Describe the specified users",
+    "operationDescription": "Describes the specified users. You can describe all users or filter the results (for example, by status or organization). By default, Amazon WorkDocs returns the first 24 active or pending users. If there are more results, the response includes a marker that you can use to request the next set of results.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Retrieve details of a document",
+    "description": "",
+    "operationId": "GetDocument",
+    "operationApiType": "GET",
+    "operationPath": "/api/v1/documents/{DocumentId}?includeCustomMetadata",
+    "operationSummary": "Retrieve details of a document",
+    "operationDescription": "Retrieves details of a document.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Retrieve the requested document's path information",
+    "description": "",
+    "operationId": "GetDocumentPath",
+    "operationApiType": "GET",
+    "operationPath": "/api/v1/documents/{DocumentId}/path?fields&limit&marker",
+    "operationSummary": "Retrieve the requested document's path information",
+    "operationDescription": "Retrieves the path information (the hierarchy from the root folder) for the requested document. By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested document and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the names of the parent folders.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Retrieve version metadata for the specified document",
+    "description": "",
+    "operationId": "GetDocumentVersion",
+    "operationApiType": "GET",
+    "operationPath": "/api/v1/documents/{DocumentId}/versions/{VersionId}?fields&includeCustomMetadata",
+    "operationSummary": "Retrieve version metadata for the specified document",
+    "operationDescription": "Retrieves version metadata for the specified document.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Retrieve the specified folder's metadata",
+    "description": "",
+    "operationId": "GetFolder",
+    "operationApiType": "GET",
+    "operationPath": "/api/v1/folders/{FolderId}?includeCustomMetadata",
+    "operationSummary": "Retrieve the specified folder's metadata",
+    "operationDescription": "Retrieves the metadata of the specified folder.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Retrieve the specified folder's path information",
+    "description": "",
+    "operationId": "GetFolderPath",
+    "operationApiType": "GET",
+    "operationPath": "/api/v1/folders/{FolderId}/path?fields&limit&marker",
+    "operationSummary": "Retrieve the specified folder's path information",
+    "operationDescription": "Retrieves the path information (the hierarchy from the root folder) for the specified folder. By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested folder and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the parent folder names.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Retrieve a collection of resources",
+    "description": "",
+    "operationId": "GetResources",
+    "operationApiType": "GET",
+    "operationPath": "/api/v1/resources?collectionType&limit&marker&userId",
+    "operationSummary": "Retrieve a collection of resources",
+    "operationDescription": "Retrieves a collection of resources, including folders and documents. The only CollectionType supported is SHARED_WITH_ME.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Create new document and version object",
+    "description": "",
+    "operationId": "InitiateDocumentVersionUpload",
+    "operationApiType": "POST",
+    "operationPath": "/api/v1/documents",
+    "operationSummary": "Create new document and version object",
+    "operationDescription": "Creates a new document object and version object. The client specifies the parent folder ID and name of the document to upload. The ID is optionally specified when creating a new version of an existing document. This is the first step to upload a document. Next, upload the document to the URL returned from the call, and then call UpdateDocumentVersion. To cancel the document upload, call AbortDocumentVersionUpload.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Recover a deleted version",
+    "description": "",
+    "operationId": "RestoreDocumentVersions",
+    "operationApiType": "POST",
+    "operationPath": "/api/v1/documentVersions/restore/{DocumentId}",
+    "operationSummary": "Recover a deleted version",
+    "operationDescription": "Recovers a deleted version of an Amazon WorkDocs document.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  },
+  {
+    "operation": "Search metadata and content of resources",
+    "description": "",
+    "operationId": "SearchResources",
+    "operationApiType": "POST",
+    "operationPath": "/api/v1/search",
+    "operationSummary": "Search metadata and content of resources",
+    "operationDescription": "Searches metadata and the content of folders, documents, document versions, and comments",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+        
+    ]
+  }
+]
