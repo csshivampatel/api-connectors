@@ -35,10 +35,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       }
     ]
   },
@@ -103,10 +102,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -115,9 +113,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       }
     ]
   },
@@ -162,10 +161,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -174,10 +172,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc",
-        "ui_displayName": "Rename to"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       }
     ]
   },
@@ -217,10 +215,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -229,9 +226,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       }
     ]
   },
@@ -259,10 +257,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -271,9 +268,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       }
     ]
   },
@@ -301,10 +299,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -313,9 +310,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       },
       {
         "name": "recursive",
@@ -349,10 +347,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -361,9 +358,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       }
     ]
   },
@@ -397,10 +395,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -409,9 +406,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       }
     ]
   },
@@ -445,10 +443,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -457,9 +454,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       }
     ]
   },
@@ -504,10 +502,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -516,9 +513,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       }
     ]
   },
@@ -563,10 +561,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -575,9 +572,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       }
     ]
   },
@@ -633,10 +631,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -645,9 +642,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       }
     ]
   },
@@ -681,10 +679,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -693,9 +690,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       }
     ]
   },
@@ -723,10 +721,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -735,15 +732,16 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       },
       {
         "name": "Body",
         "value": "",
         "param_type": "Param",
-        "isVisible": false,
+        "isVisible": true,
         "bindable": true,
         "required": true,
         "datatype": "System.Byte[]",
@@ -808,10 +806,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -820,9 +817,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       },
       {
         "name": "Content-Type",
@@ -885,10 +883,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -897,9 +894,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       },
       {
         "name": "x-ms-lease-action",
@@ -968,10 +966,9 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       },
       {
         "name": "{path}",
@@ -980,9 +977,10 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "ReceiveFolder",
+        "ui_category": "Publish Mode Properties"
       }
     ]
   }

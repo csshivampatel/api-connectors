@@ -1263,7 +1263,7 @@
       {
         "name": "Body",
         "value": "",
-        "param_type": "BodyParam",
+        "param_type": "Param",
         "bindable": true,
         "required": true,
         "datatype": "System.Byte[]",
