@@ -1,84 +1,514 @@
 [
   {
-    "operation": "Update an existing User",
+    "operation": "Get Audit Report",
     "description": "",
-    "operationId": "UpdateUsersAsync",
-    "operationApiType": "PUT",
-    "operationPath": "users",
-    "operationSummary": "Update an existing User.",
-    "operationDescription": "",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-      }
-    ],
-    "parameters": [
-    ]
-  },
-  {
-	"operation": "Get User",
-    "description": "",
-    "operationId": "GetUsers",
+    "operationId": "GetAuditReports",
     "operationApiType": "POST",
-    "operationPath": "users",
-    "operationSummary": "Get User.",
+    "operationPath": "/api/v5/auditreports",
+    "operationSummary": "Get Audit Report.",
     "operationDescription": "",
     "deprecated": false,
     "adapterProperties": [
       {
         "name": "AdapterMode",
         "key": "",
-        "value": "API"
+        "value": "Solicit Response"
       }
     ],
-    "parameters": [
-	{
-        "name": "ApiKey",
-        "value": "",
-        "param_type": "Header",
-		"required": true,
-		"isVisible": true,
-		"datatype": "System.String",
-        "ui_source": "operation"
-      },
-	  {
-        "name": "ApiSecret",
-        "value": "",
-        "param_type": "Header",
-		"required": true,
-		"isVisible": true,
-		"datatype": "System.String",
-        "ui_source": "operation"
-      },
-	  {
-        "name": "ApiUsername",
-        "value": "",
-        "param_type": "Header",
-		"required": true,
-		"isVisible": true,
-		"datatype": "System.String",
-        "ui_source": "operation"
-      },
-	  {
-        "name": "ApiPassword",
-        "value": "",
-        "param_type": "Header",
-		"required": true,
-		"isVisible": true,
-		"datatype": "System.String",
-        "ui_source": "operation"
-      },
-    ]
+    "parameters": []
   },
   {
-	"operation": "Delete a User",
+    "operation": "Verify API Credentials",
+    "description": "",
+    "operationId": "ServiceAuthenticationTest",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/communications/serviceauthenticationtest",
+    "operationSummary": "ServiceAuthenticationTest - Verify API Credentials",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get an existing Document",
+    "description": "",
+    "operationId": "GetDocuments",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/documents",
+    "operationSummary": "Get an existing Document.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Update an existing Document",
+    "description": "",
+    "operationId": "UpdateDocuments",
+    "operationApiType": "PUT",
+    "operationPath": "/api/v5/documents",
+    "operationSummary": "Update an existing Document.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Retrieve Document Files",
+    "description": "",
+    "operationId": "GetDocumentFiles",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/documents/files",
+    "operationSummary": "Retrieve Document Files.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Insert a Document",
+    "description": "",
+    "operationId": "InsertDocuments",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/documents/insert",
+    "operationSummary": "Insert a Document.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get the Document object",
+    "description": "",
+    "operationId": "GetDocumentsUpdateable",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/documentsupdateable",
+    "operationSummary": "Get the Document object that you can use to update with the UpdateDocuments() method.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get File Attachments",
+    "description": "",
+    "operationId": "GetFileAttachments",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/fileattachments",
+    "operationSummary": "Get File Attachments.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Insert File Attachments",
+    "description": "",
+    "operationId": "InsertFileAttachments",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/fileattachments/insert",
+    "operationSummary": "Insert File Attachments.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Delete a Group",
+    "description": "",
+    "operationId": "DeleteGroupsAsync",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/v5/groups",
+    "operationSummary": "Delete a Group.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Insert a Group",
+    "description": "",
+    "operationId": "InsertGroupsAsync",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/groups/insert",
+    "operationSummary": "Insert a Group.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Update an existing Group",
+    "description": "",
+    "operationId": "UpdateGroupsAsync",
+    "operationApiType": "PUT",
+    "operationPath": "/api/v5/groups",
+    "operationSummary": "Update an existing Group.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Insert a Group",
+    "description": "",
+    "operationId": "InsertGroupsAsync",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/groups/insert",
+    "operationSummary": "Insert a Group.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get a Participant",
+    "description": "",
+    "operationId": "GetParticipants",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/participants",
+    "operationSummary": "Get a Participant.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Update Participant",
+    "description": "",
+    "operationId": "UpdateParticipants",
+    "operationApiType": "PUT",
+    "operationPath": "/api/v5/participants",
+    "operationSummary": "Update Participant.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Update Participant Workflow Action Status",
+    "description": "",
+    "operationId": "UpdateParticipantWorkflowActionStatus",
+    "operationApiType": "PUT",
+    "operationPath": "/api/v5/participants/workflowactionstatus",
+    "operationSummary": "Update Participant Workflow Action Status.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Re-send Participant Email Notification",
+    "description": "",
+    "operationId": "ResendParticipantEmailNotifications",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/participants/emailnotification",
+    "operationSummary": "Re-send Participant Email Notification.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Seal PDF",
+    "description": "",
+    "operationId": "SealPdfs",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/pdf/seal",
+    "operationSummary": "Seal PDF",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Certify PDF",
+    "description": "",
+    "operationId": "CertifyPdfs",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/pdf/certify",
+    "operationSummary": "Certify PDF",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get PDF Data Files",
+    "description": "",
+    "operationId": "GetPdfDataFiles",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/pdf/dataFiles",
+    "operationSummary": "Get PDF Data Files.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get Transaction Security Token Data",
+    "description": "",
+    "operationId": "GetTransactionTokenData",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/securitytoken",
+    "operationSummary": "Get Transaction Security Token Data.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get Task",
+    "description": "",
+    "operationId": "GetTasks",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/tasks",
+    "operationSummary": "Get Task.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Update Task",
+    "description": "",
+    "operationId": "UpdateTasks",
+    "operationApiType": "PUT",
+    "operationPath": "/api/v5/tasks",
+    "operationSummary": "Update Task.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Insert a Task",
+    "description": "",
+    "operationId": "InsertTasks",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/tasks/insert",
+    "operationSummary": "Insert a Task.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get Transaction",
+    "description": "",
+    "operationId": "GetTransactions",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/transactions",
+    "operationSummary": "Get Transaction.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Update an existing Transaction",
+    "description": "",
+    "operationId": "UpdateTransactions",
+    "operationApiType": "PUT",
+    "operationPath": "/api/v5/transactions",
+    "operationSummary": "Update an existing Transaction.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Close Transaction",
+    "description": "",
+    "operationId": "CloseTransactions",
+    "operationApiType": "PUT",
+    "operationPath": "/api/v5/transactions/close",
+    "operationSummary": "Close Transaction",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Create Transaction",
+    "description": "",
+    "operationId": "CreateTransactions",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/transactions/create",
+    "operationSummary": "Create Transaction.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Delete a User",
     "description": "",
     "operationId": "DeleteUsersAsync",
     "operationApiType": "DELETE",
-    "operationPath": "users",
+    "operationPath": "/api/v5/users",
     "operationSummary": "Delete a User.",
     "operationDescription": "",
     "deprecated": false,
@@ -86,18 +516,53 @@
       {
         "name": "AdapterMode",
         "key": "",
-        "value": "API"
+        "value": "Solicit Response"
       }
     ],
-    "parameters": [
-    ]
+    "parameters": []
   },
   {
-	"operation": "Insert User",
+    "operation": "Get User",
+    "description": "",
+    "operationId": "GetUsers",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/v5/users",
+    "operationSummary": "Get User.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Update an existing User",
+    "description": "",
+    "operationId": "UpdateUsersAsync",
+    "operationApiType": "PUT",
+    "operationPath": "/api/v5/users",
+    "operationSummary": "Update an existing User.",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Insert User",
     "description": "",
     "operationId": "InsertUsersAsync",
     "operationApiType": "POST",
-    "operationPath": "users/insert",
+    "operationPath": "/api/v5/users/insert",
     "operationSummary": "Insert User.",
     "operationDescription": "",
     "deprecated": false,
@@ -105,38 +570,45 @@
       {
         "name": "AdapterMode",
         "key": "",
-        "value": "API"
+        "value": "Solicit Response"
       }
     ],
-    "parameters": [
-	  {
-        "name": "ApiKey",
-        "value": "",
-        "param_type": "Header",
-		"required": true,
-        "ui_source": "operation"
-      },
-	  {
-        "name": "ApiSecret",
-        "value": "",
-        "param_type": "Header",
-		"required": true,
-        "ui_source": "operation"
-      },
-	  {
-        "name": "ApiUsername",
-        "value": "",
-        "param_type": "Header",
-		"required": true,
-        "ui_source": "operation"
-      },
-	  {
-        "name": "ApiPassword",
-        "value": "",
-        "param_type": "Header",
-		"required": true,
-        "ui_source": "operation"
-      },
-    ]
+    "parameters": []
+  },
+  {
+    "operation": "Get Workflows",
+    "description": "",
+    "operationId": "GetWorkflows",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/workflows",
+    "operationSummary": "Get Workflows",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get Workflow List",
+    "description": "",
+    "operationId": "GetWorkflowList",
+    "operationApiType": "POST",
+    "operationPath": "/api/v5/workflows/list",
+    "operationSummary": "Get Workflow List",
+    "operationDescription": "",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
   }
 ]
