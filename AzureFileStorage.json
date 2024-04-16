@@ -4,7 +4,7 @@
     "description": "",
     "operationId": "Service_ListShares",
     "operationApiType": "GET",
-    "operationPath": "/?comp=list",
+    "operationPath": "/",
     "operationSummary": "List Shares",
     "operationDescription": "The List Shares operation returns a list of the shares and share snapshots under the specified account. ",
     "deprecated": false,
@@ -16,6 +16,12 @@
       }
     ],
     "parameters": [
+      {
+        "name": "comp",
+        "value": "list",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
     ]
   },
   {
@@ -23,7 +29,7 @@
     "description": "",
     "operationId": "Directory_ListFilesAndDirectoriesSegment",
     "operationApiType": "GET",
-    "operationPath": "/{shareName}/{directoryPath}?restype=directory&comp=list",
+    "operationPath": "/{shareName}/{directoryPath}",
     "operationSummary": "List Directories and Files",
     "operationDescription": "The List Directories and Files operation returns a list of files or directories under the specified share or directory. It lists the contents only for a single level of the directory hierarchy.",
     "deprecated": false,
@@ -35,53 +41,40 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{shareName}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder"
       },
-	  {
+      {
         "name": "{directoryPath}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "SendFolder"
-      }
-	  {
-        "name": "x-ms-content-length",
-        "value": "",
-        "param_type": "Header",
-        "ui_source": "operation"
-      },
-	  {
-        "name": "x-ms-type",
-        "value": "",
-        "param_type": "Header",
-        "ui_source": "operation"
-      },
-	  {
-		"name": "x-ms-version",
-        "value": "2014-02-14",
-        "param_type": "Header",
-        "ui_source": "operation"
-	  },
-	  {
-		  "name": "Content-Type",
-        "value": "application/xml",
-		"isVisible": true,
-        "param_type": "Header",
+        "datatype": "System.String",
         "ui_source": "operation",
-		"datatype": "System.String",
-	  }
+        "ui_displayName": "Share Name",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "restype",
+        "value": "directory",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "comp",
+        "value": "list",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
     ]
   },
   {
@@ -101,28 +94,29 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{shareName}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name"
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder"
       },
-	  {
+      {
         "name": "{directoryPath}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
-        "ui_source": "adapter",
-        "ui_EditorType": "DsDialogue",
-        "sourceProperty": "SendFolder"
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name",
+        "ui_category": "Misc"
       },
-	  {
+      {
         "name": "{fileName}",
         "value": "",
         "param_type": "Param",
@@ -131,34 +125,151 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_displayName": "File Name"
+        "ui_displayName": "File Name",
+        "ui_category": "Misc"
       },
-	  {
+      {
         "name": "x-ms-content-length",
-        "value": "",
+        "value": "1024",
         "param_type": "Header",
         "ui_source": "operation"
       },
-	  {
+      {
         "name": "x-ms-type",
-        "value": "",
+        "value": "file",
         "param_type": "Header",
         "ui_source": "operation"
       },
-	  {
-		  "name": "x-ms-version",
-        "value": "2014-02-14",
-        "param_type": "Header",
-        "ui_source": "operation"
-	  },
-	  {
-		  "name": "Content-Type",
+      {
+        "name": "Content-Type",
         "value": "application/xml",
-		"isVisible": true,
+        "isVisible": false,
         "param_type": "Header",
         "ui_source": "operation",
-		"datatype": "System.String",
-	  }
+        "datatype": "System.String"
+      }
+    ]
+  },
+  {
+    "operation": "Put Range",
+    "description": "",
+    "operationId": "File_UploadRange",
+    "operationApiType": "PUT",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
+    "operationSummary": "Put Range",
+    "operationDescription": "The Put Range operation writes a range of bytes to a file.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/xml",
+        "isVisible": false,
+        "param_type": "Header",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Content-Length",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "x-ms-range",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "comp",
+        "value": "range",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-write",
+        "value": "update",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
     ]
   },
   {
@@ -178,28 +289,29 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{shareName}",
         "value": "",
-        "param_type": "Param",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name"
-      },
-	  {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Param",
-        "isVisible": true,
-        "bindable": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "SendFolder"
       },
-	  {
+      {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name",
+        "ui_category": "Misc"
+      },
+      {
         "name": "{fileName}",
         "value": "",
         "param_type": "Param",
@@ -208,7 +320,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_displayName": "File Name"
+        "ui_displayName": "File Name",
+        "ui_category": "Misc"
       }
     ]
   },
@@ -229,28 +342,29 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{shareName}",
         "value": "",
-        "param_type": "Param",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name"
-      },
-	  {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Param",
-        "isVisible": true,
-        "bindable": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "SendFolder"
       },
-	  {
+      {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name",
+        "ui_category": "Misc"
+      },
+      {
         "name": "{fileName}",
         "value": "",
         "param_type": "Param",
@@ -259,7 +373,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_displayName": "File Name"
+        "ui_displayName": "File Name",
+        "ui_category": "Misc"
       }
     ]
   },
@@ -280,28 +395,29 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{shareName}",
         "value": "",
-        "param_type": "Param",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name"
-      },
-	  {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Param",
-        "isVisible": true,
-        "bindable": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "SendFolder"
       },
-	  {
+      {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name",
+        "ui_category": "Misc"
+      },
+      {
         "name": "{fileName}",
         "value": "",
         "param_type": "Param",
@@ -310,7 +426,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_displayName": "File Name"
+        "ui_displayName": "File Name",
+        "ui_category": "Misc"
       }
     ]
   },
@@ -319,7 +436,7 @@
     "description": "",
     "operationId": "File_SetMetadata",
     "operationApiType": "PUT",
-    "operationPath": "/{shareName}/{directoryPath}/{fileName}?comp=metadata",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
     "operationSummary": "Set File Metadata",
     "operationDescription": "The Set File Metadata operation sets user-defined metadata for the specified file.",
     "deprecated": false,
@@ -331,28 +448,29 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{shareName}",
         "value": "",
-        "param_type": "Param",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name"
-      },
-	  {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Param",
-        "isVisible": true,
-        "bindable": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "SendFolder"
       },
-	  {
+      {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name",
+        "ui_category": "Misc"
+      },
+      {
         "name": "{fileName}",
         "value": "",
         "param_type": "Param",
@@ -361,7 +479,25 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_displayName": "File Name"
+        "ui_displayName": "File Name",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "comp",
+        "value": "metadata",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-meta-name",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Meta Data Name",
+        "ui_category": "Misc"
       }
     ]
   },
@@ -370,7 +506,7 @@
     "description": "",
     "operationId": "File_GetMetadata",
     "operationApiType": "GET",
-    "operationPath": "/{shareName}/{directoryPath}/{fileName}?comp=metadata",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
     "operationSummary": "Set File Metadata",
     "operationDescription": "The Get File Metadata operation returns all user-defined metadata for the specified file.",
     "deprecated": false,
@@ -382,28 +518,29 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{shareName}",
         "value": "",
-        "param_type": "Param",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name"
-      },
-	  {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Param",
-        "isVisible": true,
-        "bindable": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "SendFolder"
       },
-	  {
+      {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name",
+        "ui_category": "Misc"
+      },
+      {
         "name": "{fileName}",
         "value": "",
         "param_type": "Param",
@@ -412,7 +549,14 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_displayName": "File Name"
+        "ui_displayName": "File Name",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "comp",
+        "value": "metadata",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
       }
     ]
   },
@@ -421,7 +565,7 @@
     "description": "",
     "operationId": "File_AbortCopy",
     "operationApiType": "PUT",
-    "operationPath": "/{shareName}/{directoryPath}/{fileName}?comp=copy&copyid={id}",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
     "operationSummary": "Abort Copy File",
     "operationDescription": "The Abort Copy File operation cancels a pending Copy File operation, and leaves a destination file with zero length and full metadata.",
     "deprecated": false,
@@ -433,28 +577,29 @@
       }
     ],
     "parameters": [
-	  {
+      {
         "name": "{shareName}",
         "value": "",
-        "param_type": "Param",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name"
-      },
-	  {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Param",
-        "isVisible": true,
-        "bindable": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "SendFolder"
       },
-	  {
+      {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name",
+        "ui_category": "Misc"
+      },
+      {
         "name": "{fileName}",
         "value": "",
         "param_type": "Param",
@@ -463,10 +608,69 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_displayName": "File Name"
+        "ui_displayName": "File Name",
+        "ui_category": "Misc"
       },
-	  {
+      {
         "name": "{id}",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "CopyId"
+      },
+      {
+        "name": "comp",
+        "value": "copy",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Copy File",
+    "description": "",
+    "operationId": "File_AbortCopy",
+    "operationApiType": "PUT",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
+    "operationSummary": "Abort Copy File",
+    "operationDescription": "The Copy File operation from source file to destination.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder"
+      },
+      {
+        "name": "{directoryPath}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Share Name",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "{fileName}",
         "value": "",
         "param_type": "Param",
         "isVisible": true,
@@ -474,8 +678,20 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_displayName": "Id"
+        "ui_displayName": "File Name",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "x-ms-copy-source",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
       }
     ]
-  },
+  }
 ]
