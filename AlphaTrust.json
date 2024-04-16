@@ -4,7 +4,7 @@
     "description": "",
     "operationId": "GetAuditReports",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/auditreports",
+    "operationPath": "auditreports",
     "operationSummary": "Get Audit Report.",
     "operationDescription": "",
     "deprecated": false,
@@ -15,14 +15,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Verify API Credentials",
     "description": "",
     "operationId": "ServiceAuthenticationTest",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/communications/serviceauthenticationtest",
+    "operationPath": "communications/serviceauthenticationtest",
     "operationSummary": "ServiceAuthenticationTest - Verify API Credentials",
     "operationDescription": "",
     "deprecated": false,
@@ -33,14 +100,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Get an existing Document",
     "description": "",
     "operationId": "GetDocuments",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/documents",
+    "operationPath": "documents",
     "operationSummary": "Get an existing Document.",
     "operationDescription": "",
     "deprecated": false,
@@ -51,14 +185,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Update an existing Document",
     "description": "",
     "operationId": "UpdateDocuments",
     "operationApiType": "PUT",
-    "operationPath": "/api/v5/documents",
+    "operationPath": "documents",
     "operationSummary": "Update an existing Document.",
     "operationDescription": "",
     "deprecated": false,
@@ -69,14 +270,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Retrieve Document Files",
     "description": "",
     "operationId": "GetDocumentFiles",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/documents/files",
+    "operationPath": "documents/files",
     "operationSummary": "Retrieve Document Files.",
     "operationDescription": "",
     "deprecated": false,
@@ -87,14 +355,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Insert a Document",
     "description": "",
     "operationId": "InsertDocuments",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/documents/insert",
+    "operationPath": "documents/insert",
     "operationSummary": "Insert a Document.",
     "operationDescription": "",
     "deprecated": false,
@@ -105,14 +440,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Get the Document object",
     "description": "",
     "operationId": "GetDocumentsUpdateable",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/documentsupdateable",
+    "operationPath": "documentsupdateable",
     "operationSummary": "Get the Document object that you can use to update with the UpdateDocuments() method.",
     "operationDescription": "",
     "deprecated": false,
@@ -123,14 +525,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Get File Attachments",
     "description": "",
     "operationId": "GetFileAttachments",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/fileattachments",
+    "operationPath": "fileattachments",
     "operationSummary": "Get File Attachments.",
     "operationDescription": "",
     "deprecated": false,
@@ -141,14 +610,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Insert File Attachments",
     "description": "",
     "operationId": "InsertFileAttachments",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/fileattachments/insert",
+    "operationPath": "fileattachments/insert",
     "operationSummary": "Insert File Attachments.",
     "operationDescription": "",
     "deprecated": false,
@@ -159,14 +695,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Delete a Group",
     "description": "",
     "operationId": "DeleteGroupsAsync",
     "operationApiType": "DELETE",
-    "operationPath": "/api/v5/groups",
+    "operationPath": "groups",
     "operationSummary": "Delete a Group.",
     "operationDescription": "",
     "deprecated": false,
@@ -177,14 +780,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Insert a Group",
     "description": "",
     "operationId": "InsertGroupsAsync",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/groups/insert",
+    "operationPath": "groups/insert",
     "operationSummary": "Insert a Group.",
     "operationDescription": "",
     "deprecated": false,
@@ -195,14 +865,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Update an existing Group",
     "description": "",
     "operationId": "UpdateGroupsAsync",
     "operationApiType": "PUT",
-    "operationPath": "/api/v5/groups",
+    "operationPath": "groups",
     "operationSummary": "Update an existing Group.",
     "operationDescription": "",
     "deprecated": false,
@@ -213,14 +950,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Insert a Group",
     "description": "",
     "operationId": "InsertGroupsAsync",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/groups/insert",
+    "operationPath": "groups/insert",
     "operationSummary": "Insert a Group.",
     "operationDescription": "",
     "deprecated": false,
@@ -231,14 +1035,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Get a Participant",
     "description": "",
     "operationId": "GetParticipants",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/participants",
+    "operationPath": "participants",
     "operationSummary": "Get a Participant.",
     "operationDescription": "",
     "deprecated": false,
@@ -249,14 +1120,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Update Participant",
     "description": "",
     "operationId": "UpdateParticipants",
     "operationApiType": "PUT",
-    "operationPath": "/api/v5/participants",
+    "operationPath": "participants",
     "operationSummary": "Update Participant.",
     "operationDescription": "",
     "deprecated": false,
@@ -267,14 +1205,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Update Participant Workflow Action Status",
     "description": "",
     "operationId": "UpdateParticipantWorkflowActionStatus",
     "operationApiType": "PUT",
-    "operationPath": "/api/v5/participants/workflowactionstatus",
+    "operationPath": "participants/workflowactionstatus",
     "operationSummary": "Update Participant Workflow Action Status.",
     "operationDescription": "",
     "deprecated": false,
@@ -285,14 +1290,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Re-send Participant Email Notification",
     "description": "",
     "operationId": "ResendParticipantEmailNotifications",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/participants/emailnotification",
+    "operationPath": "participants/emailnotification",
     "operationSummary": "Re-send Participant Email Notification.",
     "operationDescription": "",
     "deprecated": false,
@@ -303,14 +1375,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Seal PDF",
     "description": "",
     "operationId": "SealPdfs",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/pdf/seal",
+    "operationPath": "pdf/seal",
     "operationSummary": "Seal PDF",
     "operationDescription": "",
     "deprecated": false,
@@ -321,14 +1460,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Certify PDF",
     "description": "",
     "operationId": "CertifyPdfs",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/pdf/certify",
+    "operationPath": "pdf/certify",
     "operationSummary": "Certify PDF",
     "operationDescription": "",
     "deprecated": false,
@@ -339,14 +1545,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Get PDF Data Files",
     "description": "",
     "operationId": "GetPdfDataFiles",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/pdf/dataFiles",
+    "operationPath": "pdf/dataFiles",
     "operationSummary": "Get PDF Data Files.",
     "operationDescription": "",
     "deprecated": false,
@@ -357,14 +1630,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Get Transaction Security Token Data",
     "description": "",
     "operationId": "GetTransactionTokenData",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/securitytoken",
+    "operationPath": "securitytoken",
     "operationSummary": "Get Transaction Security Token Data.",
     "operationDescription": "",
     "deprecated": false,
@@ -375,14 +1715,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Get Task",
     "description": "",
     "operationId": "GetTasks",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/tasks",
+    "operationPath": "tasks",
     "operationSummary": "Get Task.",
     "operationDescription": "",
     "deprecated": false,
@@ -393,14 +1800,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Update Task",
     "description": "",
     "operationId": "UpdateTasks",
     "operationApiType": "PUT",
-    "operationPath": "/api/v5/tasks",
+    "operationPath": "tasks",
     "operationSummary": "Update Task.",
     "operationDescription": "",
     "deprecated": false,
@@ -411,14 +1885,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Insert a Task",
     "description": "",
     "operationId": "InsertTasks",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/tasks/insert",
+    "operationPath": "tasks/insert",
     "operationSummary": "Insert a Task.",
     "operationDescription": "",
     "deprecated": false,
@@ -429,14 +1970,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Get Transaction",
     "description": "",
     "operationId": "GetTransactions",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/transactions",
+    "operationPath": "transactions",
     "operationSummary": "Get Transaction.",
     "operationDescription": "",
     "deprecated": false,
@@ -447,14 +2055,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Update an existing Transaction",
     "description": "",
     "operationId": "UpdateTransactions",
     "operationApiType": "PUT",
-    "operationPath": "/api/v5/transactions",
+    "operationPath": "transactions",
     "operationSummary": "Update an existing Transaction.",
     "operationDescription": "",
     "deprecated": false,
@@ -465,14 +2140,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Close Transaction",
     "description": "",
     "operationId": "CloseTransactions",
     "operationApiType": "PUT",
-    "operationPath": "/api/v5/transactions/close",
+    "operationPath": "transactions/close",
     "operationSummary": "Close Transaction",
     "operationDescription": "",
     "deprecated": false,
@@ -483,14 +2225,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Create Transaction",
     "description": "",
     "operationId": "CreateTransactions",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/transactions/create",
+    "operationPath": "transactions/create",
     "operationSummary": "Create Transaction.",
     "operationDescription": "",
     "deprecated": false,
@@ -501,14 +2310,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Delete a User",
     "description": "",
     "operationId": "DeleteUsersAsync",
     "operationApiType": "DELETE",
-    "operationPath": "/api/v5/users",
+    "operationPath": "users",
     "operationSummary": "Delete a User.",
     "operationDescription": "",
     "deprecated": false,
@@ -519,14 +2395,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Get User",
     "description": "",
     "operationId": "GetUsers",
-    "operationApiType": "DELETE",
-    "operationPath": "/api/v5/users",
+    "operationApiType": "POST",
+    "operationPath": "users",
     "operationSummary": "Get User.",
     "operationDescription": "",
     "deprecated": false,
@@ -537,14 +2480,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Update an existing User",
     "description": "",
     "operationId": "UpdateUsersAsync",
     "operationApiType": "PUT",
-    "operationPath": "/api/v5/users",
+    "operationPath": "users",
     "operationSummary": "Update an existing User.",
     "operationDescription": "",
     "deprecated": false,
@@ -555,14 +2565,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Insert User",
     "description": "",
     "operationId": "InsertUsersAsync",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/users/insert",
+    "operationPath": "users/insert",
     "operationSummary": "Insert User.",
     "operationDescription": "",
     "deprecated": false,
@@ -573,14 +2650,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Get Workflows",
     "description": "",
     "operationId": "GetWorkflows",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/workflows",
+    "operationPath": "workflows",
     "operationSummary": "Get Workflows",
     "operationDescription": "",
     "deprecated": false,
@@ -591,14 +2735,81 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   },
   {
     "operation": "Get Workflow List",
     "description": "",
     "operationId": "GetWorkflowList",
     "operationApiType": "POST",
-    "operationPath": "/api/v5/workflows/list",
+    "operationPath": "workflows/list",
     "operationSummary": "Get Workflow List",
     "operationDescription": "",
     "deprecated": false,
@@ -609,6 +2820,73 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
   }
 ]
