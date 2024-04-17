@@ -1,0 +1,529 @@
+[
+  {
+    "operation": "Get file information",
+    "description": "",
+    "operationId": "get_files_id",
+    "operationApiType": "GET",
+    "operationPath": "/files/{file_id}",
+    "operationSummary": "Get file information",
+    "operationDescription": "Retrieves the details about a file.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Id"
+      }
+    ]
+  },
+  {
+    "operation": "Restore file",
+    "description": "",
+    "operationId": "post_files_id",
+    "operationApiType": "POST",
+    "operationPath": "/files/{file_id}",
+    "operationSummary": "Restore file",
+    "operationDescription": "Restores a file that has been moved to the trash.\n\nAn optional new parent ID can be provided to restore the file to in case the\noriginal folder has been deleted.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Id"
+      }
+    ]
+  },
+  {
+    "operation": "Update file",
+    "description": "",
+    "operationId": "put_files_id",
+    "operationApiType": "PUT",
+    "operationPath": "/files/{file_id}",
+    "operationSummary": "Update file",
+    "operationDescription": "Updates a file. This can be used to rename or move a file,\ncreate a shared link, or lock a file.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Id"
+      }
+    ]
+  },
+  {
+    "operation": "Delete file",
+    "description": "",
+    "operationId": "delete_files_id",
+    "operationApiType": "DELETE",
+    "operationPath": "/files/{file_id}",
+    "operationSummary": "Delete file",
+    "operationDescription": "Deletes a file, either permanently or by moving it to\nthe trash.\n\nThe the enterprise settings determine whether the item will\nbe permanently deleted from Box or moved to the trash.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Id"
+      }
+    ]
+  },
+  {
+    "operation": "Download file",
+    "description": "",
+    "operationId": "get_files_id_content",
+    "operationApiType": "GET",
+    "operationPath": "/files/{file_id}/content",
+    "operationSummary": "Download file",
+    "operationDescription": "Returns the contents of a file in binary format.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Id"
+      }
+    ]
+  },
+  {
+    "operation": "Upload file",
+    "description": "",
+    "operationId": "post_files_content",
+    "operationApiType": "POST",
+    "operationPath": "/files/content",
+    "operationSummary": "Upload file",
+    "operationDescription": "Uploads a small file to Box. For file sizes over 50MB we recommend\nusing the Chunk Upload APIs.\n\n# Request body order\n\nThe `attributes` part of the body must come **before** the\n`file` part. Requests that do not follow this format when\nuploading the file will receive a HTTP `400` error with a\n`metadata_after_file_contents` error code.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Copy file",
+    "description": "",
+    "operationId": "post_files_id_copy",
+    "operationApiType": "POST",
+    "operationPath": "/files/{file_id}/copy",
+    "operationSummary": "Copy file",
+    "operationDescription": "Creates a copy of a file.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Id"
+      }
+    ]
+  },
+  {
+    "operation": "Get metadata instance on file",
+    "description": "",
+    "operationId": "get_files_id_metadata_id_id",
+    "operationApiType": "GET",
+    "operationPath": "/files/{file_id}/metadata/{scope}/{template_key}",
+    "operationSummary": "Get metadata instance on file",
+    "operationDescription": "Retrieves the instance of a metadata template that has been applied to a\nfile.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Id"
+      },
+      {
+        "name": "{scope}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation"
+      },
+      {
+        "name": "{template_key}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get file request",
+    "description": "",
+    "operationId": "get_file_requests_id",
+    "operationApiType": "GET",
+    "operationPath": "/file_requests/{file_request_id}",
+    "operationSummary": "Get file request",
+    "operationDescription": "Retrieves the information about a file request.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_request_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update file request",
+    "description": "",
+    "operationId": "put_file_requests_id",
+    "operationApiType": "PUT",
+    "operationPath": "/file_requests/{file_request_id}",
+    "operationSummary": "Update file request",
+    "operationDescription": "Updates a file request. This can be used to activate or\ndeactivate a file request.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_request_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete file request",
+    "description": "",
+    "operationId": "delete_file_requests_id",
+    "operationApiType": "DELETE",
+    "operationPath": "/file_requests/{file_request_id}",
+    "operationSummary": "Delete file request",
+    "operationDescription": "Deletes a file request permanently.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_request_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Copy file request",
+    "description": "",
+    "operationId": "post_file_requests_id_copy",
+    "operationApiType": "POST",
+    "operationPath": "/file_requests/{file_request_id}/copy",
+    "operationSummary": "Copy file request",
+    "operationDescription": "Copies an existing file request that is already present on one folder,\nand applies it to another folder.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_request_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List items in folder",
+    "description": "",
+    "operationId": "get_folders_id_items",
+    "operationApiType": "GET",
+    "operationPath": "/folders/{folder_id}/items",
+    "operationSummary": "Copy file request",
+    "operationDescription": "Retrieves a page of items in a folder. These items can be files,\nfolders, and web links.\n\nTo request more information about the folder itself, like its size,\nplease use the [Get a folder](#get-folders-id) endpoint instead.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{folder_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Find file for shared link",
+    "description": "",
+    "operationId": "shared_links_files",
+    "operationApiType": "GET",
+    "operationPath": "/shared_items",
+    "operationSummary": "Find file for shared link",
+    "operationDescription": "Returns the file represented by a shared link.\n\nA shared file can be represented by a shared link,\nwhich can originate within the current enterprise or within another.\n\nThis endpoint allows an application to retrieve information about a\nshared file when only given a shared link.\n\nThe `shared_link_permission_options` array field can be returned\nby requesting it in the `fields` query parameter.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get shared link for file",
+    "description": "",
+    "operationId": "get_files_id#get_shared_link",
+    "operationApiType": "GET",
+    "operationPath": "/files/{file_id}#get_shared_link",
+    "operationSummary": "Get shared link for file",
+    "operationDescription": "Gets the information for a shared link on a file.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Add shared link to file",
+    "description": "",
+    "operationId": "put_files_id#add_shared_link",
+    "operationApiType": "PUT",
+    "operationPath": "/files/{file_id}#add_shared_link",
+    "operationSummary": "Add shared link to file",
+    "operationDescription": "Adds a shared link to a file.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update shared link on file",
+    "description": "",
+    "operationId": "put_files_id#update_shared_link",
+    "operationApiType": "PUT",
+    "operationPath": "/files/{file_id}#update_shared_link",
+    "operationSummary": "Update shared link on file",
+    "operationDescription": "Updates a shared link on a file.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Remove shared link from file",
+    "description": "",
+    "operationId": "put_files_id#remove_shared_link",
+    "operationApiType": "PUT",
+    "operationPath": "/files/{file_id}#remove_shared_link",
+    "operationSummary": "Remove shared link from file",
+    "operationDescription": "Removes a shared link from a file.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]
