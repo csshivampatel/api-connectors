@@ -1,6 +1,39 @@
 [
   {
-    "operation": "Abort upload of the specified document version",
+    "operation": "Delete Document",
+    "description": "",
+    "operationId": "DeleteDocument",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/v1/documents/{DocumentId}",
+    "operationSummary": "Permanently delete the specified document",
+    "operationDescription": "Permanently deletes the specified document and its associated metadata.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{DocumentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Document ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Document ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Document with version",
     "description": "",
     "operationId": "AbortDocumentVersionUpload",
     "operationApiType": "DELETE",
@@ -16,11 +49,116 @@
     }
     ],
     "parameters": [
-        
+      {
+        "name": "{DocumentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Document ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Document ID"
+      },{
+      "name": "{VersionId}",
+      "value": "",
+      "isVisible": true,
+      "bindable": true,
+      "required": true,
+      "description": "Specify Version ID .",
+      "ui_EditorType": "Textbox",
+      "param_type": "Path",
+      "ui_category": "Subscribe Mode Properties",
+      "ui_source": "operation",
+      "datatype": "System.String",
+      "ui_displayName": "Version ID"
+      }
     ]
   },
   {
-    "operation": "Change the status of the document version",
+    "operation": "Update Document",
+    "description": "",
+    "operationId": "UpdateDocument",
+    "operationApiType": "PATCH",
+    "operationPath": "/api/v1/documents/{DocumentId}",
+    "operationSummary": "Update the specified attributes of a document",
+    "operationDescription": "Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{DocumentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Document ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Document ID"
+      },{
+      "name": "{VersionId}",
+      "value": "",
+      "isVisible": true,
+      "bindable": true,
+      "required": false,
+      "description": "Specify Version ID .",
+      "ui_EditorType": "Textbox",
+      "param_type": "Path",
+      "ui_category": "Subscribe Mode Properties",
+      "ui_source": "operation",
+      "datatype": "System.String",
+      "ui_displayName": "Version ID"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "description": "Specify the content of the blob to upload.",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update Document with Version",
     "description": "",
     "operationId": "UpdateDocumentVersion",
     "operationApiType": "PATCH",
@@ -36,15 +174,75 @@
     }
     ],
     "parameters": [
-        
+      {
+        "name": "{DocumentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Document ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Document ID"
+      },
+      {
+        "name": "{VersionId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Version ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Version ID"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "description": "Specify the content of the blob to upload.",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
     ]
   },
   {
-    "operation": "Add custom properties to the specified resource",
+    "operation": "Create Custom Metadata",
     "description": "",
     "operationId": "CreateCustomMetadata",
     "operationApiType": "PUT",
-    "operationPath": "/api/v1/resources/{ResourceId}/customMetadata?versionid",
+    "operationPath": "/api/v1/resources/{ResourceId}/customMetadata",
     "operationSummary": "Add custom properties to the specified resource",
     "operationDescription": "Adds one or more custom properties to the specified resource (a folder, document, or version).",
     "deprecated": false,
@@ -56,7 +254,53 @@
     }
     ],
     "parameters": [
-        
+      {
+        "name": "{ResourceId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Resource ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Resource ID"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "description": "Specify the content of the blob to upload.",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
     ]
   },
   {
@@ -64,7 +308,7 @@
     "description": "",
     "operationId": "DeleteCustomMetadata",
     "operationApiType": "DELETE",
-    "operationPath": "/api/v1/resources/{ResourceId}/customMetadata?deleteAll&keys&versionId",
+    "operationPath": "/api/v1/resources/{ResourceId}/customMetadata",
     "operationSummary": "Delete custom metadata",
     "operationDescription": "Deletes custom metadata from the specified resource.",
     "deprecated": false,
@@ -76,7 +320,32 @@
     }
     ],
     "parameters": [
-        
+      {
+        "name": "{ResourceId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Resource ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Resource ID"
+      },
+      {
+        "name": "deleteAll",
+        "value": "true",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "keys",
+        "value": "8",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
     ]
   },
   {
@@ -96,11 +365,43 @@
     }
     ],
     "parameters": [
-        
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "description": "Specify the content of the blob to upload.",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
     ]
   },
   {
-    "operation": "Permanently delete the specified folder",
+    "operation": "Delete folder",
     "description": "",
     "operationId": "DeleteFolder",
     "operationApiType": "DELETE",
@@ -116,11 +417,24 @@
     }
     ],
     "parameters": [
-        
+      {
+        "name": "{FolderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Folder ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+    }
     ]
   },
   {
-    "operation": "Update the specified attributes of the specified folder",
+    "operation": "Update folder",
     "description": "",
     "operationId": "UpdateFolder",
     "operationApiType": "PATCH",
@@ -136,11 +450,57 @@
     }
     ],
     "parameters": [
-        
+      {
+        "name": "{FolderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Folder ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+    },
+    {
+      "name": "Content-Type",
+      "value": "application/json",
+      "param_type": "Header",
+      "ui_source": "operation"
+    },
+    {
+      "name": "Body",
+      "value": "",
+      "param_type": "Param",
+      "isVisible": false,
+      "bindable": true,
+      "required": true,
+      "datatype": "System.Byte[]",
+      "description": "Specify the content of the blob to upload.",
+      "uiEditor": "FileEditor",
+      "ui_source": "operation",
+      "ui_EditorType": "FileEditor",
+      "ui_category": "Subscribe Mode Properties",
+      "ui_displayName": "Blob Content"
+    },
+    {
+      "name": "BodyType",
+      "value": "Raw",
+      "param_type": "Param",
+      "ui_source": "operation"
+    },
+    {
+      "name": "BodyFormat",
+      "value": "XML",
+      "param_type": "Param",
+      "ui_source": "operation"
+    }
     ]
   },
   {
-    "operation": "Add labels to the given resource",
+    "operation": "Create Labels",
     "description": "",
     "operationId": "CreateLabels",
     "operationApiType": "PUT",
@@ -156,15 +516,61 @@
     }
     ],
     "parameters": [
-        
+      {
+        "name": "{ResourceId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Resource ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Resource ID"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "description": "Specify the content of the blob to upload.",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
     ]
   },
   {
-    "operation": "Delete labels from a resource",
+    "operation": "Delete labels",
     "description": "",
     "operationId": "DeleteLabels",
     "operationApiType": "DELETE",
-    "operationPath": "/api/v1/resources/{ResourceId}/labels?deleteAll&labels",
+    "operationPath": "/api/v1/resources/{ResourceId}/labels",
     "operationSummary": "Delete labels from a resource",
     "operationDescription": "Deletes the specified list of labels from a resource.",
     "deprecated": false,
@@ -176,97 +582,50 @@
     }
     ],
     "parameters": [
-        
+      {
+        "name": "{ResourceId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Resource ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Resource ID"
+      },
+      {
+        "name": "deleteAll",
+        "value": "false",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "labels",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify block ID",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Labels",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
     ]
   },
   {
-    "operation": "Configure Amazon WorkDocs to use Amazon SNS notifications",
+    "operation": "Describe Folder Contents",
     "description": "",
-    "operationId": "CreateNotificationSubscription",
-    "operationApiType": "POST",
-    "operationPath": "/api/v1/organizations/{OrganizationId}/subscriptions",
-    "operationSummary": "Configure Amazon WorkDocs to use Amazon SNS notifications",
-    "operationDescription": "Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must confirm the subscription.",
-    "deprecated": false,
-    "adapterProperties": [
-    {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-    }
-    ],
-    "parameters": [
-        
-    ]
-  },
-  {
-    "operation": "Delete the specified subscription",
-    "description": "",
-    "operationId": "DeleteNotificationSubscription",
-    "operationApiType": "DELETE",
-    "operationPath": "/api/v1/organizations/{OrganizationId}/subscriptions/{SubscriptionId}",
-    "operationSummary": "Delete the specified subscription",
-    "operationDescription": "Deletes the specified subscription from the specified organization.",
-    "deprecated": false,
-    "adapterProperties": [
-    {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-    }
-    ],
-    "parameters": [
-        
-    ]
-  },
-  {
-    "operation": "Permanently delete the specified document",
-    "description": "",
-    "operationId": "DeleteDocument",
-    "operationApiType": "DELETE",
-    "operationPath": "/api/v1/documents/{DocumentId}",
-    "operationSummary": "Permanently delete the specified document",
-    "operationDescription": "Permanently deletes the specified document and its associated metadata.",
-    "deprecated": false,
-    "adapterProperties": [
-    {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-    }
-    ],
-    "parameters": [
-        
-    ]
-  },
-  {
-    "operation": "Permanently delete the specified document",
-    "description": "",
-    "operationId": "DeleteDocument",
-    "operationApiType": "PATCH",
-    "operationPath": "/api/v1/documents/{DocumentId}",
-    "operationSummary": "Permanently delete the specified document",
-    "operationDescription": "Permanently deletes the specified document and its associated metadata.",
-    "deprecated": false,
-    "adapterProperties": [
-    {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-    }
-    ],
-    "parameters": [
-        
-    ]
-  },
-  {
-    "operation": "Describe current user's special folders",
-    "description": "",
-    "operationId": "DescribeRootFolders",
+    "operationId": "DescribeFolderContents",
     "operationApiType": "GET",
-    "operationPath": "/api/v1/me/root?limit&marker",
-    "operationSummary": "Describe current user's special folders",
-    "operationDescription": "Describes the current user's special folders; the RootFolder and the RecycleBin. RootFolder is the root of user's files and folders and RecycleBin is the root of recycled items. This is not a valid action for SigV4 (administrative API) clients.",
+    "operationPath": "/api/v1/folders/{FolderId}/contents",
+    "operationSummary": "Describe specified folder's contents",
+    "operationDescription": "Describes the contents of the specified folder, including its documents and subfolders. By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more results, the response includes a marker that you can use to request the next set of results. You can also request initialized documents.",
     "deprecated": false,
     "adapterProperties": [
     {
@@ -276,35 +635,28 @@
     }
     ],
     "parameters": [
-        
+      {
+        "name": "{FolderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Folder ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+      }
     ]
   },
   {
-    "operation": "Describe the specified users",
-    "description": "",
-    "operationId": "DescribeUsers",
-    "operationApiType": "GET",
-    "operationPath": "/api/v1/users?fields&include&limit&marker&order&organizationId&query&sort&userIds",
-    "operationSummary": "Describe the specified users",
-    "operationDescription": "Describes the specified users. You can describe all users or filter the results (for example, by status or organization). By default, Amazon WorkDocs returns the first 24 active or pending users. If there are more results, the response includes a marker that you can use to request the next set of results.",
-    "deprecated": false,
-    "adapterProperties": [
-    {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-    }
-    ],
-    "parameters": [
-        
-    ]
-  },
-  {
-    "operation": "Retrieve details of a document",
+    "operation": "Get document",
     "description": "",
     "operationId": "GetDocument",
     "operationApiType": "GET",
-    "operationPath": "/api/v1/documents/{DocumentId}?includeCustomMetadata",
+    "operationPath": "/api/v1/documents/{DocumentId}",
     "operationSummary": "Retrieve details of a document",
     "operationDescription": "Retrieves details of a document.",
     "deprecated": false,
@@ -316,55 +668,28 @@
     }
     ],
     "parameters": [
-        
+      {
+        "name": "{DocumentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Document ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Document ID"
+      }
     ]
   },
   {
-    "operation": "Retrieve the requested document's path information",
-    "description": "",
-    "operationId": "GetDocumentPath",
-    "operationApiType": "GET",
-    "operationPath": "/api/v1/documents/{DocumentId}/path?fields&limit&marker",
-    "operationSummary": "Retrieve the requested document's path information",
-    "operationDescription": "Retrieves the path information (the hierarchy from the root folder) for the requested document. By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested document and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the names of the parent folders.",
-    "deprecated": false,
-    "adapterProperties": [
-    {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-    }
-    ],
-    "parameters": [
-        
-    ]
-  },
-  {
-    "operation": "Retrieve version metadata for the specified document",
-    "description": "",
-    "operationId": "GetDocumentVersion",
-    "operationApiType": "GET",
-    "operationPath": "/api/v1/documents/{DocumentId}/versions/{VersionId}?fields&includeCustomMetadata",
-    "operationSummary": "Retrieve version metadata for the specified document",
-    "operationDescription": "Retrieves version metadata for the specified document.",
-    "deprecated": false,
-    "adapterProperties": [
-    {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-    }
-    ],
-    "parameters": [
-        
-    ]
-  },
-  {
-    "operation": "Retrieve the specified folder's metadata",
+    "operation": "Get Folder",
     "description": "",
     "operationId": "GetFolder",
     "operationApiType": "GET",
-    "operationPath": "/api/v1/folders/{FolderId}?includeCustomMetadata",
+    "operationPath": "/api/v1/folders/{FolderId}",
     "operationSummary": "Retrieve the specified folder's metadata",
     "operationDescription": "Retrieves the metadata of the specified folder.",
     "deprecated": false,
@@ -376,15 +701,28 @@
     }
     ],
     "parameters": [
-        
+      {
+        "name": "{FolderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Folder ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+    }
     ]
   },
   {
-    "operation": "Retrieve the specified folder's path information",
+    "operation": "Get Folder's path",
     "description": "",
     "operationId": "GetFolderPath",
     "operationApiType": "GET",
-    "operationPath": "/api/v1/folders/{FolderId}/path?fields&limit&marker",
+    "operationPath": "/api/v1/folders/{FolderId}/path",
     "operationSummary": "Retrieve the specified folder's path information",
     "operationDescription": "Retrieves the path information (the hierarchy from the root folder) for the specified folder. By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested folder and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the parent folder names.",
     "deprecated": false,
@@ -396,31 +734,24 @@
     }
     ],
     "parameters": [
-        
-    ]
-  },
-  {
-    "operation": "Retrieve a collection of resources",
-    "description": "",
-    "operationId": "GetResources",
-    "operationApiType": "GET",
-    "operationPath": "/api/v1/resources?collectionType&limit&marker&userId",
-    "operationSummary": "Retrieve a collection of resources",
-    "operationDescription": "Retrieves a collection of resources, including folders and documents. The only CollectionType supported is SHARED_WITH_ME.",
-    "deprecated": false,
-    "adapterProperties": [
-    {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
+      {
+        "name": "{FolderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Folder ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
     }
-    ],
-    "parameters": [
-        
     ]
   },
   {
-    "operation": "Create new document and version object",
+    "operation": "Initiate Document Version Upload",
     "description": "",
     "operationId": "InitiateDocumentVersionUpload",
     "operationApiType": "POST",
@@ -436,47 +767,39 @@
     }
     ],
     "parameters": [
-        
-    ]
-  },
-  {
-    "operation": "Recover a deleted version",
-    "description": "",
-    "operationId": "RestoreDocumentVersions",
-    "operationApiType": "POST",
-    "operationPath": "/api/v1/documentVersions/restore/{DocumentId}",
-    "operationSummary": "Recover a deleted version",
-    "operationDescription": "Recovers a deleted version of an Amazon WorkDocs document.",
-    "deprecated": false,
-    "adapterProperties": [
-    {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-    }
-    ],
-    "parameters": [
-        
-    ]
-  },
-  {
-    "operation": "Search metadata and content of resources",
-    "description": "",
-    "operationId": "SearchResources",
-    "operationApiType": "POST",
-    "operationPath": "/api/v1/search",
-    "operationSummary": "Search metadata and content of resources",
-    "operationDescription": "Searches metadata and the content of folders, documents, document versions, and comments",
-    "deprecated": false,
-    "adapterProperties": [
-    {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-    }
-    ],
-    "parameters": [
-        
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "description": "Specify the content of the blob to upload.",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
     ]
   }
 ]
