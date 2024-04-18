@@ -1,0 +1,362 @@
+[
+  {
+    "operation": "Copy File or Folder",
+    "description": "",
+    "operationId": "FilesCopyV2",
+    "operationApiType": "POST",
+    "operationPath": "/files/copy_v2",
+    "operationSummary": "Copy File or Folder",
+    "operationDescription": "Copy a file or folder to a different location in the user's Dropbox.\nIf the source path is a folder all its contents will be copied.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete File or Folder",
+    "description": "",
+    "operationId": "FilesDeleteV2",
+    "operationApiType": "POST",
+    "operationPath": "/files/delete_v2",
+    "operationSummary": "Delete File or Folder",
+    "operationDescription": "Delete the file or folder at a given path.\nIf the path is a folder, all its contents will be deleted too.\nA successful response indicates that the file or folder was deleted. The returned metadata will be the corresponding :type:`FileMetadata` or :type:`FolderMetadata` for the item at time of deletion, and not a :type:`DeletedMetadata` object.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Metadata For a File or Folder",
+    "description": "",
+    "operationId": "FilesGetMetadata",
+    "operationApiType": "POST",
+    "operationPath": "/files/get_metadata",
+    "operationSummary": "Get Metadata For a File or Folder",
+    "operationDescription": "Returns the metadata for a file or folder.\nNote: Metadata for the root folder is unsupported.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Contents of a Folder",
+    "description": "",
+    "operationId": "FilesListFolder",
+    "operationApiType": "POST",
+    "operationPath": "/files/list_folder",
+    "operationSummary": "Get Contents of a Folder",
+    "operationDescription": "Starts returning the contents of a folder. If the result's :field:`ListFolderResult.has_more` field is :val:`true`, call :route:`list_folder/continue` with the returned :field:`ListFolderResult.cursor` to retrieve more entries.\nIf you're using :field:`ListFolderArg.recursive` set to :val:`true` to keep a local cache of the contents of a Dropbox account, iterate through each entry in order and process them as follows to keep your local state in sync:\nFor each :type:`FileMetadata`, store the new entry at the given path in your local state. If the required parent folders don't exist yet, create them. If there's already something else at the given path, replace it and remove all its children.\nFor each :type:`FolderMetadata`, store the new entry at the given path in your local state. If the required parent folders don't exist yet, create them. If there's already something else at the given path, replace it but leave the children as they are. Check the new entry's :field:`FolderSharingInfo.read_only` and set all its children's read-only statuses to match.\nFor each :type:`DeletedMetadata`, if your local state has something at the given path, remove it and all its children. If there's nothing at the given path, ignore this entry.\nNote: :type:`auth.RateLimitError` may be returned if multiple :route:`list_folder` or :route:`list_folder/continue` calls with same parameters are made simultaneously by same API app for same user. If your app implements retry logic, please hold off the retry until the previous request finishes.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Move File/Folder",
+    "description": "",
+    "operationId": "FilesMoveV2",
+    "operationApiType": "POST",
+    "operationPath": "/files/move_v2",
+    "operationSummary": "Move File/Folder",
+    "operationDescription": "Move a file or folder to a different location in the user's Dropbox.\nIf the source path is a folder all its contents will be moved.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Shared Folders Accessible by Current User",
+    "description": "",
+    "operationId": "SharingListFolders",
+    "operationApiType": "POST",
+    "operationPath": "/sharing/list_folders",
+    "operationSummary": "List Shared Folders Accessible by Current User",
+    "operationDescription": "Return the list of all shared folders the current user has access to.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Files Shared With Current User",
+    "description": "",
+    "operationId": "SharingListReceivedFiles",
+    "operationApiType": "POST",
+    "operationPath": "/sharing/list_received_files",
+    "operationSummary": "List Files Shared With Current User",
+    "operationDescription": "Returns a list of all files shared with current user.\n Does not include files the user has received via shared folders, and does  not include unclaimed invitations.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Shared Links of User",
+    "description": "",
+    "operationId": "SharingListSharedLinks",
+    "operationApiType": "POST",
+    "operationPath": "/sharing/list_shared_links",
+    "operationSummary": "List Shared Links of User",
+    "operationDescription": "List shared links of this user.\nIf no path is given, returns a list of all shared links for the current user.\nIf a non-empty path is given, returns a list of all shared links that allow access to the given path - direct links to the given path and links to parent folders of the given path. Links to parent folders can be suppressed by setting direct_only to true.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]
