@@ -105,47 +105,6 @@
     ]
   },
   {
-    "operation": "Lists  parts for multipart upload",
-    "description": "",
-    "operationId": "ListParts",
-    "operationApiType": "GET",
-    "operationPath": "/{Key}",
-    "operationSummary": "Lists  parts for  multipart upload",
-    "operationDescription": "Lists the parts that have been uploaded for a specific multipart upload. This operation must include the upload ID, which you obtain by sending the initiate multipart upload request",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "{Key}",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
-      },
-      {
-        "name": "uploadId",
-        "value": "",
-        "param_type": "UrlParam",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
-      }
-    ]
-  },
-  {
     "operation": "Copy object",
     "description": "",
     "operationId": "CopyObject",
@@ -478,6 +437,81 @@
         "name": "uploads",
         "value": "",
         "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Filter content based on SQL statement",
+    "description": "",
+    "operationId": "SelectObjectContent",
+    "operationApiType": "POST",
+    "operationPath": "/{Key}?select&select-type=2",
+    "operationSummary": "Filter content based on SQL statement",
+    "operationDescription": "This action filters the contents of an Amazon S3 object based on a simple structured query language (SQL) statement. In the request, along with the SQL expression, you must also specify a data serialization format (JSON, CSV, or Apache Parquet) of the object. Amazon S3 uses this format to parse object data into records, and returns only records that match the specified SQL expression. You must also specify the data serialization format for the response. This action is not supported by Amazon S3 on Outposts.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Key}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "select",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "select-type",
+        "value": "2",
+        "param_type": "UrlParam",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
         "ui_source": "operation"
       }
     ]
