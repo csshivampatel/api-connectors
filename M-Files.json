@@ -1,6 +1,6 @@
 [
   {
-    "operation": "Get Session Vaults",
+    "operation": "Get Vaults Accessible by Current User",
     "description": "",
     "operationId": "get_vaults_accessible_by_current_user",
     "operationApiType": "GET",
@@ -18,18 +18,21 @@
     "parameters": [
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
   {
-    "operation": "Get Current Session  Vault",
+    "operation": "Get Current Vault",
     "description": "",
     "operationId": "get_current_vault",
     "operationApiType": "GET",
@@ -47,18 +50,21 @@
     "parameters": [
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
   {
-    "operation": "Get Server Vaults",
+    "operation": "Get Vaults",
     "description": "",
     "operationId": "get_vaults",
     "operationApiType": "GET",
@@ -76,13 +82,16 @@
     "parameters": [
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -105,13 +114,16 @@
     "parameters": [
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -145,13 +157,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -185,13 +200,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -214,13 +232,16 @@
     "parameters": [
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -254,13 +275,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -294,13 +318,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -323,13 +350,16 @@
     "parameters": [
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -363,13 +393,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -403,13 +436,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -468,13 +504,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -519,13 +558,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -570,13 +612,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -621,53 +666,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
-        "isVisible": true,
-        "bindable": true,
-        "ui_source": "adapter",
-        "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
-      }
-    ]
-  },
-  {
-    "operation": "Delete Shared File Link",
-    "description": "",
-    "operationId": "delete_shared_file_link",
-    "operationApiType": "DELETE",
-    "operationPath": "/sharedlinks/{SharePublicAccessKey}",
-    "operationSummary": "Delete Shared File Link",
-    "operationDescription": "Deletes an existing shared file link, causing it to become invalid.",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "{SharePublicAccessKey}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
-      },
-      {
-        "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
-        "isVisible": true,
-        "bindable": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -690,13 +698,16 @@
     "parameters": [
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -730,13 +741,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -781,13 +795,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -843,13 +860,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -916,13 +936,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -989,13 +1012,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -1062,13 +1088,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -1160,13 +1189,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -1211,13 +1243,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -1287,13 +1322,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -1349,13 +1387,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -1436,13 +1477,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -1498,13 +1542,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -1560,13 +1607,16 @@
       },
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   },
@@ -1589,13 +1639,16 @@
     "parameters": [
       {
         "name": "APIVaultName",
-        "value": "Test Voult",
-        "param_type": "Param",
+        "value": "",
+        "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "required": true,
         "ui_source": "adapter",
         "sourceProperty": "APIVaultName",
-        "ui_category": "API Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "VaultListConverter",
+        "ui_displayName": "Vault"
       }
     ]
   }
