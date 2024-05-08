@@ -1,0 +1,597 @@
+[
+  {
+    "operation": "Get an specified attachment",
+    "description": "",
+    "operationId": "get_specified_attachment",
+    "operationApiType": "GET",
+    "operationPath": "/api/now/attachment/{sys_id}/file",
+    "operationSummary": "Get an specified attachment.",
+    "operationDescription": "Get an specified attachment.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "System Id",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "sys_id",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      }
+    ]
+  },
+  {
+    "operation": "Delete an attachment",
+    "description": "",
+    "operationId": "delete_an_attachment",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/now/attachment/{sys_id}",
+    "operationSummary": "Delete an attachment.",
+    "operationDescription": "Delete an attachment",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "System Id",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "sys_id",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      }
+    ]
+  },
+  {
+    "operation": "Upload an attachment",
+    "description": "",
+    "operationId": "upload_an_attachment",
+    "operationApiType": "POST",
+    "operationPath": "/api/now/attachment/file",
+    "operationSummary": "Upload an attachement",
+    "operationDescription": "Upload an attachment",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "System Id",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "sys_id",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Misc",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get all attachment",
+    "description": "",
+    "operationId": "get_all_attachment",
+    "operationApiType": "GET",
+    "operationPath": "/api/now/attachment",
+    "operationSummary": "Get all attachement",
+    "operationDescription": "Get all attachment",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "System Id",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "sys_id",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      }
+    ]
+  },
+  {
+    "operation": "Create a new email",
+    "description": "",
+    "operationId": "create_new_email",
+    "operationApiType": "POST",
+    "operationPath": "/api/now/v1/email",
+    "operationSummary": "create a new email.",
+    "operationDescription": "create a new email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "System Id",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "sys_id",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Misc",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get an email",
+    "description": "",
+    "operationId": "get_an_email",
+    "operationApiType": "GET",
+    "operationPath": "/api/now/v1/email/{sys_id}",
+    "operationSummary": "Get an email.",
+    "operationDescription": "Get an email.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "System Id",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "sys_id",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      }
+    ]
+  },
+  {
+    "operation": "Create a record",
+    "description": "",
+    "operationId": "create_record",
+    "operationApiType": "POST",
+    "operationPath": "/api/now/table/{tableName}",
+    "operationSummary": "Create a record",
+    "operationDescription": "Create a record",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Table Name",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "tableName",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Misc",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Retrieve a record",
+    "description": "",
+    "operationId": "retrieve_record",
+    "operationApiType": "GET",
+    "operationPath": "/api/now/table/{tableName}/{sys_id}",
+    "operationSummary": "Retrieve a record",
+    "operationDescription": "Retrieve a record",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "System Id",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "sys_id",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      },
+      {
+        "name": "Table Name",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "tableName",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      }
+    ]
+  },
+  {
+    "operation": "Detete record",
+    "description": "",
+    "operationId": "delete_record",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/now/table/{tableName}/{sys_id}",
+    "operationSummary": "Delete a record",
+    "operationDescription": "Delete a record",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "System Id",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "sys_id",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      },
+      {
+        "name": "Table Name",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "tableName",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      }
+    ]
+  },
+  {
+    "operation": "Updates a record",
+    "description": "",
+    "operationId": "update_record",
+    "operationApiType": "PATCH",
+    "operationPath": "/api/now/table/{tableName}/{sys_id}",
+    "operationSummary": "Updates a record ",
+    "operationDescription": "update a record",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "System Id",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "sys_id",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      },
+      {
+        "name": "Table Name",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "tableName",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Misc",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get incidents",
+    "description": "",
+    "operationId": "get_incidents",
+    "operationApiType": "GET",
+    "operationPath": "/api/now/table/incident",
+    "operationSummary": "Get incidents",
+    "operationDescription": "Get incidents",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get incident",
+    "description": "",
+    "operationId": "get_incident",
+    "operationApiType": "GET",
+    "operationPath": "/api/now/table/incident/{sys_id}",
+    "operationSummary": "Get incident",
+    "operationDescription": "Get incident",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "System Id",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "sys_id",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      }
+    ]
+  },
+  {
+    "operation": "Create incident",
+    "description": "",
+    "operationId": "create_incident",
+    "operationApiType": "POST",
+    "operationPath": "/api/now/table/incident",
+    "operationSummary": "Create incident",
+    "operationDescription": "Create incident",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Misc",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update Incident",
+    "description": "",
+    "operationId": "update_incident",
+    "operationApiType": "PUT",
+    "operationPath": "/api/now/table/incident/{sys_id}",
+    "operationSummary": "Update incident",
+    "operationDescription": "Update incident",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "System Id",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "sys_id",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "uiEditor": "FileEditor",
+        "ui_source": "operation",
+        "ui_EditorType": "FileEditor",
+        "ui_category": "Misc",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]
