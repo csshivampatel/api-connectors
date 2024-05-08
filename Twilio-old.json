@@ -1,0 +1,509 @@
+[
+  {
+    "operation": "Fetch message",
+    "description": "",
+    "operationId": "fetch_message",
+    "operationApiType": "GET",
+    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}",
+    "operationSummary": "Fetch message",
+    "operationDescription": "Fetch a specific Message",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "AccountSid",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "sourceProperty": "AccountSid",
+        "ui_category": "Publish Mode Properties"
+      },
+      {
+        "name": "Sid",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "Sid",
+        "ui_category": "Publish Mode Properties",
+        "datatype": "System.String"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete message",
+    "description": "",
+    "operationId": "delete_message",
+    "operationApiType": "DELETE",
+    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}",
+    "operationSummary": "Delete message",
+    "operationDescription": "Deletes a Message resource from the specified account",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "AccountSid",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "sourceProperty": "AccountSid",
+        "ui_category": "Publish Mode Properties"
+      },
+      {
+        "name": "Sid",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "Sid",
+        "ui_category": "Publish Mode Properties",
+        "datatype": "System.String"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "Textbox",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body",
+        "ui_source": "operation",
+        "datatype": "System.String"
+      },
+      {
+        "name": "BodyType",
+        "value": "UrlEncoded",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update message",
+    "description": "",
+    "operationId": "update_message",
+    "operationApiType": "POST",
+    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}",
+    "operationSummary": "Update message",
+    "operationDescription": "Update a Message resource (used to redact Message `body` text and to cancel not-yet-sent messages)",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "AccountSid",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "sourceProperty": "AccountSid",
+        "ui_category": "Publish Mode Properties"
+      },
+      {
+        "name": "Sid",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "Sid",
+        "ui_category": "Publish Mode Properties",
+        "datatype": "System.String"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Set body",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body",
+        "param_type": "BodyParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Status",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Set status",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Status",
+        "param_type": "BodyParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyType",
+        "value": "UrlEncoded",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Send message",
+    "description": "",
+    "operationId": "send_message",
+    "operationApiType": "POST",
+    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages",
+    "operationSummary": "Send mesage to given number",
+    "operationDescription": "Send mesage to given number",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "AccountSid",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "sourceProperty": "AccountSid",
+        "ui_category": "Publish Mode Properties"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "From",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Message send from",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "From",
+        "param_type": "BodyParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "To",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Message send to",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "To",
+        "param_type": "BodyParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Set body",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body",
+        "param_type": "BodyParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyType",
+        "value": "UrlEncoded",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List messages",
+    "description": "",
+    "operationId": "list_messages",
+    "operationApiType": "GET",
+    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages",
+    "operationSummary": "List messages",
+    "operationDescription": "Send mesage to given number",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "AccountSid",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "sourceProperty": "AccountSid",
+        "ui_category": "Publish Mode Properties"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "From",
+        "value": "",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Message send from",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "From",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "To",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Message send to",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "To",
+        "param_type": "BodyParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "DateSentBefore",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Set body",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "DateSentBefore",
+        "param_type": "BodyParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "DateSentAfter",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Set body",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "DateSentAfter",
+        "param_type": "BodyParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyType",
+        "value": "UrlEncoded",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List messages between Specified Range",
+    "description": "",
+    "operationId": "list_messages",
+    "operationApiType": "GET",
+    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages",
+    "operationSummary": "List messages between Specified Ranges",
+    "operationDescription": "Send mesage to given number between specified range",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "AccountSid",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "sourceProperty": "AccountSid",
+        "ui_category": "Publish Mode Properties"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "From",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Message send from",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "From",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "To",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Message send to",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "To",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "DateSent<",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Set body",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "DateSent<",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "DateSent>",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Set body",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "DateSent>",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyType",
+        "value": "UrlEncoded",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]
