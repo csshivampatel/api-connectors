@@ -1,0 +1,1319 @@
+[
+  {
+    "operation": "Create Associations",
+    "description": "",
+    "operationId": "post-/crm/v4/associations/{fromObjectType}/{toObjectType}/labels",
+    "operationApiType": "POST",
+    "operationPath": "/crm/v4/associations/{fromObjectType}/{toObjectType}/labels",
+    "operationSummary": "Create Associations",
+    "operationDescription": "Create an Association.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{fromObjectType}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "From object type"
+      },
+      {
+        "name": "{toObjectType}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "To Object Type"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create Company",
+    "description": "",
+    "operationId": "post-/crm/v3/objects/companies",
+    "operationApiType": "POST",
+    "operationPath": "/crm/v3/objects/companies",
+    "operationSummary": "Create a company",
+    "operationDescription": "Create an Object identified by companyId.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create a contact",
+    "description": "",
+    "operationId": "post-/crm/v3/objects/contacts_create",
+    "operationApiType": "POST",
+    "operationPath": "/crm/v3/objects/contacts",
+    "operationSummary": "Create a contact with the given properties",
+    "operationDescription": "Create a contact with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard contacts is provided.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create COS Blog Post",
+    "description": "",
+    "operationId": "post-/cms/v3/blogs/posts",
+    "operationApiType": "POST",
+    "operationPath": "/cms/v3/blogs/posts",
+    "operationSummary": "Create COS Blog Post",
+    "operationDescription": "Create COS Blog Post",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create a new schema",
+    "description": "",
+    "operationId": "post-/crm-object-schemas/v3/schemas_create",
+    "operationApiType": "POST",
+    "operationPath": "/crm/v3/schemas",
+    "operationSummary": "Create a new schema",
+    "operationDescription": "Define a new object schema, along with custom properties and associations. The entire object schema, including its object type ID, properties, and associations will be returned in the response.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create Deal",
+    "description": "",
+    "operationId": "post-/crm/v3/objects/deals_create",
+    "operationApiType": "POST",
+    "operationPath": "/crm/v3/objects/deals",
+    "operationSummary": "Create Deal",
+    "operationDescription": "Create a deal with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard deals is provided.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create a Line Item",
+    "description": "",
+    "operationId": "post-/crm/v3/objects/line-items_create",
+    "operationApiType": "POST",
+    "operationPath": "/crm/v3/objects/line_items",
+    "operationSummary": "Create a Line Item",
+    "operationDescription": "Create a line item with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard line items is provided.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Line item",
+    "description": "",
+    "operationId": "get-/crm/v3/objects/line-items_getPage",
+    "operationApiType": "GET",
+    "operationPath": "/crm/v3/objects/line_items",
+    "operationSummary": "List Line Items",
+    "operationDescription": "Read a page of line items. Control what is returned via the `properties` query param.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get a line item by lineItemId",
+    "description": "",
+    "operationId": "get-/crm/v3/objects/line-item/{lineItemId}_getById",
+    "operationApiType": "GET",
+    "operationPath": "/crm/v3/objects/line_items/{lineItemId}",
+    "operationSummary": "Get a line item by lineItemId",
+    "operationDescription": "Read an Object identified by `{lineItemId}`. `{lineItemId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Control what is returned via the `properties` query param.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{lineItemId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "List Item Id"
+      }
+    ]
+  },
+  {
+    "operation": "Update a line item",
+    "description": "",
+    "operationId": "patch-/crm/v3/objects/line-item/{lineItemId}_update",
+    "operationApiType": "PATCH",
+    "operationPath": "/crm/v3/objects/line_items/{lineItemId}",
+    "operationSummary": "Update a line item",
+    "operationDescription": "Perform a partial update of an Object identified by `{lineItemId}`. `{lineItemId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{lineItemId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "List Item Id"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create a Product",
+    "description": "",
+    "operationId": "post-/crm/v3/objects/products_create",
+    "operationApiType": "POST",
+    "operationPath": "/crm/v3/objects/products",
+    "operationSummary": "Create a Product",
+    "operationDescription": "Create a product with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard products is provided.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create Ticket",
+    "description": "",
+    "operationId": "post-/crm/v3/objects/tickets_create",
+    "operationApiType": "POST",
+    "operationPath": "/crm/v3/objects/tickets",
+    "operationSummary": "Create Ticket",
+    "operationDescription": "Create a ticket with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard tickets is provided.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get All Companies",
+    "description": "",
+    "operationId": "get-/crm/v3/objects/companies_getPage",
+    "operationApiType": "GET",
+    "operationPath": "/crm/v3/objects/companies",
+    "operationSummary": "Get All Companies",
+    "operationDescription": "Read a page of companies. Control what is returned via the properties query param.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get Company by Id",
+    "description": "",
+    "operationId": "get-/crm/v3/objects/companies/{companyId}_getById",
+    "operationApiType": "GET",
+    "operationPath": "/crm/v3/objects/companies/{companyId}",
+    "operationSummary": "Get All Companies",
+    "operationDescription": "Read an Object identified by companyId.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{companyId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "Company Id"
+      }
+    ]
+  },
+  {
+    "operation": "Get all Contacts",
+    "description": "",
+    "operationId": "get-/crm/v3/objects/contacts_getPage",
+    "operationApiType": "GET",
+    "operationPath": "/crm/v3/objects/contacts",
+    "operationSummary": "Read a page of contacts",
+    "operationDescription": "Read a page of contacts. Control what is returned via the properties query param.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get Contact By Id",
+    "description": "",
+    "operationId": "get-/crm/v3/objects/contacts/{contactId}_getById",
+    "operationApiType": "GET",
+    "operationPath": "/crm/v3/objects/contacts/{contactId}",
+    "operationSummary": "Read a Contact",
+    "operationDescription": "Read an Object identified by `{contactId}`. `{contactId}` refers to the internal object ID. Control what is returned via the `properties` query param.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{contactId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Contact ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get all schemas",
+    "description": "",
+    "operationId": "get-/crm-object-schemas/v3/schemas_getAll",
+    "operationApiType": "GET",
+    "operationPath": "/crm/v3/schemas",
+    "operationSummary": "Get all Custom Objects",
+    "operationDescription": "Returns all object schemas that have been defined for your account.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get Deals",
+    "description": "",
+    "operationId": "get-/crm/v3/objects/deals_getPage",
+    "operationApiType": "GET",
+    "operationPath": "/crm/v3/objects/deals",
+    "operationSummary": "Read a page of deals",
+    "operationDescription": "Read a page of deals. Control what is returned via the `properties` query param.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get Products",
+    "description": "",
+    "operationId": "get-/crm/v3/objects/products_getPage",
+    "operationApiType": "GET",
+    "operationPath": "/crm/v3/objects/products",
+    "operationSummary": "List Products",
+    "operationDescription": "Read a page of products. Control what is returned via the `properties` query param.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get All Tickets",
+    "description": "",
+    "operationId": "get-/crm/v3/objects/tickets_getPage",
+    "operationApiType": "GET",
+    "operationPath": "/crm/v3/objects/tickets",
+    "operationSummary": "List Tickets",
+    "operationDescription": "Read a page of tickets. Control what is returned via the `properties` query param",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get Ticket By Id",
+    "description": "",
+    "operationId": "get-/crm/v3/objects/tickets/{ticketId}_getById",
+    "operationApiType": "GET",
+    "operationPath": "/crm/v3/objects/tickets/{ticketId}",
+    "operationSummary": "Get Ticket",
+    "operationDescription": "Read an Object identified by `{ticketId}`. `{ticketId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Control what is returned via the `properties` query param.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{ticketId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Ticket ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Ticket ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete contacts",
+    "description": "",
+    "operationId": "delete-/crm/v3/objects/contacts/{contactId}_archive",
+    "operationApiType": "DELETE",
+    "operationPath": "/crm/v3/objects/contacts/{contactId}",
+    "operationSummary": "Archive a Contact",
+    "operationDescription": "Move an Object identified by `{contactId}` to the recycling bin.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{contactId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Ticket ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Contact ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update a Company",
+    "description": "",
+    "operationId": "patch-/crm/v3/objects/companies/{companyId}_update",
+    "operationApiType": "PATCH",
+    "operationPath": "/crm/v3/objects/companies/{companyId}",
+    "operationSummary": "Update a Company",
+    "operationDescription": "Perform a partial update of an Object identified by companyId.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{companyId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "companyId",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Company",
+    "description": "",
+    "operationId": "delete-/crm/v3/objects/companies/{companyId}_archive",
+    "operationApiType": "DELETE",
+    "operationPath": "/crm/v3/objects/companies/{companyId}",
+    "operationSummary": "Archive a Company",
+    "operationDescription": "Move an Object identified by `{companyId}` to the recycling bin.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{companyId}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "companyId",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      }
+    ]
+  },
+  {
+    "operation": "Update Contact",
+    "description": "",
+    "operationId": "patch-/crm/v3/objects/contacts/{contactId}_update",
+    "operationApiType": "PATCH",
+    "operationPath": "/crm/v3/objects/contacts/{contactId}",
+    "operationSummary": "Update a Contact",
+    "operationDescription": "Perform a partial update of an Object identified by `{contactId}`. `{contactId}` refers to the internal object ID. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{contactId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Contact ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update Custom Object",
+    "description": "",
+    "operationId": "patch-/crm-object-schemas/v3/schemas/{objectType}_update",
+    "operationApiType": "PATCH",
+    "operationPath": "/crm/v3/schemas/{objectType}",
+    "operationSummary": "Update a schema",
+    "operationDescription": "Update the details for an existing object schema.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objectType}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Object Type"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update Deal",
+    "description": "",
+    "operationId": "patch-/crm/v3/objects/deals/{dealId}_update",
+    "operationApiType": "PATCH",
+    "operationPath": "/crm/v3/objects/deals/{dealId}",
+    "operationSummary": "Update a schema",
+    "operationDescription": "Perform a partial update of an Object identified by dealId. dealId refers to the internal object ID by default, or optionally any unique property value as specified by the idProperty query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{dealId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Deal Id"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update Product",
+    "description": "",
+    "operationId": "patch-/crm/v3/objects/products/{productId}_update",
+    "operationApiType": "PATCH",
+    "operationPath": "/crm/v3/objects/products/{productid}",
+    "operationSummary": "Update a product",
+    "operationDescription": "Perform a partial update of an Object identified by productId.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{productId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Product Id"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update ticket",
+    "description": "",
+    "operationId": "patch-/crm/v3/objects/tickets/{ticketId}_update",
+    "operationApiType": "PATCH",
+    "operationPath": "/crm/v3/objects/tickets/{ticketId}",
+    "operationSummary": "Update a ticket",
+    "operationDescription": "Perform a partial update of an Object identified by `{ticketId}`. `{ticketId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{ticketId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Ticket ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get All Associations",
+    "description": "",
+    "operationId": "get-/crm/v4/associations/{fromObjectType}/{toObjectType}/labels",
+    "operationApiType": "GET",
+    "operationPath": "/crm/v4/associations/{fromObjectType}/{toObjectType}/labels",
+    "operationSummary": "Get All Associations",
+    "operationDescription": "Get All Association.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{fromObjectType}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "From Bbject Type"
+      },
+      {
+        "name": "{toObjectType}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "To Object Type"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Custom Object by ObjectType",
+    "description": "",
+    "operationId": "get-/crm-object-schemas/v3/schemas/{objectType}_getById",
+    "operationApiType": "GET",
+    "operationPath": "/crm/v3/schemas/{objectType}",
+    "operationSummary": "Get an existing schema",
+    "operationDescription": "Returns an existing object schema.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{objectType}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Object Type"
+      }
+    ]
+  },
+  {
+    "operation": "Get Product By Id",
+    "description": "",
+    "operationId": "get-/crm/v3/objects/products/{productId}_getById",
+    "operationApiType": "GET",
+    "operationPath": "/crm/v3/objects/products/{productid}",
+    "operationSummary": "Read Product By Id",
+    "operationDescription": "Read an Object identified by productId.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{productId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Product Id"
+      }
+    ]
+  },
+  {
+    "operation": "Get Blogs",
+    "description": "",
+    "operationId": "get-/cms/v3/blogs/posts",
+    "operationApiType": "GET",
+    "operationPath": "/cms/v3/blogs/posts",
+    "operationSummary": "Get Blogs",
+    "operationDescription": "Get Blogs",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Subscribe"
+      }
+    ],
+    "parameters": []
+  }
+]
