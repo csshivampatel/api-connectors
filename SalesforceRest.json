@@ -1,0 +1,1804 @@
+[
+  {
+    "operation": "Create record",
+    "description": "",
+    "operationId": "POST-/sobjects/Account/",
+    "operationApiType": "POST",
+    "operationPath": "/sobjects/Account",
+    "operationSummary": "Create record",
+    "operationDescription": "Create record",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get records",
+    "description": "",
+    "operationId": "get-/sobjects/Account/{Id}",
+    "operationApiType": "GET",
+    "operationPath": "/sobjects/Account/{Id}",
+    "operationSummary": "Get records",
+    "operationDescription": "Get records",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Id"
+      }
+    ]
+  },
+  {
+    "operation": "Delete record",
+    "description": "",
+    "operationId": "delete-/sobjects/Account/{Id}",
+    "operationApiType": "DELETE",
+    "operationPath": "/sobjects/Account/{Id}",
+    "operationSummary": "Delete record",
+    "operationDescription": "Delete record",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Id"
+      }
+    ]
+  },
+  {
+    "operation": "Update record",
+    "description": "",
+    "operationId": "patch-/sobjects/Account/{Id}",
+    "operationApiType": "PATCH",
+    "operationPath": "/sobjects/Account/{Id}",
+    "operationSummary": "Update record",
+    "operationDescription": "Update record",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Id"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Execute SOSL search query",
+    "description": "",
+    "operationId": "get-/querys",
+    "operationApiType": "GET",
+    "operationPath": "/query",
+    "operationSummary": "Execute SOSL search query",
+    "operationDescription": "Execute SOSL search query",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "q",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify Path to get item",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Query",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Search for a String",
+    "description": "",
+    "operationId": "get-/search",
+    "operationApiType": "GET",
+    "operationPath": "/search",
+    "operationSummary": "Search for a String",
+    "operationDescription": "Search for a String",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Query",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the Query to get data",
+        "uiEditor": "Textbox",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Query",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get a Record by External ID",
+    "description": "",
+    "operationId": "get-/sobjects/{Object_Name}/{ExternalIdField}/{ExternalValue}",
+    "operationApiType": "GET",
+    "operationPath": "/sobjects/{Object_Name}/{ExternalIdField}/{ExternalValue}",
+    "operationSummary": "Get a Record by External ID",
+    "operationDescription": "Get a Record by External ID",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Object_Name}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Object Name"
+      },
+      {
+        "name": "{ExternalValue}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "ExternalValue"
+      },
+      {
+        "name": "{ExternalIdField}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "ExternalIdField"
+      }
+    ]
+  },
+  {
+    "operation": "Insert or Update (Upsert) a Record by External ID (V2)",
+    "description": "",
+    "operationId": "patch-/sobjects/{Object_Name}/{ExternalIdField}/{ExternalValue}",
+    "operationApiType": "PATCH",
+    "operationPath": "/sobjects/{Object_Name}/{ExternalIdField}/{ExternalValue}",
+    "operationSummary": "Insert or Update (Upsert) a Record by External ID (V2)",
+    "operationDescription": "Insert or Update (Upsert) a Record by External ID (V2)",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Object_Name}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Object Name"
+      },
+      {
+        "name": "{ExternalValue}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "ExternalValue"
+      },
+      {
+        "name": "{ExternalIdField}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "ExternalIdField"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get object types",
+    "description": "",
+    "operationId": "get-/sobjects/{Object_Name}/describe",
+    "operationApiType": "GET",
+    "operationPath": "/sobjects/{Object_Name}/describe",
+    "operationSummary": "Get object types",
+    "operationDescription": "Get object types",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Object_Name}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Object Name"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Close or abort a job",
+    "description": "",
+    "operationId": "patch-/jobs/ingest/{jobID}",
+    "operationApiType": "PATCH",
+    "operationPath": "/jobs/ingest/{jobID}",
+    "operationSummary": "Close or abort a job",
+    "operationDescription": "Close or abort a job",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{jobID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Job ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create a job",
+    "description": "",
+    "operationId": "post-/jobs/ingest",
+    "operationApiType": "POST",
+    "operationPath": "/jobs/ingest",
+    "operationSummary": "Create a job",
+    "operationDescription": "Create a job",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a job",
+    "description": "",
+    "operationId": "delete-/jobs/ingest/{jobID}",
+    "operationApiType": "DELETE",
+    "operationPath": "/jobs/ingest/{jobID}",
+    "operationSummary": "Delete a job",
+    "operationDescription": "Delete a job",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{jobID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Job ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Information About an Ingest Job",
+    "description": "",
+    "operationId": "get-/jobs/ingest/{jobID}",
+    "operationApiType": "GET",
+    "operationPath": "/jobs/ingest/{jobID}",
+    "operationSummary": "Get Information About an Ingest Job",
+    "operationDescription": "Get Information About an Ingest Job",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{jobID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Job ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get job resultsb",
+    "description": "",
+    "operationId": "get-/jobs/ingest",
+    "operationApiType": "GET",
+    "operationPath": "/jobs/ingest",
+    "operationSummary": "Get job results",
+    "operationDescription": "Get job results",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Upload job data",
+    "description": "",
+    "operationId": "put-/jobs/ingest/{jobID}/batches",
+    "operationApiType": "PUT",
+    "operationPath": "/jobs/ingest/{jobID}/batches",
+    "operationSummary": "Upload job data",
+    "operationDescription": "Upload job data",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Creates a query job",
+    "description": "",
+    "operationId": "post-/jobs/query",
+    "operationApiType": "POST",
+    "operationPath": "/jobs/query",
+    "operationSummary": "Creates a query job",
+    "operationDescription": "Creates a query job",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Gets information about all query jobs in the org",
+    "description": "",
+    "operationId": "get-/jobs/query",
+    "operationApiType": "GET",
+    "operationPath": "/jobs/query",
+    "operationSummary": "Gets information about all query jobs in the org",
+    "operationDescription": "Gets information about all query jobs in the org",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Gets information about one query job",
+    "description": "",
+    "operationId": "get-/jobs/query/{JobId}",
+    "operationApiType": "GET",
+    "operationPath": "/jobs/query/{JobId}",
+    "operationSummary": "Gets information about one query job",
+    "operationDescription": "Gets information about one query job",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{jobID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Job ID"
+      }
+    ]
+  },
+  {
+    "operation": "Gets the results for a query job",
+    "description": "",
+    "operationId": "get-/jobs/query/{JobId}/results",
+    "operationApiType": "GET",
+    "operationPath": "/jobs/query/{JobId}/results",
+    "operationSummary": "Gets the results for a query job",
+    "operationDescription": "Gets the results for a query job",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{jobID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Job ID"
+      }
+    ]
+  },
+  {
+    "operation": "Aborts a query job",
+    "description": "",
+    "operationId": "patch-/jobs/query/{JobId}",
+    "operationApiType": "PATCH",
+    "operationPath": "/jobs/query/{JobId}",
+    "operationSummary": "Aborts a query job",
+    "operationDescription": "Aborts a query job",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{jobID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Job ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Deletes a query job",
+    "description": "",
+    "operationId": "delete-/jobs/query/{JobId}",
+    "operationApiType": "DELETE",
+    "operationPath": "/jobs/query/{JobId}",
+    "operationSummary": "Aborts a query job",
+    "operationDescription": "Aborts a query job",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{jobID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Job ID"
+      }
+    ]
+  },
+  {
+    "operation": "Create Attachment",
+    "description": "",
+    "operationId": "post-/sobjects/Attachment/",
+    "operationApiType": "POST",
+    "operationPath": "/sobjects/Attachment/",
+    "operationSummary": "Create Attachment",
+    "operationDescription": "Create Attachment",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{jobID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Job ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create folder",
+    "description": "",
+    "operationId": "post-/sobjects/Folder",
+    "operationApiType": "POST",
+    "operationPath": "/sobjects/Folder",
+    "operationSummary": "Create folder",
+    "operationDescription": "Create folder",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get folder by Id",
+    "description": "",
+    "operationId": "get-/sobjects/Folder/{Id}",
+    "operationApiType": "GET",
+    "operationPath": "/sobjects/Folder/{Id}",
+    "operationSummary": "Get folder by Id",
+    "operationDescription": "Get folder by Id",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Insert a Document with Blob Data",
+    "description": "",
+    "operationId": "post-/sobjects/Document/",
+    "operationApiType": "POST",
+    "operationPath": "/sobjects/Document/",
+    "operationSummary": "Insert a Document with Blob Data",
+    "operationDescription": "Insert a Document with Blob Data",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update a Document with Blob Data",
+    "description": "",
+    "operationId": "patch-/sobjects/Document/{Id}",
+    "operationApiType": "PATCH",
+    "operationPath": "/sobjects/Document/{Id}",
+    "operationSummary": "Update a Document with Blob Data",
+    "operationDescription": "Update a Document with Blob Data",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create a Content Version Record",
+    "description": "",
+    "operationId": "post-/sobjects/ContentVersion/",
+    "operationApiType": "POST",
+    "operationPath": "/sobjects/ContentVersion/",
+    "operationSummary": "Create a Content Version Record",
+    "operationDescription": "Create a Content Version Record",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create a ContentDocumentLink",
+    "description": "",
+    "operationId": "post-/sobjects/ContentDocumentLink",
+    "operationApiType": "POST",
+    "operationPath": "/sobjects/ContentDocumentLink",
+    "operationSummary": "Create a ContentDocumentLink",
+    "operationDescription": "Create a ContentDocumentLink",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create Lead",
+    "description": "",
+    "operationId": "post-/sobjects/Lead",
+    "operationApiType": "POST",
+    "operationPath": "/sobjects/Lead",
+    "operationSummary": "Create Lead",
+    "operationDescription": "Create Lead",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update Lead",
+    "description": "",
+    "operationId": "patch-/sobjects/Lead/{Id}",
+    "operationApiType": "PATCH",
+    "operationPath": "/sobjects/Lead/{Id}",
+    "operationSummary": "update Lead",
+    "operationDescription": "update Lead",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Id"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Lead",
+    "description": "",
+    "operationId": "delete-/sobjects/Lead/{Id}",
+    "operationApiType": "DELETE",
+    "operationPath": "/sobjects/Lead/{Id}",
+    "operationSummary": "Delete Lead",
+    "operationDescription": "Delete Lead",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Id"
+      }
+    ]
+  },
+  {
+    "operation": "Get Lead",
+    "description": "",
+    "operationId": "get-/sobjects/Lead",
+    "operationApiType": "GET",
+    "operationPath": "/sobjects/Lead",
+    "operationSummary": "Get Lead",
+    "operationDescription": "Get Lead",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+
+  {
+    "operation": "Create Contact",
+    "description": "",
+    "operationId": "post-/sobjects/Contact",
+    "operationApiType": "POST",
+    "operationPath": "/sobjects/Contact",
+    "operationSummary": "Create Contact",
+    "operationDescription": "Create Contact",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update Contact",
+    "description": "",
+    "operationId": "patch-/sobjects/Contact/{Id}",
+    "operationApiType": "PATCH",
+    "operationPath": "/sobjects/Contact/{Id}",
+    "operationSummary": "Update Contact",
+    "operationDescription": "Update Contact",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Id"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Contact",
+    "description": "",
+    "operationId": "delete-/sobjects/Contact/{Id}",
+    "operationApiType": "DELETE",
+    "operationPath": "/sobjects/Contact/{Id}",
+    "operationSummary": "Delete Contact",
+    "operationDescription": "Delete Contact",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Id"
+      }
+    ]
+  },
+  {
+    "operation": "Get Contact",
+    "description": "",
+    "operationId": "get-/sobjects/Contact",
+    "operationApiType": "GET",
+    "operationPath": "/sobjects/Contact",
+    "operationSummary": "Get Contact",
+    "operationDescription": "Get Contact",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+
+  {
+    "operation": "Create Note",
+    "description": "",
+    "operationId": "post-/sobjects/Note",
+    "operationApiType": "POST",
+    "operationPath": "/sobjects/Note",
+    "operationSummary": "Create Note",
+    "operationDescription": "Create Note",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update Note",
+    "description": "",
+    "operationId": "patch-/sobjects/Note/{Id}",
+    "operationApiType": "PATCH",
+    "operationPath": "/sobjects/Note/{Id}",
+    "operationSummary": "Update Note",
+    "operationDescription": "Update Note",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Id"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Note",
+    "description": "",
+    "operationId": "delete-/sobjects/Note/{Id}",
+    "operationApiType": "DELETE",
+    "operationPath": "/sobjects/Note/{Id}",
+    "operationSummary": "Delete Note",
+    "operationDescription": "Delete Note",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{Id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Id"
+      }
+    ]
+  },
+  {
+    "operation": "Get Note",
+    "description": "",
+    "operationId": "get-/sobjects/Note/{Id}",
+    "operationApiType": "GET",
+    "operationPath": "/sobjects/Note/{Id}",
+    "operationSummary": "Get Note",
+    "operationDescription": "Get Note",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]

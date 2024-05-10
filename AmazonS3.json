@@ -25,7 +25,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Key"
       },
       {
         "name": "uploadId",
@@ -89,7 +90,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Key"
       },
       {
         "name": "uploadId",
@@ -130,7 +132,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Key"
       },
       {
         "name": "x-amz-copy-source",
@@ -189,7 +192,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Key"
       },
       {
         "name": "uploads",
@@ -226,7 +230,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Key"
       }
     ]
   },
@@ -256,7 +261,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Key"
       }
     ]
   },
@@ -286,7 +292,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Key"
       }
     ]
   },
@@ -316,7 +323,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Key"
       },
       {
         "name": "Body",
@@ -442,7 +450,7 @@
     ]
   },
   {
-    "operation": "Filter content based on SQL statement",
+    "operation": "Select Object Content",
     "description": "",
     "operationId": "SelectObjectContent",
     "operationApiType": "POST",
@@ -467,13 +475,14 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Key"
       },
       {
         "name": "select",
         "value": "",
         "param_type": "UrlParam",
-        "isVisible": false,
+        "isVisible": true,
         "bindable": true,
         "required": true,
         "datatype": "System.String",
@@ -484,7 +493,7 @@
         "name": "select-type",
         "value": "2",
         "param_type": "UrlParam",
-        "isVisible": false,
+        "isVisible": true,
         "bindable": true,
         "required": true,
         "datatype": "System.String",

@@ -1,0 +1,240 @@
+[
+    {
+      "operation": "Create record",
+      "description": "",
+      "operationId": "POST-/sobjects/Account/",
+      "operationApiType": "POST",
+      "operationPath": "/sobjects/Account",
+      "operationSummary": "Create record",
+      "operationDescription": "Create record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Body",
+          "value": "",
+          "param_type": "Param",
+          "isVisible": false,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "description": "Specify the content of the body to upload.",
+          "ui_source": "operation",
+          "ui_EditorType": "TextArea",
+          "ui_category": "Subscribe Mode Properties",
+          "ui_displayName": "Body"
+        },
+        {
+          "name": "BodyType",
+          "value": "Raw",
+          "param_type": "Param",
+          "ui_source": "operation"
+        },
+        {
+          "name": "BodyFormat",
+          "value": "JSON",
+          "param_type": "Param",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Get records",
+      "description": "",
+      "operationId": "get-/sobjects/Account/{Id}",
+      "operationApiType": "GET",
+      "operationPath": "/sobjects/Account/{Id}",
+      "operationSummary": "Get records",
+      "operationDescription": "Get records",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "{Id}",
+          "value": "",
+          "isVisible": true,
+          "bindable": true,
+          "required": true,
+          "description": "Specify Contact ID .",
+          "ui_EditorType": "Textbox",
+          "param_type": "Path",
+          "ui_category": "Subscribe Mode Properties",
+          "ui_source": "operation",
+          "datatype": "System.String",
+          "ui_displayName": "Id"
+        }
+      ]
+    },
+    {
+      "operation": "Delete record",
+      "description": "",
+      "operationId": "delete-/sobjects/Account/{Id}",
+      "operationApiType": "DELETE",
+      "operationPath": "/sobjects/Account/{Id}",
+      "operationSummary": "Delete record",
+      "operationDescription": "Delete record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "{Id}",
+          "value": "",
+          "isVisible": true,
+          "bindable": true,
+          "required": true,
+          "description": "Specify Contact ID .",
+          "ui_EditorType": "Textbox",
+          "param_type": "Path",
+          "ui_category": "Subscribe Mode Properties",
+          "ui_source": "operation",
+          "datatype": "System.String",
+          "ui_displayName": "Id"
+        }
+      ]
+    },
+    {
+      "operation": "Update record",
+      "description": "",
+      "operationId": "patch-/sobjects/Account/{Id}",
+      "operationApiType": "PATCH",
+      "operationPath": "/sobjects/Account/{Id}",
+      "operationSummary": "Update record",
+      "operationDescription": "Update record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "{Id}",
+          "value": "",
+          "isVisible": true,
+          "bindable": true,
+          "required": true,
+          "description": "Specify Contact ID .",
+          "ui_EditorType": "Textbox",
+          "param_type": "Path",
+          "ui_category": "Subscribe Mode Properties",
+          "ui_source": "operation",
+          "datatype": "System.String",
+          "ui_displayName": "Id"
+        },
+        {
+          "name": "Body",
+          "value": "",
+          "param_type": "Param",
+          "isVisible": false,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "description": "Specify the content of the body to upload.",
+          "ui_source": "operation",
+          "ui_EditorType": "TextArea",
+          "ui_category": "Subscribe Mode Properties",
+          "ui_displayName": "Body"
+        },
+        {
+          "name": "BodyType",
+          "value": "Raw",
+          "param_type": "Param",
+          "ui_source": "operation"
+        },
+        {
+          "name": "BodyFormat",
+          "value": "JSON",
+          "param_type": "Param",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Execute SOSL search query",
+      "description": "",
+      "operationId": "get-/querys",
+      "operationApiType": "GET",
+      "operationPath": "/query",
+      "operationSummary": "Execute SOSL search query",
+      "operationDescription": "Execute SOSL search query",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "q",
+          "value": "",
+          "isVisible": true,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "description": "Specify Path to get item",
+          "ui_EditorType": "Textbox",
+          "ui_displayName": "Query",
+          "param_type": "UrlParam",
+          "ui_category": "Subscribe Mode Properties",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Search for a String",
+      "description": "",
+      "operationId": "get-/search",
+      "operationApiType": "GET",
+      "operationPath": "/search",
+      "operationSummary": "Search for a String",
+      "operationDescription": "Search for a String",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Query",
+          "value": "",
+          "param_type": "UrlParam",
+          "isVisible": true,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "description": "Specify the Query to get data",
+          "uiEditor": "Textbox",
+          "ui_EditorType": "Textbox",
+          "ui_category": "Subscribe Mode Properties",
+          "ui_displayName": "Query",
+          "ui_source": "operation"
+        }
+      ]
+    }
+  ]
+  
