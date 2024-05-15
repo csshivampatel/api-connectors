@@ -220,7 +220,7 @@
     ],
     "parameters": [
       {
-        "name": "Query",
+        "name": "q",
         "value": "",
         "param_type": "UrlParam",
         "isVisible": true,
@@ -228,7 +228,6 @@
         "required": true,
         "datatype": "System.String",
         "description": "Specify the Query to get data",
-        "uiEditor": "Textbox",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Query",
@@ -414,41 +413,15 @@
         "ui_source": "operation",
         "datatype": "System.String",
         "ui_displayName": "Object Name"
-      },
-      {
-        "name": "Body",
-        "value": "",
-        "param_type": "Param",
-        "isVisible": false,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify the content of the body to upload.",
-        "ui_source": "operation",
-        "ui_EditorType": "TextArea",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "Body"
-      },
-      {
-        "name": "BodyType",
-        "value": "Raw",
-        "param_type": "Param",
-        "ui_source": "operation"
-      },
-      {
-        "name": "BodyFormat",
-        "value": "JSON",
-        "param_type": "Param",
-        "ui_source": "operation"
       }
     ]
   },
   {
     "operation": "Close or abort a job",
     "description": "",
-    "operationId": "patch-/jobs/ingest/{jobID}",
+    "operationId": "patch-/jobs/ingest/{JobId}",
     "operationApiType": "PATCH",
-    "operationPath": "/jobs/ingest/{jobID}",
+    "operationPath": "/jobs/ingest/{JobId}",
     "operationSummary": "Close or abort a job",
     "operationDescription": "Close or abort a job",
     "deprecated": false,
@@ -461,7 +434,7 @@
     ],
     "parameters": [
       {
-        "name": "{jobID}",
+        "name": "{JobId}",
         "value": "",
         "isVisible": true,
         "bindable": true,
@@ -550,9 +523,9 @@
   {
     "operation": "Delete a job",
     "description": "",
-    "operationId": "delete-/jobs/ingest/{jobID}",
+    "operationId": "delete-/jobs/ingest/{JobId}",
     "operationApiType": "DELETE",
-    "operationPath": "/jobs/ingest/{jobID}",
+    "operationPath": "/jobs/ingest/{JobId}",
     "operationSummary": "Delete a job",
     "operationDescription": "Delete a job",
     "deprecated": false,
@@ -565,7 +538,7 @@
     ],
     "parameters": [
       {
-        "name": "{jobID}",
+        "name": "{JobId}",
         "value": "",
         "isVisible": true,
         "bindable": true,
@@ -609,9 +582,9 @@
   {
     "operation": "Get Information About an Ingest Job",
     "description": "",
-    "operationId": "get-/jobs/ingest/{jobID}",
+    "operationId": "get-/jobs/ingest/{JobId}",
     "operationApiType": "GET",
-    "operationPath": "/jobs/ingest/{jobID}",
+    "operationPath": "/jobs/ingest/{JobId}",
     "operationSummary": "Get Information About an Ingest Job",
     "operationDescription": "Get Information About an Ingest Job",
     "deprecated": false,
@@ -624,7 +597,7 @@
     ],
     "parameters": [
       {
-        "name": "{jobID}",
+        "name": "{JobId}",
         "value": "",
         "isVisible": true,
         "bindable": true,
@@ -640,7 +613,7 @@
     ]
   },
   {
-    "operation": "Get job resultsb",
+    "operation": "Get job results",
     "description": "",
     "operationId": "get-/jobs/ingest",
     "operationApiType": "GET",
@@ -660,9 +633,9 @@
   {
     "operation": "Upload job data",
     "description": "",
-    "operationId": "put-/jobs/ingest/{jobID}/batches",
+    "operationId": "put-/jobs/ingest/{JobId}/batches",
     "operationApiType": "PUT",
-    "operationPath": "/jobs/ingest/{jobID}/batches",
+    "operationPath": "/jobs/ingest/{JobId}/batches",
     "operationSummary": "Upload job data",
     "operationDescription": "Upload job data",
     "deprecated": false,
@@ -674,6 +647,20 @@
       }
     ],
     "parameters": [
+      {
+        "name": "{JobId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Job ID"
+      },
       {
         "name": "Body",
         "value": "",
@@ -696,7 +683,7 @@
       },
       {
         "name": "BodyFormat",
-        "value": "JSON",
+        "value": "TEXT",
         "param_type": "Param",
         "ui_source": "operation"
       }
@@ -783,7 +770,7 @@
     ],
     "parameters": [
       {
-        "name": "{jobID}",
+        "name": "{JobId}",
         "value": "",
         "isVisible": true,
         "bindable": true,
@@ -816,7 +803,7 @@
     ],
     "parameters": [
       {
-        "name": "{jobID}",
+        "name": "{JobId}",
         "value": "",
         "isVisible": true,
         "bindable": true,
@@ -849,7 +836,7 @@
     ],
     "parameters": [
       {
-        "name": "{jobID}",
+        "name": "{JobId}",
         "value": "",
         "isVisible": true,
         "bindable": true,
@@ -908,7 +895,7 @@
     ],
     "parameters": [
       {
-        "name": "{jobID}",
+        "name": "{JobId}",
         "value": "",
         "isVisible": true,
         "bindable": true,
@@ -940,20 +927,6 @@
       }
     ],
     "parameters": [
-      {
-        "name": "{jobID}",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "description": "Specify Contact ID .",
-        "ui_EditorType": "Textbox",
-        "param_type": "Path",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_source": "operation",
-        "datatype": "System.String",
-        "ui_displayName": "Job ID"
-      },
       {
         "name": "Body",
         "value": "",
@@ -1125,7 +1098,7 @@
       },
       {
         "name": "BodyFormat",
-        "value": "JSON",
+        "value": "TEXT",
         "param_type": "Param",
         "ui_source": "operation"
       }
@@ -1757,7 +1730,7 @@
     ]
   },
   {
-    "operation": "Get Note",
+    "operation": "Get Note By Id",
     "description": "",
     "operationId": "get-/sobjects/Note/{Id}",
     "operationApiType": "GET",
@@ -1774,30 +1747,18 @@
     ],
     "parameters": [
       {
-        "name": "Body",
+        "name": "{Id}",
         "value": "",
-        "param_type": "Param",
-        "isVisible": false,
+        "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "description": "Specify the content of the body to upload.",
-        "ui_source": "operation",
-        "ui_EditorType": "TextArea",
+        "description": "Specify Contact ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "Body"
-      },
-      {
-        "name": "BodyType",
-        "value": "Raw",
-        "param_type": "Param",
-        "ui_source": "operation"
-      },
-      {
-        "name": "BodyFormat",
-        "value": "JSON",
-        "param_type": "Param",
-        "ui_source": "operation"
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Id"
       }
     ]
   }

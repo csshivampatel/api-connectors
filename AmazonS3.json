@@ -454,7 +454,7 @@
     "description": "",
     "operationId": "SelectObjectContent",
     "operationApiType": "POST",
-    "operationPath": "/{Key}?select&select-type=2",
+    "operationPath": "/{Key}",
     "operationSummary": "Filter content based on SQL statement",
     "operationDescription": "This action filters the contents of an Amazon S3 object based on a simple structured query language (SQL) statement. In the request, along with the SQL expression, you must also specify a data serialization format (JSON, CSV, or Apache Parquet) of the object. Amazon S3 uses this format to parse object data into records, and returns only records that match the specified SQL expression. You must also specify the data serialization format for the response. This action is not supported by Amazon S3 on Outposts.",
     "deprecated": false,
@@ -484,7 +484,7 @@
         "param_type": "UrlParam",
         "isVisible": true,
         "bindable": true,
-        "required": true,
+        "required": false,
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc"
