@@ -1,5 +1,5 @@
 [
-    {
+  {
     "operation": "Get List Queues",
     "description": "The List Queues Segment operation returns a list of the queues under the specified account",
     "operationId": "Service_ListQueuesSegment",
@@ -23,506 +23,506 @@
         "ui_source": "operation"
       }
     ]
-    },
-    {
-      "operation": "Set Queue Metadata",
-      "description": "sets user-defined metadata on the specified queue. Metadata is associated with the queue as name-value pairs.",
-      "operationId": "Queue_SetMetadata",
-      "operationApiType": "PUT",
-      "operationPath": "/{queueName}",
-      "operationSummary": "Set Queue Metadata",
-      "operationDescription": "sets user-defined metadata on the specified queue. Metadata is associated with the queue as name-value pairs.",
-      "deprecated": false,
-      "adapterProperties": [
-        {
-          "name": "AdapterMode",
-          "key": "",
-          "value": "API"
-        }
-      ],
-      "parameters": [
-        {
-          "name": "{queueName}",
-          "value": "",
-          "param_type": "Path",
-          "isVisible": true,
-          "bindable": true,
-          "ui_EditorType": "DSDialogue",
-          "ui_source": "adapter",
-          "datatype": "System.String",
-          "sourceProperty": "PublishQueue"
-        },
-        {
-          "name": "x-ms-meta-name",
-          "value": "sample1",
-          "param_type": "Header",
-          "ui_source": "operation"
-        },
-        {
-          "name": "comp",
-          "value": "metadata",
-          "param_type": "UrlParam",
-          "ui_source": "operation"
-        }
-      ]
-    },
-    {
-      "operation": "Get Queue Metadata",
-      "description": "Retrieves user-defined metadata and queue properties on the specified queue. Metadata is associated with the queue as name-values pairs.",
-      "operationId": "Queue_GetProperties",
-      "operationApiType": "GET",
-      "operationPath": "/{queueName}",
-      "operationSummary": "Get Queue Metadata",
-      "operationDescription": "Retrieves user-defined metadata and queue properties on the specified queue. Metadata is associated with the queue as name-values pairs.",
-      "deprecated": false,
-      "adapterProperties": [
-        {
-          "name": "AdapterMode",
-          "key": "",
-          "value": "API"
-        }
-      ],
-      "parameters": [
-        {
-          "name": "{queueName}",
-          "value": "",
-          "param_type": "Path",
-          "isVisible": true,
-          "bindable": true,
-          "ui_EditorType": "DSDialogue",
-          "ui_source": "adapter",
-          "datatype": "System.String",
-          "sourceProperty": "PublishQueue"
-        },
-        {
-          "name": "comp",
-          "value": "metadata",
-          "param_type": "UrlParam",
-          "ui_source": "operation"
-        }
-      ]
-    },
-    { 
-        "operation": "Get Messages",
-        "description": "The Dequeue operation retrieves one or more messages from the front of the queue.",
-        "operationId": "Messages_Dequeue",
-        "operationApiType": "GET",
-        "operationPath": "/{queueName}/messages",
-        "operationSummary": "Get Messages",
-        "operationDescription": "The Dequeue operation retrieves one or more messages from the front of the queue.",
-        "deprecated": false,
-        "adapterProperties": [
-          {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-          }
-        ],
-        "parameters": [
-          {
-            "name": "{queueName}",
-            "value": "",
-            "param_type": "Path",
-            "isVisible": true,
-            "bindable": true,
-            "datatype": "System.String",
-            "ui_EditorType": "DSDialogue",
-            "ui_source": "adapter",
-            "sourceProperty": "PublishQueue"
-          },
-          {
-            "name": "numofmessages",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify number of messages you want to retrive.",
-            "ui_EditorType": "Textbox",
-            "param_type": "UrlParam",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Number of Messages"
-          },
-          {
-            "name": "visibilitytimeout",
-            "value": "30",
-            "isVisible": true,
-            "bindable": true,
-            "required": false,
-            "description": "Specify visibility timeout in *miliseconds .",
-            "ui_EditorType": "Textbox",
-            "datatype": "System.String",
-            "param_type": "UrlParam",
-            "ui_source": "operation",
-            "ui_displayName": "Visibility Timeout"
-          },
-          {
-            "name": "timeout",
-            "value": "30",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-          }
-        ]
-    },
-    {
-        "operation": "Clear Messages",
-        "description": "The Clear operation deletes all messages from the specified queue.",
-        "operationId": "Messages_Clear",
-        "operationApiType": "DELETE",
-        "operationPath": "/{queueName}/messages",
-        "operationSummary": "Clear Messages",
-        "operationDescription": "The Clear operation deletes all messages from the specified queue.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-          {
-            "name": "{queueName}",
-            "value": "",
-            "param_type": "Path",
-            "isVisible": true,
-            "bindable": true,
-            "ui_EditorType": "DSDialogue",
-            "ui_source": "adapter",
-            "datatype": "System.String",
-            "sourceProperty": "PublishQueue"
-          },
-          {
-            "name": "timeout",
-            "value": "30",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-          }
-        ]
-    },
-    {
-        "operation": "Put Message",
-        "description": "The Enqueue operation adds a new message to the back of the message queue. A visibility timeout can also be specified to make the message invisible until the visibility timeout expires. A message must be in a format that can be included in an XML request with UTF-8 encoding. The encoded message can be up to 64 KB in size for versions 2011-08-18 and newer, or 8 KB in size for previous versions.",
-        "operationId": "Messages_Enqueuer",
-        "operationApiType": "POST",
-        "operationPath": "/{queueName}/messages",
-        "operationSummary": "Put Message",
-        "operationDescription": "The Enqueue operation adds a new message to the back of the message queue. A visibility timeout can also be specified to make the message invisible until the visibility timeout expires. A message must be in a format that can be included in an XML request with UTF-8 encoding. The encoded message can be up to 64 KB in size for versions 2011-08-18 and newer, or 8 KB in size for previous versions.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-          {
-            "name": "{queueName}",
-            "value": "",
-            "param_type": "Path",
-            "isVisible": true,
-            "bindable": true,
-            "datatype": "System.String",
-            "ui_EditorType": "DSDialogue",
-            "ui_source": "adapter",
-            "sourceProperty": "PublishQueue"
-          },
-          {
-            "name": "visibilitytimeout",
-            "value": "0",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-          },
-          {
-            "name": "messagettl",
-            "value": "-1",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-          },
-          {
-            "name": "timeout",
-            "value": "30",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-          },
-          {
-            "name": "Body",
-            "value": "",
-            "param_type": "Param",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.Byte[]",
-            "description": "Specify the content of the blob to upload.",
-            "uiEditor": "FileEditor",
-            "ui_source": "operation",
-            "ui_EditorType": "FileEditor",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_displayName": "Blob Content"
-          },
-          {
-            "name": "BodyType",
-            "value": "Raw",
-            "param_type": "Param",
-            "ui_source": "operation"
-          },
-          {
-            "name": "BodyFormat",
-            "value": "XML",
-            "param_type": "Param",
-            "ui_source": "operation"
-          }
-        ]
-    },
-    {
-        "operation": "Peek Messages",
-        "description": "",
-        "operationId": "Messages_Peek",
-        "operationApiType": "GET",
-        "operationPath":"/{queueName}/messages",
-        "operationSummary": "Peek Messages",
-        "operationDescription": "The Peek operation retrieves one or more messages from the front of the queue, but does not alter the visibility of the message.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-          {
-            "name": "{queueName}",
-            "value": "",
-            "param_type": "Path",
-            "isVisible": true,
-            "bindable": true,
-            "ui_EditorType": "DSDialogue",
-            "ui_source": "adapter",
-            "datatype": "System.String",
-            "sourceProperty": "PublishQueue"
-          },
-          {
-            "name": "peekonly",
-            "value": "true",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-          },
-          {
-            "name": "numofmessages",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": false,
-            "datatype": "System.String",
-            "description": "Specify number of messages you want to retrive.",
-            "ui_EditorType": "Textbox",
-            "param_type": "UrlParam",
-            "ui_source": "operation",
-            "ui_displayName": "Number of Messages"
-          }
-        ]
-    },
-    {
-        "operation": "Update Message",
-        "description": "The Update operation was introduced with version 2011-08-18 of the Queue service API. The Update Message operation updates the visibility timeout of a message. You can also use this operation to update the contents of a message. A message must be in a format that can be included in an XML request with UTF-8 encoding, and the encoded message can be up to 64KB in size.",
-        "operationId": "MessageId_Update",
-        "operationApiType": "PUT",
-        "operationPath": "/{queueName}/messages/{messageid}",
-        "operationSummary": "Update Message",
-        "operationDescription": "The Update operation was introduced with version 2011-08-18 of the Queue service API. The Update Message operation updates the visibility timeout of a message. You can also use this operation to update the contents of a message. A message must be in a format that can be included in an XML request with UTF-8 encoding, and the encoded message can be up to 64KB in size.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-          {
-            "name": "{queueName}",
-            "value": "",
-            "param_type": "Path",
-            "isVisible": true,
-            "bindable": true,
-            "ui_EditorType": "DSDialogue",
-            "ui_source": "adapter",
-            "sourceProperty": "PublishQueue",
-            "ui_displayName":"Queue Name " 
-          },
-          {
-            "name": "{messageid}",
-            "value": "",
-            "param_type": "Path",
-            "isVisible": true,
-            "bindable": true,
-            "ui_EditorType": "DSDialogue",
-            "ui_source": "adapter",
-            "sourceProperty": "PublishQueue",
-            "ui_displayName":"Message ID"
-          },
-          {
-            "name": "Body",
-            "value": "",
-            "param_type": "Param",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.Byte[]",
-            "description": "Specify the content of the blob to upload.",
-            "uiEditor": "FileEditor",
-            "ui_source": "operation",
-            "ui_EditorType": "FileEditor",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_displayName": "Blob Content"
-          },
-          {
-            "name": "popreceipt",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify Pop receipt code",
-            "ui_EditorType": "Textbox",
-            "ui_displayName": "Pop Receipt",
-            "param_type": "UrlParam",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_source": "operation"
-          },
-          {
-            "name": "visibilitytimeout",
-            "value": "0",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-          },
-          {
-            "name": "BodyType",
-            "value": "Raw",
-            "param_type": "Param",
-            "ui_source": "operation"
-          },
-          {
-            "name": "BodyFormat",
-            "value": "XML",
-            "param_type": "Param",
-            "ui_source": "operation"
-          }
-        ]
-    },
-    {
-        "operation": "Delete Message",
-        "description": "The Delete operation deletes the specified message.",
-        "operationId": "MessageId_Delete",
-        "operationApiType": "DELETE",
-        "operationPath": "/{queueName}/messages/{messageid}",
-        "operationSummary": "Delete Message",
-        "operationDescription": "The Delete operation deletes the specified message.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-          {
-            "name": "{queueName}",
-            "value": "",
-            "param_type": "Path",
-            "isVisible": true,
-            "bindable": true,
-            "datatype": "System.String",
-            "ui_EditorType": "DSDialogue",
-            "ui_source": "adapter",
-            "ui_category": "Subscribe Mode Properties",
-            "sourceProperty": "PublishQueue"
-          },
-          {
-            "name": "{messageid}",
-            "value": "",
-            "param_type": "Path",
-            "isVisible": true,
-            "bindable": true,
-            "datatype": "System.String",
-            "ui_EditorType": "DSDialogue",
-            "ui_source": "adapter",
-            "ui_category": "Subscribe Mode Properties",
-            "sourceProperty": "PublishQueue"
-          },
-          {
-            "name": "popreceipt",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify Pop receipt code",
-            "ui_EditorType": "Textbox",
-            "ui_displayName": "Pop Receipt",
-            "param_type": "UrlParam",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_source": "operation"
-          },
-          {
-            "name": "timeout",
-            "value": "30",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-          }
-        ]
-    },
-    {
-      "operation": "Delete Message with propreceipt",
-      "description": "The Delete operation deletes the specified message.",
-      "operationId": "MessageId_Delete",
-      "operationApiType": "DELETE",
-      "operationPath": "/{queueName}/messages/{messageid}",
-      "operationSummary": "Delete Message with propreceipt",
-      "operationDescription": "The Delete operation deletes the specified message.",
-      "deprecated": false,
-      "adapterProperties": [
+  },
+  {
+    "operation": "Set Queue Metadata",
+    "description": "sets user-defined metadata on the specified queue. Metadata is associated with the queue as name-value pairs.",
+    "operationId": "Queue_SetMetadata",
+    "operationApiType": "PUT",
+    "operationPath": "/{queueName}",
+    "operationSummary": "Set Queue Metadata",
+    "operationDescription": "sets user-defined metadata on the specified queue. Metadata is associated with the queue as name-value pairs.",
+    "deprecated": false,
+    "adapterProperties": [
       {
-          "name": "AdapterMode",
-          "key": "",
-          "value": "API"
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
       }
-      ],
-      "parameters": [
-        {
-          "name": "{queueName}",
-          "value": "",
-          "param_type": "Path",
-          "isVisible": true,
-          "bindable": true,
-          "datatype": "System.String",
-          "ui_EditorType": "DSDialogue",
-          "ui_source": "adapter",
-          "sourceProperty": "PublishQueue"
-        },
-        {
-          "name": "popreceipt",
-          "value": "",
-          "isVisible": true,
-          "bindable": true,
-          "required": true,
-          "datatype": "System.String",
-          "description": "Specify Pop receipt code",
-          "ui_EditorType": "Textbox",
-          "ui_displayName": "Pop Receipt",
-          "param_type": "UrlParam",
-          "ui_category": "Subscribe Mode Properties",
-          "ui_source": "operation"
-        },
-        {
-          "name": "timeout",
-          "value": "30",
-          "param_type": "UrlParam",
-          "ui_source": "operation"
-        }
-      ]
+    ],
+    "parameters": [
+      {
+        "name": "{queueName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "sourceProperty": "PublishQueue"
+      },
+      {
+        "name": "x-ms-meta-name",
+        "value": "sample1",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "comp",
+        "value": "metadata",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Queue Metadata",
+    "description": "Retrieves user-defined metadata and queue properties on the specified queue. Metadata is associated with the queue as name-values pairs.",
+    "operationId": "Queue_GetProperties",
+    "operationApiType": "GET",
+    "operationPath": "/{queueName}",
+    "operationSummary": "Get Queue Metadata",
+    "operationDescription": "Retrieves user-defined metadata and queue properties on the specified queue. Metadata is associated with the queue as name-values pairs.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{queueName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "sourceProperty": "PublishQueue"
+      },
+      {
+        "name": "comp",
+        "value": "metadata",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Messages",
+    "description": "The Dequeue operation retrieves one or more messages from the front of the queue.",
+    "operationId": "Messages_Dequeue",
+    "operationApiType": "GET",
+    "operationPath": "/{queueName}/messages",
+    "operationSummary": "Get Messages",
+    "operationDescription": "The Dequeue operation retrieves one or more messages from the front of the queue.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{queueName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "PublishQueue"
+      },
+      {
+        "name": "numofmessages",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify number of messages you want to retrive.",
+        "ui_EditorType": "Textbox",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Number of Messages",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "visibilitytimeout",
+        "value": "30",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "description": "Specify visibility timeout in *miliseconds .",
+        "ui_EditorType": "Textbox",
+        "datatype": "System.String",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "ui_displayName": "Visibility Timeout"
+      },
+      {
+        "name": "timeout",
+        "value": "30",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Clear Messages",
+    "description": "The Clear operation deletes all messages from the specified queue.",
+    "operationId": "Messages_Clear",
+    "operationApiType": "DELETE",
+    "operationPath": "/{queueName}/messages",
+    "operationSummary": "Clear Messages",
+    "operationDescription": "The Clear operation deletes all messages from the specified queue.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{queueName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "sourceProperty": "PublishQueue"
+      },
+      {
+        "name": "timeout",
+        "value": "30",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Put Message",
+    "description": "The Enqueue operation adds a new message to the back of the message queue. A visibility timeout can also be specified to make the message invisible until the visibility timeout expires. A message must be in a format that can be included in an XML request with UTF-8 encoding. The encoded message can be up to 64 KB in size for versions 2011-08-18 and newer, or 8 KB in size for previous versions.",
+    "operationId": "Messages_Enqueuer",
+    "operationApiType": "POST",
+    "operationPath": "/{queueName}/messages",
+    "operationSummary": "Put Message",
+    "operationDescription": "The Enqueue operation adds a new message to the back of the message queue. A visibility timeout can also be specified to make the message invisible until the visibility timeout expires. A message must be in a format that can be included in an XML request with UTF-8 encoding. The encoded message can be up to 64 KB in size for versions 2011-08-18 and newer, or 8 KB in size for previous versions.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{queueName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "PublishQueue"
+      },
+      {
+        "name": "visibilitytimeout",
+        "value": "0",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "messagettl",
+        "value": "-1",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "timeout",
+        "value": "30",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Peek Messages",
+    "description": "",
+    "operationId": "Messages_Peek",
+    "operationApiType": "GET",
+    "operationPath": "/{queueName}/messages",
+    "operationSummary": "Peek Messages",
+    "operationDescription": "The Peek operation retrieves one or more messages from the front of the queue, but does not alter the visibility of the message.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{queueName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "sourceProperty": "PublishQueue"
+      },
+      {
+        "name": "peekonly",
+        "value": "true",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "numofmessages",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Specify number of messages you want to retrive.",
+        "ui_EditorType": "Textbox",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "ui_displayName": "Number of Messages",
+        "ui_category": "Subscribe Mode Properties"
+      }
+    ]
+  },
+  {
+    "operation": "Update Message",
+    "description": "The Update operation was introduced with version 2011-08-18 of the Queue service API. The Update Message operation updates the visibility timeout of a message. You can also use this operation to update the contents of a message. A message must be in a format that can be included in an XML request with UTF-8 encoding, and the encoded message can be up to 64KB in size.",
+    "operationId": "MessageId_Update",
+    "operationApiType": "PUT",
+    "operationPath": "/{queueName}/messages/{messageid}",
+    "operationSummary": "Update Message",
+    "operationDescription": "The Update operation was introduced with version 2011-08-18 of the Queue service API. The Update Message operation updates the visibility timeout of a message. You can also use this operation to update the contents of a message. A message must be in a format that can be included in an XML request with UTF-8 encoding, and the encoded message can be up to 64KB in size.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{queueName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "PublishQueue",
+        "ui_displayName": "Queue Name "
+      },
+      {
+        "name": "{messageid}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "PublishQueue",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "popreceipt",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify Pop receipt code",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Pop Receipt",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "visibilitytimeout",
+        "value": "0",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Message",
+    "description": "The Delete operation deletes the specified message.",
+    "operationId": "MessageId_Delete",
+    "operationApiType": "DELETE",
+    "operationPath": "/{queueName}/messages/{messageid}",
+    "operationSummary": "Delete Message",
+    "operationDescription": "The Delete operation deletes the specified message.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{queueName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "ui_category": "Subscribe Mode Properties",
+        "sourceProperty": "PublishQueue"
+      },
+      {
+        "name": "{messageid}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "ui_category": "Subscribe Mode Properties",
+        "sourceProperty": "PublishQueue"
+      },
+      {
+        "name": "popreceipt",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify Pop receipt code",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Pop Receipt",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "timeout",
+        "value": "30",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Message with propreceipt",
+    "description": "The Delete operation deletes the specified message.",
+    "operationId": "MessageId_Delete",
+    "operationApiType": "DELETE",
+    "operationPath": "/{queueName}/messages/{messageid}",
+    "operationSummary": "Delete Message with propreceipt",
+    "operationDescription": "The Delete operation deletes the specified message.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{queueName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "PublishQueue"
+      },
+      {
+        "name": "popreceipt",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify Pop receipt code",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Pop Receipt",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "timeout",
+        "value": "30",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
   }
-]  
+]
