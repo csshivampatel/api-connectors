@@ -17,16 +17,16 @@
     ],
     "parameters": [
       {
-        "name": "System Id",
+        "name": "{sys_id}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "ui_source": "operation",
-        "sourceProperty": "sys_id",
         "ui_category": "Misc",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
       }
     ]
   },
@@ -48,16 +48,16 @@
     ],
     "parameters": [
       {
-        "name": "System Id",
+        "name": "{sys_id}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "ui_source": "operation",
-        "sourceProperty": "sys_id",
         "ui_category": "Misc",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
       }
     ]
   },
@@ -78,18 +78,6 @@
       }
     ],
     "parameters": [
-      {
-        "name": "System Id",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "ui_source": "operation",
-        "sourceProperty": "sys_id",
-        "ui_category": "Misc",
-        "datatype": "System.String"
-      },
       {
         "name": "Body",
         "value": "",
@@ -134,20 +122,7 @@
         "value": "Solicit Response"
       }
     ],
-    "parameters": [
-      {
-        "name": "System Id",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "ui_source": "operation",
-        "sourceProperty": "sys_id",
-        "ui_category": "Misc",
-        "datatype": "System.String"
-      }
-    ]
+    "parameters": []
   },
   {
     "operation": "Create a new email",
@@ -166,18 +141,6 @@
       }
     ],
     "parameters": [
-      {
-        "name": "System Id",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "ui_source": "operation",
-        "sourceProperty": "sys_id",
-        "ui_category": "Misc",
-        "datatype": "System.String"
-      },
       {
         "name": "Body",
         "value": "",
@@ -224,16 +187,16 @@
     ],
     "parameters": [
       {
-        "name": "System Id",
+        "name": "{sys_id}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "ui_source": "operation",
-        "sourceProperty": "sys_id",
         "ui_category": "Misc",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
       }
     ]
   },
@@ -312,16 +275,16 @@
     ],
     "parameters": [
       {
-        "name": "System Id",
+        "name": "{sys_id}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "ui_source": "operation",
-        "sourceProperty": "sys_id",
         "ui_category": "Misc",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
       },
       {
         "name": "Table Name",
@@ -355,16 +318,16 @@
     ],
     "parameters": [
       {
-        "name": "System Id",
+        "name": "{sys_id}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "ui_source": "operation",
-        "sourceProperty": "sys_id",
         "ui_category": "Misc",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
       },
       {
         "name": "Table Name",
@@ -398,16 +361,16 @@
     ],
     "parameters": [
       {
-        "name": "System Id",
+        "name": "{sys_id}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "ui_source": "operation",
-        "sourceProperty": "sys_id",
         "ui_category": "Misc",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
       },
       {
         "name": "Table Name",
@@ -485,16 +448,16 @@
     ],
     "parameters": [
       {
-        "name": "System Id",
+        "name": "{sys_id}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "ui_source": "operation",
-        "sourceProperty": "sys_id",
         "ui_category": "Misc",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
       }
     ]
   },
@@ -561,16 +524,16 @@
     ],
     "parameters": [
       {
-        "name": "System Id",
+        "name": "{sys_id}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "ui_source": "operation",
-        "sourceProperty": "sys_id",
         "ui_category": "Misc",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
       },
       {
         "name": "Body",

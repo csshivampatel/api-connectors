@@ -25,48 +25,6 @@
     ]
   },
   {
-    "operation": "Set Queue Metadata",
-    "description": "sets user-defined metadata on the specified queue. Metadata is associated with the queue as name-value pairs.",
-    "operationId": "Queue_SetMetadata",
-    "operationApiType": "PUT",
-    "operationPath": "/{queueName}",
-    "operationSummary": "Set Queue Metadata",
-    "operationDescription": "sets user-defined metadata on the specified queue. Metadata is associated with the queue as name-value pairs.",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "{queueName}",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "ui_EditorType": "DSDialogue",
-        "ui_source": "adapter",
-        "datatype": "System.String",
-        "sourceProperty": "PublishQueue"
-      },
-      {
-        "name": "x-ms-meta-name",
-        "value": "sample1",
-        "param_type": "Header",
-        "ui_source": "operation"
-      },
-      {
-        "name": "comp",
-        "value": "metadata",
-        "param_type": "UrlParam",
-        "ui_source": "operation"
-      }
-    ]
-  },
-  {
     "operation": "Get Queue Metadata",
     "description": "Retrieves user-defined metadata and queue properties on the specified queue. Metadata is associated with the queue as name-values pairs.",
     "operationId": "Queue_GetProperties",
@@ -348,10 +306,10 @@
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
+        "datatype": "System.String",
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "PublishQueue",
-        "ui_displayName": "Queue Name "
+        "sourceProperty": "PublishQueue"
       },
       {
         "name": "{messageid}",
@@ -359,10 +317,10 @@
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
-        "ui_EditorType": "DSDialogue",
-        "ui_source": "adapter",
-        "sourceProperty": "PublishQueue",
-        "ui_displayName": "Message ID"
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Message ID",
+        "datatype": "System.String"
       },
       {
         "name": "Body",
@@ -447,11 +405,10 @@
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
-        "datatype": "System.String",
-        "ui_EditorType": "DSDialogue",
-        "ui_source": "adapter",
+        "ui_source": "operation",
         "ui_category": "Subscribe Mode Properties",
-        "sourceProperty": "PublishQueue"
+        "ui_displayName": "Message ID",
+        "datatype": "System.String"
       },
       {
         "name": "popreceipt",
@@ -502,6 +459,17 @@
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
         "sourceProperty": "PublishQueue"
+      },
+      {
+        "name": "{messageid}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Message ID",
+        "datatype": "System.String"
       },
       {
         "name": "popreceipt",
