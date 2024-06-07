@@ -53,17 +53,6 @@
         "sourceProperty": "SendFolder"
       },
       {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name",
-        "ui_category": "Misc"
-      },
-      {
         "name": "restype",
         "value": "directory",
         "param_type": "UrlParam",
@@ -104,17 +93,6 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "SendFolder"
-      },
-      {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name",
-        "ui_category": "Misc"
       },
       {
         "name": "{fileName}",
@@ -177,17 +155,6 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "SendFolder"
-      },
-      {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name",
-        "ui_category": "Misc"
       },
       {
         "name": "{fileName}",
@@ -301,17 +268,6 @@
         "sourceProperty": "SendFolder"
       },
       {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name",
-        "ui_category": "Misc"
-      },
-      {
         "name": "{fileName}",
         "value": "",
         "param_type": "Param",
@@ -352,17 +308,6 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "SendFolder"
-      },
-      {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name",
-        "ui_category": "Misc"
       },
       {
         "name": "{fileName}",
@@ -407,17 +352,6 @@
         "sourceProperty": "SendFolder"
       },
       {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name",
-        "ui_category": "Misc"
-      },
-      {
         "name": "{fileName}",
         "value": "",
         "param_type": "Param",
@@ -458,17 +392,6 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "SendFolder"
-      },
-      {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name",
-        "ui_category": "Misc"
       },
       {
         "name": "{fileName}",
@@ -530,17 +453,6 @@
         "sourceProperty": "SendFolder"
       },
       {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name",
-        "ui_category": "Misc"
-      },
-      {
         "name": "{fileName}",
         "value": "",
         "param_type": "Param",
@@ -587,17 +499,6 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "SendFolder"
-      },
-      {
-        "name": "{directoryPath}",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_displayName": "Share Name",
-        "ui_category": "Misc"
       },
       {
         "name": "{fileName}",

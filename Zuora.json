@@ -1,0 +1,1268 @@
+[
+  {
+    "operation": "Create Account",
+    "description": "",
+    "operationId": "POST_Account",
+    "operationApiType": "POST",
+    "operationPath": "/v2/accounts",
+    "operationSummary": "Create an account",
+    "operationDescription": "Creates a customer account with a payment method, a bill-to contact, and an optional sold-to contact. Request and response field descriptions and sample code are provided. Use this operation to optionally create a subscription, invoice for that subscription, and collect payment through the default payment method. The transaction is atomic; if any part fails for any reason, the entire transaction is rolled back.\n\nThis operation is CORS Enabled, so you can use client-side Javascript to invoke the call. \n\n## Notes\n1. The account is created in active status.  \n2. If the `autoPay` field is set to `true` in the request, you must provide one of the `paymentMethod`, `creditCard`, or `hpmCreditCardPaymentMethodId` field, but not multiple. The one provided becomes the default payment method for this account. If the credit card information is declined or cannot be verified, no account is created.\n3. Customer accounts created with this call are automatically be set to Auto Pay.\n4. If either the `workEmail` or `personalEmail` field is specified, then the account's email delivery preference is automatically set to `true`. (In that case, emails go to the `workEmail` address, if it exists, or else the `personalEmail`.) If neither field is specified, the email delivery preference is automatically set to `false`.\n\n## Defaults for customerAcceptanceDate and serviceActivationDate\nDefault values for **customerAcceptanceDate** and **serviceActivationDate** are set as follows.\n\n|        | serviceActivationDate(SA) specified          | serviceActivationDate (SA) NOT specified  |\n| ------------- |:-------------:| -----:|\n| customerAcceptanceDate (CA) specified      | SA uses value in the request call; CA uses value in the request call| CA uses value in the request call;SA uses CE as default |\n| customerAcceptanceDate (CA) NOT specified      | SA uses value in the request call; CA uses SA as default |   SA and CA use CE as default |\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Retrieve an account list",
+    "description": "",
+    "operationId": "GET_Account",
+    "operationApiType": "GET",
+    "operationPath": "/v2/accounts",
+    "operationSummary": "Retrieve an account list",
+    "operationDescription": "Retrieve an account list",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Retrieve an account list by Account Key",
+    "description": "",
+    "operationId": "GET_Account",
+    "operationApiType": "GET",
+    "operationPath": "/v2/accounts/{account-key}",
+    "operationSummary": "Retrieve an account list",
+    "operationDescription": "Retrieves basic information about a customer account.\n\nThis operation is a quick retrieval that doesn't include the account's subscriptions, invoices, payments, or usage details. Use Get account summary to get more detailed information about an account.\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{account-key}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Account Key",
+        "datatype": "System.String"
+      }
+    ]
+  },
+  {
+    "operation": "Create Product",
+    "description": "",
+    "operationId": "Object_POSTProduct",
+    "operationApiType": "POST",
+    "operationPath": "/v1/object/product",
+    "operationSummary": "Create Product",
+    "operationDescription": "Create Product",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List all products",
+    "description": "",
+    "operationId": "Object_POSTProduct",
+    "operationApiType": "GET",
+    "operationPath": "/v1/catalog/products",
+    "operationSummary": "List all products",
+    "operationDescription": "List all products",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Create Rate Plan",
+    "description": "",
+    "operationId": "Object_POSTProductRatePlan",
+    "operationApiType": "POST",
+    "operationPath": "/v1/object/product-rate-plan",
+    "operationSummary": "Create Rate Plan",
+    "operationDescription": "Retrieves a product rate plan.\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List billing documents for an account",
+    "description": "",
+    "operationId": "GET_BillingDocuments",
+    "operationApiType": "GET",
+    "operationPath": "/v1/billing-documents",
+    "operationSummary": "List billing documents for an account",
+    "operationDescription": "Retrieves the information about all billing documents associated with a specified account. The billing documents contain invoices, credit memos, and debit memos.\n\nTo retrieve information about credit memos and debit memos, you must have the Invoice Settlement feature enabled. \n\nYou can use query parameters to restrict the data returned in the response.\n\nExamples:\n- /billing-documents?accountId=4028905f5e4feb38015e50af9aa002d1&sort=+documentDate\n- /billing-documents?accountId=4028905f5e4feb38015e50af9aa002d1&status=Posted\n- /billing-documents?accountNumber=A00000001&sort=+documentDate\n- /billing-documents?accountNumber=A00000001&status=Posted\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "accountId",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify account id",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Account Id",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create a standalone invoice",
+    "description": "",
+    "operationId": "POST_StandaloneInvoice",
+    "operationApiType": "POST",
+    "operationPath": "/v1/invoices",
+    "operationSummary": "Create a standalone invoice",
+    "operationDescription": "Creates a standalone invoice for selling physical goods, services or other items on a non-recurring basis to your subscription customers.\n\nTo use this operation, you must have the \"Create Standalone Invoice\" and \"Modify Invoice\" user permissions. See [Billing Roles](https://knowledgecenter.zuora.com/CF_Users_and_Administrators/A_Administrator_Settings/User_Roles/d_Billing_Roles) for more information. As of Zuora Release 2022.03.R5, newly created standard Billing users have the “Create Standalone Invoice” permission enabled by default.\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create standalone invoices",
+    "description": "",
+    "operationId": "POST_StandaloneInvoices",
+    "operationApiType": "POST",
+    "operationPath": "/v1/invoices",
+    "operationSummary": "Create standalone invoiceS",
+    "operationDescription": "Creates multiple standalone invoices for selling physical goods, services or other items on a non-recurring basis to your subscription customers.\n\nTo use this operation, you must have the \"Create Standalone Invoice\" and \"Modify Invoice\" user permissions. See [Billing Roles](https://knowledgecenter.zuora.com/CF_Users_and_Administrators/A_Administrator_Settings/User_Roles/d_Billing_Roles) for more information. As of Zuora Release 2022.03.R5, newly created standard Billing users have the “Create Standalone Invoice” permission enabled by default.\n\n## Limitations\n\nThis operation has the following limitations:\n* You can create a maximum of 50 invoices in one request.\n* You can create a maximum of 1,000 invoice items in one request.\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Post Invoices",
+    "description": "",
+    "operationId": "POST_PostInvoices",
+    "operationApiType": "POST",
+    "operationPath": "/v1/invoices/bulk-post",
+    "operationSummary": "Post Invoices",
+    "operationDescription": "Posts multiple invoices.\n\nYou can post a maximum of 50 invoices in one single request. Additionally, you can also update invoice dates while posting the invoices.\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List credit memos",
+    "description": "",
+    "operationId": "GET_CreditMemos",
+    "operationApiType": "GET",
+    "operationPath": "/v1/creditmemos",
+    "operationSummary": "Get a credit memo from a charge",
+    "operationDescription": "**Note:** This operation is only available if you have [Invoice Settlement](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement) enabled. The Invoice Settlement feature is generally available as of Zuora Billing Release 296 (March 2021). This feature includes Unapplied Payments, Credit and Debit Memo, and Invoice Item Settlement. If you want to enable Invoice Settlement, see [Invoice Settlement Enablement and Checklist Guide](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement/Invoice_Settlement_Migration_Checklist_and_Guide) for more information. \n\nRetrieves the information about all credit memos. \n\nFor a use case of this operation, see [Get credit memo](https://www.zuora.com/developer/rest-api/general-concepts/authentication//#Get-credit-memo).\n\n\n### Filtering\n\nYou can use query parameters to restrict the data returned in the response. Each query parameter corresponds to one field in the response body.\n\nIf the value of a filterable field is string, you can set the corresponding query parameter to `null` when filtering. Then, you can get the response data with this field value being `null`. \n  \nExamples:\n\n- /v1/creditmemos?status=Posted\n\n- /v1/creditmemos?referredInvoiceId=null&status=Draft\n\n- /v1/creditmemos?status=Posted&type=External&sort=+number\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Create a credit memo from a charge",
+    "description": "",
+    "operationId": "POST_CreditMemoFromPrpc",
+    "operationApiType": "POST",
+    "operationPath": "/v1/creditmemos",
+    "operationSummary": "Create a credit memo from a charge",
+    "operationDescription": "**Note:** This operation is only available if you have [Invoice Settlement](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement) enabled. The Invoice Settlement feature is generally available as of Zuora Billing Release 296 (March 2021). This feature includes Unapplied Payments, Credit and Debit Memo, and Invoice Item Settlement. If you want to enable Invoice Settlement, see [Invoice Settlement Enablement and Checklist Guide](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement/Invoice_Settlement_Migration_Checklist_and_Guide) for more information. \n\nCreates an ad-hoc credit memo from a product rate plan charge. Zuora supports the creation of credit memos from any type of product rate plan charge. The charges can also have any amount and any charge model, except for discout charge models. \n\nWhen credit memos are created from product rate plan charges, the specified amount with decimal places is now validated based on the decimal places supported by each currency.\n\nYou can create a credit memo only if you have the user permission. See [Billing Roles](https://knowledgecenter.zuora.com/CF_Users_and_Administrators/A_Administrator_Settings/User_Roles/d_Billing_Roles) for more information.\n\nFor a use case of this operation, see [Create credit memos](https://www.zuora.com/developer/rest-api/api-guides/create-credit-memo/).\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create credit memos",
+    "description": "",
+    "operationId": "POST_CreateCreditMemos",
+    "operationApiType": "POST",
+    "operationPath": "/v1/creditmemos/bulk",
+    "operationSummary": "Create a credit memo from a charge",
+    "operationDescription": "**Note:** This operation is only available if you have [Invoice Settlement](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement) enabled. The Invoice Settlement feature is generally available as of Zuora Billing Release 296 (March 2021). This feature includes Unapplied Payments, Credit and Debit Memo, and Invoice Item Settlement. If you want to enable Invoice Settlement, see [Invoice Settlement Enablement and Checklist Guide](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement/Invoice_Settlement_Migration_Checklist_and_Guide) for more information. \n\nCreates an ad-hoc credit memo from a product rate plan charge. Zuora supports the creation of credit memos from any type of product rate plan charge. The charges can also have any amount and any charge model, except for discout charge models. \n\nWhen credit memos are created from product rate plan charges, the specified amount with decimal places is now validated based on the decimal places supported by each currency.\n\nYou can create a credit memo only if you have the user permission. See [Billing Roles](https://knowledgecenter.zuora.com/CF_Users_and_Administrators/A_Administrator_Settings/User_Roles/d_Billing_Roles) for more information.\n\nFor a use case of this operation, see [Create credit memos](https://www.zuora.com/developer/rest-api/api-guides/create-credit-memo/).\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List debit memos",
+    "description": "",
+    "operationId": "GET_DebitMemos",
+    "operationApiType": "GET",
+    "operationPath": "/v1/debitmemos",
+    "operationSummary": "List debit memos",
+    "operationDescription": "**Note:** This operation is only available if you have [Invoice Settlement](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement) enabled. The Invoice Settlement feature is generally available as of Zuora Billing Release 296 (March 2021). This feature includes Unapplied Payments, Credit and Debit Memo, and Invoice Item Settlement. If you want to enable Invoice Settlement, see [Invoice Settlement Enablement and Checklist Guide](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement/Invoice_Settlement_Migration_Checklist_and_Guide) for more information.\n\nRetrieves the information about all debit memos associated with all customer accounts.\n\n### Filtering\n\nYou can use query parameters to restrict the data returned in the response. Each query parameter corresponds to one field in the response body.\n\nIf the value of a filterable field is string, you can set the corresponding query parameter to `null` when filtering. Then, you can get the response data with this field value being `null`. \n\nExamples:\n\n- /v1/debitmemos?status=Posted\n\n- /v1/debitmemos?referredInvoiceId=null&status=Draft\n\n- /v1/debitmemos?status=Posted&type=External&sort=+number\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Create a payment method",
+    "description": "",
+    "operationId": "POST_PaymentMethods",
+    "operationApiType": "POST",
+    "operationPath": "/v1/payment-methods",
+    "operationSummary": "Create a payment method",
+    "operationDescription": "You can use this operation to create either a payment method associated with a specific customer account, or an orphan payment method that is not associated with any customer account. The orphan payment method must be associated with a customer account within 10 days. Otherwise, it will be deleted.\n\nThis operation supports the payment methods listed below.\n        \n### Credit Card\nThe following request body fields are applicable to this payment method:\n* `cardHolderInfo` (`cardHolderName` required)\n* `cardNumber` (required)\n* `cardType` (required)\n* `expirationMonth` (required)\n* `expirationYear` (required)\n* `mitConsentAgreementRef`\n* `mitConsentAgreementSrc`\n* `mitNetworkTransactionId`\n* `mitProfileAction`\n* `mitProfileType`\n* `mitProfileAgreedOn`\n* `securityCode`\n* `checkDuplicated`\n* `mandateInfo`\n\nWhen creating a credit card payment method, it is recommended to enable [the support for stored credential transactions](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/L_Payment_Methods/Stored_credential_transactions) for this payment method. Specify the [required fields](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/L_Payment_Methods/Stored_credential_transactions/Configuration_procedures/Create_a_new_payment_method) to enable the support.\n\n### Credit Card (CC) Reference Transaction\nThe following request body fields are applicable to this payment method:\n* `tokenId` (required)\n* `secondTokenId`\n* `creditCardMaskNumber`\n* `mandateInfo`\n\n### ACH\nThe following request body fields are applicable to this payment method:\n* `bankABACode` (required)\n* `bankAccountName` (required)\n* `bankAccountNumber` (required)\n* `bankAccountType` (required)\n* `bankName` (required)\n* `addressLine1`\n* `addressLine2`\n* `phone`\n* `email`\n* `city`\n* `country`\n* `state`\n* `zipCode`\n* `mandateInfo`\n\n### SEPA\nThe following request body fields are applicable to this payment method:\n* `IBAN` (required)\n* `accountHolderInfo` (required)\n* `businessIdentificationCode`\n* `mandateInfo`\n\n### Betalingsservice (Direct Debit DK)\nThe following request body fields are applicable to this payment method:\n* `accountNumber` (required)\n* `identityNumber` (required)\n* `bankCode` (required)\n* `accountHolderInfo` (required)\n* `mandateInfo`\n\n### Autogiro (Direct Debit SE)\nThe following request body fields are applicable to this payment method:        \n* `accountNumber` (required)\n* `identityNumber` (required)\n* `branchCode` (required)\n* `accountHolderInfo` (required) \n* `mandateInfo`\n\n### Bacs (Direct Debit UK)\nThe following request body fields are applicable to this payment method:        \n* `accountNumber` (required)\n* `bankCode` (required)\n* `accountHolderInfo` (required)\n* `mandateInfo`\n\n### Becs (Direct Entry AU)\nThe following request body fields are applicable to this payment method:        \n* `accountNumber` (required)\n* `branchCode` (required)\n* `accountHolderInfo` (required)\n* `mandateInfo`\n\n### Becsnz (Direct Debit NZ)\nThe following request body fields are applicable to this payment method:        \n* `accountNumber` (required)\n* `bankCode` (required)\n* `branchCode` (required)\n* `accountHolderInfo` (required)\n* `mandateInfo`\n\n### PAD (Pre-Authorized Debit)\nThe following request body fields are applicable to this payment method:\n* `accountNumber` (required)\n* `bankCode` (required)\n* `branchCode` (required)\n* `accountHolderInfo` (required)\n* `mandateInfo`\n\n### PayPal Express Checkout\nThe following request body fields are specific to this payment method:\n* `BAID` (required)\n* `email` (required)\n\n### PayPal Native Express Checkout\nThe following request body fields are specific to this payment method:\n* `BAID` (required)\n* `email` (optional)\n\n### PayPal Adaptive\nThe following request body fields are specific to this payment method:\n* `preapprovalKey` (required)\n* `email` (required)\n\n### PayPal Commerce Platform\nThe following request body fields are applicable to the creation of a payment method with the PayPal Commerce Platform gateway integration:\n* `BAID` (required)\n* `email` (required)\n\nThis feature is in the Early Adopter phase. See [PayPal Commerce Platform Gateway](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/M_Payment_Gateways/Supported_Payment_Gateways/PayPal_Commerce_Platform_Gateway) for details.\n\n\n### Apple Pay on Adyen Integration v2.0\nSee [Set up Adyen Apple Pay](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/L_Payment_Methods/Payment_Method_Types/Apple_Pay_on_Web/Set_up_Adyen_Apple_Pay) for details.\n\n### Google Pay on Adyen Integration v2.0\nThis feature is in the Early Adopter phase. See [Set up Adyen Google Pay](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/L_Payment_Methods/Payment_Method_Types/Set_up_Adyen_Google_Pay) for details.\n\n### Google Pay on Chase Paymentech Orbital Gateway\nThis feature is in the Early Adopter phase. See [Set up Google Pay on Chase](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/L_Payment_Methods/Payment_Method_Types/Set_up_Google_Pay_on_Chase) for details.\n\n### Custom payment methods\nWith the support of Universal Payment Connector (UPC) and Open Payment Method (OPM) services, you can create custom payment methods by using the fields defined in a definition file for this type of custom payment method. See [Set up custom payment gateways and payment methods](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/MB_Set_up_custom_payment_gateways_and_payment_methods) for details.\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List payments",
+    "description": "",
+    "operationId": "GET_RetrieveAllPayments",
+    "operationApiType": "GET",
+    "operationPath": "/v1/payments",
+    "operationSummary": "List payments",
+    "operationDescription": "**Note:** This operation is only available if you have [Invoice Settlement](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement) enabled. The Invoice Settlement feature is generally available as of Zuora Billing Release 296 (March 2021). This feature includes Unapplied Payments, Credit and Debit Memo, and Invoice Item Settlement. If you want to enable Invoice Settlement, see [Invoice Settlement Enablement and Checklist Guide](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement/Invoice_Settlement_Migration_Checklist_and_Guide) for more information. \n\nRetrieves the information about all payments from all your customer accounts.\n\n### Filtering\n\nYou can use query parameters to restrict the data returned in the response. Each query parameter corresponds to one field in the response body.\n\nIf the value of a filterable field is string, you can set the corresponding query parameter to `null` when filtering. Then, you can get the response data with this field value being `null`.\n\nExamples:\n\n- /v1/payments?status=Processed\n\n- /v1/payments?currency=USD&status=Processed\n\n- /v1/payments?status=Processed&type=External&sort=+number\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "List refunds",
+    "description": "",
+    "operationId": "GET_Refunds",
+    "operationApiType": "GET",
+    "operationPath": "/v1/refunds",
+    "operationSummary": "List refunds",
+    "operationDescription": "**Note:** This operation is only available if you have [Invoice Settlement](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement) enabled. The Invoice Settlement feature is generally available as of Zuora Billing Release 296 (March 2021). This feature includes Unapplied Payments, Credit and Debit Memo, and Invoice Item Settlement. If you want to enable Invoice Settlement, see [Invoice Settlement Enablement and Checklist Guide](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement/Invoice_Settlement_Migration_Checklist_and_Guide) for more information. \n\nRetrieves the information about all refunds. Two types of refunds are available, electronic refunds and external refunds.\n\n### Filtering\n\nYou can use query parameters to restrict the data returned in the response. Each query parameter corresponds to one field in the response body.\n\nIf the value of a filterable field is string, you can set the corresponding query parameter to `null` when filtering. Then, you can get the response data with this field value being `null`.\n\nExamples:\n\n- /v1/refunds?status=Processed\n\n- /v1/refunds?amount=4&status=Processed\n\n- /v1/refunds?status=Processed&type=External&sort=+number\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Create a journal run",
+    "description": "",
+    "operationId": "POST_JournalRun",
+    "operationApiType": "POST",
+    "operationPath": "/v1/journal-runs",
+    "operationSummary": "Create a journal run",
+    "operationDescription": "This REST API reference describes how to create a journal run. Request and response field descriptions and sample code are provided.\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List notification definitions",
+    "description": "",
+    "operationId": "GET_Query_Notification_Definitions",
+    "operationApiType": "GET",
+    "operationPath": "/notifications/notification-definitions",
+    "operationSummary": "List notification definitions",
+    "operationDescription": "Queries notification definitions with the specified filters.\n\n**Note**: This operation is only applicable to notifications for custom events and custom scheduled events.\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "List email templates",
+    "description": "",
+    "operationId": "GET_Query_Email_Templates",
+    "operationApiType": "GET",
+    "operationPath": "/notifications/email-templates",
+    "operationSummary": "List email templates",
+    "operationDescription": "Queries email templates. This operation supports querying email templates for all event types.\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "List accounts",
+    "description": "",
+    "operationId": "GET_Account",
+    "operationApiType": "GET",
+    "operationPath": "/object-query/accounts",
+    "operationSummary": "List accounts",
+    "operationDescription": "List accounts",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "List accounts",
+    "description": "",
+    "operationId": "GET_Account",
+    "operationApiType": "GET",
+    "operationPath": "/object-query/accounts",
+    "operationSummary": "List accounts",
+    "operationDescription": "List accounts",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "List amendments",
+    "description": "",
+    "operationId": "GET_Account",
+    "operationApiType": "GET",
+    "operationPath": "/object-query/accounts",
+    "operationSummary": "List amendments",
+    "operationDescription": "List accounts",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "List orders",
+    "description": "",
+    "operationId": "GET_AllOrders",
+    "operationApiType": "GET",
+    "operationPath": "/v1/orders",
+    "operationSummary": "List orders",
+    "operationDescription": "**Note:** This feature is only available if you have the [Order Metrics](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AA_Overview_of_Orders#Order_Metrics) feature enabled. As of Zuora Billing Release 284, Orders is generally available and the Order Metrics feature is no longer available as a standalone feature. If you are an existing Subscribe and Amend customer and want Order Metrics only, you must turn on [Orders Harmonization](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Orders_Harmonization/Orders_Harmonization). You can still keep the existing Subscribe and Amend API integrations to create and manage subscriptions.\n\n**Note:** The [Order Line Items](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Order_Line_Items/AA_Overview_of_Order_Line_Items) feature is now generally available to all Zuora customers. You need to enable the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AA_Overview_of_Orders#Orders) feature to access the [Order Line Items](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Order_Line_Items/AA_Overview_of_Order_Line_Items) feature. As of Zuora Billing Release 313 (November 2021), new customers who onboard on [Orders](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/AA_Overview_of_Orders) will have the [Order Line Items](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Order_Line_Items) feature enabled by default.        \n\nRetrieves information about all orders in your tenant. By default, it returns the first page of the orders. \n\n**Note:** The following fields in the response body of the \"List orders\" operation are only available if you have the Fulfillment and Return feature enabled. The Fulfillment and Return feature is in the **Early Adopter** phase. We are actively soliciting feedback from a small set of early adopters before releasing it as generally available. If you want to join this early adopter program, submit a request at [Zuora Global Support](https://support.zuora.com/).\n- `category`\n- `reasonCode`\n- `orders` > `orderLineItems` > `quantityFulfilled`\n- `orders` > `orderLineItems` > `quantityPendingFulfillment`\n- `orders` > `orderLineItems` > `billingRule`\n- `orders` > `orderLineItems` > `itemCategory`\n- `orders` > `orderLineItems` > `originalOrderId`\n- `orders` > `orderLineItems` > `originalOrderLineItemId`\n- `orders` > `orderLineItems` > `originalOrderLineItemNumber`\n- `orders` > `orderLineItems` > `originalOrderNumber`\n- `orders` > `orderLineItems` > `quantityAvailableForReturn`\n- `orders` > `orderLineItems` > `requiresFulfillment`\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Create an order",
+    "description": "",
+    "operationId": "POST_Order",
+    "operationApiType": "POST",
+    "operationPath": "/v1/orders",
+    "operationSummary": "Create an order",
+    "operationDescription": "**Note:** This operation is only available if you have the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AA_Overview_of_Orders#Orders) feature enabled. Orders is now generally available as of Zuora Billing Release 284 (August 2020). If you are an existing Zuora Subscribe and Amend customer and want to adopt Orders, see [What is Orders Harmonization](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Orders_Harmonization/Orders_Harmonization#What_is_Orders_Harmonization.3F) and join the [Orders Harmonization community group](https://community.zuora.com/t5/Orders-Harmonization/gp-p/Orders-Harmonization) for more information. If you want to enable Orders, submit a request at [Zuora Global Support](https://support.zuora.com/).\n\n**Note:** The [Order Line Items](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Order_Line_Items/AA_Overview_of_Order_Line_Items) feature is now generally available to all Zuora customers. You need to enable the [Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AA_Overview_of_Orders#Orders) feature to access the [Order Line Items](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Order_Line_Items/AA_Overview_of_Order_Line_Items) feature. As of Zuora Billing Release 313 (November 2021), new customers who onboard on [Orders](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/AA_Overview_of_Orders) will have the [Order Line Items](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Order_Line_Items) feature enabled by default.       \n\nYou can use this operation to create subscriptions and make changes to subscriptions by creating orders. You can also use this operation to create order line items by creating orders. The following tutorials demonstrate how to use this operation:\n\n * [Create a Subscription](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AC_Orders_Tutorials/A_Create_a_Subscription)\n * [Add a Product to a Subscription](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AC_Orders_Tutorials/A_Add_a_Product_to_a_Subscription)\n * [Create a Ramp Deal](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Ramps_and_Ramp_Metrics/B_Create_a_Ramp_Deal)\n * [Add a Product Mid-Interval Update on a Ramp Deal](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Ramps_and_Ramp_Metrics/E_Update_a_Product_in_a_Ramp_Deal)\n * [Add a Product in a Ramp Deal](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Ramps_and_Ramp_Metrics/C_Add_a_Product_in_a_Ramp_Deal)\n * [Change the Terms and Conditions of a Ramp Deal](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Ramps_and_Ramp_Metrics/D_Change_the_Terms_and_Conditions_of_a_Ramp_Deal_and_Update_the_Ramp)\n * [Change the Owner of a Subscription](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AC_Orders_Tutorials/C_Change_the_Owner_of_a_Subscription)\n * [Change the Terms and Conditions of a Subscription](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AC_Orders_Tutorials/C_Change_the_Terms_and_Conditions_of_a_Subscription)\n * [Renew a Subscription](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AC_Orders_Tutorials/C_Renew_a_Subscription)\n * [Renew a Subscription and Upgrade a Product](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AC_Orders_Tutorials/C_Renew_a_Subscription_and_Upgrade_a_Product)\n * [Replace a Product in a Subscription](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AC_Orders_Tutorials/C_Replace_a_Product_in_a_Subscription)\n * [Update a Product in a Subscription](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AC_Orders_Tutorials/C_Update_a_Product_in_a_Subscription)\n * [Cancel a Subscription](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AC_Orders_Tutorials/D_Cancel_a_Subscription)\n * [Remove a Product from a Subscription](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/AC_Orders_Tutorials/D_Remove_a_Product_from_a_Subscription)\n * [Create a sales order line item without fulfillments](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Order_Line_Items/AC_Create_a_sales_order_line_item_without_fulfillments)\n * [Create a sales order line item with fulfillments](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Order_Line_Items/AD_Create_a_sales_order_line_item_with_fulfillments)\n * [Create an order line item with a new subscription](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Order_Line_Items/AE_Create_an_order_line_item_with_a_new_subscription)\n * [Create a return order line item without fulfillments](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Order_Line_Items/AF_Create_a_return_order_line_item_without_fulfillments)\n * [Create a return order line item with fulfillments](https://knowledgecenter.zuora.com/Billing/Subscriptions/Orders/Order_Line_Items/Create_a_return_order_line_item_with_fulfillments)\n\n**Note:** If you received a timeout error message when creating an order, the call is still running in the backend and the order will be created.\n\nYou can also see the [API Guides](https://www.zuora.com/developer/rest-api/api-guides/overview/) for more use cases of the \"Create an order\" operation.\n\nCreating a draft order is currently not supported. See [Known Limitations in Orders](https://knowledgecenter.zuora.com/BC_Subscription_Management/Orders/C_Known_Limitations_in_Orders) for additional limitations.\n\nThe limit of orders allowed on a subscription is 1000.\n\nThe limit of order line items allowed in an order is 100.\n\nZuora has the following limits on the Orders synchronous API to prevent performance degradation: \n* Up to 50 subscriptions are allowed in a single [Create an order](https://www.zuora.com/developer/api-references/api/operation/POST_Order) or [Preview an order](https://www.zuora.com/developer/api-references/api/operation/POST_PreviewOrder) operation call.\n* Up to 50 order actions are allowed in a single [Create an order](https://www.zuora.com/developer/api-references/api/operation/POST_Order) or [Preview an order](https://www.zuora.com/developer/api-references/api/operation/POST_PreviewOrder) operation call.\n* Up to 50 order actions are allowed on a single subscription in a [Create an order](https://www.zuora.com/developer/api-references/api/operation/POST_Order) or [Preview an order](https://www.zuora.com/developer/api-references/api/operation/POST_PreviewOrder) operation call.\n\nIf you have an Order that exceeds any limits of the above, Zuora recommends you use the following asynchronous API operations:\n* [Create an order asynchronously](https://www.zuora.com/developer/api-references/api/operation/POST_CreateOrderAsynchronously)\n* [Preview an order asynchronously](https://www.zuora.com/developer/api-references/api/operation/POST_PreviewOrderAsynchronously)\n\nZuora has the following limits on the Orders asynchronous API operations to prevent performance degradation:\n* Up to 300 subscriptions are allowed in a single [Create an order asynchronously](https://www.zuora.com/developer/api-references/api/operation/POST_CreateOrderAsynchronously) or [Preview an order asynchronously](https://www.zuora.com/developer/api-references/api/operation/POST_PreviewOrderAsynchronously) operation call.\n* Up to 300 order actions are allowed in a single [Create an order asynchronously](https://www.zuora.com/developer/api-references/api/operation/POST_CreateOrderAsynchronously) or [Preview an order asynchronously](https://www.zuora.com/developer/api-references/api/operation/POST_PreviewOrderAsynchronously) operation call.\n* Up to 300 order actions are allowed on a single subscription in a [Create an order asynchronously](https://www.zuora.com/developer/api-references/api/operation/POST_CreateOrderAsynchronously) or [Preview an order asynchronously](https://www.zuora.com/developer/api-references/api/operation/POST_PreviewOrderAsynchronously) operation call.\n\nIf you have a need for a large order that exceeds any limits of the above, you can request a limit increase for the Orders asynchronous API by submitting a request at [Zuora Global Support](https://support.zuora.com).        \n\n**Note:** When you are to suspend a subcription (via the `suspend` order action), if in the same \"Create an order\" call you are to perform other subsequent order actions on the supscription to suspend, you must first resume the subscription (via a `resume` order action). \n\n**Note:** When using this operation to create an account, create a subscription, run billing, and collect payment in a single call, if any error occurs during the call, such as a payment processing failure and a tax engine failure, then all the other steps will be rolled back. This means that the invoice will not be generated, the subscription will not be created, and the account will not be created.\n\n**Note:** The following fields in the request body of the \"Create an order\" operation are only available if you have the Fulfillment and Return feature enabled. The Fulfillment and Return feature is in the **Early Adopter** phase. We are actively soliciting feedback from a small set of early adopters before releasing it as generally available. If you want to join this early adopter program, submit a request at [Zuora Global Support](https://support.zuora.com/).\n- `category`\n- `reasonCode`\n- `orderLineItems` > `billingRule`\n- `orderLineItems` > `itemCategory`\n- `orderLineItems` > `originalOrderLineItemNumber`\n- `orderLineItems` > `originalOrderNumber`\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create a payment run",
+    "description": "",
+    "operationId": "POST_PaymentRun",
+    "operationApiType": "POST",
+    "operationPath": "/v1/payment-runs",
+    "operationSummary": "Create a payment run",
+    "operationDescription": "Creates a payment run. You can create a payment run to be executed immediately after it is created, or a scheduled payment run to be executed in future.\n\nTo filter the payments to be collected for a payment run, you can use either of the following methods but not both:\n\n  - Use the `accountId`, `batch`, `billCycleDay`, `currency`, `paymentGatewayId`, and `billingRunId` fields to define the billing documents to be collected.\n  - Use the `data` field to specify the records of accounts and billing documents to be collected, in a more flexible manner. See [Create custom payment runs through Zuora REST API](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/K_Payment_Operations/CA_Payment_Runs/Create_custom_payment_runs_through_Zuora_REST_API) for more information.\n\nIf no filter criteria are specified in the request body, the payment run collects payments for all accounts.\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List payment runs",
+    "description": "",
+    "operationId": "GET_PaymentRun",
+    "operationApiType": "GET",
+    "operationPath": "/v1/payment-runs",
+    "operationSummary": "List payment runs",
+    "operationDescription": "Creates a payment run. You can create a payment run to be executed immediately after it is created, or a scheduled payment run to be executed in future.\n\nTo filter the payments to be collected for a payment run, you can use either of the following methods but not both:\n\n  - Use the `accountId`, `batch`, `billCycleDay`, `currency`, `paymentGatewayId`, and `billingRunId` fields to define the billing documents to be collected.\n  - Use the `data` field to specify the records of accounts and billing documents to be collected, in a more flexible manner. See [Create custom payment runs through Zuora REST API](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/K_Payment_Operations/CA_Payment_Runs/Create_custom_payment_runs_through_Zuora_REST_API) for more information.\n\nIf no filter criteria are specified in the request body, the payment run collects payments for all accounts.\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Create a product rate plan definition",
+    "description": "",
+    "operationId": "POST_ProductRat",
+    "operationApiType": "GET",
+    "operationPath": "/v1/product-rateplan-definitions",
+    "operationSummary": "reate a product rate plan definition",
+    "operationDescription": "reate a product rate plan definition",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create a product",
+    "description": "",
+    "operationId": "Object_POSTProduct",
+    "operationApiType": "POST",
+    "operationPath": "/v1/payment-runs",
+    "operationSummary": "CRUD: Create a product",
+    "operationDescription": "Creates a product run. ",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List refunds",
+    "description": "",
+    "operationId": "GET_Refunds",
+    "operationApiType": "GET",
+    "operationPath": "/v1/payment-runs",
+    "operationSummary": "List refunds",
+    "operationDescription": "**Note:** This operation is only available if you have [Invoice Settlement](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement) enabled. The Invoice Settlement feature is generally available as of Zuora Billing Release 296 (March 2021). This feature includes Unapplied Payments, Credit and Debit Memo, and Invoice Item Settlement. If you want to enable Invoice Settlement, see [Invoice Settlement Enablement and Checklist Guide](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement/Invoice_Settlement_Migration_Checklist_and_Guide) for more information. \n\nRetrieves the information about all refunds. Two types of refunds are available, electronic refunds and external refunds.\n\n### Filtering\n\nYou can use query parameters to restrict the data returned in the response. Each query parameter corresponds to one field in the response body.\n\nIf the value of a filterable field is string, you can set the corresponding query parameter to `null` when filtering. Then, you can get the response data with this field value being `null`.\n\nExamples:\n\n- /v1/refunds?status=Processed\n\n- /v1/refunds?amount=4&status=Processed\n\n- /v1/refunds?status=Processed&type=External&sort=+number\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Preview a subscription",
+    "description": "",
+    "operationId": "POST_PreviewSubscription",
+    "operationApiType": "POST",
+    "operationPath": "/v1/subscriptions/preview",
+    "operationSummary": "Preview a subscription",
+    "operationDescription": "The REST API reference describes how to create a new subscription in preview mode. This call does not require a valid customer account. It can be used to show potential new customers a preview of a subscription with complete details and charges before creating an account, or to let existing customers preview a subscription with all charges before committing.\n\n## Notes\n- The response of the Preview Subscription call is based on the REST API minor version you set in the request header. The response structure might be different if you use different minor version numbers. \n\n- If you have the Invoice Settlement feature enabled, we recommend that you set the `zuora-version` parameter to `207.0` or later. Otherwise, an error is returned.\n\n\n- Default values for **customerAcceptanceDate** and **serviceActivationDate** are set as follows.\n\n|        | serviceActivationDate (SA) specified          | serviceActivationDate (SA) NOT specified  |\n| ------------- |:-------------:| -----:|\n| customerAcceptanceDate (CA) specified      | SA uses value in the request call; CA uses value in the request call| CA uses value in the request call;SA uses CE as default |\n| customerAcceptanceDate (CA) NOT specified      | SA uses value in the request call; CA uses SA as default |   SA and CA use CE as default |\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create a subscription",
+    "description": "",
+    "operationId": "POST_Subscription",
+    "operationApiType": "POST",
+    "operationPath": "/v1/subscriptions",
+    "operationSummary": "Preview a subscription",
+    "operationDescription": "This REST API reference describes how to create a new subscription for an existing customer account.\n\n## Notes\n\nIf you have the Invoice Settlement feature enabled, it is best practice to set the `zuora-version` parameter to `211.0` or later. Otherwise, an error occurs.\n\nIf `invoiceCollect` is `true`, the call will not return `success` = `true` unless the subscription, invoice, and payment are all successful.\n\nDefault values for **customerAcceptanceDate** and **serviceActivationDate** are set as follows. This API operation does not support creating a pending subscription.\n\n|        | serviceActivationDate(SA) specified          | serviceActivationDate (SA) NOT specified  |\n| ------------- |:-------------:| -----:|\n| customerAcceptanceDate (CA) specified| SA uses value in the request call; CA uses value in the request call| CA uses value in the request call;SA uses CE as default |\n| customerAcceptanceDate (CA) NOT specified      | SA uses value in the request call; CA uses SA as default |   SA and CA use CE as default |\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Create a summary journal entry",
+    "description": "",
+    "operationId": "POST_SummaryJournalEntry",
+    "operationApiType": "POST",
+    "operationPath": "/v1/subscriptions",
+    "operationSummary": "Create a summary journal entry",
+    "operationDescription": "This REST API reference describes how to manually create a summary journal entry. Request and response field descriptions and sample code are provided.\n## Requirements\n1.The sum of debits must equal the sum of credits in the summary journal entry.\n\n2.The following applies only if you use foreign currency conversion:\n  * If you have configured Aggregate transactions with different currencies during a Journal Run to \"Yes\", the value of the **currency** field must be the same as your tenant's home currency. That is, you must create journal entries using your home currency.\n  * All journal entries in an accounting period must either all be aggregated or all be unaggregated. You cannot have a mix of aggregated and unaggregated journal entries in the same accounting period.\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create a taxation item",
+    "description": "",
+    "operationId": "Object_POSTTaxationItem",
+    "operationApiType": "POST",
+    "operationPath": "/v1/object/taxation-item",
+    "operationSummary": "Create a taxation item",
+    "operationDescription": "Create a taxation item",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create a usage record",
+    "description": "",
+    "operationId": "Object_POSTUsage",
+    "operationApiType": "POST",
+    "operationPath": "/v1/object/usage",
+    "operationSummary": "Create a usage record",
+    "operationDescription": "Create a usage record",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List workflows",
+    "description": "",
+    "operationId": "GET_Workflows",
+    "operationApiType": "GET",
+    "operationPath": "/workflows",
+    "operationSummary": "List workflows",
+    "operationDescription": "Retrieves a list of workflow definitions available in your Zuora tenant.\n\n## User Access Permission\nYou must be assigned the **Workflow View Access** permission to run this operation.   \n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Import a workflow",
+    "description": "",
+    "operationId": "POST_WorkflowImport",
+    "operationApiType": "POST",
+    "operationPath": "/workflows/import",
+    "operationSummary": "Import a workflow",
+    "operationDescription": "Create a new workflow definition and its first version using the exported JSON document of an existing workflow version.\n\n## User Access Permission\nYou must be assigned the **Workflow Manage Access** permission to run this operation.\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "workflow_definition_id",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify definition id of the workflow",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Workflow Defifnition Id",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "version",
+        "value": "1",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify version of the workflow",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Version",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "activate",
+        "value": "false",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify version of the workflow",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Active",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List workflow tasks",
+    "description": "",
+    "operationId": "GET_WorkflowsTasks",
+    "operationApiType": "GET",
+    "operationPath": "/workflows/tasks",
+    "operationSummary": "List workflow tasks",
+    "operationDescription": "Retrieves a list of workflow tasks available in your Zuora tenant.\n\n## User Access Permission\nYou must be assigned the **Workflow View Access** permission to run this operation.\n",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  }
+]

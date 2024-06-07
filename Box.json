@@ -98,25 +98,24 @@
         "isVisible": false,
         "bindable": true,
         "required": true,
-        "datatype": "System.Byte[]",
-        "description": "Specify the content of the blob to upload.",
-        "uiEditor": "FileEditor",
+        "datatype": "System.String",
+        "description": "Specify the content of the Body",
         "ui_source": "operation",
-        "ui_EditorType": "FileEditor",
+        "ui_EditorType": "TextArea",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Blob Content"
       },
       {
-      "name": "BodyType",
-      "value": "Raw",
-      "param_type": "Param",
-      "ui_source": "operation"
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
       },
       {
-      "name": "BodyFormat",
-      "value": "XML",
-      "param_type": "Param",
-      "ui_source": "operation"
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
       }
     ]
   },
@@ -158,40 +157,39 @@
         "isVisible": false,
         "bindable": true,
         "required": true,
-        "datatype": "System.Byte[]",
-        "description": "Specify the content of the blob to upload.",
-        "uiEditor": "FileEditor",
+        "datatype": "System.String",
+        "description": "Specify the content of the Body",
         "ui_source": "operation",
-        "ui_EditorType": "FileEditor",
+        "ui_EditorType": "TextArea",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Blob Content"
-        },
-        {
+      },
+      {
         "name": "BodyType",
         "value": "Raw",
         "param_type": "Param",
         "ui_source": "operation"
-        },
-        {
+      },
+      {
         "name": "BodyFormat",
         "value": "XML",
         "param_type": "Param",
         "ui_source": "operation"
-        },
-        {
-          "name": "fields",
-          "value": "",
-          "isVisible": true,
-          "bindable": true,
-          "required": false,
-          "datatype": "System.String",
-          "description": "To request a specific field for a resource that is not returned by default in the standard response, append the field query parameter to your request. ",
-          "ui_EditorType": "Textbox",
-          "ui_displayName": "Fields",
-          "param_type": "UrlParam",
-          "ui_category": "Subscribe Mode Properties",
-          "ui_source": "operation"
-        }
+      },
+      {
+        "name": "fields",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "To request a specific field for a resource that is not returned by default in the standard response, append the field query parameter to your request. ",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Fields",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      }
     ]
   },
   {
@@ -268,7 +266,7 @@
         "description": "This header can be used to access items that have not been explicitly shared with a user.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "boxapi",
+        "ui_displayName": "Box API",
         "param_type": "Header",
         "ui_source": "operation"
       },
@@ -277,86 +275,6 @@
         "value": "bytes=0-1024",
         "param_type": "Header",
         "ui_source": "operation"
-      }
-    ]
-  },
-  {
-    "operation": "Upload file",
-    "description": "",
-    "operationId": "post_files_content",
-    "operationApiType": "POST",
-    "operationPath": "/files/content",
-    "operationSummary": "Upload file",
-    "operationDescription": "Uploads a small file to Box. For file sizes over 50MB we recommend\nusing the Chunk Upload APIs.\n\n# Request body order\n\nThe `attributes` part of the body must come **before** the\n`file` part. Requests that do not follow this format when\nuploading the file will receive a HTTP `400` error with a\n`metadata_after_file_contents` error code.",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "Content-Type",
-        "value": "multipart/form-data",
-        "param_type": "Header",
-        "ui_source": "operation"
-      },
-      {
-        "name": "upload_session_id",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify session ID",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "Upload session Id",
-        "param_type": "UrlParam",
-        "ui_source": "operation"
-      },
-      {
-        "name": "protected_params",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Protexted param ",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "Protexted param",
-        "param_type": "UrlParam",
-        "ui_source": "operation"
-      },
-      {
-      "name": "Body",
-      "value": "",
-      "param_type": "Param",
-      "isVisible": false,
-      "bindable": true,
-      "required": true,
-      "datatype": "System.Byte[]",
-      "description": "Specify the content of the blob to upload.",
-      "uiEditor": "FileEditor",
-      "ui_source": "operation",
-      "ui_EditorType": "FileEditor",
-      "ui_category": "Subscribe Mode Properties",
-      "ui_displayName": "Blob Content"
-      },
-      {
-      "name": "BodyType",
-      "value": "Raw",
-      "param_type": "Param",
-      "ui_source": "operation"
-      },
-      {
-      "name": "BodyFormat",
-      "value": "XML",
-      "param_type": "Param",
-      "ui_source": "operation"
       }
     ]
   },
@@ -398,31 +316,30 @@
         "ui_source": "operation"
       },
       {
-      "name": "Body",
-      "value": "",
-      "param_type": "Param",
-      "isVisible": false,
-      "bindable": true,
-      "required": true,
-      "datatype": "System.Byte[]",
-      "description": "Specify the content of the blob to upload.",
-      "uiEditor": "FileEditor",
-      "ui_source": "operation",
-      "ui_EditorType": "FileEditor",
-      "ui_category": "Subscribe Mode Properties",
-      "ui_displayName": "Blob Content"
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the Body",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
       },
       {
-      "name": "BodyType",
-      "value": "Raw",
-      "param_type": "Param",
-      "ui_source": "operation"
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
       },
       {
-      "name": "BodyFormat",
-      "value": "XML",
-      "param_type": "Param",
-      "ui_source": "operation"
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
       },
       {
         "name": "fields",
@@ -483,7 +400,7 @@
         "ui_category": "Subscribe Mode Properties",
         "ui_source": "operation",
         "datatype": "System.String",
-        "ui_displayName": "File ID"
+        "ui_displayName": "Scope"
       },
       {
         "name": "{template_key}",
@@ -497,7 +414,7 @@
         "ui_category": "Subscribe Mode Properties",
         "ui_source": "operation",
         "datatype": "System.String",
-        "ui_displayName": "File ID"
+        "ui_displayName": "Template Key"
       },
       {
         "name": "Content-Type",
@@ -550,7 +467,7 @@
         "ui_category": "Subscribe Mode Properties",
         "ui_source": "operation",
         "datatype": "System.String",
-        "ui_displayName": "File ID"
+        "ui_displayName": "Scope"
       },
       {
         "name": "{template_key}",
@@ -564,7 +481,7 @@
         "ui_category": "Subscribe Mode Properties",
         "ui_source": "operation",
         "datatype": "System.String",
-        "ui_displayName": "File ID"
+        "ui_displayName": "Template Key"
       },
       {
         "name": "Content-Type",
@@ -579,11 +496,10 @@
         "isVisible": false,
         "bindable": true,
         "required": true,
-        "datatype": "System.Byte[]",
-        "description": "Strictly Specify Content in chunks of 512 bytes or multiples thereof.",
-        "uiEditor": "FileEditor",
+        "datatype": "System.String",
+        "description": "Specify the content of the Body",
         "ui_source": "operation",
-        "ui_EditorType": "FileEditor",
+        "ui_EditorType": "TextArea",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Blob Content"
       },
@@ -644,7 +560,7 @@
         "ui_category": "Subscribe Mode Properties",
         "ui_source": "operation",
         "datatype": "System.String",
-        "ui_displayName": "File ID"
+        "ui_displayName": "Scope"
       },
       {
         "name": "{template_key}",
@@ -658,7 +574,7 @@
         "ui_category": "Subscribe Mode Properties",
         "ui_source": "operation",
         "datatype": "System.String",
-        "ui_displayName": "File ID"
+        "ui_displayName": "Template Key"
       },
       {
         "name": "Content-Type",
@@ -709,7 +625,7 @@
         "description": "This header can be used to access items that have not been explicitly shared with a user.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "boxapi",
+        "ui_displayName": "Box API",
         "param_type": "Header",
         "ui_source": "operation"
       },
@@ -757,12 +673,12 @@
         "value": "",
         "isVisible": true,
         "bindable": true,
-        "required": false,
+        "required": true,
         "datatype": "System.String",
         "description": "This header can be used to access items that have not been explicitly shared with a user.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "boxapi",
+        "ui_displayName": "Box API",
         "param_type": "Header",
         "ui_source": "operation"
       },
@@ -824,7 +740,7 @@
         "value": "",
         "isVisible": true,
         "bindable": true,
-        "required": false,
+        "required": true,
         "datatype": "System.String",
         "description": "To request a specific field for a resource that is not returned by default in the standard response, append the field query parameter to your request. ",
         "ui_EditorType": "Textbox",
@@ -877,7 +793,7 @@
         "value": "",
         "isVisible": true,
         "bindable": true,
-        "required": false,
+        "required": true,
         "datatype": "System.String",
         "description": "To request a specific field for a resource that is not returned by default in the standard response, append the field query parameter to your request. ",
         "ui_EditorType": "Textbox",
@@ -893,11 +809,10 @@
         "isVisible": false,
         "bindable": true,
         "required": true,
-        "datatype": "System.Byte[]",
-        "description": "Specify the content of the blob to upload.",
-        "uiEditor": "FileEditor",
+        "datatype": "System.String",
+        "description": "Specify the content of the Body",
         "ui_source": "operation",
-        "ui_EditorType": "FileEditor",
+        "ui_EditorType": "TextArea",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Blob Content"
       },
@@ -957,7 +872,7 @@
         "value": "",
         "isVisible": true,
         "bindable": true,
-        "required": false,
+        "required": true,
         "datatype": "System.String",
         "description": "To request a specific field for a resource that is not returned by default in the standard response, append the field query parameter to your request. ",
         "ui_EditorType": "Textbox",
@@ -973,11 +888,10 @@
         "isVisible": false,
         "bindable": true,
         "required": true,
-        "datatype": "System.Byte[]",
-        "description": "Specify the content of the blob to upload.",
-        "uiEditor": "FileEditor",
+        "datatype": "System.String",
+        "description": "Specify the content of the Body",
         "ui_source": "operation",
-        "ui_EditorType": "FileEditor",
+        "ui_EditorType": "TextArea",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Blob Content"
       },
@@ -1053,11 +967,10 @@
         "isVisible": false,
         "bindable": true,
         "required": true,
-        "datatype": "System.Byte[]",
-        "description": "Specify the content of the blob to upload.",
-        "uiEditor": "FileEditor",
+        "datatype": "System.String",
+        "description": "Specify the content of the Body",
         "ui_source": "operation",
-        "ui_EditorType": "FileEditor",
+        "ui_EditorType": "TextArea",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Blob Content"
       },

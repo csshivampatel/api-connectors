@@ -1,0 +1,759 @@
+[
+    {
+      "operation": "Creates an account record",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "POST",
+      "operationPath": "/accounts",
+      "operationSummary": "Creates an account record",
+      "operationDescription": "Creates an account record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Body",
+          "value": "",
+          "param_type": "Param",
+          "isVisible": false,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "ui_source": "operation",
+          "ui_category": "Subscribe Mode Properties"
+        },
+        {
+          "name": "BodyType",
+          "value": "Raw",
+          "param_type": "Param",
+          "ui_source": "operation"
+        },
+        {
+          "name": "BodyFormat",
+          "value": "XML",
+          "param_type": "Param",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Get list of account records",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "GET",
+      "operationPath": "/accounts",
+      "operationSummary": "Get list of account records",
+      "operationDescription": "Get list of account records",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "operation": "Creates an campaign record",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "POST",
+      "operationPath": "/campaigns",
+      "operationSummary": "Creates an campaign record",
+      "operationDescription": "Creates an campaign record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Body",
+          "value": "",
+          "param_type": "Param",
+          "isVisible": false,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "ui_source": "operation",
+          "ui_category": "Subscribe Mode Properties"
+        },
+        {
+          "name": "BodyType",
+          "value": "Raw",
+          "param_type": "Param",
+          "ui_source": "operation"
+        },
+        {
+          "name": "BodyFormat",
+          "value": "XML",
+          "param_type": "Param",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Get list of campaign records",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "GET",
+      "operationPath": "/campaigns",
+      "operationSummary": "Get list of campaign records",
+      "operationDescription": "Get list of campaign recordsd",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "operation": "Creates an campaign response record",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "POST",
+      "operationPath": "/campaignresponses",
+      "operationSummary": "Creates an campaign response record",
+      "operationDescription": "Creates an campaign response record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Body",
+          "value": "",
+          "param_type": "Param",
+          "isVisible": false,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "ui_source": "operation",
+          "ui_category": "Subscribe Mode Properties"
+        },
+        {
+          "name": "BodyType",
+          "value": "Raw",
+          "param_type": "Param",
+          "ui_source": "operation"
+        },
+        {
+          "name": "BodyFormat",
+          "value": "XML",
+          "param_type": "Param",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Get list of campaign response records",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "GET",
+      "operationPath": "/campaignresponses",
+      "operationSummary": "Get list of campaign response records",
+      "operationDescription": "Get list of campaign response records",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "operation": "Creates an subject record",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "POST",
+      "operationPath": "/subjects",
+      "operationSummary": "Creates an subject record",
+      "operationDescription": "Creates an subject record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Body",
+          "value": "",
+          "param_type": "Param",
+          "isVisible": false,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "ui_source": "operation",
+          "ui_category": "Subscribe Mode Properties"
+        },
+        {
+          "name": "BodyType",
+          "value": "Raw",
+          "param_type": "Param",
+          "ui_source": "operation"
+        },
+        {
+          "name": "BodyFormat",
+          "value": "XML",
+          "param_type": "Param",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Creates an subject record",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "GET",
+      "operationPath": "/subjects",
+      "operationSummary": "Creates an subject record",
+      "operationDescription": "Creates an subject record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "operation": "Creates an incident record",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "POST",
+      "operationPath": "/incidents",
+      "operationSummary": "Creates an incident record",
+      "operationDescription": "Creates an incident record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Body",
+          "value": "",
+          "param_type": "Param",
+          "isVisible": false,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "ui_source": "operation",
+          "ui_category": "Subscribe Mode Properties"
+        },
+        {
+          "name": "BodyType",
+          "value": "Raw",
+          "param_type": "Param",
+          "ui_source": "operation"
+        },
+        {
+          "name": "BodyFormat",
+          "value": "XML",
+          "param_type": "Param",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Get list of incident records",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "GET",
+      "operationPath": "/incidents",
+      "operationSummary": "Get list of incident records",
+      "operationDescription": "Get list of incident records",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "operation": "Creates an contact record",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "POST",
+      "operationPath": "/contacts",
+      "operationSummary": "Creates an contact record",
+      "operationDescription": "Creates an contact record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Body",
+          "value": "",
+          "param_type": "Param",
+          "isVisible": false,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "ui_source": "operation",
+          "ui_category": "Subscribe Mode Properties"
+        },
+        {
+          "name": "BodyType",
+          "value": "Raw",
+          "param_type": "Param",
+          "ui_source": "operation"
+        },
+        {
+          "name": "BodyFormat",
+          "value": "XML",
+          "param_type": "Param",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Get list of contact records",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "GET",
+      "operationPath": "/contacts",
+      "operationSummary": "Get list of contact records",
+      "operationDescription": "Get list of contact records",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "operation": "Creates an invoice record",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "POST",
+      "operationPath": "/invoices",
+      "operationSummary": "Creates an invoice record",
+      "operationDescription": "Creates an invoice record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Body",
+          "value": "",
+          "param_type": "Param",
+          "isVisible": false,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "ui_source": "operation",
+          "ui_category": "Subscribe Mode Properties"
+        },
+        {
+          "name": "BodyType",
+          "value": "Raw",
+          "param_type": "Param",
+          "ui_source": "operation"
+        },
+        {
+          "name": "BodyFormat",
+          "value": "XML",
+          "param_type": "Param",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Get list of invoice records",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "GET",
+      "operationPath": "/invoices",
+      "operationSummary": "Get list of invoice records",
+      "operationDescription": "Get list of invoice records",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "operation": "Creates an lead record",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "POST",
+      "operationPath": "/leads",
+      "operationSummary": "Creates an lead record",
+      "operationDescription": "Creates an lead record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Body",
+          "value": "",
+          "param_type": "Param",
+          "isVisible": false,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "ui_source": "operation",
+          "ui_category": "Subscribe Mode Properties"
+        },
+        {
+          "name": "BodyType",
+          "value": "Raw",
+          "param_type": "Param",
+          "ui_source": "operation"
+        },
+        {
+          "name": "BodyFormat",
+          "value": "XML",
+          "param_type": "Param",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Get list of invoice records",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "GET",
+      "operationPath": "/leads",
+      "operationSummary": "Get list of lead records",
+      "operationDescription": "Get list of lead records",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "operation": "Creates an opportunity record",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "POST",
+      "operationPath": "/opportunities",
+      "operationSummary": "Creates an opportunity record",
+      "operationDescription": "Creates an opportunity record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Body",
+          "value": "",
+          "param_type": "Param",
+          "isVisible": false,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "ui_source": "operation",
+          "ui_category": "Subscribe Mode Properties"
+        },
+        {
+          "name": "BodyType",
+          "value": "Raw",
+          "param_type": "Param",
+          "ui_source": "operation"
+        },
+        {
+          "name": "BodyFormat",
+          "value": "XML",
+          "param_type": "Param",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Get list of opportunity records",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "GET",
+      "operationPath": "/opportunities",
+      "operationSummary": "Get list of opportunity records",
+      "operationDescription": "Get list of opportunity records",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "operation": "Create an item record",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "POST",
+      "operationPath": "/products",
+      "operationSummary": "Create an item record",
+      "operationDescription": "Create an item record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Body",
+          "value": "",
+          "param_type": "Param",
+          "isVisible": false,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "ui_source": "operation",
+          "ui_category": "Subscribe Mode Properties"
+        },
+        {
+          "name": "BodyType",
+          "value": "Raw",
+          "param_type": "Param",
+          "ui_source": "operation"
+        },
+        {
+          "name": "BodyFormat",
+          "value": "XML",
+          "param_type": "Param",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Get list of item reeords",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "GET",
+      "operationPath": "/products",
+      "operationSummary": "Get list of item reeords",
+      "operationDescription": "Get list of item reeords",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "operation": "Create an report record",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "POST",
+      "operationPath": "/reports",
+      "operationSummary": "Create an report record",
+      "operationDescription": "Create an report record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Body",
+          "value": "",
+          "param_type": "Param",
+          "isVisible": false,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "ui_source": "operation",
+          "ui_category": "Subscribe Mode Properties"
+        },
+        {
+          "name": "BodyType",
+          "value": "Raw",
+          "param_type": "Param",
+          "ui_source": "operation"
+        },
+        {
+          "name": "BodyFormat",
+          "value": "XML",
+          "param_type": "Param",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Get list of report card records",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "GET",
+      "operationPath": "/reports",
+      "operationSummary": "Get list of report card records",
+      "operationDescription": "Get list of report card records",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "operation": "Get list of record filter records",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "GET",
+      "operationPath": "/recordfilters",
+      "operationSummary": "Get list of record filter records",
+      "operationDescription": "Get list of record filter records",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "operation": "Get list of calendar records",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "GET",
+      "operationPath": "/calendars",
+      "operationSummary": "Get list of calendar records",
+      "operationDescription": "Get list of calendar records",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "operation": "Create an task record",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "POST",
+      "operationPath": "/tasks",
+      "operationSummary": "Create an task record",
+      "operationDescription": "Create an task record",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Body",
+          "value": "",
+          "param_type": "Param",
+          "isVisible": false,
+          "bindable": true,
+          "required": true,
+          "datatype": "System.String",
+          "ui_source": "operation",
+          "ui_category": "Subscribe Mode Properties"
+        },
+        {
+          "name": "BodyType",
+          "value": "Raw",
+          "param_type": "Param",
+          "ui_source": "operation"
+        },
+        {
+          "name": "BodyFormat",
+          "value": "XML",
+          "param_type": "Param",
+          "ui_source": "operation"
+        }
+      ]
+    },
+    {
+      "operation": "Get list of task records",
+      "description": "",
+      "operationId": "",
+      "operationApiType": "GET",
+      "operationPath": "/tasks",
+      "operationSummary": "Get list of task records",
+      "operationDescription": "Get list of task records",
+      "deprecated": false,
+      "adapterProperties": [
+        {
+          "name": "AdapterMode",
+          "key": "",
+          "value": "Solicit Response"
+        }
+      ],
+      "parameters": []
+    }
+  ]
+  
