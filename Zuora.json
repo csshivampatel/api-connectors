@@ -81,6 +81,7 @@
     "parameters": [
       {
         "name": "{account-key}",
+        "description": "Account number or account ID",
         "value": "",
         "param_type": "Path",
         "required": true,
@@ -225,7 +226,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify account id",
+        "description": "The ID of the customer account that the billing documents are associated with.",
         "ui_EditorType": "Textbox",
         "ui_displayName": "Account Id",
         "param_type": "UrlParam",
@@ -676,24 +677,6 @@
     "parameters": []
   },
   {
-    "operation": "List amendments",
-    "description": "",
-    "operationId": "GET_Account",
-    "operationApiType": "GET",
-    "operationPath": "/object-query/accounts",
-    "operationSummary": "List amendments",
-    "operationDescription": "List accounts",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "Solicit Response"
-      }
-    ],
-    "parameters": []
-  },
-  {
     "operation": "List orders",
     "description": "",
     "operationId": "GET_AllOrders",
@@ -888,7 +871,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify definition id of the workflow",
+        "description": "The unique number or ID of the charge for which the product rate plan definitions are to be retrieved.",
         "ui_EditorType": "Textbox",
         "ui_displayName": "Charge",
         "param_type": "UrlParam",
@@ -902,7 +885,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify definition id of the workflow",
+        "description": "The unique number or ID of the product rate plan for which the product rate plan definitions are to be retrieved.",
         "ui_EditorType": "Textbox",
         "ui_displayName": "Rate Plan",
         "param_type": "UrlParam",
@@ -910,69 +893,6 @@
         "ui_source": "operation"
       }
     ]
-  },
-  {
-    "operation": "Create a product",
-    "description": "",
-    "operationId": "Object_POSTProduct",
-    "operationApiType": "POST",
-    "operationPath": "/v1/payment-runs",
-    "operationSummary": "CRUD: Create a product",
-    "operationDescription": "Creates a product run. ",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "Solicit Response"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "Body",
-        "value": "",
-        "param_type": "Param",
-        "bindable": true,
-        "isVisible": false,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify the content of the body to upload.",
-        "ui_source": "operation",
-        "ui_EditorType": "TextArea",
-        "ui_category": "Publish Mode Properties",
-        "ui_displayName": "Body"
-      },
-      {
-        "name": "BodyType",
-        "value": "Raw",
-        "param_type": "Param",
-        "ui_source": "operation"
-      },
-      {
-        "name": "BodyFormat",
-        "value": "JSON",
-        "param_type": "Param",
-        "ui_source": "operation"
-      }
-    ]
-  },
-  {
-    "operation": "List refunds",
-    "description": "",
-    "operationId": "GET_Refunds",
-    "operationApiType": "GET",
-    "operationPath": "/v1/payment-runs",
-    "operationSummary": "List refunds",
-    "operationDescription": "**Note:** This operation is only available if you have [Invoice Settlement](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement) enabled. The Invoice Settlement feature is generally available as of Zuora Billing Release 296 (March 2021). This feature includes Unapplied Payments, Credit and Debit Memo, and Invoice Item Settlement. If you want to enable Invoice Settlement, see [Invoice Settlement Enablement and Checklist Guide](https://knowledgecenter.zuora.com/Billing/Billing_and_Payments/Invoice_Settlement/Invoice_Settlement_Migration_Checklist_and_Guide) for more information. \n\nRetrieves the information about all refunds. Two types of refunds are available, electronic refunds and external refunds.\n\n### Filtering\n\nYou can use query parameters to restrict the data returned in the response. Each query parameter corresponds to one field in the response body.\n\nIf the value of a filterable field is string, you can set the corresponding query parameter to `null` when filtering. Then, you can get the response data with this field value being `null`.\n\nExamples:\n\n- /v1/refunds?status=Processed\n\n- /v1/refunds?amount=4&status=Processed\n\n- /v1/refunds?status=Processed&type=External&sort=+number\n",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "Solicit Response"
-      }
-    ],
-    "parameters": []
   },
   {
     "operation": "Preview a subscription",
@@ -1042,7 +962,7 @@
     "description": "",
     "operationId": "POST_SummaryJournalEntry",
     "operationApiType": "POST",
-    "operationPath": "/v1/subscriptions",
+    "operationPath": "/v1/journal-entries",
     "operationSummary": "Create a summary journal entry",
     "operationDescription": "This REST API reference describes how to manually create a summary journal entry. Request and response field descriptions and sample code are provided.\n## Requirements\n1.The sum of debits must equal the sum of credits in the summary journal entry.\n\n2.The following applies only if you use foreign currency conversion:\n  * If you have configured Aggregate transactions with different currencies during a Journal Run to \"Yes\", the value of the **currency** field must be the same as your tenant's home currency. That is, you must create journal entries using your home currency.\n  * All journal entries in an accounting period must either all be aggregated or all be unaggregated. You cannot have a mix of aggregated and unaggregated journal entries in the same accounting period.\n",
     "deprecated": false,
@@ -1240,7 +1160,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify definition id of the workflow",
+        "description": "The unique id of the workflow definition to import a workflow version under.",
         "ui_EditorType": "Textbox",
         "ui_displayName": "Workflow Defifnition Id",
         "param_type": "UrlParam",
@@ -1254,7 +1174,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify version of the workflow",
+        "description": "The version number of the new workflow version to import. Must be greater than any existing version numbers.",
         "ui_EditorType": "Textbox",
         "ui_displayName": "Version",
         "param_type": "UrlParam",
@@ -1268,7 +1188,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify version of the workflow",
+        "description": "Indicates whether the imported version is an active version. Default to be false.",
         "ui_EditorType": "Textbox",
         "ui_displayName": "Active",
         "param_type": "UrlParam",

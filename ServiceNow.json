@@ -4,7 +4,7 @@
     "description": "",
     "operationId": "get_specified_attachment",
     "operationApiType": "GET",
-    "operationPath": "/api/now/attachment/{sys_id}/file",
+    "operationPath": "/now/attachment/{sys_id}/file",
     "operationSummary": "Get an specified attachment.",
     "operationDescription": "Get an specified attachment.",
     "deprecated": false,
@@ -18,6 +18,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
+        "description": "Specify System Id of the attachment record you want to retrieve",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -35,7 +36,7 @@
     "description": "",
     "operationId": "delete_an_attachment",
     "operationApiType": "DELETE",
-    "operationPath": "/api/now/attachment/{sys_id}",
+    "operationPath": "/now/attachment/{sys_id}",
     "operationSummary": "Delete an attachment.",
     "operationDescription": "Delete an attachment",
     "deprecated": false,
@@ -49,6 +50,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
+        "description": "Specify System Id of the attachment record you want to retrieve",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -58,6 +60,12 @@
         "ui_category": "Misc",
         "datatype": "System.String",
         "ui_displayName": "System Id"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
       }
     ]
   },
@@ -66,7 +74,7 @@
     "description": "",
     "operationId": "upload_an_attachment",
     "operationApiType": "POST",
-    "operationPath": "/api/now/attachment/file",
+    "operationPath": "/now/attachment/file",
     "operationSummary": "Upload an attachement",
     "operationDescription": "Upload an attachment",
     "deprecated": false,
@@ -103,6 +111,51 @@
         "value": "JSON",
         "param_type": "Param",
         "ui_source": "operation"
+      },
+      {
+        "name": "file_name",
+        "description": "Required, Name to give the attachment",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "File Name"
+      },
+      {
+        "name": "table_name",
+        "description": "Required, Name of the table to attach the file to",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "Table Name"
+      },
+      {
+        "name": "table_sys_id",
+        "description": "Required. Sys_id of the record in the table specified in table_name that you want to attach the file to.",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "Table System Id"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
       }
     ]
   },
@@ -111,7 +164,7 @@
     "description": "",
     "operationId": "get_all_attachment",
     "operationApiType": "GET",
-    "operationPath": "/api/now/attachment",
+    "operationPath": "/now/attachment",
     "operationSummary": "Get all attachement",
     "operationDescription": "Get all attachment",
     "deprecated": false,
@@ -129,7 +182,7 @@
     "description": "",
     "operationId": "create_new_email",
     "operationApiType": "POST",
-    "operationPath": "/api/now/v1/email",
+    "operationPath": "/now/v1/email",
     "operationSummary": "create a new email.",
     "operationDescription": "create a new email",
     "deprecated": false,
@@ -166,6 +219,12 @@
         "value": "JSON",
         "param_type": "Param",
         "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
       }
     ]
   },
@@ -174,7 +233,7 @@
     "description": "",
     "operationId": "get_an_email",
     "operationApiType": "GET",
-    "operationPath": "/api/now/v1/email/{sys_id}",
+    "operationPath": "/now/v1/email/{sys_id}",
     "operationSummary": "Get an email.",
     "operationDescription": "Get an email.",
     "deprecated": false,
@@ -188,6 +247,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
+        "description": "Specify System Id of the email record you want to retrieve",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -205,7 +265,7 @@
     "description": "",
     "operationId": "create_record",
     "operationApiType": "POST",
-    "operationPath": "/api/now/table/{tableName}",
+    "operationPath": "/now/table/{tableName}",
     "operationSummary": "Create a record",
     "operationDescription": "Create a record",
     "deprecated": false,
@@ -218,7 +278,8 @@
     ],
     "parameters": [
       {
-        "name": "Table Name",
+        "name": "{tableName}",
+        "description": "Specify the table name where you want to create a new record",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -227,7 +288,8 @@
         "ui_source": "operation",
         "sourceProperty": "tableName",
         "ui_category": "Misc",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "Table Name"
       },
       {
         "name": "Body",
@@ -254,6 +316,12 @@
         "value": "JSON",
         "param_type": "Param",
         "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
       }
     ]
   },
@@ -262,7 +330,7 @@
     "description": "",
     "operationId": "retrieve_record",
     "operationApiType": "GET",
-    "operationPath": "/api/now/table/{tableName}/{sys_id}",
+    "operationPath": "/now/table/{tableName}/{sys_id}",
     "operationSummary": "Retrieve a record",
     "operationDescription": "Retrieve a record",
     "deprecated": false,
@@ -276,6 +344,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
+        "description": "Specify System Id of the record you want to retrieve",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -287,7 +356,8 @@
         "ui_displayName": "System Id"
       },
       {
-        "name": "Table Name",
+        "name": "{tableName}",
+        "description": "Specify the table name where you want to retrieve records",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -301,11 +371,11 @@
     ]
   },
   {
-    "operation": "Detete record",
+    "operation": "Detete a record",
     "description": "",
     "operationId": "delete_record",
     "operationApiType": "DELETE",
-    "operationPath": "/api/now/table/{tableName}/{sys_id}",
+    "operationPath": "/now/table/{tableName}/{sys_id}",
     "operationSummary": "Delete a record",
     "operationDescription": "Delete a record",
     "deprecated": false,
@@ -319,6 +389,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
+        "description": "Specify System Id of the record you want to delete",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -330,7 +401,8 @@
         "ui_displayName": "System Id"
       },
       {
-        "name": "Table Name",
+        "name": "{tableName}",
+        "description": "Specify the table name where you want to delete a record",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -339,17 +411,25 @@
         "ui_source": "operation",
         "sourceProperty": "tableName",
         "ui_category": "Misc",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "Table Name"
+      }, 
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
       }
+
     ]
   },
   {
-    "operation": "Updates a record",
+    "operation": "Update a record",
     "description": "",
     "operationId": "update_record",
     "operationApiType": "PATCH",
-    "operationPath": "/api/now/table/{tableName}/{sys_id}",
-    "operationSummary": "Updates a record ",
+    "operationPath": "/now/table/{tableName}/{sys_id}",
+    "operationSummary": "Update a record ",
     "operationDescription": "update a record",
     "deprecated": false,
     "adapterProperties": [
@@ -362,6 +442,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
+        "description": "Specify System Id of the record you want to update",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -373,7 +454,8 @@
         "ui_displayName": "System Id"
       },
       {
-        "name": "Table Name",
+        "name": "{tableName}",
+        "description": "Specify the table name where you want to update a record",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -382,7 +464,8 @@
         "ui_source": "operation",
         "sourceProperty": "tableName",
         "ui_category": "Misc",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "Table Name"
       },
       {
         "name": "Body",
@@ -409,6 +492,12 @@
         "value": "JSON",
         "param_type": "Param",
         "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
       }
     ]
   },
@@ -417,7 +506,7 @@
     "description": "",
     "operationId": "get_incidents",
     "operationApiType": "GET",
-    "operationPath": "/api/now/table/incident",
+    "operationPath": "/now/table/incident",
     "operationSummary": "Get incidents",
     "operationDescription": "Get incidents",
     "deprecated": false,
@@ -435,7 +524,7 @@
     "description": "",
     "operationId": "get_incident",
     "operationApiType": "GET",
-    "operationPath": "/api/now/table/incident/{sys_id}",
+    "operationPath": "/now/table/incident/{sys_id}",
     "operationSummary": "Get incident",
     "operationDescription": "Get incident",
     "deprecated": false,
@@ -449,6 +538,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
+        "description": "Specify System Id of the incident record you want to retrieve",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -466,7 +556,7 @@
     "description": "",
     "operationId": "create_incident",
     "operationApiType": "POST",
-    "operationPath": "/api/now/table/incident",
+    "operationPath": "/now/table/incident",
     "operationSummary": "Create incident",
     "operationDescription": "Create incident",
     "deprecated": false,
@@ -503,6 +593,12 @@
         "value": "JSON",
         "param_type": "Param",
         "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
       }
     ]
   },
@@ -511,7 +607,7 @@
     "description": "",
     "operationId": "update_incident",
     "operationApiType": "PUT",
-    "operationPath": "/api/now/table/incident/{sys_id}",
+    "operationPath": "/now/table/incident/{sys_id}",
     "operationSummary": "Update incident",
     "operationDescription": "Update incident",
     "deprecated": false,
@@ -525,6 +621,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
+        "description": "Specify System Id of the Incident record you want to update",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -559,6 +656,12 @@
         "name": "BodyFormat",
         "value": "JSON",
         "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
         "ui_source": "operation"
       }
     ]

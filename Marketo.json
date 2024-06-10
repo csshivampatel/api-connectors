@@ -44,7 +44,7 @@
         "description": "Specify Parent Value",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "parent",
+        "ui_displayName": "Parent",
         "param_type": "BodyParam",
         "ui_source": "operation"
       },
@@ -58,7 +58,7 @@
         "description": "Specify name",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "name",
+        "ui_displayName": "Name",
         "param_type": "BodyParam",
         "ui_source": "operation"
       },
@@ -72,7 +72,7 @@
         "description": "Specify description Value",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "description",
+        "ui_displayName": "Description",
         "param_type": "BodyParam",
         "ui_source": "operation"
       },
@@ -114,7 +114,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify ID",
+        "description": "Id of the folder to update",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "ID",
@@ -128,10 +128,10 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify Parent Value",
+        "description": "Specify description for update Folder Request",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "parent",
+        "ui_displayName": "Parent",
         "param_type": "BodyParam",
         "ui_source": "operation"
       }
@@ -161,7 +161,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify ID",
+        "description": "Id of the folder to delete",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "ID",
@@ -194,7 +194,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify ID",
+        "description": "Id of the folder to retrieve",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "ID",
@@ -208,7 +208,7 @@
         "bindable": true,
         "required": false,
         "datatype": "System.String",
-        "description": "Specify Type ",
+        "description": "Type of folder.  'Folder' or 'Program'",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Type",
@@ -241,44 +241,11 @@
         "bindable": true,
         "required": false,
         "datatype": "System.String",
-        "description": "Specify Name ",
+        "description": "Name of the folder. Not applicable for Programs",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Name",
-        "param_type": "Param",
-        "ui_source": "operation"
-      }
-    ]
-  },
-  {
-    "operation": "Update Folder Metadata",
-    "description": "",
-    "operationId": "updateFolderUsingPOST",
-    "operationApiType": "GET",
-    "operationPath": "/rest/asset/v1/folder/{id}.json",
-    "operationSummary": "Update Folder Metadata",
-    "operationDescription": "Updates the metadata for a given folder.  Required Permissions: Read-Write Assets",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "Solicit Response"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "{id}",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify ID",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "ID",
-        "param_type": "Path",
+        "param_type": "UrlParam",
         "ui_source": "operation"
       }
     ]
@@ -481,7 +448,7 @@
         "description": "Specify field API name",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "field API name",
+        "ui_displayName": "Field API Name",
         "param_type": "Path",
         "ui_source": "operation"
       },
@@ -514,39 +481,6 @@
     ]
   },
   {
-    "operation": "Get Lead by Lead Id",
-    "description": "",
-    "operationId": "getLeadByIdUsingGET",
-    "operationApiType": "GET",
-    "operationPath": "/rest/v1/lead/{leadId}.json",
-    "operationSummary": "Get Lead by Id",
-    "operationDescription": "Retrieves a single lead record through its Marketo id.  Required Permissions: Read-Only Lead, Read-Write Lead",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "Solicit Response"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "{leadId}",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify Lead ID",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "lead ID",
-        "param_type": "Path",
-        "ui_source": "operation"
-      }
-    ]
-  },
-  {
     "operation": "Get Lead Field by Name",
     "description": "",
     "operationId": "getLeadFieldByNameUsingGET",
@@ -570,7 +504,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify file API Name",
+        "description": "The API name of lead field",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "File API Name",
@@ -599,12 +533,12 @@
       {
         "name": "filterType",
         "value": "",
-        "param_type": "Param",
+        "param_type": "UrlParam",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify Filter Type",
+        "description": "The lead field to filter on. Any custom field (string, email, or integer types only), and any of the following fields are supported: cookies, email, facebookId, id, leadPartitionId, linkedInId, sfdcAccountId, sfdcContactId, sfdcLeadId, sfdcLeadOwnerId, sfdcOpptyId, twitterId.",
         "ui_source": "operation",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
@@ -613,12 +547,12 @@
       {
         "name": "filterValues",
         "value": "",
-        "param_type": "Param",
+        "param_type": "UrlParam",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify Filter Type",
+        "description": "A comma-separated list of lead fields to return for each record",
         "ui_source": "operation",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
@@ -650,7 +584,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify program Id",
+        "description": "The id of the program to retrieve from",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Program Id",
@@ -664,7 +598,7 @@
     "description": "",
     "operationId": "getLeadByIdUsingGET",
     "operationApiType": "GET",
-    "operationPath": "/rest/v1/lead/{id}.json",
+    "operationPath": "/rest/v1/lead/{leadId}.json",
     "operationSummary": "Get Lead by Id",
     "operationDescription": "Retrieves a single lead record through its Marketo id.  Required Permissions: Read-Only Lead, Read-Write Lead",
     "deprecated": false,
@@ -677,31 +611,50 @@
     ],
     "parameters": [
       {
-        "name": "{id}",
+        "name": "{leadId}",
         "value": "",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify ID",
+        "description": "The Marketo lead id",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "ID",
+        "ui_displayName": "Lead Id",
         "param_type": "Path",
         "ui_source": "operation"
-      },
+      }
+    ]
+  },
+  {
+    "operation": "Get Lists by Lead Id",
+    "description": "",
+    "operationId": "getListMembershipUsingGET",
+    "operationApiType": "GET",
+    "operationPath": "/rest/v1/leads/{leadId}/listMembership.json",
+    "operationSummary": "Get Lists by Lead Id",
+    "operationDescription": "Query static list membership for one lead.  Required Permissions: Read-Only Asset",
+    "deprecated": false,
+    "adapterProperties": [
       {
-        "name": "batchSize",
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{leadId}",
         "value": "",
         "isVisible": true,
         "bindable": true,
-        "required": false,
+        "required": true,
         "datatype": "System.String",
-        "description": "Specify Batch Size",
+        "description": "The Marketo lead id",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "Batch Size",
-        "param_type": "Param",
+        "ui_displayName": "Lead ID",
+        "param_type": "Path",
         "ui_source": "operation"
       }
     ]
@@ -793,7 +746,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify export ID",
+        "description": "Id of export batch job.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Export ID",
@@ -826,40 +779,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify export ID",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "Export ID",
-        "param_type": "Path",
-        "ui_source": "operation"
-      }
-    ]
-  },
-  {
-    "operation": "Cancel Export Lead Job",
-    "description": "",
-    "operationId": "cancelExportLeadsUsingPOST",
-    "operationApiType": "POST",
-    "operationPath": "/bulk/v1/leads/export/{exportId}/cancel.json",
-    "operationSummary": "Cancel Export Lead Job",
-    "operationDescription": "Cancel export job.  Required Permissions: Read-Only Lead",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "Solicit Response"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "{exportId}",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify export ID",
+        "description": "Id of export batch job.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Export ID",
@@ -928,22 +848,36 @@
         "description": "Specify name",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "name",
-        "param_type": "Param",
+        "ui_displayName": "Name",
+        "param_type": "UrlParam",
         "ui_source": "operation"
       },
       {
         "name": "includeTags",
-        "value": "",
+        "value": "true",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Do you want to include tags ? true/false",
+        "description": "Set true to populate program tags.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Include Tags",
-        "param_type": "Param",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "includeCosts",
+        "value": "true",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Set true to populate program costs.",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Include Costs",
+        "param_type": "UrlParam",
         "ui_source": "operation"
       }
     ]
@@ -990,10 +924,10 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify name",
+        "description": "Required, A globally unique identifier for the program",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "name",
+        "ui_displayName": "Name",
         "param_type": "BodyParam",
         "ui_source": "operation"
       },
@@ -1004,10 +938,10 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify folder name",
+        "description": "Required, Specifies the parent folder where the program resides",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "folder",
+        "ui_displayName": "Folder",
         "param_type": "BodyParam",
         "ui_source": "operation"
       },
@@ -1021,7 +955,7 @@
         "description": "Specify description Value",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "description",
+        "ui_displayName": "Description",
         "param_type": "BodyParam",
         "ui_source": "operation"
       },
@@ -1030,9 +964,9 @@
         "value": "",
         "isVisible": true,
         "bindable": true,
-        "required": false,
+        "required": true,
         "datatype": "System.String",
-        "description": "Specify Type",
+        "description": "Required, Specify the type of the program.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Type",
@@ -1044,12 +978,12 @@
         "value": "",
         "isVisible": true,
         "bindable": true,
-        "required": false,
+        "required": true,
         "datatype": "System.String",
-        "description": "Specify channel mode",
+        "description": "Required, Specify the communication channel for the program.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "channel",
+        "ui_displayName": "Channel",
         "param_type": "BodyParam",
         "ui_source": "operation"
       },
@@ -1063,7 +997,7 @@
         "description": "Specify costs",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "costs",
+        "ui_displayName": "Costs",
         "param_type": "BodyParam",
         "ui_source": "operation"
       }
@@ -1076,7 +1010,7 @@
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/program/{id}/delete.json",
     "operationSummary": "Delete Program",
-    "operationDescription": "Deletes the target program.  The program may not contain any assets which are in use outside the program.  Required Permissions: Read-Write Assets",
+    "operationDescription": "Deletes the target program. The program may not contain any assets which are in use outside the program.  Required Permissions: Read-Write Assets",
     "deprecated": false,
     "adapterProperties": [
       {
@@ -1140,10 +1074,10 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify name",
+        "description": "Name parameter must be globally unique and cannot exceed 255 characters.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "name",
+        "ui_displayName": "Name",
         "param_type": "BodyParam",
         "ui_source": "operation"
       },
@@ -1154,10 +1088,10 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify folder name",
+        "description": "Folder parameter is the parent folder",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "folder",
+        "ui_displayName": "Folder",
         "param_type": "BodyParam",
         "ui_source": "operation"
       },
@@ -1171,82 +1105,7 @@
         "description": "Specify description Value",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "description",
-        "param_type": "BodyParam",
-        "ui_source": "operation"
-      }
-    ]
-  },
-  {
-    "operation": "Clone Program",
-    "description": "",
-    "operationId": "cloneProgramUsingPOST",
-    "operationApiType": "POST",
-    "operationPath": "/rest/asset/v1/program/{id}/clone.json",
-    "operationSummary": "Clone Program",
-    "operationDescription": "Clones the target program.  Required Permissions: Read-Write Assets",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "Solicit Response"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "{id}",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify ID",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "ID",
-        "param_type": "Path",
-        "ui_source": "operation"
-      },
-      {
-        "name": "name",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify name",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "name",
-        "param_type": "BodyParam",
-        "ui_source": "operation"
-      },
-      {
-        "name": "folder",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify folder name",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "folder",
-        "param_type": "BodyParam",
-        "ui_source": "operation"
-      },
-      {
-        "name": "description",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": false,
-        "datatype": "System.String",
-        "description": "Specify description Value",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "description",
+        "ui_displayName": "Description",
         "param_type": "BodyParam",
         "ui_source": "operation"
       }
@@ -1342,74 +1201,14 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify ID",
+        "description": "Required, A unique identifier for the program to be updated.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "ID",
         "param_type": "Path",
         "ui_source": "operation"
-      },
-      {
-        "name": "name",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify name",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "name",
-        "param_type": "BodyParam",
-        "ui_source": "operation"
-      },
-      {
-        "name": "Type",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify Type",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "Type",
-        "param_type": "BodyParam",
-        "ui_source": "operation"
-      },
-      {
-        "name": "description",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": false,
-        "datatype": "System.String",
-        "description": "Specify description Value",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "description",
-        "param_type": "BodyParam",
-        "ui_source": "operation"
       }
     ]
-  },
-  {
-    "operation": "Describe Program Member",
-    "description": "",
-    "operationId": "describeProgramMemberUsingGET2",
-    "operationApiType": "GET",
-    "operationPath": "/rest/v1/programs/members/describe.json",
-    "operationSummary": "Describe Program Member",
-    "operationDescription": "Returns metadata about program member objects in the target instance, including a list of all fields available for interaction via the APIs.  Required Permissions: Read-Only Lead, Read-Write Leads",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "Solicit Response"
-      }
-    ],
-    "parameters": []
   },
   {
     "operation": "Create Export Program Member Job",
@@ -1480,7 +1279,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify export ID",
+        "description": "Id of export batch job.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Export ID",
@@ -1539,103 +1338,11 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify export ID",
+        "description": "Id of export batch job.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Export ID",
         "param_type": "Path",
-        "ui_source": "operation"
-      }
-    ]
-  },
-  {
-    "operation": "Get Export Program Member File",
-    "description": "",
-    "operationId": "getExportProgramMembersFileUsingGET",
-    "operationApiType": "GET",
-    "operationPath": "/bulk/v1/program/members/export/{exportId}/file.json",
-    "operationSummary": "Get Export Program Member File",
-    "operationDescription": "Returns the file content of an export job.  The export job must be in \"Completed\" state.  Use Get Export Program Member Job Status endpoint to retrieve status of export job.  Required Permissions: Read-Only Lead<br><br>The file format is specified by calling the Create Export Program Member Job endpoint. The following is an example of the default file format (\"CSV\").<br><br><code>firstName,lastName,email</code><br><code>Marvin,Gaye,marvin.gaye@motown.com</code>",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "Solicit Response"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "{exportId}",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify export ID",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "Export ID",
-        "param_type": "Path",
-        "ui_source": "operation"
-      }
-    ]
-  },
-  {
-    "operation": "Cancel Export Program Member Job",
-    "description": "",
-    "operationId": "cancelExportProgramMembersUsingPOST",
-    "operationApiType": "POST",
-    "operationPath": "/bulk/v1/program/members/export/{exportId}/cancel.json",
-    "operationSummary": "Cancel Export Program Member Job",
-    "operationDescription": "Cancel export job.  Required Permissions: Read-Only Lead",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "Solicit Response"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "{exportId}",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify export ID",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "Export ID",
-        "param_type": "Path",
-        "ui_source": "operation"
-      },
-      {
-        "name": "Body",
-        "value": "",
-        "param_type": "Param",
-        "isVisible": false,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify the content of the body to upload.",
-        "ui_source": "operation",
-        "ui_EditorType": "TextArea",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "Body Content"
-      },
-      {
-        "name": "BodyType",
-        "value": "Raw",
-        "param_type": "Param",
-        "ui_source": "operation"
-      },
-      {
-        "name": "BodyFormat",
-        "value": "XML",
-        "param_type": "Param",
         "ui_source": "operation"
       }
     ]
@@ -1664,7 +1371,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify ID",
+        "description": "Id of the smart list to retrieve",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "ID",
@@ -1678,7 +1385,7 @@
         "bindable": true,
         "required": false,
         "datatype": "System.String",
-        "description": "Do you want to include rules ? true/false",
+        "description": "Set true to populate smart list rules.  Default false",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Include Rules",
@@ -1709,13 +1416,13 @@
         "value": "",
         "isVisible": true,
         "bindable": true,
-        "required": false,
+        "required": true,
         "datatype": "System.String",
-        "description": "Specify Name",
+        "description": "Name of smart list to retrieve",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Name",
-        "param_type": "Param",
+        "param_type": "UrlParam",
         "ui_source": "operation"
       }
     ]
@@ -1744,7 +1451,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify program Id",
+        "description": "Id for the email program containing smart list to retrieve",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Program Id",
@@ -1795,7 +1502,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify ID",
+        "description": "Id of smart list to clone",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "ID",
@@ -1812,7 +1519,7 @@
         "description": "Specify name",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "name",
+        "ui_displayName": "Name",
         "param_type": "BodyParam",
         "ui_source": "operation"
       },
@@ -1826,7 +1533,7 @@
         "description": "Specify folder name",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "folder",
+        "ui_displayName": "Folder",
         "param_type": "BodyParam",
         "ui_source": "operation"
       }
@@ -1856,39 +1563,11 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify ID",
+        "description": "Id of the smart list to delete",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "ID",
         "param_type": "Path",
-        "ui_source": "operation"
-      },
-      {
-        "name": "name",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify name",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "name",
-        "param_type": "BodyParam",
-        "ui_source": "operation"
-      },
-      {
-        "name": "folder",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify folder name",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "folder",
-        "param_type": "BodyParam",
         "ui_source": "operation"
       }
     ]
@@ -1935,11 +1614,11 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify name",
+        "description": "Name of the file",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "name",
-        "param_type": "Param",
+        "ui_displayName": "Name",
+        "param_type": "UrlParam",
         "ui_source": "operation"
       }
     ]
@@ -1968,7 +1647,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify ID",
+        "description": "Id for file in database",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "ID",
@@ -2010,7 +1689,7 @@
         "description": "Specify name",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "name",
+        "ui_displayName": "Name",
         "param_type": "BodyParam",
         "ui_source": "operation"
       },
@@ -2025,68 +1704,7 @@
         "description": "Specify description Value",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "description",
-        "param_type": "BodyParam",
-        "ui_source": "operation"
-      }
-    ]
-  },
-  {
-    "operation": "Update File Content",
-    "description": "",
-    "operationId": "updateContentUsingPOST",
-    "operationApiType": "POST",
-    "operationPath": "/rest/asset/v1/file/{id}/content.json",
-    "operationSummary": "Update File Content",
-    "operationDescription": "Replaces the current content of the file with the included payload.  Required Permissions: Read-Write Assets",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "Solicit Response"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "name",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify name",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "name",
-        "param_type": "BodyParam",
-        "ui_source": "operation"
-      },
-      {
-        "name": "folder",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify folder name",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "folder",
-        "param_type": "BodyParam",
-        "ui_source": "operation"
-      },
-      {
-        "name": "description",
-        "value": "",
-        "isVisible": true,
-        "bindable": true,
-        "required": false,
-        "datatype": "System.String",
-        "description": "Specify description Value",
-        "ui_EditorType": "Textbox",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "description",
+        "ui_displayName": "Description",
         "param_type": "BodyParam",
         "ui_source": "operation"
       }
@@ -2134,7 +1752,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify ID",
+        "description": "Id of the static list to retrieve",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "ID",
@@ -2167,11 +1785,11 @@
         "bindable": true,
         "required": false,
         "datatype": "System.String",
-        "description": "Specify Name ",
+        "description": "Name of static list to retrieve",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Name",
-        "param_type": "Param",
+        "param_type": "UrlParam",
         "ui_source": "operation"
       }
     ]
@@ -2203,7 +1821,7 @@
         "description": "Specify name",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "name",
+        "ui_displayName": "Name",
         "param_type": "BodyParam",
         "ui_source": "operation"
       },
@@ -2217,7 +1835,7 @@
         "description": "Specify folder name",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "folder",
+        "ui_displayName": "Folder",
         "param_type": "BodyParam",
         "ui_source": "operation"
       },
@@ -2259,11 +1877,25 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify ID",
+        "description": "Id of static list to update",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "ID",
         "param_type": "Path",
+        "ui_source": "operation"
+      },
+      {
+        "name": "name",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Specify name to update the static list name and must be unique.",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Name",
+        "param_type": "BodyParam",
         "ui_source": "operation"
       },
       {
@@ -2273,10 +1905,10 @@
         "bindable": true,
         "required": false,
         "datatype": "System.String",
-        "description": "Specify description Value",
+        "description": "Specify description to update the static list description.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "description",
+        "ui_displayName": "Description",
         "param_type": "BodyParam",
         "ui_source": "operation"
       }
@@ -2306,7 +1938,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify ID",
+        "description": "Id of the static list to delete",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "ID",
@@ -2316,12 +1948,12 @@
     ]
   },
   {
-    "operation": "Add to List",
+    "operation": "Add Leads to List",
     "description": "",
     "operationId": "addLeadsToListUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/v1/lists/{listId}/leads.json",
-    "operationSummary": "Add to List",
+    "operationSummary": "Add Leads to List",
     "operationDescription": "Adds a given set of person records to a target static list.  There is a limit of 300 lead ids per request.  Required Permissions: Read-Write Lead",
     "deprecated": false,
     "adapterProperties": [
@@ -2339,25 +1971,25 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify ID",
+        "description": "Id of target list",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "ID",
+        "ui_displayName": "List ID",
         "param_type": "Path",
         "ui_source": "operation"
       },
       {
-        "name": "{id}",
+        "name": "id",
         "value": "",
         "isVisible": true,
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify ID",
+        "description": "Comma-separated list of lead ids to add to the list",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "ID",
-        "param_type": "Param",
+        "param_type": "UrlParam",
         "ui_source": "operation"
       }
     ]
@@ -2386,7 +2018,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify list ID",
+        "description": "Id of static list to remove leads from",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "List ID",
@@ -2394,7 +2026,7 @@
         "ui_source": "operation"
       },
       {
-        "name": "{id}",
+        "name": "id",
         "value": "",
         "isVisible": true,
         "bindable": true,
@@ -2404,7 +2036,7 @@
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "ID",
-        "param_type": "Param",
+        "param_type": "UrlParam",
         "ui_source": "operation"
       }
     ]
@@ -2433,7 +2065,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify program Id",
+        "description": "The id of target program.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Program Id",
@@ -2444,7 +2076,7 @@
         "name": "Body",
         "value": "",
         "param_type": "Param",
-        "isVisible": true,
+        "isVisible": false,
         "bindable": true,
         "required": true,
         "datatype": "System.Byte[]",
@@ -2489,7 +2121,7 @@
         "name": "Body",
         "value": "",
         "param_type": "Param",
-        "isVisible": true,
+        "isVisible": false,
         "bindable": true,
         "required": true,
         "datatype": "System.Byte[]",
@@ -2537,10 +2169,10 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify field API name",
+        "description": "The API name of program member field",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "field API name",
+        "ui_displayName": "Field API Name",
         "param_type": "Path",
         "ui_source": "operation"
       },
@@ -2556,7 +2188,7 @@
         "ui_source": "operation",
         "ui_EditorType": "FileEditor",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "Body content to append"
+        "ui_displayName": "Body Content to Append"
       },
       {
         "name": "BodyType",
@@ -2614,7 +2246,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify program Id",
+        "description": "The id of target program.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Program Id",
@@ -2673,7 +2305,7 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify program Id",
+        "description": "The id of target program.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Program Id",
@@ -2732,10 +2364,10 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify field API name",
+        "description": "The API name of program member field",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "field API name",
+        "ui_displayName": "Field API Name",
         "param_type": "Path",
         "ui_source": "operation"
       }
@@ -2765,7 +2397,7 @@
         "bindable": true,
         "required": false,
         "datatype": "System.String",
-        "description": "Specify Batch Size",
+        "description": "The batch size to return. The max and default value is 300.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Batch Size",
@@ -2816,10 +2448,10 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify campaignId",
+        "description": "Specify Campaign Id",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "campaignId",
+        "ui_displayName": "Campaign Id",
         "param_type": "Path",
         "ui_source": "operation"
       }
@@ -2849,10 +2481,10 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify campaignId",
+        "description": "The id of the campaign to trigger",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "campaignId",
+        "ui_displayName": "Campaign Id",
         "param_type": "Path",
         "ui_source": "operation"
       },
@@ -2908,10 +2540,10 @@
         "bindable": true,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify campaignId",
+        "description": "Id of the batch campaign to schedule.",
         "ui_EditorType": "Textbox",
         "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "campaignId",
+        "ui_displayName": "Campaign Id",
         "param_type": "Path",
         "ui_source": "operation"
       },
