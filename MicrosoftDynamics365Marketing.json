@@ -222,13 +222,13 @@
       ]
     },
     {
-      "operation": "Creates an subject record",
+      "operation": "Get list of subject records",
       "description": "",
       "operationId": "",
       "operationApiType": "GET",
       "operationPath": "/subjects",
-      "operationSummary": "Creates an subject record",
-      "operationDescription": "Creates an subject record",
+      "operationSummary": "Get list of subject records",
+      "operationDescription": "Get list of subject records",
       "deprecated": false,
       "adapterProperties": [
         {
@@ -462,7 +462,7 @@
       ]
     },
     {
-      "operation": "Get list of invoice records",
+      "operation": "Get list of lead records",
       "description": "",
       "operationId": "",
       "operationApiType": "GET",
@@ -582,13 +582,13 @@
       ]
     },
     {
-      "operation": "Get list of item reeords",
+      "operation": "Get list of item records",
       "description": "",
       "operationId": "",
       "operationApiType": "GET",
       "operationPath": "/products",
-      "operationSummary": "Get list of item reeords",
-      "operationDescription": "Get list of item reeords",
+      "operationSummary": "Get list of item records",
+      "operationDescription": "Get list of item records",
       "deprecated": false,
       "adapterProperties": [
         {

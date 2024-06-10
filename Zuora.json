@@ -83,6 +83,7 @@
         "name": "{account-key}",
         "value": "",
         "param_type": "Path",
+        "required": true,
         "isVisible": true,
         "bindable": true,
         "ui_source": "operation",
@@ -675,24 +676,6 @@
     "parameters": []
   },
   {
-    "operation": "List accounts",
-    "description": "",
-    "operationId": "GET_Account",
-    "operationApiType": "GET",
-    "operationPath": "/object-query/accounts",
-    "operationSummary": "List accounts",
-    "operationDescription": "List accounts",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "Solicit Response"
-      }
-    ],
-    "parameters": []
-  },
-  {
     "operation": "List amendments",
     "description": "",
     "operationId": "GET_Account",
@@ -840,10 +823,10 @@
     "operation": "Create a product rate plan definition",
     "description": "",
     "operationId": "POST_ProductRat",
-    "operationApiType": "GET",
+    "operationApiType": "POST",
     "operationPath": "/v1/product-rateplan-definitions",
-    "operationSummary": "reate a product rate plan definition",
-    "operationDescription": "reate a product rate plan definition",
+    "operationSummary": "Create a product rate plan definition",
+    "operationDescription": "Create a product rate plan definition",
     "deprecated": false,
     "adapterProperties": [
       {
@@ -877,6 +860,53 @@
         "name": "BodyFormat",
         "value": "JSON",
         "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List product rate plan definitions",
+    "description": "",
+    "operationId": "GET_ProductRat",
+    "operationApiType": "GET",
+    "operationPath": "/v1/product-rateplan-definitions",
+    "operationSummary": "Get a product rate plan definition",
+    "operationDescription": "Get a product rate plan definition",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "charge",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify definition id of the workflow",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Charge",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "rateplan",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify definition id of the workflow",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Rate Plan",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
         "ui_source": "operation"
       }
     ]

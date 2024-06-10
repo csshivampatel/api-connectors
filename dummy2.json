@@ -1,0 +1,556 @@
+[
+  {
+    "operation": "Get list of fulfillment request records",
+    "description": "",
+    "operationId": "fulfillmentRequestGET",
+    "operationApiType": "GET",
+    "operationPath": "/fulfillmentRequest",
+    "operationSummary": "Get list of fulfillment request records",
+    "operationDescription": "Get list of fulfillment request records",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Prefer",
+        "value": "",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response."
+      },
+      {
+        "name": "X-NetSuite-Idempotency-Key",
+        "value": "",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Idempotency Key",
+        "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored."
+      },
+      {
+        "name": "limit",
+        "value": "100",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "offset",
+        "value": "0",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "q",
+        "value": "",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_category": "Misc",
+        "ui_displayName": "q",
+        "description": "The search query that is used to filter results."
+      }
+    ]
+  },
+  {
+    "operation": "Insert fulfillment request record",
+    "description": "",
+    "operationId": "fulfillmentRequestPOST",
+    "operationApiType": "POST",
+    "operationPath": "/fulfillmentRequest",
+    "operationSummary": "Insert fulfillment request record",
+    "operationDescription": "Insert fulfillment request record",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Prefer",
+        "value": "",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response."
+      },
+      {
+        "name": "X-NetSuite-Idempotency-Key",
+        "value": "",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Idempotency Key",
+        "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored."
+      },
+      {
+        "name": "X-NetSuite-PropertyNameValidation",
+        "value": "Warning",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Property Name Validation",
+        "description": "Sets the strictness of property name validation."
+      },
+      {
+        "name": "X-NetSuite-PropertyValueValidation",
+        "value": "Error",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Property Value Validation",
+        "description": "Sets the strictness of property value validation."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "replace",
+        "value": "",
+        "param_type": "UrlParam",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Replace",
+        "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma."
+      }
+    ]
+  },
+  {
+    "operation": "Remove fulfillment request record",
+    "description": "",
+    "operationId": "fulfillmentRequestDELETE",
+    "operationApiType": "DELETE",
+    "operationPath": "/fulfillmentRequest/{id}",
+    "operationSummary": "Remove fulfillment request record",
+    "operationDescription": "Remove fulfillment request record",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{id}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "Id",
+        "description": "Insert fulfillment request id"
+      },
+      {
+        "name": "Prefer",
+        "value": "",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response."
+      },
+      {
+        "name": "X-NetSuite-Idempotency-Key",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Idempotency Key",
+        "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored."
+      }
+    ]
+  },
+  {
+    "operation": "Get fulfillment request record by id",
+    "description": "",
+    "operationId": "fulfillmentRequestGET2",
+    "operationApiType": "GET",
+    "operationPath": "/fulfillmentRequest/{id}",
+    "operationSummary": "Get fulfillment request record by id",
+    "operationDescription": "Get fulfillment request record by id",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{id}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "Id",
+        "description": "Insert fulfillment request id"
+      },
+      {
+        "name": "Prefer",
+        "value": "",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response."
+      },
+      {
+        "name": "X-NetSuite-Idempotency-Key",
+        "value": "",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Idempotency Key",
+        "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored."
+      },
+      {
+        "name": "expandSubResources",
+        "value": "true",
+        "param_type": "UrlParam",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Expand Sub Resources",
+        "description": "Set to 'true' to automatically expand all sublists, sublist lines, and subrecords on this record."
+      },
+      {
+        "name": "simpleEnumFormat",
+        "value": "true",
+        "param_type": "UrlParam",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Simple Enum Format",
+        "description": "Set to true to return enumeration values in a format that only shows the internal ID value."
+      }
+    ]
+  },
+  {
+    "operation": "Update fulfillment request record",
+    "description": "",
+    "operationId": "fulfillmentRequestPATCH",
+    "operationApiType": "PATCH",
+    "operationPath": "/fulfillmentRequest/{id}",
+    "operationSummary": "Update fulfillment request record",
+    "operationDescription": "Update fulfillment request record",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{id}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "Id",
+        "description": "Insert expense ratio id"
+      },
+      {
+        "name": "Prefer",
+        "value": "",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response."
+      },
+      {
+        "name": "X-NetSuite-Idempotency-Key",
+        "value": "",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Idempotency Key",
+        "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored."
+      },
+      {
+        "name": "X-NetSuite-PropertyNameValidation",
+        "value": "Warning",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Property Name Validation",
+        "description": "Sets the strictness of property name validation."
+      },
+      {
+        "name": "X-NetSuite-PropertyValueValidation",
+        "value": "Error",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Property Value Validation",
+        "description": "Sets the strictness of property value validation."
+      },
+      {
+        "name": "replaceSelectedFields",
+        "value": "false",
+        "param_type": "UrlParam",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Expand Sub Resources",
+        "description": "If set to 'true', all fields that should be deleted in the update request, including body fields, must be included in the 'replace' query parameter."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Insert or Update fulfillment request record",
+    "description": "",
+    "operationId": "fulfillmentRequestPUT",
+    "operationApiType": "PUT",
+    "operationPath": "/fulfillmentRequest/{id}",
+    "operationSummary": "Insert or Update fulfillment request record",
+    "operationDescription": "Insert or Update fulfillment request record",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{id}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "Id",
+        "description": "Insert fulfillment request id"
+      },
+      {
+        "name": "Prefer",
+        "value": "",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response."
+      },
+      {
+        "name": "X-NetSuite-Idempotency-Key",
+        "value": "",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Idempotency Key",
+        "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored."
+      },
+      {
+        "name": "X-NetSuite-PropertyNameValidation",
+        "value": "Warning",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Property Name Validation",
+        "description": "Sets the strictness of property name validation."
+      },
+      {
+        "name": "X-NetSuite-PropertyValueValidation",
+        "value": "Error",
+        "param_type": "Header",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Property Value Validation",
+        "description": "Sets the strictness of property value validation."
+      },
+      {
+        "name": "replaceSelectedFields",
+        "value": "false",
+        "param_type": "UrlParam",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Expand Sub Resources",
+        "description": "If set to 'true', all fields that should be deleted in the update request, including body fields, must be included in the 'replace' query parameter."
+      },
+      {
+        "name": "replace",
+        "value": "true",
+        "param_type": "UrlParam",
+        "required": false,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Replace",
+        "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]
