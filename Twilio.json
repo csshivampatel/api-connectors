@@ -37,7 +37,8 @@
         "ui_source": "operation",
         "sourceProperty": "Sid",
         "ui_category": "Publish Mode Properties",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "SID"
       },
       {
         "name": "Content-Type",
@@ -111,7 +112,8 @@
         "ui_source": "operation",
         "sourceProperty": "Sid",
         "ui_category": "Publish Mode Properties",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "SID"
       },
       {
         "name": "Content-Type",
@@ -185,7 +187,8 @@
         "ui_source": "operation",
         "sourceProperty": "Sid",
         "ui_category": "Publish Mode Properties",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "SID"
       },
       {
         "name": "Content-Type",
@@ -198,13 +201,13 @@
         "value": "",
         "isVisible": true,
         "bindable": true,
-        "required": true,
+        "required": false,
         "datatype": "System.String",
         "description": "Set body",
         "ui_EditorType": "Textbox",
         "ui_category": "Publish Mode Properties",
         "ui_displayName": "Body",
-        "param_type": "BodyParam",
+        "param_type": "Param",
         "ui_source": "operation"
       },
       {
@@ -212,7 +215,7 @@
         "value": "",
         "isVisible": true,
         "bindable": true,
-        "required": true,
+        "required": false,
         "datatype": "System.String",
         "description": "Set status",
         "ui_EditorType": "Textbox",

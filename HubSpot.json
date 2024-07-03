@@ -1,11 +1,11 @@
 [
   {
-    "operation": "Create Associations",
+    "operation": "Create an Associations",
     "description": "",
     "operationId": "post-/crm/v4/associations/{fromObjectType}/{toObjectType}/labels",
     "operationApiType": "POST",
     "operationPath": "/crm/v4/associations/{fromObjectType}/{toObjectType}/labels",
-    "operationSummary": "Create Associations",
+    "operationSummary": "Create an Associations",
     "operationDescription": "Create an Association.",
     "deprecated": false,
     "adapterProperties": [
@@ -22,13 +22,13 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "description": "Specify Contact ID .",
+        "description": "The ID of the object you're associating",
         "ui_EditorType": "Textbox",
         "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",
         "ui_source": "operation",
         "datatype": "System.String",
-        "ui_displayName": "From object type"
+        "ui_displayName": "From Object Type"
       },
       {
         "name": "{toObjectType}",
@@ -36,7 +36,7 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "description": "Specify Contact ID .",
+        "description": "The ID of the object you're associating the record to",
         "ui_EditorType": "Textbox",
         "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",
@@ -73,7 +73,7 @@
     ]
   },
   {
-    "operation": "Create Company",
+    "operation": "Create a Company",
     "description": "",
     "operationId": "post-/crm/v3/objects/companies",
     "operationApiType": "POST",
@@ -118,7 +118,7 @@
     ]
   },
   {
-    "operation": "Create a contact",
+    "operation": "Create a Contact",
     "description": "",
     "operationId": "post-/crm/v3/objects/contacts_create",
     "operationApiType": "POST",
@@ -208,57 +208,12 @@
     ]
   },
   {
-    "operation": "Create a new schema",
-    "description": "",
-    "operationId": "post-/crm-object-schemas/v3/schemas_create",
-    "operationApiType": "POST",
-    "operationPath": "/crm/v3/schemas",
-    "operationSummary": "Create a new schema",
-    "operationDescription": "Define a new object schema, along with custom properties and associations. The entire object schema, including its object type ID, properties, and associations will be returned in the response.",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "Solicit Response"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "Body",
-        "value": "",
-        "param_type": "Param",
-        "isVisible": false,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify the content of the body to upload.",
-        "ui_source": "operation",
-        "ui_EditorType": "TextArea",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "Body Content"
-      },
-      {
-        "name": "BodyType",
-        "value": "Raw",
-        "param_type": "Param",
-        "ui_source": "operation"
-      },
-      {
-        "name": "BodyFormat",
-        "value": "JSON",
-        "param_type": "Param",
-        "ui_source": "operation"
-      }
-    ]
-  },
-  {
-    "operation": "Create Deal",
+    "operation": "Create a Deal",
     "description": "",
     "operationId": "post-/crm/v3/objects/deals_create",
     "operationApiType": "POST",
     "operationPath": "/crm/v3/objects/deals",
-    "operationSummary": "Create Deal",
+    "operationSummary": "Create a Deal",
     "operationDescription": "Create a deal with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard deals is provided.",
     "deprecated": false,
     "adapterProperties": [
@@ -343,7 +298,7 @@
     ]
   },
   {
-    "operation": "Get Line item",
+    "operation": "Get Line Items",
     "description": "",
     "operationId": "get-/crm/v3/objects/line-items_getPage",
     "operationApiType": "GET",
@@ -361,7 +316,7 @@
     "parameters": []
   },
   {
-    "operation": "Get a line item by lineItemId",
+    "operation": "Get a Line Item by Line Item ID",
     "description": "",
     "operationId": "get-/crm/v3/objects/line-item/{lineItemId}_getById",
     "operationApiType": "GET",
@@ -379,6 +334,7 @@
     "parameters": [
       {
         "name": "{lineItemId}",
+        "description": "The ID of the line item",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -387,7 +343,7 @@
         "ui_source": "operation",
         "ui_category": "Misc",
         "datatype": "System.String",
-        "ui_displayName": "List Item Id"
+        "ui_displayName": "Line Item Id"
       }
     ]
   },
@@ -410,6 +366,7 @@
     "parameters": [
       {
         "name": "{lineItemId}",
+        "description": "The ID of the line item",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -418,7 +375,7 @@
         "ui_source": "operation",
         "ui_category": "Misc",
         "datatype": "System.String",
-        "ui_displayName": "List Item Id"
+        "ui_displayName": "Line Item Id"
       },
       {
         "name": "Body",
@@ -494,7 +451,7 @@
     ]
   },
   {
-    "operation": "Create Ticket",
+    "operation": "Create a Ticket",
     "description": "",
     "operationId": "post-/crm/v3/objects/tickets_create",
     "operationApiType": "POST",
@@ -557,12 +514,12 @@
     "parameters": []
   },
   {
-    "operation": "Get Company by Id",
+    "operation": "Get a Company by Id",
     "description": "",
     "operationId": "get-/crm/v3/objects/companies/{companyId}_getById",
     "operationApiType": "GET",
     "operationPath": "/crm/v3/objects/companies/{companyId}",
-    "operationSummary": "Get All Companies",
+    "operationSummary": "Get a Company by Id",
     "operationDescription": "Read an Object identified by companyId.",
     "deprecated": false,
     "adapterProperties": [
@@ -575,6 +532,7 @@
     "parameters": [
       {
         "name": "{companyId}",
+        "description": "Specify the company id to retrieve company details.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -583,7 +541,7 @@
         "ui_source": "operation",
         "ui_category": "Misc",
         "datatype": "System.String",
-        "ui_displayName": "Company Id"
+        "ui_displayName": "Company ID"
       }
     ]
   },
@@ -606,7 +564,7 @@
     "parameters": []
   },
   {
-    "operation": "Get Contact By Id",
+    "operation": "Get a Contact By Id",
     "description": "",
     "operationId": "get-/crm/v3/objects/contacts/{contactId}_getById",
     "operationApiType": "GET",
@@ -628,7 +586,7 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "description": "Specify Contact ID .",
+        "description": "Specify the contact id to retrieve contact record.",
         "ui_EditorType": "Textbox",
         "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",
@@ -693,7 +651,7 @@
     "parameters": []
   },
   {
-    "operation": "Get All Tickets",
+    "operation": "Get all Tickets",
     "description": "",
     "operationId": "get-/crm/v3/objects/tickets_getPage",
     "operationApiType": "GET",
@@ -711,7 +669,7 @@
     "parameters": []
   },
   {
-    "operation": "Get Ticket By Id",
+    "operation": "Get Ticket By ID",
     "description": "",
     "operationId": "get-/crm/v3/objects/tickets/{ticketId}_getById",
     "operationApiType": "GET",
@@ -733,7 +691,7 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "description": "Specify Ticket ID .",
+        "description": "Specify ticket id to retrieve the ticket details.",
         "ui_EditorType": "Textbox",
         "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",
@@ -744,7 +702,7 @@
     ]
   },
   {
-    "operation": "Delete contacts",
+    "operation": "Delete Contacts",
     "description": "",
     "operationId": "delete-/crm/v3/objects/contacts/{contactId}_archive",
     "operationApiType": "DELETE",
@@ -766,7 +724,7 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "description": "Specify Ticket ID .",
+        "description": "Specify contact id to delete contact record.",
         "ui_EditorType": "Textbox",
         "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",
@@ -821,6 +779,7 @@
     "parameters": [
       {
         "name": "{companyId}",
+        "description": "Specify company id to update the contact record.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -829,7 +788,8 @@
         "ui_source": "operation",
         "sourceProperty": "companyId",
         "ui_category": "Misc",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "Company ID"
       },
       {
         "name": "Body",
@@ -878,6 +838,7 @@
     "parameters": [
       {
         "name": "{companyId}",
+        "description": "Specify delete id to delete company record.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -886,12 +847,13 @@
         "ui_source": "operation",
         "sourceProperty": "companyId",
         "ui_category": "Misc",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "ui_displayName": "Company ID"
       }
     ]
   },
   {
-    "operation": "Update Contact",
+    "operation": "Update a Contact",
     "description": "",
     "operationId": "patch-/crm/v3/objects/contacts/{contactId}_update",
     "operationApiType": "PATCH",
@@ -913,7 +875,7 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "description": "Specify Contact ID .",
+        "description": "Specify contact id to update the contact record.",
         "ui_EditorType": "Textbox",
         "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",
@@ -950,7 +912,7 @@
     ]
   },
   {
-    "operation": "Update Custom Object",
+    "operation": "Update Existing Custom Object",
     "description": "",
     "operationId": "patch-/crm-object-schemas/v3/schemas/{objectType}_update",
     "operationApiType": "PATCH",
@@ -972,7 +934,7 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "description": "Specify Contact ID .",
+        "description": "Specify Object Type to update the Custom Object record .",
         "ui_EditorType": "Textbox",
         "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",
@@ -1009,7 +971,7 @@
     ]
   },
   {
-    "operation": "Update Deal",
+    "operation": "Update a Deal",
     "description": "",
     "operationId": "patch-/crm/v3/objects/deals/{dealId}_update",
     "operationApiType": "PATCH",
@@ -1031,7 +993,7 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "description": "Specify Contact ID .",
+        "description": "Specify deal id to update the deal record.",
         "ui_EditorType": "Textbox",
         "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",
@@ -1068,7 +1030,7 @@
     ]
   },
   {
-    "operation": "Update Product",
+    "operation": "Update a Product",
     "description": "",
     "operationId": "patch-/crm/v3/objects/products/{productId}_update",
     "operationApiType": "PATCH",
@@ -1090,7 +1052,7 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "description": "Specify Contact ID .",
+        "description": "Specify Prodcut Id to update the product record.",
         "ui_EditorType": "Textbox",
         "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",
@@ -1127,7 +1089,7 @@
     ]
   },
   {
-    "operation": "Update ticket",
+    "operation": "Update a Ticket",
     "description": "",
     "operationId": "patch-/crm/v3/objects/tickets/{ticketId}_update",
     "operationApiType": "PATCH",
@@ -1149,13 +1111,39 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "description": "Specify Contact ID .",
+        "description": "Specify ticket id to update the ticket record.",
         "ui_EditorType": "Textbox",
         "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",
         "ui_source": "operation",
         "datatype": "System.String",
         "ui_displayName": "Ticket ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
       }
     ]
   },
@@ -1182,13 +1170,13 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "description": "Specify Contact ID .",
+        "description": "The ID of the object you're associating.",
         "ui_EditorType": "Textbox",
         "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",
         "ui_source": "operation",
         "datatype": "System.String",
-        "ui_displayName": "From Bbject Type"
+        "ui_displayName": "From Object Type"
       },
       {
         "name": "{toObjectType}",
@@ -1196,7 +1184,7 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "description": "Specify Contact ID .",
+        "description": "The ID of the object you're associating the record to.",
         "ui_EditorType": "Textbox",
         "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",
@@ -1233,7 +1221,7 @@
     ]
   },
   {
-    "operation": "Get Custom Object by ObjectType",
+    "operation": "Get Custom Object by Object Type",
     "description": "",
     "operationId": "get-/crm-object-schemas/v3/schemas/{objectType}_getById",
     "operationApiType": "GET",
@@ -1255,7 +1243,7 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "description": "Specify Contact ID .",
+        "description": "Specify Object Type to get details of Custom Object record.",
         "ui_EditorType": "Textbox",
         "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",
@@ -1288,7 +1276,7 @@
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "description": "Specify Contact ID .",
+        "description": "Specify Product ID to retrieve details of product record.",
         "ui_EditorType": "Textbox",
         "param_type": "Path",
         "ui_category": "Subscribe Mode Properties",

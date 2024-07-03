@@ -19,13 +19,16 @@
             {
                 "name": "{fileId}",
                 "value": "",
-                "param_type": "Path",
                 "isVisible": true,
                 "bindable": true,
-                "ui_EditorType": "DSDialogue",
-                "ui_source": "adapter",
+                "required": true,
+                "description": "Specify File ID .",
+                "ui_EditorType": "Textbox",
+                "param_type": "Path",
+                "ui_category": "Subscribe Mode Properties",
+                "ui_source": "operation",
                 "datatype": "System.String",
-                "sourceProperty": "SendFolder"
+                "ui_displayName": "File ID"
             },
             {
                 "name": "Body",
@@ -34,11 +37,10 @@
                 "isVisible": false,
                 "bindable": true,
                 "required": true,
-                "datatype": "System.Byte[]",
-                "description": "Specify the content of the blob to upload.",
-                "uiEditor": "FileEditor",
+                "datatype": "System.String",
+                "description": "Specify the content of the Body",
                 "ui_source": "operation",
-                "ui_EditorType": "FileEditor",
+                "ui_EditorType": "TextArea",
                 "ui_category": "Subscribe Mode Properties"
             },
             {
@@ -79,11 +81,10 @@
             "isVisible": false,
             "bindable": true,
             "required": true,
-            "datatype": "System.Byte[]",
-            "description": "Specify the content of the blob to upload.",
-            "uiEditor": "FileEditor",
+            "datatype": "System.String",
+            "description": "Specify the content of the Body",
             "ui_source": "operation",
-            "ui_EditorType": "FileEditor",
+            "ui_EditorType": "TextArea",
             "ui_category": "Subscribe Mode Properties"
             },
             {
@@ -154,12 +155,16 @@
             {
                 "name": "{fileId}",
                 "value": "",
-                "param_type": "Path",
                 "isVisible": true,
                 "bindable": true,
-                "ui_EditorType": "DSDialogue",
-                "ui_source": "adapter",
-                "sourceProperty": "SendFolder"
+                "required": true,
+                "description": "Specify File ID .",
+                "ui_EditorType": "Textbox",
+                "param_type": "Path",
+                "ui_category": "Subscribe Mode Properties",
+                "ui_source": "operation",
+                "datatype": "System.String",
+                "ui_displayName": "File ID"
             }
         ]
        },
@@ -183,13 +188,16 @@
             {
                 "name": "{fileId}",
                 "value": "",
-                "param_type": "Path",
                 "isVisible": true,
                 "bindable": true,
-                "ui_EditorType": "DSDialogue",
-                "ui_source": "adapter",
+                "required": true,
+                "description": "Specify File ID .",
+                "ui_EditorType": "Textbox",
+                "param_type": "Path",
+                "ui_category": "Subscribe Mode Properties",
+                "ui_source": "operation",
                 "datatype": "System.String",
-                "sourceProperty": "SendFolder"
+                "ui_displayName": "File ID"
             }
         ]
        },
@@ -213,12 +221,16 @@
         {
             "name": "{fileId}",
             "value": "",
-            "param_type": "Path",
             "isVisible": true,
             "bindable": true,
-            "ui_EditorType": "DSDialogue",
-            "ui_source": "adapter",
-            "sourceProperty": "SendFolder"
+            "required": true,
+            "description": "Specify File ID .",
+            "ui_EditorType": "Textbox",
+            "param_type": "Path",
+            "ui_category": "Subscribe Mode Properties",
+            "ui_source": "operation",
+            "datatype": "System.String",
+            "ui_displayName": "File ID"
         },
         {
             "name": "Body",
@@ -227,11 +239,10 @@
             "isVisible": false,
             "bindable": true,
             "required": true,
-            "datatype": "System.Byte[]",
-            "description": "Specify the content of the blob to upload.",
-            "uiEditor": "FileEditor",
+            "datatype": "System.String",
+            "description": "Specify the content of the Body",
             "ui_source": "operation",
-            "ui_EditorType": "FileEditor",
+            "ui_EditorType": "TextArea",
             "ui_category": "Subscribe Mode Properties"
         },
         {
