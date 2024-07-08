@@ -744,7 +744,7 @@
         "name": "x-ms-range",
         "value": "bytes=0-511",
         "param_type": "Header",
-        "isVisible": true,
+        "isVisible": false,
         "bindable": false,
         "required": true,
         "datatype": "System.String",

@@ -181,18 +181,13 @@
         "name": "Content-Length",
         "value": "",
         "param_type": "Header",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_source": "operation"
       },
       {
         "name": "x-ms-range",
         "value": "",
         "param_type": "Header",
-        "isVisible": true,
+        "isVisible": false,
         "bindable": true,
         "required": true,
         "datatype": "System.String",
