@@ -4,7 +4,7 @@
     "description": "",
     "operationId": "fetch_message",
     "operationApiType": "GET",
-    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}",
+    "operationPath": "/2010-04-01/Accounts/{AccountSID}/Messages/{Sid}",
     "operationSummary": "Fetch message",
     "operationDescription": "Fetch a specific Message",
     "deprecated": false,
@@ -17,14 +17,15 @@
     ],
     "parameters": [
       {
-        "name": "AccountSid",
+        "name": "AccountSID",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "sourceProperty": "AccountSid",
+        "ui_source": "operation",
+        "ui_displayName": "Account SID",
+        "datatype": "System.String",
         "ui_category": "Publish Mode Properties"
       },
       {
@@ -79,7 +80,7 @@
     "description": "",
     "operationId": "delete_message",
     "operationApiType": "DELETE",
-    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}",
+    "operationPath": "/2010-04-01/Accounts/{AccountSID}/Messages/{Sid}",
     "operationSummary": "Delete message",
     "operationDescription": "Deletes a Message resource from the specified account",
     "deprecated": false,
@@ -92,14 +93,15 @@
     ],
     "parameters": [
       {
-        "name": "AccountSid",
+        "name": "AccountSID",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "sourceProperty": "AccountSid",
+        "ui_source": "operation",
+        "ui_displayName": "Account SID",
+        "datatype": "System.String",
         "ui_category": "Publish Mode Properties"
       },
       {
@@ -154,7 +156,7 @@
     "description": "",
     "operationId": "update_message",
     "operationApiType": "POST",
-    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}",
+    "operationPath": "/2010-04-01/Accounts/{AccountSID}/Messages/{Sid}",
     "operationSummary": "Update message",
     "operationDescription": "Update a Message resource (used to redact Message `body` text and to cancel not-yet-sent messages)",
     "deprecated": false,
@@ -167,14 +169,15 @@
     ],
     "parameters": [
       {
-        "name": "AccountSid",
+        "name": "AccountSID",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "sourceProperty": "AccountSid",
+        "ui_source": "operation",
+        "ui_displayName": "Account SID",
+        "datatype": "System.String",
         "ui_category": "Publish Mode Properties"
       },
       {
@@ -243,7 +246,7 @@
     "description": "",
     "operationId": "send_message",
     "operationApiType": "POST",
-    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages",
+    "operationPath": "/2010-04-01/Accounts/{AccountSID}/Messages",
     "operationSummary": "Send mesage to given number",
     "operationDescription": "Send mesage to given number",
     "deprecated": false,
@@ -256,14 +259,15 @@
     ],
     "parameters": [
       {
-        "name": "AccountSid",
+        "name": "AccountSID",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "sourceProperty": "AccountSid",
+        "ui_source": "operation",
+        "ui_displayName": "Account SID",
+        "datatype": "System.String",
         "ui_category": "Publish Mode Properties"
       },
       {
@@ -305,7 +309,7 @@
     "description": "",
     "operationId": "list_messages",
     "operationApiType": "GET",
-    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages",
+    "operationPath": "/2010-04-01/Accounts/{AccountSID}/Messages",
     "operationSummary": "List messages",
     "operationDescription": "Send mesage to given number",
     "deprecated": false,
@@ -318,14 +322,15 @@
     ],
     "parameters": [
       {
-        "name": "AccountSid",
+        "name": "AccountSID",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "sourceProperty": "AccountSid",
+        "ui_source": "operation",
+        "ui_displayName": "Account SID",
+        "datatype": "System.String",
         "ui_category": "Publish Mode Properties"
       },
       {
@@ -361,7 +366,7 @@
     "description": "",
     "operationId": "list_messages",
     "operationApiType": "GET",
-    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages",
+    "operationPath": "/2010-04-01/Accounts/{AccountSID}/Messages",
     "operationSummary": "List messages between Specified Ranges",
     "operationDescription": "Send mesage to given number between specified range",
     "deprecated": false,
@@ -374,14 +379,15 @@
     ],
     "parameters": [
       {
-        "name": "AccountSid",
+        "name": "AccountSID",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "ui_source": "adapter",
-        "sourceProperty": "AccountSid",
+        "ui_source": "operation",
+        "ui_displayName": "Account SID",
+        "datatype": "System.String",
         "ui_category": "Publish Mode Properties"
       },
       {
