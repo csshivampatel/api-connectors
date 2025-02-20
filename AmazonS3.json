@@ -1,10 +1,10 @@
 [
   {
-    "operation": "Aborts a multipart upload",
+    "operation": "Aborts a Multipart Upload",
     "description": "",
     "operationId": "AbortMultipartUpload",
     "operationApiType": "DELETE",
-    "operationPath": "/{Key}",
+    "operationPath": "/{bucket}/{Key}",
     "operationSummary": "Aborts a multipart upload",
     "operationDescription": "This action aborts a multipart upload. After a multipart upload is aborted, no additional parts can be uploaded using that upload ID. The storage consumed by any previously uploaded parts will be freed. However, if any part uploads are currently in progress, those part uploads might or might not succeed. As a result, it might be necessary to abort a given multipart upload multiple times in order to completely free all storage consumed by all parts.",
     "deprecated": false,
@@ -17,6 +17,18 @@
     ],
     "parameters": [
       {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
+      {
         "name": "{Key}",
         "value": "",
         "param_type": "Path",
@@ -26,7 +38,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Key"
+        "ui_displayName": "Key",
+        "description":"The unique identifier of an object within an S3 bucket, used to locate and perform actions on the object."
       },
       {
         "name": "uploadId",
@@ -37,7 +50,9 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Upload ID",
+        "description":"A unique identifier for a multipart upload operation, required for subsequent upload actions."
       },
       {
         "name": "Body",
@@ -65,11 +80,11 @@
     ]
   },
   {
-    "operation": "Completes a multipart upload",
+    "operation": "Completes a Multipart Upload",
     "description": "",
     "operationId": "CompleteMultipartUpload",
     "operationApiType": "POST",
-    "operationPath": "/{Key}",
+    "operationPath": "/{bucket}/{Key}",
     "operationSummary": "Completes a multipart upload",
     "operationDescription": "Completes a multipart upload by assembling previously uploaded parts.",
     "deprecated": false,
@@ -82,6 +97,18 @@
     ],
     "parameters": [
       {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
+      {
         "name": "{Key}",
         "value": "",
         "param_type": "Path",
@@ -91,7 +118,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Key"
+        "ui_displayName": "Key",
+        "description":"The unique identifier of an object within an S3 bucket, used to locate and perform actions on the object."
       },
       {
         "name": "uploadId",
@@ -102,16 +130,191 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Upload ID",
+        "description":"A unique identifier for a multipart upload operation, required for subsequent upload actions."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
       }
     ]
   },
   {
-    "operation": "Copy object",
+    "operation": "Upload Part",
+    "description": "",
+    "operationId": "CompleteMultipartUpload",
+    "operationApiType": "PUT",
+    "operationPath": "/{bucket}/{Key}",
+    "operationSummary": "Upload Part",
+    "operationDescription": "Uploads a specific part in a multipart upload to an S3 bucket using the provided bucket name, object key, part number, and upload ID",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
+      {
+        "name": "{Key}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Key",
+        "description":"The unique identifier of an object within an S3 bucket, used to locate and perform actions on the object."
+      },
+      {
+        "name": "partNumber",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Part Number",
+        "description":"Specifies the part number in a multipart upload, indicating the sequence of the uploaded part. Each part is identified by a Part Number (ranging from 1 to 10,000). "
+      },
+      {
+        "name": "uploadId",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Upload ID",
+        "description":"A unique identifier for a multipart upload operation, required for subsequent upload actions."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Parts",
+    "description": "",
+    "operationId": "ListParts",
+    "operationApiType": "GET",
+    "operationPath": "/{bucket}/{Key}",
+    "operationSummary": "List Parts",
+    "operationDescription": "Lists the parts that have been uploaded for a specific multipart upload in an S3 bucket using the provided bucket name, object key, and upload ID.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
+      {
+        "name": "{Key}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Key",
+        "description":"The unique identifier of an object within an S3 bucket, used to locate and perform actions on the object."
+      },
+      {
+        "name": "uploadId",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Upload ID",
+        "description":"A unique identifier for a multipart upload operation, required for subsequent upload actions."
+      }
+    ]
+  },
+  {
+    "operation": "Copy Object",
     "description": "",
     "operationId": "CopyObject",
     "operationApiType": "PUT",
-    "operationPath": "/{Key}",
+    "operationPath": "/{bucket}/{Key}",
     "operationSummary": "Copy object",
     "operationDescription": "Creates a copy of an object that is already stored in Amazon S3.",
     "deprecated": false,
@@ -124,6 +327,18 @@
     ],
     "parameters": [
       {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
+      {
         "name": "{Key}",
         "value": "",
         "param_type": "Path",
@@ -133,7 +348,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Key"
+        "ui_displayName": "Key",
+        "description":"Specify the key for new object within an s3 bucket."
       },
       {
         "name": "x-amz-copy-source",
@@ -144,7 +360,140 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Source Object Path (x-amz-copy-source)",
+        "description":"Specify the source object for a copy operation in the format /<source-bucket>/<source-object-key>, e.g., x-amz-copy-source: /my-source-bucket/my-folder/example-object.txt"
+      }
+    ]
+  },
+  {
+    "operation": "Create Bucket",
+    "description": "",
+    "operationId": "CreateBucket",
+    "operationApiType": "PUT",
+    "operationPath": "/{bucket}",
+    "operationSummary": "Create Bucket",
+    "operationDescription": "Creates a bucket in Amazon S3.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Bucket Name",
+        "description":"Unique bucket name to be created in Amazon S3."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Bucket",
+    "description": "",
+    "operationId": "DeleteBucket",
+    "operationApiType": "DELETE",
+    "operationPath": "/{bucket}",
+    "operationSummary": "Delete Bucket",
+    "operationDescription": "Delete a bucket in Amazon S3.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      }
+    ]
+  },
+  {
+    "operation": "List Buckets",
+    "description": "",
+    "operationId": "ListBucket",
+    "operationApiType": "GET",
+    "operationPath": "/",
+    "operationSummary": "List Buckets",
+    "operationDescription": "Lists  Amazon S3 buckets with optional filtering based on region and limits the number of buckets returned",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "bucket-region",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName":"Bucket Region",
+        "description":"Specifies the AWS region to filter the buckets."
+      },
+      {
+        "name": "max-buckets",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName":"Max Buckets",
+        "description":"Limits the number of buckets returned in the response"
       }
     ]
   },
@@ -153,7 +502,7 @@
     "description": "",
     "operationId": "ListObjects",
     "operationApiType": "GET",
-    "operationPath": "/",
+    "operationPath": "/{bucket}",
     "operationSummary": "List Objects",
     "operationDescription": "List Objects",
     "deprecated": false,
@@ -164,14 +513,141 @@
         "value": "API"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
+      {
+        "name": "list-type",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName":"List Type",
+        "description":"Specifies the version of the ListObjects API"
+      },
+      {
+        "name": "ContinuationToken",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName":"Continuation Token",
+        "description":"A token used for pagination to fetch the next set of results."
+      },
+      {
+        "name": "Delimiter",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"A character used to group keys and create a pseudo-hierarchy in the listing of objects."
+      },
+      {
+        "name": "EncodingType",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName":"Encoding Type",
+        "description":"Specifies the encoding method (e.g., URL) for special characters in response keys."
+      },
+      {
+        "name": "FetchOwner",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName":"Fetch Owner",
+        "description":"If set to true, includes the owner information of each object in the response."
+      },
+      {
+        "name": "Marker",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"Specifies the key to start listing objects from, used for pagination."
+      },
+      {
+        "name": "MaxKeys",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName":"Max Keys",
+        "description":"Limits the number of objects returned in the response."
+      },
+      {
+        "name": "Prefix",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"Filters the objects to return only those that begin with the specified prefix."
+      },
+      {
+        "name": "StartAfter",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName":"Start After",
+        "description":"Specifies the key after which listing should begin, used for pagination."
+      }
+    ]
   },
   {
-    "operation": "Initiates a multipart upload",
+    "operation": "Initiates a Multipart Upload",
     "description": "",
     "operationId": "CreateMultipartUpload",
     "operationApiType": "POST",
-    "operationPath": "/{Key}",
+    "operationPath": "/{bucket}/{Key}",
     "operationSummary": "Initiates a multipart upload",
     "operationDescription": "This action initiates a multipart upload and returns an upload ID. This upload ID is used to associate all of the parts in the specific multipart upload. You specify this upload ID in each of your subsequent upload part requests",
     "deprecated": false,
@@ -184,6 +660,18 @@
     ],
     "parameters": [
       {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
+      {
         "name": "{Key}",
         "value": "",
         "param_type": "Path",
@@ -193,7 +681,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Key"
+        "ui_displayName": "Key",
+        "description":"The unique identifier of an object within an S3 bucket, used to locate and perform actions on the object."
       },
       {
         "name": "uploads",
@@ -209,7 +698,7 @@
     "description": "",
     "operationId": "DeleteObject",
     "operationApiType": "DELETE",
-    "operationPath": "/{Key}",
+    "operationPath": "/{bucket}/{Key}",
     "operationSummary": "Delete Object",
     "operationDescription": "Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object. If there isn't a null version, Amazon S3 does not remove any objects but will still respond that the command was successful.",
     "deprecated": false,
@@ -221,6 +710,18 @@
       }
     ],
     "parameters": [
+        {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
       {
         "name": "{Key}",
         "value": "",
@@ -231,16 +732,80 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Key"
+        "ui_displayName": "Key",
+        "description":"The unique identifier of an object within an S3 bucket, used to locate and perform actions on the object."
+      },
+      {
+        "name": "VersionId",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName":"Version Id",
+        "description":"Specifies the unique version of an object in an S3 bucket with versioning enabled."
       }
     ]
   },
   {
-    "operation": "Get Object",
+    "operation": "Delete Objects",
     "description": "",
-    "operationId": "GetObject",
+    "operationId": "DeleteObjects",
+    "operationApiType": "POST",
+    "operationPath": "/{bucket}/{Key}",
+    "operationSummary": "Delete Objects",
+    "operationDescription": "Delete multiple objects from an S3 bucket in a single request.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+        {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
+      {
+        "name": "{Key}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Key",
+        "description":"The unique identifier of an object within an S3 bucket, used to locate and perform actions on the object."
+      },
+      {
+        "name": "delete",
+        "value": "",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Object from Bucket",
+    "description": "",
+    "operationId": "GetObjectFromBucket",
     "operationApiType": "GET",
-    "operationPath": "/{Key}",
+    "operationPath": "/{bucket}/{Key}",
     "operationSummary": "Get Object",
     "operationDescription": "Retrieves objects from Amazon S3. To use GET, you must have READ access to the object. If you grant READ access to the anonymous user, you can return the object without using an authorization header. An Amazon S3 bucket has no directory hierarchy such as you would find in a typical computer file system. You can, however, create a logical hierarchy by using object key names that imply a folder structure.",
     "deprecated": false,
@@ -253,6 +818,18 @@
     ],
     "parameters": [
       {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
+      {
         "name": "{Key}",
         "value": "",
         "param_type": "Path",
@@ -262,16 +839,17 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Key"
+        "ui_displayName": "Key",
+        "description":"The unique identifier of an object within an S3 bucket, used to locate and perform actions on the object."
       }
     ]
   },
   {
-    "operation": "Retrieves object metadata",
+    "operation": "Retrieves Object Metadata",
     "description": "",
     "operationId": "HeadObject",
     "operationApiType": "HEAD",
-    "operationPath": "/{Key}",
+    "operationPath": "/{bucket}/{Key}",
     "operationSummary": "Retrieves metadata of object",
     "operationDescription": "The HEAD action retrieves metadata from an object without returning the object itself. This action is useful if you're only interested in an object's metadata. To use HEAD, you must have READ access to the object.HEAD request has the same options as a GET action on an object.",
     "deprecated": false,
@@ -284,6 +862,18 @@
     ],
     "parameters": [
       {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
+      {
         "name": "{Key}",
         "value": "",
         "param_type": "Path",
@@ -293,16 +883,17 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Key"
+        "ui_displayName": "Key",
+        "description":"The unique identifier of an object within an S3 bucket, used to locate and perform actions on the object."
       }
     ]
   },
   {
-    "operation": "Add object to bucket",
+    "operation": "Add Object to Bucket",
     "description": "",
     "operationId": "PutObject",
     "operationApiType": "PUT",
-    "operationPath": "/{Key}",
+    "operationPath": "/{bucket}/{Key}",
     "operationSummary": "Adds object to bucket",
     "operationDescription": "Adds an object to a bucket. You must have WRITE permissions on a bucket to add an object to it.Amazon S3 never adds partial objects; if you receive a success response, Amazon S3 added the entire object to the bucketAmazon S3 is a distributed system. If it receives multiple write requests for the same object simultaneously, it overwrites all but the last object written.",
     "deprecated": false,
@@ -315,6 +906,18 @@
     ],
     "parameters": [
       {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
+      {
         "name": "{Key}",
         "value": "",
         "param_type": "Path",
@@ -324,7 +927,282 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Key"
+        "ui_displayName": "Key",
+        "description":"The unique identifier of an object within an S3 bucket, used to locate and perform actions on the object."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Object Access Control List",
+    "description": "",
+    "operationId": "GetObjectAcl",
+    "operationApiType": "GET",
+    "operationPath": "/{bucket}",
+    "operationSummary": "Get Access Control List Of Bucket",
+    "operationDescription": "This implementation of the GET action uses the acl subresource to return the access control list (ACL) of a bucket. To use GET to return the ACL of the bucket, you must have READ_ACP access to the bucket.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
+      {
+        "name": "{Key}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Key",
+        "description":"The unique identifier of an object within an S3 bucket, used to locate and perform actions on the object."
+      },
+      {
+        "name": "acl",
+        "value": "",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "hasvalue":false
+      },
+      {
+        "name": "VersionId",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName":"Version Id",
+        "description":"Specifies the unique version of an object in an S3 bucket with versioning enabled."
+      },
+      {
+        "name": "x-amz-request-payer",
+        "value": "requester",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName":"Request Payer (x-amz-request-payer)",
+        "description":"Specifies the unique version of an object in an S3 bucket with versioning enabled."
+      }
+    ]
+  },
+  {
+    "operation": "Set Object Access Control List",
+    "description": "",
+    "operationId": "SetObjectAcl",
+    "operationApiType": "PUT",
+    "operationPath": "/{bucket}",
+    "operationSummary": "Get Access Control List Of Bucket",
+    "operationDescription": "This implementation of the GET action uses the acl subresource to return the access control list (ACL) of a bucket. To use GET to return the ACL of the bucket, you must have READ_ACP access to the bucket.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
+      {
+        "name": "{Key}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Key",
+        "description":"The unique identifier of an object within an S3 bucket, used to locate and perform actions on the object."
+      },
+      {
+        "name": "acl",
+        "value": "",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "hasvalue":false
+      },
+      {
+        "name": "VersionId",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName":"Version Id",
+        "description":"Specifies the unique version of an object in an S3 bucket with versioning enabled."
+      },
+      {
+        "name": "x-amz-acl",
+        "value": "private",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName":"Canned ACL (x-amz-acl)",
+        "description":"Valid Values: private | public-read | public-read-write | authenticated-read | aws-exec-read | bucket-owner-read | bucket-owner-full-control"
+      },
+      {
+        "name": "x-amz-request-payer",
+        "value": "requester",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName":"Request Payer (x-amz-request-payer)",
+        "description":"Valid Values: requester"
+      },
+      {
+        "name": "x-amz-expected-bucket-owner",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"The account ID of the expected bucket owner. If the account ID that you provide does not match the actual owner of the bucket, the request fails with the HTTP status code 403 Forbidden (access denied)."
+      },
+      {
+        "name": "x-amz-grant-full-control",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"Allows grantee the read, write, read ACP, and write ACP permissions on the bucket."
+      },
+      {
+        "name": "x-amz-grant-read",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"Allows grantee to list the objects in the bucket."
+      },
+      {
+        "name": "x-amz-grant-read-acp",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"Allows grantee to read the bucket ACL."
+      },
+      {
+        "name": "x-amz-grant-write",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"Allows grantee to create new objects in the bucket."
+      },
+      {
+        "name": "x-amz-grant-write-acp",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"Allows grantee to write the ACL for the applicable bucket."
+      },
+      {
+        "name": "x-amz-sdk-checksum-algorithm",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"Valid Values: CRC32 | CRC32C | SHA1 | SHA256 | CRC64NVME"
       },
       {
         "name": "Body",
@@ -356,7 +1234,7 @@
     "description": "",
     "operationId": "GetBucketAcl",
     "operationApiType": "GET",
-    "operationPath": "/",
+    "operationPath": "/{bucket}",
     "operationSummary": "Get Access Control List Of Bucket",
     "operationDescription": "This implementation of the GET action uses the acl subresource to return the access control list (ACL) of a bucket. To use GET to return the ACL of the bucket, you must have READ_ACP access to the bucket.",
     "deprecated": false,
@@ -372,7 +1250,33 @@
         "name": "acl",
         "value": "",
         "param_type": "UrlParam",
-        "ui_source": "operation"
+        "ui_source": "operation",
+        "hasvalue":false
+      },
+      {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
+      },
+      {
+        "name": "x-amz-expected-bucket-owner",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Bucket Owner Account Id",
+        "description":"Specify the account ID of the expected bucket owner"
       }
     ]
   },
@@ -381,7 +1285,7 @@
     "description": "",
     "operationId": "PutBucketAcl",
     "operationApiType": "PUT",
-    "operationPath": "/",
+    "operationPath": "/{bucket}",
     "operationSummary": "Sets Access Control List Of Bucket",
     "operationDescription": "Sets the permissions on an existing bucket using access control lists (ACL).",
     "deprecated": false,
@@ -397,7 +1301,20 @@
         "name": "acl",
         "value": "",
         "param_type": "UrlParam",
-        "ui_source": "operation"
+        "ui_source": "operation",
+        "hasvalue":false
+      },
+      {
+        "name": "{bucket}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
       },
       {
         "name": "Body",
@@ -421,6 +1338,107 @@
         "value": "XML",
         "param_type": "Param",
         "ui_source": "operation"
+      },
+      {
+          "name": "x-amz-acl",
+          "value": "",
+          "param_type": "Header",
+          "required": false,
+          "datatype": "System.String",
+            "ui_source": "operation",
+            "ui_category": "Permissions",
+            "ui_displayName": "Canned ACL",
+            "description": "Set predefined permissions using a canned ACL."
+          },
+        {
+            "name": "Content-MD5",
+            "value": "",
+            "param_type": "Header",
+            "required": false,
+            "datatype": "System.String",
+            "ui_source": "operation",
+            "ui_category": "Validation",
+            "ui_displayName": "Content MD5",
+            "description": "Base64-encoded MD5 checksum of the request body."
+        },
+        {
+            "name": "x-amz-sdk-checksum-algorithm",
+            "value": "",
+            "param_type": "Header",
+            "required": false,
+            "datatype": "System.String",
+            "ui_source": "operation",
+            "ui_category": "Validation",
+            "ui_displayName": "Checksum Algorithm",
+            "description": "Specify checksum algorithm to validate request integrity."
+        },
+        {
+            "name": "x-amz-grant-full-control",
+            "value": "",
+            "param_type": "Header",
+            "required": false,
+            "datatype": "System.String",
+            "ui_source": "operation",
+            "ui_category": "Permissions",
+            "ui_displayName": "Grant Full Control",
+            "description": "Grant full control to specified AWS accounts."
+        },
+        {
+            "name": "x-amz-grant-read",
+            "value": "",
+            "param_type": "Header",
+            "required": false,
+            "datatype": "System.String",
+            "ui_source": "operation",
+            "ui_category": "Permissions",
+            "ui_displayName": "Grant Read Access",
+            "description": "Grant read access to specified AWS accounts."
+        },
+        {
+            "name": "x-amz-grant-read-acp",
+            "value": "",
+            "param_type": "Header",
+            "required": false,
+            "datatype": "System.String",
+            "ui_source": "operation",
+            "ui_category": "Permissions",
+            "ui_displayName": "Grant Read ACP",
+            "description": "Grant read access to ACL permissions of the bucket."
+        },
+        {
+            "name": "x-amz-grant-write",
+            "value": "",
+            "param_type": "Header",
+            "required": false,
+            "datatype": "System.String",
+            "ui_source": "operation",
+            "ui_category": "Permissions",
+            "ui_displayName": "Grant Write Access",
+            "description": "Grant write access to specified AWS accounts."
+        },
+        {
+            "name": "x-amz-grant-write-acp",
+            "value": "",
+            "param_type": "Header",
+            "required": false,
+            "datatype": "System.String",
+            "ui_source": "operation",
+            "ui_category": "Permissions",
+            "ui_displayName": "Grant Write ACP",
+            "description": "Grant write access to ACL permissions of the bucket."
+        },
+        {
+            "name": "x-amz-expected-bucket-owner",
+            "value": "",
+            "param_type": "Header",
+            "isVisible": true,
+            "bindable": true,
+            "required": false,
+            "datatype": "System.String",
+            "ui_source": "operation",
+            "ui_category": "Misc",
+            "ui_displayName": "Bucket Owner Account Id",
+            "description": "Specify the account ID of the expected bucket owner."
       }
     ]
   },
@@ -429,7 +1447,7 @@
     "description": "",
     "operationId": "ListMultipartUploads",
     "operationApiType": "GET",
-    "operationPath": "/",
+    "operationPath": "/{bucket}",
     "operationSummary": "List Multipart Uploads",
     "operationDescription": "This action lists in-progress multipart uploads. An in-progress multipart upload is a multipart upload that has been initiated using the Initiate Multipart Upload request, but has not yet been completed or aborted.This action returns at most 1,000 multipart uploads in the response. 1,000 multipart uploads is the maximum number of uploads a response can include, which is also the default value. You can further limit the number of uploads in a response by specifying the max-uploads parameter in the response.",
     "deprecated": false,
@@ -442,85 +1460,21 @@
     ],
     "parameters": [
       {
-        "name": "uploads",
-        "value": "",
-        "param_type": "UrlParam",
-        "ui_source": "operation"
-      }
-    ]
-  },
-  {
-    "operation": "Select Object Content",
-    "description": "",
-    "operationId": "SelectObjectContent",
-    "operationApiType": "POST",
-    "operationPath": "/{Key}",
-    "operationSummary": "Filter content based on SQL statement",
-    "operationDescription": "This action filters the contents of an Amazon S3 object based on a simple structured query language (SQL) statement. In the request, along with the SQL expression, you must also specify a data serialization format (JSON, CSV, or Apache Parquet) of the object. Amazon S3 uses this format to parse object data into records, and returns only records that match the specified SQL expression. You must also specify the data serialization format for the response. This action is not supported by Amazon S3 on Outposts.",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "API"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "{Key}",
+        "name": "{bucket}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc",
-        "ui_displayName": "Key"
+        "ui_source": "adapter",
+        "ui_category": "Publish Mode Properties",
+        "typeConverter": "CloudFolderTypeConverter",
+        "sourceProperty":"ReceiveFolder"
       },
       {
-        "name": "select",
+        "name": "uploads",
         "value": "",
         "param_type": "UrlParam",
-        "isVisible": true,
-        "bindable": true,
-        "required": false,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
-      },
-      {
-        "name": "select-type",
-        "value": "2",
-        "param_type": "UrlParam",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "ui_source": "operation",
-        "ui_category": "Misc"
-      },
-      {
-        "name": "Body",
-        "value": "",
-        "param_type": "Param",
-        "isVisible": false,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.Byte[]",
-        "ui_source": "operation",
-        "ui_category": "Subscribe Mode Properties"
-      },
-      {
-        "name": "BodyType",
-        "value": "Raw",
-        "param_type": "Param",
-        "ui_source": "operation"
-      },
-      {
-        "name": "BodyFormat",
-        "value": "XML",
-        "param_type": "Param",
         "ui_source": "operation"
       }
     ]

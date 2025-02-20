@@ -1,12 +1,12 @@
 [
   {
-    "operation": "Fetch message",
-    "description": "",
+    "operation": "Fetch Message Details",
+    "description": "Retrieves a specific message from the account using the message SID.",
     "operationId": "fetch_message",
     "operationApiType": "GET",
-    "operationPath": "/2010-04-01/Accounts/{AccountSID}/Messages/{Sid}",
+    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}",
     "operationSummary": "Fetch message",
-    "operationDescription": "Fetch a specific Message",
+    "operationDescription": "Retrieve details of a specific message, including status, sender, recipient, and content.",
     "deprecated": false,
     "adapterProperties": [
       {
@@ -17,7 +17,7 @@
     ],
     "parameters": [
       {
-        "name": "AccountSID",
+        "name": "{AccountSid}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -25,11 +25,12 @@
         "required": true,
         "ui_source": "operation",
         "ui_displayName": "Account SID",
+        "description": "The unique identifier of the account from which the message is fetched.",
         "datatype": "System.String",
         "ui_category": "Publish Mode Properties"
       },
       {
-        "name": "Sid",
+        "name": "{Sid}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -39,7 +40,8 @@
         "sourceProperty": "Sid",
         "ui_category": "Publish Mode Properties",
         "datatype": "System.String",
-        "ui_displayName": "SID"
+        "ui_displayName": "SID",
+        "description": "The unique identifier of the message to be fetched."
       },
       {
         "name": "Content-Type",
@@ -76,13 +78,13 @@
     ]
   },
   {
-    "operation": "Delete message",
-    "description": "",
+    "operation": "Delete Message",
+    "description": "Deletes a specific message from the account using the message SID.",
     "operationId": "delete_message",
     "operationApiType": "DELETE",
-    "operationPath": "/2010-04-01/Accounts/{AccountSID}/Messages/{Sid}",
+    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}",
     "operationSummary": "Delete message",
-    "operationDescription": "Deletes a Message resource from the specified account",
+    "operationDescription": "Deletes a specific message from the account using the message SID.",
     "deprecated": false,
     "adapterProperties": [
       {
@@ -93,7 +95,7 @@
     ],
     "parameters": [
       {
-        "name": "AccountSID",
+        "name": "{AccountSid}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -101,11 +103,12 @@
         "required": true,
         "ui_source": "operation",
         "ui_displayName": "Account SID",
+        "description": "The unique identifier of the account from which the message is deleted.",
         "datatype": "System.String",
         "ui_category": "Publish Mode Properties"
       },
       {
-        "name": "Sid",
+        "name": "{Sid}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -115,7 +118,8 @@
         "sourceProperty": "Sid",
         "ui_category": "Publish Mode Properties",
         "datatype": "System.String",
-        "ui_displayName": "SID"
+        "ui_displayName": "SID",
+        "description": "The unique identifier of the message to be deleted."
       },
       {
         "name": "Content-Type",
@@ -152,13 +156,13 @@
     ]
   },
   {
-    "operation": "Update message",
-    "description": "",
+    "operation": "Update Message",
+    "description": "Updates a specific message in the account, such as redacting the message body or canceling an unsent message.",
     "operationId": "update_message",
     "operationApiType": "POST",
-    "operationPath": "/2010-04-01/Accounts/{AccountSID}/Messages/{Sid}",
+    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages/{Sid}",
     "operationSummary": "Update message",
-    "operationDescription": "Update a Message resource (used to redact Message `body` text and to cancel not-yet-sent messages)",
+    "operationDescription": "Updates a specific message in the account, such as redacting the message body or canceling an unsent message.",
     "deprecated": false,
     "adapterProperties": [
       {
@@ -169,7 +173,7 @@
     ],
     "parameters": [
       {
-        "name": "AccountSID",
+        "name": "{AccountSid}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -177,11 +181,12 @@
         "required": true,
         "ui_source": "operation",
         "ui_displayName": "Account SID",
+        "description": "The unique identifier of the account where the message is updated.",
         "datatype": "System.String",
         "ui_category": "Publish Mode Properties"
       },
       {
-        "name": "Sid",
+        "name": "{Sid}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -191,7 +196,8 @@
         "sourceProperty": "Sid",
         "ui_category": "Publish Mode Properties",
         "datatype": "System.String",
-        "ui_displayName": "SID"
+        "ui_displayName": "SID",
+        "description": "The unique identifier of the message to be updated."
       },
       {
         "name": "Content-Type",
@@ -220,7 +226,7 @@
         "bindable": true,
         "required": false,
         "datatype": "System.String",
-        "description": "Set status",
+        "description": "Set to canceled to cancel a message that has not yet been sent.",
         "ui_EditorType": "Textbox",
         "ui_category": "Publish Mode Properties",
         "ui_displayName": "Status",
@@ -242,13 +248,13 @@
     ]
   },
   {
-    "operation": "Send message",
-    "description": "",
+    "operation": "Send SMS Message",
+    "description": "Sends a message to a specified recipient using the account SID.",
     "operationId": "send_message",
     "operationApiType": "POST",
-    "operationPath": "/2010-04-01/Accounts/{AccountSID}/Messages",
+    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages",
     "operationSummary": "Send mesage to given number",
-    "operationDescription": "Send mesage to given number",
+    "operationDescription": "Sends a message to a specified recipient using the account SID.",
     "deprecated": false,
     "adapterProperties": [
       {
@@ -259,7 +265,7 @@
     ],
     "parameters": [
       {
-        "name": "AccountSID",
+        "name": "{AccountSid}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -267,6 +273,7 @@
         "required": true,
         "ui_source": "operation",
         "ui_displayName": "Account SID",
+        "description": "The unique identifier of the account from which the message is sent.",
         "datatype": "System.String",
         "ui_category": "Publish Mode Properties"
       },
@@ -305,13 +312,13 @@
     ]
   },
   {
-    "operation": "List messages",
-    "description": "",
+    "operation": "List Messages",
+    "description": "Retrieves a list of messages associated with the account.",
     "operationId": "list_messages",
     "operationApiType": "GET",
-    "operationPath": "/2010-04-01/Accounts/{AccountSID}/Messages",
+    "operationPath": "/2010-04-01/Accounts/{AccountSid}/Messages",
     "operationSummary": "List messages",
-    "operationDescription": "Send mesage to given number",
+    "operationDescription": "Retrieve a list of messages sent or received by the account.",
     "deprecated": false,
     "adapterProperties": [
       {
@@ -322,7 +329,7 @@
     ],
     "parameters": [
       {
-        "name": "AccountSID",
+        "name": "{AccountSid}",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -330,71 +337,9 @@
         "required": true,
         "ui_source": "operation",
         "ui_displayName": "Account SID",
+        "description": "The unique identifier of the account from which messages are listed.",
         "datatype": "System.String",
         "ui_category": "Publish Mode Properties"
-      },
-      {
-        "name": "Body",
-        "value": "",
-        "param_type": "Param",
-        "bindable": true,
-        "isVisible": false,
-        "required": true,
-        "datatype": "System.String",
-        "description": "Specify the content of the body to upload.",
-        "ui_source": "operation",
-        "ui_EditorType": "TextArea",
-        "ui_category": "Publish Mode Properties",
-        "ui_displayName": "Body"
-      },
-      {
-        "name": "BodyType",
-        "value": "Raw",
-        "param_type": "Param",
-        "ui_source": "operation"
-      },
-      {
-        "name": "BodyFormat",
-        "value": "XML",
-        "param_type": "Param",
-        "ui_source": "operation"
-      }
-    ]
-  },
-  {
-    "operation": "List messages between Specified Range",
-    "description": "",
-    "operationId": "list_messages",
-    "operationApiType": "GET",
-    "operationPath": "/2010-04-01/Accounts/{AccountSID}/Messages",
-    "operationSummary": "List messages between Specified Ranges",
-    "operationDescription": "Send mesage to given number between specified range",
-    "deprecated": false,
-    "adapterProperties": [
-      {
-        "name": "AdapterMode",
-        "key": "",
-        "value": "Solicit Response"
-      }
-    ],
-    "parameters": [
-      {
-        "name": "AccountSID",
-        "value": "",
-        "param_type": "Path",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "ui_source": "operation",
-        "ui_displayName": "Account SID",
-        "datatype": "System.String",
-        "ui_category": "Publish Mode Properties"
-      },
-      {
-        "name": "Content-Type",
-        "value": "application/json",
-        "param_type": "Header",
-        "ui_source": "operation"
       },
       {
         "name": "Body",

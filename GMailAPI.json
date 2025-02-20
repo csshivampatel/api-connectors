@@ -1,0 +1,1606 @@
+[
+  {
+    "operation": "Send a New Email",
+    "description": "",
+    "operationId": "Send_New _Email",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/send",
+    "operationSummary": "Send a New Email",
+    "operationDescription": "Send a New Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Search Email",
+    "description": "",
+    "operationId": "Search_Email",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/messages",
+    "operationSummary": "Search Email",
+    "operationDescription": "Search Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "q",
+        "value": "subject:",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the keyword or text String to search email",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Search Email by Keyword"
+      }
+    ]
+  },
+  {
+    "operation": "New Labeled Email",
+    "description": "",
+    "operationId": "New_Labeled_Email",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/messages",
+    "operationSummary": "New Labeled Email",
+    "operationDescription": "New Labeled Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "labelIds",
+        "value": "",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the keyword to search label.",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Search label by keyword"
+      },
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      }
+    ]
+  },
+  {
+    "operation": "New Starred Email",
+    "description": "",
+    "operationId": "New_Starred_Email",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/messages",
+    "operationSummary": "New Starred Email",
+    "operationDescription": "New Starred Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "q",
+        "value": "is:starred",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the starred email",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Search Starred Email"
+      },
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Email",
+    "description": "",
+    "operationId": "Delete_Email",
+    "operationApiType": "DELETE",
+    "operationPath": "/users/{userId}/messages/{messageID}",
+    "operationSummary": "Delete Email",
+    "operationDescription": "Delete Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      }
+    ]
+  },
+  {
+    "operation": "Trash Email",
+    "description": "",
+    "operationId": "Trash_Email",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/{messageID}/trash",
+    "operationSummary": "Trash Email",
+    "operationDescription": "Trash Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Untrash Email",
+    "description": "",
+    "operationId": "Untrash_Email",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/{messageID}/untrash",
+    "operationSummary": "Untrash Email",
+    "operationDescription": "Untrash Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Messages",
+    "description": "",
+    "operationId": "list_messsages",
+    "operationApiType": "GET",
+    "operationPath": "/users/me/messages",
+    "operationSummary": "List Messages",
+    "operationDescription": "List all the messages along with message id",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get the Specified Message",
+    "description": "",
+    "operationId": "Get_Specified_Message",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/messages/{messageID}",
+    "operationSummary": "Get the Specified Message",
+    "operationDescription": "Get the Specified Message",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete the Specified Message",
+    "description": "",
+    "operationId": "Delete_Specified_Message",
+    "operationApiType": "DELETE",
+    "operationPath": "/users/{userId}/messages/{messageID}",
+    "operationSummary": "Delete the Specified Message",
+    "operationDescription": "Delete the Specified Message",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      }
+    ]
+  },
+  {
+    "operation": "Deletes many messages by message ID",
+    "description": "",
+    "operationId": "Deletes_many_messages_by_message_ID.",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/batchDelete",
+    "operationSummary": "Deletes many messages by message ID.",
+    "operationDescription": "Deletes many messages by message ID.",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Batch Modify Labels",
+    "description": "",
+    "operationId": "Batch_Modify_Labels",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/batchModify",
+    "operationSummary": "Batch Modify Labels",
+    "operationDescription": "Batch Modify Labels",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create Label",
+    "description": "",
+    "operationId": "Create_Label",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/labels",
+    "operationSummary": "Create Label",
+    "operationDescription": "Create Label",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Labels",
+    "description": "",
+    "operationId": "List_Labels",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/labels",
+    "operationSummary": "List Labels",
+    "operationDescription": "List Labels",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      }
+    ]
+  },
+  {
+    "operation": "Add Label to Email",
+    "description": "",
+    "operationId": "Add_Label_to_Email",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/{messageID}/modify",
+    "operationSummary": "Add Label to Email",
+    "operationDescription": "Add Label to Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Label",
+    "description": "",
+    "operationId": "Delete_Label",
+    "operationApiType": "DELETE",
+    "operationPath": "/users/{userId}/labels/{labelID}",
+    "operationSummary": "Delete a Label",
+    "operationDescription": "Delete a Label",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{labelID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a Gmail label.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Label ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Remove Label From Email",
+    "description": "",
+    "operationId": "Remove_Label_From_Email",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/{messageID}/modify",
+    "operationSummary": "Remove Label From Email",
+    "operationDescription": "Remove Label From Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Modify Message",
+    "description": "",
+    "operationId": "Modify_Message",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/{messageID}/modify",
+    "operationSummary": "Modify Message",
+    "operationDescription": "Modify Message",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Retrieve Attachment",
+    "description": "",
+    "operationId": "Retrieve_Attachment",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/messages/{messageID}/attachments/{attachmentId}",
+    "operationSummary": "Retrieve Attachment",
+    "operationDescription": "Retrieve Attachment",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "{attachmentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an attachment within an email.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Attachment ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get Thread Details",
+    "description": "",
+    "operationId": "Get_Thread_Details",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/threads/{threadID}",
+    "operationSummary": "Get Thread Details",
+    "operationDescription": "Get Thread Details",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "format",
+        "value": "full",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{threadID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email thread.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Thread ID"
+      }
+    ]
+  },
+  {
+    "operation": "List Threads",
+    "description": "",
+    "operationId": "List_Threads",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/threads",
+    "operationSummary": "List Threads",
+    "operationDescription": "List Threads",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Thread",
+    "description": "",
+    "operationId": "Delete_Thread",
+    "operationApiType": "DELETE",
+    "operationPath": "/users/{userId}/threads/{threadID}",
+    "operationSummary": "Delete a Thread",
+    "operationDescription": "Delete a Thread",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{threadID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email thread.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Thread ID"
+      }
+    ]
+  },
+  {
+    "operation": "Modify a Thread (Labels)",
+    "description": "",
+    "operationId": "Modify_Thread_(Labels)",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/threads/{threadID}/modify",
+    "operationSummary": "Modify a Thread (Labels)",
+    "operationDescription": "Modify a Thread (Labels)",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{threadID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email thread.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Thread ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Drafts",
+    "description": "",
+    "operationId": "List_Drafts",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/drafts",
+    "operationSummary": "List Drafts",
+    "operationDescription": "List Drafts",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      }
+    ]
+  },
+  {
+    "operation": "Update Draft",
+    "description": "",
+    "operationId": "Update_Draft",
+    "operationApiType": "PUT",
+    "operationPath": "/users/{userId}/drafts/{draftID}",
+    "operationSummary": "Update Draft",
+    "operationDescription": "Update Draft",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{draftID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The ID of the draft to update.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Draft ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create Draft",
+    "description": "",
+    "operationId": "Create_Draft",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/drafts",
+    "operationSummary": "Create Draft",
+    "operationDescription": "Create Draft",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Draft",
+    "description": "",
+    "operationId": "Delete_Draft",
+    "operationApiType": "DELETE",
+    "operationPath": "/users/{userId}/drafts/{draftID}",
+    "operationSummary": "Delete Draft",
+    "operationDescription": "Delete Draft",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{draftID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The ID of the draft to delete.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Draft ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Import message",
+    "description": "",
+    "operationId": "Import_message",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/import",
+    "operationSummary": "Import message",
+    "operationDescription": "Import message",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "internalDateSource",
+        "value": "receivedTime",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "{userId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify User ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]

@@ -1,0 +1,2150 @@
+[
+  {
+    "operation": "Send an Email",
+    "description": "",
+    "operationId": "SendEmail",
+    "operationApiType": "POST",
+    "operationPath": "/accounts/{accountId}/messages",
+    "operationSummary": "Send an Email",
+    "operationDescription": "Send an Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Send Reply to an Email",
+    "description": "",
+    "operationId": "SendReplyToEmail",
+    "operationApiType": "POST",
+    "operationPath": "/accounts/{accountId}/messages/{messageId}",
+    "operationSummary": "Send Reply to an Email",
+    "operationDescription": "Send Reply to an Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "{messageId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Emails",
+    "description": "",
+    "operationId": "ListEmails",
+    "operationApiType": "GET",
+    "operationPath": "/accounts/{accountId}/messages/view",
+    "operationSummary": "List Emails",
+    "operationDescription": "List Emails",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      }
+    ]
+  },
+  {
+    "operation": "List Emails based on Search Parameters",
+    "description": "",
+    "operationId": "ListEmailBasedOnSearchParameter",
+    "operationApiType": "GET",
+    "operationPath": "/accounts/{accountId}/messages/search",
+    "operationSummary": "List Emails based on Search Parameters",
+    "operationDescription": "List Emails based on Search Parameters",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "seachKey",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"pecifies the filter criteria for searching emails"
+      },
+      {
+        "name": "receivedTime",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"Filters emails based on the received time"
+      },
+      {
+        "name": "start",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"The starting index of emails to fetch."
+      },
+      {
+        "name": "limit",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"The maximum number of emails to retrieve in one request."
+      },
+      {
+        "name": "includeto",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description":"Boolean parameter (true or false), determining whether to include recipient details in the response."
+      }
+    ]
+  },
+  {
+    "operation": "Get Email Content of an Email",
+    "description": "",
+    "operationId": "GetEmailContentofanEmail",
+    "operationApiType": "GET",
+    "operationPath": "/accounts/{accountId}/folders/{folderId}/messages/{messageId}/content",
+    "operationSummary": "Get Email Content of an Email",
+    "operationDescription": "Get Email Content of an Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "{folderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email folder.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+      },
+      {
+        "name": "{messageId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get Original Message of an Email",
+    "description": "",
+    "operationId": "GetOriginalMessageofEmail",
+    "operationApiType": "GET",
+    "operationPath": "/accounts/{accountId}/messages/{messageId}/originalmessage",
+    "operationSummary": "Get Original Message of an Email",
+    "operationDescription": "Get Original Message of an Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "{messageId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get Meta Data of an Email",
+    "description": "",
+    "operationId": "GetMetaDataofEmail",
+    "operationApiType": "GET",
+    "operationPath": "/accounts/{accountId}/folders/{folderId}/messages/{messageId}/details",
+    "operationSummary": "Get Meta Data of an Email",
+    "operationDescription": "Get Meta Data of an Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "{folderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email folder.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+      },
+      {
+        "name": "{messageId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get Email Attachment Info",
+    "description": "",
+    "operationId": "GetEmailAttachmentInfo",
+    "operationApiType": "GET",
+    "operationPath": "/accounts/{accountId}/folders/{folderId}/messages/{messageId}/attachmentinfo",
+    "operationSummary": "Get Email Attachment Info",
+    "operationDescription": "Get Email Attachment Info",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "{folderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email folder.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+      },
+      {
+        "name": "{messageId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get Email Attachment Content",
+    "description": "",
+    "operationId": "GetEmailAttachmentContent",
+    "operationApiType": "GET",
+    "operationPath": "/accounts/{accountId}/folders/{folderId}/messages/{messageId}/attachments/{attachmentId}",
+    "operationSummary": "Get Email Attachment Content",
+    "operationDescription": "Get Email Attachment Content",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "{folderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email folder.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+      },
+      {
+        "name": "{messageId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "{attachmentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email attachment.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Attachment ID"
+      }
+    ]
+  },
+  {
+    "operation": "Update Message",
+    "description": "",
+    "operationId": "updatemessage",
+    "operationApiType": "PUT",
+    "operationPath": "/accounts/{accountId}/updatemessage",
+    "operationSummary": "Update Message",
+    "operationDescription": "Update Message",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete an Email",
+    "description": "",
+    "operationId": "DeleteEmail",
+    "operationApiType": "DELETE",
+    "operationPath": "/accounts/{accountId}/folders/{folderId}/messages/{messageId}/content",
+    "operationSummary": "Delete an Email",
+    "operationDescription": "Delete an Email",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "{folderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email folder.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+      },
+      {
+        "name": "{messageId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      }
+    ]
+  },
+  {
+    "operation": "Create a New Folder",
+    "description": "",
+    "operationId": "CreateNewFolder",
+    "operationApiType": "POST",
+    "operationPath": "/accounts/{accountId}/folders",
+    "operationSummary": "Create a New Folder",
+    "operationDescription": "Create a New Folder",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get all folders",
+    "description": "",
+    "operationId": "Getallfolders",
+    "operationApiType": "GET",
+    "operationPath": "/accounts/{accountId}/folders",
+    "operationSummary": "Get all folders",
+    "operationDescription": "Get all folders",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get a Specific Folder",
+    "description": "",
+    "operationId": "GetSpecificFolder",
+    "operationApiType": "GET",
+    "operationPath": "/accounts/{accountId}/folders/{folderId}",
+    "operationSummary": "Get a Specific Folder",
+    "operationDescription": "Get a Specific Folder",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "{folderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email folder.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+      }
+    ]
+  },
+  {
+    "operation": "Move or Rename Folder",
+    "description": "",
+    "operationId": "MoveorRenameFolder",
+    "operationApiType": "PUT",
+    "operationPath": "/accounts/{accountId}/folders/{folderId}",
+    "operationSummary": "Move or Rename Folder",
+    "operationDescription": "Move or Rename Folder",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "{folderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email folder.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Folder",
+    "description": "",
+    "operationId": "DeleteaFolder",
+    "operationApiType": "DELETE",
+    "operationPath": "/accounts/{accountId}/folders/{folderId}",
+    "operationSummary": "Delete a Folder",
+    "operationDescription": "Delete a Folder",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "{folderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email folder.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+      }
+    ]
+  },
+  {
+    "operation": "Create a New Label",
+    "description": "",
+    "operationId": "CreateNewlabels",
+    "operationApiType": "POST",
+    "operationPath": "/accounts/{accountId}/labels",
+    "operationSummary": "Create a New Label",
+    "operationDescription": "Create a New Label",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get all labels",
+    "description": "",
+    "operationId": "Getalllabels",
+    "operationApiType": "GET",
+    "operationPath": "/accounts/{accountId}/labels",
+    "operationSummary": "Get all folders",
+    "operationDescription": "Get all folders",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get a Specific labels",
+    "description": "",
+    "operationId": "GetSpecificlabels",
+    "operationApiType": "GET",
+    "operationPath": "/accounts/{accountId}/labels/{labelId}",
+    "operationSummary": "Get a Specific labels",
+    "operationDescription": "Get a Specific labels",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "{labelId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email label.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Label ID"
+      }
+    ]
+  },
+  {
+    "operation": "Update Label Details",
+    "description": "",
+    "operationId": "UpdateLabelDetails",
+    "operationApiType": "PUT",
+    "operationPath": "/accounts/{accountId}/labels/{labelId}",
+    "operationSummary": "Update Label Details",
+    "operationDescription": "Update Label Details",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "{labelId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email label.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Label ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Label",
+    "description": "",
+    "operationId": "DeleteaLabel",
+    "operationApiType": "DELETE",
+    "operationPath": "/accounts/{accountId}/labels/{labelId}",
+    "operationSummary": "Delete a Label",
+    "operationDescription": "Delete a Label",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      },
+      {
+        "name": "{labelId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email label.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Label ID"
+      }
+    ]
+  },
+  {
+    "operation": "Manage Labels for Thread(s)",
+    "description": "",
+    "operationId": "ManageLabelsforThread(s)",
+    "operationApiType": "PUT",
+    "operationPath": "/accounts/{accountId}/updatethread",
+    "operationSummary": "Manage Labels for Thread(s)",
+    "operationDescription": "Manage Labels for Thread(s)",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get All Accounts of a User",
+    "description": "",
+    "operationId": "GetAllAccountsofaUser",
+    "operationApiType": "GET",
+    "operationPath": "/accounts",
+    "operationSummary": "Get All Accounts of a User",
+    "operationDescription": "Get All Accounts of a User",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get a Specific Account Details",
+    "description": "",
+    "operationId": "GetSpecificAccountDetails",
+    "operationApiType": "GET",
+    "operationPath": "/accounts/{accountId}",
+    "operationSummary": "Get a Specific Account Detailss",
+    "operationDescription": "Get a Specific Account Details",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{accountId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Account ID"
+      }
+    ]
+  },
+  {
+    "operation": "Add a New Group Task",
+    "description": "",
+    "operationId": "AddNewGroupTask",
+    "operationApiType": "POST",
+    "operationPath": "tasks/groups/{zgid}",
+    "operationSummary": "Add a New Group Task",
+    "operationDescription": "Add a New Group Task",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{zgid}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a task group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Zoho Group ID"
+      }
+    ]
+  },
+  {
+    "operation": "Add a New Personal Task",
+    "description": "",
+    "operationId": "AddNewPersonalTask",
+    "operationApiType": "POST",
+    "operationPath": "tasks/me",
+    "operationSummary": "Add a New Personal Task",
+    "operationDescription": "Add a New Personal Task",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Add a New Project under a Group",
+    "description": "",
+    "operationId": "AddNewGroupTask",
+    "operationApiType": "POST",
+    "operationPath": "tasks/groups/{zgid}/projects",
+    "operationSummary": "Add a New Project under a Group",
+    "operationDescription": "Add a New Project under a Group",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{zgid}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a task group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Zoho Group ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get All Tasks in a Group Tasks",
+    "description": "",
+    "operationId": "GetAllTasksinGroupTasks",
+    "operationApiType": "GET",
+    "operationPath": "tasks/groups/{zgid}",
+    "operationSummary": "Get All Tasks in a Group Tasks",
+    "operationDescription": "Get All Tasks in a Group Tasks",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{zgid}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a task group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Zoho Group ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get All Tasks in a Personal Tasks",
+    "description": "",
+    "operationId": "GetAllTasksinPersonalTasks",
+    "operationApiType": "GET",
+    "operationPath": "tasks/me",
+    "operationSummary": "Get All Tasks in a Personal Tasks",
+    "operationDescription": "Get All Tasks in a Personal Tasks",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get All Tasks Assigned or Created by Me",
+    "description": "",
+    "operationId": "GetAllTasksAssignedorCreatedbyMe",
+    "operationApiType": "GET",
+    "operationPath": "tasks",
+    "operationSummary": "Get All Tasks Assigned or Created by Me",
+    "operationDescription": "Get All Tasks Assigned or Created by Me",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get a Specific Task - Group Task",
+    "description": "",
+    "operationId": "GetSpecificTaskGroupTask",
+    "operationApiType": "GET",
+    "operationPath": "tasks/groups/{zgid}/{taskId}",
+    "operationSummary": "Get a Specific Task - Group Task",
+    "operationDescription": "Get a Specific Task - Group Task",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{zgid}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a task group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Zoho Group ID"
+      },
+      {
+        "name": "{taskId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Task ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Task ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get a Specific Task - Personal Task",
+    "description": "",
+    "operationId": "GetSpecificTaskPersonalTask",
+    "operationApiType": "GET",
+    "operationPath": "tasks/me/{taskId}",
+    "operationSummary": "Get a Specific Task - Personal Task",
+    "operationDescription": "Get a Specific Task - Personal Task",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{taskId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Task ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Task ID"
+      }
+    ]
+  },
+  {
+    "operation": "Change Group Task Title",
+    "description": "",
+    "operationId": "ChangeGroupTaskTitle",
+    "operationApiType": "PUT",
+    "operationPath": "tasks/groups/{zgid}/{taskId}",
+    "operationSummary": "Get a Specific Task - Personal Task",
+    "operationDescription": "Get a Specific Task - Personal Task",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{zgid}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a task group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Zoho Group ID"
+      },
+      {
+        "name": "{taskId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Task ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Task ID"
+      }
+    ]
+  },
+  {
+    "operation": "Change Personal Task Title",
+    "description": "",
+    "operationId": "ChangePersonalTaskTitle",
+    "operationApiType": "PUT",
+    "operationPath": "tasks/me/{taskId}",
+    "operationSummary": "Change Personal Task Title",
+    "operationDescription": "Change Personal Task Title",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{taskId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Task ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Task ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Project",
+    "description": "",
+    "operationId": "DeleteProject",
+    "operationApiType": "DELETE",
+    "operationPath": "tasks/groups/{zgid}/projects/{projectId}",
+    "operationSummary": "Delete a Project",
+    "operationDescription": "Delete a Project",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{zgid}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a task group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Zoho Group ID"
+      },
+      {
+        "name": "{projectId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Project ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Project ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Group Task",
+    "description": "",
+    "operationId": "DeleteGroupTask",
+    "operationApiType": "DELETE",
+    "operationPath": "tasks/groups/{zgid}/{taskId}",
+    "operationSummary": "Delete a Group Task",
+    "operationDescription": "Delete a Group Task",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{zgid}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a task group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Zoho Group ID"
+      },
+      {
+        "name": "{taskId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Task ID",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Task ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Personal Task",
+    "description": "",
+    "operationId": "DeletePersonalTask",
+    "operationApiType": "DELETE",
+    "operationPath": "tasks/me/{taskId}",
+    "operationSummary": "Delete a Personal Task",
+    "operationDescription": "Delete a Personal Task ",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{taskId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a specific task.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Task ID"
+      }
+    ]
+  },
+  {
+    "operation": "Create a Group Bookmark",
+    "description": "",
+    "operationId": "CreateGroupBookmark",
+    "operationApiType": "POST",
+    "operationPath": "links/groups/{groupId}",
+    "operationSummary": "Create a Group Bookmark",
+    "operationDescription": "Create a Group Bookmark",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{groupId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a bookmark group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Group ID"
+      }
+    ]
+  },
+  {
+    "operation": "Create a Personal Bookmark",
+    "description": "",
+    "operationId": "CreatePersonalBookmark",
+    "operationApiType": "POST",
+    "operationPath": "links/me",
+    "operationSummary": "Create a Personal Bookmark",
+    "operationDescription": "Create a Personal Bookmark",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Create a Group Collection",
+    "description": "",
+    "operationId": "CreateGroup Collection",
+    "operationApiType": "POST",
+    "operationPath": "links/groups/{groupId}/collections",
+    "operationSummary": "Create a Group Collection",
+    "operationDescription": "Create a Group Bookmark",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{groupId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a bookmark group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Group ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get All Groups in Bookmarks",
+    "description": "",
+    "operationId": "GetAllGroupsinBookmarks",
+    "operationApiType": "GET",
+    "operationPath": "links/groups",
+    "operationSummary": "Get All Groups in Bookmarks",
+    "operationDescription": "Get All Groups in Bookmarks",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get Group Bookmark",
+    "description": "",
+    "operationId": "GetGroupBookmark",
+    "operationApiType": "GET",
+    "operationPath": "links/groups/{groupId}",
+    "operationSummary": "Get Group Bookmark",
+    "operationDescription": "Get Group Bookmark",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{groupId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a bookmark group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Group ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get Group Bookmark by BookmarkId",
+    "description": "",
+    "operationId": "GetGroupBookmarkbybookmarkid",
+    "operationApiType": "GET",
+    "operationPath": "links/groups/{groupId}/{bookmarkId}",
+    "operationSummary": "Get Group Bookmark by BookmarkId",
+    "operationDescription": "Get Group Bookmark BookmarkId",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{groupId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a bookmark group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Group ID"
+      },
+      {
+        "name": "{bookmarkId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a specific bookmark.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Bookmark ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get Personal Bookmark",
+    "description": "",
+    "operationId": "GetPersonalBookmark",
+    "operationApiType": "GET",
+    "operationPath": "links/me",
+    "operationSummary": "Get Personal Bookmark",
+    "operationDescription": "Get Personal Bookmark",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get Personal Bookmark by BookmarkId",
+    "description": "",
+    "operationId": "GetPersonalBookmarkbyBookmarkId",
+    "operationApiType": "GET",
+    "operationPath": "links/me/{bookmarkId}",
+    "operationSummary": "Get Personal Bookmark by BookmarkId",
+    "operationDescription": "Get Personal Bookmark by BookmarkId",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{bookmarkId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a specific bookmark.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Bookmark ID"
+      }
+    ]
+  },
+  {
+    "operation": "Edit a Group Bookmark",
+    "description": "",
+    "operationId": "EditGroupBookmark",
+    "operationApiType": "PUT",
+    "operationPath": "links/groups/{groupId}/{bookmarkId}",
+    "operationSummary": "Edit a Group Bookmark",
+    "operationDescription": "Edit a Group Bookmark",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{groupId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a bookmark group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Group ID"
+      },
+      {
+        "name": "{bookmarkId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a specific bookmark.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Bookmark ID"
+      }
+    ]
+  },
+  {
+    "operation": "Edit a Personal Bookmark",
+    "description": "",
+    "operationId": "EditPersonalBookmark",
+    "operationApiType": "PUT",
+    "operationPath": "links/me/{bookmarkId}",
+    "operationSummary": "Edit a Personal Bookmark",
+    "operationDescription": "Edit a Personal Bookmark",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{bookmarkId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a specific bookmark.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Bookmark ID"
+      }
+    ]
+  },
+  {
+    "operation": "Edit a Group Collection",
+    "description": "",
+    "operationId": "EditGroupCollection",
+    "operationApiType": "PUT",
+    "operationPath": "links/groups/{groupId}/collections/{collectionId}",
+    "operationSummary": "Edit a Group Collection",
+    "operationDescription": "Edit a Group Collection",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{groupId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a bookmark group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Group ID"
+      },
+      {
+        "name": "{collectionId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a bookmark collection.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Collection ID"
+      }
+    ]
+  },
+  {
+    "operation": "Edit a Personal Collection",
+    "description": "",
+    "operationId": "EditPersonalCollection",
+    "operationApiType": "PUT",
+    "operationPath": "links/me/collections/{collectionId}",
+    "operationSummary": "Edit a Personal Collection",
+    "operationDescription": "Edit a Personal Collection",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{collectionId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a bookmark collection.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Collection ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Group Bookmark",
+    "description": "",
+    "operationId": "DeleteGroupBookmark",
+    "operationApiType": "DELETE",
+    "operationPath": "links/groups/{groupId}/{bookmarkId}",
+    "operationSummary": "Delete a Group Bookmark",
+    "operationDescription": "Delete a Group Bookmark",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{groupId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a bookmark group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Group ID"
+      },
+      {
+        "name": "{bookmarkId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a specific bookmark.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Bookmark ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Personal Bookmark",
+    "description": "",
+    "operationId": "DeletePersonalBookmark",
+    "operationApiType": "DELETE",
+    "operationPath": "links/me/{bookmarkId}",
+    "operationSummary": "Delete a Personal Bookmark",
+    "operationDescription": "Delete a Personal Bookmark",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{bookmarkId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a specific bookmark.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Bookmark ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Group Collection",
+    "description": "",
+    "operationId": "DeleteGroupCollection",
+    "operationApiType": "DELETE",
+    "operationPath": "links/groups/{groupId}/collections/{collectionId}",
+    "operationSummary": "Delete a Group Collection",
+    "operationDescription": "Delete a Group Collection",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{groupId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a bookmark group.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Group ID"
+      },
+      {
+        "name": "{collectionId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a bookmark collection.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Collection ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Personal Collection",
+    "description": "",
+    "operationId": "DeletePersonalCollection",
+    "operationApiType": "DELETE",
+    "operationPath": "links/me/collections/{collectionId}",
+    "operationSummary": "Delete a Personal Collection",
+    "operationDescription": "Delete a Personal Collection",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{collectionId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of a bookmark collection.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Collection ID"
+      }
+    ]
+  }
+]
