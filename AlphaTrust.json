@@ -458,6 +458,7 @@
     "operationSummary": "Insert a Document.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Document",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -727,6 +728,7 @@
     "operationSummary": "Insert File Attachments.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Document",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -816,6 +818,7 @@
     "operationSummary": "Delete a Group.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Group Management",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1085,6 +1088,7 @@
     "operationSummary": "Get a Participant.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Participants",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1174,6 +1178,7 @@
     "operationSummary": "Update Participant.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Participants",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1263,6 +1268,7 @@
     "operationSummary": "Update Participant Workflow Action Status.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Participants",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1352,6 +1358,7 @@
     "operationSummary": "Re-send Participant Email Notification.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Participants",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1441,6 +1448,7 @@
     "operationSummary": "Seal PDF",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "PDF",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1530,6 +1538,7 @@
     "operationSummary": "Certify PDF",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "PDF",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1619,6 +1628,7 @@
     "operationSummary": "Get PDF Data Files.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "PDF",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1708,6 +1718,7 @@
     "operationSummary": "Get Transaction Security Token Data.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Security Token",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1797,6 +1808,7 @@
     "operationSummary": "Get Task.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1886,6 +1898,7 @@
     "operationSummary": "Update Task.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1974,6 +1987,7 @@
     "operationPath": "tasks/insert",
     "operationSummary": "Insert a Task.",
     "operationDescription": "",
+    "OperationCategory": "Tasks",
     "deprecated": false,
     "adapterProperties": [
       {
@@ -2064,6 +2078,7 @@
     "operationSummary": "Get Transaction.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Transactions",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2153,6 +2168,7 @@
     "operationSummary": "Update an existing Transaction.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Transactions",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2242,6 +2258,7 @@
     "operationSummary": "Close Transaction",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Transactions",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2331,6 +2348,7 @@
     "operationSummary": "Create Transaction.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Transactions",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2780,6 +2798,7 @@
     "operationSummary": "Get Workflows",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Workflows",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2869,6 +2888,7 @@
     "operationSummary": "Get Workflow List",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Workflows",
     "adapterProperties": [
       {
         "name": "AdapterMode",
