@@ -8,6 +8,7 @@
     "operationSummary": "Get Vaults Accessible by Current User",
     "operationDescription": "Retrieves a list of vaults that are accessible by the current user.",
     "deprecated": false,
+    "OperationCategory": "Vault",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -40,6 +41,7 @@
     "operationSummary": "Get Current Vault",
     "operationDescription": "Fetch the document vault attached to the current session.",
     "deprecated": false,
+    "OperationCategory": "Vault",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -72,6 +74,7 @@
     "operationSummary": "Get Vaults",
     "operationDescription": "Retrieves the vaults that are on-line and available for the user on the server.",
     "deprecated": false,
+    "OperationCategory": "Vault",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -104,6 +107,7 @@
     "operationSummary": "Get Object Classes",
     "operationDescription": "Retrieves information on all object classes.",
     "deprecated": false,
+    "OperationCategory": "Object Type",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -136,6 +140,7 @@
     "operationSummary": "Get Object Class",
     "operationDescription": "Retrieves information on an object class.",
     "deprecated": false,
+    "OperationCategory": "Object Type",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -181,6 +186,7 @@
     "operationSummary": "Get Class Icon",
     "operationDescription": "Retrieves the icon for a single class.",
     "deprecated": false,
+    "OperationCategory": "Object Type",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -226,6 +232,7 @@
     "operationSummary": "Get Object Types",
     "operationDescription": "Retrieves information on real object types.",
     "deprecated": false,
+    "OperationCategory": "Object Type",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -258,6 +265,7 @@
     "operationSummary": "Get Object Type",
     "operationDescription": "Retrieves information on an object type.",
     "deprecated": false,
+    "OperationCategory": "Object Type",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -303,6 +311,7 @@
     "operationSummary": "Get Object Type Classes",
     "operationDescription": "Retrieves a collection of object classes for the provided object type.",
     "deprecated": false,
+    "OperationCategory": "Object Type",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -348,6 +357,7 @@
     "operationSummary": "Get Value Lists",
     "operationDescription": "Retrieves information on all value lists.",
     "deprecated": false,
+    "OperationCategory": "Value List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -380,6 +390,7 @@
     "operationSummary": "Get Value List",
     "operationDescription": "Retrieves information on a single value list.",
     "deprecated": false,
+    "OperationCategory": "Value List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -425,6 +436,7 @@
     "operationSummary": "Get Value List Items",
     "operationDescription": "Retrieves information on a single value list.",
     "deprecated": false,
+    "OperationCategory": "Value List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -470,6 +482,7 @@
     "operationSummary": "Create Value List Item",
     "operationDescription": "Creates a new value list item in the value list.",
     "deprecated": false,
+    "OperationCategory": "Value List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -541,6 +554,7 @@
     "operationSummary": "Get Value List Item",
     "operationDescription": "Retrieves a single value list item information.",
     "deprecated": false,
+    "OperationCategory": "Value List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -599,6 +613,7 @@
     "operationSummary": "Delete Value List Item",
     "operationDescription": "Deletes a value list item.",
     "deprecated": false,
+    "OperationCategory": "Value List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -657,6 +672,7 @@
     "operationSummary": "Get Value List Item Title",
     "operationDescription": "Retrieves the value list item title.",
     "deprecated": false,
+    "OperationCategory": "Value List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -689,8 +705,7 @@
         "ui_source": "operation",
         "ui_category": "Misc",
         "ui_displayName": "Object ID",
-        "description": "The object ID identifies an object in a document vault, consisting of the object type and a unique ID."                                                                                                                                                  
-
+        "description": "The object ID identifies an object in a document vault, consisting of the object type and a unique ID."
       },
       {
         "name": "APIVaultName",
@@ -716,6 +731,7 @@
     "operationSummary": "Get Collection of Objects in the Document Vault",
     "operationDescription": "Retrieves objects. The amount of returned objects is limited by the server, by default to 500 items.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -748,6 +764,7 @@
     "operationSummary": "Get Collection of Objects Filtered by Object Type",
     "operationDescription": "Retrieves objects of the given type. The amount of returned objects is limited by the server.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -792,6 +809,7 @@
     "operationSummary": "Get a Single Object",
     "operationDescription": "Retrieves objects of the given type. The amount of returned objects is limited by the server.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -850,6 +868,7 @@
     "operationSummary": "Get Files Belonging to an Object",
     "operationDescription": "Retrieves the object file information for all the files on an object.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -921,6 +940,7 @@
     "operationSummary": "Get a Single File on an Object",
     "operationDescription": "Retrieves the object file infromation for the object file.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1004,6 +1024,7 @@
     "operationSummary": "Get the Contents of a Single File",
     "operationDescription": "Retrieves the object file contents.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1087,6 +1108,7 @@
     "operationSummary": "Get the File Name of an Object File",
     "operationDescription": "Retrieves the current object file name.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1170,6 +1192,7 @@
     "operationSummary": "Change the Name on the Object File",
     "operationDescription": "Sets the name on the object file.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1279,6 +1302,7 @@
     "operationSummary": "Get the Deleted Status of the Object",
     "operationDescription": "Retrieves the deleted status of the object.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1337,6 +1361,7 @@
     "operationSummary": "Set the Deleted Status of the Object",
     "operationDescription": "Sets the deleted status of the object.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1421,6 +1446,7 @@
     "operationSummary": "Get the Current Check Out Status of the Object",
     "operationDescription": "Retrieves the current check out status.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1492,6 +1518,7 @@
     "operationSummary": "Set the Check Out Status of the Object",
     "operationDescription": "Sets the check out status. This is allowed only when the object isn't checked out to someone else, that is when the check out status isn't CheckedOut.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1589,6 +1616,7 @@
     "operationSummary": "Get Objects Filtered by Object Version",
     "operationDescription": "Retrieves the object information.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1660,6 +1688,7 @@
     "operationSummary": "Destroy the Object Version",
     "operationDescription": "Destroys the object version. As checked in versions cannot be destroyed this can only be performed on a checked out version and is equivalent to an undo checkout. Returns the new ObjectVersion information if it is still visible to the user.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1731,6 +1760,7 @@
     "operationSummary": "Create Collection of Temporary Uploads",
     "operationDescription": "Stores a temporary file on the server and assigns an ID for it.",
     "deprecated": false,
+    "OperationCategory": "Object",
     "adapterProperties": [
       {
         "name": "AdapterMode",

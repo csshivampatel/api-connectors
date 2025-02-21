@@ -8,6 +8,7 @@
     "operationSummary": "Fetch message",
     "operationDescription": "Retrieve details of a specific message, including status, sender, recipient, and content.",
     "deprecated": false,
+    "OperationCategory": "Messages",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -86,6 +87,7 @@
     "operationSummary": "Delete message",
     "operationDescription": "Deletes a specific message from the account using the message SID.",
     "deprecated": false,
+    "OperationCategory": "Messages",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -164,6 +166,7 @@
     "operationSummary": "Update message",
     "operationDescription": "Updates a specific message in the account, such as redacting the message body or canceling an unsent message.",
     "deprecated": false,
+    "OperationCategory": "Messages",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -256,6 +259,7 @@
     "operationSummary": "Send mesage to given number",
     "operationDescription": "Sends a message to a specified recipient using the account SID.",
     "deprecated": false,
+    "OperationCategory": "Messages",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -320,6 +324,7 @@
     "operationSummary": "List messages",
     "operationDescription": "Retrieve a list of messages sent or received by the account.",
     "deprecated": false,
+    "OperationCategory": "Messages",
     "adapterProperties": [
       {
         "name": "AdapterMode",

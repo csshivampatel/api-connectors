@@ -8,6 +8,7 @@
     "operationSummary": "List Containers",
     "operationDescription": "The List Containers operation returns a list of the containers under the specified storage account.",
     "deprecated": false,
+    "OperationCategory": "Container",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -33,6 +34,7 @@
     "operationSummary": "Set Blob Tier",
     "operationDescription": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -89,6 +91,7 @@
     "operationSummary": "Set Blob Tier",
     "operationDescription": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -145,6 +148,7 @@
     "operationSummary": "Set Blob Tier",
     "operationDescription": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -207,6 +211,7 @@
     "operationSummary": "List Blobs",
     "operationDescription": "The List Blobs operation returns a list of the blobs under the specified container.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -291,6 +296,7 @@
     "operationSummary": "Get Blob",
     "operationDescription": "The Get Blob operation reads or downloads a blob from the system, including its metadata and properties. You can also call Get Blob to read a snapshot.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -335,6 +341,7 @@
     "operationSummary": "Get Blob Properties",
     "operationDescription": "The Get Properties operation returns all user-defined metadata, standard HTTP properties, and system properties for the blob. It does not return the content of the blob.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -379,6 +386,7 @@
     "operationSummary": "Delete Blob",
     "operationDescription": "The Delete Blob operation marks the specified blob or snapshot for deletion. The blob is later deleted during garbage collection.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -423,6 +431,7 @@
     "operationSummary": "Get Blob Metadata",
     "operationDescription": "The Get Blob Metadata operation returns all user-defined metadata for the specified blob or snapshot.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -473,6 +482,7 @@
     "operationSummary": "Put Block",
     "operationDescription": "The Put Block operation creates a new block to be committed as part of a blob.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -552,6 +562,7 @@
     "operationSummary": "Put Block List",
     "operationDescription": "The Put Block List operation writes a blob by specifying the list of block IDs that make up the blob. To be written as part of a blob, a block must have been successfully written to the server in an earlier Put Block operation.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -635,6 +646,7 @@
     "operationSummary": "Get Block List",
     "operationDescription": "Specifies one or more datasets to include in the response:- User specify blocklisttype include={snapshots,metadata,uncommittedblobs,copy,deleted,tags,versions, deletedwithversions,immutabilitypolicy,legalhold,permissions}",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -706,6 +718,7 @@
     "operationSummary": "Put Page",
     "operationDescription": "The Put Page operation writes a range of pages to a page blob.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -813,6 +826,7 @@
     "operationSummary": "Copy Blob",
     "operationDescription": "The Copy Blob operation copies a blob to a destination within the storage account. In version 2012-02-12 and later, the source for a Copy Blob operation can be a committed blob in any Azure storage account. Beginning with version 2015-02-21, the source for a Copy Blob operation can be an Azure file in any Azure storage account.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -871,6 +885,7 @@
     "operationSummary": "Put Blob",
     "operationDescription": "The Put Blob operation creates a new block or updates the content of an existing block blob.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -980,6 +995,7 @@
     "operationSummary": "Put Blob",
     "operationDescription": "The Put Blob operation creates a new append blob, or updates the content of an existing page blob.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1076,6 +1092,7 @@
     "operationSummary": "Put Blob",
     "operationDescription": "The Put Blob operation creates a new append blob, or updates the content of an existing append blob.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1159,6 +1176,7 @@
     "operationSummary": "Append Block",
     "operationDescription": "The Append Block operation commits a new block of data to the end of an existing append blob. The Append Block operation is permitted only if the blob was created with x-ms-blob-type set to AppendBlob. Append Block is supported only on version 2015-02-21 version or later.",
     "deprecated": false,
+    "OperationCategory": "Blob",
     "adapterProperties": [
       {
         "name": "AdapterMode",

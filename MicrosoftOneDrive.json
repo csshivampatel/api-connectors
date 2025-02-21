@@ -8,6 +8,7 @@
     "operationSummary": "Search for Items in the Drive",
     "operationDescription": "This method allows your app to track changes to a drive and its children over time.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -41,6 +42,7 @@
     "operationSummary": "Create a new folder in the signed-in user's OneDrive root folder",
     "operationDescription": "Return a collection of drive root folder in the children relationship of a root.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -59,6 +61,7 @@
     "operationSummary": "Create a new folder in the signed-in user's OneDrive root folder",
     "operationDescription": "create a new folder in the signed-in user's OneDrive root folder.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -104,6 +107,7 @@
     "operationSummary": "Get item",
     "operationDescription": "Retrieve the metadata for a DriveItem in a Drive by ID.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -137,6 +141,7 @@
     "operationSummary": "Update item",
     "operationDescription": "Update the metadata for a DriveItem by ID",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -196,6 +201,7 @@
     "operationSummary": "Delete item",
     "operationDescription": "Delete a DriveItem by using its ID. Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -229,6 +235,7 @@
     "operationSummary": "List children",
     "operationDescription": "Return a collection of DriveItems in the children relationship of a DriveItem.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -262,6 +269,7 @@
     "operationSummary": "Create item",
     "operationDescription": "Create a new folder or DriveItem in a Drive with a specified parent item.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -307,6 +315,7 @@
     "operationSummary": "Upload content",
     "operationDescription": "The simple upload API allows you to provide the contents of a new file or update the contents of an existing file in a single API call. This method only supports files up to 4MB in size.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -366,6 +375,7 @@
     "operationSummary": "Download content",
     "operationDescription": "The simple upload API allows you to provide the contents of a new file or update the contents of an existing file in a single API call. This method only supports files up to 4MB in size.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -399,6 +409,7 @@
     "operationSummary": "Download specific file format",
     "operationDescription": "The simple upload API allows you to provide the contents of a new file or update the contents of an existing file in a single API call. This method only supports files up to 4MB in size.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -446,6 +457,7 @@
     "operationSummary": "Copy item",
     "operationDescription": "Asynchronously creates a copy of an driveItem (including any children), under a new parent item",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -505,6 +517,7 @@
     "operationSummary": "Search items",
     "operationDescription": "Search the hierarchy of items for items matching a query. You can search within a folder hierarchy, a whole drive, or files shared with the current user",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -552,6 +565,7 @@
     "operationSummary": "List thumbnails",
     "operationDescription": "Retrieve a collection of ThumbnailSet resources for a DriveItem resource.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -585,6 +599,7 @@
     "operationSummary": "Get a DriveItem resource",
     "operationDescription": "Retrieve the metadata for a DriveItem in a Drive by ID.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -632,6 +647,7 @@
     "operationSummary": "Update DriveItem properties",
     "operationDescription": "Update the metadata for a DriveItem by ID. You can also use update to move an item to another parent by updating the item's parentReference property.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -705,6 +721,7 @@
     "operationSummary": "Delete a DriveItem",
     "operationDescription": "Delete a DriveItem by using its ID. Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -752,6 +769,7 @@
     "operationSummary": "Create a new folder in a drive",
     "operationDescription": "Create a new folder or DriveItem in a Drive with a specified parent item.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -825,6 +843,7 @@
     "operationSummary": "Upload a new file",
     "operationDescription": "Upload a new file with specified name. This method only supports files up to 4MB in size.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -886,6 +905,7 @@
     "operationSummary": "List children of a driveItem",
     "operationDescription": "Return a collection of DriveItems in the children relationship of a DriveItem.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -933,6 +953,7 @@
     "operationSummary": "Download the contents of a DriveItem",
     "operationDescription": "Download the contents of the primary stream (file) of a DriveItem. Only DriveItems with the file property can be downloaded.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -980,6 +1001,7 @@
     "operationSummary": "Copy a DriveItem",
     "operationDescription": "Asynchronously creates a copy of an driveItem (including any children), under a new parent item or with a new name.",
     "deprecated": false,
+    "OperationCategory": "Item",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1053,6 +1075,7 @@
     "operationSummary": "Get list",
     "operationDescription": "Returns the metadata for a list.",
     "deprecated": false,
+    "OperationCategory": "List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1086,6 +1109,7 @@
     "operationSummary": "Get list",
     "operationDescription": "Returns the metadata for a list.",
     "deprecated": false,
+    "OperationCategory": "List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1133,6 +1157,7 @@
     "operationSummary": "Create list item",
     "operationDescription": "Create a new listItem in a list.",
     "deprecated": false,
+    "OperationCategory": "List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1206,6 +1231,7 @@
     "operationSummary": "Enumerate list items",
     "operationDescription": "Get the collection of items in a list.",
     "deprecated": false,
+    "OperationCategory": "List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1239,6 +1265,7 @@
     "operationSummary": "Enumerate list items",
     "operationDescription": "Get the collection of items in a list.",
     "deprecated": false,
+    "OperationCategory": "List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1286,6 +1313,7 @@
     "operationSummary": "Delete list item",
     "operationDescription": "Removes an item from a list.",
     "deprecated": false,
+    "OperationCategory": "List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1333,6 +1361,7 @@
     "operationSummary": "Update list item",
     "operationDescription": "Update the properties on a listItem.",
     "deprecated": false,
+    "OperationCategory": "List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1406,6 +1435,7 @@
     "operationSummary": "Get an item in a list",
     "operationDescription": "Returns the metadata for an item in a list.",
     "deprecated": false,
+    "OperationCategory": "List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1439,6 +1469,7 @@
     "operationSummary": "Get an item in a list",
     "operationDescription": "Returns the metadata for an item in a list.",
     "deprecated": false,
+    "OperationCategory": "List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1500,6 +1531,7 @@
     "operationSummary": "Delete an item in a list",
     "operationDescription": "Removes an item from a list.",
     "deprecated": false,
+    "OperationCategory": "List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1533,6 +1565,7 @@
     "operationSummary": "Update an item in a list",
     "operationDescription": "Update the properties on a listItem.",
     "deprecated": false,
+    "OperationCategory": "List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1592,6 +1625,7 @@
     "operationSummary": "Update an item in a list",
     "operationDescription": "Update the column value on a listItem.",
     "deprecated": false,
+    "OperationCategory": "List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1679,6 +1713,7 @@
     "operationSummary": "Create an item in a list",
     "operationDescription": "Create a new listItem in a list.",
     "deprecated": false,
+    "OperationCategory": "List",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1752,6 +1787,7 @@
     "operationSummary": "Create sharing link",
     "operationDescription": "You can use createLink action to share a DriveItem via a sharing link.",
     "deprecated": false,
+    "OperationCategory": "List",
     "adapterProperties": [
       {
         "name": "AdapterMode",

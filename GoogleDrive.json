@@ -1,282 +1,287 @@
 [
-    {
-        "operation": "Create copy of a file",
-        "description": "",
-        "operationId": "copy_file",
-        "operationApiType": "POST",
-        "operationPath": "/files/{fileId}/copy",
-        "operationSummary": "Create copy of a file",
-        "operationDescription": "Creates a copy of a file and applies any requested updates with patch semantics. Folders cannot be copied.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-            {
-                "name": "{fileId}",
-                "value": "",
-                "isVisible": true,
-                "bindable": true,
-                "required": true,
-                "description": "Specify File ID .",
-                "ui_EditorType": "Textbox",
-                "param_type": "Path",
-                "ui_category": "Subscribe Mode Properties",
-                "ui_source": "operation",
-                "datatype": "System.String",
-                "ui_displayName": "File ID"
-            },
-            {
-                "name": "Body",
-                "value": "",
-                "param_type": "Param",
-                "isVisible": false,
-                "bindable": true,
-                "required": true,
-                "datatype": "System.String",
-                "description": "Specify the content of the Body",
-                "ui_source": "operation",
-                "ui_EditorType": "TextArea",
-                "ui_category": "Subscribe Mode Properties"
-            },
-            {
-            "name": "BodyType",
-            "value": "Raw",
-            "param_type": "Param",
-            "ui_source": "operation"
-            },
-            {
-            "name": "BodyFormat",
-            "value": "XML",
-            "param_type": "Param",
-            "ui_source": "operation"
-            }
-        ]
+  {
+    "operation": "Create copy of a file",
+    "description": "",
+    "operationId": "copy_file",
+    "operationApiType": "POST",
+    "operationPath": "/files/{fileId}/copy",
+    "operationSummary": "Create copy of a file",
+    "operationDescription": "Creates a copy of a file and applies any requested updates with patch semantics. Folders cannot be copied.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{fileId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify File ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
       },
       {
-        "operation": "Create new file",
-        "description": "",
-        "operationId": "create_file",
-        "operationApiType": "POST",
-        "operationPath": "/files",
-        "operationSummary": "Create new file",
-        "operationDescription": "Creates a new file.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-            {
-            "name": "Body",
-            "value": "",
-            "param_type": "Param",
-            "isVisible": false,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify the content of the Body",
-            "ui_source": "operation",
-            "ui_EditorType": "TextArea",
-            "ui_category": "Subscribe Mode Properties"
-            },
-            {
-            "name": "BodyType",
-            "value": "Raw",
-            "param_type": "Param",
-            "ui_source": "operation"
-            },
-            {
-            "name": "BodyFormat",
-            "value": "XML",
-            "param_type": "Param",
-            "ui_source": "operation"
-            }
-        ]
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the Body",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties"
       },
       {
-        "operation": "List or search files",
-        "description": "",
-        "operationId": "list_files",
-        "operationApiType": "GET",
-        "operationPath": "/files",
-        "operationSummary": "List or search files",
-        "operationDescription": "Lists or searches files.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "q",
-            "value": "",
-            "param_type": "UrlParam",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.Byte[]",
-            "description": "Specify the Query String to search or List files.",
-            "uiEditor": "Textbox",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_displayName": "Query String",
-            "ui_source": "operation"
-        }
-        ]
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
       },
       {
-        "operation": "Permanently delete a file",
-        "description": "",
-        "operationId": "delete_file",
-        "operationApiType": "DELETE",
-        "operationPath": "/files/{fileId}",
-        "operationSummary": "Permanently delete a file",
-        "operationDescription": "Permanently deletes a file owned by the user without moving it to the trash. If the file belongs to a shared drive the user must be an organizer on the parent. If the target is a folder, all descendants owned by the user are also deleted.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-            {
-                "name": "{fileId}",
-                "value": "",
-                "isVisible": true,
-                "bindable": true,
-                "required": true,
-                "description": "Specify File ID .",
-                "ui_EditorType": "Textbox",
-                "param_type": "Path",
-                "ui_category": "Subscribe Mode Properties",
-                "ui_source": "operation",
-                "datatype": "System.String",
-                "ui_displayName": "File ID"
-            }
-        ]
-       },
-       {
-        "operation": "Get file's metadata",
-        "description": "",
-        "operationId": "get_fileMetadata",
-        "operationApiType": "GET",
-        "operationPath": "/files/{fileId}",
-        "operationSummary": "Get file's metadata",
-        "operationDescription": "Gets a file's metadata or content by ID.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-            {
-                "name": "{fileId}",
-                "value": "",
-                "isVisible": true,
-                "bindable": true,
-                "required": true,
-                "description": "Specify File ID .",
-                "ui_EditorType": "Textbox",
-                "param_type": "Path",
-                "ui_category": "Subscribe Mode Properties",
-                "ui_source": "operation",
-                "datatype": "System.String",
-                "ui_displayName": "File ID"
-            }
-        ]
-       },
-       {
-        "operation": "Update file's metadata",
-        "description": "",
-        "operationId": "update_fileMetadata",
-        "operationApiType": "PATCH",
-        "operationPath": "/files/{fileId}",
-        "operationSummary": "Update file's metadata",
-        "operationDescription": "Updates a file's metadata and/or content. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This method supports patch semantics.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{fileId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify File ID .",
-            "ui_EditorType": "Textbox",
-            "param_type": "Path",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "File ID"
-        },
-        {
-            "name": "Body",
-            "value": "",
-            "param_type": "Param",
-            "isVisible": false,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify the content of the Body",
-            "ui_source": "operation",
-            "ui_EditorType": "TextArea",
-            "ui_category": "Subscribe Mode Properties"
-        },
-        {
-            "name": "BodyType",
-            "value": "Raw",
-            "param_type": "Param",
-            "ui_source": "operation"
-        },
-        {
-            "name": "BodyFormat",
-            "value": "XML",
-            "param_type": "Param",
-            "ui_source": "operation"
-        }
-        ]
-       },
-       {
-        "operation": "Permanently delete trashed files",
-        "description": "",
-        "operationId": "delete_all_trashed_file",
-        "operationApiType": "DELETE",
-        "operationPath": "/files/trash",
-        "operationSummary": "Permanently delete trashed files",
-        "operationDescription": "Permanently deletes all of the user's trashed files.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-            
-        ]
-       }
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create new file",
+    "description": "",
+    "operationId": "create_file",
+    "operationApiType": "POST",
+    "operationPath": "/files",
+    "operationSummary": "Create new file",
+    "operationDescription": "Creates a new file.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the Body",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List or search files",
+    "description": "",
+    "operationId": "list_files",
+    "operationApiType": "GET",
+    "operationPath": "/files",
+    "operationSummary": "List or search files",
+    "operationDescription": "Lists or searches files.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "q",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "description": "Specify the Query String to search or List files.",
+        "uiEditor": "Textbox",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Query String",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Permanently delete a file",
+    "description": "",
+    "operationId": "delete_file",
+    "operationApiType": "DELETE",
+    "operationPath": "/files/{fileId}",
+    "operationSummary": "Permanently delete a file",
+    "operationDescription": "Permanently deletes a file owned by the user without moving it to the trash. If the file belongs to a shared drive the user must be an organizer on the parent. If the target is a folder, all descendants owned by the user are also deleted.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{fileId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify File ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get file's metadata",
+    "description": "",
+    "operationId": "get_fileMetadata",
+    "operationApiType": "GET",
+    "operationPath": "/files/{fileId}",
+    "operationSummary": "Get file's metadata",
+    "operationDescription": "Gets a file's metadata or content by ID.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{fileId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify File ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      }
+    ]
+  },
+  {
+    "operation": "Update file's metadata",
+    "description": "",
+    "operationId": "update_fileMetadata",
+    "operationApiType": "PATCH",
+    "operationPath": "/files/{fileId}",
+    "operationSummary": "Update file's metadata",
+    "operationDescription": "Updates a file's metadata and/or content. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This method supports patch semantics.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{fileId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify File ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the Body",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Permanently delete trashed files",
+    "description": "",
+    "operationId": "delete_all_trashed_file",
+    "operationApiType": "DELETE",
+    "operationPath": "/files/trash",
+    "operationSummary": "Permanently delete trashed files",
+    "operationDescription": "Permanently deletes all of the user's trashed files.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
+  }
 ]

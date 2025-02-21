@@ -8,6 +8,7 @@
     "operationSummary": "List Shares",
     "operationDescription": "The List Shares operation returns a list of the shares and share snapshots under the specified account. ",
     "deprecated": false,
+    "OperationCategory": "Share",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -33,6 +34,7 @@
     "operationSummary": "List Directories and Files",
     "operationDescription": "The List Directories and Files operation returns a list of files or directories under the specified share or directory. It lists the contents only for a single level of the directory hierarchy.",
     "deprecated": false,
+    "OperationCategory": "Directory and File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -75,6 +77,7 @@
     "operationSummary": "Create File",
     "operationDescription": "The Create File operation creates a new file or replaces a file. When you call Create File, you only initialize the file. To add content to a file, you call the Put Range operation.",
     "deprecated": false,
+    "OperationCategory": "Directory and File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -137,6 +140,7 @@
     "operationSummary": "Put Range",
     "operationDescription": "The Put Range operation writes a range of bytes to a file.",
     "deprecated": false,
+    "OperationCategory": "Directory and File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -243,6 +247,7 @@
     "operationSummary": "Get File",
     "operationDescription": "The Get File operation reads or downloads a file from the system, including its metadata and properties.",
     "deprecated": false,
+    "OperationCategory": "Directory and File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -285,6 +290,7 @@
     "operationSummary": "Delete File",
     "operationDescription": "The Delete File operation immediately removes the file from the storage account.",
     "deprecated": false,
+    "OperationCategory": "Directory and File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -327,6 +333,7 @@
     "operationSummary": "Delete File",
     "operationDescription": "The Delete File operation immediately removes the file from the storage account.",
     "deprecated": false,
+    "OperationCategory": "Directory and File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -369,6 +376,7 @@
     "operationSummary": "Set File Metadata",
     "operationDescription": "The Set File Metadata operation sets user-defined metadata for the specified file.",
     "deprecated": false,
+    "OperationCategory": "Directory and File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -428,6 +436,7 @@
     "operationSummary": "Set File Metadata",
     "operationDescription": "The Get File Metadata operation returns all user-defined metadata for the specified file.",
     "deprecated": false,
+    "OperationCategory": "Directory and File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -476,6 +485,7 @@
     "operationSummary": "Abort Copy File",
     "operationDescription": "The Copy File operation from source file to destination.",
     "deprecated": false,
+    "OperationCategory": "Directory and File",
     "adapterProperties": [
       {
         "name": "AdapterMode",

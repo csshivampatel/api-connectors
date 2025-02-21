@@ -8,6 +8,7 @@
     "operationSummary": "Create an Associations",
     "operationDescription": "Create an Association.",
     "deprecated": false,
+    "OperationCategory": "Associations",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -81,6 +82,7 @@
     "operationSummary": "Create a company",
     "operationDescription": "Create an Object identified by companyId.",
     "deprecated": false,
+    "OperationCategory": "Companies",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -126,6 +128,7 @@
     "operationSummary": "Create a contact with the given properties",
     "operationDescription": "Create a contact with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard contacts is provided.",
     "deprecated": false,
+    "OperationCategory": "Contacts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -171,6 +174,7 @@
     "operationSummary": "Create COS Blog Post",
     "operationDescription": "Create COS Blog Post",
     "deprecated": false,
+    "OperationCategory": "Blog Posts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -216,6 +220,7 @@
     "operationSummary": "Create a Deal",
     "operationDescription": "Create a deal with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard deals is provided.",
     "deprecated": false,
+    "OperationCategory": "Deals",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -261,6 +266,7 @@
     "operationSummary": "Create a Line Item",
     "operationDescription": "Create a line item with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard line items is provided.",
     "deprecated": false,
+    "OperationCategory": "Line Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -306,6 +312,7 @@
     "operationSummary": "List Line Items",
     "operationDescription": "Read a page of line items. Control what is returned via the `properties` query param.",
     "deprecated": false,
+    "OperationCategory": "Line Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -324,6 +331,7 @@
     "operationSummary": "Get a line item by lineItemId",
     "operationDescription": "Read an Object identified by `{lineItemId}`. `{lineItemId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Control what is returned via the `properties` query param.",
     "deprecated": false,
+    "OperationCategory": "Line Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -356,6 +364,7 @@
     "operationSummary": "Update a line item",
     "operationDescription": "Perform a partial update of an Object identified by `{lineItemId}`. `{lineItemId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.",
     "deprecated": false,
+    "OperationCategory": "Line Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -414,6 +423,7 @@
     "operationSummary": "Create a Product",
     "operationDescription": "Create a product with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard products is provided.",
     "deprecated": false,
+    "OperationCategory": "Products",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -459,6 +469,7 @@
     "operationSummary": "Create Ticket",
     "operationDescription": "Create a ticket with the given properties and return a copy of the object, including the ID. Documentation and examples for creating standard tickets is provided.",
     "deprecated": false,
+    "OperationCategory": "Tickets",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -504,6 +515,7 @@
     "operationSummary": "Get All Companies",
     "operationDescription": "Read a page of companies. Control what is returned via the properties query param.",
     "deprecated": false,
+    "OperationCategory": "Companies",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -522,6 +534,7 @@
     "operationSummary": "Get a Company by Id",
     "operationDescription": "Read an Object identified by companyId.",
     "deprecated": false,
+    "OperationCategory": "Companies",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -554,6 +567,7 @@
     "operationSummary": "Read a page of contacts",
     "operationDescription": "Read a page of contacts. Control what is returned via the properties query param.",
     "deprecated": false,
+    "OperationCategory": "Contacts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -572,6 +586,7 @@
     "operationSummary": "Read a Contact",
     "operationDescription": "Read an Object identified by `{contactId}`. `{contactId}` refers to the internal object ID. Control what is returned via the `properties` query param.",
     "deprecated": false,
+    "OperationCategory": "Contacts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -605,6 +620,7 @@
     "operationSummary": "Get all Custom Objects",
     "operationDescription": "Returns all object schemas that have been defined for your account.",
     "deprecated": false,
+    "OperationCategory": "Schemas",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -623,6 +639,7 @@
     "operationSummary": "Read a page of deals",
     "operationDescription": "Read a page of deals. Control what is returned via the `properties` query param.",
     "deprecated": false,
+    "OperationCategory": "Deals",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -641,6 +658,7 @@
     "operationSummary": "List Products",
     "operationDescription": "Read a page of products. Control what is returned via the `properties` query param.",
     "deprecated": false,
+    "OperationCategory": "Products",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -659,6 +677,7 @@
     "operationSummary": "List Tickets",
     "operationDescription": "Read a page of tickets. Control what is returned via the `properties` query param",
     "deprecated": false,
+    "OperationCategory": "Tickets",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -677,6 +696,7 @@
     "operationSummary": "Get Ticket",
     "operationDescription": "Read an Object identified by `{ticketId}`. `{ticketId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Control what is returned via the `properties` query param.",
     "deprecated": false,
+    "OperationCategory": "Tickets",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -710,6 +730,7 @@
     "operationSummary": "Archive a Contact",
     "operationDescription": "Move an Object identified by `{contactId}` to the recycling bin.",
     "deprecated": false,
+    "OperationCategory": "Contacts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -769,6 +790,7 @@
     "operationSummary": "Update a Company",
     "operationDescription": "Perform a partial update of an Object identified by companyId.",
     "deprecated": false,
+    "OperationCategory": "Companies",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -828,6 +850,7 @@
     "operationSummary": "Archive a Company",
     "operationDescription": "Move an Object identified by `{companyId}` to the recycling bin.",
     "deprecated": false,
+    "OperationCategory": "Companies",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -861,6 +884,7 @@
     "operationSummary": "Update a Contact",
     "operationDescription": "Perform a partial update of an Object identified by `{contactId}`. `{contactId}` refers to the internal object ID. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.",
     "deprecated": false,
+    "OperationCategory": "Contacts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -920,6 +944,7 @@
     "operationSummary": "Update a schema",
     "operationDescription": "Update the details for an existing object schema.",
     "deprecated": false,
+    "OperationCategory": "Custom Objects",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -979,6 +1004,7 @@
     "operationSummary": "Update a schema",
     "operationDescription": "Perform a partial update of an Object identified by dealId. dealId refers to the internal object ID by default, or optionally any unique property value as specified by the idProperty query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.",
     "deprecated": false,
+    "OperationCategory": "Deals",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1038,6 +1064,7 @@
     "operationSummary": "Update a product",
     "operationDescription": "Perform a partial update of an Object identified by productId.",
     "deprecated": false,
+    "OperationCategory": "Products",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1097,6 +1124,7 @@
     "operationSummary": "Update a ticket",
     "operationDescription": "Perform a partial update of an Object identified by `{ticketId}`. `{ticketId}` refers to the internal object ID by default, or optionally any unique property value as specified by the `idProperty` query param. Provided property values will be overwritten. Read-only and non-existent properties will be ignored. Properties values can be cleared by passing an empty string.",
     "deprecated": false,
+    "OperationCategory": "Tickets",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1156,6 +1184,7 @@
     "operationSummary": "Get All Associations",
     "operationDescription": "Get All Association.",
     "deprecated": false,
+    "OperationCategory": "Associations",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1229,6 +1258,7 @@
     "operationSummary": "Get an existing schema",
     "operationDescription": "Returns an existing object schema.",
     "deprecated": false,
+    "OperationCategory": "Custom Objects",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1262,6 +1292,7 @@
     "operationSummary": "Read Product By Id",
     "operationDescription": "Read an Object identified by productId.",
     "deprecated": false,
+    "OperationCategory": "Products",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1295,6 +1326,7 @@
     "operationSummary": "Get Blogs",
     "operationDescription": "Get Blogs",
     "deprecated": false,
+    "OperationCategory": "Blog Posts",
     "adapterProperties": [
       {
         "name": "AdapterMode",

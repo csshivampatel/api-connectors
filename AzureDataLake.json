@@ -8,6 +8,7 @@
     "operationSummary": "List Paths",
     "operationDescription": "List filesystem paths and their properties.",
     "deprecated": false,
+    "OperationCategory": "Filesystem",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -51,6 +52,7 @@
     "operationSummary": "List Filesystems",
     "operationDescription": "List filesystems and their properties in given account.",
     "deprecated": false,
+    "OperationCategory": "Filesystem",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -76,6 +78,7 @@
     "operationSummary": "Create File",
     "operationDescription": "Create a file. By default, the destination is overwritten and if the destination already exists and has a lease the lease is broken.",
     "deprecated": false,
+    "OperationCategory": "Filesystem",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -130,6 +133,7 @@
     "operationSummary": "Rename File | Rename Directory",
     "operationDescription": "Rename a file or directory name. By default, the destination is overwritten and if the destination already exists and has a lease the lease is broken.",
     "deprecated": false,
+    "OperationCategory": "Filesystem",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -190,6 +194,7 @@
     "operationSummary": "Create Directory",
     "operationDescription": "Create a directory. By default, the destination is overwritten and if the destination already exists and has a lease the lease is broken.",
     "deprecated": false,
+    "OperationCategory": "Filesystem",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -244,6 +249,7 @@
     "operationSummary": "Delete File",
     "operationDescription": "Delete the file from directory",
     "deprecated": false,
+    "OperationCategory": "Filesystem",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -286,6 +292,7 @@
     "operationSummary": "Delete Directory",
     "operationDescription": "Delete the directory recursively.",
     "deprecated": false,
+    "OperationCategory": "Filesystem",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -334,6 +341,7 @@
     "operationSummary": "Get Properties",
     "operationDescription": "Get Properties returns all system and user defined properties for a path.",
     "deprecated": false,
+    "OperationCategory": "Path",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -376,6 +384,7 @@
     "operationSummary": "Get Status",
     "operationDescription": "Get Status returns all system defined properties for a path.",
     "deprecated": false,
+    "OperationCategory": "Path",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -424,6 +433,7 @@
     "operationSummary": "Get Access Control List",
     "operationDescription": "Get Access Control List returns the access control list for a path.",
     "deprecated": false,
+    "OperationCategory": "Path",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -472,6 +482,7 @@
     "operationSummary": "Renew Lease Path",
     "operationDescription": "Renew a lease to restrict write and delete access to the path.",
     "deprecated": false,
+    "OperationCategory": "Path",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -531,6 +542,7 @@
     "operationSummary": "Release Lease Path",
     "operationDescription": "Release a lease to restrict write and delete access to the path.",
     "deprecated": false,
+    "OperationCategory": "Path",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -590,6 +602,7 @@
     "operationSummary": "Change Lease Path",
     "operationDescription": "Change a lease to restrict write and delete access to the path.",
     "deprecated": false,
+    "OperationCategory": "Path",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -660,6 +673,7 @@
     "operationSummary": "Break Lease Path",
     "operationDescription": "Break a lease to restrict write and delete access to the path.",
     "deprecated": false,
+    "OperationCategory": "Path",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -708,6 +722,7 @@
     "operationSummary": "Append Data",
     "operationDescription": "Uploads data to be appended to a file.",
     "deprecated": false,
+    "OperationCategory": "Path",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -793,6 +808,7 @@
     "operationSummary": "Flush Data",
     "operationDescription": "Flushes (writes) previously uploaded data to a file.",
     "deprecated": false,
+    "OperationCategory": "Path",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -870,6 +886,7 @@
     "operationSummary": "Set Properties for a file or directory",
     "operationDescription": "Set Properties for a file or directory",
     "deprecated": false,
+    "OperationCategory": "Path",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -953,6 +970,7 @@
     "operationSummary": "Read File",
     "operationDescription": "Read the contents of a file.  For read operations, range requests are supported.",
     "deprecated": false,
+    "OperationCategory": "Path",
     "adapterProperties": [
       {
         "name": "AdapterMode",

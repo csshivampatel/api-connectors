@@ -8,6 +8,7 @@
     "operationSummary": "Get Folders",
     "operationDescription": "Retrieves child folders from within a given root folder.  Required Permissions: Read-Only Assets, Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Folders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -26,6 +27,7 @@
     "operationSummary": "Create Folder",
     "operationDescription": "Creates a new folder.  Required Permissions: Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Folders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -99,6 +101,7 @@
     "operationSummary": "Update Folder Metadata",
     "operationDescription": "Updates the metadata for a given folder.  Required Permissions: Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Folders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -146,6 +149,7 @@
     "operationSummary": "Delete Folder",
     "operationDescription": "Deletes the designated folder.  Deletion will fail if the folder has content.  Required Permissions: Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Folders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -179,6 +183,7 @@
     "operationSummary": "Get Folder by Id",
     "operationDescription": "Returns the folder record with the given id.  Required Permissions: Read-Only Assets, Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Folders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -226,6 +231,7 @@
     "operationSummary": "Get Folder by Name",
     "operationDescription": "Returns a folder record for the given name.  Required Permissions: Read-Only Assets, Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Folders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -259,6 +265,7 @@
     "operationSummary": "Describe Lead",
     "operationDescription": "Returns metadata about lead objects in the target instance, including a list of all fields available for interaction via the APIs.  Required Permissions: Read-Only Lead, Read-Write Lead<br><br><b>Note: This endpoint has been superceded.</b>  Use <a href=\"/rest-api/endpoint-reference/lead-database-endpoint-reference/#!/Leads/describeUsingGET_6\">Describe Lead2</a> endpoint instead.",
     "deprecated": false,
+    "OperationCategory": "Leads",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -277,6 +284,7 @@
     "operationSummary": "Describe Lead2",
     "operationDescription": "Returns list of searchable fields on lead objects in the target instance.  Required Permissions: Read-Only Lead, Read-Write Lead",
     "deprecated": false,
+    "OperationCategory": "Leads",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -295,6 +303,7 @@
     "operationSummary": "Create or Update Lead",
     "operationDescription": "Syncs a list of leads to the target instance.  Required Permissions: Read-Write Lead",
     "deprecated": false,
+    "OperationCategory": "Leads",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -340,6 +349,7 @@
     "operationSummary": "Create Lead Fields",
     "operationDescription": "Create lead fields in the target instance.  Required Permissions: Read-Write Schema Custom Field",
     "deprecated": false,
+    "OperationCategory": "Lead Fields",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -385,6 +395,7 @@
     "operationSummary": "Delete Leads",
     "operationDescription": "Delete a list of leads from the destination instance.  Required Permissions: Read-Write Lead",
     "deprecated": false,
+    "OperationCategory": "Leads",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -430,6 +441,7 @@
     "operationSummary": "Update Lead Field",
     "operationDescription": "Update metadata for a lead field in the target instance.  See update rules <a href=\"https://developers.marketo.com/rest-api/lead-database/leads/#update_field\">here</a>.  Required Permissions: Read-Write Schema Standard Field, Read-Write Schema Custom Field",
     "deprecated": false,
+    "OperationCategory": "Lead Fields",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -489,6 +501,7 @@
     "operationSummary": "Get Lead Field by Name",
     "operationDescription": "Retrieves metadata for single lead field.  Required Permissions: Read-Write Schema Standard Field, Read-Write Schema Custom Field",
     "deprecated": false,
+    "OperationCategory": "Lead Fields",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -522,6 +535,7 @@
     "operationSummary": "Get Leads by Filter Type",
     "operationDescription": "Returns a list of up to 300 leads based on a list of values in a particular field.  Required Permissions: Read-Only Lead, Read-Write Lead",
     "deprecated": false,
+    "OperationCategory": "Leads",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -569,6 +583,7 @@
     "operationSummary": "Get Leads by Program Id",
     "operationDescription": "Retrieves a list of leads which are members of the designated program.  Required Permissions: Read-Only Lead, Read-Write Lead",
     "deprecated": false,
+    "OperationCategory": "Leads",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -602,6 +617,7 @@
     "operationSummary": "Get Lead by Id",
     "operationDescription": "Retrieves a single lead record through its Marketo id.  Required Permissions: Read-Only Lead, Read-Write Lead",
     "deprecated": false,
+    "OperationCategory": "Leads",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -635,6 +651,7 @@
     "operationSummary": "Get Lists by Lead Id",
     "operationDescription": "Query static list membership for one lead.  Required Permissions: Read-Only Asset",
     "deprecated": false,
+    "OperationCategory": "Lead Fields",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -668,6 +685,7 @@
     "operationSummary": "Get Lead Fields",
     "operationDescription": "Retrieves metadata for all lead fields in the target instance.  Required Permissions: Read-Write Schema Standard Field, Read-Write Schema Custom Field",
     "deprecated": false,
+    "OperationCategory": "Lead Fields",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -686,6 +704,7 @@
     "operationSummary": "Create Export Lead Job",
     "operationDescription": "Create export job for search criteria defined via \"filter\" parameter.  Request returns the \"exportId\" which is passed as a parameter in subsequent calls to Bulk Export Leads endpoints.  Use Enqueue Export Lead Job endpoint to queue the export job for processing.  Use Get Export Lead Job Status endpoint to retrieve status of export job.  Required Permissions: Read-Only Lead",
     "deprecated": false,
+    "OperationCategory": "Export Lead Jobss",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -731,6 +750,7 @@
     "operationSummary": "Enqueue Export lead Job",
     "operationDescription": "Enqueue export job. This will place export job in queue, and will start the job when computing resources become available.  The export job must be in \"Created\" state.  Use Get Export Lead Job Status endpoint to retrieve status of export job.  Required Permissions: Read-Only Lead",
     "deprecated": false,
+    "OperationCategory": "Export Lead Jobs",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -764,6 +784,7 @@
     "operationSummary": "Get Export Lead Job Status",
     "operationDescription": "Returns status of an export job.  Job status is available for 30 days after Completed or Failed status was reached. Required Permissions: Read-Only Lead",
     "deprecated": false,
+    "OperationCategory": "Export Lead Jobss",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -797,6 +818,7 @@
     "operationSummary": "Get Program by Id",
     "operationDescription": "Retrieves the program record for the given id.  Required Permissions: Read-Only Assets, Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Programs",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -830,6 +852,7 @@
     "operationSummary": "Get Program by Name",
     "operationDescription": "Retrieves the program record for the given name.  Required Permissions: Read-Only Assets, Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Programs",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -891,6 +914,7 @@
     "operationSummary": "Get Programs",
     "operationDescription": "Retrieves the list of accessible programs from the target instance. Required Permissions: Read-Only Assets, Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Programs",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -909,6 +933,7 @@
     "operationSummary": "Create Program",
     "operationDescription": "Creates a new program.  Required Permissions: Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Programs",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1012,6 +1037,7 @@
     "operationSummary": "Delete Program",
     "operationDescription": "Deletes the target program. The program may not contain any assets which are in use outside the program.  Required Permissions: Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Programs",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1045,6 +1071,7 @@
     "operationSummary": "Clone Program",
     "operationDescription": "Clones the target program.  Required Permissions: Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Programs",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1120,6 +1147,7 @@
     "operationSummary": "Approve Program",
     "operationDescription": "Approves the target program.  Only valid for unapproved email programs.  Required Permissions: Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Programs",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1153,6 +1181,7 @@
     "operationSummary": "Unapprove Program",
     "operationDescription": "Unapproves the target program.  Only valid for approved email programs.  Required Permissions: Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Programs",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1186,6 +1215,7 @@
     "operationSummary": "Update Program Metadata",
     "operationDescription": "Updates the target program's metadata.  Required Permissions: Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Programs",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1219,6 +1249,7 @@
     "operationSummary": "Create Export Program Member Job",
     "operationDescription": "Create export job for search criteria defined via \"filter\" parameter.  Request returns the \"exportId\" which is passed as a parameter in subsequent calls to Bulk Export Program Members endpoints.  Use Enqueue Export Program Member Job endpoint to queue the export job for processing.  Use Get Export Program Member Job Status endpoint to retrieve status of export job.  Required Permissions: Read-Only Lead",
     "deprecated": false,
+    "OperationCategory": "Program Members",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1264,6 +1295,7 @@
     "operationSummary": "Enqueue Export Program Member Job",
     "operationDescription": "Enqueue export job. This will place export job in queue, and will start the job when computing resources become available.  The export job must be in \"Created\" state.  Use Get Export Program Member Job Status endpoint to retrieve status of export job.  Required Permissions: Read-Only Lead",
     "deprecated": false,
+    "OperationCategory": "Program Members",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1323,6 +1355,7 @@
     "operationSummary": "Get Export Program Member Job Status",
     "operationDescription": "Returns status of an export job.  Job status is available for 30 days after Completed or Failed status was reached. Required Permissions: Read-Only Lead",
     "deprecated": false,
+    "OperationCategory": "Program Members",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1356,6 +1389,7 @@
     "operationSummary": "Get Smart List by Id",
     "operationDescription": "Retrieves a Smart List record by its id. Required Permissions: Read-Asset or Read-Write Asset",
     "deprecated": false,
+    "OperationCategory": "Smart Lists",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1403,6 +1437,7 @@
     "operationSummary": "Get Smart List by Name",
     "operationDescription": "Retrieves a Smart List record by its name. Required Permissions: Read-Asset or Read-Write Asset",
     "deprecated": false,
+    "OperationCategory": "Smart Lists",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1436,6 +1471,7 @@
     "operationSummary": "Get Smart List by Program Id",
     "operationDescription": "Retrieves a Smart List record by its Email Program id. Required Permissions: Read-Asset or Read-Write Asset",
     "deprecated": false,
+    "OperationCategory": "Smart Lists",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1469,6 +1505,7 @@
     "operationSummary": "Get Smart Lists",
     "operationDescription": "Retrieves a list of user created Smart List records. Required Permissions: Read-Asset or Read-Write Asset",
     "deprecated": false,
+    "OperationCategory": "Smart Lists",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1487,6 +1524,7 @@
     "operationSummary": "Clone Smart List",
     "operationDescription": "Clones the designated Smart List. Required Permissions: Read-Write Asset",
     "deprecated": false,
+    "OperationCategory": "Smart Lists",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1548,6 +1586,7 @@
     "operationSummary": "Delete Smart List",
     "operationDescription": "Deletes the designated Smart List. Required Permissions: Read-Write Asset",
     "deprecated": false,
+    "OperationCategory": "Smart Lists",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1581,6 +1620,7 @@
     "operationSummary": "Get Files",
     "operationDescription": "Returns the files from the given folder. Required Permissions: Read-Only Assets, Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Files",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1599,6 +1639,7 @@
     "operationSummary": "Get File by Name",
     "operationDescription": "Returns files records for the given name.  Required Permissions: Read-Only Assets, Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Files",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1632,6 +1673,7 @@
     "operationSummary": "Get File by Id",
     "operationDescription": "Returns the file record for the given id.  Required Permissions: Read-Only Assets, Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Files",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1665,6 +1707,7 @@
     "operationSummary": "Create File",
     "operationDescription": "Creates a new file from the included payload. Required Permissions: Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Files",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1719,6 +1762,7 @@
     "operationSummary": "Get Static Lists",
     "operationDescription": "Retrieves a list of Static List records. Required Permissions: Read-Asset or Read-Write Asset",
     "deprecated": false,
+    "OperationCategory": "Static Lists",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1737,6 +1781,7 @@
     "operationSummary": "Get Static List by Id",
     "operationDescription": "Retrieves a Static List record by its id. Required Permissions: Read-Asset or Read-Write Asset",
     "deprecated": false,
+    "OperationCategory": "Static Lists",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1770,6 +1815,7 @@
     "operationSummary": "Get Static List by Name",
     "operationDescription": "Retrieves a Static List record by its name. Required Permissions: Read-Asset or Read-Write Asset",
     "deprecated": false,
+    "OperationCategory": "Static Lists",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1803,6 +1849,7 @@
     "operationSummary": "Create Static List",
     "operationDescription": "Creates a new Static List.  Required Permissions: Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Static Lists",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1862,6 +1909,7 @@
     "operationSummary": "Update Static List Metadata",
     "operationDescription": "Updates the metadata of a static list asset.  Required Permissions: Read-Write Assets",
     "deprecated": false,
+    "OperationCategory": "Static Lists",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1923,6 +1971,7 @@
     "operationSummary": "Delete Static List",
     "operationDescription": "Deletes the designated Static List. Required Permissions: Read-Write Asset",
     "deprecated": false,
+    "OperationCategory": "Static Lists",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1956,6 +2005,7 @@
     "operationSummary": "Add Leads to List",
     "operationDescription": "Adds a given set of person records to a target static list.  There is a limit of 300 lead ids per request.  Required Permissions: Read-Write Lead",
     "deprecated": false,
+    "OperationCategory": "Leads",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2003,6 +2053,7 @@
     "operationSummary": "Remove from List",
     "operationDescription": "Removes a given set of person records from a target static list.  Required Permissions: Read-Write Lead",
     "deprecated": false,
+    "OperationCategory": "Static Lists",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2050,6 +2101,7 @@
     "operationSummary": "Delete Program Members",
     "operationDescription": "Delete a list of members from the destination instance.  Required Permissions: Read-Write Lead",
     "deprecated": false,
+    "OperationCategory": "Program Members",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2109,6 +2161,7 @@
     "operationSummary": "Create Program Member Fields",
     "operationDescription": "Create program member fields in the target instance.  Required Permissions: Read-Write Schema Custom Field",
     "deprecated": false,
+    "OperationCategory": "Program Members",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2154,6 +2207,7 @@
     "operationSummary": "Update Program Member Field",
     "operationDescription": "Update metadata for a program member field in the target instance.  See update rules <a href=\"https://developers.marketo.com/rest-api/lead-database/leads/#update_field\">here</a>.  Required Permissions: Read-Write Schema Standard Field, Read-Write Schema Custom Field",
     "deprecated": false,
+    "OperationCategory": "Program Members",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2213,6 +2267,7 @@
     "operationSummary": "Describe Program Member",
     "operationDescription": "Returns metadata about program member objects in the target instance, including a list of all fields available for interaction via the APIs.  Required Permissions: Read-Only Lead, Read-Write Lead",
     "deprecated": false,
+    "OperationCategory": "Program Members",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2231,6 +2286,7 @@
     "operationSummary": "Sync Program Member Data",
     "operationDescription": "Changes the program member data of a list of leads in a target program. Only existing members of the program may have their data changed with this API. Required Permissions: Read-Write Lead",
     "deprecated": false,
+    "OperationCategory": "Program Members",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2290,6 +2346,7 @@
     "operationSummary": "Sync Program Member Status",
     "operationDescription": "Changes the program member status of a list of leads in a target program.  If member is not part of the program, member is added to the program.  Required Permissions: Read-Write Lead",
     "deprecated": false,
+    "OperationCategory": "Program Members",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2349,6 +2406,7 @@
     "operationSummary": "Get Program Member Field by Name",
     "operationDescription": "Retrieves metadata for single program member field.  Required Permissions: Read-Write Schema Standard Field, Read-Write Schema Custom Field",
     "deprecated": false,
+    "OperationCategory": "Program Members",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2382,6 +2440,7 @@
     "operationSummary": "Get Program Member Fields",
     "operationDescription": "Retrieves metadata for all program member fields in the target instance.  Required Permissions: Read-Write Schema Standard Field, Read-Write Schema Custom Field",
     "deprecated": false,
+    "OperationCategory": "Program Members",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2415,6 +2474,7 @@
     "operationSummary": "Get Campaigns",
     "operationDescription": "Returns a list of campaign records.  Required Permissions: Read-Only Campaigns, Read-Write Campaigns<br><br><b>Note: This endpoint has been superceded.</b>  Use <a href=\"/rest-api/endpoint-reference/asset-endpoint-reference/#/Smart_Campaigns/getAllSmartCampaignsGET\">Get Smart Campaigns</a> endpoint instead.",
     "deprecated": false,
+    "OperationCategory": "Campaigns",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2433,6 +2493,7 @@
     "operationSummary": "Get Campaign By Id",
     "operationDescription": "Returns the record of a campaign by its id.  Required Permissions: Read-Only Campaigns, Read-Write Campaigns<br><br><b>Note: This endpoint has been superceded.</b>  Use <a href=\"/rest-api/endpoint-reference/asset-endpoint-reference/#!/Smart_Campaigns/getSmartCampaignByIdUsingGET\">Get Smart Campaign by Id</a> endpoint instead.",
     "deprecated": false,
+    "OperationCategory": "Campaigns",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2466,6 +2527,7 @@
     "operationSummary": "Request Campaign",
     "operationDescription": "Passes a set of leads to a trigger campaign to run through the campaign's flow.  The designated campaign must have a Campaign is Requested: Web Service API trigger, and must be active.  My tokens local to the campaign's parent program can be overridden for the run to customize content. A maximum of 100 leads are allowed per call. Required Permissions: Execute Campaign",
     "deprecated": false,
+    "OperationCategory": "Campaigns",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2525,6 +2587,7 @@
     "operationSummary": "Schedule Campaign",
     "operationDescription": "Remotely schedules a batch campaign to run at a given time.  My tokens local to the campaign's parent program can be overridden for the run to customize content.  When using the \"cloneToProgramName\" parameter described below, this endpoint is limited to 20 calls per day. Required Permissions: Execute Campaign",
     "deprecated": false,
+    "OperationCategory": "Campaigns",
     "adapterProperties": [
       {
         "name": "AdapterMode",

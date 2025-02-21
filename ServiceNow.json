@@ -8,6 +8,7 @@
     "operationSummary": "Get an specified attachment.",
     "operationDescription": "Get an specified attachment.",
     "deprecated": false,
+    "OperationCategory": "Attachments",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -40,6 +41,7 @@
     "operationSummary": "Delete an attachment.",
     "operationDescription": "Delete an attachment",
     "deprecated": false,
+    "OperationCategory": "Attachments",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -78,6 +80,7 @@
     "operationSummary": "Upload an attachement",
     "operationDescription": "Upload an attachment",
     "deprecated": false,
+    "OperationCategory": "Attachments",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -168,6 +171,7 @@
     "operationSummary": "Get all attachement",
     "operationDescription": "Get all attachment",
     "deprecated": false,
+    "OperationCategory": "Attachments",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -186,6 +190,7 @@
     "operationSummary": "create a new email.",
     "operationDescription": "create a new email",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -237,6 +242,7 @@
     "operationSummary": "Get an email.",
     "operationDescription": "Get an email.",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -269,6 +275,7 @@
     "operationSummary": "Create a record",
     "operationDescription": "Create a record",
     "deprecated": false,
+    "OperationCategory": "Records",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -334,6 +341,7 @@
     "operationSummary": "Retrieve a record",
     "operationDescription": "Retrieve a record",
     "deprecated": false,
+    "OperationCategory": "Records",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -379,6 +387,7 @@
     "operationSummary": "Delete a record",
     "operationDescription": "Delete a record",
     "deprecated": false,
+    "OperationCategory": "Records",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -413,14 +422,13 @@
         "ui_category": "Misc",
         "datatype": "System.String",
         "ui_displayName": "Table Name"
-      }, 
+      },
       {
         "name": "Content-Type",
         "value": "application/json",
         "param_type": "Header",
         "ui_source": "operation"
       }
-
     ]
   },
   {
@@ -432,6 +440,7 @@
     "operationSummary": "Update a record ",
     "operationDescription": "update a record",
     "deprecated": false,
+    "OperationCategory": "Records",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -510,6 +519,7 @@
     "operationSummary": "Get incidents",
     "operationDescription": "Get incidents",
     "deprecated": false,
+    "OperationCategory": "Incidents",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -528,6 +538,7 @@
     "operationSummary": "Get incident",
     "operationDescription": "Get incident",
     "deprecated": false,
+    "OperationCategory": "Incidents",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -560,6 +571,7 @@
     "operationSummary": "Create incident",
     "operationDescription": "Create incident",
     "deprecated": false,
+    "OperationCategory": "Incidents",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -611,6 +623,7 @@
     "operationSummary": "Update incident",
     "operationDescription": "Update incident",
     "deprecated": false,
+    "OperationCategory": "Incidents",
     "adapterProperties": [
       {
         "name": "AdapterMode",

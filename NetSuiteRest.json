@@ -8,6 +8,7 @@
     "operationSummary": "Get list of records.",
     "operationDescription": "Get list of records",
     "deprecated": false,
+    "OperationCategory": "Accounts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -74,6 +75,7 @@
     "operationSummary": "Insert account record",
     "operationDescription": "Insert account record",
     "deprecated": false,
+    "OperationCategory": "Accounts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -178,6 +180,7 @@
     "operationSummary": "Remove account record",
     "operationDescription": "Remove account record",
     "deprecated": false,
+    "OperationCategory": "Accounts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -234,6 +237,7 @@
     "operationSummary": "Get account record by id",
     "operationDescription": "Get account record by id",
     "deprecated": false,
+    "OperationCategory": "Accounts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -314,6 +318,7 @@
     "operationSummary": "Update account record",
     "operationDescription": "Update account record",
     "deprecated": false,
+    "OperationCategory": "Accounts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -432,6 +437,7 @@
     "operationSummary": "Insert or Update account record",
     "operationDescription": "Insert or Update account record",
     "deprecated": false,
+    "OperationCategory": "Accounts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -553,7 +559,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of customer records",
     "description": "",
@@ -563,6 +568,7 @@
     "operationSummary": "Get list of customer records",
     "operationDescription": "Get list of customer records",
     "deprecated": false,
+    "OperationCategory": "Customers",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -581,6 +587,7 @@
     "operationSummary": "Insert customer record",
     "operationDescription": "Insert customer record",
     "deprecated": false,
+    "OperationCategory": "Customers",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -626,6 +633,7 @@
     "operationSummary": "Get customer by id",
     "operationDescription": "Get customer by id",
     "deprecated": false,
+    "OperationCategory": "Customers",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -692,6 +700,7 @@
     "operationSummary": "Update customer record",
     "operationDescription": "Update customer record",
     "deprecated": false,
+    "OperationCategory": "Customers",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -751,6 +760,7 @@
     "operationSummary": "Get customer record by filter",
     "operationDescription": "Get customer record by filter",
     "deprecated": false,
+    "OperationCategory": "Customers",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -782,6 +792,7 @@
     "operationSummary": "Insert ot Update customer record",
     "operationDescription": "Insert ot Update customer record",
     "deprecated": false,
+    "OperationCategory": "Customers",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -832,7 +843,6 @@
       }
     ]
   },
-
   {
     "operation": "Insert campaign record",
     "description": "",
@@ -842,6 +852,7 @@
     "operationSummary": "Insert campaign record ",
     "operationDescription": "Insert campaign record",
     "deprecated": false,
+    "OperationCategory": "Campaigns",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -946,6 +957,7 @@
     "operationSummary": "Delete campaign record",
     "operationDescription": "Delete campaign record",
     "deprecated": false,
+    "OperationCategory": "Campaigns",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1002,6 +1014,7 @@
     "operationSummary": "Get campaign record by id",
     "operationDescription": "Get campaign record by id",
     "deprecated": false,
+    "OperationCategory": "Campaigns",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1082,6 +1095,7 @@
     "operationSummary": "Update campaign record",
     "operationDescription": "Update campaign record",
     "deprecated": false,
+    "OperationCategory": "Campaigns",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1200,6 +1214,7 @@
     "operationSummary": "Insert or update campaign record",
     "operationDescription": "Insert or update campaign record",
     "deprecated": false,
+    "OperationCategory": "Campaigns",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1321,7 +1336,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of invoice records",
     "description": "",
@@ -1331,6 +1345,7 @@
     "operationSummary": "Get list of invoice records",
     "operationDescription": "Get list of invoice records",
     "deprecated": false,
+    "OperationCategory": "Invoices",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1397,6 +1412,7 @@
     "operationSummary": "Insert invoice record",
     "operationDescription": "Insert invoice record",
     "deprecated": false,
+    "OperationCategory": "Invoices",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1501,6 +1517,7 @@
     "operationSummary": "Remove invoice record",
     "operationDescription": "Remove invoice record",
     "deprecated": false,
+    "OperationCategory": "Invoices",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1557,6 +1574,7 @@
     "operationSummary": "Get invoice record by id",
     "operationDescription": "Get invoice record by id",
     "deprecated": false,
+    "OperationCategory": "Invoices",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1637,6 +1655,7 @@
     "operationSummary": "Update invoice record",
     "operationDescription": "Update invoice record",
     "deprecated": false,
+    "OperationCategory": "Invoices",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1755,6 +1774,7 @@
     "operationSummary": "Insert or Update invoice record",
     "operationDescription": "Insert or Update invoice record",
     "deprecated": false,
+    "OperationCategory": "Invoices",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1876,7 +1896,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of credit memo records",
     "description": "",
@@ -1886,6 +1905,7 @@
     "operationSummary": "Get list of credit memo records",
     "operationDescription": "Get list of credit memo records",
     "deprecated": false,
+    "OperationCategory": "Credit Memos",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1952,6 +1972,7 @@
     "operationSummary": "Insert credit memo record",
     "operationDescription": "Insert credit memo record",
     "deprecated": false,
+    "OperationCategory": "Credit Memos",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2056,6 +2077,7 @@
     "operationSummary": "Remove credit memo record",
     "operationDescription": "Remove credit memo record",
     "deprecated": false,
+    "OperationCategory": "Credit Memos",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2112,6 +2134,7 @@
     "operationSummary": "Get credit memo record by id",
     "operationDescription": "Get credit memo record by id",
     "deprecated": false,
+    "OperationCategory": "Credit Memos",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2192,6 +2215,7 @@
     "operationSummary": "Update credit memo record",
     "operationDescription": "Update credit memo record",
     "deprecated": false,
+    "OperationCategory": "Credit Memos",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2310,6 +2334,7 @@
     "operationSummary": "Insert or Update credit memo record",
     "operationDescription": "Insert or Update credit memo record",
     "deprecated": false,
+    "OperationCategory": "Credit Memos",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2431,7 +2456,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of expense ratio records",
     "description": "",
@@ -2441,6 +2465,7 @@
     "operationSummary": "Get list of expense ratio records",
     "operationDescription": "Get list of expense ratio records",
     "deprecated": false,
+    "OperationCategory": "Expense Reports",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2507,6 +2532,7 @@
     "operationSummary": "Insert expense ratio record",
     "operationDescription": "Insert expense ratio record",
     "deprecated": false,
+    "OperationCategory": "Expense Reports",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2611,6 +2637,7 @@
     "operationSummary": "Remove expense ratio record",
     "operationDescription": "Remove expense ratio record",
     "deprecated": false,
+    "OperationCategory": "Expense Reports",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2667,6 +2694,7 @@
     "operationSummary": "Get expense ratio record by id",
     "operationDescription": "Get expense ratio record by id",
     "deprecated": false,
+    "OperationCategory": "Expense Reports",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2747,6 +2775,7 @@
     "operationSummary": "Update expense ratio record",
     "operationDescription": "Update expense ratio record",
     "deprecated": false,
+    "OperationCategory": "Expense Reports",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2865,6 +2894,7 @@
     "operationSummary": "Insert or Update expense ratio record",
     "operationDescription": "Insert or Update expense ratio record",
     "deprecated": false,
+    "OperationCategory": "Expense Reports",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2986,7 +3016,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of payment item records",
     "description": "",
@@ -2996,6 +3025,7 @@
     "operationSummary": "Get list of payment item records",
     "operationDescription": "Get list of payment item records",
     "deprecated": false,
+    "OperationCategory": "Payment Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -3062,6 +3092,7 @@
     "operationSummary": "Insert payment item record",
     "operationDescription": "Insert payment Item record",
     "deprecated": false,
+    "OperationCategory": "Payment Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -3166,6 +3197,7 @@
     "operationSummary": "Remove payment item record",
     "operationDescription": "Remove payment item record",
     "deprecated": false,
+    "OperationCategory": "Payment Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -3222,6 +3254,7 @@
     "operationSummary": "Get payment item record by id",
     "operationDescription": "Get payment item record by id",
     "deprecated": false,
+    "OperationCategory": "Payment Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -3302,6 +3335,7 @@
     "operationSummary": "Update payment item record",
     "operationDescription": "Update payment item record",
     "deprecated": false,
+    "OperationCategory": "Payment Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -3420,6 +3454,7 @@
     "operationSummary": "Insert or Update payment item record",
     "operationDescription": "Insert or Update payment item record",
     "deprecated": false,
+    "OperationCategory": "Payment Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -3541,7 +3576,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of sales order records",
     "description": "",
@@ -3551,6 +3585,7 @@
     "operationSummary": "Get list of sales order records",
     "operationDescription": "Get list of sales order records",
     "deprecated": false,
+    "OperationCategory": "Sales Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -3617,6 +3652,7 @@
     "operationSummary": "Insert sales order record",
     "operationDescription": "Insert sales order record",
     "deprecated": false,
+    "OperationCategory": "Sales Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -3721,6 +3757,7 @@
     "operationSummary": "Remove sales order record",
     "operationDescription": "Remove sales order record",
     "deprecated": false,
+    "OperationCategory": "Sales Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -3777,6 +3814,7 @@
     "operationSummary": "Get sales order record by id",
     "operationDescription": "Get sales order record by id",
     "deprecated": false,
+    "OperationCategory": "Sales Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -3857,6 +3895,7 @@
     "operationSummary": "Update sales order record",
     "operationDescription": "Update sales order record",
     "deprecated": false,
+    "OperationCategory": "Sales Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -3975,6 +4014,7 @@
     "operationSummary": "Insert or Update sales order record",
     "operationDescription": "Insert or Update sales order record",
     "deprecated": false,
+    "OperationCategory": "Sales Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -4096,7 +4136,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of estimate records",
     "description": "",
@@ -4106,6 +4145,7 @@
     "operationSummary": "Get list of estimate records",
     "operationDescription": "Get list of estimate records",
     "deprecated": false,
+    "OperationCategory": "Estimates",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -4172,6 +4212,7 @@
     "operationSummary": "Insert estimate record",
     "operationDescription": "Insert estimate record",
     "deprecated": false,
+    "OperationCategory": "Estimates",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -4276,6 +4317,7 @@
     "operationSummary": "Remove estimate record",
     "operationDescription": "Remove estimate record",
     "deprecated": false,
+    "OperationCategory": "Estimates",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -4332,6 +4374,7 @@
     "operationSummary": "Get estimate record by id",
     "operationDescription": "Get estimate record by id",
     "deprecated": false,
+    "OperationCategory": "Estimates",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -4412,6 +4455,7 @@
     "operationSummary": "Update estimate record",
     "operationDescription": "Update estimate record",
     "deprecated": false,
+    "OperationCategory": "Estimates",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -4530,6 +4574,7 @@
     "operationSummary": "Insert or Update estimate record",
     "operationDescription": "Insert or Update estimate record",
     "deprecated": false,
+    "OperationCategory": "Estimates",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -4651,7 +4696,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of fulfillment request records",
     "description": "",
@@ -4661,6 +4705,7 @@
     "operationSummary": "Get list of fulfillment request records",
     "operationDescription": "Get list of fulfillment request records",
     "deprecated": false,
+    "OperationCategory": "Fulfillment Requests",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -4727,6 +4772,7 @@
     "operationSummary": "Insert fulfillment request record",
     "operationDescription": "Insert fulfillment request record",
     "deprecated": false,
+    "OperationCategory": "Fulfillment Requests",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -4831,6 +4877,7 @@
     "operationSummary": "Remove fulfillment request record",
     "operationDescription": "Remove fulfillment request record",
     "deprecated": false,
+    "OperationCategory": "Fulfillment Requests",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -4887,6 +4934,7 @@
     "operationSummary": "Get fulfillment request record by id",
     "operationDescription": "Get fulfillment request record by id",
     "deprecated": false,
+    "OperationCategory": "Fulfillment Requests",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -4967,6 +5015,7 @@
     "operationSummary": "Update fulfillment request record",
     "operationDescription": "Update fulfillment request record",
     "deprecated": false,
+    "OperationCategory": "Fulfillment Requests",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -5085,6 +5134,7 @@
     "operationSummary": "Insert or Update fulfillment request record",
     "operationDescription": "Insert or Update fulfillment request record",
     "deprecated": false,
+    "OperationCategory": "Fulfillment Requests",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -5206,7 +5256,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of Vendor records",
     "description": "",
@@ -5216,6 +5265,7 @@
     "operationSummary": "Get list of Vendor records",
     "operationDescription": "Get list of Vendor records",
     "deprecated": false,
+    "OperationCategory": "Vendors",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -5282,6 +5332,7 @@
     "operationSummary": "Insert Vendor record",
     "operationDescription": "Insert Vendor record",
     "deprecated": false,
+    "OperationCategory": "Vendors",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -5386,6 +5437,7 @@
     "operationSummary": "Remove Vendor record",
     "operationDescription": "Remove Vendor record",
     "deprecated": false,
+    "OperationCategory": "Vendors",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -5442,6 +5494,7 @@
     "operationSummary": "Get Vendor record by id",
     "operationDescription": "Get Vendor record by id",
     "deprecated": false,
+    "OperationCategory": "Vendors",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -5522,6 +5575,7 @@
     "operationSummary": "Update Vendor record",
     "operationDescription": "Update Vendor record",
     "deprecated": false,
+    "OperationCategory": "Vendors",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -5640,6 +5694,7 @@
     "operationSummary": "Insert or Update Vendor record",
     "operationDescription": "Insert or Update Vendor record",
     "deprecated": false,
+    "OperationCategory": "Vendors",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -5761,7 +5816,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of vendor bill records",
     "description": "",
@@ -5771,6 +5825,7 @@
     "operationSummary": "Get list of vendor bill records",
     "operationDescription": "Get list of vendor bill records",
     "deprecated": false,
+    "OperationCategory": "Vendor Bills",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -5837,6 +5892,7 @@
     "operationSummary": "Insert vendor bill record",
     "operationDescription": "Insert vendor bill record",
     "deprecated": false,
+    "OperationCategory": "Vendor Bills",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -5941,6 +5997,7 @@
     "operationSummary": "Remove vendor bill record",
     "operationDescription": "Remove vendor bill record",
     "deprecated": false,
+    "OperationCategory": "Vendor Bills",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -5997,6 +6054,7 @@
     "operationSummary": "Get vendor bill record by id",
     "operationDescription": "Get vendor bill record by id",
     "deprecated": false,
+    "OperationCategory": "Vendor Bills",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -6077,6 +6135,7 @@
     "operationSummary": "Update vendor bill record",
     "operationDescription": "Update vendor bill record",
     "deprecated": false,
+    "OperationCategory": "Vendor Bills",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -6195,6 +6254,7 @@
     "operationSummary": "Insert or Update vendor bill record",
     "operationDescription": "Insert or Update vendor bill record",
     "deprecated": false,
+    "OperationCategory": "Vendor Bills",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -6316,7 +6376,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of purchase order records",
     "description": "",
@@ -6326,6 +6385,7 @@
     "operationSummary": "Get list of purchase order records",
     "operationDescription": "Get list of purchase order records",
     "deprecated": false,
+    "OperationCategory": "Purchase Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -6392,6 +6452,7 @@
     "operationSummary": "Insert purchase order record",
     "operationDescription": "Insert purchase order record",
     "deprecated": false,
+    "OperationCategory": "Purchase Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -6496,6 +6557,7 @@
     "operationSummary": "Remove purchase order record",
     "operationDescription": "Remove purchase order record",
     "deprecated": false,
+    "OperationCategory": "Purchase Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -6552,6 +6614,7 @@
     "operationSummary": "Get purchase order record by id",
     "operationDescription": "Get purchase order record by id",
     "deprecated": false,
+    "OperationCategory": "Purchase Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -6632,6 +6695,7 @@
     "operationSummary": "Update purchase order record",
     "operationDescription": "Update purchase order record",
     "deprecated": false,
+    "OperationCategory": "Purchase Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -6750,6 +6814,7 @@
     "operationSummary": "Insert or Update purchase order record",
     "operationDescription": "Insert or Update purchase order record",
     "deprecated": false,
+    "OperationCategory": "Purchase Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -6871,7 +6936,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of inventory item records",
     "description": "",
@@ -6881,6 +6945,7 @@
     "operationSummary": "Get list of inventory item records",
     "operationDescription": "Get list of inventory item records",
     "deprecated": false,
+    "OperationCategory": "Inventory Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -6947,6 +7012,7 @@
     "operationSummary": "Insert inventory item record",
     "operationDescription": "Insert inventory item record",
     "deprecated": false,
+    "OperationCategory": "Inventory Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -7051,6 +7117,7 @@
     "operationSummary": "Remove inventory item record",
     "operationDescription": "Remove inventory item record",
     "deprecated": false,
+    "OperationCategory": "Inventory Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -7107,6 +7174,7 @@
     "operationSummary": "Get inventory item record by id",
     "operationDescription": "Get inventory item record by id",
     "deprecated": false,
+    "OperationCategory": "Inventory Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -7187,6 +7255,7 @@
     "operationSummary": "Update inventory item record",
     "operationDescription": "Update inventory item record",
     "deprecated": false,
+    "OperationCategory": "Inventory Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -7305,6 +7374,7 @@
     "operationSummary": "Insert or Update inventory item record",
     "operationDescription": "Insert or Update inventory item record",
     "deprecated": false,
+    "OperationCategory": "Inventory Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -7426,7 +7496,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of inventory adjustment records",
     "description": "",
@@ -7436,6 +7505,7 @@
     "operationSummary": "Get list of inventory adjustment records",
     "operationDescription": "Get list of inventory adjustment records",
     "deprecated": false,
+    "OperationCategory": "Inventory Adjustments",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -7502,6 +7572,7 @@
     "operationSummary": "Insert inventory adjustment record",
     "operationDescription": "Insert inventory adjustment record",
     "deprecated": false,
+    "OperationCategory": "Inventory Adjustments",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -7606,6 +7677,7 @@
     "operationSummary": "Remove inventory adjustment record",
     "operationDescription": "Remove inventory adjustment record",
     "deprecated": false,
+    "OperationCategory": "Inventory Adjustments",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -7662,6 +7734,7 @@
     "operationSummary": "Get inventory adjustment record by id",
     "operationDescription": "Get inventory adjustment record by id",
     "deprecated": false,
+    "OperationCategory": "Inventory Adjustments",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -7742,6 +7815,7 @@
     "operationSummary": "Update inventory adjustment record",
     "operationDescription": "Update inventory adjustment record",
     "deprecated": false,
+    "OperationCategory": "Inventory Adjustments",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -7860,6 +7934,7 @@
     "operationSummary": "Insert or Update inventory adjustment record",
     "operationDescription": "Insert or Update inventory adjustment record",
     "deprecated": false,
+    "OperationCategory": "Inventory Adjustments",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -7981,7 +8056,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of transfer order records",
     "description": "",
@@ -7991,6 +8065,7 @@
     "operationSummary": "Get list of transfer order records",
     "operationDescription": "Get list of transfer order records",
     "deprecated": false,
+    "OperationCategory": "Transfer Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -8057,6 +8132,7 @@
     "operationSummary": "Insert transfer order record",
     "operationDescription": "Insert transfer order record",
     "deprecated": false,
+    "OperationCategory": "Transfer Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -8161,6 +8237,7 @@
     "operationSummary": "Remove transfer order record",
     "operationDescription": "Remove transfer order record",
     "deprecated": false,
+    "OperationCategory": "Transfer Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -8217,6 +8294,7 @@
     "operationSummary": "Get transfer order record by id",
     "operationDescription": "Get transfer order record by id",
     "deprecated": false,
+    "OperationCategory": "Transfer Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -8297,6 +8375,7 @@
     "operationSummary": "Update transfer order record",
     "operationDescription": "Update transfer order record",
     "deprecated": false,
+    "OperationCategory": "Transfer Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -8415,6 +8494,7 @@
     "operationSummary": "Insert or Update transfer order record",
     "operationDescription": "Insert or Update transfer order record",
     "deprecated": false,
+    "OperationCategory": "Transfer Orders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -8536,7 +8616,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of project task records",
     "description": "",
@@ -8546,6 +8625,7 @@
     "operationSummary": "Get list of project task records",
     "operationDescription": "Get list of project task records",
     "deprecated": false,
+    "OperationCategory": "Project Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -8612,6 +8692,7 @@
     "operationSummary": "Insert project task record",
     "operationDescription": "Insert project task record",
     "deprecated": false,
+    "OperationCategory": "Project Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -8716,6 +8797,7 @@
     "operationSummary": "Remove project task record",
     "operationDescription": "Remove project task record",
     "deprecated": false,
+    "OperationCategory": "Project Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -8772,6 +8854,7 @@
     "operationSummary": "Get project task record by id",
     "operationDescription": "Get project task record by id",
     "deprecated": false,
+    "OperationCategory": "Project Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -8852,6 +8935,7 @@
     "operationSummary": "Update project task record",
     "operationDescription": "Update project task record",
     "deprecated": false,
+    "OperationCategory": "Project Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -8970,6 +9054,7 @@
     "operationSummary": "Insert or Update project task record",
     "operationDescription": "Insert or Update project task record",
     "deprecated": false,
+    "OperationCategory": "Project Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -9091,7 +9176,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of task records",
     "description": "",
@@ -9101,6 +9185,7 @@
     "operationSummary": "Get list of task records",
     "operationDescription": "Get list of task records",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -9167,6 +9252,7 @@
     "operationSummary": "Insert task record",
     "operationDescription": "Insert task record",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -9271,6 +9357,7 @@
     "operationSummary": "Remove task record",
     "operationDescription": "Remove task record",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -9327,6 +9414,7 @@
     "operationSummary": "Get task record by id",
     "operationDescription": "Get task record by id",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -9407,6 +9495,7 @@
     "operationSummary": "Update task record",
     "operationDescription": "Update task record",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -9525,6 +9614,7 @@
     "operationSummary": "Insert or Update task record",
     "operationDescription": "Insert or Update task record",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -9646,7 +9736,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of service sale item records",
     "description": "",
@@ -9656,6 +9745,7 @@
     "operationSummary": "Get list of service sale item records",
     "operationDescription": "Get list of service sale item records",
     "deprecated": false,
+    "OperationCategory": "Service Sale Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -9722,6 +9812,7 @@
     "operationSummary": "Insert service sale item record",
     "operationDescription": "Insert service sale item record",
     "deprecated": false,
+    "OperationCategory": "Service Sale Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -9826,6 +9917,7 @@
     "operationSummary": "Remove service sale item record",
     "operationDescription": "Remove service sale item record",
     "deprecated": false,
+    "OperationCategory": "Service Sale Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -9882,6 +9974,7 @@
     "operationSummary": "Get service sale item record by id",
     "operationDescription": "Get service sale item record by id",
     "deprecated": false,
+    "OperationCategory": "Service Sale Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -9962,6 +10055,7 @@
     "operationSummary": "Update service sale item record",
     "operationDescription": "Update service sale item record",
     "deprecated": false,
+    "OperationCategory": "Service Sale Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -10080,6 +10174,7 @@
     "operationSummary": "Insert or Update service sale item record",
     "operationDescription": "Insert or Update service sale item record",
     "deprecated": false,
+    "OperationCategory": "Service Sale Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -10201,7 +10296,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of service resale item records",
     "description": "",
@@ -10211,6 +10305,7 @@
     "operationSummary": "Get list of service resale item records",
     "operationDescription": "Get list of service resale item records",
     "deprecated": false,
+    "OperationCategory": "Service Resale Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -10277,6 +10372,7 @@
     "operationSummary": "Insert service resale item record",
     "operationDescription": "Insert service resale item record",
     "deprecated": false,
+    "OperationCategory": "Service Resale Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -10381,6 +10477,7 @@
     "operationSummary": "Remove service resale item record",
     "operationDescription": "Remove service resale item record",
     "deprecated": false,
+    "OperationCategory": "Service Resale Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -10437,6 +10534,7 @@
     "operationSummary": "Get service resale item record by id",
     "operationDescription": "Get service resale item record by id",
     "deprecated": false,
+    "OperationCategory": "Service Resale Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -10517,6 +10615,7 @@
     "operationSummary": "Update service resale item record",
     "operationDescription": "Update service resale item record",
     "deprecated": false,
+    "OperationCategory": "Service Resale Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -10635,6 +10734,7 @@
     "operationSummary": "Insert or Update service resale item record",
     "operationDescription": "Insert or Update service resale item record",
     "deprecated": false,
+    "OperationCategory": "Service Resale Items",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -10756,7 +10856,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of employee records",
     "description": "",
@@ -10766,6 +10865,7 @@
     "operationSummary": "Get list of employee records",
     "operationDescription": "Get list of employee records",
     "deprecated": false,
+    "OperationCategory": "Employees",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -10832,6 +10932,7 @@
     "operationSummary": "Insert employee record",
     "operationDescription": "Insert employee record",
     "deprecated": false,
+    "OperationCategory": "Employees",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -10936,6 +11037,7 @@
     "operationSummary": "Remove employee record",
     "operationDescription": "Remove employee record",
     "deprecated": false,
+    "OperationCategory": "Employees",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -10992,6 +11094,7 @@
     "operationSummary": "Get employee record by id",
     "operationDescription": "Get employee record by id",
     "deprecated": false,
+    "OperationCategory": "Employees",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -11072,6 +11175,7 @@
     "operationSummary": "Update employee record",
     "operationDescription": "Update employee record",
     "deprecated": false,
+    "OperationCategory": "Employees",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -11190,6 +11294,7 @@
     "operationSummary": "Insert or Update employee record",
     "operationDescription": "Insert or Update employee record",
     "deprecated": false,
+    "OperationCategory": "Employees",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -11311,7 +11416,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of time sheet records",
     "description": "",
@@ -11321,6 +11425,7 @@
     "operationSummary": "Get list of time sheet records",
     "operationDescription": "Get list of time sheet records",
     "deprecated": false,
+    "OperationCategory": "Time Sheets",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -11387,6 +11492,7 @@
     "operationSummary": "Insert time sheet record",
     "operationDescription": "Insert time sheet record",
     "deprecated": false,
+    "OperationCategory": "Time Sheets",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -11491,6 +11597,7 @@
     "operationSummary": "Remove time sheet record",
     "operationDescription": "Remove time sheet record",
     "deprecated": false,
+    "OperationCategory": "Time Sheets",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -11547,6 +11654,7 @@
     "operationSummary": "Get time sheet record by id",
     "operationDescription": "Get time sheet record by id",
     "deprecated": false,
+    "OperationCategory": "Time Sheets",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -11627,6 +11735,7 @@
     "operationSummary": "Update time sheet record",
     "operationDescription": "Update time sheet record",
     "deprecated": false,
+    "OperationCategory": "Time Sheets",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -11745,6 +11854,7 @@
     "operationSummary": "Insert or Update time sheet record",
     "operationDescription": "Insert or Update time sheet record",
     "deprecated": false,
+    "OperationCategory": "Time Sheets",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -11866,7 +11976,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of promotion code records",
     "description": "",
@@ -11876,6 +11985,7 @@
     "operationSummary": "Get list of promotion code records",
     "operationDescription": "Get list of promotion code records",
     "deprecated": false,
+    "OperationCategory": "Promotion Codes",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -11942,6 +12052,7 @@
     "operationSummary": "Insert promotion code record",
     "operationDescription": "Insert promotion code record",
     "deprecated": false,
+    "OperationCategory": "Promotion Codes",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -12046,6 +12157,7 @@
     "operationSummary": "Remove promotion code record",
     "operationDescription": "Remove promotion code record",
     "deprecated": false,
+    "OperationCategory": "Promotion Codes",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -12102,6 +12214,7 @@
     "operationSummary": "Get promotion code record by id",
     "operationDescription": "Get promotion code record by id",
     "deprecated": false,
+    "OperationCategory": "Promotion Codes",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -12182,6 +12295,7 @@
     "operationSummary": "Update promotion code record",
     "operationDescription": "Update promotion code record",
     "deprecated": false,
+    "OperationCategory": "Promotion Codes",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -12300,6 +12414,7 @@
     "operationSummary": "Insert or Update promotion code record",
     "operationDescription": "Insert or Update promotion code record",
     "deprecated": false,
+    "OperationCategory": "Promotion Codes",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -12421,7 +12536,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of customer message records",
     "description": "",
@@ -12431,6 +12545,7 @@
     "operationSummary": "Get list of customer message records",
     "operationDescription": "Get list of customer message records",
     "deprecated": false,
+    "OperationCategory": "Customer Messages",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -12497,6 +12612,7 @@
     "operationSummary": "Insert customer message record",
     "operationDescription": "Insert customer message record",
     "deprecated": false,
+    "OperationCategory": "Customer Messages",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -12601,6 +12717,7 @@
     "operationSummary": "Remove customer message record",
     "operationDescription": "Remove customer message record",
     "deprecated": false,
+    "OperationCategory": "Customer Messages",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -12657,6 +12774,7 @@
     "operationSummary": "Get customer message record by id",
     "operationDescription": "Get customer message record by id",
     "deprecated": false,
+    "OperationCategory": "Customer Messages",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -12737,6 +12855,7 @@
     "operationSummary": "Update customer message record",
     "operationDescription": "Update customer message record",
     "deprecated": false,
+    "OperationCategory": "Customer Messages",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -12855,6 +12974,7 @@
     "operationSummary": "Insert or Update customer message record",
     "operationDescription": "Insert or Update customer message record",
     "deprecated": false,
+    "OperationCategory": "Customer Messages",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -12976,7 +13096,6 @@
       }
     ]
   },
-
   {
     "operation": "Get list of support case records",
     "description": "",
@@ -12986,6 +13105,7 @@
     "operationSummary": "Get list of support case records",
     "operationDescription": "Get list of support case records",
     "deprecated": false,
+    "OperationCategory": "Support Cases",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -13052,6 +13172,7 @@
     "operationSummary": "Insert support case record",
     "operationDescription": "Insert support case record",
     "deprecated": false,
+    "OperationCategory": "Support Cases",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -13156,6 +13277,7 @@
     "operationSummary": "Remove support case record",
     "operationDescription": "Remove support case record",
     "deprecated": false,
+    "OperationCategory": "Support Cases",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -13212,6 +13334,7 @@
     "operationSummary": "Get support case record by id",
     "operationDescription": "Get support case record by id",
     "deprecated": false,
+    "OperationCategory": "Support Cases",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -13292,6 +13415,7 @@
     "operationSummary": "Update support case record",
     "operationDescription": "Update support case record",
     "deprecated": false,
+    "OperationCategory": "Support Cases",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -13410,6 +13534,7 @@
     "operationSummary": "Insert or Update support case record",
     "operationDescription": "Insert or Update support case record",
     "deprecated": false,
+    "OperationCategory": "Support Cases",
     "adapterProperties": [
       {
         "name": "AdapterMode",

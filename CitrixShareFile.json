@@ -1,49 +1,14 @@
-[  
-    {
-        "operation": "Get Apps for Current User",
-        "description": "",
-        "operationId": "get_apps_for_current_user",
-        "operationApiType": "GET",
-        "operationPath": "/Apps",
-        "operationSummary": "Get Apps for Current User",
-        "operationDescription": "Get the connected Apps for Current User",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": []
-    },
-    {
-        "operation": "Get Device Users for Current User",
-        "description": "",
-        "operationId": "get_device_users_for_current_user",
-        "operationApiType": "GET",
-        "operationPath": "/Devices",
-        "operationSummary": "Get Device Users for Current User",
-        "operationDescription": "Get all the Device Users for Current User",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": []
-    },
-    {
-    "operation": "Get HomeFolder for Current User",
+[
+  {
+    "operation": "Get Apps for Current User",
     "description": "",
-    "operationId": "get_homeFolder_for_current_user",
+    "operationId": "get_apps_for_current_user",
     "operationApiType": "GET",
-    "operationPath": "/Items",
-    "operationSummary": "Get HomeFolder for Current User",
-    "operationDescription": "Returns home folder for current user. Note that home folders are not available for client users, or if the account doesn't have the \"My Files & Folders\" feature enabled.",
+    "operationPath": "/Apps",
+    "operationSummary": "Get Apps for Current User",
+    "operationDescription": "Get the connected Apps for Current User",
     "deprecated": false,
+    "OperationCategory": "User",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -52,566 +17,498 @@
       }
     ],
     "parameters": []
-    },
-    {
-        "operation": "Get Item by ID or TreeView",
-        "description": "",
-        "operationId": "get_item_by_id_or_treeView",
-        "operationApiType": "GET",
-        "operationPath": "/Items({itemId})",
-        "operationSummary": "Get Item by ID or TreeView",
-        "operationDescription": "Returns a single Item or a folder list structure tailored for TreeView navigation - used by clients to create folder trees for specific operations. If a TreeMode is entered then a treeview is returned, otherwise a single item is returned.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID .",
-            "ui_EditorType": "Textbox",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_displayName": "Item ID"
-        }
-        ]
-    },
-    {
-        "operation": "Update Item",
-        "description": "",
-        "operationId": "update_item",
-        "operationApiType": "PATCH",
-        "operationPath": "/Items({itemId})",
-        "operationSummary": "Update Item",
-        "operationDescription": "Updates an Item object. Please note that for a Folder, the Name and FileName properties must be consistent.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID to Update.",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        },
-        {
-            "name": "Body",
-            "value": "",
-            "param_type": "Param",
-            "isVisible": false,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify the content of the blob to upload.",
-            "ui_source": "operation",
-            "ui_EditorType": "TextArea",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_displayName": "Blob Content"
-          },
-          {
-            "name": "BodyType",
-            "value": "Raw",
-            "param_type": "Param",
-            "ui_source": "operation"
-          },
-          {
-            "name": "BodyFormat",
-            "value": "XML",
-            "param_type": "Param",
-            "ui_source": "operation"
-          }
-        ]
-    },
-    {
-        "operation": "Delete Item",
-        "description": "",
-        "operationId": "delete_item",
-        "operationApiType": "DELETE",
-        "operationPath": "/Items({itemId})",
-        "operationSummary": "Delete Item",
-        "operationDescription": "Removes an Item object.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID to Update.",
-            "ui_EditorType": "Textbox",
-            "param_type": "Path",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        }
-        ]
-    },
-    {
-        "operation": "Get TreeView",
-        "description": "",
-        "operationId": "get_treeView",
-        "operationApiType": "GET",
-        "operationPath": "/Items({itemId})/TreeView",
-        "operationSummary": "Get TreeView",
-        "operationDescription": "Retrieves a folder list structure tailored for TreeView navigation - used by clients to create folder trees for specific operations. This operation will enforce a specific $select and $expand operators.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID to get TreeView",
-            "ui_EditorType": "Textbox",
-            "param_type": "Path",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        }
-        ]
-    },
-    {
-        "operation": "Get Stream",
-        "description": "",
-        "operationId": "get_stream",
-        "operationApiType": "GET",
-        "operationPath": "/Items({itemId})/Stream",
-        "operationSummary": "Get Stream",
-        "operationDescription": "Retrieves the versions of a given Stream. The ID parameter must be a StreamID, otherwise an empty list is returned. StreamID is a property of all Items, representing the \"Stream\", ie., the collection of all versions of a file.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID to Get a Stream.",
-            "ui_EditorType": "Textbox",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_displayName": "Item ID"
-        }
-        ]
-    },
-    {
-        "operation": "Get Item by Path",
-        "description": "",
-        "operationId": "get_item_by_path",
-        "operationApiType": "GET",
-        "operationPath": "/Items/ByPath",
-        "operationSummary": "Get Item by Path",
-        "operationDescription": "Retrieves an item from its path. The path is of format /foldername/foldername/filename This call may redirect the client to another API provider, if the path contains a symbolic link.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "path",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify Path to get item",
-            "ui_EditorType": "Textbox",
-            "ui_displayName": "Path name",
-            "param_type": "UrlParam",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_source": "operation"
-        }
-        ]
-    },
-    {
-        "operation": "Get Item by relative Path from ID",
-        "description": "",
-        "operationId": "get_item_relative_by_path_from_id",
-        "operationApiType": "GET",
-        "operationPath": "/Items({itemId})/ByPath",
-        "operationSummary": "Get Item by relative Path from ID",
-        "operationDescription": "Retrieves an item from its path, relative to the provided ID. The path is of format /foldername/foldername/filename This call may redirect the client to another API provider, if the path contains a symbolic link.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID to Get Item.",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        },
-        {
-            "name": "path",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify Path to get item",
-            "ui_EditorType": "Textbox",
-            "ui_displayName": "Path name",
-            "param_type": "UrlParam",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_source": "operation"
-        }
-        ]
-    },
-    {
-        "operation": "Get Parent Item",
-        "description": "",
-        "operationId": "get_parent_item",
-        "operationApiType": "GET",
-        "operationPath": "/Items({itemId})/Parent",
-        "operationSummary": "Get Parent Item",
-        "operationDescription": "Retrieves the Parent navigation property of a single Item.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID to Get Parent Item.",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        }
-        ]
-    },
-    {
-        "operation": "Get Children",
-        "description": "",
-        "operationId": "get_children",
-        "operationApiType": "GET",
-        "operationPath": "/Items({itemId})/Children",
-        "operationSummary": "Get Children",
-        "operationDescription": "Handler for the Children navigation property of a given Item. A 302 redirection is returned if the folder is a SymbolicLink. The redirection will enumerate the children of the remote connector.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID to Get Children .",
-            "ui_EditorType": "Textbox",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "ui_category": "Subscribe Mode Properties",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        }
-        ]
-    },
-    {
-        "operation": "Get Folder Access Info",
-        "description": "",
-        "operationId": "get_folder_access_info",
-        "operationApiType": "GET",
-        "operationPath": "/Items({itemId})/Info",
-        "operationSummary": "Get Folder Access Info",
-        "operationDescription": "Returns the effective Access Controls for the current authenticated user for the selected folder - i.e., the resulting set of Access Controls for the Item/User context.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify ID to Get Folder Access Info .",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        }
-        ]
-    },
-    {
-        "operation": "Download Item Content",
-        "description": "",
-        "operationId": "download_item_content",
-        "operationApiType": "GET",
-        "operationPath": "/Items({itemId})/Download",
-        "operationSummary": "Download Item Content",
-        "operationDescription": "Initiate the download operation for an item. It will return 302 redirection to the actual download link. For Folders, the download link will retrieve a ZIP archive with the contents of the Folder.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID to Download item Content .",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        }
-        ]
-    },
-    {
-        "operation": "Download Item content in bulk",
-        "description": "",
-        "operationId": "download_multiple_items",
-        "operationApiType": "POST",
-        "operationPath": "/Items({itemId})/BulkDownload",
-        "operationSummary": "Download Items Content in bulk",
-        "operationDescription": "Initiate the download operation for an item. It will return 302 redirection to the actual download link. For Folders, the download link will retrieve a ZIP archive with the contents of the Folder.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID .",
-            "ui_EditorType": "Textbox",
-            "param_type": "Path",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        },
-        {
+  },
+  {
+    "operation": "Get Device Users for Current User",
+    "description": "",
+    "operationId": "get_device_users_for_current_user",
+    "operationApiType": "GET",
+    "operationPath": "/Devices",
+    "operationSummary": "Get Device Users for Current User",
+    "operationDescription": "Get all the Device Users for Current User",
+    "deprecated": false,
+    "OperationCategory": "User",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get HomeFolder for Current User",
+    "description": "",
+    "operationId": "get_homeFolder_for_current_user",
+    "operationApiType": "GET",
+    "operationPath": "/Items",
+    "operationSummary": "Get HomeFolder for Current User",
+    "operationDescription": "Returns home folder for current user. Note that home folders are not available for client users, or if the account doesn't have the \"My Files & Folders\" feature enabled.",
+    "deprecated": false,
+    "OperationCategory": "User",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get Item by ID or TreeView",
+    "description": "",
+    "operationId": "get_item_by_id_or_treeView",
+    "operationApiType": "GET",
+    "operationPath": "/Items({itemId})",
+    "operationSummary": "Get Item by ID or TreeView",
+    "operationDescription": "Returns a single Item or a folder list structure tailored for TreeView navigation - used by clients to create folder trees for specific operations. If a TreeMode is entered then a treeview is returned, otherwise a single item is returned.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Update Item",
+    "description": "",
+    "operationId": "update_item",
+    "operationApiType": "PATCH",
+    "operationPath": "/Items({itemId})",
+    "operationSummary": "Update Item",
+    "operationDescription": "Updates an Item object. Please note that for a Folder, the Name and FileName properties must be consistent.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID to Update.",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Item",
+    "description": "",
+    "operationId": "delete_item",
+    "operationApiType": "DELETE",
+    "operationPath": "/Items({itemId})",
+    "operationSummary": "Delete Item",
+    "operationDescription": "Removes an Item object.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID to Update.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get TreeView",
+    "description": "",
+    "operationId": "get_treeView",
+    "operationApiType": "GET",
+    "operationPath": "/Items({itemId})/TreeView",
+    "operationSummary": "Get TreeView",
+    "operationDescription": "Retrieves a folder list structure tailored for TreeView navigation - used by clients to create folder trees for specific operations. This operation will enforce a specific $select and $expand operators.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID to get TreeView",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get Stream",
+    "description": "",
+    "operationId": "get_stream",
+    "operationApiType": "GET",
+    "operationPath": "/Items({itemId})/Stream",
+    "operationSummary": "Get Stream",
+    "operationDescription": "Retrieves the versions of a given Stream. The ID parameter must be a StreamID, otherwise an empty list is returned. StreamID is a property of all Items, representing the \"Stream\", ie., the collection of all versions of a file.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID to Get a Stream.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get Item by Path",
+    "description": "",
+    "operationId": "get_item_by_path",
+    "operationApiType": "GET",
+    "operationPath": "/Items/ByPath",
+    "operationSummary": "Get Item by Path",
+    "operationDescription": "Retrieves an item from its path. The path is of format /foldername/foldername/filename This call may redirect the client to another API provider, if the path contains a symbolic link.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "path",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify Path to get item",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Path name",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Item by relative Path from ID",
+    "description": "",
+    "operationId": "get_item_relative_by_path_from_id",
+    "operationApiType": "GET",
+    "operationPath": "/Items({itemId})/ByPath",
+    "operationSummary": "Get Item by relative Path from ID",
+    "operationDescription": "Retrieves an item from its path, relative to the provided ID. The path is of format /foldername/foldername/filename This call may redirect the client to another API provider, if the path contains a symbolic link.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID to Get Item.",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "path",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify Path to get item",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Path name",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Parent Item",
+    "description": "",
+    "operationId": "get_parent_item",
+    "operationApiType": "GET",
+    "operationPath": "/Items({itemId})/Parent",
+    "operationSummary": "Get Parent Item",
+    "operationDescription": "Retrieves the Parent navigation property of a single Item.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID to Get Parent Item.",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get Children",
+    "description": "",
+    "operationId": "get_children",
+    "operationApiType": "GET",
+    "operationPath": "/Items({itemId})/Children",
+    "operationSummary": "Get Children",
+    "operationDescription": "Handler for the Children navigation property of a given Item. A 302 redirection is returned if the folder is a SymbolicLink. The redirection will enumerate the children of the remote connector.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID to Get Children .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get Folder Access Info",
+    "description": "",
+    "operationId": "get_folder_access_info",
+    "operationApiType": "GET",
+    "operationPath": "/Items({itemId})/Info",
+    "operationSummary": "Get Folder Access Info",
+    "operationDescription": "Returns the effective Access Controls for the current authenticated user for the selected folder - i.e., the resulting set of Access Controls for the Item/User context.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify ID to Get Folder Access Info .",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Download Item Content",
+    "description": "",
+    "operationId": "download_item_content",
+    "operationApiType": "GET",
+    "operationPath": "/Items({itemId})/Download",
+    "operationSummary": "Download Item Content",
+    "operationDescription": "Initiate the download operation for an item. It will return 302 redirection to the actual download link. For Folders, the download link will retrieve a ZIP archive with the contents of the Folder.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID to Download item Content .",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Download Item content in bulk",
+    "description": "",
+    "operationId": "download_multiple_items",
+    "operationApiType": "POST",
+    "operationPath": "/Items({itemId})/BulkDownload",
+    "operationSummary": "Download Items Content in bulk",
+    "operationDescription": "Initiate the download operation for an item. It will return 302 redirection to the actual download link. For Folders, the download link will retrieve a ZIP archive with the contents of the Folder.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
         "name": "redirect",
         "value": "false",
         "param_type": "UrlParam",
         "ui_source": "operation"
-        },
-        {
-            "name": "Body",
-            "value": "",
-            "param_type": "Param",
-            "isVisible": false,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify the content of the blob to upload.",
-            "ui_source": "operation",
-            "ui_EditorType": "TextArea",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_displayName": "Blob Content"
-          },
-            {
-            "name": "BodyType",
-            "value": "Raw",
-            "param_type": "Param",
-            "ui_source": "operation"
-            },
-            {
-            "name": "BodyFormat",
-            "value": "XML",
-            "param_type": "Param",
-            "ui_source": "operation"
-            }
-        ]
-    },
-    {
-        "operation": "Create Folder",
-        "description": "",
-        "operationId": "create_folder",
-        "operationApiType": "POST",
-        "operationPath": "/Items({parentId})/Folder",
-        "operationSummary": "Create Folder",
-        "operationDescription": "Creates a new Folder. The POST body must contain the serialized object. For top-level folders, use Items/Folder. The Zone object may only be provided for top-level folders. The Zone object must contain a zone ID.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{parentId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Parent ID to Create Folder.",
-            "ui_EditorType": "Textbox",
-            "param_type": "Path",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Parent ID"
-        },
-        {
-            "name": "Body",
-            "value": "",
-            "param_type": "Param",
-            "isVisible": false,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify the content of the blob to upload.",
-            "ui_source": "operation",
-            "ui_EditorType": "TextArea",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_displayName": "Blob Content"
-          },
-        {
-        "name": "BodyType",
-        "value": "Raw",
-        "param_type": "Param",
-        "ui_source": "operation"
-        },
-        {
-        "name": "BodyFormat",
-        "value": "XML",
-        "param_type": "Param",
-        "ui_source": "operation"
-        }
-        ]
-    },
-    {
-        "operation": "Create Note",
-        "description": "",
-        "operationId": "create_note",
-        "operationApiType": "POST",
-        "operationPath": "/Items({parentId})/Note",
-        "operationSummary": "Create Note",
-        "operationDescription": "Creates a new Note.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{parentId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify IParent ID to Create Note",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Parent ID"
-        },
-        {
+      },
+      {
         "name": "Body",
         "value": "",
         "param_type": "Param",
@@ -624,53 +521,54 @@
         "ui_EditorType": "TextArea",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Blob Content"
-        },
-        {
+      },
+      {
         "name": "BodyType",
         "value": "Raw",
         "param_type": "Param",
         "ui_source": "operation"
-        },
-        {
+      },
+      {
         "name": "BodyFormat",
         "value": "XML",
         "param_type": "Param",
         "ui_source": "operation"
-        }
-        ]
-    },
-    {
-        "operation": "Create Link",
-        "description": "",
-        "operationId": "create_link",
-        "operationApiType": "POST",
-        "operationPath": "/Items({parentId})/Link",
-        "operationSummary": "Create Link",
-        "operationDescription": "Creates a new Link.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{parentId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify IParent ID to Create Link .",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Parent ID"
-        },
-        {
+      }
+    ]
+  },
+  {
+    "operation": "Create Folder",
+    "description": "",
+    "operationId": "create_folder",
+    "operationApiType": "POST",
+    "operationPath": "/Items({parentId})/Folder",
+    "operationSummary": "Create Folder",
+    "operationDescription": "Creates a new Folder. The POST body must contain the serialized object. For top-level folders, use Items/Folder. The Zone object may only be provided for top-level folders. The Zone object must contain a zone ID.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{parentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Parent ID to Create Folder.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Parent ID"
+      },
+      {
         "name": "Body",
         "value": "",
         "param_type": "Param",
@@ -683,118 +581,54 @@
         "ui_EditorType": "TextArea",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Blob Content"
-        },
-        {
+      },
+      {
         "name": "BodyType",
         "value": "Raw",
         "param_type": "Param",
         "ui_source": "operation"
-        },
-        {
+      },
+      {
         "name": "BodyFormat",
         "value": "XML",
         "param_type": "Param",
         "ui_source": "operation"
-        }
-        ]
-    },
-    {
-        "operation": "Update Link",
-        "description": "",
-        "operationId": "update_link",
-        "operationApiType": "PATCH",
-        "operationPath": "/Items/Link({itemId})",
-        "operationSummary": "Update Link",
-        "operationDescription": "Updates a new Link.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID to Update Link.",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        },
-        {
-            "name": "notify",
-            "value": "true",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-        },
-        {
-            "name": "Body",
-            "value": "",
-            "param_type": "Param",
-            "isVisible": false,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify the content of the blob to upload.",
-            "ui_source": "operation",
-            "ui_EditorType": "TextArea",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_displayName": "Blob Content"
-        },
-        {
-        "name": "BodyType",
-        "value": "Raw",
-        "param_type": "Param",
-        "ui_source": "operation"
-        },
-        {
-        "name": "BodyFormat",
-        "value": "XML",
-        "param_type": "Param",
-        "ui_source": "operation"
-        }
-        ]
-    },
-    {
-        "operation": "Update Note",
-        "description": "",
-        "operationId": "update_note",
-        "operationApiType": "POST",
-        "operationPath": "/Items/({itemId})/Note",
-        "operationSummary": "Update Note",
-        "operationDescription": "Updates a new Note.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID to Update Note.",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        },
-        {
+      }
+    ]
+  },
+  {
+    "operation": "Create Note",
+    "description": "",
+    "operationId": "create_note",
+    "operationApiType": "POST",
+    "operationPath": "/Items({parentId})/Note",
+    "operationSummary": "Create Note",
+    "operationDescription": "Creates a new Note.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{parentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify IParent ID to Create Note",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Parent ID"
+      },
+      {
         "name": "Body",
         "value": "",
         "param_type": "Param",
@@ -807,65 +641,54 @@
         "ui_EditorType": "TextArea",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Blob Content"
-        },
-        {
+      },
+      {
         "name": "BodyType",
         "value": "Raw",
         "param_type": "Param",
         "ui_source": "operation"
-        },
-        {
+      },
+      {
         "name": "BodyFormat",
         "value": "XML",
         "param_type": "Param",
         "ui_source": "operation"
-        }
-        ]
-    },
-    {
-        "operation": "Delete Multiple Items",
-        "description": "",
-        "operationId": "delete_multiple_items",
-        "operationApiType": "POST",
-        "operationPath": "/Items({parentId})/BulkDelete",
-        "operationSummary": "Delete Multiple Items",
-        "operationDescription": "All items in bulk delete must be children of the same parent, identified in the URI",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{parentId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Parent ID to Delete Multiple Items .",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Parent ID"
-        },
-        {
-            "name": "forceSync",
-            "value": "false",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-        },
-        {
-            "name": "deletePermanently",
-            "value": "true",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-        },
-        {
+      }
+    ]
+  },
+  {
+    "operation": "Create Link",
+    "description": "",
+    "operationId": "create_link",
+    "operationApiType": "POST",
+    "operationPath": "/Items({parentId})/Link",
+    "operationSummary": "Create Link",
+    "operationDescription": "Creates a new Link.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{parentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify IParent ID to Create Link .",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Parent ID"
+      },
+      {
         "name": "Body",
         "value": "",
         "param_type": "Param",
@@ -878,580 +701,790 @@
         "ui_EditorType": "TextArea",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Blob Content"
-        },
-        {
+      },
+      {
         "name": "BodyType",
         "value": "Raw",
         "param_type": "Param",
         "ui_source": "operation"
-        },
-        {
+      },
+      {
         "name": "BodyFormat",
         "value": "XML",
         "param_type": "Param",
         "ui_source": "operation"
-        }
-        ]
-    },
-    {
-        "operation": "Get Thumbnail",
-        "description": "",
-        "operationId": "get_thumbnail",
-        "operationApiType": "GET",
-        "operationPath": "/Items({parentId})/Thumbnail",
-        "operationSummary": "Get Thumbnail",
-        "operationDescription": "Retrieve a thumbnail link from the specified Item.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{parentId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify IParent ID to Get Thumbnail .",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Parent ID"
-        }
-        ]
-    },
-    {
-        "operation": "Get Breadcrumbs",
-        "description": "",
-        "operationId": "get_breadcrumbs",
-        "operationApiType": "GET",
-        "operationPath": "/Items({parentId})/Breadcrumbs",
-        "operationSummary": "Get Breadcrumbs",
-        "operationDescription": "Retrieves the path from an item from the root. The return list is a Feed of Items, with the top-level folder at the first position.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{parentId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify IParent ID to Get BreadCrumbs .",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Parent ID"
-        },
-        {
-            "name": "path",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify Path to get item",
-            "ui_EditorType": "Textbox",
-            "ui_displayName": "Path name",
-            "param_type": "UrlParam",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_source": "operation"
-        },
-        {
-            "name": "bubbleSharedPassthroughs",
-            "value": "false",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-        }
-        ]
-    },
-    {
-        "operation": "Copy Item",
-        "description": "",
-        "operationId": "copy_item",
-        "operationApiType": "POST",
-        "operationPath": "/Items({itemId})/Copy",
-        "operationSummary": "Copy Item",
-        "operationDescription": "Copies an item to a new target Folder. If the target folder is in another zone, the operation will return an AsyncOperation record instead.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID to Copy.",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        },
-        {
-            "name": "targetid",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify target ID to copy item",
-            "ui_EditorType": "Textbox",
-            "ui_displayName": "targetID",
-            "param_type": "UrlParam",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_source": "operation"
-        },
-        {
-            "name": "overwrite",
-            "value": "false",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-        }
-        ]
-    },
-    {
-        "operation": "Search In Item",
-        "description": "",
-        "operationId": "search_in_item",
-        "operationApiType": "GET",
-        "operationPath": "/Items({itemId})/Search",
-        "operationSummary": "Search In Item",
-        "operationDescription": "Search for Items matching the criteria of the query parameter.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID to Search for .",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        },
-        {
-            "name": "query",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify return type for query",
-            "ui_EditorType": "Textbox",
-            "ui_displayName": "Query",
-            "param_type": "UrlParam",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_source": "operation"
-        },
-        {
-            "name": "maxResults",
-            "value": "50",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-        },
-        {
-            "name": "skip",
-            "value": "0",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-        }
-        ]
-    },
-    {
-        "operation": "Search",
-        "description": "Search for Items matching the criteria of the query parameter.",
-        "operationId": "search",
-        "operationApiType": "GET",
-        "operationPath": "/Items/Search",
-        "operationSummary": "Search",
-        "operationDescription": "Search for Items matching the criteria of the query parameter.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-            {
-            "name": "Body",
-            "value": "",
-            "param_type": "Param",
-            "isVisible": false,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify the content of the blob to upload.",
-            "ui_source": "operation",
-            "ui_EditorType": "TextArea",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_displayName": "Blob Content"
-            },
-            {
-            "name": "BodyType",
-            "value": "Raw",
-            "param_type": "Param",
-            "ui_source": "operation"
-            },
-            {
-            "name": "BodyFormat",
-            "value": "XML",
-            "param_type": "Param",
-            "ui_source": "operation"
-            }
-        ]
-    },
-    {
-        "operation": "Advanced Simple Search",
-        "description": "",
-        "operationId": "advanced_simple_search",
-        "operationApiType": "POST",
-        "operationPath": "/Items/AdvancedSimpleSearch",
-        "operationSummary": "Advanced Simple Search",
-        "operationDescription": "Search for Items matching the criteria of the query parameter.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-            {
-            "name": "Body",
-            "value": "",
-            "param_type": "Param",
-            "isVisible": false,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify the content of the blob to upload.",
-            "ui_source": "operation",
-            "ui_EditorType": "TextArea",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_displayName": "Blob Content"
-            },
-            {
-            "name": "BodyType",
-            "value": "Raw",
-            "param_type": "Param",
-            "ui_source": "operation"
-            },
-            {
-            "name": "BodyFormat",
-            "value": "XML",
-            "param_type": "Param",
-            "ui_source": "operation"
-            }
-        ]
-    },
-    {
-        "operation": "Advanced Search",
-        "description": "",
-        "operationApiType": "POST",
-        "operationPath": "/Items/AdvancedSearch",
-        "operationSummary": "Advanced Search",
-        "operationDescription": "Search for Items matching the criteria of the query parameter. Paging.PageNumber and Paging.PageSize are deprecated. Default values for Paging.Count is 50 and Paging.Skip is 0.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-            {
-            "name": "Body",
-            "value": "",
-            "param_type": "Param",
-            "isVisible": false,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify the content of the blob to upload.",
-            "ui_source": "operation",
-            "ui_EditorType": "TextArea",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_displayName": "Blob Content"
-            },
-            {
-            "name": "BodyType",
-            "value": "Raw",
-            "param_type": "Param",
-            "ui_source": "operation"
-            },
-            {
-            "name": "BodyFormat",
-            "value": "XML",
-            "param_type": "Param",
-            "ui_source": "operation"
-            }
-        ]
-    },
-    {
-        "operation": "Restore expired items",
-        "description": "Restore expired items to their original locations",
-        "operationId": "restore_expired_items",
-        "operationApiType": "POST",
-        "operationPath": "/Items/BulkRestore",
-        "operationSummary": "Restore expired items",
-        "operationDescription": "Restore expired items to their original locations",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-            {
-            "name": "Body",
-            "value": "",
-            "param_type": "Param",
-            "isVisible": false,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify the content of the blob to upload.",
-            "ui_source": "operation",
-            "ui_EditorType": "TextArea",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_displayName": "Blob Content"
-            },
-            {
-            "name": "BodyType",
-            "value": "Raw",
-            "param_type": "Param",
-            "ui_source": "operation"
-            },
-            {
-            "name": "BodyFormat",
-            "value": "XML",
-            "param_type": "Param",
-            "ui_source": "operation"
-            }
-        ]
-    },
-    {
-        "operation": "Permanently delete multiple items",
-        "description": "Permanently delete multiple items",
-        "operationId": "permanently_delete_multiple_items",
-        "operationApiType": "POST",
-        "operationPath": "/Items/BulkDeletePermanently",
-        "operationSummary": "Permanently delete multiple items",
-        "operationDescription": "Permanently delete multiple items",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-            {
-            "name": "Body",
-            "value": "",
-            "param_type": "Param",
-            "isVisible": false,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify the content of the blob to upload.",
-            "ui_source": "operation",
-            "ui_EditorType": "TextArea",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_displayName": "Blob Content"
-            },
-            {
-            "name": "BodyType",
-            "value": "Raw",
-            "param_type": "Param",
-            "ui_source": "operation"
-            },
-            {
-            "name": "BodyFormat",
-            "value": "XML",
-            "param_type": "Param",
-            "ui_source": "operation"
-            }
-        ]
-    },
-    {
-        "operation": "Upload File - STANDARD",
-        "description": "Prepares the links for uploading files to the target Folder. This method returns an Upload Specification object. The fields are populated based on the upload method, provider, and canResume parameters passed to the upload call. The Method determines how the URLs must be called.",
-        "operationId": "upload_file",
-        "operationApiType": "POST",
-        "operationPath": "/Items({itemId})/Upload",
-        "operationSummary": "Upload File",
-        "operationDescription": "Prepares the links for uploading files to the target Folder. This method returns an Upload Specification object. The fields are populated based on the upload method, provider, and canResume parameters passed to the upload call. The Method determines how the URLs must be called.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID ",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        },
-        {
-            "name": "fileName",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify File Name ",
-            "ui_EditorType": "Textbox",
-            "ui_displayName": "FileName",
-            "param_type": "UrlParam",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_source": "operation"
-        },
-        {
-            "name": "method",
-            "value": "Standard",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-        }
-        ]
-    },
-    {
-        "operation": "Upload File - THREADED",
-        "description": "Prepares the links for uploading files to the target Folder. This method returns an Upload Specification object. The fields are populated based on the upload method, provider, and canResume parameters passed to the upload call. The Method determines how the URLs must be called.",
-        "operationId": "upload_file",
-        "operationApiType": "POST",
-        "operationPath": "/Items({itemId})/Upload",
-        "operationSummary": "Upload File",
-        "operationDescription": "Prepares the links for uploading files to the target Folder. This method returns an Upload Specification object. The fields are populated based on the upload method, provider, and canResume parameters passed to the upload call. The Method determines how the URLs must be called.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID ",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        },
-        {
-            "name": "fileName",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "datatype": "System.String",
-            "description": "Specify File Name ",
-            "ui_EditorType": "Textbox",
-            "ui_displayName": "FileName",
-            "param_type": "UrlParam",
-            "ui_category": "Subscribe Mode Properties",
-            "ui_source": "operation"
-        },
-        {
-            "name": "method",
-            "value": "Threaded",
-            "param_type": "UrlParam",
-            "ui_source": "operation"
-        }
-        ]
-    },
-    {
-        "operation": "Upload File2",
-        "description": "Prepares the links for uploading files to the target Folder. This method returns an Upload Specification object. The fields are populated based on the upload method, provider, and canResume parameters passed to the upload call. The Method determines how the URLs must be called.",
-        "operationId": "upload_file2",
-        "operationApiType": "POST",
-        "operationPath": "/Items({itemId})/Upload2",
-        "operationSummary": "Upload File2",
-        "operationDescription": "Prepares the links for uploading files to the target Folder. This method returns an Upload Specification object. The fields are populated based on the upload method, provider, and canResume parameters passed to the upload call. The Method determines how the URLs must be called.",
-        "deprecated": false,
-        "adapterProperties": [
-        {
-            "name": "AdapterMode",
-            "key": "",
-            "value": "API"
-        }
-        ],
-        "parameters": [
-        {
-            "name": "{itemId}",
-            "value": "",
-            "isVisible": true,
-            "bindable": true,
-            "required": true,
-            "description": "Specify Item ID ",
-            "ui_EditorType": "Textbox",
-            "ui_category": "Subscribe Mode Properties",
-            "param_type": "Path",
-            "ui_source": "operation",
-            "datatype": "System.String",
-            "ui_displayName": "Item ID"
-        }
-        ]
-    }
+      }
+    ]
+  },
+  {
+    "operation": "Update Link",
+    "description": "",
+    "operationId": "update_link",
+    "operationApiType": "PATCH",
+    "operationPath": "/Items/Link({itemId})",
+    "operationSummary": "Update Link",
+    "operationDescription": "Updates a new Link.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID to Update Link.",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "notify",
+        "value": "true",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update Note",
+    "description": "",
+    "operationId": "update_note",
+    "operationApiType": "POST",
+    "operationPath": "/Items/({itemId})/Note",
+    "operationSummary": "Update Note",
+    "operationDescription": "Updates a new Note.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID to Update Note.",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Multiple Items",
+    "description": "",
+    "operationId": "delete_multiple_items",
+    "operationApiType": "POST",
+    "operationPath": "/Items({parentId})/BulkDelete",
+    "operationSummary": "Delete Multiple Items",
+    "operationDescription": "All items in bulk delete must be children of the same parent, identified in the URI",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{parentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Parent ID to Delete Multiple Items .",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Parent ID"
+      },
+      {
+        "name": "forceSync",
+        "value": "false",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "deletePermanently",
+        "value": "true",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Thumbnail",
+    "description": "",
+    "operationId": "get_thumbnail",
+    "operationApiType": "GET",
+    "operationPath": "/Items({parentId})/Thumbnail",
+    "operationSummary": "Get Thumbnail",
+    "operationDescription": "Retrieve a thumbnail link from the specified Item.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{parentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify IParent ID to Get Thumbnail .",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Parent ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get Breadcrumbs",
+    "description": "",
+    "operationId": "get_breadcrumbs",
+    "operationApiType": "GET",
+    "operationPath": "/Items({parentId})/Breadcrumbs",
+    "operationSummary": "Get Breadcrumbs",
+    "operationDescription": "Retrieves the path from an item from the root. The return list is a Feed of Items, with the top-level folder at the first position.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{parentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify IParent ID to Get BreadCrumbs .",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Parent ID"
+      },
+      {
+        "name": "path",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify Path to get item",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Path name",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "bubbleSharedPassthroughs",
+        "value": "false",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Copy Item",
+    "description": "",
+    "operationId": "copy_item",
+    "operationApiType": "POST",
+    "operationPath": "/Items({itemId})/Copy",
+    "operationSummary": "Copy Item",
+    "operationDescription": "Copies an item to a new target Folder. If the target folder is in another zone, the operation will return an AsyncOperation record instead.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID to Copy.",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "targetid",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify target ID to copy item",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "targetID",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "overwrite",
+        "value": "false",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Search In Item",
+    "description": "",
+    "operationId": "search_in_item",
+    "operationApiType": "GET",
+    "operationPath": "/Items({itemId})/Search",
+    "operationSummary": "Search In Item",
+    "operationDescription": "Search for Items matching the criteria of the query parameter.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID to Search for .",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "query",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify return type for query",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Query",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "maxResults",
+        "value": "50",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "skip",
+        "value": "0",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Search",
+    "description": "Search for Items matching the criteria of the query parameter.",
+    "operationId": "search",
+    "operationApiType": "GET",
+    "operationPath": "/Items/Search",
+    "operationSummary": "Search",
+    "operationDescription": "Search for Items matching the criteria of the query parameter.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Advanced Simple Search",
+    "description": "",
+    "operationId": "advanced_simple_search",
+    "operationApiType": "POST",
+    "operationPath": "/Items/AdvancedSimpleSearch",
+    "operationSummary": "Advanced Simple Search",
+    "operationDescription": "Search for Items matching the criteria of the query parameter.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Advanced Search",
+    "description": "",
+    "operationApiType": "POST",
+    "operationPath": "/Items/AdvancedSearch",
+    "operationSummary": "Advanced Search",
+    "operationDescription": "Search for Items matching the criteria of the query parameter. Paging.PageNumber and Paging.PageSize are deprecated. Default values for Paging.Count is 50 and Paging.Skip is 0.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Restore expired items",
+    "description": "Restore expired items to their original locations",
+    "operationId": "restore_expired_items",
+    "operationApiType": "POST",
+    "operationPath": "/Items/BulkRestore",
+    "operationSummary": "Restore expired items",
+    "operationDescription": "Restore expired items to their original locations",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Permanently delete multiple items",
+    "description": "Permanently delete multiple items",
+    "operationId": "permanently_delete_multiple_items",
+    "operationApiType": "POST",
+    "operationPath": "/Items/BulkDeletePermanently",
+    "operationSummary": "Permanently delete multiple items",
+    "operationDescription": "Permanently delete multiple items",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Upload File - STANDARD",
+    "description": "Prepares the links for uploading files to the target Folder. This method returns an Upload Specification object. The fields are populated based on the upload method, provider, and canResume parameters passed to the upload call. The Method determines how the URLs must be called.",
+    "operationId": "upload_file",
+    "operationApiType": "POST",
+    "operationPath": "/Items({itemId})/Upload",
+    "operationSummary": "Upload File",
+    "operationDescription": "Prepares the links for uploading files to the target Folder. This method returns an Upload Specification object. The fields are populated based on the upload method, provider, and canResume parameters passed to the upload call. The Method determines how the URLs must be called.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID ",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "fileName",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify File Name ",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "FileName",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "method",
+        "value": "Standard",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Upload File - THREADED",
+    "description": "Prepares the links for uploading files to the target Folder. This method returns an Upload Specification object. The fields are populated based on the upload method, provider, and canResume parameters passed to the upload call. The Method determines how the URLs must be called.",
+    "operationId": "upload_file",
+    "operationApiType": "POST",
+    "operationPath": "/Items({itemId})/Upload",
+    "operationSummary": "Upload File",
+    "operationDescription": "Prepares the links for uploading files to the target Folder. This method returns an Upload Specification object. The fields are populated based on the upload method, provider, and canResume parameters passed to the upload call. The Method determines how the URLs must be called.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID ",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "fileName",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify File Name ",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "FileName",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "method",
+        "value": "Threaded",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Upload File2",
+    "description": "Prepares the links for uploading files to the target Folder. This method returns an Upload Specification object. The fields are populated based on the upload method, provider, and canResume parameters passed to the upload call. The Method determines how the URLs must be called.",
+    "operationId": "upload_file2",
+    "operationApiType": "POST",
+    "operationPath": "/Items({itemId})/Upload2",
+    "operationSummary": "Upload File2",
+    "operationDescription": "Prepares the links for uploading files to the target Folder. This method returns an Upload Specification object. The fields are populated based on the upload method, provider, and canResume parameters passed to the upload call. The Method determines how the URLs must be called.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{itemId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Item ID ",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Path",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  }
 ]

@@ -8,6 +8,7 @@
     "operationSummary": "Get file information",
     "operationDescription": "Retrieves the details about a file.",
     "deprecated": false,
+    "OperationCategory": "File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -55,6 +56,7 @@
     "operationSummary": "Restore file",
     "operationDescription": "Restores a file that has been moved to the trash.\n\nAn optional new parent ID can be provided to restore the file to in case the\noriginal folder has been deleted.",
     "deprecated": false,
+    "OperationCategory": "File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -128,6 +130,7 @@
     "operationSummary": "Update file",
     "operationDescription": "Updates a file. This can be used to rename or move a file,\ncreate a shared link, or lock a file.",
     "deprecated": false,
+    "OperationCategory": "File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -201,6 +204,7 @@
     "operationSummary": "Delete file",
     "operationDescription": "Deletes a file, either permanently or by moving it to\nthe trash.\n\nThe the enterprise settings determine whether the item will\nbe permanently deleted from Box or moved to the trash.",
     "deprecated": false,
+    "OperationCategory": "File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -234,6 +238,7 @@
     "operationSummary": "Download file",
     "operationDescription": "Returns the contents of a file in binary format.",
     "deprecated": false,
+    "OperationCategory": "File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -287,6 +292,7 @@
     "operationSummary": "Copy file",
     "operationDescription": "Creates a copy of a file.",
     "deprecated": false,
+    "OperationCategory": "File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -366,6 +372,7 @@
     "operationSummary": "Get metadata instance on file",
     "operationDescription": "Retrieves the instance of a metadata template that has been applied to a\nfile.",
     "deprecated": false,
+    "OperationCategory": "File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -433,6 +440,7 @@
     "operationSummary": "Create metadata instance on file",
     "operationDescription": "Applies an instance of a metadata template to a file.\n\nIn most cases only values that are present in the metadata template\nwill be accepted, except for the `global.properties` template which accepts\nany key-value pair.",
     "deprecated": false,
+    "OperationCategory": "File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -526,6 +534,7 @@
     "operationSummary": "Remove metadata instance from file",
     "operationDescription": "Deletes a piece of file metadata.",
     "deprecated": false,
+    "OperationCategory": "File",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -593,6 +602,7 @@
     "operationSummary": "Copy file request",
     "operationDescription": "Retrieves a page of items in a folder. These items can be files,\nfolders, and web links.\n\nTo request more information about the folder itself, like its size,\nplease use the [Get a folder](#get-folders-id) endpoint instead.",
     "deprecated": false,
+    "OperationCategory": "Folder",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -660,6 +670,7 @@
     "operationSummary": "Find file for shared link",
     "operationDescription": "Returns the file represented by a shared link.\n\nA shared file can be represented by a shared link,\nwhich can originate within the current enterprise or within another.\n\nThis endpoint allows an application to retrieve information about a\nshared file when only given a shared link.\n\nThe `shared_link_permission_options` array field can be returned\nby requesting it in the `fields` query parameter.",
     "deprecated": false,
+    "OperationCategory": "Folder",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -707,6 +718,7 @@
     "operationSummary": "Get shared link for file",
     "operationDescription": "Gets the information for a shared link on a file.",
     "deprecated": false,
+    "OperationCategory": "Folder",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -760,6 +772,7 @@
     "operationSummary": "Add shared link to file",
     "operationDescription": "Adds a shared link to a file.",
     "deprecated": false,
+    "OperationCategory": "Folder",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -839,6 +852,7 @@
     "operationSummary": "Update shared link on file",
     "operationDescription": "Updates a shared link on a file.",
     "deprecated": false,
+    "OperationCategory": "Folder",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -918,6 +932,7 @@
     "operationSummary": "Remove shared link from file",
     "operationDescription": "Removes a shared link from a file.",
     "deprecated": false,
+    "OperationCategory": "Folder",
     "adapterProperties": [
       {
         "name": "AdapterMode",

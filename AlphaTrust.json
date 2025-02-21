@@ -8,6 +8,7 @@
     "operationSummary": "Get Audit Report.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Audit",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -97,6 +98,7 @@
     "operationSummary": "ServiceAuthenticationTest - Verify API Credentials",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Authentication",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -186,6 +188,7 @@
     "operationSummary": "Get an existing Document.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Document",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -275,6 +278,7 @@
     "operationSummary": "Update an existing Document.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Document",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -364,6 +368,7 @@
     "operationSummary": "Retrieve Document Files.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Document",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -542,6 +547,7 @@
     "operationSummary": "Get the Document object that you can use to update with the UpdateDocuments() method.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Document",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -631,6 +637,7 @@
     "operationSummary": "Get File Attachments.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Document",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -898,6 +905,7 @@
     "operationSummary": "Insert a Group.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Group Management",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -987,6 +995,7 @@
     "operationSummary": "Update an existing Group.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "Group Management",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2411,6 +2420,7 @@
     "operationSummary": "Delete a User.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "User Management",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2500,6 +2510,7 @@
     "operationSummary": "Get User.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "User Management",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2589,6 +2600,7 @@
     "operationSummary": "Update an existing User.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "User Management",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2678,6 +2690,7 @@
     "operationSummary": "Insert User.",
     "operationDescription": "",
     "deprecated": false,
+    "OperationCategory": "User Management",
     "adapterProperties": [
       {
         "name": "AdapterMode",

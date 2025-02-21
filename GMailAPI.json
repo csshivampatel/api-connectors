@@ -8,6 +8,7 @@
     "operationSummary": "Send a New Email",
     "operationDescription": "Send a New Email",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -68,6 +69,7 @@
     "operationSummary": "Search Email",
     "operationDescription": "Search Email",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -116,6 +118,7 @@
     "operationSummary": "New Labeled Email",
     "operationDescription": "New Labeled Email",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -164,6 +167,7 @@
     "operationSummary": "New Starred Email",
     "operationDescription": "New Starred Email",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -212,6 +216,7 @@
     "operationSummary": "Delete Email",
     "operationDescription": "Delete Email",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -260,6 +265,7 @@
     "operationSummary": "Trash Email",
     "operationDescription": "Trash Email",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -334,6 +340,7 @@
     "operationSummary": "Untrash Email",
     "operationDescription": "Untrash Email",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -408,6 +415,7 @@
     "operationSummary": "List Messages",
     "operationDescription": "List all the messages along with message id",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -426,6 +434,7 @@
     "operationSummary": "Get the Specified Message",
     "operationDescription": "Get the Specified Message",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -474,6 +483,7 @@
     "operationSummary": "Delete the Specified Message",
     "operationDescription": "Delete the Specified Message",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -522,6 +532,7 @@
     "operationSummary": "Deletes many messages by message ID.",
     "operationDescription": "Deletes many messages by message ID.",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -582,6 +593,7 @@
     "operationSummary": "Batch Modify Labels",
     "operationDescription": "Batch Modify Labels",
     "deprecated": false,
+    "OperationCategory": "Labels",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -642,6 +654,7 @@
     "operationSummary": "Create Label",
     "operationDescription": "Create Label",
     "deprecated": false,
+    "OperationCategory": "Labels",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -702,6 +715,7 @@
     "operationSummary": "List Labels",
     "operationDescription": "List Labels",
     "deprecated": false,
+    "OperationCategory": "Labels",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -736,6 +750,7 @@
     "operationSummary": "Add Label to Email",
     "operationDescription": "Add Label to Email",
     "deprecated": false,
+    "OperationCategory": "Labels",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -810,6 +825,7 @@
     "operationSummary": "Delete a Label",
     "operationDescription": "Delete a Label",
     "deprecated": false,
+    "OperationCategory": "Labels",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -884,6 +900,7 @@
     "operationSummary": "Remove Label From Email",
     "operationDescription": "Remove Label From Email",
     "deprecated": false,
+    "OperationCategory": "Labels",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -958,6 +975,7 @@
     "operationSummary": "Modify Message",
     "operationDescription": "Modify Message",
     "deprecated": false,
+    "OperationCategory": "Labels",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1032,6 +1050,7 @@
     "operationSummary": "Retrieve Attachment",
     "operationDescription": "Retrieve Attachment",
     "deprecated": false,
+    "OperationCategory": "Attachments",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1094,6 +1113,7 @@
     "operationSummary": "Get Thread Details",
     "operationDescription": "Get Thread Details",
     "deprecated": false,
+    "OperationCategory": "Threads",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1148,6 +1168,7 @@
     "operationSummary": "List Threads",
     "operationDescription": "List Threads",
     "deprecated": false,
+    "OperationCategory": "Threads",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1182,6 +1203,7 @@
     "operationSummary": "Delete a Thread",
     "operationDescription": "Delete a Thread",
     "deprecated": false,
+    "OperationCategory": "Threads",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1230,6 +1252,7 @@
     "operationSummary": "Modify a Thread (Labels)",
     "operationDescription": "Modify a Thread (Labels)",
     "deprecated": false,
+    "OperationCategory": "Threads",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1304,6 +1327,7 @@
     "operationSummary": "List Drafts",
     "operationDescription": "List Drafts",
     "deprecated": false,
+    "OperationCategory": "Drafts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1338,6 +1362,7 @@
     "operationSummary": "Update Draft",
     "operationDescription": "Update Draft",
     "deprecated": false,
+    "OperationCategory": "Drafts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1412,6 +1437,7 @@
     "operationSummary": "Create Draft",
     "operationDescription": "Create Draft",
     "deprecated": false,
+    "OperationCategory": "Drafts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1472,6 +1498,7 @@
     "operationSummary": "Delete Draft",
     "operationDescription": "Delete Draft",
     "deprecated": false,
+    "OperationCategory": "Drafts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1546,6 +1573,7 @@
     "operationSummary": "Import message",
     "operationDescription": "Import message",
     "deprecated": false,
+    "OperationCategory": "Import",
     "adapterProperties": [
       {
         "name": "AdapterMode",

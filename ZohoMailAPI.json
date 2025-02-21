@@ -8,6 +8,7 @@
     "operationSummary": "Send an Email",
     "operationDescription": "Send an Email",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -67,6 +68,7 @@
     "operationSummary": "Send Reply to an Email",
     "operationDescription": "Send Reply to an Email",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -140,6 +142,7 @@
     "operationSummary": "List Emails",
     "operationDescription": "List Emails",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -173,6 +176,7 @@
     "operationSummary": "List Emails based on Search Parameters",
     "operationDescription": "List Emails based on Search Parameters",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -205,7 +209,7 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "description":"pecifies the filter criteria for searching emails"
+        "description": "pecifies the filter criteria for searching emails"
       },
       {
         "name": "receivedTime",
@@ -217,7 +221,7 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "description":"Filters emails based on the received time"
+        "description": "Filters emails based on the received time"
       },
       {
         "name": "start",
@@ -229,7 +233,7 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "description":"The starting index of emails to fetch."
+        "description": "The starting index of emails to fetch."
       },
       {
         "name": "limit",
@@ -241,7 +245,7 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "description":"The maximum number of emails to retrieve in one request."
+        "description": "The maximum number of emails to retrieve in one request."
       },
       {
         "name": "includeto",
@@ -253,7 +257,7 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "description":"Boolean parameter (true or false), determining whether to include recipient details in the response."
+        "description": "Boolean parameter (true or false), determining whether to include recipient details in the response."
       }
     ]
   },
@@ -266,6 +270,7 @@
     "operationSummary": "Get Email Content of an Email",
     "operationDescription": "Get Email Content of an Email",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -327,6 +332,7 @@
     "operationSummary": "Get Original Message of an Email",
     "operationDescription": "Get Original Message of an Email",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -374,6 +380,7 @@
     "operationSummary": "Get Meta Data of an Email",
     "operationDescription": "Get Meta Data of an Email",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -435,6 +442,7 @@
     "operationSummary": "Get Email Attachment Info",
     "operationDescription": "Get Email Attachment Info",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -496,6 +504,7 @@
     "operationSummary": "Get Email Attachment Content",
     "operationDescription": "Get Email Attachment Content",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -571,6 +580,7 @@
     "operationSummary": "Update Message",
     "operationDescription": "Update Message",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -604,6 +614,7 @@
     "operationSummary": "Delete an Email",
     "operationDescription": "Delete an Email",
     "deprecated": false,
+    "OperationCategory": "Emails",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -665,6 +676,7 @@
     "operationSummary": "Create a New Folder",
     "operationDescription": "Create a New Folder",
     "deprecated": false,
+    "OperationCategory": "Folders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -698,6 +710,7 @@
     "operationSummary": "Get all folders",
     "operationDescription": "Get all folders",
     "deprecated": false,
+    "OperationCategory": "Folders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -731,6 +744,7 @@
     "operationSummary": "Get a Specific Folder",
     "operationDescription": "Get a Specific Folder",
     "deprecated": false,
+    "OperationCategory": "Folders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -778,6 +792,7 @@
     "operationSummary": "Move or Rename Folder",
     "operationDescription": "Move or Rename Folder",
     "deprecated": false,
+    "OperationCategory": "Folders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -825,6 +840,7 @@
     "operationSummary": "Delete a Folder",
     "operationDescription": "Delete a Folder",
     "deprecated": false,
+    "OperationCategory": "Folders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -872,6 +888,7 @@
     "operationSummary": "Create a New Label",
     "operationDescription": "Create a New Label",
     "deprecated": false,
+    "OperationCategory": "Labels",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -905,6 +922,7 @@
     "operationSummary": "Get all folders",
     "operationDescription": "Get all folders",
     "deprecated": false,
+    "OperationCategory": "Labels",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -938,6 +956,7 @@
     "operationSummary": "Get a Specific labels",
     "operationDescription": "Get a Specific labels",
     "deprecated": false,
+    "OperationCategory": "Labels",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -985,6 +1004,7 @@
     "operationSummary": "Update Label Details",
     "operationDescription": "Update Label Details",
     "deprecated": false,
+    "OperationCategory": "Labels",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1032,6 +1052,7 @@
     "operationSummary": "Delete a Label",
     "operationDescription": "Delete a Label",
     "deprecated": false,
+    "OperationCategory": "Labels",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1079,6 +1100,7 @@
     "operationSummary": "Manage Labels for Thread(s)",
     "operationDescription": "Manage Labels for Thread(s)",
     "deprecated": false,
+    "OperationCategory": "Labels",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1112,6 +1134,7 @@
     "operationSummary": "Get All Accounts of a User",
     "operationDescription": "Get All Accounts of a User",
     "deprecated": false,
+    "OperationCategory": "Accounts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1130,6 +1153,7 @@
     "operationSummary": "Get a Specific Account Detailss",
     "operationDescription": "Get a Specific Account Details",
     "deprecated": false,
+    "OperationCategory": "Labels",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1163,6 +1187,7 @@
     "operationSummary": "Add a New Group Task",
     "operationDescription": "Add a New Group Task",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1196,6 +1221,7 @@
     "operationSummary": "Add a New Personal Task",
     "operationDescription": "Add a New Personal Task",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1214,6 +1240,7 @@
     "operationSummary": "Add a New Project under a Group",
     "operationDescription": "Add a New Project under a Group",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1247,6 +1274,7 @@
     "operationSummary": "Get All Tasks in a Group Tasks",
     "operationDescription": "Get All Tasks in a Group Tasks",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1280,6 +1308,7 @@
     "operationSummary": "Get All Tasks in a Personal Tasks",
     "operationDescription": "Get All Tasks in a Personal Tasks",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1298,6 +1327,7 @@
     "operationSummary": "Get All Tasks Assigned or Created by Me",
     "operationDescription": "Get All Tasks Assigned or Created by Me",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1316,6 +1346,7 @@
     "operationSummary": "Get a Specific Task - Group Task",
     "operationDescription": "Get a Specific Task - Group Task",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1363,6 +1394,7 @@
     "operationSummary": "Get a Specific Task - Personal Task",
     "operationDescription": "Get a Specific Task - Personal Task",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1396,6 +1428,7 @@
     "operationSummary": "Get a Specific Task - Personal Task",
     "operationDescription": "Get a Specific Task - Personal Task",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1443,6 +1476,7 @@
     "operationSummary": "Change Personal Task Title",
     "operationDescription": "Change Personal Task Title",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1476,6 +1510,7 @@
     "operationSummary": "Delete a Project",
     "operationDescription": "Delete a Project",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1523,6 +1558,7 @@
     "operationSummary": "Delete a Group Task",
     "operationDescription": "Delete a Group Task",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1570,6 +1606,7 @@
     "operationSummary": "Delete a Personal Task",
     "operationDescription": "Delete a Personal Task ",
     "deprecated": false,
+    "OperationCategory": "Tasks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1603,6 +1640,7 @@
     "operationSummary": "Create a Group Bookmark",
     "operationDescription": "Create a Group Bookmark",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1636,6 +1674,7 @@
     "operationSummary": "Create a Personal Bookmark",
     "operationDescription": "Create a Personal Bookmark",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1654,6 +1693,7 @@
     "operationSummary": "Create a Group Collection",
     "operationDescription": "Create a Group Bookmark",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1687,6 +1727,7 @@
     "operationSummary": "Get All Groups in Bookmarks",
     "operationDescription": "Get All Groups in Bookmarks",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1705,6 +1746,7 @@
     "operationSummary": "Get Group Bookmark",
     "operationDescription": "Get Group Bookmark",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1738,6 +1780,7 @@
     "operationSummary": "Get Group Bookmark by BookmarkId",
     "operationDescription": "Get Group Bookmark BookmarkId",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1785,6 +1828,7 @@
     "operationSummary": "Get Personal Bookmark",
     "operationDescription": "Get Personal Bookmark",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1803,6 +1847,7 @@
     "operationSummary": "Get Personal Bookmark by BookmarkId",
     "operationDescription": "Get Personal Bookmark by BookmarkId",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1836,6 +1881,7 @@
     "operationSummary": "Edit a Group Bookmark",
     "operationDescription": "Edit a Group Bookmark",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1883,6 +1929,7 @@
     "operationSummary": "Edit a Personal Bookmark",
     "operationDescription": "Edit a Personal Bookmark",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1916,6 +1963,7 @@
     "operationSummary": "Edit a Group Collection",
     "operationDescription": "Edit a Group Collection",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1963,6 +2011,7 @@
     "operationSummary": "Edit a Personal Collection",
     "operationDescription": "Edit a Personal Collection",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1996,6 +2045,7 @@
     "operationSummary": "Delete a Group Bookmark",
     "operationDescription": "Delete a Group Bookmark",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2043,6 +2093,7 @@
     "operationSummary": "Delete a Personal Bookmark",
     "operationDescription": "Delete a Personal Bookmark",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2076,6 +2127,7 @@
     "operationSummary": "Delete a Group Collection",
     "operationDescription": "Delete a Group Collection",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2123,6 +2175,7 @@
     "operationSummary": "Delete a Personal Collection",
     "operationDescription": "Delete a Personal Collection",
     "deprecated": false,
+    "OperationCategory": "Bookmarks",
     "adapterProperties": [
       {
         "name": "AdapterMode",
