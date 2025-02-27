@@ -1237,12 +1237,9 @@
         "isVisible": false,
         "bindable": true,
         "required": true,
-        "datatype": "System.String",
-        "description": "Specify the content of the blob to upload.",
+        "datatype": "System.Byte[]",
         "ui_source": "operation",
-        "ui_EditorType": "TextArea",
-        "ui_category": "Subscribe Mode Properties",
-        "ui_displayName": "Blob Content"
+        "ui_category": "Subscribe Mode Properties"
       },
       {
         "name": "BodyType",
