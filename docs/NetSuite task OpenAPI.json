@@ -1,0 +1,1170 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "NetSuite REST Record API",
+    "description": "NetSuite REST Record API generated 2024-05-24 at 12:28:56 UTC for account TSTDRV1303059, user joe.klug@peregrineconnect.com with role Neuron ESB Integration.",
+    "termsOfService": "http://www.netsuite.com/portal/resource/terms-of-service.shtml",
+    "contact": {
+      "name": "Oracle NetSuite",
+      "url": "http://www.netsuite.com",
+      "email": "info@netsuite.com"
+    },
+    "version": "v1",
+    "x-framework": {
+      "name": "oracle-netsuite-suitetalk-rest"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://tstdrv1303059.suitetalk.api.netsuite.com/services/rest/record/v1"
+    }
+  ],
+  "paths": {
+    "/task": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Get list of records.",
+        "operationId": "taskGET",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "The search query that is used to filter results.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The limit used to specify the number of results on a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1000
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The offset used for selecting a specific page of results.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of records.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=collection": {
+                "schema": {
+                  "$ref": "#/components/schemas/taskCollection"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Insert record.",
+        "operationId": "taskPOST",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/task"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Inserted record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/task/{id}": {
+      "get": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Get record.",
+        "operationId": "taskGET2",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "expandSubResources",
+            "in": "query",
+            "description": "Set to 'true' to automatically expand all sublists, sublist lines, and subrecords on this record.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "simpleEnumFormat",
+            "in": "query",
+            "description": "Set to true to return enumeration values in a format that only shows the internal ID value.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "The names of the fields and sublists on the record. Only the selected fields and sublists will be returned in the response.",
+            "examples": {
+              "multiple fields": {
+                "value": "field1,field2"
+              },
+              "single field": {
+                "value": "field"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved record.",
+            "headers": {
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/vnd.oracle.resource+json; type=singular": {
+                "schema": {
+                  "$ref": "#/components/schemas/task"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Insert or update record.",
+        "operationId": "taskPUT",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "External identifier.",
+            "schema": {
+              "type": "string",
+              "pattern": "eid:(.+)"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replaceSelectedFields",
+            "in": "query",
+            "description": "If set to 'true', all fields that should be deleted in the update request, including body fields, must be included in the 'replace' query parameter.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/task"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Upserted record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Remove record.",
+        "operationId": "taskDELETE",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Removed record."
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Task"
+        ],
+        "summary": "Update record.",
+        "operationId": "taskPATCH",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replaceSelectedFields",
+            "in": "query",
+            "description": "If set to 'true', all fields that should be deleted in the update request, including body fields, must be included in the 'replace' query parameter.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/task"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Updated record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "nsResourceCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/nsResource"
+            }
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          }
+        }
+      },
+      "nsResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Internal identifier",
+            "type": "string"
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "externalId": {
+            "title": "External identifier",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          }
+        }
+      },
+      "nsError": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "type": "string",
+            "readOnly": true,
+            "description": "A URI reference to the documentation about the problem type.",
+            "format": "URI"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string",
+            "readOnly": true,
+            "description": "A human-readable description of the problem type."
+          },
+          "status": {
+            "title": "Status",
+            "type": "integer",
+            "readOnly": true,
+            "description": "The HTTP status code generated by the server the request originates from.",
+            "format": "int32"
+          },
+          "o:errorDetails": {
+            "type": "array",
+            "readOnly": true,
+            "description": "An array containing one or more problem types.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "detail": {
+                  "title": "Detail",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "A detailed, human-readable description of the problem occurrence."
+                },
+                "o:errorPath": {
+                  "title": "Error Path",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The JSON path that indicates where the problem occurs within the request body.",
+                  "format": "JSONPath"
+                },
+                "o:errorUrl": {
+                  "title": "Error URL",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The URI of the first element in the request URL where the problem occurs.",
+                  "format": "URI"
+                },
+                "o:errorHeader": {
+                  "title": "Error Header",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The name of the HTTP header where the problem occurs."
+                },
+                "o:errorQueryParam": {
+                  "title": "Error Query Parameter",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The name of the query parameter where the problem occurs."
+                },
+                "o:errorCode": {
+                  "title": "Error Code",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The application-specific error code. Similar problem types are grouped together."
+                }
+              }
+            }
+          }
+        }
+      },
+      "nsLink": {
+        "type": "object",
+        "properties": {
+          "rel": {
+            "title": "Relationship",
+            "type": "string",
+            "readOnly": true
+          },
+          "href": {
+            "title": "Hypertext Reference",
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
+      "taskCollection": {
+        "type": "object",
+        "properties": {
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "title": "Items",
+            "type": "array",
+            "description": "An array field that represents a collection of elements, for example, sublist lines, multiselect items, or search results.",
+            "items": {
+              "$ref": "#/components/schemas/task"
+            }
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          }
+        }
+      },
+      "task": {
+        "type": "object",
+        "properties": {
+          "createdDate": {
+            "title": "Date Created",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timezone": {
+            "title": "Time Zone",
+            "type": "string",
+            "nullable": true
+          },
+          "accessLevel": {
+            "title": "Private",
+            "type": "boolean",
+            "description": "Check this box so that only the creator of this task or person assigned this task can view the task. If you don&apos;t check this box, this task is considered public and can be viewed on all task lists."
+          },
+          "externalId": {
+            "title": "External ID",
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "title": "Start Time",
+            "type": "string",
+            "description": "Enter the start time for placing this task on the assignee&apos;s calendar. You must check the Block Out Time box to set a time in this field.",
+            "pattern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$",
+            "nullable": true
+          },
+          "startDate": {
+            "title": "Start Date",
+            "type": "string",
+            "description": "This is the date the task should be started. If you are entering or editing the task, type or pick the start date of the task. This date is included in the e-mail to the assignee.",
+            "format": "date",
+            "nullable": true
+          },
+          "title": {
+            "title": "Title",
+            "type": "string",
+            "description": "Enter a name for this task. This name is the subject line of the e-mail sent to the assignee if you check the Send e-mail box. This title also appears to others if the Private Task box is not checked. The title shows on the Tasks list.",
+            "nullable": true
+          },
+          "estimatedTime": {
+            "title": "Initial Time Budget",
+            "type": "string",
+            "description": "In the Initial Time Budget field, enter your first approximation of the amount of time this task will take. Later, you can increase or decrease your time estimate in the Current Time Budget field. By maintaining an initial time estimate in this field, you can compare your initial estimate to your altered estimate. If you entered a time estimate on a job task template, that amount shows here.",
+            "nullable": true
+          },
+          "id": {
+            "title": "Internal ID",
+            "type": "string",
+            "nullable": true
+          },
+          "order": {
+            "title": "Insert Before",
+            "type": "string",
+            "description": "Choose the placement of this task on your task list or the person&apos;s tasks list you are assigning this to. Leave this field blank to place this task last on the tasks list.",
+            "nullable": true
+          },
+          "reminderType": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "POPUP",
+                  "EMAIL"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "actualTime": {
+            "title": "Actual Time",
+            "type": "string",
+            "description": "The Actual Time field shows the total amount of time entered against this task.",
+            "nullable": true
+          },
+          "percentComplete": {
+            "title": "Percent Complete",
+            "type": "number",
+            "description": "In the Percent Complete field, enter an estimate of how much of the total amount of work for this task is already completed. For example, if half the work toward completion is done, enter 50%. Note: The percentage you enter in this field overrides the auto-calculated figure in the Percent Time Complete field and is used for task calculations.",
+            "format": "double",
+            "nullable": true
+          },
+          "lastModifiedDate": {
+            "title": "Last Modified Date",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timeRemaining": {
+            "title": "Time Remaining",
+            "type": "string",
+            "description": "The Time Remaining field shows the estimated remaining amount of time for this task. Time remaining is calculated as follows: (Initial Time Budget - Actual Time) If you have entered a Current Time Budget to update your Initial Time Budget, then the time remaining for the task is calculated as: (Current Time Budget - Actual Time)",
+            "nullable": true
+          },
+          "estimatedTimeOverride": {
+            "title": "Current Time Budget",
+            "type": "string",
+            "description": "If your estimate of the time this task will take increases or decreases from your original estimate, enter the altered estimate in the Current Time Budget field.",
+            "nullable": true
+          },
+          "endTime": {
+            "title": "End time",
+            "type": "string",
+            "description": "Enter the end time for placing this task on the assignee&apos;s calendar. You must check the Block Out Time box to set a time in this field.",
+            "pattern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$",
+            "nullable": true
+          },
+          "priority": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "HIGH",
+                  "MEDIUM",
+                  "LOW"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "message": {
+            "title": "Comments",
+            "type": "string",
+            "description": "Enter any comments about this task. These comments appear in the e-mail sent to the person this task is assigned to.",
+            "nullable": true
+          },
+          "percentTimeComplete": {
+            "title": "Percent Complete (Time)",
+            "type": "number",
+            "description": "The system auto-calculates a value for the Percent Time Complete field, by dividing Actual Time by Current Time Budget (or by Initial Time Budget, if no Current Time Budget has been entered). This value indicates how much of the budgeted time for the task has been completed. You can override this value by entering a percentage value in the Percent Complete field.",
+            "format": "double",
+            "nullable": true
+          },
+          "milestone": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "customForm": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "5",
+                  "6",
+                  "138",
+                  "-120",
+                  "60"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "dueDate": {
+            "title": "Due Date",
+            "type": "string",
+            "description": "Enter the projected date when this task needs to be complete.",
+            "format": "date",
+            "nullable": true
+          },
+          "timedEvent": {
+            "title": "Timed Event",
+            "type": "boolean",
+            "description": "Check this box to schedule this task on the calendar of the person the task is assigned to. Enter the start and end times in the From and To fields. This time is scheduled on the calendar for the start date."
+          },
+          "completedDate": {
+            "title": "Date Completed",
+            "type": "string",
+            "description": "Enter the date this task was actually completed.",
+            "format": "date",
+            "nullable": true
+          },
+          "sendEmail": {
+            "title": "Send email",
+            "type": "boolean",
+            "description": "Check this box to send an email message to the person this task is assigned to. The person the task is assigned to also receives an e-mail message when this task is updated if the Send e-mail box is checked. If this person&apos;s record does not include an email address, no message will be sent."
+          },
+          "reminderMinutes": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "0",
+                  "5",
+                  "10",
+                  "15",
+                  "30"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "NOTSTART",
+                  "PROGRESS",
+                  "COMPLETE"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "supportCase": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custevent2": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "contact": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "relatedItem": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/nsResource"
+              }
+            ]
+          },
+          "owner": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/nsResource"
+              }
+            ]
+          },
+          "transaction": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "parent": {
+            "$ref": "#/components/schemas/task"
+          },
+          "company": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/nsResource"
+              }
+            ]
+          },
+          "assigned": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/nsResource"
+              }
+            ]
+          }
+        },
+        "x-ns-filterable": []
+      }
+    },
+    "securitySchemes": {
+      "OAuth_1.0_authorization": {
+        "type": "apiKey",
+        "description": "OAuth 1.0 - https://tools.ietf.org/html/rfc5849",
+        "name": "authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "OAuth_1.0_authorization": []
+    }
+  ]
+}

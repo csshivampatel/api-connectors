@@ -1,0 +1,1472 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "NetSuite REST Record API",
+    "description": "NetSuite REST Record API generated 2024-05-24 at 12:35:06 UTC for account TSTDRV1303059, user joe.klug@peregrineconnect.com with role Neuron ESB Integration.",
+    "termsOfService": "http://www.netsuite.com/portal/resource/terms-of-service.shtml",
+    "contact": {
+      "name": "Oracle NetSuite",
+      "url": "http://www.netsuite.com",
+      "email": "info@netsuite.com"
+    },
+    "version": "v1",
+    "x-framework": {
+      "name": "oracle-netsuite-suitetalk-rest"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://tstdrv1303059.suitetalk.api.netsuite.com/services/rest/record/v1"
+    }
+  ],
+  "paths": {
+    "/promotionCode": {
+      "get": {
+        "tags": [
+          "PromotionCode"
+        ],
+        "summary": "Get list of records.",
+        "operationId": "promotionCodeGET",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "The search query that is used to filter results.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The limit used to specify the number of results on a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1000
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The offset used for selecting a specific page of results.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of records.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=collection": {
+                "schema": {
+                  "$ref": "#/components/schemas/promotionCodeCollection"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PromotionCode"
+        ],
+        "summary": "Insert record.",
+        "operationId": "promotionCodePOST",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/promotionCode"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Inserted record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/promotionCode/{id}": {
+      "get": {
+        "tags": [
+          "PromotionCode"
+        ],
+        "summary": "Get record.",
+        "operationId": "promotionCodeGET2",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "expandSubResources",
+            "in": "query",
+            "description": "Set to 'true' to automatically expand all sublists, sublist lines, and subrecords on this record.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "simpleEnumFormat",
+            "in": "query",
+            "description": "Set to true to return enumeration values in a format that only shows the internal ID value.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "The names of the fields and sublists on the record. Only the selected fields and sublists will be returned in the response.",
+            "examples": {
+              "multiple fields": {
+                "value": "field1,field2"
+              },
+              "single field": {
+                "value": "field"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved record.",
+            "headers": {
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/vnd.oracle.resource+json; type=singular": {
+                "schema": {
+                  "$ref": "#/components/schemas/promotionCode"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "PromotionCode"
+        ],
+        "summary": "Insert or update record.",
+        "operationId": "promotionCodePUT",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "External identifier.",
+            "schema": {
+              "type": "string",
+              "pattern": "eid:(.+)"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replaceSelectedFields",
+            "in": "query",
+            "description": "If set to 'true', all fields that should be deleted in the update request, including body fields, must be included in the 'replace' query parameter.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/promotionCode"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Upserted record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PromotionCode"
+        ],
+        "summary": "Remove record.",
+        "operationId": "promotionCodeDELETE",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Removed record."
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "PromotionCode"
+        ],
+        "summary": "Update record.",
+        "operationId": "promotionCodePATCH",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replaceSelectedFields",
+            "in": "query",
+            "description": "If set to 'true', all fields that should be deleted in the update request, including body fields, must be included in the 'replace' query parameter.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/promotionCode"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Updated record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "nsResourceCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/nsResource"
+            }
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          }
+        }
+      },
+      "nsResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Internal identifier",
+            "type": "string"
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "externalId": {
+            "title": "External identifier",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          }
+        }
+      },
+      "promotionCode-itemsCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/promotionCode-itemsElement"
+            }
+          }
+        }
+      },
+      "promotionCode-partnersCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/promotionCode-partnersElement"
+            }
+          }
+        }
+      },
+      "nsError": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "type": "string",
+            "readOnly": true,
+            "description": "A URI reference to the documentation about the problem type.",
+            "format": "URI"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string",
+            "readOnly": true,
+            "description": "A human-readable description of the problem type."
+          },
+          "status": {
+            "title": "Status",
+            "type": "integer",
+            "readOnly": true,
+            "description": "The HTTP status code generated by the server the request originates from.",
+            "format": "int32"
+          },
+          "o:errorDetails": {
+            "type": "array",
+            "readOnly": true,
+            "description": "An array containing one or more problem types.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "detail": {
+                  "title": "Detail",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "A detailed, human-readable description of the problem occurrence."
+                },
+                "o:errorPath": {
+                  "title": "Error Path",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The JSON path that indicates where the problem occurs within the request body.",
+                  "format": "JSONPath"
+                },
+                "o:errorUrl": {
+                  "title": "Error URL",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The URI of the first element in the request URL where the problem occurs.",
+                  "format": "URI"
+                },
+                "o:errorHeader": {
+                  "title": "Error Header",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The name of the HTTP header where the problem occurs."
+                },
+                "o:errorQueryParam": {
+                  "title": "Error Query Parameter",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The name of the query parameter where the problem occurs."
+                },
+                "o:errorCode": {
+                  "title": "Error Code",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The application-specific error code. Similar problem types are grouped together."
+                }
+              }
+            }
+          }
+        }
+      },
+      "promotionCode-currencyElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "minimumOrderAmount": {
+            "title": "Value",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "currency": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "promotionCode-itemsElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "item": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/nsResource"
+              }
+            ]
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "nsLink": {
+        "type": "object",
+        "properties": {
+          "rel": {
+            "title": "Relationship",
+            "type": "string",
+            "readOnly": true
+          },
+          "href": {
+            "title": "Hypertext Reference",
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
+      "promotionCode-discountedItemsElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "discountedItem": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/nsResource"
+              }
+            ]
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "promotionCodeCollection": {
+        "type": "object",
+        "properties": {
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "title": "Items",
+            "type": "array",
+            "description": "An array field that represents a collection of elements, for example, sublist lines, multiselect items, or search results.",
+            "items": {
+              "$ref": "#/components/schemas/promotionCode"
+            }
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          }
+        }
+      },
+      "promotionCode-discountedItemsCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/promotionCode-discountedItemsElement"
+            }
+          }
+        }
+      },
+      "promotionCode-currencyCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/promotionCode-currencyElement"
+            }
+          }
+        }
+      },
+      "promotionCode-partnersElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "partner": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "promotionCode": {
+        "type": "object",
+        "properties": {
+          "displayLineDiscounts": {
+            "title": "Display Line Discounts",
+            "type": "boolean",
+            "description": "Check this box if you want to show the promotion discount as line items in transactions. The discount will appear as a line beneath qualifying items on the transaction. You must check this box and select a percentage discount in order to show strikeout pricing on Web store orders. A flat rate promotion applies to the total order. If you clear this box, the promotion discount will be shown in the transaction total. Note: If you use line discount promotions, when you apply the promotion to a transaction, you must click Calculate to create the discount line before saving the transaction."
+          },
+          "isInactive": {
+            "title": "Inactive",
+            "type": "boolean",
+            "description": "Check this box to deactivate this promotion. Inactive promotions cannot be applied to customers or transactions."
+          },
+          "partnerCnt": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "code": {
+            "title": "Coupon Code",
+            "type": "string",
+            "description": "The coupon code that is entered on a sales transaction to apply the promotion. Coupon codes can be multiple-use or single-use. Multiple-use codes can be used any number of times by any number of customers. Each single-use code can only be used in one transaction by a single customer.",
+            "nullable": true
+          },
+          "externalId": {
+            "title": "External ID",
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "description": "Enter a description of this promotion.",
+            "nullable": true
+          },
+          "startDate": {
+            "title": "Start Date",
+            "type": "string",
+            "description": "Enter the first date this promotion can be applied to a transaction.",
+            "format": "date",
+            "nullable": true
+          },
+          "rate": {
+            "title": "Rate",
+            "type": "number",
+            "description": "Enter the discount rate for this promotion. Select % if this rate is a percentage. Select flat if this rate is a flat discount.",
+            "format": "double",
+            "nullable": true
+          },
+          "isPublic": {
+            "title": "Available to all Clients",
+            "type": "boolean",
+            "description": "Check this box to be able to select this promotion on transactions for any customer. If you do not check this box, only customers associated with the partners you select below are able to use this promotion."
+          },
+          "customerGroupPreference": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "USECACHED",
+                  "RUNEACHTIME"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "excludeItems": {
+            "title": "Exclude Items",
+            "type": "boolean",
+            "description": "Check this box to have this promotion code apply to all items except those you add below. If you do not check this box, the code can only be used for the items you add below."
+          },
+          "repeatDiscount": {
+            "title": "Repeat discount incrementally",
+            "type": "boolean"
+          },
+          "id": {
+            "title": "Internal ID",
+            "type": "string",
+            "nullable": true
+          },
+          "salesChannels": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "ALL",
+                  "SPECIFICLOCATIONS",
+                  "SPECIFICWEBSITES"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "specificItemsCheck": {
+            "title": "Specific Items",
+            "type": "boolean",
+            "description": "Select this option to require the customer to buy a specific item to be eligible for this promotion&apos;s discount. Select the items the customer must buy: * From Items List: select the item or items the customer must buy to make the transaction eligible for this promotion from the Item list. * From Saved Search: select the item or items the customer must buy to make the transaction eligible for this promotion from the From Saved Search list. For more information regarding creating Saved Searches, see the help topic Using Saved Searches."
+          },
+          "audience": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "EVERYONE",
+                  "SPECIFICCUSTOMERS"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "applyDiscountTo": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "FIRSTSALE",
+                  "ALLSALES"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "cannotBeCombined": {
+            "title": "Exclusive Promotion",
+            "type": "boolean",
+            "description": "Check this box if you do not want this promotion to be combined with other promotions."
+          },
+          "discountType": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "F",
+                  "T"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "applyDiscountToType": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "MOSTEXPENSIVEDISCITEM",
+                  "CHEAPESTDISCITEM",
+                  "EACHDISCITEM"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "numberToGenerate": {
+            "title": "Codes to Generate",
+            "type": "integer",
+            "description": "Enter the number of coupon codes you want to generate with your code pattern.",
+            "format": "int64",
+            "nullable": true
+          },
+          "itemQuantifier": {
+            "title": "Item Quantity",
+            "type": "integer",
+            "description": "In the Item Quantity field, enter how many units of each selected item the customer has to buy to get the discount provided by this promotion. For example, enter 2 in this field to create a promotion that provides discount on every third unit, such as a &quot;Buy 2 Get 1 Free&quot;, or &quot;Buy 3 for the price of 2&quot; promotion. Check the Repeat Discount Incrementally box to repeat the discount on the transaction every time the customer adds the number of items specified in the Item Quantity field.",
+            "format": "int64",
+            "nullable": true
+          },
+          "fixedPrice": {
+            "title": "Fixed Price",
+            "type": "number",
+            "description": "Enter the price of the item when this promotion is applied to an eligible transaction. This amount is fixed and will not change.",
+            "format": "double",
+            "nullable": true
+          },
+          "endDate": {
+            "title": "End Date",
+            "type": "string",
+            "description": "Enter the date this promotion can no longer be applied to transactions.",
+            "format": "date",
+            "nullable": true
+          },
+          "whatTheCustomerNeedsToBuy": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "ANYTHING",
+                  "MINIMUMORDERAMOUNTORSPECIFICITEMS"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "customForm": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "-500"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "codePattern": {
+            "title": "Code Pattern",
+            "type": "string",
+            "description": "You enter code patterns using the following components in any order you choose: * [A.#] – This adds a number of random letters in the code. * [N.#] – This adds a number of random numbers in the code. * [AN.#] – This adds a number of random alphanumeric characters to the code. * Hard-coded alphanumeric characters. Do not enclose these in square brackets. * Dashes (-) Note: The following letters and numbers cannot be used in coupon codes: 1, 0, I, L, O. For example, the code ABC-[AN.3]-[A.3]-[N.3] would generate codes like: * ABC-J3N-FLN-647 * ABC-45F-KPM-958 * ABC-5MP-PQA-874 When creating your code pattern, make sure that the pattern you give has enough variables to provide the number of unique codes you need for your promotion.",
+            "nullable": true
+          },
+          "combinationType": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "COMBINABLE",
+                  "GLOBALEXCLUSIVE",
+                  "ITEMLINEEXCLUSIVE",
+                  "ORDERTYPEEXCLUSIVE",
+                  "SHIPPINGTYPEEXCLUSIVE"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "minimumOrderAmountCheck": {
+            "title": "Minimum Order Amount",
+            "type": "boolean",
+            "description": "Select this option to require the customer to spend a minimum amount before they are eligible for this promotion&apos;s discount. Enter the amount in the Minimum Order Amount field."
+          },
+          "name": {
+            "title": "Name",
+            "type": "string",
+            "description": "Enter the name for this promotion. Note: This is the name used for internal and reporting use only. The coupon code you want customers to use on sales transactions is entered in the Coupon Code field on the Codes subtab.",
+            "nullable": true
+          },
+          "useType": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "MULTIPLEUSES",
+                  "SINGLEUSE"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "itemsSavedSearch": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "discountedItemsSavedSearch": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "freeShipMethod": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "discount": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/nsResource"
+              }
+            ]
+          },
+          "website": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "partners": {
+            "$ref": "#/components/schemas/promotionCode-partnersCollection"
+          },
+          "items": {
+            "$ref": "#/components/schemas/promotionCode-itemsCollection"
+          },
+          "discountedItems": {
+            "$ref": "#/components/schemas/promotionCode-discountedItemsCollection"
+          },
+          "currency": {
+            "$ref": "#/components/schemas/promotionCode-currencyCollection"
+          },
+          "location": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          }
+        },
+        "x-ns-filterable": []
+      }
+    },
+    "securitySchemes": {
+      "OAuth_1.0_authorization": {
+        "type": "apiKey",
+        "description": "OAuth 1.0 - https://tools.ietf.org/html/rfc5849",
+        "name": "authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "OAuth_1.0_authorization": []
+    }
+  ]
+}

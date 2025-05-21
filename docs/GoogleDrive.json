@@ -1,0 +1,4863 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Google Drive API v3",
+        "description": "The Google Drive API allows developers to work with files in Google Drive, including advanced functionality like Copy-paste files and sharing.",
+        "version": "3.0.0"
+    },
+    "host": "www.googleapis.com/drive/v3",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/about": {
+            "get": {
+                "tags": [
+                    "About"
+                ],
+                "summary": "Get information about the user",
+                "operationId": "get_about",
+                "description": "Gets information about the user, the user's Drive, and system capabilities.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/AboutResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/changes": {
+            "get": {
+                "tags": [
+                    "Changes"
+                ],
+                "summary": "List the changes for a user or shared drive",
+                "operationId": "get_changes",
+                "description": "Lists the changes for a user or shared drive.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/pageToken_required"
+                    },
+                    {
+                        "$ref": "#/parameters/driveId"
+                    },
+                    {
+                        "$ref": "#/parameters/includeCorpusRemovals"
+                    },
+                    {
+                        "$ref": "#/parameters/includeItemsFromAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/includeLabels"
+                    },
+                    {
+                        "$ref": "#/parameters/includePermissionsForView"
+                    },
+                    {
+                        "$ref": "#/parameters/includeRemoved"
+                    },
+                    {
+                        "$ref": "#/parameters/includeTeamDriveItems"
+                    },
+                    {
+                        "$ref": "#/parameters/pageSize"
+                    },
+                    {
+                        "$ref": "#/parameters/restrictToMyDrive"
+                    },
+                    {
+                        "$ref": "#/parameters/spaces"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/teamDriveId"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/listResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/changes/startPageToken": {
+            "get": {
+                "tags": [
+                    "Changes"
+                ],
+                "summary": "Get the starting pageToken",
+                "operationId": "get_startPageToken",
+                "description": "Gets the starting pageToken for listing future changes.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/driveId"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/teamDriveId"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "kind": {
+                                    "default": "drive#startPageToken",
+                                    "type":"string"
+                                },
+                                "startPageToken": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/changes/watch": {
+            "post": {
+                "tags": [
+                    "Changes"
+                ],
+                "summary": "Subscribe to changes for a user",
+                "operationId": "post_watch",
+                "description": "Subscribes to changes for a user.",
+                "parameters": [
+                    {
+                        "schema": {
+                            "$ref": "#/definitions/Channel"
+                        },
+                        "name": "body",
+                        "in": "body"
+                    },
+                    {
+                        "$ref": "#/parameters/driveId"
+                    },
+                    {
+                        "$ref": "#/parameters/includeCorpusRemovals"
+                    },                 
+                    {
+                        "$ref": "#/parameters/includeItemsFromAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/includeRemoved"
+                    },
+                    {
+                        "$ref": "#/parameters/includeTeamDriveItems"
+                    },
+                    {
+                        "$ref": "#/parameters/pageSize"
+                    },
+                    {
+                        "$ref": "#/parameters/pageToken_required"
+                    },
+                    {
+                        "$ref": "#/parameters/restrictToMyDrive"
+                    },
+                    {
+                        "$ref": "#/parameters/spaces"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/teamDriveId"
+                    },
+                    {
+                        "$ref": "#/parameters/includePermissionsForView"
+                    },
+                    {
+                        "$ref": "#/parameters/includeLabels"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Channel"
+                        }
+                    }
+                }
+            }
+        },
+        "/channels/stop": {
+            "post": {
+                "tags": [
+                    "Channels"
+                ],
+                "summary": "Stop watching resources through this channel",
+                "operationId": "post_stop",
+                "description": "Stop watching resources through this channel",
+                "parameters": [
+                    {
+                        "schema": {
+                            "$ref": "#/definitions/Channel"
+                        },
+                        "name": "body",
+                        "in": "body"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/files/{fileId}/comments": {
+            "get": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "List file's comments",
+                "operationId": "list_comments",
+                "description": "Lists a file's comments.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/includeDeleted"
+                    },
+                    {
+                        "$ref": "#/parameters/pageSize"
+                    },
+                    {
+                        "$ref": "#/parameters/pageToken"
+                    },
+                    {
+                        "name": "startModifiedTime",
+                        "description": "",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "kind": {
+                                    "default": "drive#commentList",
+                                    "type":"string"
+                                },
+                                "nextPageToken": {
+                                    "type": "string"
+                                },
+                                "comments": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/CommentsResourse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Create comment on a file",
+                "operationId": "create_comment",
+                "description": "Creates comment on a file.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "schema": {
+                            "$ref": "#/definitions/CommentsResourse"
+                        },
+                        "name": "body",
+                        "in": "body"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/CommentsResourse"
+                        }
+                    }
+                }
+            }
+        },
+        "/files/{fileId}/comments/{commentId}": {
+            "delete": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Delete a comment",
+                "operationId": "delete_comment",
+                "description": "Deletes a comment.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "name": "commentId",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Get comment by ID",
+                "operationId": "get_comment_by_id",
+                "description": "Gets a comment by ID.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "name": "commentId",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "$ref": "#/parameters/includeDeleted"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/CommentsResourse"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Update a comment",
+                "operationId": "update_comment",
+                "description": "Updates a comment with patch semantics.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "name": "commentId",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "$ref": "#/definitions/CommentsResourse"
+                        },
+                        "name": "body",
+                        "in": "body"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/CommentsResourse"
+                        }
+                    }
+                }
+            }
+        },
+        "/files/{fileId}/copy": {
+            "post": {
+                "tags": [
+                    "Files"
+                ],
+                "summary": "Create copy of a file",
+                "operationId": "copy_file",
+                "description": "Creates a copy of a file and applies any requested updates with patch semantics. Folders cannot be copied.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/enforceSingleParent"
+                    },
+                    {
+                        "$ref": "#/parameters/ignoreDefaultVisibility"
+                    },
+                    {
+                        "$ref": "#/parameters/includeLabels"
+                    },
+                    {
+                        "$ref": "#/parameters/includePermissionsForView"
+                    },
+                    {
+                        "$ref": "#/parameters/keepRevisionForever"
+                    },
+                    {
+                        "$ref": "#/parameters/ocrLanguage"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/FilesResourse"
+                        }
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/FilesResourse"
+                        }
+                    }
+                }
+            }
+        },
+        "/files": {
+            "post": {
+                "tags": [
+                    "Files"
+                ],
+                "summary": "Create new file",
+                "operationId": "create_file",
+                "description": "Creates a new file.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/enforceSingleParent"
+                    },
+                    {
+                        "$ref": "#/parameters/ignoreDefaultVisibility"
+                    },
+                    {
+                        "$ref": "#/parameters/includeLabels"
+                    },
+                    {
+                        "$ref": "#/parameters/includePermissionsForView"
+                    },
+                    {
+                        "$ref": "#/parameters/keepRevisionForever"
+                    },
+                    {
+                        "$ref": "#/parameters/ocrLanguage"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/useContentAsIndexableText"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/FilesResourse"
+                        }
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/FilesResourse"
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Files"
+                ],
+                "summary": "List or search files",
+                "operationId": "list_files",
+                "description": "Lists or searches files.",
+                "parameters": [
+                    {
+                        "name": "corpora",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "corpus",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "#/parameters/driveId"
+                    },
+                    {
+                        "$ref": "#/parameters/includeItemsFromAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/includeLabels"
+                    },
+                    {
+                        "$ref": "#/parameters/includePermissionsForView"
+                    },
+                    {
+                        "$ref": "#/parameters/includeTeamDriveItems"
+                    },
+                    {
+                        "name": "orderBy",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "#/parameters/pageSize"
+                    },
+                    {
+                        "$ref": "#/parameters/pageToken"
+                    },
+                    {
+                        "$ref": "#/parameters/q"
+                    },
+                    {
+                        "$ref": "#/parameters/spaces"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/teamDriveId"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "kind": {
+                                    "default": "drive#fileList",
+                                    "type":"string"
+                                },
+                                "nextPageToken": {
+                                    "type": "string"
+                                },
+                                "incompleteSearch": {
+                                    "type": "boolean"
+                                },
+                                "files": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/FilesResourse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/files/{fileId}": {
+            "delete": {
+                "tags": [
+                    "Files"
+                ],
+                "summary": "Permanently delete a file",
+                "operationId": "delete_file",
+                "description": "Permanently deletes a file owned by the user without moving it to the trash. If the file belongs to a shared drive the user must be an organizer on the parent. If the target is a folder, all descendants owned by the user are also deleted.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/enforceSingleParent"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "get": {
+                "operationId": "get_fileMetadata",
+                "tags": [
+                    "Files"
+                ],
+                "summary": "Get file's metadata",
+                "description": "Gets a file's metadata or content by ID.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/acknowledgeAbuse"
+                    },
+                    {
+                        "$ref": "#/parameters/includeLabels"
+                    },
+                    {
+                        "$ref": "#/parameters/includePermissionsForView"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/FilesResourse"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Files"
+                ],
+                "summary": "Update file's metadata",
+                "operationId": "update_fileMetadata",
+                "description": "Updates a file's metadata and/or content. When calling this method, only populate fields in the request that you want to modify. When updating fields, some fields might change automatically, such as modifiedDate. This method supports patch semantics.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/addParents"
+                    },
+                    {
+                        "$ref": "#/parameters/enforceSingleParent"
+                    },
+                    {
+                        "$ref": "#/parameters/includeLabels"
+                    },
+                    {
+                        "$ref": "#/parameters/includePermissionsForView"
+                    },
+                    {
+                        "$ref": "#/parameters/keepRevisionForever"
+                    },
+                    {
+                        "$ref": "#/parameters/ocrLanguage"
+                    },
+                    {
+                        "$ref": "#/parameters/removeParents"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/useContentAsIndexableText"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/FilesResourse"
+                        }
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/FilesResourse"
+                        }
+                    }
+                }
+            }
+        },
+        "/files/trash": {
+            "delete": {
+                "tags": [
+                    "Files"
+                ],
+                "summary": "Permanently delete trashed files",
+                "operationId": "delete_all_trashed_file",
+                "description": "Permanently deletes all of the user's trashed files.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/driveId"
+                    },
+                    {
+                        "$ref": "#/parameters/enforceSingleParent"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/files/{fileId}/export": {
+            "get": {
+                "tags": [
+                    "Files"
+                ],
+                "summary": "Export a Google Workspace document",
+                "operationId": "export_workspace_doc",
+                "description": "Exports a Google Workspace document to the requested MIME type and returns exported byte content. Note that the exported content is limited to 10MB.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "name": "mimeType",
+                        "in": "query",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/files/generateIds": {
+            "get": {
+                "tags": [
+                    "Files"
+                ],
+                "summary": "Generate file IDs",
+                "operationId": "generate_ids",
+                "description": "Generates a set of file IDs which can be provided in create or copy requests.",
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "space",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "kind": {
+                                    "default": "drive#generatedIds",
+                                    "type":"string"
+                                },
+                                "space": {
+                                    "type": "string"
+                                },
+                                "ids": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/files/{fileId}/watch": {
+            "post": {
+                "tags": [
+                    "Files"
+                ],
+                "summary": "Subscribe to file changes",
+                "operationId": "subscribe_change_file",
+                "description": "Subscribes to changes to a file. While you can establish a channel for changes to a file on a shared drive, a change to a shared drive file won't create a notification.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/acknowledgeAbuse"
+                    },
+                    {
+                        "$ref": "#/parameters/includePermissionsForView"
+                    },
+                    {
+                        "$ref": "#/parameters/includeLabels"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/Channel"
+                        }
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Channel"
+                        }
+                    }
+                }
+            }
+        },
+        "/files/{fileId}/listLabels": {
+            "get": {
+                "tags": [
+                    "Files"
+                ],
+                "summary": "List labels on a file",
+                "operationId": "list_labels_on_file",
+                "description": "Lists the labels on a file.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/maxResults"
+                    },
+                    {
+                        "$ref": "#/parameters/pageToken"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/labelList"
+                        }
+                    }
+                }
+            }
+        },
+        "/files/{fileId}/modifyLabels": {
+            "post": {
+                "tags": [
+                    "Files"
+                ],
+                "summary": "Modify labels on a file",
+                "operationId": "modify_labels_on_file",
+                "description": "Modifies the set of labels on a file.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/modifyLabelsRequest"
+                        }
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/modifyLabelsResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/files/{fileId}/permissions": {
+            "post": {
+                "tags": [
+                    "Permissions"
+                ],
+                "summary": "Create permission for a file or shared drive",
+                "operationId": "create_permission_for_file",
+                "description": "Creates a permission for a file or shared drive.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/emailMessage"
+                    },
+                    {
+                        "$ref": "#/parameters/enforceSingleParent"
+                    },
+                    {
+                        "$ref": "#/parameters/moveToNewOwnersRoot"
+                    },
+                    {
+                        "$ref": "#/parameters/sendNotificationEmail"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/transferOwnership"
+                    },
+                    {
+                        "$ref": "#/parameters/useDomainAdminAccess"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/PermissionsResource"
+                        }
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/PermissionsResource"
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Permissions"
+                ],
+                "summary": "List a file's or shared drive's permissions",
+                "operationId": "list_files_permission",
+                "description": "Lists a file's or shared drive's permissions.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/includePermissionsForView"
+                    },
+                    {
+                        "$ref": "#/parameters/pageSize"
+                    },
+                    {
+                        "$ref": "#/parameters/pageToken"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/useDomainAdminAccess"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "kind": {
+                                    "default": "drive#permissionList",
+                                    "type":"string"
+                                },
+                                "nextPageToken": {
+                                    "type": "string"
+                                },
+                                "permissions": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/PermissionsResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/files/{fileId}/permissions/{permissionId}": {
+            "delete": {
+                "tags": [
+                    "Permissions"
+                ],
+                "summary": "Delete a permission",
+                "operationId": "delete_permission",
+                "description": "Deletes a permission.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/permissionId"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/useDomainAdminAccess"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Permissions"
+                ],
+                "summary": "Get a permission by ID",
+                "operationId": "get_permission_by_id",
+                "description": "Gets a permission by ID.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/permissionId"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/useDomainAdminAccess"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/PermissionsResource"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Permissions"
+                ],
+                "summary": "Update a permission",
+                "operationId": "update_permission",
+                "description": "Updates a permission with patch semantics.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/permissionId"
+                    },
+                    {
+                        "$ref": "#/parameters/removeExpiration"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsAllDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/supportsTeamDrives"
+                    },
+                    {
+                        "$ref": "#/parameters/transferOwnership"
+                    },
+                    {
+                        "$ref": "#/parameters/useDomainAdminAccess"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/PermissionsResource"
+                        }
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/PermissionsResource"
+                        }
+                    }
+                }
+            }
+        },
+        "/files/{fileId}/comments/{commentId}/replies": {
+            "post": {
+                "tags": [
+                    "Replies"
+                ],
+                "summary": "Create reply to a comment",
+                "operationId": "create_replay",
+                "description": "Creates a reply to a comment.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/commentId"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/RepliesResourse"
+                        }
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/RepliesResourse"
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Replies"
+                ],
+                "summary": "List a comment's replies",
+                "operationId": "list_replies",
+                "description": "Lists a comment's replies.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/commentId"
+                    },
+                    {
+                        "$ref": "#/parameters/includeDeleted"
+                    },
+                    {
+                        "$ref": "#/parameters/pageSize"
+                    },
+                    {
+                        "$ref": "#/parameters/pageToken"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "kind": {
+                                    "default": "drive#replyList",
+                                    "type":"string"
+                                },
+                                "nextPageToken": {
+                                    "type": "string"
+                                },
+                                "replies": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/RepliesResourse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/files/{fileId}/comments/{commentId}/replies/{replyId}": {
+            "delete": {
+                "tags": [
+                    "Replies"
+                ],
+                "summary": "Delete a reply",
+                "operationId": "delete_reply",
+                "description": "Deletes a reply.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/replyId"
+                    },
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/commentId"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Replies"
+                ],
+                "summary": "Get reply by ID",
+                "operationId": "get_reply",
+                "description": "Gets a reply by ID.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/replyId"
+                    },
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/commentId"
+                    },
+                    {
+                        "$ref": "#/parameters/includeDeleted"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/RepliesResourse"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Replies"
+                ],
+                "summary": "Update a reply",
+                "operationId": "update_reply",
+                "description": "Updates a reply with patch semantics.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/replyId"
+                    },
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/commentId"
+                    },                  
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/RepliesResourse"
+                        }
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/RepliesResourse"
+                        }
+                    }
+                }
+            }
+        },
+        "/files/{fileId}/revisions/{revisionId}": {
+            "delete": {
+                "tags": [
+                    "Revisions"
+                ],
+                "summary": "Permanently delete a file version",
+                "operationId": "delete_file_version",
+                "description": "Permanently deletes a file version. You can only delete revisions for files with binary content in Google Drive, like images or videos. Revisions for other files, like Google Docs or Sheets, and the last remaining file version can't be deleted.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/revisionId"
+                    },
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Revisions"
+                ],
+                "summary": "Get a revision's metadata or content by ID",
+                "operationId": "get_revision",
+                "description": "Gets a revision's metadata or content by ID.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/revisionId"
+                    },
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/acknowledgeAbuse"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/RevisionResourse"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "Revisions"
+                ],
+                "summary": "Update a revision",
+                "operationId": "update_revision",
+                "description": "Updates a revision with patch semantics.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/revisionId"
+                    },
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/RevisionResourse"
+                        }
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/RevisionResourse"
+                        }
+                    }
+                }
+            }
+        },
+        "/files/{fileId}/revisions": {
+            "get": {
+                "tags": [
+                    "Revisions"
+                ],
+                "summary": "List a file's revisions",
+                "operationId": "list_file_revisions",
+                "description": "Lists a file's revisions.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/fileId"
+                    },
+                    {
+                        "$ref": "#/parameters/pageSize"
+                    },
+                    {
+                        "$ref": "#/parameters/pageToken"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "kind": {
+                                    "default": "drive#revisionList",
+                                    "type":"string"
+                                },
+                                "nextPageToken": {
+                                    "type": "string"
+                                },
+                                "revisions": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/RevisionResourse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/drives": {
+            "post": {
+                "tags": [
+                    "Drives"
+                ],
+                "summary": "Create a shared drive",
+                "operationId": "create_drive",
+                "description": "Creates a shared drive.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/requestId"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/DriveResourse"
+                        }
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/DriveResourse"
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Drives"
+                ],
+                "summary": "List the user's shared drives",
+                "operationId": "list_drive",
+                "description": "Lists the user's shared drives.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/pageSize"
+                    },
+                    {
+                        "$ref": "#/parameters/pageToken"
+                    },
+                    {
+                        "$ref": "#/parameters/q"
+                    },
+                    {
+                        "$ref": "#/parameters/useDomainAdminAccess"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "kind": {
+                                    "default": "drive#driveList",
+                                    "type":"string"
+                                },
+                                "nextPageToken": {
+                                    "type": "string"
+                                },
+                                "drives": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/DriveResourse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/drives/{driveId}": {
+            "delete": {
+                "tags": [
+                    "Drives"
+                ],
+                "summary": "Permanently delete a shared drive",
+                "operationId": "delete_drive",
+                "description": "Permanently deletes a shared drive for which the user is an organizer. The shared drive cannot contain any untrashed items.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/driveId_path"
+                    },
+                    {
+                        "$ref": "#/parameters/allowItemDeletion"
+                    },
+                    {
+                        "$ref": "#/parameters/useDomainAdminAccess"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Drives"
+                ],
+                "summary": "Get a shared drive's metadata by ID",
+                "operationId": "get_drive",
+                "description": "Gets a shared drive's metadata by ID.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/driveId_path"
+                    },
+                    {
+                        "$ref": "#/parameters/useDomainAdminAccess"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/DriveResourse"
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "operationId": "update_drive",
+                "tags": [
+                    "Drives"
+                ],
+                "summary": "Update shared drive's metadata",
+                "description": "Updates the metadata for a shared drive.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/driveId_path"
+                    },
+                    {
+                        "$ref": "#/parameters/useDomainAdminAccess"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/DriveResourse"
+                        }
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/DriveResourse"
+                        }
+                    }
+                }
+            }
+        },
+        "/drives/{driveId}/hide": {
+            "post": {
+                "tags": [
+                    "Drives"
+                ],
+                "summary": "Hide a shared drive",
+                "operationId": "hide_drive",
+                "description": "Hides a shared drive from the default view.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/driveId_path"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/DriveResourse"
+                        }
+                    }
+                }
+            }
+        },
+        "/drives/{driveId}/unhide": {
+            "post": {
+                "tags": [
+                    "Drives"
+                ],
+                "summary": "Restore a shared drive",
+                "operationId": "restore_drive",
+                "description": "Restores a shared drive to the default view.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/driveId_path"
+                    },
+                    {
+                        "$ref": "#/parameters/access_token"
+                    },
+                    {
+                        "$ref": "#/parameters/alt"
+                    },
+                    {
+                        "$ref": "#/parameters/callback"
+                    },
+                    {
+                        "$ref": "#/parameters/fields"
+                    },
+                    {
+                        "$ref": "#/parameters/prettyPrint"
+                    },
+                    {
+                        "$ref": "#/parameters/quotaUser"
+                    },
+                    {
+                        "$ref": "#/parameters/upload_protocol"
+                    },
+                    {
+                        "$ref": "#/parameters/uploadType"
+                    },
+                    {
+                        "$ref": "#/parameters/xgafv"
+                    },
+                    {
+                        "$ref": "#/parameters/oauth_token"
+                    },
+                    {
+                        "$ref": "#/parameters/key"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/DriveResourse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "AboutResponse": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#about",
+                    "type": "string"
+                },
+                "user": {
+                    "$ref": "#/definitions/user"
+                },
+                "storageQuota": {
+                    "$ref": "#/definitions/storageQuota"
+                },
+                "importFormats": {
+                    "$ref": "#/definitions/importFormats"
+                },
+                "exportFormats": {
+                    "$ref": "#/definitions/exportFormats"
+                },
+                "maxImportSizes": {
+                    "$ref": "#/definitions/maxImportSizes"
+                },
+                "maxUploadSize": {
+                    "type": "number"
+                },
+                "appInstalled": {
+                    "type": "boolean"
+                },
+                "folderColorPalette": {
+                    "$ref": "#/definitions/folderColorPalette"
+                },
+                "teamDriveThemes": {
+                    "$ref": "#/definitions/teamDriveThemes"
+                },
+                "canCreateTeamDrives": {
+                    "$ref": "#/definitions/canCreateTeamDrives"
+                },
+                "driveThemes": {
+                    "$ref": "#/definitions/driveThemes"
+                },
+                "canCreateDrives": {
+                    "$ref": "#/definitions/canCreateDrives"
+                }
+            }
+        },
+        "Channel": {
+            "type": "object",
+            "properties": {
+                "payload": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "resourceId": {
+                    "type": "string"
+                },
+                "resourceUri": {
+                    "type": "string"
+                },
+                "token": {
+                    "type": "string"
+                },
+                "expiration": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "params": {
+                    "type": "object",
+                    "properties": {
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "kind": {
+                    "default": "api#channel",
+                    "type":"string"
+                }
+            }
+        },
+        "user": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#user",
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "photoLink": {
+                    "type": "string"
+                },
+                "me": {
+                    "type": "boolean"
+                },
+                "permissionId": {
+                    "type": "string"
+                },
+                "emailAddress": {
+                    "type": "string"
+                }
+            }
+        },
+        "storageQuota": {
+            "type": "object",
+            "properties": {
+                "limit": {
+                    "type": "integer"
+                },
+                "usage": {
+                    "type": "integer"
+                },
+                "usageInDrive": {
+                    "type": "integer"
+                },
+                "usageInDriveTrash": {
+                    "type": "integer"
+                }
+            }
+        },
+        "quotedFileContent": {
+            "type": "object",
+            "properties": {
+                "mimeType": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            }
+        },
+        "CommentsResourse": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#comment",
+                    "type":"string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "createdTime": {
+                    "type": "string"
+                },
+                "modifiedTime": {
+                    "type": "string"
+                },
+                "author": {
+                    "$ref": "#/definitions/user"
+                },
+                "htmlContent": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "deleted": {
+                    "type": "boolean"
+                },
+                "resolved": {
+                    "type": "boolean"
+                },
+                "quotedFileContent": {
+                    "$ref": "#/definitions/quotedFileContent"
+                },
+                "anchor": {
+                    "type": "string"
+                },
+                "replies": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/RepliesResourse"
+                    }
+                }
+            }
+        },
+        "RepliesResourse": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#reply",
+                    "type":"string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "createdTime": {
+                    "type": "string"
+                },
+                "modifiedTime": {
+                    "type": "string"
+                },
+                "author": {
+                    "$ref": "#/definitions/user"
+                },
+                "htmlContent": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                },
+                "deleted": {
+                    "type": "boolean"
+                },
+                "action": {
+                    "type": "string"
+                }
+            }
+        },
+        "importFormats": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        "exportFormats": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        "maxImportSizes": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "integer"
+            }
+        },
+        "folderColorPalette": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "teamDriveThemes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "backgroundImageLink": {
+                        "type": "string"
+                    },
+                    "colorRgb": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "driveThemes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "backgroundImageLink": {
+                        "type": "string"
+                    },
+                    "colorRgb": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "canCreateTeamDrives": {
+            "type": "boolean"
+        },
+        "canCreateDrives": {
+            "type": "boolean"
+        },
+        "backgroundImageFile": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "xCoordinate": {
+                    "type": "number"
+                },
+                "yCoordinate": {
+                    "type": "number"
+                },
+                "width": {
+                    "type": "number"
+                }
+            }
+        },
+        "FileCapabilities": {
+            "type": "object",
+            "properties": {
+                "canAcceptOwnership": {
+                    "type": "boolean"
+                },
+                "canAddChildren": {
+                    "type": "boolean"
+                },
+                "canAddFolderFromAnotherDrive": {
+                    "type": "boolean"
+                },
+                "canAddMyDriveParent": {
+                    "type": "boolean"
+                },
+                "canChangeCopyRequiresWriterPermission": {
+                    "type": "boolean"
+                },
+                "canChangeSecurityUpdateEnabled": {
+                    "type": "boolean"
+                },
+                "canChangeViewersCanCopyContent": {
+                    "type": "boolean"
+                },
+                "canComment": {
+                    "type": "boolean"
+                },
+                "canCopy": {
+                    "type": "boolean"
+                },
+                "canDelete": {
+                    "type": "boolean"
+                },
+                "canDeleteChildren": {
+                    "type": "boolean"
+                },
+                "canDownload": {
+                    "type": "boolean"
+                },
+                "canEdit": {
+                    "type": "boolean"
+                },
+                "canListChildren": {
+                    "type": "boolean"
+                },
+                "canModifyContent": {
+                    "type": "boolean"
+                },
+                "canModifyContentRestriction": {
+                    "type": "boolean"
+                },
+                "canModifyLabels": {
+                    "type": "boolean"
+                },
+                "canMoveChildrenOutOfTeamDrive": {
+                    "type": "boolean"
+                },
+                "canMoveChildrenOutOfDrive": {
+                    "type": "boolean"
+                },
+                "canMoveChildrenWithinTeamDrive": {
+                    "type": "boolean"
+                },
+                "canMoveChildrenWithinDrive": {
+                    "type": "boolean"
+                },
+                "canMoveItemIntoTeamDrive": {
+                    "type": "boolean"
+                },
+                "canMoveItemOutOfTeamDrive": {
+                    "type": "boolean"
+                },
+                "canMoveItemOutOfDrive": {
+                    "type": "boolean"
+                },
+                "canMoveItemWithinTeamDrive": {
+                    "type": "boolean"
+                },
+                "canMoveItemWithinDrive": {
+                    "type": "boolean"
+                },
+                "canMoveTeamDriveItem": {
+                    "type": "boolean"
+                },
+                "canReadLabels": {
+                    "type": "boolean"
+                },
+                "canReadRevisions": {
+                    "type": "boolean"
+                },
+                "canReadTeamDrive": {
+                    "type": "boolean"
+                },
+                "canReadDrive": {
+                    "type": "boolean"
+                },
+                "canRemoveChildren": {
+                    "type": "boolean"
+                },
+                "canRemoveMyDriveParent": {
+                    "type": "boolean"
+                },
+                "canRename": {
+                    "type": "boolean"
+                },
+                "canShare": {
+                    "type": "boolean"
+                },
+                "canTrash": {
+                    "type": "boolean"
+                },
+                "canTrashChildren": {
+                    "type": "boolean"
+                },
+                "canUntrash": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "teamDrivePermissionDetails": {
+            "type": "object",
+            "properties": {
+                "teamDrivePermissionType": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "inheritedFrom": {
+                    "type": "string"
+                },
+                "inherited": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "permissionDetails": {
+            "type": "object",
+            "properties": {
+                "permissionType": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "inheritedFrom": {
+                    "type": "string"
+                },
+                "inherited": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "PermissionsResource": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#permission",
+                    "type":"string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "emailAddress": {
+                    "type": "string"
+                },
+                "domain": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "view": {
+                    "type": "string"
+                },
+                "allowFileDiscovery": {
+                    "type": "boolean"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "photoLink": {
+                    "type": "string"
+                },
+                "expirationTime": {
+                    "type": "string"
+                },
+                "teamDrivePermissionDetails": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/teamDrivePermissionDetails"
+                    }
+                },
+                "permissionDetails": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/permissionDetails"
+                    }
+                },
+                "deleted": {
+                    "type": "boolean"
+                },
+                "pendingOwner": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "thumbnail": {
+            "type": "object",
+            "properties": {
+                "image": {
+                    "type": "string"
+                },
+                "mimeType": {
+                    "type": "string"
+                }
+            }
+        },
+        "contentHints": {
+            "type": "object",
+            "properties": {
+                "thumbnail": {
+                    "$ref": "#/definitions/thumbnail"
+                },
+                "indexableText": {
+                    "type": "string"
+                }
+            }
+        },
+        "location": {
+            "type": "object",
+            "properties": {
+                "latitude": {
+                    "type": "number"
+                },
+                "longitude": {
+                    "type": "number"
+                },
+                "altitude": {
+                    "type": "number"
+                }
+            }
+        },
+        "imageMediaMetadata": {
+            "type": "object",
+            "properties": {
+                "width": {
+                    "type": "integer"
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "rotation": {
+                    "type": "integer"
+                },
+                "location": {
+                    "$ref": "#/definitions/location"
+                },
+                "time": {
+                    "type": "string"
+                },
+                "cameraMake": {
+                    "type": "string"
+                },
+                "cameraModel": {
+                    "type": "string"
+                },
+                "exposureTime": {
+                    "type": "number"
+                },
+                "aperture": {
+                    "type": "number"
+                },
+                "flashUsed": {
+                    "type": "boolean"
+                },
+                "focalLength": {
+                    "type": "number"
+                },
+                "isoSpeed": {
+                    "type": "integer"
+                },
+                "meteringMode": {
+                    "type": "string"
+                },
+                "sensor": {
+                    "type": "string"
+                },
+                "exposureMode": {
+                    "type": "string"
+                },
+                "colorSpace": {
+                    "type": "string"
+                },
+                "whiteBalance": {
+                    "type": "string"
+                },
+                "exposureBias": {
+                    "type": "number"
+                },
+                "maxApertureValue": {
+                    "type": "number"
+                },
+                "subjectDistance": {
+                    "type": "integer"
+                },
+                "lens": {
+                    "type": "string"
+                }
+            }
+        },
+        "videoMediaMetadata": {
+            "type": "object",
+            "properties": {
+                "width": {
+                    "type": "integer"
+                },
+                "height": {
+                    "type": "integer"
+                },
+                "durationMillis": {
+                    "type": "integer"
+                }
+            }
+        },
+        "shortcutDetails": {
+            "type": "object",
+            "properties": {
+                "targetId": {
+                    "type": "string"
+                },
+                "targetMimeType": {
+                    "type": "string"
+                },
+                "targetResourceKey": {
+                    "type": "string"
+                }
+            }
+        },
+        "restrictingUser": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#user",
+                    "type":"string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "photoLink": {
+                    "type": "string"
+                },
+                "me": {
+                    "type": "boolean"
+                },
+                "permissionId": {
+                    "type": "string"
+                },
+                "emailAddress": {
+                    "type": "string"
+                }
+            }
+        },
+        "contentRestrictions": {
+            "type": "object",
+            "properties": {
+                "readOnly": {
+                    "type": "boolean"
+                },
+                "reason": {
+                    "type": "string"
+                },
+                "restrictingUser": {
+                    "$ref": "#/definitions/restrictingUser"
+                },
+                "restrictionTime": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        },
+        "fields": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "object",
+                "properties": {
+                    "kind": {
+                        "default": "drive#labelField",
+                        "type":"string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "valueType": {
+                        "type": "string"
+                    },
+                    "dateString": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "integer": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "selection": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "text": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "user": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/user"
+                        }
+                    }
+                }
+            }
+        },
+        "labels": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#label",
+                    "type":"string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "revisionId": {
+                    "type": "string"
+                },
+                "fields": {
+                    "$ref": "#/definitions/fields"
+                }
+            }
+        },
+        "modifyLabelsResponse": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#modifyLabelsResponse",
+                    "type":"string"
+                },
+                "modifiedLabels": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/labels"
+                    }
+                }
+            }
+        },
+        "labelList": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#labelList",
+                    "type":"string"
+                },
+                "nextPageToken": {
+                    "type": "string"
+                },
+                "labels": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/labels"
+                    }
+                }
+            }
+        },
+        "linkShareMetadata": {
+            "type": "object",
+            "properties": {
+                "securityUpdateEligible": {
+                    "type": "boolean"
+                },
+                "securityUpdateEnabled": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "FilesResourse": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#file",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "mimeType": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "starred": {
+                    "type": "boolean"
+                },
+                "trashed": {
+                    "type": "boolean"
+                },
+                "explicitlyTrashed": {
+                    "type": "boolean"
+                },
+                "trashingUser": {
+                    "$ref": "#/definitions/user"
+                },
+                "trashedTime": {
+                    "type": "string"
+                },
+                "parents": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "properties": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "appProperties": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "spaces": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "version": {
+                    "type": "integer"
+                },
+                "webContentLink": {
+                    "type": "string"
+                },
+                "webViewLink": {
+                    "type": "string"
+                },
+                "iconLink": {
+                    "type": "string"
+                },
+                "hasThumbnail": {
+                    "type": "boolean"
+                },
+                "thumbnailLink": {
+                    "type": "string"
+                },
+                "thumbnailVersion": {
+                    "type": "integer"
+                },
+                "viewedByMe": {
+                    "type": "boolean"
+                },
+                "viewedByMeTime": {
+                    "type": "string"
+                },
+                "createdTime": {
+                    "type": "string"
+                },
+                "modifiedTime": {
+                    "type": "string"
+                },
+                "modifiedByMeTime": {
+                    "type": "string"
+                },
+                "modifiedByMe": {
+                    "type": "boolean"
+                },
+                "sharedWithMeTime": {
+                    "type": "string"
+                },
+                "sharingUser": {
+                    "$ref": "#/definitions/user"
+                },
+                "owners": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/user"
+                    }
+                },
+                "teamDriveId": {
+                    "type": "string"
+                },
+                "driveId": {
+                    "type": "string"
+                },
+                "lastModifyingUser": {
+                    "$ref": "#/definitions/lastModifyingUser"
+                },
+                "shared": {
+                    "type": "boolean"
+                },
+                "ownedByMe": {
+                    "type": "boolean"
+                },
+                "capabilities": {
+                    "$ref": "#/definitions/FileCapabilities"
+                },
+                "viewersCanCopyContent": {
+                    "type": "boolean"
+                },
+                "copyRequiresWriterPermission": {
+                    "type": "boolean"
+                },
+                "writersCanShare": {
+                    "type": "boolean"
+                },
+                "permissions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/PermissionsResource"
+                    }
+                },
+                "permissionIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "hasAugmentedPermissions": {
+                    "type": "boolean"
+                },
+                "folderColorRgb": {
+                    "type": "string"
+                },
+                "originalFilename": {
+                    "type": "string"
+                },
+                "fullFileExtension": {
+                    "type": "string"
+                },
+                "fileExtension": {
+                    "type": "string"
+                },
+                "md5Checksum": {
+                    "type": "string"
+                },
+                "sha1Checksum": {
+                    "type": "string"
+                },
+                "sha256Checksum": {
+                    "type": "string"
+                },
+                "size": {
+                    "type": "integer"
+                },
+                "quotaBytesUsed": {
+                    "type": "integer"
+                },
+                "headRevisionId": {
+                    "type": "string"
+                },
+                "contentHints": {
+                    "$ref": "#/definitions/contentHints"
+                },
+                "imageMediaMetadata": {
+                    "$ref": "#/definitions/imageMediaMetadata"
+                },
+                "videoMediaMetadata": {
+                    "$ref": "#/definitions/videoMediaMetadata"
+                },
+                "isAppAuthorized": {
+                    "type": "boolean"
+                },
+                "exportLinks": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "shortcutDetails": {
+                    "$ref": "#/definitions/shortcutDetails"
+                },
+                "contentRestrictions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/contentRestrictions"
+                    }
+                },
+                "labelInfo": {
+                    "type": "object",
+                    "properties": {
+                        "labels": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/labels"
+                            }
+                        }
+                    }
+                },
+                "resourceKey": {
+                    "type": "string"
+                },
+                "linkShareMetadata": {
+                    "$ref": "#/definitions/linkShareMetadata"
+                }
+            }
+        },
+        "DriveCapabilities": {
+            "type": "object",
+            "properties": {
+                "canAddChildren": {
+                    "type": "boolean"
+                },
+                "canChangeCopyRequiresWriterPermissionRestriction": {
+                    "type": "boolean"
+                },
+                "canChangeDomainUsersOnlyRestriction": {
+                    "type": "boolean"
+                },
+                "canChangeDriveBackground": {
+                    "type": "boolean"
+                },
+                "canChangeDriveMembersOnlyRestriction": {
+                    "type": "boolean"
+                },
+                "canComment": {
+                    "type": "boolean"
+                },
+                "canCopy": {
+                    "type": "boolean"
+                },
+                "canDeleteChildren": {
+                    "type": "boolean"
+                },
+                "canDeleteDrive": {
+                    "type": "boolean"
+                },
+                "canDownload": {
+                    "type": "boolean"
+                },
+                "canEdit": {
+                    "type": "boolean"
+                },
+                "canListChildren": {
+                    "type": "boolean"
+                },
+                "canManageMembers": {
+                    "type": "boolean"
+                },
+                "canReadRevisions": {
+                    "type": "boolean"
+                },
+                "canRename": {
+                    "type": "boolean"
+                },
+                "canRenameDrive": {
+                    "type": "boolean"
+                },
+                "canResetDriveRestrictions": {
+                    "type": "boolean"
+                },
+                "canShare": {
+                    "type": "boolean"
+                },
+                "canTrashChildren": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "restrictions": {
+            "type": "object",
+            "properties": {
+                "adminManagedRestrictions": {
+                    "type": "boolean"
+                },
+                "copyRequiresWriterPermission": {
+                    "type": "boolean"
+                },
+                "domainUsersOnly": {
+                    "type": "boolean"
+                },
+                "driveMembersOnly": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "lastModifyingUser": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#user",
+                    "type":"string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "photoLink": {
+                    "type": "string"
+                },
+                "me": {
+                    "type": "boolean"
+                },
+                "permissionId": {
+                    "type": "string"
+                },
+                "emailAddress": {
+                    "type": "string"
+                }
+            }
+        },
+        "teamDrivesResource": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#drive",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "themeId": {
+                    "type": "string"
+                },
+                "colorRgb": {
+                    "type": "string"
+                },
+                "backgroundImageFile": {
+                    "$ref": "#/definitions/backgroundImageFile"
+                },
+                "backgroundImageLink": {
+                    "type": "string"
+                },
+                "capabilities": {
+                    "$ref": "#/definitions/DriveCapabilities"
+                },
+                "createdTime": {
+                    "type": "string"
+                },
+                "orgUnitId": {
+                    "type": "string"
+                },
+                "hidden": {
+                    "type": "boolean"
+                },
+                "restrictions": {
+                    "$ref": "#/definitions/restrictions"
+                }
+            }
+        },
+        "changesResource": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#change",
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "changeType": {
+                    "type": "string"
+                },
+                "time": {
+                    "type": "string"
+                },
+                "removed": {
+                    "type": "boolean"
+                },
+                "fileId": {
+                    "type": "string"
+                },
+                "file": {
+                    "$ref": "#/definitions/FilesResourse"
+                },
+                "teamDriveId": {
+                    "type": "string"
+                },
+                "driveId": {
+                    "type": "string"
+                },
+                "teamDrive": {
+                    "$ref": "#/definitions/teamDrivesResource"
+                },
+                "drive": {
+                    "$ref": "#/definitions/teamDrivesResource"
+                }
+            }
+        },
+        "listResponse": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#changeList",
+                    "type": "string"
+                },
+                "nextPageToken": {
+                    "type": "string"
+                },
+                "newStartPageToken": {
+                    "type": "string"
+                },
+                "changes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/changesResource"
+                    }
+                }
+            }
+        },
+        "fieldModifications": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#labelFieldModification",
+                    "type":"string"
+                },
+                "fieldId": {
+                    "type": "string"
+                },
+                "setTextValues": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "setSelectionValues": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "setIntegerValues": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "setDateValues": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "setUserValues": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "unsetValues": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "labelModifications": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#labelModification",
+                    "type":"string"
+                },
+                "labelId": {
+                    "type": "string"
+                },
+                "fieldModifications": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/fieldModifications"
+                    }
+                },
+                "removeLabel": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "modifyLabelsRequest": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#modifyLabelsRequest",
+                    "type":"string"
+                },
+                "labelModifications": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/labelModifications"
+                    }
+                }
+            }
+        },
+        "RevisionResourse": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#revision",
+                    "type":"string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "mimeType": {
+                    "type": "string"
+                },
+                "modifiedTime": {
+                    "type": "string"
+                },
+                "keepForever": {
+                    "type": "boolean"
+                },
+                "published": {
+                    "type": "boolean"
+                },
+                "publishedLink": {
+                    "type": "string"
+                },
+                "publishAuto": {
+                    "type": "boolean"
+                },
+                "publishedOutsideDomain": {
+                    "type": "boolean"
+                },
+                "lastModifyingUser": {
+                    "$ref": "#/definitions/user"
+                },
+                "originalFilename": {
+                    "type": "string"
+                },
+                "md5Checksum": {
+                    "type": "string"
+                },
+                "size": {
+                    "type": "integer"
+                },
+                "exportLinks": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "DriveResourse": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "default": "drive#drive",
+                    "type":"string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "themeId": {
+                    "type": "string"
+                },
+                "colorRgb": {
+                    "type": "string"
+                },
+                "backgroundImageFile": {
+                    "$ref": "#/definitions/backgroundImageFile"
+                },
+                "backgroundImageLink": {
+                    "type": "string"
+                },
+                "capabilities": {
+                    "$ref": "#/definitions/DriveCapabilities"
+                },
+                "createdTime": {
+                    "type": "string"
+                },
+                "orgUnitId": {
+                    "type": "string"
+                },
+                "hidden": {
+                    "type": "boolean"
+                },
+                "restrictions": {
+                    "$ref": "#/definitions/restrictions"
+                }
+            }
+        }
+    },
+    "parameters": {
+        "access_token": {
+            "name": "access_token",
+            "in": "query",
+            "type": "string",
+            "description": "OAuth access token."
+        },
+        "callback": {
+            "name": "callback",
+            "in": "query",
+            "type": "string",
+            "description": "JSONP"
+        },
+        "ignoreDefaultVisibility": {
+            "name": "ignoreDefaultVisibility",
+            "description": "",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "keepRevisionForever": {
+            "name": "keepRevisionForever",
+            "description": "",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "driveId": {
+            "name": "driveId",
+            "description": "",
+            "in": "query",
+            "type": "string"
+        },
+        "driveId_path": {
+            "name": "driveId",
+            "description": "",
+            "in": "path",
+            "type": "string",
+            "required": true
+        },
+        "includeLabels": {
+            "name": "includeLabels",
+            "description": "",
+            "in": "query",
+            "type": "string"
+        },
+        "includePermissionsForView": {
+            "name": "includePermissionsForView",
+            "description": "",
+            "in": "query",
+            "type": "string"
+        },
+        "ocrLanguage": {
+            "name": "ocrLanguage",
+            "description": "",
+            "in": "query",
+            "type": "string"
+        },
+        "alt": {
+            "name": "alt",
+            "in": "query",
+            "description": "Data format for the response.",
+            "enum": [
+                "json", "media", "proto"
+            ],
+            "type": "string"
+        },
+        "fields": {
+            "name": "fields",
+            "description": "Selector specifying which fields to include in a partial response.",
+            "in": "query",
+            "type": "string"
+        },
+        "key": {
+            "name": "key",
+            "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+            "in": "query",
+            "type": "string"
+        },
+        "oauth_token": {
+            "name": "oauth_token",
+            "description": "OAuth 2.0 token for the current user.",
+            "in": "query",
+            "type": "string"
+        },
+        "prettyPrint": {
+            "name": "prettyPrint",
+            "description": "Returns response with indentations and line breaks.",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "quotaUser": {
+            "name": "quotaUser",
+            "description": "An opaque string that represents a user for quota purposes. Must not exceed 40 characters.",
+            "in": "query",
+            "type": "string"
+        },
+        "upload_protocol": {
+            "name": "upload_protocol",
+            "in": "query",
+            "type": "string",
+            "description": "Upload protocol for media (e.g. \"raw\", \"multipart\")."
+        },
+        "uploadType": {
+            "name": "uploadType",
+            "in": "query",
+            "type": "string",
+            "description": "Legacy upload protocol for media (e.g. \"media\", \"multipart\")."
+        },
+        "xgafv": {
+            "description": "V1 error format.",
+            "in": "query",
+            "name": "$.xgafv",
+          "enum": [
+            "1",
+            "2"
+          ],
+          "type": "string"
+        },
+        "userIp": {
+            "name": "userIp",
+            "description": "",
+            "in": "query",
+            "type": "string"
+        },
+        "enforceSingleParent": {
+            "name": "enforceSingleParent",
+            "description": "",
+            "in": "query",
+            "enum": [
+                "true",
+                "false"
+            ],
+            "type": "boolean"
+        },
+        "supportsAllDrives": {
+            "name": "supportsAllDrives",
+            "description": "",
+            "in": "query",
+            "enum": [
+                "true",
+                "false"
+            ],
+            "type": "boolean"
+        },
+        "supportsTeamDrives": {
+            "name": "supportsTeamDrives",
+            "description": "",
+            "in": "query",
+            "enum": [
+                "true",
+                "false"
+            ],
+            "type": "boolean"
+        },
+        "includeItemsFromAllDrives": {
+            "name": "includeItemsFromAllDrives",
+            "description": "",
+            "in": "query",
+            "enum": [
+                "true",
+                "false"
+            ],
+            "type": "boolean"
+        },
+        "includeTeamDriveItems": {
+            "name": "includeTeamDriveItems",
+            "description": "",
+            "in": "query",
+            "enum": [
+                "true",
+                "false"
+            ],
+            "type": "boolean"
+        },
+        "pageSize": {
+            "name": "pageSize",
+            "description": "",
+            "in": "query",
+            "type": "integer"
+        },
+        "pageToken": {
+            "name": "pageToken",
+            "description": "",
+            "in": "query",
+            "type": "string"
+        },
+        "pageToken_required": {
+            "name": "pageToken",
+            "description": "",
+            "in": "query",
+            "type": "string"
+        },
+        "spaces": {
+            "name": "spaces",
+            "description": "",
+            "in": "query",
+            "type": "string"
+        },
+        "teamDriveId": {
+            "name": "teamDriveId",
+            "description": "",
+            "in": "query",
+            "type": "string"
+        },
+        "removeParents": {
+            "name": "removeParents",
+            "description": "",
+            "in": "query",
+            "type": "string"
+        },
+        "useContentAsIndexableText": {
+            "name": "useContentAsIndexableText",
+            "description": "",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "addParents": {
+            "name": "addParents",
+            "in": "query",
+            "type": "string"
+        },
+        "fileId": {
+            "name": "fileId",
+            "in": "path",
+            "type": "string",
+            "required": true
+        },
+        "acknowledgeAbuse": {
+            "name": "acknowledgeAbuse",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "maxResults": {
+            "name": "maxResults",
+            "in": "query",
+            "type": "integer"
+        },
+        "emailMessage": {
+            "name": "emailMessage",
+            "in": "query",
+            "type": "string"
+        },
+        "moveToNewOwnersRoot": {
+            "name": "moveToNewOwnersRoot",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "sendNotificationEmail": {
+            "name": "sendNotificationEmail",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "transferOwnership": {
+            "name": "transferOwnership",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "useDomainAdminAccess": {
+            "name": "useDomainAdminAccess",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "permissionId": {
+            "name": "permissionId",
+            "in": "path",
+            "type": "string",
+            "required": true
+        },
+        "commentId": {
+            "name": "commentId",
+            "in": "path",
+            "type": "string",
+            "required": true
+        },
+        "replyId": {
+            "name": "replyId",
+            "in": "path",
+            "type": "string",
+            "required": true
+        },
+        "revisionId": {
+            "name": "revisionId",
+            "in": "path",
+            "type": "string",
+            "required": true
+        },
+        "requestId": {
+            "name": "requestId",
+            "in": "query",
+            "type": "string",
+            "required": true
+        },
+        "removeExpiration": {
+            "name": "removeExpiration",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "includeDeleted": {
+            "name": "includeDeleted",
+            "description": "",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "allowItemDeletion": {
+            "name": "allowItemDeletion",
+            "description": "",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "q": {
+            "name": "q",
+            "in": "query",
+            "type": "string"
+        },
+        "includeCorpusRemovals": {
+            "name": "includeCorpusRemovals",
+            "description": "",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "includeRemoved": {
+            "name": "includeRemoved",
+            "description": "",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        },
+        "restrictToMyDrive": {
+            "name": "restrictToMyDrive",
+            "description": "",
+            "in": "query",
+            "type": "boolean",
+            "enum": [
+                "true",
+                "false"
+            ]
+        }
+    }
+}

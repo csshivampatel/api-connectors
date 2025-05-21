@@ -1,0 +1,2045 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "NetSuite REST Record API",
+    "description": "NetSuite REST Record API generated 2024-05-24 at 12:32:09 UTC for account TSTDRV1303059, user joe.klug@peregrineconnect.com with role Neuron ESB Integration.",
+    "termsOfService": "http://www.netsuite.com/portal/resource/terms-of-service.shtml",
+    "contact": {
+      "name": "Oracle NetSuite",
+      "url": "http://www.netsuite.com",
+      "email": "info@netsuite.com"
+    },
+    "version": "v1",
+    "x-framework": {
+      "name": "oracle-netsuite-suitetalk-rest"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://tstdrv1303059.suitetalk.api.netsuite.com/services/rest/record/v1"
+    }
+  ],
+  "paths": {
+    "/paycheck": {
+      "get": {
+        "tags": [
+          "Paycheck"
+        ],
+        "summary": "Get list of records.",
+        "operationId": "paycheck",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "The search query that is used to filter results.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The limit used to specify the number of results on a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1000
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The offset used for selecting a specific page of results.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of records.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=collection": {
+                "schema": {
+                  "$ref": "#/components/schemas/paycheckCollection"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/paycheck/{id}": {
+      "get": {
+        "tags": [
+          "Paycheck"
+        ],
+        "summary": "Get record.",
+        "operationId": "paycheck2",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "expandSubResources",
+            "in": "query",
+            "description": "Set to 'true' to automatically expand all sublists, sublist lines, and subrecords on this record.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "simpleEnumFormat",
+            "in": "query",
+            "description": "Set to true to return enumeration values in a format that only shows the internal ID value.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "The names of the fields and sublists on the record. Only the selected fields and sublists will be returned in the response.",
+            "examples": {
+              "multiple fields": {
+                "value": "field1,field2"
+              },
+              "single field": {
+                "value": "field"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved record.",
+            "headers": {
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/vnd.oracle.resource+json; type=singular": {
+                "schema": {
+                  "$ref": "#/components/schemas/paycheck"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "nsResourceCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/nsResource"
+            }
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          }
+        }
+      },
+      "nsResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Internal identifier",
+            "type": "string"
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "externalId": {
+            "title": "External identifier",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          }
+        }
+      },
+      "paycheck-payTimeElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "origtimebreakdown": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "amount": {
+            "title": "Amount",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "ddate": {
+            "title": "Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "origdoc": {
+            "title": "Orig Transaction Document",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "apply": {
+            "title": "Pay",
+            "type": "boolean"
+          },
+          "line": {
+            "title": "Line",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "nid": {
+            "title": "ID",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "count": {
+            "title": "Hours",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "rate": {
+            "title": "Rate",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "location": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "payitemworkplace": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "class": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "department": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "serviceItem": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "payitem": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custjob": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "paycheck-payContribCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/paycheck-payContribElement"
+            }
+          }
+        }
+      },
+      "nsError": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "type": "string",
+            "readOnly": true,
+            "description": "A URI reference to the documentation about the problem type.",
+            "format": "URI"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string",
+            "readOnly": true,
+            "description": "A human-readable description of the problem type."
+          },
+          "status": {
+            "title": "Status",
+            "type": "integer",
+            "readOnly": true,
+            "description": "The HTTP status code generated by the server the request originates from.",
+            "format": "int32"
+          },
+          "o:errorDetails": {
+            "type": "array",
+            "readOnly": true,
+            "description": "An array containing one or more problem types.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "detail": {
+                  "title": "Detail",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "A detailed, human-readable description of the problem occurrence."
+                },
+                "o:errorPath": {
+                  "title": "Error Path",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The JSON path that indicates where the problem occurs within the request body.",
+                  "format": "JSONPath"
+                },
+                "o:errorUrl": {
+                  "title": "Error URL",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The URI of the first element in the request URL where the problem occurs.",
+                  "format": "URI"
+                },
+                "o:errorHeader": {
+                  "title": "Error Header",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The name of the HTTP header where the problem occurs."
+                },
+                "o:errorQueryParam": {
+                  "title": "Error Query Parameter",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The name of the query parameter where the problem occurs."
+                },
+                "o:errorCode": {
+                  "title": "Error Code",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The application-specific error code. Similar problem types are grouped together."
+                }
+              }
+            }
+          }
+        }
+      },
+      "nsLink": {
+        "type": "object",
+        "properties": {
+          "rel": {
+            "title": "Relationship",
+            "type": "string",
+            "readOnly": true
+          },
+          "href": {
+            "title": "Hypertext Reference",
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
+      "paycheck-payExpCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/paycheck-payExpElement"
+            }
+          }
+        }
+      },
+      "paycheck-payEarnCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/paycheck-payEarnElement"
+            }
+          }
+        }
+      },
+      "paycheck": {
+        "type": "object",
+        "properties": {
+          "custbody1": {
+            "title": "Actual Usage",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody3": {
+            "title": "Contract Start Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody4": {
+            "title": "Roll Back",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "tranDate": {
+            "title": "Date",
+            "type": "string",
+            "description": "NetSuite inserts today&apos;s date for the posting date of this paycheck. You can type or pick another date. What you enter here determines the date range in which this transaction appears on the Bank Register. You can select or enter custom date ranges on registers.",
+            "format": "date",
+            "nullable": true
+          },
+          "memo": {
+            "title": "Memo",
+            "type": "string",
+            "description": "Enter a memo that prints on the check itself.",
+            "nullable": true
+          },
+          "custbody_sii_code_issued_inv": {
+            "title": "SII Code Issued Inv",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "startDate": {
+            "title": "Period Start Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "custbody_opp_prjredflags": {
+            "title": "Potential Red Flags",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_collections_activity_date": {
+            "title": "Collections Activity Date",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "clearedDate": {
+            "title": "Date Cleared",
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "balance": {
+            "title": "Balance",
+            "type": "number",
+            "description": "NetSuite displays the balance in the bank account you selected.",
+            "format": "double",
+            "nullable": true
+          },
+          "custbody_date_of_taxable_supply": {
+            "title": "Date of Taxable Supply",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "origTotal": {
+            "title": "Total",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "id": {
+            "title": "Internal ID",
+            "type": "string",
+            "nullable": true
+          },
+          "custbody_powf_pm_ok": {
+            "title": "Project Manager Approval",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_land_register": {
+            "title": "Land register/Cadaster reference",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_cash_register": {
+            "title": "Cash Register",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody5": {
+            "title": "PS Project Baseline Set",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody6": {
+            "title": "Project Created",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody7": {
+            "title": "Notes",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "status": {
+            "title": "Status",
+            "type": "string",
+            "nullable": true
+          },
+          "custbody_powf_ctrl_dt": {
+            "title": "Controller Approval Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_svb_sched_in_process": {
+            "title": "SVB Schedule In Process",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "createdDate": {
+            "title": "Date Created",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "custbody_collections_promised_pmt_date": {
+            "title": "Collections Promised Payment Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_code": {
+            "title": "SII Code",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_svb_schedule_is_intercompany": {
+            "title": "Schedule Is Intercompany",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_adjustment_journal": {
+            "title": "Adjustment Journal",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_my_import_declaration_num": {
+            "title": "Import Declaration No.",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_establishment_code": {
+            "title": "Establishment Code",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "address": {
+            "title": "Address",
+            "type": "string",
+            "description": "Accept or enter the address of the employee.",
+            "nullable": true
+          },
+          "custbody_country_of_origin": {
+            "title": "Country of Origin",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_not_reported_in_time": {
+            "title": "Billing Record Cannot Be Submitted On Time",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_opp_prjrequirements": {
+            "title": "Key Requirements",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "prevDate": {
+            "title": "Previous Effective Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "custbody_itr_nexus": {
+            "title": "ITR Nexus",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_document_date": {
+            "title": "Document Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_powf_pm_dt": {
+            "title": "Project Manager Approval Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_report_timestamp": {
+            "title": "Report Timestamp",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_esc_last_modified_date": {
+            "title": "Last Modified Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_is_third_party": {
+            "title": "Issued By Third Party",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_invoice_date": {
+            "title": "Invoice Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_svb_error_logs": {
+            "title": "Shared Vendor Bill Error Logs",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_credit_terms": {
+            "title": "Terms",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_registration_msg": {
+            "title": "Registration Message",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "userAmount": {
+            "title": "Amount",
+            "type": "number",
+            "description": "NetSuite will calculate the net pay amount as you add or edit individual items on the tabs below.",
+            "format": "double",
+            "nullable": true
+          },
+          "externalId": {
+            "title": "External ID",
+            "type": "string",
+            "nullable": true
+          },
+          "custbody_sii_accounting_date": {
+            "title": "Accounting Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_opp_prjstart": {
+            "title": "Desired Start Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "chkAmount": {
+            "title": "Amount",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "custbody_sale_billexpdetail": {
+            "title": "Billable Expense Detail",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_opportunity_link": {
+            "title": "Opportunity Link",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_4110_customregnum": {
+            "title": "Customs Registration Number",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_ref_no": {
+            "title": "Reference No.",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_article_72_73": {
+            "title": "Simplified Invoice Article 7.2 7.3",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_4599_sg_import_permit_num": {
+            "title": "Import Permit No.",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "cleared": {
+            "title": "Cleared",
+            "type": "boolean"
+          },
+          "custbody_doc_num_summ_invoice": {
+            "title": "Last Document Number Of Summary Invoice",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_external_reference": {
+            "title": "External Reference",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_itr_doc_number": {
+            "title": "Document Number",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "periodEnding": {
+            "title": "Period Ending",
+            "type": "string",
+            "description": "This is the last date in the payroll period.",
+            "format": "date",
+            "nullable": true
+          },
+          "custbody_2663_reference_num": {
+            "title": "ACH/EFT Reference No.",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sesc_approved": {
+            "title": "Approved",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_esc_created_date": {
+            "title": "Created Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_article_61d": {
+            "title": "Invoice With No Counterpart Article 6.1.d",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_nondeductible_processed": {
+            "title": "Non-Deductible Tax Adjusted",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_reminder": {
+            "title": "Reminder",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "tranId": {
+            "title": "Check #",
+            "type": "string",
+            "description": "If you have checked the To Be Printed box, you will choose starting numbers later, when you print those checks. If you are immediately printing this check, NetSuite increases the largest check number by one. You can type another number here, but the next number will revert to the standard pattern.",
+            "nullable": true
+          },
+          "custbody_counterparty_vat": {
+            "title": "Counterparty VAT Number",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_refno_originvoice": {
+            "title": "Reference No. of Original Invoice",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_opp_prjopentemplate": {
+            "title": "View template",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_collections_note_id": {
+            "title": "Collections Note Id",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "lastModifiedDate": {
+            "title": "Date Last Modified",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "custbody_collections_note": {
+            "title": "Collections Notes",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "allowCdlPerLine": {
+            "title": "Classify Individual Paycheck Lines",
+            "type": "boolean",
+            "description": "Check this box to classify individual line items on this paycheck by department, location, or class. You can classify earnings, deductions, taxes, or contributions."
+          },
+          "custbody_sii_operation_date": {
+            "title": "Operation Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_powf_ctrl_ok": {
+            "title": "Controller Approval",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "statusRef": {
+            "title": "Reference",
+            "type": "string",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "custbody_nondeductible_ref_tran": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "custbody_sii_registration_status": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_correction_type": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_nexus_notc": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_regime_code": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_regime_code_of_supply": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_property_location": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_notc": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_powf_pm": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_nondeductible_ref_genjrnl": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_opp_prjtemplate": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "payDeduct": {
+            "$ref": "#/components/schemas/paycheck-payDeductCollection"
+          },
+          "custbody_svb_vend_bill_link": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "location": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_svb_allocation_journal": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "workPlace": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_spcl_scheme_code_sales": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_orig_bill": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_esc_campaign_category": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "payPto": {
+            "$ref": "#/components/schemas/paycheck-payPtoCollection"
+          },
+          "custbody_sii_issued_inv_type": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_mode_of_transport": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "postingPeriod": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_received_inv_type": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_delivery_terms": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "payExp": {
+            "$ref": "#/components/schemas/paycheck-payExpCollection"
+          },
+          "account": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "entity": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/nsResource"
+              }
+            ]
+          },
+          "custbody_sii_intra_txn_type": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_registration_code": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_4599_mx_operation_type": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "payTime": {
+            "$ref": "#/components/schemas/paycheck-payTimeCollection"
+          },
+          "custbody_svb_vb_to_bell_dist_sched": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_collections_performed_by": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_powf_ctrl": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "payEarn": {
+            "$ref": "#/components/schemas/paycheck-payEarnCollection"
+          },
+          "custbody_sii_exempt_details": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "paySummary": {
+            "$ref": "#/components/schemas/paycheck-paySummaryCollection"
+          },
+          "custbody_collections_activity": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "payContrib": {
+            "$ref": "#/components/schemas/paycheck-payContribCollection"
+          },
+          "custbody_sii_orig_invoice": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "payBonuses": {
+            "$ref": "#/components/schemas/paycheck-payBonusesCollection"
+          },
+          "custbody2": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_spcl_scheme_code_purchase": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_transaction_region": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "payTax": {
+            "$ref": "#/components/schemas/paycheck-payTaxCollection"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "paycheck-payTaxElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "amount": {
+            "title": "Amount",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "taxedwagebase": {
+            "title": "Taxed Wage Base",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "isExempt": {
+            "title": "Exempt",
+            "type": "boolean"
+          },
+          "apply": {
+            "title": "Apply",
+            "type": "boolean"
+          },
+          "editable": {
+            "title": "Edit",
+            "type": "string",
+            "nullable": true
+          },
+          "line": {
+            "title": "Line",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "nid": {
+            "title": "ID",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "sequence": {
+            "title": "Sequence # ",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "isresidenttax": {
+            "title": "Resident Status",
+            "type": "boolean"
+          },
+          "reportablewagebase": {
+            "title": "Reportable Wage Base",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "taxablewagebase": {
+            "title": "Taxable Wage Base",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "department": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "class": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "paytax": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "location": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "paycheck-paySummaryCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/paycheck-paySummaryElement"
+            }
+          }
+        }
+      },
+      "paycheck-payDeductElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "wagebase": {
+            "title": "Wage Base",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "amount": {
+            "title": "Amount",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "line": {
+            "title": "Line",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "nid": {
+            "title": "ID",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "manualentry": {
+            "title": "Manual Entry",
+            "type": "boolean"
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "class": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "department": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "payitem": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "location": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "paycheck-payContribElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "wagebase": {
+            "title": "Wage Base",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "amount": {
+            "title": "Amount",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "line": {
+            "title": "Line",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "nid": {
+            "title": "ID",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "manualentry": {
+            "title": "Manual Entry",
+            "type": "boolean"
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "payitem": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "location": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "class": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "department": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "paycheck-payBonusesElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "amount": {
+            "title": "Amount",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "line": {
+            "title": "Line",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "nid": {
+            "title": "ID",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "bonusid": {
+            "title": "Bonus",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "grantdate": {
+            "title": "Award Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "payitem": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "class": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "bonustype": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "location": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "payitemworkplace": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "department": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "paycheck-payPtoElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "hoursused": {
+            "title": "Hours Used",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "hoursbalance": {
+            "title": "Balance",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "nid": {
+            "title": "ID",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "hoursaccrued": {
+            "title": "Hours Accrued",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "payitem": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "paycheck-payPtoCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/paycheck-payPtoElement"
+            }
+          }
+        }
+      },
+      "paycheck-payTimeCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/paycheck-payTimeElement"
+            }
+          }
+        }
+      },
+      "paycheck-payEarnElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "line": {
+            "title": "Line",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "nid": {
+            "title": "ID",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "count": {
+            "title": "Hours/Base",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "grossamount": {
+            "title": "Amount",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "basedonquan": {
+            "title": "Based on Quantity",
+            "type": "boolean"
+          },
+          "rate": {
+            "title": "Rate",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "manualentry": {
+            "title": "Manual Entry",
+            "type": "boolean"
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "payitemworkplace": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "class": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "department": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "serviceItem": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/nsResource"
+              }
+            ]
+          },
+          "payitem": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custjob": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "location": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "paycheck-paySummaryElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "amount": {
+            "title": "Amount",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "sortcolumn": {
+            "title": "Sort By",
+            "type": "string",
+            "nullable": true
+          },
+          "itemcategory": {
+            "title": "Item Category",
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "title": "Value",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "payitemtype": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "11",
+                  "12",
+                  "13",
+                  "14",
+                  "15",
+                  "16",
+                  "17",
+                  "18",
+                  "19",
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "6",
+                  "7",
+                  "8",
+                  "9",
+                  "10"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "payitem": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "paycheck-payBonusesCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/paycheck-payBonusesElement"
+            }
+          }
+        }
+      },
+      "paycheck-payDeductCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/paycheck-payDeductElement"
+            }
+          }
+        }
+      },
+      "paycheck-payTaxCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/paycheck-payTaxElement"
+            }
+          }
+        }
+      },
+      "paycheck-payExpElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "amount": {
+            "title": "Amount",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "origdoc": {
+            "title": "Orig Transaction Document",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "apply": {
+            "title": "Pay",
+            "type": "boolean"
+          },
+          "line": {
+            "title": "Line",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "nid": {
+            "title": "ID",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "transaction": {
+            "title": "Transaction",
+            "type": "string",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "payitem": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "paycheckCollection": {
+        "type": "object",
+        "properties": {
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "title": "Items",
+            "type": "array",
+            "description": "An array field that represents a collection of elements, for example, sublist lines, multiselect items, or search results.",
+            "items": {
+              "$ref": "#/components/schemas/paycheck"
+            }
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "OAuth_1.0_authorization": {
+        "type": "apiKey",
+        "description": "OAuth 1.0 - https://tools.ietf.org/html/rfc5849",
+        "name": "authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "OAuth_1.0_authorization": []
+    }
+  ]
+}

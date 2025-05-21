@@ -1,0 +1,1403 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "NetSuite REST Record API",
+    "description": "NetSuite REST Record API generated 2024-05-24 at 12:35:04 UTC for account TSTDRV1303059, user joe.klug@peregrineconnect.com with role Neuron ESB Integration.",
+    "termsOfService": "http://www.netsuite.com/portal/resource/terms-of-service.shtml",
+    "contact": {
+      "name": "Oracle NetSuite",
+      "url": "http://www.netsuite.com",
+      "email": "info@netsuite.com"
+    },
+    "version": "v1",
+    "x-framework": {
+      "name": "oracle-netsuite-suitetalk-rest"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://tstdrv1303059.suitetalk.api.netsuite.com/services/rest/record/v1"
+    }
+  ],
+  "paths": {
+    "/paymentItem": {
+      "get": {
+        "tags": [
+          "PaymentItem"
+        ],
+        "summary": "Get list of records.",
+        "operationId": "paymentItemGET",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "The search query that is used to filter results.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The limit used to specify the number of results on a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1000
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The offset used for selecting a specific page of results.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of records.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=collection": {
+                "schema": {
+                  "$ref": "#/components/schemas/paymentItemCollection"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "PaymentItem"
+        ],
+        "summary": "Insert record.",
+        "operationId": "paymentItemPOST",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/paymentItem"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Inserted record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/paymentItem/{id}": {
+      "get": {
+        "tags": [
+          "PaymentItem"
+        ],
+        "summary": "Get record.",
+        "operationId": "paymentItemGET2",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "expandSubResources",
+            "in": "query",
+            "description": "Set to 'true' to automatically expand all sublists, sublist lines, and subrecords on this record.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "simpleEnumFormat",
+            "in": "query",
+            "description": "Set to true to return enumeration values in a format that only shows the internal ID value.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "The names of the fields and sublists on the record. Only the selected fields and sublists will be returned in the response.",
+            "examples": {
+              "multiple fields": {
+                "value": "field1,field2"
+              },
+              "single field": {
+                "value": "field"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved record.",
+            "headers": {
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/vnd.oracle.resource+json; type=singular": {
+                "schema": {
+                  "$ref": "#/components/schemas/paymentItem"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "PaymentItem"
+        ],
+        "summary": "Insert or update record.",
+        "operationId": "paymentItemPUT",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "External identifier.",
+            "schema": {
+              "type": "string",
+              "pattern": "eid:(.+)"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replaceSelectedFields",
+            "in": "query",
+            "description": "If set to 'true', all fields that should be deleted in the update request, including body fields, must be included in the 'replace' query parameter.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/paymentItem"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Upserted record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "PaymentItem"
+        ],
+        "summary": "Remove record.",
+        "operationId": "paymentItemDELETE",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Removed record."
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "PaymentItem"
+        ],
+        "summary": "Update record.",
+        "operationId": "paymentItemPATCH",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replaceSelectedFields",
+            "in": "query",
+            "description": "If set to 'true', all fields that should be deleted in the update request, including body fields, must be included in the 'replace' query parameter.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/paymentItem"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Updated record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "nsResourceCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/nsResource"
+            }
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          }
+        }
+      },
+      "nsResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Internal identifier",
+            "type": "string"
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "externalId": {
+            "title": "External identifier",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          }
+        }
+      },
+      "nsError": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "type": "string",
+            "readOnly": true,
+            "description": "A URI reference to the documentation about the problem type.",
+            "format": "URI"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string",
+            "readOnly": true,
+            "description": "A human-readable description of the problem type."
+          },
+          "status": {
+            "title": "Status",
+            "type": "integer",
+            "readOnly": true,
+            "description": "The HTTP status code generated by the server the request originates from.",
+            "format": "int32"
+          },
+          "o:errorDetails": {
+            "type": "array",
+            "readOnly": true,
+            "description": "An array containing one or more problem types.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "detail": {
+                  "title": "Detail",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "A detailed, human-readable description of the problem occurrence."
+                },
+                "o:errorPath": {
+                  "title": "Error Path",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The JSON path that indicates where the problem occurs within the request body.",
+                  "format": "JSONPath"
+                },
+                "o:errorUrl": {
+                  "title": "Error URL",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The URI of the first element in the request URL where the problem occurs.",
+                  "format": "URI"
+                },
+                "o:errorHeader": {
+                  "title": "Error Header",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The name of the HTTP header where the problem occurs."
+                },
+                "o:errorQueryParam": {
+                  "title": "Error Query Parameter",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The name of the query parameter where the problem occurs."
+                },
+                "o:errorCode": {
+                  "title": "Error Code",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The application-specific error code. Similar problem types are grouped together."
+                }
+              }
+            }
+          }
+        }
+      },
+      "paymentItem-translationsCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/paymentItem-translationsElement"
+            }
+          }
+        }
+      },
+      "nsLink": {
+        "type": "object",
+        "properties": {
+          "rel": {
+            "title": "Relationship",
+            "type": "string",
+            "readOnly": true
+          },
+          "href": {
+            "title": "Hypertext Reference",
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
+      "paymentItem-translationsElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "featuredDescription": {
+            "title": "Featured Description",
+            "type": "string",
+            "nullable": true
+          },
+          "outOfStockMessage": {
+            "title": "Out Of Stock Message",
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "title": "Display Name",
+            "type": "string",
+            "nullable": true
+          },
+          "specialsDescription": {
+            "title": "Special Description",
+            "type": "string",
+            "nullable": true
+          },
+          "storeDisplayName": {
+            "title": "Store Display Name",
+            "type": "string",
+            "nullable": true
+          },
+          "language": {
+            "title": "Language",
+            "type": "string",
+            "nullable": true
+          },
+          "storeDescription": {
+            "title": "Store Description",
+            "type": "string",
+            "nullable": true
+          },
+          "noPriceMessage": {
+            "title": "No Price Message",
+            "type": "string",
+            "nullable": true
+          },
+          "pageTitle": {
+            "title": "Page Title",
+            "type": "string",
+            "nullable": true
+          },
+          "locale": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "it_CH",
+                  "en_TC",
+                  "af_ZA",
+                  "es_EA",
+                  "es_EC",
+                  "pt_BR",
+                  "en_CY",
+                  "fr_LU",
+                  "nl_AN",
+                  "es_UY",
+                  "en_TT",
+                  "es_ES",
+                  "pt_ST",
+                  "en_DM",
+                  "en_TZ",
+                  "es_ES_EURO",
+                  "fr_ML",
+                  "de_DE_onLQA",
+                  "es_VE",
+                  "nl_BE",
+                  "da_DK",
+                  "pt_AO",
+                  "to_TO",
+                  "en_UG",
+                  "am_ET",
+                  "ss_SZ",
+                  "nl_BQ",
+                  "ar",
+                  "pt_AW",
+                  "ko_KR",
+                  "en_US",
+                  "fr_BE_EURO",
+                  "ko_KP",
+                  "si_AQ",
+                  "fr_MG",
+                  "el_GR",
+                  "be_BY",
+                  "en_AU",
+                  "he_IL",
+                  "en_AW",
+                  "es_SV",
+                  "en_BB",
+                  "ar_YE",
+                  "es_CO",
+                  "es_CL",
+                  "en_BM",
+                  "es_CR",
+                  "pa_IN",
+                  "en_SC",
+                  "en_BS",
+                  "sm_WS",
+                  "it_IT_EURO",
+                  "fr_KM",
+                  "es_CU",
+                  "en_SB",
+                  "en_SG",
+                  "en_BW",
+                  "en_SH",
+                  "en_BZ",
+                  "en_SL",
+                  "az_AZ",
+                  "fi_FI",
+                  "en_SS",
+                  "sr_YU",
+                  "en_CD",
+                  "en_CA",
+                  "ka_GE",
+                  "lv_LV",
+                  "uk_UA",
+                  "es_DO",
+                  "ur_PK",
+                  "ar_IQ",
+                  "fr_LU_EURO",
+                  "pt_PT",
+                  "fr_FR_EURO",
+                  "en_PH",
+                  "th_TH",
+                  "bn_BD",
+                  "si_LK",
+                  "en_PG",
+                  "hu_HU",
+                  "ar_SA",
+                  "ar_SD",
+                  "ru_KZ",
+                  "ar_BH",
+                  "nl_BE_EURO",
+                  "ro_MD",
+                  "en_QA",
+                  "ru_KG",
+                  "es_AR",
+                  "ta_IN",
+                  "sr_RS",
+                  "aa_ER",
+                  "en",
+                  "de_DE_EURO",
+                  "zh_MO",
+                  "en_AE",
+                  "ar_SY",
+                  "es_BO",
+                  "en_AI",
+                  "no_NO",
+                  "en_AG",
+                  "nl_SR",
+                  "fr_VU",
+                  "en_MW",
+                  "gu_AQ",
+                  "ar_TN",
+                  "nl_SX",
+                  "hi_IN",
+                  "en_NA",
+                  "mn_MN",
+                  "en_NG",
+                  "fr_FR",
+                  "ms_MY",
+                  "nl_CW",
+                  "uz_UZ",
+                  "ar_DJ",
+                  "sr_CS",
+                  "de_AT_EURO",
+                  "en_NZ",
+                  "es_PE",
+                  "es_PA",
+                  "fa_IR",
+                  "ar_DZ",
+                  "fr_GN",
+                  "lb_LU",
+                  "xx_US",
+                  "pt_CV",
+                  "sh_RS",
+                  "ht_HT",
+                  "fr_WF",
+                  "es_AR_onLQA",
+                  "es_PR",
+                  "ar_EG",
+                  "es_PY",
+                  "fr_GA",
+                  "en_KW",
+                  "de_AT",
+                  "ro_RO",
+                  "en_KY",
+                  "fr_FR_onLQA",
+                  "fr_DJ",
+                  "ca_ES_EURO",
+                  "cs_CZ",
+                  "en_LC",
+                  "pl_AQ",
+                  "fr_TD",
+                  "fr_TG",
+                  "es_MX",
+                  "sv_AX",
+                  "sk_SK",
+                  "en_LR",
+                  "en_LS",
+                  "ar_OM",
+                  "dz_BT",
+                  "te_IN",
+                  "de_LU_EURO",
+                  "sq_AL",
+                  "sv_SE",
+                  "sn_ZW",
+                  "es_NI",
+                  "en_IE_EURO",
+                  "my_MM",
+                  "en_MF",
+                  "en_MU",
+                  "it_IT",
+                  "pl_PL",
+                  "fr_BE",
+                  "fr_BF",
+                  "tr_TR",
+                  "fr_BI",
+                  "fr_BJ",
+                  "id_ID",
+                  "fr_RW",
+                  "en_ZM",
+                  "km_KH",
+                  "ja_JP",
+                  "de_DE",
+                  "fr_BL",
+                  "tg_TJ",
+                  "ar_QA",
+                  "de_CH",
+                  "zh_HK",
+                  "pt_PT_EURO",
+                  "en_JO",
+                  "en_JM",
+                  "fr_CA",
+                  "nl_NL_EURO",
+                  "fr_CF",
+                  "fr_CG",
+                  "fr_CD",
+                  "pa_AQ",
+                  "fr_CH",
+                  "xx_US_wthId",
+                  "fr_CI",
+                  "pt_GW",
+                  "vi_VN",
+                  "ru_MD",
+                  "fr_CM",
+                  "fr_SC",
+                  "en_KE",
+                  "ne_NP",
+                  "bs_BA",
+                  "sl_SI",
+                  "en_KN",
+                  "fr_SN",
+                  "ar_AE",
+                  "en_GY",
+                  "tl_PH",
+                  "ca_ES",
+                  "es_IC",
+                  "lo_LA",
+                  "kn_IN",
+                  "so_SO",
+                  "fr_PF",
+                  "ar_JO",
+                  "nl_NL",
+                  "is_IS",
+                  "fi_FI_EURO",
+                  "pt_MZ",
+                  "sk_SK_EURO",
+                  "sl_SI_EURO",
+                  "en_IE",
+                  "ms_BN",
+                  "hr_HR",
+                  "ar_KW",
+                  "de_LU",
+                  "lt_LT",
+                  "en_IN",
+                  "ps_AF",
+                  "en_ZA",
+                  "en_VC",
+                  "ru_RU",
+                  "sh_YU",
+                  "ar_LB",
+                  "mr_IN",
+                  "dv_MV",
+                  "fj_FJ",
+                  "zh_TW",
+                  "tk_TM",
+                  "ar_LY",
+                  "en_VU",
+                  "fr_NE",
+                  "en_FK",
+                  "es_GT",
+                  "fr_NC",
+                  "es_GQ",
+                  "fa_AF",
+                  "bg_BG",
+                  "hy_AM",
+                  "en_CY_EURO",
+                  "mk_MK",
+                  "ar_MA",
+                  "en_GD",
+                  "en_GB",
+                  "es_HN",
+                  "gu_IN",
+                  "en_GH",
+                  "et_EE",
+                  "en_GI",
+                  "zh_CN",
+                  "en_GM",
+                  "ar_MR"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "storeDetailedDescription": {
+            "title": "Detailed Description",
+            "type": "string",
+            "nullable": true
+          },
+          "salesDescription": {
+            "title": "Sales Description",
+            "type": "string",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "paymentItem": {
+        "type": "object",
+        "properties": {
+          "isInactive": {
+            "title": "Inactive",
+            "type": "boolean",
+            "description": "When you check this box, this item will no longer appear on a list unless you check the Show All box at the bottom of the list page."
+          },
+          "createdDate": {
+            "title": "Date Created",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastModifiedDate": {
+            "title": "Last Modified",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "externalId": {
+            "title": "External ID",
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "description": "Enter a description for this item. This description will appear in the Description column of sales forms.",
+            "nullable": true
+          },
+          "undepFunds": {
+            "title": "Group with Undeposited Funds",
+            "type": "boolean",
+            "description": "1. Click the button after Group with Undeposited Funds if you want these payments to be processed as any other undeposited funds. 2. If these are to be deposited immediately into an account, click the button between Deposit To and Account."
+          },
+          "includeChildren": {
+            "title": "Include Children",
+            "type": "boolean",
+            "description": "Check the Include Children box to share the item with all the sub-subsidiaries associated with each subsidiary selected in the Subsidiary field. Note: When sharing items across subsidiaries, all of the options selected on the item record must be compatible across subsidiaries. For example, when entering an inventory item to be shared across subsidiaries, you should select Income and Asset accounts on the item record that are also shared across the same subsidiaries."
+          },
+          "availableToPartners": {
+            "title": "Available to Adv. Partners",
+            "type": "boolean",
+            "description": "Check this box to make this item available to partners with the Advanced Partner Center role for viewing. These items are also available to partners with roles that are customized for the Advanced Partner Center and include view, create or edit access to item records."
+          },
+          "itemId": {
+            "title": "Item Name/Number",
+            "type": "string",
+            "description": "Enter up to 250 characters for the name of this item. This name appears in lists on transactions. If you have the option of entering a display name and do not, the item name prints in the Item column of sales forms when Basic printing is used. If you have the option to enter a vendor name and do not, the item name prints in the Item column of purchase forms. If you have entered a display name, it will print on purchases instead of the item name when Basic printing is used.",
+            "nullable": true
+          },
+          "itemType": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "Group",
+                  "Description",
+                  "Discount",
+                  "EndGroup",
+                  "GiftCert",
+                  "Subtotal",
+                  "Service",
+                  "ShipItem",
+                  "TaxItem",
+                  "InvtPart",
+                  "Payment",
+                  "Expense",
+                  "NonInvtPart",
+                  "TaxGroup",
+                  "Kit",
+                  "Markup",
+                  "DwnLdItem",
+                  "OthCharge",
+                  "Assembly",
+                  "SubscriPlan"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "customForm": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "-240"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "displayName": {
+            "title": "Display Name/Code",
+            "type": "string",
+            "description": "Enter an optional name of up to 250 characters for this item in addition to the Item Name. If you are integrating with a Yahoo! store, this field is imported from Yahoo!. The display name prints in the Item column of sales forms when Basic printing is used. If this item is a member of a kit, this name appears in the Item column when the Print Items box is checked. If you do not enter a display name, the item name appears on printed forms.",
+            "nullable": true
+          },
+          "id": {
+            "title": "Internal ID",
+            "type": "string",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "location": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "class": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "subsidiary": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "account": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "department": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "translations": {
+            "$ref": "#/components/schemas/paymentItem-translationsCollection"
+          },
+          "paymentMethod": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "paymentItemCollection": {
+        "type": "object",
+        "properties": {
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "title": "Items",
+            "type": "array",
+            "description": "An array field that represents a collection of elements, for example, sublist lines, multiselect items, or search results.",
+            "items": {
+              "$ref": "#/components/schemas/paymentItem"
+            }
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "OAuth_1.0_authorization": {
+        "type": "apiKey",
+        "description": "OAuth 1.0 - https://tools.ietf.org/html/rfc5849",
+        "name": "authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "OAuth_1.0_authorization": []
+    }
+  ]
+}

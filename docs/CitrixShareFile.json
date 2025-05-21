@@ -1,0 +1,3025 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "citrix Share file api v3",
+        "description": "Citrix ShareFile supports external integration through an HTTP-based REST API. The ShareFile API implements a subset of the ODATA specification, enabling extension of base requests with query parameters to retrieve additional information such as relational objects. This implementation allows you to leverage file sharing capabilities within your applications.",
+        "version": "1.0"
+    },
+    "host": "account.sf-api.com/sf/",
+    "basePath": "v3",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "tags":[
+        {
+            "name": "Apps"
+        },
+        {
+            "name": "Capabilities"
+        },
+        {
+            "name": "Devices"
+        },
+        {
+            "name": "FavoriteFolders"
+        }        
+     ],
+     "paths": {
+        "/Apps": {
+            "get": {
+                "operationId": "get_apps_for_current_user",
+                "tags": [
+                    "Apps"
+                ],
+                "summary": "Get Apps for Current User",
+                "description": "Get the connected Apps for Current User",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/FeedofConnectedApp"
+                        }
+                    }
+                }
+            }
+        },
+        "/Users({userId})/Apps": {
+            "get": {
+                "operationId": "get_apps_for_given_user",
+                "tags": [
+                    "Apps"
+                ],
+                "summary": "Get Apps for given User",
+                "description": "Get the connected Apps for Given User",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/FeedofConnectedApp"
+                        }
+                    }
+                }
+            }
+        },
+        "/Apps({appId})": {
+            "get": {
+                "operationId": "get_apps_by_id_for_current_user",
+                "tags": [
+                    "Apps"
+                ],
+                "summary": "Get App by ID for Current User",
+                "description": "Get connected App by ID for Current User",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/appId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectedApp"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "revoke_app_access_for_current_user",
+                "tags": [
+                    "Apps"
+                ],
+                "summary": "Revoke App access for Current User",
+                "description": "Revoke App access for given App for Current User",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/appId"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/Users({userId})/Apps({appId})": {
+            "get": {
+                "operationId": "get_app_by_id_for_given_user",
+                "tags": [
+                    "Apps"
+                ],
+                "summary": "Get App by ID for given User",
+                "description": "Get connected App by ID for given User",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId"
+                    },
+                    {
+                        "$ref": "#/parameters/appId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ConnectedApp"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "revoke_app_access_for_given_user",
+                "tags": [
+                    "Apps"
+                ],
+                "summary": "Revoke App access for a given User",
+                "description": "Revoke App access for a given User",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId"
+                    },
+                    {
+                        "$ref": "#/parameters/appId"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/Apps/TFA": {
+            "get": {
+                "operationId": "get_all_tfa_apps_for_current_user",
+                "tags": [
+                    "Apps"
+                ],
+                "summary": "Get all Two Factor Authentication Apps for the Current User",
+                "description": "Get all connected Apps having Two Factor Authentication for the Current User",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/FeedofTwoFactorAuthApp"
+                        }
+                    }
+                }
+            }
+        },
+        "/Users({userId})/TFA": {
+            "get": {
+                "operationId": "get_all_tfa_apps_for_given_user",
+                "tags": [
+                    "Apps"
+                ],
+                "summary": "Get all Two Factor Authentication Apps for the given User",
+                "description": "Get all connected Apps having Two Factor Authentication for the given User",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/FeedofTwoFactorAuthApp"
+                        }
+                    }
+                }
+            }
+        },
+        "/Apps/TFA({tfaAppId})": {
+            "get": {
+                "operationId": "get_tfa_app_by_id_for_current_user",
+                "tags": [
+                    "Apps"
+                ],
+                "summary": "Get Two Factor Authentication App by ID for the Current User",
+                "description": "Get connected App having Two Factor Authentication by ID for the Current User",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/tfaAppId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/TwoFactorAuthApp"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "revoke_tfa_app_by_id_for_current_user",
+                "tags": [
+                    "Apps"
+                ],
+                "summary": "Revoke Two Factor Auth App by ID for Current User",
+                "description": "Revoke Two Factor Auth App by ID for the Current User",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/tfaAppId"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/Users({userId})/TFA({tfaAppId})": {
+            "get": {
+                "operationId": "get_tfa_app_by_id",
+                "tags": [
+                    "Apps"
+                ],
+                "summary": "Get Two Factor Authentication App by ID for the given User",
+                "description": "Get connected App having Two Factor Authentication by ID for the given User",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId"
+                    },
+                    {
+                        "$ref": "#/parameters/tfaAppId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/TwoFactorAuthApp"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "revoke_tfa_app_by_id_for_given_user",
+                "tags": [
+                    "Apps"
+                ],
+                "summary": "Revoke Two Factor Auth App by ID for the given User",
+                "description": "Revoke Two Factor Auth App by ID for the given User",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId"
+                    },
+                    {
+                        "$ref": "#/parameters/tfaAppId"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/Capabilities": {
+            "get": {
+                "operationId": "get_list_of_capabilities",
+                "tags": [
+                    "Capabilities"
+                ],
+                "summary": "Get List of Capabilities",
+                "description": "Retrieves the capability list of a given provider.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Capabilities"
+                        }
+                    }
+                }
+            }
+        },
+        "/Devices": {
+            "get": {
+                "operationId": "get_device_users_for_current_user",
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Get Device Users for Current User",
+                "description": "Get all the Device Users for Current User",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/DeviceUser"
+                        }
+                    }
+                }
+            }
+        },
+        "/Devices({deviceId})": {
+            "get": {
+                "operationId": "get_device_by_id",
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Get Device by ID",
+                "description": "Get details of a Device by ID",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/deviceId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/DeviceDetails"
+                        }
+                    }
+                }
+            }
+        },
+        "/Users({userId})/Devices": {
+            "get": {
+                "operationId": "get_devices_for_given_user",
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Get Devices for given User",
+                "description": "Get the list of Devices for given User",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                                "$ref": "#/definitions/DeviceUser"
+                        }
+                    }
+                }
+            }
+        },
+        "/Users({userId})/Devices({deviceId})": {
+            "delete": {
+                "operationId": "delete_specific_device_for_given_user",
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Delete specific Device for given User",
+                "description": "Delete the specific Device for the given User",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId"
+                    },
+                    {
+                        "$ref": "#/parameters/deviceId"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/Devices({deviceId})/Wipe": {
+            "post": {
+                "operationId": "wipe_device",
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Wipe Device",
+                "description": "Wipe the Device",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId_query"
+                    },
+                    {
+                        "$ref": "#/parameters/deviceId"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/Devices(deviceID)/Lock": {
+            "post": {
+                "operationId": "lock_device",
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Lock Device",
+                "description": "Lock the Device",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId_query"
+                    },
+                    {
+                        "$ref": "#/parameters/deviceId"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/Devices(deviceID)/Unlock": {
+            "post": {
+                "operationId": "unlock_device",
+                "tags": [
+                    "Devices"
+                ],
+                "summary": "Unlock Device",
+                "description": "Unlock the Device",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId_query"
+                    },
+                    {
+                        "$ref": "#/parameters/deviceId"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/Users({userId})/FavoriteFolders": {
+            "get": {
+                "operationId": "get_list_of_favorite_folders",
+                "tags": [
+                    "FavoriteFolders"
+                ],
+                "summary": "Get List of FavoriteFolders",
+                "description": "Retrieves the list of Favorite folders for a given user if userId is specified otherwise will get the list for current user.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/FavoriteFolders"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "operationId": "create_favorite_folder",
+                "tags": [
+                    "FavoriteFolders"
+                ],
+                "summary": "Create FavoriteFolder",
+                "description": "Adds an existing folder to the list of favorites of a given user if userId is provided otherwise adds to the list of favorites of the current user",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId"
+                    },
+                    {
+                        "in": "body",
+                        "name": "folder",
+                        "schema": {
+                            "$ref": "#/definitions/CreateFavoriteFolderIdRequest"
+                        }                        
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/FavoriteFoldersArray"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "operationId": "create_or_update_favorite_folders",
+                "tags": [
+                    "FavoriteFolders"
+                ],
+                "summary": "Create or Update FavoriteFolders",
+                "description": "Replaces existing favorite folders with the folders provided. Any exisitng folders that are not specified will be removed.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId"
+                    },
+                    {
+                        "in": "body",
+                        "name": "favoriteFolderList",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/FavoriteFolderId"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/Users({userId})/FavoriteFolders({itemId})": {
+            "get": {
+                "operationId": "get_favorite_folder",
+                "tags": [
+                    "FavoriteFolders"
+                ],
+                "summary": "Get FavoriteFolder",
+                "description": "Retrieves a given Favorite Folder for given user if userId is specified otherwise for current user.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId"
+                    },
+                    {
+                        "$ref": "#/parameters/itemId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/FavoriteFoldersArray"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "delete_favorite_folder",
+                "tags": [
+                    "FavoriteFolders"
+                ],
+                "summary": "Delete FavoriteFolder",
+                "description": "Removes a favorite folder from a given user's list if userId is specified otherwise from current user's list.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/userId"
+                    },
+                    {
+                        "$ref": "#/parameters/itemId"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/Items({itemId})/FavoriteFolder": {
+            "get": {
+                "operationId": "get_item_as_favorite_folder",
+                "tags": [
+                    "FavoriteFolders"
+                ],
+                "summary": "Get Item as Favorite Folder",
+                "description": "Retrieves a Favorite Folder representation of a given parent Item",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/itemId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/FavoriteFoldersArray"
+                        }
+                    }
+                }
+            }
+        },
+        "/FavoriteFolders(userid={userId},itemid={itemId})": {
+            "get": {
+                "operationId": "other_way_to_get_favorite_folder",
+                "tags": [
+                    "FavoriteFolders"
+                ],
+                "summary": "Other way to Get FavoriteFolder",
+                "description": "Retrieve a single Favorite Folder from a give user",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/itemId"
+                    },
+                    {
+                        "$ref": "#/parameters/userId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/FavoriteFoldersArray"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items":{
+            "get":{
+                "operationId": "get_homeFolder_for_current_user",
+                "tags": [ "Items" ],
+                "summary": "Get HomeFolder for Current User",
+                "description": "Returns home folder for current user. Note that home folders are not available for client users, or if the account doesn't have the \"My Files & Folders\" feature enabled.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Item"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({itemId})":{
+            "get":{
+                "operationId": "get_item_by_id_or_treeView",
+                "tags": [ "Items" ],
+                "summary": "Get Item by ID or TreeView",
+                "description": "Returns a single Item or a folder list structure tailored for TreeView navigation - used by clients to create folder trees for specific operations. If a TreeMode is entered then a treeview is returned, otherwise a single item is returned.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/itemId"
+                    },
+                    {
+                        "$ref":"#/parameters/includeDeleted"
+                    },
+                    {
+                        "$ref":"#/parameters/treeMode"
+                    },
+                    {
+                        "$ref":"#/parameters/sourceId"
+                    },
+                    {
+                        "$ref":"#/parameters/canCreateRootFolder"
+                    },
+                    {
+                        "$ref":"#/parameters/fileBox"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Item"
+                        }
+                    }
+                }
+            },
+            "patch":{
+                "operationId": "update_item",
+                "tags": [ "Items" ],
+                "summary": "Update Item",
+                "description": "Updates an Item object. Please note that for a Folder, the Name and FileName properties must be consistent.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/itemId"
+                    },
+                    {
+                        "$ref":"#/parameters/batchid"
+                    },
+                    {
+                        "$ref":"#/parameters/batchSizeInBytes"
+                    },
+                    {
+                        "$ref":"#/parameters/forceSync"
+                    },
+                    {
+                        "$ref":"#/parameters/scheduleAsync"
+                    },
+                    {
+                        "$ref":"#/parameters/resolveFolderNameConflict"
+                    },
+                    {
+                        "$ref":"#/parameters/notify"
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "schema":{
+                            "$ref":"#/definitions/Item"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Item"
+                        }
+                    }
+                }
+            },
+            "delete":{
+                "operationId": "delete_item",
+                "tags": [ "Items" ],
+                "summary": "Delete Item",
+                "description": "Removes an Item object.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/itemId"
+                    },
+                    {
+                        "$ref":"#/parameters/forceSync"
+                    },
+                    {
+                        "$ref":"#/parameters/singleversion"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/Items({itemId})/TreeView":{
+            "get":{
+                "operationId": "get_treeView",
+                "tags": [ "Items" ],
+                "summary": "Get TreeView",
+                "description": "Retrieves a folder list structure tailored for TreeView navigation - used by clients to create folder trees for specific operations. This operation will enforce a specific $select and $expand operators.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/itemId"
+                    },
+                    {
+                        "$ref":"#/parameters/treeMode"
+                    },
+                    {
+                        "$ref":"#/parameters/sourceId"
+                    },
+                    {
+                        "$ref":"#/parameters/canCreateRootFolder"
+                    },
+                    {
+                        "$ref":"#/parameters/fileBox"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Item"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({itemId})/Stream":{
+            "get":{
+                "operationId": "get_stream",
+                "tags": [ "Items" ],
+                "summary": "Get Stream",
+                "description": "Retrieves the versions of a given Stream. The ID parameter must be a StreamID, otherwise an empty list is returned. StreamID is a property of all Items, representing the \"Stream\", ie., the collection of all versions of a file.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/itemId"
+                    },
+                    {
+                        "$ref":"#/parameters/includeDeleted"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Item"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items/ByPath":{
+            "get":{
+                "operationId": "get_item_by_path",
+                "tags": [ "Items" ],
+                "summary": "Get Item by Path",
+                "description": "Retrieves an item from its path. The path is of format /foldername/foldername/filename This call may redirect the client to another API provider, if the path contains a symbolic link.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/itemPath"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Item"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({itemId})/ByPath":{
+            "get":{
+                "operationId": "get_item_relative_by_path_from_id",
+                "tags": [ "Items" ],
+                "summary": "Get Item by relative Path from ID",
+                "description": "Retrieves an item from its path, relative to the provided ID. The path is of format /foldername/foldername/filename This call may redirect the client to another API provider, if the path contains a symbolic link.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/itemId"
+                    },
+                    {
+                        "$ref":"#/parameters/itemPath"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Item"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({itemId})/Parent":{
+            "get":{
+                "operationId": "get_parent_item",
+                "tags": [ "Items" ],
+                "summary": "Get Parent Item",
+                "description": "Retrieves the Parent navigation property of a single Item.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/itemId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Item"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({itemId})/Children":{
+            "get":{
+                "operationId": "get_children",
+                "tags": [ "Items" ],
+                "summary": "Get Children",
+                "description": "Handler for the Children navigation property of a given Item. A 302 redirection is returned if the folder is a SymbolicLink. The redirection will enumerate the children of the remote connector.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/itemId"
+                    },
+                    {
+                        "$ref": "#/parameters/includeDeleted"
+                    },
+                    {
+                        "$ref": "#/parameters/orderingMode"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/Items"
+                        }
+                    }
+                }
+            } 
+        },
+        "/Items({itemId})/Info":{
+            "get":{
+                "operationId": "get_folder_access_info",
+                "tags": [ "Items" ],
+                "summary": "Get Folder Access Info",
+                "description": "Returns the effective Access Controls for the current authenticated user for the selected folder - i.e., the resulting set of Access Controls for the Item/User context.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/itemId"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/ItemInfo"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({itemId})/Download":{
+            "get":{
+                "operationId": "download_item_content",
+                "tags": [ "Items" ],
+                "summary": "Download Item Content",
+                "description": "Initiate the download operation for an item. It will return 302 redirection to the actual download link. For Folders, the download link will retrieve a ZIP archive with the contents of the Folder.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/itemId"
+                    },
+                    {
+                        "$ref": "#/parameters/redirect"
+                    },
+                    {
+                        "$ref": "#/parameters/includeAllVersions"
+                    },
+                    {
+                        "$ref": "#/parameters/includeDeleted"
+                    },
+                    {
+                        "$ref": "#/parameters/forQuarantinedFiles"
+                    }
+                ],
+                "responses": {
+                    "302": {
+                        "description": "Success",
+                        "schema": {
+                            "type":"string"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({itemId})/BulkDownload":{
+            "get":{
+                "operationId": "download_multiple_items",
+                "tags": [ "Items" ],
+                "summary": "Download Multiple Items",
+                "description": "Initiate the download operation for an item. It will return 302 redirection to the actual download link. For Folders, the download link will retrieve a ZIP archive with the contents of the Folder.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/itemId"
+                    },
+                    {
+                        "$ref": "#/parameters/redirect"
+                    },
+                    {
+                        "in":"body",
+                        "name":"body",
+                        "schema":{
+                            "type":"array",
+                            "items":{
+                                "type":"string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "302": {
+                        "description": "Success",
+                        "schema": {
+                            "type":"string"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({parentId})/Folder":{
+            "post":{
+                "operationId": "create_folder",
+                "tags": [ "Items" ],
+                "summary": "Create Folder",
+                "description": "Creates a new Folder. The POST body must contain the serialized object. For top-level folders, use Items/Folder. The Zone object may only be provided for top-level folders. The Zone object must contain a zone ID.",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/passthrough"
+                    },
+                    {
+                        "$ref": "#/parameters/overwrite"
+                    },
+                    {
+                        "$ref":"#/parameters/parentId"
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "schema":{
+                            "$ref":"#/definitions/CreateFolderRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref":"#/definitions/Folder"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({parentId})/Note":{
+            "post":{
+                "operationId": "create_note",
+                "tags": [ "Items" ],
+                "summary": "Create Note",
+                "description": "Creates a new Note.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/parentId"
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "schema":{
+                            "$ref":"#/definitions/CreateNoteRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref":"#/definitions/Note"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({parentId})/Link":{
+            "post":{
+                "operationId": "create_link",
+                "tags": [ "Items" ],
+                "summary": "Create Link",
+                "description": "Creates a new Link.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/parentId"
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "schema":{
+                            "$ref":"#/definitions/CreateLinkRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref":"#/definitions/Link"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items/Link({itemId})":{
+            "patch":{
+                "operationId": "update_link",
+                "tags": [ "Items" ],
+                "summary": "Update Link",
+                "description": "Updates a new Link.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/itemId"
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "schema":{
+                            "$ref":"#/definitions/UpdateLinkRequest"
+                        }
+                    },
+                    {
+                        "$ref":"#/parameters/notify"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref":"#/definitions/Link"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items/Note({itemId})":{
+            "patch":{
+                "operationId": "update_note",
+                "tags": [ "Items" ],
+                "summary": "Update Note",
+                "description": "Updates a new Note.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/itemId"
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "schema":{
+                            "$ref":"#/definitions/UpdateNoteRequest"
+                        }
+                    },
+                    {
+                        "$ref":"#/parameters/notify"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref":"#/definitions/Note"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({parentId})/BulkDelete":{
+            "post":{
+                "operationId": "delete_multiple_items",
+                "tags": [ "Items" ],
+                "summary": "Delete Multiple Items",
+                "description": "All items in bulk delete must be children of the same parent, identified in the URI",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/parentId"
+                    },
+                    {
+                        "$ref":"#/parameters/forceSync"
+                    },
+                    {
+                        "$ref":"#/parameters/deletePermanently"
+                    },
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "schema":{
+                            "type":"array",
+                            "items":{
+                                "type":"string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/Items({parentId})/Thumbnail":{
+            "get":{
+                "operationId": "get_thumbnail",
+                "tags": [ "Items" ],
+                "summary": "Get Thumbnail",
+                "description": "Retrieve a thumbnail link from the specified Item.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/parentId"
+                    },
+                    {
+                        "$ref":"#/parameters/size"
+                    },
+                    {
+                        "$ref":"#/parameters/redirect"
+                    }
+                ],
+                "responses": {
+                    "302": {
+                        "description": "No Content",
+                        "schema":{
+                            "type":"string"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({parentId})/Breadcrumbs":{
+            "get":{
+                "operationId": "get_breadcrumbs",
+                "tags": [ "Items" ],
+                "summary": "Get Breadcrumbs",
+                "description": "Retrieves the path from an item from the root. The return list is a Feed of Items, with the top-level folder at the first position.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/parentId"
+                    },
+                    {
+                        "$ref":"#/parameters/path"
+                    },
+                    {
+                        "$ref":"#/parameters/bubbleSharedPassthroughs"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema":{
+                            "$ref":"#/definitions/Items"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({itemId})/Copy":{
+            "post":{
+                "operationId": "copy_item",
+                "tags": [ "Items" ],
+                "summary": "Copy Item",
+                "description": "Copies an item to a new target Folder. If the target folder is in another zone, the operation will return an AsyncOperation record instead. ",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/itemId"
+                    },
+                    {
+                        "$ref":"#/parameters/targetid"
+                    },
+                    {
+                        "$ref":"#/parameters/overwrite"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema":{
+                            "$ref":"#/definitions/Item"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({itemId})/Search":{
+            "get":{
+                "operationId": "search_in_item",
+                "tags": [ "Items" ],
+                "summary": "Search In Item",
+                "description": "Search for Items matching the criteria of the query parameter.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/itemId"
+                    },
+                    {
+                        "$ref":"#/parameters/query"
+                    },
+                    {
+                        "$ref":"#/parameters/maxResults"
+                    },
+                    {
+                        "$ref":"#/parameters/skip"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema":{
+                            "$ref":"#/definitions/SearchResults"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items/Search":{
+            "get":{
+                "operationId": "search",
+                "tags": [ "Items" ],
+                "summary": "Search",
+                "description": "Search for Items matching the criteria of the query parameter.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/query"
+                    },
+                    {
+                        "$ref":"#/parameters/maxResults"
+                    },
+                    {
+                        "$ref":"#/parameters/skip"
+                    },
+                    {
+                        "$ref":"#/parameters/homeFolderOnly"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema":{
+                            "$ref":"#/definitions/SearchResults"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items/AdvancedSimpleSearch":{
+            "post":{
+                "operationId": "advanced_simple_search",
+                "tags": [ "Items" ],
+                "summary": "Advanced Simple Search",
+                "description": "Search for Items matching the criteria of the query parameter.",
+                "parameters": [
+                    {
+                        "in":"body",
+                        "name":"body",
+                        "schema":{
+                            "$ref":"#/definitions/SimpleSearchQuery"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema":{
+                            "$ref":"#/definitions/AdvancedSearchResults"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items/AdvancedSearch":{
+            "post":{
+                "operationId": "advanced_search",
+                "tags": [ "Items" ],
+                "summary": "Advanced Search",
+                "description": "Search for Items matching the criteria of the query parameter. Paging.PageNumber and Paging.PageSize are deprecated. Default values for Paging.Count is 50 and Paging.Skip is 0.",
+                "parameters": [
+                    {
+                        "in":"body",
+                        "name":"body",
+                        "schema":{
+                            "$ref":"#/definitions/SearchQuery"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema":{
+                            "$ref":"#/definitions/AdvancedSearchResults"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items/BulkRestore":{
+            "post":{
+                "operationId": "restore_expired_items",
+                "tags": [ "Items" ],
+                "summary": "Restore expired items",
+                "description": "Restore expired items to their original locations",
+                "parameters": [
+                    {
+                        "in":"body",
+                        "name":"body",
+                        "schema":{
+                            "type":"array",
+                            "items":{
+                                "type":"string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/Items/BulkDeletePermanently":{
+            "post":{
+                "operationId": "permanently_delete_multiple_items",
+                "tags": [ "Items" ],
+                "summary": "Permanently delete multiple items",
+                "description": "Permanently delete multiple items",
+                "parameters": [
+                    {
+                        "in":"body",
+                        "name":"body",
+                        "schema":{
+                            "type":"array",
+                            "items":{
+                                "type":"string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    }
+                }
+            }
+        },
+        "/Items({itemId})/Upload":{
+            "post":{
+                "operationId": "upload_file",
+                "tags": [ "Items" ],
+                "summary": "Upload File",
+                "description": "Prepares the links for uploading files to the target Folder. This method returns an Upload Specification object. The fields are populated based on the upload method, provider, and canResume parameters passed to the upload call. The Method determines how the URLs must be called.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/itemId"
+                    },
+                    {
+                        "name":"method",
+                        "in":"query",
+                        "type":"string"
+                    },
+                    {
+                        "name":"raw",
+                        "in":"query",
+                        "type":"boolean"
+                    },
+                    {
+                        "name":"fileName",
+                        "in":"query",
+                        "type":"string"
+                    },
+                    {
+                        "name":"fileSize",
+                        "in":"query",
+                        "type":"number"
+                    },
+                    {
+                        "name":"batchId",
+                        "in":"query",
+                        "type":"string"
+                    },
+                    {
+                        "name":"batchLast",
+                        "in":"query",
+                        "type":"boolean"
+                    },
+                    {
+                        "name":"canResume",
+                        "in":"query",
+                        "type":"boolean"
+                    },
+                    {
+                        "name":"startOver",
+                        "in":"query",
+                        "type":"boolean"
+                    },
+                    {
+                        "name":"tool",
+                        "in":"query",
+                        "type":"string"
+                    },
+                    {
+                        "name":"overwrite",
+                        "in":"query",
+                        "type":"boolean"
+                    },
+                    {
+                        "name":"title",
+                        "in":"query",
+                        "type":"string"
+                    },
+                    {
+                        "name":"details",
+                        "in":"query",
+                        "type":"string"
+                    },
+                    {
+                        "name":"isSend",
+                        "in":"query",
+                        "type":"boolean"
+                    },
+                    {
+                        "name":"sendGuid",
+                        "in":"query",
+                        "type":"string"
+                    },
+                    {
+                        "name":"opid",
+                        "in":"query",
+                        "type":"string"
+                    },
+                    {
+                        "name":"threadCount",
+                        "in":"query",
+                        "type":"number"
+                    },
+                    {
+                        "name":"responseFormat",
+                        "in":"query",
+                        "type":"string"   
+                    },
+                    {
+                        "name":"notify",
+                        "in":"query",
+                        "type":"boolean"   
+                    },
+                    {
+                        "name":"clientCreatedDateUTC",
+                        "in":"query",
+                        "type":"string"   
+                    },
+                    {
+                        "name":"clientModifiedDateUTC",
+                        "in":"query",
+                        "type":"string"   
+                    },
+                    {
+                        "name":"expirationDays",
+                        "in":"query",
+                        "type":"number"   
+                    },
+                    {
+                        "name":"baseFileId",
+                        "in":"query",
+                        "type":"string"   
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema":{
+                            "$ref":"#/definitions/UploadFileResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/Items({itemId})/Upload2":{
+            "post":{
+                "operationId": "upload_file2",
+                "tags": [ "Items" ],
+                "summary": "Upload File2",
+                "description": "Prepares the links for uploading files to the target Folder. This method returns an Upload Specification object. The fields are populated based on the upload method, provider, and canResume parameters passed to the upload call. The Method determines how the URLs must be called.",
+                "parameters": [
+                    {
+                        "$ref":"#/parameters/itemId"
+                    },
+                    {
+                        "in":"body",
+                        "name":"body",
+                        "schema":{
+                            "$ref":"#/definitions/UploadFileRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema":{
+                            "$ref":"#/definitions/SearchResults"
+                        }
+                    }
+                }
+            }
+        }
+     },
+     "parameters": {
+        "userId":{
+            "name":"userId",
+            "type":"string",
+            "in":"path",
+            "description":"User Identifier"
+         },
+         "appId":{
+            "name":"appId",
+            "type":"string",
+            "in":"path",
+            "description":"App Identifier",
+            "required":true
+         },
+         "tfaAppId": {
+            "name": "tfaAppId",
+            "type": "string",
+            "in": "path",
+            "description": "app ID",
+            "required": true
+        },
+        "deviceId": {
+            "name": "deviceId",
+            "type": "string",
+            "in": "path",
+            "description": "Device ID",
+            "required": true
+        },
+        "userId_query": {
+            "name": "userId",
+            "type": "string",
+            "in": "query"
+        },
+        "itemId": {
+            "name": "itemId",
+            "type": "string",
+            "in": "path",
+            "description": "Item Identifier",
+            "required": true
+        },
+        "batchid": {
+            "name": "batchid",
+            "type": "string",
+            "in": "query",
+            "description" : "BatchID for Async Operation"
+        },
+        "batchSizeInBytes": {
+            "name": "batchSizeInBytes",
+            "type": "number",
+            "in": "query",
+            "description" : "Async Operation size in byte."
+        },
+        "bubbleSharedPassthroughs": {
+            "name": "bubbleSharedPassthroughs",
+            "type": "boolean",
+            "in": "query",
+            "description" : "Allow bubbling of passthrough folders."
+        },
+        "canCreateRootFolder": {
+            "name": "canCreateRootFolder",
+            "type": "boolean",
+            "in": "query",
+            "description": "Specifies whether users can create root folders"
+        },
+        "deletePermanently": {
+            "name": "deletePermanently",
+            "type": "boolean",
+            "in": "query",
+            "description" : "If true, the items will be removed from the Recycle Bin or bypass it entirely."
+        },
+        "fileBox": {
+            "name": "fileBox",
+            "type": "boolean",
+            "in": "query"
+        },
+        "forceSync": {
+            "name": "forceSync",
+            "type": "boolean",
+            "in": "query",
+            "description" : "Indicates whether operation is to be executed synchronously."
+        },
+        "forQuarantinedFiles": {
+            "name": "forQuarantinedFiles",
+            "type": "boolean",
+            "in": "query",
+            "description" : "For QuarantinedFiles Page in WebApp only, Master Admin can download infected items included ones recently deleted which are on RecycleBinDays."
+        },
+        "itemPath": {
+            "name": "path",
+            "type": "string",
+            "in": "query",
+            "required":false
+        },
+        "includeAllVersions": {
+            "name": "includeAllVersions",
+            "type": "boolean",
+            "in": "query",
+            "description" : "For folder downloads only, includes old versions of files in the folder in the zip when true, current versions only when false (default)."
+        },
+        "includeDeleted": {
+            "name": "includeDeleted",
+            "type": "boolean",
+            "in": "query",
+            "description": "Specifies whether or not a deleted item should be returned."
+        },
+        "homeFolderOnly":{
+            "name":"homeFolderOnly",
+            "in":"query",
+            "type":"boolean"
+        },
+        "maxResults":{
+            "name":"maxResults",
+            "in":"query",
+            "type":"number"
+        },
+        "message": {
+            "name": "message",
+            "type": "string",
+            "in": "query",
+            "required":false
+        },
+        "notify": {
+            "name": "notify",
+            "type": "boolean",
+            "in": "query",
+            "description" : "Indicates whether an email should be sent to users subscribed to Upload Notifications."
+        },
+        "orderingMode": {
+            "name": "orderingMode",
+            "type": "string",
+            "in": "query",
+            "description": "Allows for specifying sort priorities in addition to $orderby, for example, ItemOrderingMode.FoldersFirst. Default is to use FoldersFirst if no $oderby is specified."
+        },
+        "overwrite": {
+            "name": "overwrite",
+            "type": "boolean",
+            "in": "query",
+            "description" : "Indicates whether an object with the same name must be overwritten or not. Default is false. If false, then an existing item with the same name will return an error."
+        },
+        "query":{
+            "name":"query",
+            "in":"query",
+            "type":"string"
+        },
+        "path": {
+            "name": "path",
+            "type": "string",
+            "in": "query",
+            "description" : "Path to the Root."
+        },
+        "passthrough": {
+            "name": "passthrough",
+            "type": "boolean",
+            "in": "query"
+        },
+        "parentId": {
+            "name": "parentId",
+            "type": "string",
+            "in": "path",
+            "description": "Parent Item Identifier",
+            "required": true
+        },
+        "resolveFolderNameConflict": {
+            "name": "resolveFolderNameConflict",
+            "type": "boolean",
+            "in": "query",
+            "description" : "Rename the folder if there is a conflict."
+        },
+        "redirect": {
+            "name": "redirect",
+            "type": "boolean",
+            "in": "query",
+            "description" : "Redirect to download link if set to true (default), or return a DownloadSpecification object if set to false."
+        },
+        "size": {
+            "name": "size",
+            "type": "number",
+            "in": "query",
+            "description" : "Thumbnail size. Only 75px and 600px are supported. Default is 75px."
+        },
+        "singleversion": {
+            "name": "singleversion",
+            "type": "boolean",
+            "in": "query",
+            "description" : "True will delete only the specified version rather than all sibling files with the same filename."
+        },
+        "scheduleAsync": {
+            "name": "scheduleAsync",
+            "type": "boolean",
+            "in": "query",
+            "description" : "Indicates whether operation is to be scheduled for Bot processing."
+        },
+        "skip":{
+            "name":"skip",
+            "type":"number",
+            "in":"query"
+        },
+        "sourceId": {
+            "name": "sourceId",
+            "type": "string",
+            "in": "query",
+            "description": "The source object considered for this operation - for example, in a Copy operation, the sourceId represent the source Item being copied, and the tree renders the target."
+        },
+        "treeMode": {
+            "name": "treeMode",
+            "type": "string",
+            "in": "query",
+            "description": "Specifies the type of operation for the tree. The mode determines the condition to calculate the TreeModeOperationAllowed property of ItemInfo. Allowed values are copy, move, manage"
+        },
+        "targetid": {
+            "name": "targetid",
+            "type": "string",
+            "in": "query",
+            "description": "Target item identifier"
+        }
+     },
+     "definitions": {
+        "FeedofConnectedApp":
+        {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ConnectedApp"
+                    }
+                }
+            }
+        },
+        "ConnectedApp": {
+            "type": "object",
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "AppCode": {
+                    "type": "string"
+                },
+                "LastLoginDate": {
+                    "type": "string"
+                },
+                "UserId": {
+                    "type": "string"
+                },
+                "Active": {
+                    "type": "boolean"
+                },
+                "Id": {
+                    "type": "string"
+                }
+            }
+        },
+        "FeedofTwoFactorAuthApp": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "array",
+            "items": {
+                "$ref": "#/definitions/TwoFactorAuthApp"
+               }
+            }
+          }
+       },
+       "TwoFactorAuthApp": {
+        "type": "object",
+        "properties": {
+            "Name": {
+                "type": "string"
+            },
+            "LastLoginDate": {
+                "type": "string"
+            },
+            "PasscodeType": {
+                "type": "string"
+            },
+            "UserId": {
+                "type": "string"
+            },
+            "Id": {
+                "type": "string"
+            }
+        }
+    },
+    "Capabilities": {
+        "type": "object",
+        "properties": {
+            "value": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "Name": {
+                            "type": "string"
+                        },
+                        "Id": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+     },
+     "DeviceUser": {
+        "type": "object",
+        "properties": {
+            "odata.metadata": {
+                "type": "string"
+            },
+            "odata.count": {
+                "type": "number"
+            },
+            "value": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/definitions/DeviceUserArray"
+                }
+            },
+            "url": {
+                "type": "string"
+            }
+        }
+    },
+    "DeviceUserArray": {
+        "type": "object",
+        "properties": {
+            "User": {
+                "$ref": "#/definitions/DeviceUserObject"
+            },
+            "Device": {
+                "$ref": "#/definitions/DeviceObject"
+            },
+            "IsOwner": {
+                "type": "boolean"
+            },
+            "FriendlyName": {
+                "type": "string"
+            },
+            "Wipe": {
+                "type": "boolean"
+            },
+            "IsLocked": {
+                "type": "boolean"
+            },
+            "IsDeleted": {
+                "type": "boolean"
+            },
+            "Created": {
+                "type": "string"
+            },
+            "LastLogin": {
+                "type": "string"
+            },
+            "LastWipe": {
+                "type": "string"
+            },
+            "WipeToken": {
+                "type": "string"
+            },
+            "WipeInitiator": {
+                "type": "string"
+            },
+            "WipeInitiatorRole": {
+                "type": "string"
+            },
+            "LockInitiator": {
+                "type": "string"
+            },
+            "LockInitiatorRole": {
+                "type": "string"
+            },
+            "DeviceType": {
+                "type": "string"
+            },
+            "LastErrorMessage": {
+                "type": "string"
+            },
+            "odata.metadata": {
+                "type": "string"
+            },
+            "odata.type": {
+                "type": "string"
+            },
+            "url": {
+                "type": "string"
+            }
+        }
+    },
+    "DeviceUserObject": {
+        "type": "object",
+        "properties": {
+            "odata.metadata": {
+                "type": "string"
+            },
+            "odata.type": {
+                "type": "string"
+            },
+            "Id": {
+                "type": "string"
+            },
+            "url": {
+                "type": "string"
+            }
+        }
+    },
+    "DeviceObject": {
+        "type": "object",
+        "properties": {
+            "JustRegistered": {
+                "type": "boolean"
+            },
+            "odata.metadata": {
+                "type": "string"
+            },
+            "odata.type": {
+                "type": "string"
+            },
+            "Id": {
+                "type": "string"
+            },
+            "url": {
+                "type": "string"
+            }
+        }
+    },
+    "DeviceDetails": {
+        "type": "object",
+        "properties": {
+            "Tool": {
+                "type": "string"
+            },
+            "ToolRaw": {
+                "type": "string"
+            },
+            "Created": {
+                "type": "string"
+            },
+            "ToolVersion": {
+                "type": "string"
+            },
+            "JustRegistered": {
+                "type": "boolean"
+            },
+            "odata.metadata": {
+                "type": "string"
+            },
+            "odata.type": {
+                "type": "string"
+            },
+            "Id": {
+                "type": "string"
+            },
+            "url": {
+                "type": "string"
+            }
+        }
+    },
+    "FavoriteFolders": {
+        "type": "object",
+        "properties": {
+            "odata.metadata": {
+                "type": "string"
+            },
+            "odata.count": {
+                "type": "number"
+            },
+            "value": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/definitions/FavoriteFoldersArray"
+                }
+            },
+            "url": {
+                "type": "string"
+            }
+        }
+    },
+    "FavoriteFoldersArray": {
+        "type": "object",
+        "properties": {
+            "SortOrder": {
+                "type": "number"
+            },
+            "FolderAlias": {
+                "type": "string"
+            },
+            "FolderName": {
+                "type": "string"
+            },
+            "Path": {
+                "type": "string"
+            },
+            "FileSize": {
+                "type": "number"
+            },
+            "CreationDate": {
+                "type": "string"
+            },
+            "CreatorFirstName": {
+                "type": "string"
+            },
+            "CreatorLastName": {
+                "type": "string"
+            },
+            "odata.metadata": {
+                "type": "string"
+            },
+            "odata.type": {
+                "type": "string"
+            },
+            "Id": {
+                "type": "string"
+            },
+            "url": {
+                "type": "string"
+            }
+        }
+    },
+    "FavoriteFolderId": {
+        "type": "object",
+        "properties": {
+            "Folder": {
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "string"
+                    }
+                }              
+            }
+        }
+    },
+    "AdvancedSearchResults":{
+        "type":"object",
+        "properties":{
+            "PartialResults":{
+                "type":"boolean"
+            },
+            "Results":{
+                "type":"array",
+                "items":{
+                    "$ref":"#/definitions/SearchResult"
+                }
+            },
+            "TimedOut":{
+                "type":"boolean"
+            }
+        }
+    },
+    "CreateFavoriteFolderIdRequest": {
+        "type": "object",
+        "properties": {
+            "Folder": {
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "string"
+                    }
+                }              
+            },
+            "FolderAlias":{
+                "type":"string"
+            }
+        }
+    },
+    "CreateFolderRequest":{
+        "type":"object",
+        "properties":{
+            "Name":{
+                "type":"string"
+            },
+            "Description":{
+                "type":"string"
+            },
+            "Zone":{
+                "type":"object",
+                "properties":{
+                    "Id":{
+                        "type":"string"
+                    }
+                }
+            },
+            "ExpirationDate":{
+                "type":"string"
+            }
+        }
+    },
+    "Folder":{
+        "type":"object",
+        "properties":{
+            "FileCount":{
+                "type":"number"
+            },
+            "Children":{
+                "type":"array",
+                "items":{
+                    "$ref":"#/definitions/Item"
+                }
+            },
+            "HasRemoteChildren":{
+                "type":"boolean"
+            },
+            "info":{
+                "$ref":"#/definitions/ItemInfo"
+            },
+            "Redirection":{
+                "type":"string"
+            }
+        }
+    },
+    "CreateNoteRequest":{
+        "type":"object",
+        "properties":{
+            "Name":{
+                "type":"string"
+            },
+            "Description":{
+                "type":"string"
+            }
+        }
+    },
+    "CreateLinkRequest":{
+        "type":"object",
+        "properties":{
+            "Name":{
+                "type":"string"
+            },
+            "Description":{
+                "type":"string"
+            },
+            "Uri":{
+                "type":"string"
+            }
+        }
+    },
+    "UpdateNoteRequest":{
+        "type":"object",
+        "properties":{
+            "Name":{
+                "type":"string"
+            },
+            "Description":{
+                "type":"string"
+            },
+            "Parent":{
+                "type":"object",
+                "properties":{
+                    "Id":{
+                        "type":"string"
+                    }
+                }
+            }
+        }
+    },
+    "UpdateLinkRequest":{
+        "type":"object",
+        "properties":{
+            "Name":{
+                "type":"string"
+            },
+            "Description":{
+                "type":"string"
+            },
+            "Uri":{
+                "type":"string"
+            },
+            "Parent":{
+                "type":"object",
+                "properties":{
+                    "Id":{
+                        "type":"string"
+                    }
+                }
+            }
+        }
+    },
+    "Note":{
+        "type":"object",
+        "properties":{
+            "Name":{
+                "type":"string"
+            },
+            "FileName":{
+                "type":"string"
+            },
+            "CreationDate":{
+                "type":"string"
+            },
+            "ProgenyEditDate":{
+                "type":"string"
+            },
+            "LastModifiedByUserID":{
+                "type":"string"
+            },
+            "LastActivityUserNameShort":{
+                "type":"string"
+            },
+            "ExpirationDate":{
+                "type":"string"
+            },
+            "Description":{
+                "type":"string"
+            },
+            "DiskSpaceLimit":{
+                "type":"number"
+            },
+            "IsHidden":{
+                "type":"boolean"
+            },
+            "BandwidthLimitInMB":{
+                "type":"number"
+            },
+            "FileSizeInKB":{
+                "type":"number"
+            },
+            "Path":{
+                "type":"string"
+            },
+            "CreatorFirstName":{
+                "type":"string"
+            },
+            "CreatorLastName":{
+                "type":"string"
+            },
+            "ExpirationDays":{
+                "type":"number"
+            },
+            "FileSizeBytes":{
+                "type":"number"
+            },
+            "HasPendingDeletion":{
+                "type":"boolean"
+            },
+            "AssociatedFolderTemplateID":{
+                "type":"string"
+            },
+            "IsTemplateOwned":{
+                "type":"boolean"
+            },
+            "HasPermissionInfo":{
+                "type":"boolean"
+            },
+            "State":{
+                "type":"number"
+            },
+            "StreamID":{
+                "type":"string"
+            },
+            "CreatorNameShort":{
+                "type":"string"
+            },
+            "HasPendingAsyncOp":{
+                "type":"boolean"
+            },
+            "odata.metadata":{
+                "type":"string"
+            },
+            "odata.type":{
+                "type":"string"
+            },
+            "Id":{
+                "type":"string"
+            },
+            "url":{
+                "type":"string"
+            }
+        }
+    },
+    "Link":{
+        "type":"object",
+        "properties":{
+            "Uri":{
+                "type":"string"
+            },
+            "Name":{
+                "type":"string"
+            },
+            "FileName":{
+                "type":"string"
+            },
+            "CreationDate":{
+                "type":"string"
+            },
+            "ProgenyEditDate":{
+                "type":"string"
+            },
+            "LastModifiedByUserID":{
+                "type":"string"
+            },
+            "LastActivityUserNameShort":{
+                "type":"string"
+            },
+            "ExpirationDate":{
+                "type":"string"
+            },
+            "Description":{
+                "type":"string"
+            },
+            "DiskSpaceLimit":{
+                "type":"number"
+            },
+            "IsHidden":{
+                "type":"boolean"
+            },
+            "BandwidthLimitInMB":{
+                "type":"number"
+            },
+            "FileSizeInKB":{
+                "type":"number"
+            },
+            "Path":{
+                "type":"string"
+            },
+            "CreatorFirstName":{
+                "type":"string"
+            },
+            "CreatorLastName":{
+                "type":"string"
+            },
+            "ExpirationDays":{
+                "type":"number"
+            },
+            "FileSizeBytes":{
+                "type":"number"
+            },
+            "HasPendingDeletion":{
+                "type":"boolean"
+            },
+            "AssociatedFolderTemplateID":{
+                "type":"string"
+            },
+            "IsTemplateOwned":{
+                "type":"boolean"
+            },
+            "HasPermissionInfo":{
+                "type":"boolean"
+            },
+            "State":{
+                "type":"number"
+            },
+            "StreamID":{
+                "type":"string"
+            },
+            "CreatorNameShort":{
+                "type":"string"
+            },
+            "HasPendingAsyncOp":{
+                "type":"boolean"
+            },
+            "odata.metadata":{
+                "type":"string"
+            },
+            "odata.type":{
+                "type":"string"
+            },
+            "Id":{
+                "type":"string"
+            },
+            "url":{
+                "type":"string"
+            }
+        }
+    },
+    "Items":{
+        "type":"object",
+        "properties":{
+            "odata.metadata":{
+                "type":"string"
+            },
+            "odata.count":{
+                "type":"number"
+            },
+            "value":{
+                "type":"array",
+                "items":{
+                    "$ref":"#/definitions/Item"
+                }
+            },
+            "url":{
+                "type":"string"
+            }
+        }
+    },
+    "Item":{
+        "type":"object",
+        "properties":{
+            "FileCount":{
+                "type":"number"
+            },
+            "Info":{
+                "$ref": "#/definitions/ItemInfo"
+            },
+            "Name":{
+                "type":"string"
+            },
+            "FileName":{
+                "type":"string"
+            },
+            "Parent":{
+                "$ref": "#/definitions/ParentMetaData"
+            },
+            "CreationDate":{
+                "type":"string"
+            },
+            "ProgenyEditDate":{
+                "type":"string"
+            },
+            "LastModifiedByUserID":{
+                "type":"string"
+            },
+            "LastActivityUserNameShort":{
+                "type":"string"
+            },
+            "ExpirationDate":{
+                "type":"string"
+            },
+            "Description":{
+                "type":"string"
+            },
+            "DiskSpaceLimit":{
+                "type":"number"
+            },
+            "IsHidden":{
+                "type":"boolean"
+            },
+            "BandwidthLimitInMB":{
+                "type":"number"
+            },
+            "FileSizeInKB":{
+                "type":"number"
+            },
+            "Path":{
+                "type":"string"
+            },
+            "CreatorFirstName":{
+                "type":"string"
+            },
+            "CreatorLastName":{
+                "type":"string"
+            },
+            "ExpirationDays":{
+                "type":"number"
+            },
+            "FileSizeBytes":{
+                "type":"number"
+            },
+            "HasPendingDeletion":{
+                "type":"boolean"
+            },
+            "AssociatedFolderTemplateID":{
+                "type":"string"
+            },
+            "IsTemplateOwned":{
+                "type":"boolean"
+            },
+            "HasPermissionInfo":{
+                "type":"boolean"
+            },
+            "State":{
+                "type":"number"
+            },
+            "StreamID":{
+                "type":"string"
+            },
+            "CreatorNameShort":{
+                "type":"string"
+            },
+            "HasPendingAsyncOp":{
+                "type":"boolean"
+            },
+            "odata.metadata":{
+                "type":"string"
+            },
+            "odata.type":{
+                "type":"string"
+            },
+            "Id":{
+                "type":"string"
+            },
+            "url":{
+                "type":"string"
+            }
+        }
+    },
+    "ItemInfo":{
+        "type":"object",
+        "properties":{
+            "HasVroot":{
+                "type":"boolean"
+            },
+            "IsSystemRoot":{
+                "type":"boolean"
+            },
+            "IsAccountRoot":{
+                "type":"boolean"
+            },
+            "IsVRoot":{
+                "type":"boolean"
+            },
+            "IsMyFolders":{
+                "type":"boolean"
+            },
+            "IsAHomeFolder":{
+                "type":"boolean"
+            },
+            "IsMyHomeFolder":{
+                "type":"boolean"
+            },
+            "IsAStartFolder":{
+                "type":"boolean"
+            },
+            "IsSharedFolder":{
+                "type":"boolean"
+            },
+            "IsPassthrough":{
+                "type":"boolean"
+            },
+            "CanAddFolder":{
+                "type":"boolean"
+            },
+            "CanAddNode":{
+                "type":"boolean"
+            },
+            "CanView":{
+                "type":"boolean"
+            },
+            "CanDownload":{
+                "type":"boolean"
+            },
+            "CanUpload":{
+                "type":"boolean"
+            },
+            "CanSend":{
+                "type":"boolean"
+            },
+            "CanDeleteCurrentItem":{
+                "type":"boolean"
+            },
+            "CanDeleteChildItems":{
+                "type":"boolean"
+            },
+            "CanManagePermissions":{
+                "type":"boolean"
+            },
+            "CanCreateOfficeDocuments":{
+                "type":"boolean"
+            },
+            "FolderPayID":{
+                "type":"string"
+            },
+            "ShowFolderPayBuyButton":{
+                "type":"boolean"
+            },
+            "odata.metadata":{
+                "type":"string"
+            },
+            "odata.type":{
+                "type":"string"
+            },
+            "url":{
+                "type":"string"
+            }
+        }
+    },
+    "Query":{
+        "type":"object",
+        "properties":{
+            "ItemType":{
+                "type":"array",
+                "items":{
+                    "type":"string"
+                }
+            },
+            "ParentID":{
+                "type":"array",
+                "items":{
+                    "type":"string"
+                }
+            },
+            "CreatorID":{
+                "type":"array",
+                "items":{
+                    "type":"string"
+                }
+            },
+            "SearchQuery":{
+                "type":"string"
+            },
+            "CreateStartDate":{
+                "type":"string"
+            },
+            "CreateEndDate":{
+                "type":"string"
+            },
+            "ItemNameOnly":{
+                "type":"boolean"
+            }
+        }
+    },
+    "QueryPaging":{
+        "type":"object",
+        "properties":{
+            "Count":{
+                "type":"number"
+            },
+            "Skip":{
+                "type":"number"
+            }
+        }
+    },
+    "QuerySorting":{
+        "type":"object",
+        "properties":{
+            "SortBy":{
+                "type":"string"
+            },
+            "Ascending":{
+                "type":"boolean"
+            }
+        }
+    },
+    "ParentMetaData":{
+        "type":"object",
+        "properties":{
+            "odata.metadata":{
+                "type":"string"
+            },
+            "odata.type":{
+                "type":"string"
+            },
+            "Id":{
+                "type":"string"
+            },
+            "url":{
+                "type":"string"
+            }
+        }
+    },
+    "Error":{
+        "type":"object",
+        "properties":{
+            "readyState":{
+                "type":"number"
+            },
+            "responseText":{
+                "type":"string"
+            },
+            "responseJSON":{
+                "type":"object",
+                "properties":{
+                    "code":{
+                        "type":"string"
+                    },
+                    "message":{
+                        "type":"object",
+                        "properties":{
+                            "lang":{
+                                "type":"string"
+                            },
+                            "value":{
+                                "type":"string"
+                            }
+                        }
+                    },
+                    "reason":{
+                        "type":"string"
+                    }
+                }
+            },
+            "status":{
+                "type":"number"
+            },
+            "statusText":{
+                "type":"string"
+            }
+        }
+    },
+    "SearchResult":{
+        "type":"object",
+        "properties":{
+            "Rank":{
+                "type":"number"
+            },
+            "Score":{
+                "type":"number"
+            },
+            "ItemID":{
+                "type":"string"
+            },
+            "ParentID":{
+                "type":"string"
+            },
+            "ParentName":{
+                "type":"string"
+            },
+            "ItemType":{
+                "type":"string"
+            },
+            "FileName":{
+                "type":"string"
+            },
+            "DisplayName":{
+                "type":"string"
+            },
+            "Size":{
+                "type":"number"
+            },
+            "CreatorID":{
+                "type":"string"
+            },
+            "CreatorName":{
+                "type":"string"
+            },
+            "CreatorFirstName":{
+                "type":"string"
+            },
+            "CreatorLastName":{
+                "type":"string"
+            },
+            "CreationDate":{
+                "type":"string"
+            },
+            "Details":{
+                "type":"string"
+            },
+            "MD5":{
+                "type":"string"
+            },
+            "PreviewStatus":{
+                "type":"number"
+            },
+            "VirusStatus":{
+                "type":"number"
+            },
+            "Url":{
+                "type":"string"
+            },
+            "CanDownload":{
+                "type":"boolean"
+            },
+            "CanView":{
+                "type":"boolean"
+            },
+            "ParentSemanticPath":{
+                "type":"string"
+            },
+            "Path":{
+                "type":"string"
+            },
+            "StreamID":{
+                "type":"string"
+            },
+            "AccountID":{
+                "type":"string"
+            }
+        }
+    },
+    "SearchResults":{
+        "type":"object",
+        "properties":{
+            "PartialResults":{
+                "type":"boolean"
+            },
+            "Results":{
+                "type":"array",
+                "items":{
+                    "$ref":"#/definitions/SearchResult"
+                }
+            },
+            "TimedOut":{
+                "type":"boolean"
+            }
+        }
+    },
+    "SimpleQuery":{
+        "type":"object",
+        "properties":{
+            "ItemType":{
+                "type":"string"
+            },
+            "ParentID":{
+                "type":"string"
+            },
+            "CreatorID":{
+                "type":"string"
+            },
+            "SearchQuery":{
+                "type":"string"
+            },
+            "CreateStartDate":{
+                "type":"string"
+            },
+            "CreateEndDate":{
+                "type":"string"
+            },
+            "ItemNameOnly":{
+                "type":"boolean"
+            }
+        }
+    },
+    "SimpleSearchQuery":{
+        "type":"object",
+        "properties":{
+            "Query":{
+                "$ref":"#/definitions/SimpleQuery"
+            },
+            "Paging":{
+                "$ref":"#/definitions/QueryPaging"
+            },
+            "Sort":{
+                "$ref":"#/definitions/QuerySorting"
+            },
+            "TimeoutInSeconds":{
+                "type":"number"
+            }
+        }
+    },
+    "SearchQuery":{
+        "type":"object",
+        "properties":{
+            "Query":{
+                "$ref":"#/definitions/Query"
+            },
+            "Paging":{
+                "$ref":"#/definitions/QueryPaging"
+            },
+            "Sort":{
+                "$ref":"#/definitions/QuerySorting"
+            },
+            "TimeoutInSeconds":{
+                "type":"number"
+            }
+        }
+    },
+    "UploadFileRequest":{
+        "type":"object",
+        "properties":{
+            "Method":{
+                "type":"string"
+            },
+            "Raw":{
+                "type":"boolean"
+            },
+            "FileName":{
+                "type":"string"
+            },
+            "FileSize":{
+                "type":"number"
+            },
+            "BatchId":{
+                "type":"string"
+            },
+            "BatchLast":{
+                "type":"boolean"
+            },
+            "CanResume":{
+                "type":"boolean"
+            },
+            "StartOver":{
+                "type":"boolean"
+            },
+            "Tool":{
+                "type":"string"
+            },
+            "Overwrite":{
+                "type":"boolean"
+            },
+            "Title":{
+                "type":"string"
+            },
+            "Details":{
+                "type":"string"
+            },
+            "IsSend":{
+                "type":"boolean"
+            },
+            "SendGuid":{
+                "type":"string"
+            },
+            "Opid":{
+                "type":"string"
+            },
+            "ThreadCount":{
+                "type":"number"
+            },
+            "ResponseFormat":{
+                "type":"string"
+            },
+            "Notify":{
+                "type":"boolean"
+            },
+            "ClientCreatedDateUTC":{
+                "type":"string"
+            },
+            "ClientModifiedDateUTC":{
+                "type":"string"
+            },
+            "ExpirationDays":{
+                "type":"number"
+            },
+            "BaseFileId":{
+                "type":"string"
+            }
+        }
+    },
+    "UploadFileResult":{
+        "type":"object",
+        "properties":{
+            "Method":{
+                "type":"string"
+            },
+            "ChunkUri":{
+                "type":"string"
+            },
+            "IsResume":{
+                "type":"boolean"
+            },
+            "ResumeIndex":{
+                "type":"number"
+            },
+            "ResumeOffset":{
+                "type":"number"
+            },
+            "ResumeFileHash":{
+                "type":"string"
+            },
+            "MaxNumberOfThreads":{
+                "type":"number"
+            },
+            "odata.metadata":{
+                "type":"string"
+            },
+            "odata.type":{
+                "type":"string"
+            }
+        }
+    }
+  }    
+}

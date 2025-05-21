@@ -1,0 +1,1329 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "NetSuite REST Record API",
+    "description": "NetSuite REST Record API generated 2024-05-24 at 12:35:14 UTC for account TSTDRV1303059, user joe.klug@peregrineconnect.com with role Neuron ESB Integration.",
+    "termsOfService": "http://www.netsuite.com/portal/resource/terms-of-service.shtml",
+    "contact": {
+      "name": "Oracle NetSuite",
+      "url": "http://www.netsuite.com",
+      "email": "info@netsuite.com"
+    },
+    "version": "v1",
+    "x-framework": {
+      "name": "oracle-netsuite-suitetalk-rest"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://tstdrv1303059.suitetalk.api.netsuite.com/services/rest/record/v1"
+    }
+  ],
+  "paths": {
+    "/supportCase": {
+      "get": {
+        "tags": [
+          "SupportCase"
+        ],
+        "summary": "Get list of records.",
+        "operationId": "supportCaseGET",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "The search query that is used to filter results.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The limit used to specify the number of results on a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1000
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The offset used for selecting a specific page of results.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of records.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=collection": {
+                "schema": {
+                  "$ref": "#/components/schemas/supportCaseCollection"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "SupportCase"
+        ],
+        "summary": "Insert record.",
+        "operationId": "supportCasePOST",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/supportCase"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Inserted record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/supportCase/{id}": {
+      "get": {
+        "tags": [
+          "SupportCase"
+        ],
+        "summary": "Get record.",
+        "operationId": "supportCaseGET2",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "expandSubResources",
+            "in": "query",
+            "description": "Set to 'true' to automatically expand all sublists, sublist lines, and subrecords on this record.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "simpleEnumFormat",
+            "in": "query",
+            "description": "Set to true to return enumeration values in a format that only shows the internal ID value.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "The names of the fields and sublists on the record. Only the selected fields and sublists will be returned in the response.",
+            "examples": {
+              "multiple fields": {
+                "value": "field1,field2"
+              },
+              "single field": {
+                "value": "field"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved record.",
+            "headers": {
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/vnd.oracle.resource+json; type=singular": {
+                "schema": {
+                  "$ref": "#/components/schemas/supportCase"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "SupportCase"
+        ],
+        "summary": "Insert or update record.",
+        "operationId": "supportCasePUT",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "External identifier.",
+            "schema": {
+              "type": "string",
+              "pattern": "eid:(.+)"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replaceSelectedFields",
+            "in": "query",
+            "description": "If set to 'true', all fields that should be deleted in the update request, including body fields, must be included in the 'replace' query parameter.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/supportCase"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Upserted record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "SupportCase"
+        ],
+        "summary": "Remove record.",
+        "operationId": "supportCaseDELETE",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Removed record."
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "SupportCase"
+        ],
+        "summary": "Update record.",
+        "operationId": "supportCasePATCH",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replaceSelectedFields",
+            "in": "query",
+            "description": "If set to 'true', all fields that should be deleted in the update request, including body fields, must be included in the 'replace' query parameter.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/supportCase"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Updated record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "nsResourceCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/nsResource"
+            }
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          }
+        }
+      },
+      "nsResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Internal identifier",
+            "type": "string"
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "externalId": {
+            "title": "External identifier",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          }
+        }
+      },
+      "nsError": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "type": "string",
+            "readOnly": true,
+            "description": "A URI reference to the documentation about the problem type.",
+            "format": "URI"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string",
+            "readOnly": true,
+            "description": "A human-readable description of the problem type."
+          },
+          "status": {
+            "title": "Status",
+            "type": "integer",
+            "readOnly": true,
+            "description": "The HTTP status code generated by the server the request originates from.",
+            "format": "int32"
+          },
+          "o:errorDetails": {
+            "type": "array",
+            "readOnly": true,
+            "description": "An array containing one or more problem types.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "detail": {
+                  "title": "Detail",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "A detailed, human-readable description of the problem occurrence."
+                },
+                "o:errorPath": {
+                  "title": "Error Path",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The JSON path that indicates where the problem occurs within the request body.",
+                  "format": "JSONPath"
+                },
+                "o:errorUrl": {
+                  "title": "Error URL",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The URI of the first element in the request URL where the problem occurs.",
+                  "format": "URI"
+                },
+                "o:errorHeader": {
+                  "title": "Error Header",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The name of the HTTP header where the problem occurs."
+                },
+                "o:errorQueryParam": {
+                  "title": "Error Query Parameter",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The name of the query parameter where the problem occurs."
+                },
+                "o:errorCode": {
+                  "title": "Error Code",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The application-specific error code. Similar problem types are grouped together."
+                }
+              }
+            }
+          }
+        }
+      },
+      "nsLink": {
+        "type": "object",
+        "properties": {
+          "rel": {
+            "title": "Relationship",
+            "type": "string",
+            "readOnly": true
+          },
+          "href": {
+            "title": "Hypertext Reference",
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
+      "supportCase-escalateHistCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/supportCase-escalateHistElement"
+            }
+          }
+        }
+      },
+      "supportCase-escalateHistElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "dateTime": {
+            "title": "Date/Time",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "toEntity": {
+            "title": "Action",
+            "type": "string",
+            "nullable": true
+          },
+          "fromEntity": {
+            "title": "From",
+            "type": "string",
+            "nullable": true
+          },
+          "message": {
+            "title": "Message",
+            "type": "string",
+            "nullable": true
+          },
+          "territory": {
+            "title": "Escalation Assignment",
+            "type": "string",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "supportCaseCollection": {
+        "type": "object",
+        "properties": {
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "title": "Items",
+            "type": "array",
+            "description": "An array field that represents a collection of elements, for example, sublist lines, multiselect items, or search results.",
+            "items": {
+              "$ref": "#/components/schemas/supportCase"
+            }
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          }
+        }
+      },
+      "supportCase": {
+        "type": "object",
+        "properties": {
+          "messageNew": {
+            "title": "New Message",
+            "type": "boolean",
+            "description": "Check this box to add a new message from the customer. This might be needed if the customer calls in and his or her question needs to be documented. When you check this box, Message field clears so that you can enter the new message. If the box isn&apos;t checked, the customer&apos;s most recent message shows in the Message field. All previous messages from and to the customer are listed on the Message subtab."
+          },
+          "messageSave": {
+            "title": "Messages",
+            "type": "string",
+            "nullable": true
+          },
+          "externalId": {
+            "title": "External ID",
+            "type": "string",
+            "description": "Returns the case&apos;s external ID, if one is assigned.",
+            "nullable": true
+          },
+          "timeToAssign": {
+            "title": "Time To Assign",
+            "type": "string",
+            "description": "The time between when the case was created and when it was assigned",
+            "nullable": true
+          },
+          "emailForm": {
+            "title": "Email reply",
+            "type": "boolean",
+            "description": "Check this box to email your reply to the customer&apos;s email as entered in the Email field above. When editing a case, you can also send email to customers or employees using the Email button on the Messages subtab."
+          },
+          "startTime": {
+            "title": "Incident Time",
+            "type": "string",
+            "description": "Enter or accept the time that this case is being reported. This time shows under the date on the Cases list. The time also shows on the Cases subtab of completed company, customer, and solution records.",
+            "pattern": "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$",
+            "nullable": true
+          },
+          "startDate": {
+            "title": "Incident Date",
+            "type": "string",
+            "description": "Enter, accept or click the calendar to pick the date this case is being reported. This date shows on the Cases list, and the list can be filtered by date. The date also shows on the Case subtab of completed company, customer and solution records.",
+            "format": "date",
+            "nullable": true
+          },
+          "outgoingMessage": {
+            "title": "Reply",
+            "type": "string",
+            "description": "Use this field to enter a reply to the message. This can be an answer, solution or request for more information based on the information in the Message field. Check the Send Email box to email this reply to the email address saved on this case record. Check the Internal Only box to email this reply only to those selected in the Email Employees field.",
+            "nullable": true
+          },
+          "id": {
+            "title": "Internal ID",
+            "type": "string",
+            "description": "Returns the case&apos;s internal ID.",
+            "nullable": true
+          },
+          "timeOnHold": {
+            "title": "Time On Hold",
+            "type": "string",
+            "description": "Total number of hours the case has been on hold since case creation.",
+            "nullable": true
+          },
+          "firstUpdated": {
+            "title": "First updated",
+            "type": "string",
+            "description": "The date and time when the case was first worked on (first edit).",
+            "format": "date-time",
+            "nullable": true
+          },
+          "internalOnly": {
+            "title": "Internal Only",
+            "type": "boolean",
+            "description": "Check this box if you do not want your reply to be seen by customers. Only people in your company who view this case record can see your internal message. When editing a case, you can also send email to customers or employees using the Email button on the Messages subtab."
+          },
+          "lastCustomerMessageReceived": {
+            "title": "Last Customer Message Received",
+            "type": "string",
+            "description": "The date and time of the last message received from the customer.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "useEmployeeTemplate": {
+            "title": "Use Employee Template",
+            "type": "boolean",
+            "description": "Check this box if you want to use the employee template selected at Setup &gt; Support &gt; Preferences &gt; Support Preferences &gt; Notification in the Copy Employee Template field for the email sent to employees to notify them of changes to this case. Keep this box clear if you want to use the customer template for the email sent to employees. Note: Email is only sent if the Send to Customer box is also checked."
+          },
+          "initialResponseTime": {
+            "title": "Initial Response Time",
+            "type": "string",
+            "description": "The duration between the time the case was created and the first response to the customer.",
+            "nullable": true
+          },
+          "dateCreated": {
+            "title": "Creation Date/Time",
+            "type": "string",
+            "description": "The date and time when the case was created.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timeOpen": {
+            "title": "Time Open",
+            "type": "string",
+            "description": "Total number of hours the case has not been on hold or closed (includes standard statuses and customizations of Not Started, In progress, Escalated, Reopened.)",
+            "nullable": true
+          },
+          "version": {
+            "title": "Version",
+            "type": "string",
+            "nullable": true
+          },
+          "helpDesk": {
+            "title": "Help Desk",
+            "type": "boolean",
+            "description": "Check this box if this case is internal and is being submitted by or for an employee. Help desk cases are not included in Customer Service reports."
+          },
+          "lastMessageDate": {
+            "title": "Last Message Date",
+            "type": "string",
+            "description": "The date and time of the last message received or sent relating to the case.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "supportFirstReply": {
+            "title": "Support First Reply",
+            "type": "string",
+            "description": "The date and time of when the first reply message was sent to the customer.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endDate": {
+            "title": "Date Closed",
+            "type": "string",
+            "description": "The date and time when the case was closed.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "phone": {
+            "title": "Phone",
+            "type": "string",
+            "description": "Enter the contact&apos;s phone number for this case. This phone number can be used by support or IT to follow up on a case.",
+            "nullable": true
+          },
+          "lastReopenedDate": {
+            "title": "Date Last Reopened",
+            "type": "string",
+            "description": "The date and time when the case was last changed from Closed to Re-opened.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isInactive": {
+            "title": "Inactive",
+            "type": "boolean",
+            "description": "Check this box if you want to remove this case from the cases list. To view inactive cases, you can check the Show Inactives box at the bottom of the list."
+          },
+          "custevent6": {
+            "title": "Subsidiary",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "htmlMessage": {
+            "title": "HTML Format",
+            "type": "boolean"
+          },
+          "custevent5": {
+            "title": "1 month",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "createdDate": {
+            "title": "Creation Date/Time",
+            "type": "string",
+            "description": "The date and time that this case record was first created shows in this field.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "incomingMessage": {
+            "title": "Message",
+            "type": "string",
+            "description": "If this case was submitted by a customer, the customer&apos;s most recent message appears here. If you are creating this case, enter the problem or question here. If you change the customer or company who submitted this case, the last message remains, even if it is from the previous company. To view all past messages, click View History on the Messages subtab.",
+            "nullable": true
+          },
+          "quickNote": {
+            "title": "Quick Note",
+            "type": "string",
+            "description": "You can enter information in this field that you want to keep separate from the case details. This note can only be seen by others in your company with access to this case. You can add this field to your cases list view and enter information on the list page using the Inline Editing feature.",
+            "nullable": true
+          },
+          "title": {
+            "title": "Subject",
+            "type": "string",
+            "description": "Enter the subject of this case. You can enter up to 256 characters in this field. The subject shows in the second column of the Cases list, and it is a useful way to determine what the case is about. On saved records for individuals or companies who submit cases, the subject appears in the Title column of the Cases subtab. If you use the Knowledge Base feature, the subject also appears on the Cases subtab of completed solution records.",
+            "nullable": true
+          },
+          "transactionId": {
+            "title": "Transaction ID",
+            "type": "string",
+            "nullable": true
+          },
+          "escalationMessage": {
+            "title": "Escalation Message",
+            "type": "string",
+            "description": "Enter a message that will be e-mailed to the person you are escalating this case to. The customer does not receive a copy of this e-mail message. The message is not stored in the case record.",
+            "nullable": true
+          },
+          "caseNumber": {
+            "title": "ID",
+            "type": "string",
+            "description": "If you use auto-generated numbering, this number is automatically assigned to give the case a unique identifier. You can use this case number to quickly access this case using the case search or the Global Search field.",
+            "nullable": true
+          },
+          "timeItem": {
+            "title": "Time Tracking",
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "title": "Emails",
+            "type": "string",
+            "description": "Enter the individual or company contact&apos;s email address. You can enter multiple email addresses separated by commas or semicolons. If you check the Email reply box, your response is emailed to these addresses.",
+            "nullable": true
+          },
+          "eventNumber": {
+            "title": "Number",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "lastModifiedDate": {
+            "title": "Last Modified Date/Time",
+            "type": "string",
+            "description": "The date and time when the case was last worked on. This field updates automatically when a message is received from a contact and when a message is submitted to a contact.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timeElapsed": {
+            "title": "Time Elapsed",
+            "type": "string",
+            "description": "Total number of hours the case has been actively running, excluding time spent on hold.",
+            "nullable": true
+          },
+          "inboundEmail": {
+            "title": "Inbound Email Address",
+            "type": "string",
+            "description": "If this case was submitted by email, this field displays the email address to which the case was sent to submit the case. For example, if you use two support email addresses, support@yourcompany.com and help@yourcompany.com, this field shows which address was used. The email address the customer sent the message from displays in the Email field.",
+            "nullable": true
+          },
+          "spamLock": {
+            "title": "Spam Lock",
+            "type": "string",
+            "nullable": true
+          },
+          "timeToClose": {
+            "title": "Time To Close",
+            "type": "string",
+            "description": "The difference between Date Created and Date Closed.",
+            "nullable": true
+          },
+          "origCaseNumber": {
+            "title": "Case Number (Original)",
+            "type": "string",
+            "nullable": true
+          },
+          "stage": {
+            "title": "Stage",
+            "type": "string",
+            "nullable": true
+          },
+          "customForm": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "-100",
+                  "-102",
+                  "17",
+                  "62",
+                  "20"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "emailEmployees": {
+            "title": "Copy Employees",
+            "type": "string",
+            "description": "Select other employees whom you would like to send information on this case to. Press and hold CTRL to select more than one name. An email notification with the case&apos;s details is sent to these employees when you save this record. Check the Email Reply box to send case messages to both the customer and the employees selected here.",
+            "nullable": true
+          },
+          "autoName": {
+            "title": "Auto",
+            "type": "boolean",
+            "description": "This field is available only if you are allowed to override automatically generated numbers for cases. Clear this box to make the Number field editable rather than auto-generated."
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "escalateHist": {
+            "$ref": "#/components/schemas/supportCase-escalateHistCollection"
+          },
+          "category": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "issues": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "profile": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "serialNumber": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "issue": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "assigned": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "mediaItem": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "item": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/nsResource"
+              }
+            ]
+          },
+          "origin": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "subsidiary": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "escalateTo": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/nsResourceCollection"
+              }
+            ]
+          },
+          "priority": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "company": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/nsResource"
+              }
+            ]
+          },
+          "contact": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "status": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custevent1": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custevent3": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custevent4": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      }
+    },
+    "securitySchemes": {
+      "OAuth_1.0_authorization": {
+        "type": "apiKey",
+        "description": "OAuth 1.0 - https://tools.ietf.org/html/rfc5849",
+        "name": "authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "OAuth_1.0_authorization": []
+    }
+  ]
+}

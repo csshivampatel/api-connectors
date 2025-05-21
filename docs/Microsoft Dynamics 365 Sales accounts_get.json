@@ -1,0 +1,1698 @@
+﻿{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Service for namespace Microsoft.Dynamics.CRM",
+    "description": "This service is located at [http://localhost/service-root/](http://localhost/service-root/)",
+    "version": ""
+  },
+  "servers": [
+    {
+      "url": "http://localhost/service-root"
+    }
+  ],
+  "paths": {
+    "get": {
+      "get": {
+        "tags": [
+          "accounts"
+        ],
+        "summary": "Get entities from accounts",
+        "operationId": "get",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/top/schema"
+          },
+          {
+            "$ref": "#/components/parameters/skip/schema"
+          },
+          {
+            "$ref": "#/components/parameters/search/schema"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/count/schema"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "overriddencreatedon",
+                  "overriddencreatedon desc",
+                  "territorycode",
+                  "territorycode desc",
+                  "accountid",
+                  "accountid desc",
+                  "address1_telephone1",
+                  "address1_telephone1 desc",
+                  "address1_postofficebox",
+                  "address1_postofficebox desc",
+                  "openrevenue",
+                  "openrevenue desc",
+                  "_modifiedbyexternalparty_value",
+                  "_modifiedbyexternalparty_value desc",
+                  "teamsfollowed",
+                  "teamsfollowed desc",
+                  "marketcap",
+                  "marketcap desc",
+                  "address1_line2",
+                  "address1_line2 desc",
+                  "emailaddress3",
+                  "emailaddress3 desc",
+                  "address1_telephone3",
+                  "address1_telephone3 desc",
+                  "address2_county",
+                  "address2_county desc",
+                  "createdon",
+                  "createdon desc",
+                  "numberofemployees",
+                  "numberofemployees desc",
+                  "address2_telephone3",
+                  "address2_telephone3 desc",
+                  "yominame",
+                  "yominame desc",
+                  "msdyn_gdproptout",
+                  "msdyn_gdproptout desc",
+                  "opendeals_state",
+                  "opendeals_state desc",
+                  "timezoneruleversionnumber",
+                  "timezoneruleversionnumber desc",
+                  "address2_fax",
+                  "address2_fax desc",
+                  "address2_longitude",
+                  "address2_longitude desc",
+                  "ownershipcode",
+                  "ownershipcode desc",
+                  "primarysatoriid",
+                  "primarysatoriid desc",
+                  "_masterid_value",
+                  "_masterid_value desc",
+                  "address1_telephone2",
+                  "address1_telephone2 desc",
+                  "address2_latitude",
+                  "address2_latitude desc",
+                  "_msa_managingpartnerid_value",
+                  "_msa_managingpartnerid_value desc",
+                  "address2_telephone2",
+                  "address2_telephone2 desc",
+                  "aging60_base",
+                  "aging60_base desc",
+                  "telephone1",
+                  "telephone1 desc",
+                  "aging90",
+                  "aging90 desc",
+                  "msdyn_primarytimezone",
+                  "msdyn_primarytimezone desc",
+                  "address1_postalcode",
+                  "address1_postalcode desc",
+                  "emailaddress1",
+                  "emailaddress1 desc",
+                  "timespentbymeonemailandmeetings",
+                  "timespentbymeonemailandmeetings desc",
+                  "tickersymbol",
+                  "tickersymbol desc",
+                  "customertypecode",
+                  "customertypecode desc",
+                  "address2_shippingmethodcode",
+                  "address2_shippingmethodcode desc",
+                  "opendeals",
+                  "opendeals desc",
+                  "address2_telephone1",
+                  "address2_telephone1 desc",
+                  "address2_name",
+                  "address2_name desc",
+                  "statecode",
+                  "statecode desc",
+                  "address1_stateorprovince",
+                  "address1_stateorprovince desc",
+                  "address1_line3",
+                  "address1_line3 desc",
+                  "industrycode",
+                  "industrycode desc",
+                  "aging30_base",
+                  "aging30_base desc",
+                  "lastonholdtime",
+                  "lastonholdtime desc",
+                  "accountratingcode",
+                  "accountratingcode desc",
+                  "_owningbusinessunit_value",
+                  "_owningbusinessunit_value desc",
+                  "importsequencenumber",
+                  "importsequencenumber desc",
+                  "paymenttermscode",
+                  "paymenttermscode desc",
+                  "donotfax",
+                  "donotfax desc",
+                  "openrevenue_base",
+                  "openrevenue_base desc",
+                  "businesstypecode",
+                  "businesstypecode desc",
+                  "address2_line3",
+                  "address2_line3 desc",
+                  "address2_utcoffset",
+                  "address2_utcoffset desc",
+                  "donotphone",
+                  "donotphone desc",
+                  "onholdtime",
+                  "onholdtime desc",
+                  "_ownerid_value",
+                  "_ownerid_value desc",
+                  "_modifiedonbehalfby_value",
+                  "_modifiedonbehalfby_value desc",
+                  "entityimage",
+                  "entityimage desc",
+                  "ftpsiteurl",
+                  "ftpsiteurl desc",
+                  "shippingmethodcode",
+                  "shippingmethodcode desc",
+                  "stockexchange",
+                  "stockexchange desc",
+                  "revenue",
+                  "revenue desc",
+                  "address2_line1",
+                  "address2_line1 desc",
+                  "adx_createdbyusername",
+                  "adx_createdbyusername desc",
+                  "_owningteam_value",
+                  "_owningteam_value desc",
+                  "aging60",
+                  "aging60 desc",
+                  "participatesinworkflow",
+                  "participatesinworkflow desc",
+                  "_defaultpricelevelid_value",
+                  "_defaultpricelevelid_value desc",
+                  "address2_addressid",
+                  "address2_addressid desc",
+                  "donotpostalmail",
+                  "donotpostalmail desc",
+                  "_slaid_value",
+                  "_slaid_value desc",
+                  "address2_addresstypecode",
+                  "address2_addresstypecode desc",
+                  "_transactioncurrencyid_value",
+                  "_transactioncurrencyid_value desc",
+                  "donotbulkemail",
+                  "donotbulkemail desc",
+                  "merged",
+                  "merged desc",
+                  "aging30",
+                  "aging30 desc",
+                  "entityimage_url",
+                  "entityimage_url desc",
+                  "sharesoutstanding",
+                  "sharesoutstanding desc",
+                  "accountcategorycode",
+                  "accountcategorycode desc",
+                  "_owninguser_value",
+                  "_owninguser_value desc",
+                  "stageid",
+                  "stageid desc",
+                  "versionnumber",
+                  "versionnumber desc",
+                  "preferredappointmenttimecode",
+                  "preferredappointmenttimecode desc",
+                  "donotsendmm",
+                  "donotsendmm desc",
+                  "aging90_base",
+                  "aging90_base desc",
+                  "fax",
+                  "fax desc",
+                  "adx_modifiedbyipaddress",
+                  "adx_modifiedbyipaddress desc",
+                  "address1_fax",
+                  "address1_fax desc",
+                  "_originatingleadid_value",
+                  "_originatingleadid_value desc",
+                  "exchangerate",
+                  "exchangerate desc",
+                  "address1_city",
+                  "address1_city desc",
+                  "description",
+                  "description desc",
+                  "address2_stateorprovince",
+                  "address2_stateorprovince desc",
+                  "_preferredserviceid_value",
+                  "_preferredserviceid_value desc",
+                  "opendeals_date",
+                  "opendeals_date desc",
+                  "address1_country",
+                  "address1_country desc",
+                  "donotemail",
+                  "donotemail desc",
+                  "openrevenue_state",
+                  "openrevenue_state desc",
+                  "address1_composite",
+                  "address1_composite desc",
+                  "_slainvokedid_value",
+                  "_slainvokedid_value desc",
+                  "address1_primarycontactname",
+                  "address1_primarycontactname desc",
+                  "creditlimit_base",
+                  "creditlimit_base desc",
+                  "marketingonly",
+                  "marketingonly desc",
+                  "statuscode",
+                  "statuscode desc",
+                  "traversedpath",
+                  "traversedpath desc",
+                  "processid",
+                  "processid desc",
+                  "_createdonbehalfby_value",
+                  "_createdonbehalfby_value desc",
+                  "address2_postalcode",
+                  "address2_postalcode desc",
+                  "_modifiedby_value",
+                  "_modifiedby_value desc",
+                  "address1_shippingmethodcode",
+                  "address1_shippingmethodcode desc",
+                  "_createdby_value",
+                  "_createdby_value desc",
+                  "entityimage_timestamp",
+                  "entityimage_timestamp desc",
+                  "address1_name",
+                  "address1_name desc",
+                  "address2_primarycontactname",
+                  "address2_primarycontactname desc",
+                  "primarytwitterid",
+                  "primarytwitterid desc",
+                  "adx_modifiedbyusername",
+                  "adx_modifiedbyusername desc",
+                  "name",
+                  "name desc",
+                  "address2_postofficebox",
+                  "address2_postofficebox desc",
+                  "address1_latitude",
+                  "address1_latitude desc",
+                  "address2_city",
+                  "address2_city desc",
+                  "_primarycontactid_value",
+                  "_primarycontactid_value desc",
+                  "address1_freighttermscode",
+                  "address1_freighttermscode desc",
+                  "address1_longitude",
+                  "address1_longitude desc",
+                  "customersizecode",
+                  "customersizecode desc",
+                  "telephone2",
+                  "telephone2 desc",
+                  "address1_addresstypecode",
+                  "address1_addresstypecode desc",
+                  "donotbulkpostalmail",
+                  "donotbulkpostalmail desc",
+                  "lastusedincampaign",
+                  "lastusedincampaign desc",
+                  "_preferredsystemuserid_value",
+                  "_preferredsystemuserid_value desc",
+                  "telephone3",
+                  "telephone3 desc",
+                  "address1_addressid",
+                  "address1_addressid desc",
+                  "preferredappointmentdaycode",
+                  "preferredappointmentdaycode desc",
+                  "websiteurl",
+                  "websiteurl desc",
+                  "accountclassificationcode",
+                  "accountclassificationcode desc",
+                  "address2_composite",
+                  "address2_composite desc",
+                  "utcconversiontimezonecode",
+                  "utcconversiontimezonecode desc",
+                  "_createdbyexternalparty_value",
+                  "_createdbyexternalparty_value desc",
+                  "sic",
+                  "sic desc",
+                  "_preferredequipmentid_value",
+                  "_preferredequipmentid_value desc",
+                  "creditlimit",
+                  "creditlimit desc",
+                  "address2_line2",
+                  "address2_line2 desc",
+                  "address1_line1",
+                  "address1_line1 desc",
+                  "creditonhold",
+                  "creditonhold desc",
+                  "entityimageid",
+                  "entityimageid desc",
+                  "accountnumber",
+                  "accountnumber desc",
+                  "openrevenue_date",
+                  "openrevenue_date desc",
+                  "_territoryid_value",
+                  "_territoryid_value desc",
+                  "followemail",
+                  "followemail desc",
+                  "address1_upszone",
+                  "address1_upszone desc",
+                  "modifiedon",
+                  "modifiedon desc",
+                  "address1_county",
+                  "address1_county desc",
+                  "_msdyn_salesaccelerationinsightid_value",
+                  "_msdyn_salesaccelerationinsightid_value desc",
+                  "_msdyn_accountkpiid_value",
+                  "_msdyn_accountkpiid_value desc",
+                  "marketcap_base",
+                  "marketcap_base desc",
+                  "address2_upszone",
+                  "address2_upszone desc",
+                  "address2_country",
+                  "address2_country desc",
+                  "address2_freighttermscode",
+                  "address2_freighttermscode desc",
+                  "address1_utcoffset",
+                  "address1_utcoffset desc",
+                  "emailaddress2",
+                  "emailaddress2 desc",
+                  "_parentaccountid_value",
+                  "_parentaccountid_value desc",
+                  "preferredcontactmethodcode",
+                  "preferredcontactmethodcode desc",
+                  "revenue_base",
+                  "revenue_base desc",
+                  "adx_createdbyipaddress",
+                  "adx_createdbyipaddress desc"
+                ]
+              }
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "schema": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "overriddencreatedon",
+                  "territorycode",
+                  "accountid",
+                  "address1_telephone1",
+                  "address1_postofficebox",
+                  "openrevenue",
+                  "_modifiedbyexternalparty_value",
+                  "teamsfollowed",
+                  "marketcap",
+                  "address1_line2",
+                  "emailaddress3",
+                  "address1_telephone3",
+                  "address2_county",
+                  "createdon",
+                  "numberofemployees",
+                  "address2_telephone3",
+                  "yominame",
+                  "msdyn_gdproptout",
+                  "opendeals_state",
+                  "timezoneruleversionnumber",
+                  "address2_fax",
+                  "address2_longitude",
+                  "ownershipcode",
+                  "primarysatoriid",
+                  "_masterid_value",
+                  "address1_telephone2",
+                  "address2_latitude",
+                  "_msa_managingpartnerid_value",
+                  "address2_telephone2",
+                  "aging60_base",
+                  "telephone1",
+                  "aging90",
+                  "msdyn_primarytimezone",
+                  "address1_postalcode",
+                  "emailaddress1",
+                  "timespentbymeonemailandmeetings",
+                  "tickersymbol",
+                  "customertypecode",
+                  "address2_shippingmethodcode",
+                  "opendeals",
+                  "address2_telephone1",
+                  "address2_name",
+                  "statecode",
+                  "address1_stateorprovince",
+                  "address1_line3",
+                  "industrycode",
+                  "aging30_base",
+                  "lastonholdtime",
+                  "accountratingcode",
+                  "_owningbusinessunit_value",
+                  "importsequencenumber",
+                  "paymenttermscode",
+                  "donotfax",
+                  "openrevenue_base",
+                  "businesstypecode",
+                  "address2_line3",
+                  "address2_utcoffset",
+                  "donotphone",
+                  "onholdtime",
+                  "_ownerid_value",
+                  "_modifiedonbehalfby_value",
+                  "entityimage",
+                  "ftpsiteurl",
+                  "shippingmethodcode",
+                  "stockexchange",
+                  "revenue",
+                  "address2_line1",
+                  "adx_createdbyusername",
+                  "_owningteam_value",
+                  "aging60",
+                  "participatesinworkflow",
+                  "_defaultpricelevelid_value",
+                  "address2_addressid",
+                  "donotpostalmail",
+                  "_slaid_value",
+                  "address2_addresstypecode",
+                  "_transactioncurrencyid_value",
+                  "donotbulkemail",
+                  "merged",
+                  "aging30",
+                  "entityimage_url",
+                  "sharesoutstanding",
+                  "accountcategorycode",
+                  "_owninguser_value",
+                  "stageid",
+                  "versionnumber",
+                  "preferredappointmenttimecode",
+                  "donotsendmm",
+                  "aging90_base",
+                  "fax",
+                  "adx_modifiedbyipaddress",
+                  "address1_fax",
+                  "_originatingleadid_value",
+                  "exchangerate",
+                  "address1_city",
+                  "description",
+                  "address2_stateorprovince",
+                  "_preferredserviceid_value",
+                  "opendeals_date",
+                  "address1_country",
+                  "donotemail",
+                  "openrevenue_state",
+                  "address1_composite",
+                  "_slainvokedid_value",
+                  "address1_primarycontactname",
+                  "creditlimit_base",
+                  "marketingonly",
+                  "statuscode",
+                  "traversedpath",
+                  "processid",
+                  "_createdonbehalfby_value",
+                  "address2_postalcode",
+                  "_modifiedby_value",
+                  "address1_shippingmethodcode",
+                  "_createdby_value",
+                  "entityimage_timestamp",
+                  "address1_name",
+                  "address2_primarycontactname",
+                  "primarytwitterid",
+                  "adx_modifiedbyusername",
+                  "name",
+                  "address2_postofficebox",
+                  "address1_latitude",
+                  "address2_city",
+                  "_primarycontactid_value",
+                  "address1_freighttermscode",
+                  "address1_longitude",
+                  "customersizecode",
+                  "telephone2",
+                  "address1_addresstypecode",
+                  "donotbulkpostalmail",
+                  "lastusedincampaign",
+                  "_preferredsystemuserid_value",
+                  "telephone3",
+                  "address1_addressid",
+                  "preferredappointmentdaycode",
+                  "websiteurl",
+                  "accountclassificationcode",
+                  "address2_composite",
+                  "utcconversiontimezonecode",
+                  "_createdbyexternalparty_value",
+                  "sic",
+                  "_preferredequipmentid_value",
+                  "creditlimit",
+                  "address2_line2",
+                  "address1_line1",
+                  "creditonhold",
+                  "entityimageid",
+                  "accountnumber",
+                  "openrevenue_date",
+                  "_territoryid_value",
+                  "followemail",
+                  "address1_upszone",
+                  "modifiedon",
+                  "address1_county",
+                  "_msdyn_salesaccelerationinsightid_value",
+                  "_msdyn_accountkpiid_value",
+                  "marketcap_base",
+                  "address2_upszone",
+                  "address2_country",
+                  "address2_freighttermscode",
+                  "address1_utcoffset",
+                  "emailaddress2",
+                  "_parentaccountid_value",
+                  "preferredcontactmethodcode",
+                  "revenue_base",
+                  "adx_createdbyipaddress"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Collection of account",
+                  "type": "object",
+                  "properties": {
+                    "@odata.count": {
+                      "$ref": "#/components/schemas/count"
+                    },
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Microsoft.Dynamics.CRM.account"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error",
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "count": {
+        "description": "The number of entities in the collection. Available when using the [$count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount) query option.",
+        "anyOf": [
+          {
+            "type": "number"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "Microsoft.Dynamics.CRM.account": {
+        "title": "account",
+        "type": "object",
+        "properties": {
+          "overriddencreatedon": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "example": "2017-04-13T15:51:04Z"
+          },
+          "territorycode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "accountid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "address1_telephone1": {
+            "type": "string",
+            "nullable": true
+          },
+          "address1_postofficebox": {
+            "type": "string",
+            "nullable": true
+          },
+          "openrevenue": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "_modifiedbyexternalparty_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "teamsfollowed": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "marketcap": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "address1_line2": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailaddress3": {
+            "type": "string",
+            "nullable": true
+          },
+          "address1_telephone3": {
+            "type": "string",
+            "nullable": true
+          },
+          "address2_county": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdon": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "example": "2017-04-13T15:51:04Z"
+          },
+          "numberofemployees": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "address2_telephone3": {
+            "type": "string",
+            "nullable": true
+          },
+          "yominame": {
+            "type": "string",
+            "nullable": true
+          },
+          "msdyn_gdproptout": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "opendeals_state": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "timezoneruleversionnumber": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "address2_fax": {
+            "type": "string",
+            "nullable": true
+          },
+          "address2_longitude": {
+            "format": "double",
+            "nullable": true,
+            "example": 3.14,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "ownershipcode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "primarysatoriid": {
+            "type": "string",
+            "nullable": true
+          },
+          "_masterid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "address1_telephone2": {
+            "type": "string",
+            "nullable": true
+          },
+          "address2_latitude": {
+            "format": "double",
+            "nullable": true,
+            "example": 3.14,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "_msa_managingpartnerid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "address2_telephone2": {
+            "type": "string",
+            "nullable": true
+          },
+          "aging60_base": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "telephone1": {
+            "type": "string",
+            "nullable": true
+          },
+          "aging90": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "msdyn_primarytimezone": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "address1_postalcode": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailaddress1": {
+            "type": "string",
+            "nullable": true
+          },
+          "timespentbymeonemailandmeetings": {
+            "type": "string",
+            "nullable": true
+          },
+          "tickersymbol": {
+            "type": "string",
+            "nullable": true
+          },
+          "customertypecode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "address2_shippingmethodcode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "opendeals": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "address2_telephone1": {
+            "type": "string",
+            "nullable": true
+          },
+          "address2_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "statecode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "address1_stateorprovince": {
+            "type": "string",
+            "nullable": true
+          },
+          "address1_line3": {
+            "type": "string",
+            "nullable": true
+          },
+          "industrycode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "aging30_base": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "lastonholdtime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "example": "2017-04-13T15:51:04Z"
+          },
+          "accountratingcode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "_owningbusinessunit_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "importsequencenumber": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "paymenttermscode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "donotfax": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "openrevenue_base": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "businesstypecode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "address2_line3": {
+            "type": "string",
+            "nullable": true
+          },
+          "address2_utcoffset": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "donotphone": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "onholdtime": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "_ownerid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "_modifiedonbehalfby_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "entityimage": {
+            "type": "string",
+            "format": "base64url",
+            "nullable": true
+          },
+          "ftpsiteurl": {
+            "type": "string",
+            "nullable": true
+          },
+          "shippingmethodcode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "stockexchange": {
+            "type": "string",
+            "nullable": true
+          },
+          "revenue": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "address2_line1": {
+            "type": "string",
+            "nullable": true
+          },
+          "adx_createdbyusername": {
+            "type": "string",
+            "nullable": true
+          },
+          "_owningteam_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "aging60": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "participatesinworkflow": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "_defaultpricelevelid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "address2_addressid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "donotpostalmail": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "_slaid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "address2_addresstypecode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "_transactioncurrencyid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "donotbulkemail": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "merged": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "aging30": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "entityimage_url": {
+            "type": "string",
+            "nullable": true
+          },
+          "sharesoutstanding": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "accountcategorycode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "_owninguser_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "stageid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "versionnumber": {
+            "format": "int64",
+            "nullable": true,
+            "example": "42",
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "preferredappointmenttimecode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "donotsendmm": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "aging90_base": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "fax": {
+            "type": "string",
+            "nullable": true
+          },
+          "adx_modifiedbyipaddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "address1_fax": {
+            "type": "string",
+            "nullable": true
+          },
+          "_originatingleadid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "exchangerate": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "address1_city": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "address2_stateorprovince": {
+            "type": "string",
+            "nullable": true
+          },
+          "_preferredserviceid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "opendeals_date": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "example": "2017-04-13T15:51:04Z"
+          },
+          "address1_country": {
+            "type": "string",
+            "nullable": true
+          },
+          "donotemail": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "openrevenue_state": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "address1_composite": {
+            "type": "string",
+            "nullable": true
+          },
+          "_slainvokedid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "address1_primarycontactname": {
+            "type": "string",
+            "nullable": true
+          },
+          "creditlimit_base": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "marketingonly": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "statuscode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "traversedpath": {
+            "type": "string",
+            "nullable": true
+          },
+          "processid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "_createdonbehalfby_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "address2_postalcode": {
+            "type": "string",
+            "nullable": true
+          },
+          "_modifiedby_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "address1_shippingmethodcode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "_createdby_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "entityimage_timestamp": {
+            "format": "int64",
+            "nullable": true,
+            "example": "42",
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "address1_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "address2_primarycontactname": {
+            "type": "string",
+            "nullable": true
+          },
+          "primarytwitterid": {
+            "type": "string",
+            "nullable": true
+          },
+          "adx_modifiedbyusername": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "address2_postofficebox": {
+            "type": "string",
+            "nullable": true
+          },
+          "address1_latitude": {
+            "format": "double",
+            "nullable": true,
+            "example": 3.14,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "address2_city": {
+            "type": "string",
+            "nullable": true
+          },
+          "_primarycontactid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "address1_freighttermscode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "address1_longitude": {
+            "format": "double",
+            "nullable": true,
+            "example": 3.14,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "customersizecode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "telephone2": {
+            "type": "string",
+            "nullable": true
+          },
+          "address1_addresstypecode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "donotbulkpostalmail": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "lastusedincampaign": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "example": "2017-04-13T15:51:04Z"
+          },
+          "_preferredsystemuserid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "telephone3": {
+            "type": "string",
+            "nullable": true
+          },
+          "address1_addressid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "preferredappointmentdaycode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "websiteurl": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountclassificationcode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "address2_composite": {
+            "type": "string",
+            "nullable": true
+          },
+          "utcconversiontimezonecode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "_createdbyexternalparty_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "sic": {
+            "type": "string",
+            "nullable": true
+          },
+          "_preferredequipmentid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "creditlimit": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "address2_line2": {
+            "type": "string",
+            "nullable": true
+          },
+          "address1_line1": {
+            "type": "string",
+            "nullable": true
+          },
+          "creditonhold": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "entityimageid": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "accountnumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "openrevenue_date": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "example": "2017-04-13T15:51:04Z"
+          },
+          "_territoryid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "followemail": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "address1_upszone": {
+            "type": "string",
+            "nullable": true
+          },
+          "modifiedon": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "example": "2017-04-13T15:51:04Z"
+          },
+          "address1_county": {
+            "type": "string",
+            "nullable": true
+          },
+          "_msdyn_salesaccelerationinsightid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "_msdyn_accountkpiid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "marketcap_base": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "address2_upszone": {
+            "type": "string",
+            "nullable": true
+          },
+          "address2_country": {
+            "type": "string",
+            "nullable": true
+          },
+          "address2_freighttermscode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "address1_utcoffset": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "emailaddress2": {
+            "type": "string",
+            "nullable": true
+          },
+          "_parentaccountid_value": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "example": "01234567-89ab-cdef-0123-456789abcdef"
+          },
+          "preferredcontactmethodcode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "revenue_base": {
+            "format": "decimal",
+            "nullable": true,
+            "example": 0,
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "adx_createdbyipaddress": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "error": {
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "type": "object",
+            "required": [
+              "code",
+              "message"
+            ],
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string"
+              },
+              "details": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "code",
+                    "message"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "target": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "innererror": {
+                "type": "object",
+                "description": "The structure of this object is service-specific"
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "error": {
+        "description": "Error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/error"
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "top": {
+        "name": "$top",
+        "in": "query",
+        "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+        "schema": {
+          "type": "integer",
+          "minimum": 0.0
+        },
+        "example": 50
+      },
+      "skip": {
+        "name": "$skip",
+        "in": "query",
+        "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+        "schema": {
+          "type": "integer",
+          "minimum": 0.0
+        }
+      },
+      "search": {
+        "name": "$search",
+        "in": "query",
+        "description": "Search items by search phrases, see [Searching](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionsearch)",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "count": {
+        "name": "$count",
+        "in": "query",
+        "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+        "schema": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "et"
+    }
+  ]
+}

@@ -1,0 +1,4319 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Redis",
+    "description": "Redis Commands",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/xml"
+  ],
+  "produces": [
+    "text/plain"
+  ],
+  "tags": [
+    {
+      "name": "String Commands"
+    },
+    {
+      "name": "Hash Commands"
+    },
+    {
+      "name": "Set Commands"
+    },
+    {
+      "name": "Sorted Set Commands"
+    },
+    {
+      "name": "List Commands"
+    },
+    {
+      "name": "Geospatial Commands"
+    },
+    {
+      "name": "HyperLogLog Commands"
+    },
+    {
+      "name": "Bitmap Commands"
+    },
+    {
+      "name": "Stream Commands"
+    },
+    {
+      "name": "Miscellaneous Commands"
+    }
+  ],
+  "paths": {
+    "/APPEND": {
+      "post": {
+        "tags": [
+          "String Commands"
+        ],
+        "summary": "APPEND - Append the value at the end of the string",
+        "operationId": "append_the_value_at_the_end_of_the_string",
+        "description": "If key already exists and is a string, APPEND command appends the value at the end of the string. If key does not exist it is created and set as an empty string, so APPEND will be similar to SET in this special case. This command is Available since version 2.0.0.",
+        "parameters": [
+          {
+            "name": "APPEND",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/APPEND"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/MSET": {
+      "post": {
+        "tags": [
+          "String Commands"
+        ],
+        "summary": "MSET - Atomically create or modify string values of one or more keys",
+        "operationId": "atomically_create_or_modify_string_values_of_one_or_more_keys",
+        "description": "Sets the given keys to their respective values. MSET replaces existing values with new values, just as regular SET. See MSETNX if you don't want to overwrite existing values. MSET is atomic, so all given keys are set at once. It is not possible for clients to see that some of the keys were updated while others are unchanged. This command is available since version 1.0.1.",
+        "parameters": [
+          {
+            "name": "MSET",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/MSET"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/MSETNX": {
+      "post": {
+        "tags": [
+          "String Commands"
+        ],
+        "summary": "MSETNX - Atomically modify string values of one or more keys",
+        "operationId": "atomically_modify_string_values_of_one_or_more_keys",
+        "description": "Sets the given keys to their respective values. MSETNX will not perform any operation at all even if just a single key already exists. MSETNX is atomic, so all given keys are set at once. It is not possible for clients to see that some of the keys were updated while others are unchanged. This command is available since version 1.0.1.",
+        "parameters": [
+          {
+            "name": "MSETNX",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/MSETNX"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/MGET": {
+      "get": {
+        "tags": [
+          "String Commands"
+        ],
+        "summary": "MGET - Atomically get string values of one or more keys",
+        "operationId": "atomically_get_string_values_of_one_or_more_keys",
+        "description": "MGET returns the values of all specified keys. For every key that does not hold a string value or does not exist, the special value nil is returned. Because of this, the operation never fails. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "MGET",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/MGET"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/DECR": {
+      "post": {
+        "tags": [
+          "String Commands"
+        ],
+        "summary": "DECR - Decrement the integer value of the key by one",
+        "operationId": "decrement_the_integer_value_of_the_key_by_one",
+        "description": "DECR decrements the number stored at key by one. If the key does not exist, it is set to 0 before performing the operation. An error is returned if the key contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64 bit signed integers. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "DECR",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/DECR"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/DECRBY": {
+      "post": {
+        "tags": [
+          "String Commands"
+        ],
+        "summary": "DECRBY - Decrement the integer value of the key by given number",
+        "operationId": "decrement_the_integer_value_of_the_key_by_given_number",
+        "description": "DECRBY decrements the number stored at key by DecrementBy value. If the key does not exist, it is set to 0 before performing the operation. An error is returned if the key contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64 bit signed integers. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "DECRBY",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/DECRBY"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/GET": {
+      "get": {
+        "tags": [
+          "String Commands"
+        ],
+        "summary": "GET - Get the string value of the key",
+        "operationId": "get_the_string_value_of_the_key",
+        "description": "Get the value of key. If the key does not exist the special value nil is returned. An error is returned if the value stored at key is not a string, because GET only handles string values. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "GET",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/GET"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/GETRANGE": {
+      "get": {
+        "tags": [
+          "String Commands"
+        ],
+        "summary": "GETRANGE - Get the substring of the string stored at a key",
+        "operationId": "get_the_substring_of_the_string_stored_at_a_key",
+        "description": "Returns the substring of the string value stored at key, determined by the offsets start and end (both are inclusive). Negative offsets can be used in order to provide an offset starting from the end of the string. So -1 means the last character, -2 the penultimate and so forth. The command handles out of range requests by limiting the resulting range to the actual length of the string. This command is available since version 2.4.0.",
+        "parameters": [
+          {
+            "name": "GETRANGE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/GETRANGE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/INCR": {
+      "post": {
+        "tags": [
+          "String Commands"
+        ],
+        "summary": "INCR - Increment the integer value of the key by one",
+        "operationId": "increment_the_integer_value_of_the_key_by_one",
+        "description": "INCR increments the number stored at key by one. If the key does not exist, it is set to 0 before performing the operation. An error is returned if the key contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64 bit signed integers. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "INCR",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/INCR"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/INCRBY": {
+      "post": {
+        "tags": [
+          "String Commands"
+        ],
+        "summary": "INCRBY - Increment the integer value of the key by given number",
+        "operationId": "increment_the_integer_value_of_the_key_by_given_number",
+        "description": "INCRBY increments the number stored at key by IncrementBy value. If the key does not exist, it is set to 0 before performing the operation. An error is returned if the key contains a value of the wrong type or contains a string that can not be represented as integer. This operation is limited to 64 bit signed integers. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "INCRBY",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/INCRBY"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/INCRBYFLOAT": {
+      "post": {
+        "tags": [
+          "String Commands"
+        ],
+        "summary": "INCRBYFLOAT - Increment the floating point value of the key by given number",
+        "operationId": "increment_the_floating_point_value_of_the_key_by_given_number",
+        "description": "INCRBYFLOAT increment the string representing a floating point number stored at key by the specified IncrementBy value. By using a negative increment value, the result is that the value stored at the key is decremented (by the obvious properties of addition). If the key does not exist, it is set to 0 before performing the operation. This command is available since version 2.6.0.",
+        "parameters": [
+          {
+            "name": "INCRBYFLOAT",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/INCRBYFLOAT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/SET": {
+      "post": {
+        "tags": [
+          "String Commands"
+        ],
+        "summary": "SET - Set the string value of the key",
+        "operationId": "set_the_string_value_of_the_key",
+        "description": "Set key to hold the string value. If key already holds a value, it is overwritten, regardless of its type. Any previous time to live associated with the key is discarded on successful SET operation. This command is available since version 1.0.0*.\n Options:\n1. ExistCheck: Set this value to NX to only set the key if it does not already exist. Set this value to XX to only set the key if it already exists.\n2. GetPreviousValue: Set this to True to return the old string stored at key, or nil if key did not exist. An error is returned and SET is aborted if the value stored at key is not a string. Do not set its value to True when Existcheck parameter's value is NX as it will result in error.\n3. ExpiryInSecond: Provide integer value for this. The key will be expired (deleted) after specified seconds automatically.\nHistory:\nStarting with Redis version 2.6.12: Added the EX, PX, NX and XX options.\nStarting with Redis version 6.0.0: Added the KEEPTTL option.\nStarting with Redis version 6.2.0: Added the GET, EXAT and PXAT option.\nStarting with Redis version 7.0.0: Allowed the NX and GET options to be used together.",
+        "parameters": [
+          {
+            "name": "SET",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SET"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/SETRANGE": {
+      "post": {
+        "tags": [
+          "String Commands"
+        ],
+        "summary": "SETRANGE - Overwrite a part of a string value with another by an offset",
+        "operationId": "overwrite_a_part_of_a_string_value_with_another_by_an_offset",
+        "description": "Overwrites part of the string stored at key, starting at the specified offset, for the entire length of value. If the offset is larger than the current length of the string at key, the string is padded with zero-bytes to make offset fit. Non-existing keys are considered as empty strings, so this command will make sure it holds a string large enough to be able to set value at offset. This command is available since version 2.2.0.",
+        "parameters": [
+          {
+            "name": "SETRANGE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SETRANGE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/STRLEN": {
+      "get": {
+        "tags": [
+          "String Commands"
+        ],
+        "summary": "STRLEN - Get length of a string value stored at the key",
+        "operationId": "get_length_of_a_string_value_stored_at_the_key",
+        "description": "STRLEN returns the length of the string value stored at key. An error is returned when key holds a non-string value. This command is available since version 2.2.0.",
+        "parameters": [
+          {
+            "name": "STRLEN",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/STRLEN"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/HDEL": {
+      "post": {
+        "tags": [
+          "Hash Commands"
+        ],
+        "summary": "HDEL - Delete one or more fields and their value from hash",
+        "operationId": "delete_one_or_more_fields_and_their_value_from_hash",
+        "description": "HDEL removes the specified fields from the hash stored at key. Specified fields that do not exist within this hash are ignored. If key does not exist, it is treated as an empty hash and this command returns 0. This command is available since version 2.0.0.",
+        "parameters": [
+          {
+            "name": "HDEL",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HDEL"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/HEXISTS": {
+      "post": {
+        "tags": [
+          "Hash Commands"
+        ],
+        "summary": "HEXISTS - Check whether the field exists in the hash",
+        "operationId": "check_whether_the_field_exists_in_the_hash",
+        "description": "Check if field is an existing field in the hash stored at key. This command is available since version 2.0.0.",
+        "parameters": [
+          {
+            "name": "HEXISTS",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HEXISTS"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/HGET": {
+      "get": {
+        "tags": [
+          "Hash Commands"
+        ],
+        "summary": "HGET - Get the value of the field in the hash",
+        "operationId": "get_the_value_of_the_field_in_the_hash",
+        "description": "Get the value associated with field in the hash stored at key. This command is available since version 2.0.0.",
+        "parameters": [
+          {
+            "name": "HGET",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HGET"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/HGETALL": {
+      "get": {
+        "tags": [
+          "Hash Commands"
+        ],
+        "summary": "HGETALL - Get all the fields and values in the hash",
+        "operationId": "get_all_the_fields_and_values_in_the_hash",
+        "description": "Get all fields and values of the hash stored at key. In the returned value, every field name is followed by its value, so the length of the reply is twice the size of the hash. This command is available since version 2.0.0.",
+        "parameters": [
+          {
+            "name": "HGETALL",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HGETALL"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/HINCRBY": {
+      "post": {
+        "tags": [
+          "Hash Commands"
+        ],
+        "summary": "HINCRBY - Increment the integer value of a field in a hash by a number",
+        "operationId": "increment_the_integer_value_of_a field_in_a_hash_by_a_number",
+        "description": "Increments the number stored at field in the hash stored at key by the IncrementBy value. If key does not exist, a new key holding a hash is created. If field does not exist the value is set to 0 before the operation is performed. The range of values supported by HINCRBY is limited to 64 bit signed integers. This command is available since version 2.0.0.",
+        "parameters": [
+          {
+            "name": "HINCRBY",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HINCRBY"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/HINCRBYFLOAT": {
+      "post": {
+        "tags": [
+          "Hash Commands"
+        ],
+        "summary": "HINCRBYFLOAT - Increment the floating point value of a field in a hash by a number",
+        "operationId": "increment_the_floating_point_value_of_a field_in_a_hash_by_a_number",
+        "description": "Increment the specified field of a hash stored at key, and representing a floating point number, by the specified IncrementBy value. If the increment value is negative, the result is to have the hash field value decremented instead of incremented. If the field does not exist, it is set to 0 before performing the operation. This command is available since version 2.6.0.",
+        "parameters": [
+          {
+            "name": "HINCRBYFLOAT",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HINCRBYFLOAT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/HKEYS": {
+      "get": {
+        "tags": [
+          "Hash Commands"
+        ],
+        "summary": "HKEYS - Get all fields in a hash",
+        "operationId": "get_all_fields_in_a_hash",
+        "description": "Returns all field names in the hash stored at key. This command is available since version 2.0.0.",
+        "parameters": [
+          {
+            "name": "HKEYS",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HKEYS"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/HLEN": {
+      "get": {
+        "tags": [
+          "Hash Commands"
+        ],
+        "summary": "HLEN - Get number of fields in a hash",
+        "operationId": "get_number_of_fields_in_a_hash",
+        "description": "Get the number of fields contained in the hash stored at key. This command is available since version 2.0.0.",
+        "parameters": [
+          {
+            "name": "HLEN",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HLEN"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/HMGET": {
+      "get": {
+        "tags": [
+          "Hash Commands"
+        ],
+        "summary": "HMGET - Get values of the specified fields in a hash",
+        "operationId": "get_values_of_the_specified_fields_in_a_hash",
+        "description": "Get the values associated with the specified fields in the hash stored at key. For every field that does not exist in the hash, a nil value is returned. This command is available since version 2.0.0.",
+        "parameters": [
+          {
+            "name": "HMGET",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HMGET"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/HSET": {
+      "post": {
+        "tags": [
+          "Hash Commands"
+        ],
+        "summary": "HSET - Create or modify values of fields in a hash",
+        "operationId": "create_or_modify_values_of_fields_in_a_hash",
+        "description": "Sets the specified fields to their respective values in the hash stored at key. HSET overwrites the values of specified fields that exist in the hash. If key doesn't exist, a new key holding a hash is created. This command is available since version 2.0.0*.\nHistory:\nStarting with Redis version 4.0.0: Accepts multiple field and value arguments.",
+        "parameters": [
+          {
+            "name": "HSET",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HSET"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/HSETNX": {
+      "post": {
+        "tags": [
+          "Hash Commands"
+        ],
+        "summary": "HSETNX - Set value of the field in the hash only when the field does not exist",
+        "operationId": "set_value_of_the_field_in_the_hash_only_when_the_field_does_not_exist",
+        "description": "Sets field in the hash stored at key to value, only if field does not yet exist. If key does not exist, a new key holding a hash is created. If field already exists, this operation has no effect. This command is available since version 2.0.0.",
+        "parameters": [
+          {
+            "name": "HSETNX",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HSETNX"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/HSTRLEN": {
+      "get": {
+        "tags": [
+          "Hash Commands"
+        ],
+        "summary": "HSTRLEN - Get the length of the value of the field in the hash",
+        "operationId": "get_the_length_of_the_value_of_the_field_in_the_hash",
+        "description": "Get the string length of the value associated with field in the hash stored at key. If the key or the field do not exist, 0 is returned. This command is available since version 3.2.0.",
+        "parameters": [
+          {
+            "name": "HSTRLEN",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HSTRLEN"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/HVALS": {
+      "get": {
+        "tags": [
+          "Hash Commands"
+        ],
+        "summary": "HVALS - Get all values in the hash",
+        "operationId": "get_all_values_in_the_hash",
+        "description": "Get all values in the hash stored at key. This command is available since version 2.0.0.",
+        "parameters": [
+          {
+            "name": "HVALS",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HVALS"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/GEOADD": {
+      "post": {
+        "tags": [
+          "Geospatial Commands"
+        ],
+        "summary": "GEOADD - Add one or more member to the geospatial index",
+        "operationId": "add_one_or_more_member_to_the_geospatial_index",
+        "description": "Adds the specified geospatial items (longitude, latitude, name) to the specified key. Data is stored into the key as a sorted set, in a way that makes it possible to query the items with the GEOSEARCH command. By default it returns the number of new elements added. This command is available since version 3.2.0*.\nOptions:\n1. AddOrUpdate: Set this value to XX to only update elements that already exist. Never add elements. Or, Set this value to NX to don't update already existing elements. Always add new elements.\n2. ReturnAll: Set this value to True to return the total number of elements changed which is number of new elements added plus number of elements updated\nHistory:\nStarting with Redis version 6.2.0: Added the CH, NX and XX options.",
+        "parameters": [
+          {
+            "name": "GEOADD",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/GEOADD"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/GEODIST": {
+      "get": {
+        "tags": [
+          "Geospatial Commands"
+        ],
+        "summary": "GEODIST - Get distance between two members of geospatial index",
+        "operationId": "get_distance_between_two_members_of_geospatial_index",
+        "description": "Return the distance between two members in the geospatial index represented by the sorted set. This command is available since version 3.2.0.\n Options:\n1. Unit: The unit must be one of the following, and defaults to meters:\nM for meters, KM for kilometers, FT for feets, MI for miles",
+        "parameters": [
+          {
+            "name": "GEODIST",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/GEODIST"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/GEOHASH": {
+      "get": {
+        "tags": [
+          "Geospatial Commands"
+        ],
+        "summary": "GEOHASH - Get members from the geospatial index as geohash strings",
+        "operationId": "get_members_from_the_geospatial_index_as_geohash_strings",
+        "description": "GEOHASH return valid Geohash strings representing the position of one or more elements in a sorted set value representing a geospatial index (where elements were added using GEOADD). This command is available since version 3.2.0.",
+        "parameters": [
+          {
+            "name": "GEOHASH",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/GEOHASH"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/GEOPOS": {
+      "get": {
+        "tags": [
+          "Geospatial Commands"
+        ],
+        "summary": "GEOPOS - Get coordinates of members from the geospatial index",
+        "operationId": "get_coordinates_of_members_from_the_geospatial_index",
+        "description": "GEOPOS Return the positions (longitude,latitude) of all the specified members of the geospatial index represented by the sorted set at key. This command is available since version 3.2.0.",
+        "parameters": [
+          {
+            "name": "GEOPOS",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/GEOPOS"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/PFADD": {
+      "post": {
+        "tags": [
+          "HyperLogLog Commands"
+        ],
+        "summary": "PFADD - Add elements to the HyperLogLog key",
+        "operationId": "add_elements_to_the_HyperLogLog_key",
+        "description": "Add all the element to the HyperLogLog data structure stored at the variable name specified by key. This command is available since version 2.8.9.",
+        "parameters": [
+          {
+            "name": "PFADD",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/PFADD"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/PFCOUNT": {
+      "get": {
+        "tags": [
+          "HyperLogLog Commands"
+        ],
+        "summary": "PFCOUNT - Get the approximate cardinality of the set(s) observed by the HyperLogLog key(s)",
+        "operationId": "get_the_approximate_cardinality_of_the_set(s)_observed_by_the_HyperLogLog_key(s)",
+        "description": "When called with a single key, returns the approximated cardinality computed by the HyperLogLog data structure stored at the specified variable. When called with multiple keys, returns the approximated cardinality of the union of the HyperLogLogs passed. This command is available since version 2.8.9.",
+        "parameters": [
+          {
+            "name": "PFCOUNT",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/PFCOUNT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/PFMERGE": {
+      "post": {
+        "tags": [
+          "HyperLogLog Commands"
+        ],
+        "summary": "PFMERGE - Merge one or more HyperLogLog values into a single key",
+        "operationId": "merge_one_or_more_HyperLogLog_values_into_a_single_key",
+        "description": "Merge multiple HyperLogLog values into a unique value that will approximate the cardinality of the union of the observed Sets of the source HyperLogLog structures. This command is available since version 2.8.9.",
+        "parameters": [
+          {
+            "name": "PFMERGE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/PFMERGE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/SADD": {
+      "post": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SADD - Add one or more members to the set",
+        "operationId": "add_one_or_more_members_to_the_set",
+        "description": "Add the specified members to the set stored at key. Specified members that are already a member of this set are ignored. If key does not exist, a new set is created before adding the specified members. An error is returned when the value stored at key is not a set. This command is available since version 1.0.0*.\nHistory:\nStarting with Redis version 2.4.0: Accepts multiple member arguments.",
+        "parameters": [
+          {
+            "name": "SADD",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SADD"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/SCARD": {
+      "get": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SCARD - Get number of elements in the set",
+        "operationId": "get_number_of_elements_in_the_set",
+        "description": "Get the cardinality (number of elements) of the set stored at key. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "SCARD",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SCARD"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/SDIFF": {
+      "get": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SDIFF - Get difference of multiple sets",
+        "operationId": "get_difference_of_multiple_sets",
+        "description": "Returns the members of the set resulting from the difference between the first set and all the successive sets. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "SDIFF",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SDIFF"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/SDIFFSTORE": {
+      "post": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SDIFFSTORE - Store difference of multiple sets in a key",
+        "operationId": "store_difference_of_multiple_sets_in_a_key",
+        "description": "This command is equal to SDIFF, but instead of returning the resulting set, it is stored in destination. If destination already exists, it is overwritten. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "SDIFFSTORE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SDIFFSTORE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/SINTER": {
+      "get": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SINTER - Get intersect of multiple sets",
+        "operationId": "get_intersect_of_multiple_sets",
+        "description": "Get the members of the set resulting from the intersection of all the given sets. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "SINTER",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SINTER"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/SINTERSTORE": {
+      "post": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SINTERSTORE - Store intersect of multiple sets in a key",
+        "operationId": "store_intersect_of_multiple_sets_in_a_key",
+        "description": "This command is equal to SINTER, but instead of returning the resulting set, it is stored in destination. If destination already exists, it is overwritten. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "SINTERSTORE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SINTERSTORE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/SISMEMBER": {
+      "get": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SISMEMBER - Check whether the specified member belongs to the set",
+        "operationId": "check_whether_the_specified_member_belongs_to_the_set",
+        "description": "Check if specified member is a member of the set stored at key. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "SISMEMBER",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SISMEMBER"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/SMEMBERS": {
+      "get": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SMEMBERS - Get all members of the set",
+        "operationId": "get_all_members_of_the_set",
+        "description": "GET all the members of the set value stored at key. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "SMEMBERS",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SMEMBERS"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/SMOVE": {
+      "post": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SMOVE - Move a member from one set to another",
+        "operationId": "move_a_member_from_one_set_to_another",
+        "description": "Move specified member from the set at source key to the set at destination key. This operation is atomic. In every given moment the element will appear to be a member of source or destination for other clients. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "SMOVE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SMOVE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/SPOP": {
+      "get": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SPOP - Get one or more members from the set after removing them",
+        "operationId": "get_one_or_more_members_from_the_set_after_removing_them",
+        "description": "Removes and returns one or more random members from the set value store at key. Deletes the set if the last member was popped. This command is available since version 1.0.0*.\nHistory:\nStarting with Redis version 3.2.0: Added the count argument.",
+        "parameters": [
+          {
+            "name": "SPOP",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SPOP"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/SRANDMEMBER": {
+      "get": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SRANDMEMBER - Get one or more members from the set",
+        "operationId": "get_one_or_more_members_from_the_set",
+        "description": "Returns one or more random members from the set value store at key. This command is available since version 1.0.0*.\nHistory:\nStarting with Redis version 2.6.0: Added the optional count argument.",
+        "parameters": [
+          {
+            "name": "SRANDMEMBER",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SRANDMEMBER"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/SREM": {
+      "post": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SREM - Remove one or more members from the set",
+        "operationId": "remove_one_or_more_members_from_the_set",
+        "description": "Remove the specified members from the set stored at key. Deletes the set if the last member was removed. This command is available since version 1.0.0*.\nHistory:\nStarting with Redis version 2.4.0: Accepts multiple member arguments.",
+        "parameters": [
+          {
+            "name": "SREM",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SREM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/SUNION": {
+      "get": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SUNION - Get union of multiple sets",
+        "operationId": "get_union_of_multiple_sets",
+        "description": "Returns the members of the set resulting from the union of all the given sets. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "SUNION",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SUNION"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/SUNIONSTORE": {
+      "get": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SUNIONSTORE - Store union of multiple sets in a key",
+        "operationId": "store_union_of_multiple_sets_in_a_key",
+        "description": "This command is equal to SUNION, but instead of returning the resulting set, it is stored in destination key. If destination key already exists, it is overwritten. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "SUNIONSTORE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SUNIONSTORE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/BITCOUNT": {
+      "get": {
+        "tags": [
+          "Bitmap Commands"
+        ],
+        "summary": "BITCOUNT - Count the number of set bits (population counting) in a string",
+        "operationId": "count_the_number_of_set_bits_in_a_string",
+        "description": "Count the number of set bits (population counting) in a string. By default all the bytes contained in the string are examined. It is possible to specify the counting operation only in an interval passing the additional arguments Start and End. By default, the additional arguments Start and End specify a byte index. We can use an additional argument BIT to specify a bit index. This command is available since version 2.6.0*.\nHistory:\nStarting with Redis version 7.0.0: Added the BYTE|BIT option.",
+        "parameters": [
+          {
+            "name": "BITCOUNT",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/BITCOUNT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/BITOP": {
+      "post": {
+        "tags": [
+          "Bitmap Commands"
+        ],
+        "summary": "BITOP - Perform bitwise operations on multiple strings",
+        "operationId": "perform_bitwise_operations_on_multiple_strings",
+        "description": "Perform a bitwise operation between multiple keys (containing string values) and store the result in the destination key. This command is available since version 2.6.0.",
+        "parameters": [
+          {
+            "name": "BITOP",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/BITOP"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/BITPOS": {
+      "get": {
+        "tags": [
+          "Bitmap Commands"
+        ],
+        "summary": "BITPOS - Get the first position of the specified bit in the string",
+        "operationId": "get_the_first_position_of_the_specified_bit_in_the_string",
+        "description": "Return the position of the first bit set to 1 or 0 in a string. The position is returned, thinking of the string as an array of bits from left to right. By default, all the bytes contained in the string are examined. It is possible to look for bits only in a specified interval passing the additional arguments start and end (it is possible to just pass start, the operation will assume that the end is the last byte of the string. However there are semantic differences as explained later). By default, the range is interpreted as a range of bytes and not a range of bits, so start=0 and end=2 means to look at the first three bytes. You can use the optional BIT modifier to specify that the range should be interpreted as a range of bits. So start=0 and end=2 means to look at the first three bits. This command is available since version 2.8.7*.\nHistory:\nStarting with Redis version 7.0.0: Added the BYTE|BIT option.",
+        "parameters": [
+          {
+            "name": "BITPOS",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/BITPOS"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/GETBIT": {
+      "get": {
+        "tags": [
+          "Bitmap Commands"
+        ],
+        "summary": "GETBIT - Get the bit value at the specified offset in the string",
+        "operationId": "get_the_bit_value_at_the_specified_offset_in_the_string",
+        "description": "Returns the bit value at offset in the string value stored at key. When offset is beyond the string length, the string is assumed to be a contiguous space with 0 bits. When key does not exist it is assumed to be an empty string, so offset is always out of range and the value is also assumed to be a contiguous space with 0 bits. This command is available since version 2.2.0.",
+        "parameters": [
+          {
+            "name": "GETBIT",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/GETBIT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/SETBIT": {
+      "post": {
+        "tags": [
+          "Bitmap Commands"
+        ],
+        "summary": "SETBIT - Set or clear the bit at offset in the string",
+        "operationId": "set_or_clear_the_bit_at_offset_in_the_string",
+        "description": "Sets or clears the bit at offset in the string value stored at key. The bit is either set or cleared depending on value, which can be either 0 or 1. When key does not exist, a new string value is created. The string is grown to make sure it can hold a bit at offset. This command is available since version 2.2.0.",
+        "parameters": [
+          {
+            "name": "SETBIT",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SETBIT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/ZADD": {
+      "post": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZADD - Add one or more members to a sorted set or update their score",
+        "operationId": "add_one_or_more_members_to_a_sorted_set_or_update_their_score",
+        "description": "Adds all the specified members with the specified scores to the sorted set stored at key. It is possible to specify multiple score / member pairs. If a specified member is already a member of the sorted set, the score is updated and the element reinserted at the right position to ensure the correct ordering. This command is available since version 1.2.0*.\n Options:\n1. AddOrUpdate: Set this value to XX to only update elements that already exist. Don't add new elements. OR, Set this value to NX to only add new elements. Don't update already existing elements.\n2. UpdateWhen: Set this value to LT to only update existing elements if the new score is less than the current score. This flag doesn't prevent adding new elements. OR, Set this value to GT to only update existing elements if the new score is greater than the current score. This flag doesn't prevent adding new elements.\n3. ReturnAll: Set this value to True to modify the return value from the number of new elements added, to the total number of elements changed. Changed elements are new elements added plus elements already existing for which the score was updated.\n4. IncrementScore: Set this value to True to make ZADD to act like ZINCRBY. Only one score-element pair can be specified in this mode.\nHistory:\nStarting with Redis version 2.4.0: Accepts multiple elements.\nStarting with Redis version 3.0.2: Added the XX, NX, CH and INCR options.\nStarting with Redis version 6.2.0: Added the GT and LT options.",
+        "parameters": [
+          {
+            "name": "ZADD",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZADD"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/ZCARD": {
+      "get": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZCARD - Get number of elements in the sorted set",
+        "operationId": "get_number_of_elements_in_the_sorted_set",
+        "description": "Get the cardinality (number of elements) of the sorted set stored at key. This command is available since version 1.2.0.",
+        "parameters": [
+          {
+            "name": "ZCARD",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZCARD"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/ZCOUNT": {
+      "get": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZCOUNT - Get count of members in the sorted set having scores within a range",
+        "operationId": "get_count_of_members_in_the_sorted_set_having_scores_within_a_range",
+        "description": "Returns the number of elements in the sorted set at key with a score between min and max (both inclusive). Alongwith numeric values, -inf +inf can also be used to specify the range. This command is available since version 2.0.0.",
+        "parameters": [
+          {
+            "name": "ZCOUNT",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZCOUNT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/ZINCRBY": {
+      "post": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZINCRBY - Increment the score of a member in the sorted set",
+        "operationId": "increment_the_score_of_a_member_in_the_sorted_set",
+        "description": "Increments the score of member in the sorted set stored at key by IncrementBy value. If member does not exist in the sorted set, it is added with increment as its score (as if its previous score was 0.0). If key does not exist, a new sorted set with the specified member as its sole member is created. This command is available since version 1.2.0.",
+        "parameters": [
+          {
+            "name": "ZINCRBY",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZINCRBY"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/ZLEXCOUNT": {
+      "get": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZLEXCOUNT - Get the number of members in the sorted set within a lexicographical range",
+        "operationId": "get_the_number_of_members_in_the_sorted_set_within_a_lexicographical_range",
+        "description": "When all the elements in a sorted set are inserted with the same score, in order to force lexicographical ordering, this command returns the number of elements in the sorted set at key with a value between min and max. Valid min and max avlue must start with ( or [, in order to specify if the range item is respectively exclusive or inclusive. The special values of + or - for max and min have the special meaning or positively infinite and negatively infinite strings. This command is available since version 2.8.9.",
+        "parameters": [
+          {
+            "name": "ZLEXCOUNT",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZLEXCOUNT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/ZPOPMAX": {
+      "get": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZPOPMAX - Get the highest scoring members from the sorted set after removing them",
+        "operationId": "get_the_highest_scoring_members_from_the_sorted_set_after_removing_them",
+        "description": "Removes and returns up to NumberOfMembers members with the highest scores in the sorted set stored at key. When left unspecified, the default value for NumberOfMembers is 1. Specifying a NumberOfMembers value that is higher than the sorted set's cardinality will not produce an error. When returning multiple elements, the one with the highest score will be the first, followed by the elements with lower scores. This command is available since version 5.0.0.",
+        "parameters": [
+          {
+            "name": "ZPOPMAX",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZPOPMAX"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/ZPOPMIN": {
+      "get": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZPOPMIN - Get the lowest scoring members from the sorted set after removing them",
+        "operationId": "get_the_lowest_scoring_members_from_the_sorted_set_after_removing_them",
+        "description": "Removes and returns up to NumberOfMembers members with the lowest scores in the sorted set stored at key. When left unspecified, the default value for NumberOfMembers is 1. Specifying a NumberOfMembers value that is higher than the sorted set's cardinality will not produce an error. When returning multiple elements, the one with the lowest score will be the first, followed by the elements with greater scores. This command is available since version 5.0.0.",
+        "parameters": [
+          {
+            "name": "ZPOPMIN",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZPOPMIN"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/ZRANK": {
+      "get": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZRANK - Get the index of the member in the sorted set ordered by ascending score",
+        "operationId": "get_the_index_of_the_member_in_the_sorted_set_ordered_by_ascending_score",
+        "description": "Returns the rank of member in the sorted set stored at key, with the scores ordered from low to high. The rank (or index) is 0-based, which means that the member with the lowest score has rank 0. Set the optional ShowScore argument to True to supplement the command's reply with the score of the element returned. This command is available since version 2.0.0*.\nHistory:\nStarting with Redis version 7.2.0: Added the optional WITHSCORE argument.",
+        "parameters": [
+          {
+            "name": "ZRANK",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZRANK"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/ZREM": {
+      "post": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZREM - Remove one or more members from the sorted set",
+        "operationId": "remove_one_or_more_members_from_the_sorted_set",
+        "description": "Removes the specified members from the sorted set stored at key. Non existing members are ignored. This command is available since version 1.2.0*.\nHistory:\nStarting with Redis version 2.4.0: Accepts multiple elements.",
+        "parameters": [
+          {
+            "name": "ZREM",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZREM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/ZREMRANGEBYLEX": {
+      "post": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZREMRANGEBYLEX - Remove members in a sorted set within a lexicographical range",
+        "operationId": "remove_members_in_a_sorted_set_within_a_lexicographical_range",
+        "description": "When all the elements in a sorted set are inserted with the same score, in order to force lexicographical ordering, this command removes all elements in the sorted set stored at key between the lexicographical range specified by min and max. Valid start and stop must start with ( or [, in order to specify if the range item is respectively exclusive or inclusive. The special values of + or - for start and stop have the special meaning or positively infinite and negatively infinite strings. This command is available since version 2.8.9.",
+        "parameters": [
+          {
+            "name": "ZREMRANGEBYLEX",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZREMRANGEBYLEX"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/ZREMRANGEBYRANK": {
+      "post": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZREMRANGEBYRANK - Remove members in a sorted set within a range of indexes",
+        "operationId": "remove_members_in_a_sorted_set_within_a_range_of_indexes",
+        "description": "Removes all elements in the sorted set stored at key with rank between start and stop. Both start and stop are 0 -based indexes with 0 being the element with the lowest score. These indexes can be negative numbers, where they indicate offsets starting at the element with the highest score. For example: -1 is the element with the highest score, -2 the element with the second highest score and so forth. This command is available since version 2.0.0.",
+        "parameters": [
+          {
+            "name": "ZREMRANGEBYRANK",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZREMRANGEBYRANK"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/ZREMRANGEBYSCORE": {
+      "post": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZREMRANGEBYSCORE - Remove members in a sorted set within a range of scores",
+        "operationId": "remove_members_in_a_sorted_set_within_a_range_of_scores",
+        "description": "Removes all elements in the sorted set stored at key with a score between min and max (inclusive). Alongwith numeric values for Min and Max, -inf and _inf can also be used for range. This command is available since version 1.2.0.",
+        "parameters": [
+          {
+            "name": "ZREMRANGEBYSCORE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZREMRANGEBYSCORE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/ZREVRANK": {
+      "get": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZREVRANK - Get index of a member in the sorted set ordered by descending scores",
+        "operationId": "get_index_of_a_member_in_the_sorted_set_ordered_by_descending_scores",
+        "description": "Returns the rank of member in the sorted set stored at key, with the scores ordered from high to low. The rank (or index) is 0-based, which means that the member with the highest score has rank 0. Set the optional ShowScore argument to True to supplement the command's reply with the score of the element returned. This command is available since version 2.0.0*.\nHistory:\nStarting with Redis version 7.2.0: Added the optional WITHSCORE argument.",
+        "parameters": [
+          {
+            "name": "ZREVRANK",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZREVRANK"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/ZSCORE": {
+      "get": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZSCORE - Get score of a member in the sorted set",
+        "operationId": "get_score_of_a_member_in_the_sorted_set",
+        "description": "Returns the score of member in the sorted set at key. If member does not exist in the sorted set, or key does not exist, nil is returned. This command is available since version 1.2.0.",
+        "parameters": [
+          {
+            "name": "ZSCORE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZSCORE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/BLPOP": {
+      "get": {
+        "tags": ["List Commands"],
+        "summary": "BLPOP - Remove and get the first element in the list. Blocks until an element is available otherwise",
+        "operationId": "remove_and_get_the_first_element_in_the_list_Blocks_until_an_element_is_available_otherwise",
+        "description": "BLPOP is a blocking list pop primitive. It is the blocking version of LPOP because it blocks the connection when there are no elements to pop from any of the given lists. An element is popped from the head of the first list that is non-empty, with the given keys being checked in the order that they are given. The TimeoutInSecond argument is interpreted as a double value specifying the maximum number of seconds to block. A timeout of zero can be used to block indefinitely. This command is available since version 2.0.0*.\nHistory:\nStarting with Redis version 6.0.0: timeout is interpreted as a double instead of an integer.",
+        "parameters": [
+          {
+            "name": "BLPOP",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/BLPOP"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/BRPOP": {
+      "get": {
+        "tags": ["List Commands"],
+        "summary": "BRPOP - Remove and get the last element in the list. Blocks until an element is available otherwise",
+        "operationId": "remove_and_get_the_last_element_in_the_list_Blocks_until_an_element_is_available_otherwise",
+        "description": "BRPOP is a blocking list pop primitive. It is the blocking version of RPOP because it blocks the connection when there are no elements to pop from any of the given lists. An element is popped from the tail of the first list that is non-empty, with the given keys being checked in the order that they are given. The TimeoutInSecond argument is interpreted as a double value specifying the maximum number of seconds to block. A timeout of zero can be used to block indefinitely. This command is available since version 2.0.0*.\nHistory:\nStarting with Redis version 6.0.0: timeout is interpreted as a double instead of an integer.",
+        "parameters": [
+          {
+            "name": "BRPOP",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/BRPOP"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/LINDEX": {
+      "get": {
+        "tags": ["List Commands"],
+        "summary": "LINDEX - Get an element from the list by its index",
+        "operationId": "Get_element_from_the_list_by_its_index",
+        "description": "Returns the element at specified index in the list stored at key. The index is zero-based, so 0 means the first element, 1 the second element and so on. Negative indices can be used to designate elements starting at the tail of the list. Here, -1 means the last element, -2 means the penultimate and so forth. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "LINDEX",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/LINDEX"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/LINSERT": {
+      "post": {
+        "tags": ["List Commands"],
+        "summary": "LINSERT - Insert an element before or after another element in the list",
+        "operationId": "insert_an_element_before_or_after_another_element_in_the_list",
+        "description": "Inserts element in the list stored at key either before or after the reference value pivot element. When key does not exist, it is considered an empty list and no operation is performed. This command is available since version 2.2.0.",
+        "parameters": [
+          {
+            "name": "LINSERT",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/LINSERT"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/LLEN": {
+      "get": {
+        "tags": ["List Commands"],
+        "summary": "LLEN - Get length of the list",
+        "operationId": "Get_length_of_the_list",
+        "description": "Returns the length of the list stored at key. If key does not exist, it is interpreted as an empty list and 0 is returned. An error is returned when the value stored at key is not a list. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "LLEN",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/LLEN"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/LPOP": {
+      "get": {
+        "tags": ["List Commands"],
+        "summary": "LPOP - Get the first elements in the list after removing it",
+        "operationId": "get_the_first_elements_in_the_list_after_removing_it",
+        "description": "Removes and returns the first elements of the list stored at key. By default, LPOP pops a single element from the beginning of the list. When provided with the optional NumberOfElements argument, the reply will consist of up to NumberOfElements elements, depending on the list's length. This command is available since version 1.0.0*.\nHistory:\nStarting with Redis version 6.2.0: Added the count argument.",
+        "parameters": [
+          {
+            "name": "LPOP",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/LPOP"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/LPUSH": {
+      "post": {
+        "tags": ["List Commands"],
+        "summary": "LPUSH - Prepend one or more elements to the list",
+        "operationId": "prepend_one_or_more_elements_to_the_list",
+        "description": "Insert all the specified values at the head of the list stored at key. If key does not exist, it is created as empty list before performing the push operations. When key holds a value that is not a list, an error is returned. This command is available since version 1.0.0*.\nHistory:\nStarting with Redis version 2.4.0: Accepts multiple element arguments.",
+        "parameters": [
+          {
+            "name": "LPUSH",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/LPUSH"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/LPUSHX": {
+      "post": {
+        "tags": ["List Commands"],
+        "summary": "LPUSHX - Prepend one or more elements to the list only when the list exists",
+        "operationId": "prepend_one_or_more_elements_to_the_list_only_when_the_list_exists",
+        "description": "Inserts specified values at the head of the list stored at key, only if key already exists and holds a list. In contrary to LPUSH, no operation will be performed when key does not yet exist. This command is available since version 2.2.0*.\nHistory:\nStarting with Redis version 4.0.0: Accepts multiple element arguments.",
+        "parameters": [
+          {
+            "name": "LPUSHX",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/LPUSHX"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/LRANGE": {
+      "get": {
+        "tags": ["List Commands"],
+        "summary": "LRANGE - Get a range of elements from the list",
+        "operationId": "get_a_range_of_elements_from_the_list",
+        "description": "Returns the specified elements of the list stored at key. The offsets start and stop are zero-based indexes, with 0 being the first element of the list (the head of the list), 1 being the next element and so on. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "LRANGE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/LRANGE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/LREM": {
+      "post": {
+        "tags": ["List Commands"],
+        "summary": "LREM - Remove elements from the list",
+        "operationId": "Removes_elements_from_the_list",
+        "description": "Removes the first NumberOfElements occurrences of elements equal to specified element from the list stored at key. The NumberOfElements argument influences the operation. If NumberOfElements > 0: Remove elements equal to element moving from head to tail. If NumberOfElements < 0: Remove elements equal to element moving from tail to head. If NumberOfElements = 0: Remove all elements equal to element. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "LREM",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/LREM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/LSET": {
+      "post": {
+        "tags": ["List Commands"],
+        "summary": "LSET - Set value of an element in the list by its index",
+        "operationId": "set_value_of_an_element_in_the_list_by_its_index",
+        "description": "Sets the list element at index to element. The index is zero-based, so 0 means the first element, 1 the second element and so on. Negative indices can be used to designate elements starting at the tail of the list. Here, -1 means the last element, -2 means the penultimate and so forth. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "LSET",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/LSET"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/LTRIM": {
+      "post": {
+        "tags": ["List Commands"],
+        "summary": "LTRIM - Remove elements from the both ends of the list",
+        "operationId": "remove_elements_from_the_both_ends_of_the_list",
+        "description": "Trim an existing list so that it will contain only the specified range of elements specified. Both start and stop are zero-based indexes, where 0 is the first element of the list (the head), 1 the next element and so on. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "LTRIM",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/LTRIM"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/RPOP": {
+      "get": {
+        "tags": ["List Commands"],
+        "summary": "RPOP - Return and Remove the last elements of the list",
+        "operationId": "return_and_remove_the_last_elements_of_the_list",
+        "description": "Removes and returns the last elements of the list stored at key. By default, RPOP pops a single element from the end of the list. When provided with the optional NumberOfElements argument, the reply will consist of up to NumberOfElements elements, depending on the list's length. This command is available since version 1.0.0*.\nHistory:\nStarting with Redis version 6.2.0: Added the count argument.",
+        "parameters": [
+          {
+            "name": "RPOP",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/RPOP"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/RPUSH": {
+      "post": {
+        "tags": ["List Commands"],
+        "summary": "RPUSH - Append one or more elements to the list",
+        "operationId": "append_one_or_more_elements_to_the_list",
+        "description": "Insert all the specified values at the tail of the list stored at key. If key does not exist, it is created as empty list before performing the push operation. When key holds a value that is not a list, an error is returned. This command is available since version 1.0.0*.\nHistory:\nStarting with Redis version 2.4.0: Accepts multiple element arguments.",
+        "parameters": [
+          {
+            "name": "RPUSH",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/RPUSH"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/RPUSHX": {
+      "post": {
+        "tags": ["List Commands"],
+        "summary": "RPUSHX - Append one or more elements to the list only when the list exists",
+        "operationId": "append_one_or_more_elements_to_the_list_only_when_the_list_exists",
+        "description": "Inserts specified values at the tail of the list stored at key, only if key already exists and holds a list. In contrary to RPUSH, no operation will be performed when key does not yet exist. This command is available since version 2.2.0*.\nHistory:\nStarting with Redis version 4.0.0: Accepts multiple element arguments.",
+        "parameters": [
+          {
+            "name": "RPUSHX",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/RPUSHX"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/DEL": {
+      "post": {
+        "tags": ["Miscellaneous Commands"],
+        "summary": "DEL - Delete one or more keys",
+        "operationId": "delete_one_or_more_keys",
+        "description": "Removes the specified keys. A key is ignored if it does not exist. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "DEL",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/DEL"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/DBSIZE": {
+      "get": {
+        "tags": ["Miscellaneous Commands"],
+        "summary": "DBSIZE - Get number of keys in the database",
+        "operationId": "get_number_of_keys_in_the_database",
+        "description": "Return the number of keys in the currently-selected database. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "DBSIZE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/DBSIZE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/EXISTS": {
+      "get": {
+        "tags": ["Miscellaneous Commands"],
+        "summary": "EXISTS - Check whether one or more keys exist",
+        "operationId": "check_whether_one_or_more_keys_exist",
+        "description": "Return the number of keys which exists. If the same existing key is mentioned in the arguments multiple times, it will be counted multiple times. So for example if mykey exists then EXISTS mykey mykey will return 2. This command is available since version 1.0.0*.\nHistory:\nStarting with Redis version 3.0.3: Accepts multiple key arguments.",
+        "parameters": [
+          {
+            "name": "EXISTS",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/EXISTS"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/EXPIRE": {
+      "post": {
+        "tags": ["Miscellaneous Commands"],
+        "summary": "EXPIRE - Set expiry of the key in seconds",
+        "operationId": "set_expiry_of_the_key_in_seconds",
+        "description": "Set a timeout on key. After the timeout has expired, the key will automatically be deleted. The timeout will only be cleared by commands that delete or overwrite the contents of the key, including DEL, SET, GETSET and all the *STORE commands. This command is available since version 1.0.0*.\n Options:\n1. SetWhen: Set this value to NX to set expiry only when the key has no expiry. Set this value to XX to set expiry only when the key has an existing expiry. Set this value to GT to set expiry only when the new expiry is greater than current one. Set this value to LT to set expiry only when the new expiry is less than current one.\nHistory:\nStarting with Redis version 7.0.0: Added options: NX, XX, GT and LT.",
+        "parameters": [
+          {
+            "name": "EXPIRE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/EXPIRE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/FLUSHALL": {
+      "post": {
+        "tags": ["Miscellaneous Commands"],
+        "summary": "FLUSHALL - Remove all keys from all databases",
+        "operationId": "remove_all_keys_from_all_databases",
+        "description": "Delete all the keys of all the existing databases, not just the currently selected one. This command never fails. This command is available since version 1.0.0*.\nOptions:\n1. Mode: Set this value to SYNC to flush the databases synchronously. Set this value to ASYNC to flush the databases asynchronously. An asynchronous FLUSHALL command only deletes keys that were present at the time the command was invoked. Keys created during an asynchronous flush will be unaffected.\nHistory:\nStarting with Redis version 4.0.0: Added the ASYNC flushing mode modifier.\nStarting with Redis version 6.2.0: Added the SYNC flushing mode modifier.",
+        "parameters": [
+          {
+            "name": "FLUSHALL",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/FLUSHALL"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/FLUSHDB": {
+      "post": {
+        "tags": ["Miscellaneous Commands"],
+        "summary": "FLUSHDB - Remove all keys from the current database",
+        "operationId": "remove_all_keys_from_the_current_database",
+        "description": "Delete all the keys of the currently selected DB. This command never fails. This command is available since version 1.0.0*.\nOptions:\n1. Mode: Set this value to SYNC to flush the databases synchronously. Set this value to ASYNC to flush the databases asynchronously. An asynchronous FLUSHALL command only deletes keys that were present at the time the command was invoked. Keys created during an asynchronous flush will be unaffected.\nHistory:\nStarting with Redis version 4.0.0: Added the ASYNC flushing mode modifier.\nStarting with Redis version 6.2.0: Added the SYNC flushing mode modifier.",
+        "parameters": [
+          {
+            "name": "FLUSHDB",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/FLUSHDB"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/KEYS": {
+      "get": {
+        "tags": ["Miscellaneous Commands"],
+        "summary": "KEYS - Get key names matching a pattern",
+        "operationId": "get_key_names_matching_a_pattern",
+        "description": "Returns all keys matching the pattern. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "KEYS",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/KEYS"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/MOVE": {
+      "post": {
+        "tags": ["Miscellaneous Commands"],
+        "summary": "MOVE - Move a key to another database",
+        "operationId": "move_a_key_to_another_database",
+        "description": "Move key from the currently selected database to the specified destination database. When key already exists in the destination database, or it does not exist in the source database, it does nothing. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "MOVE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/MOVE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/PERSIST": {
+      "post": {
+        "tags": ["Miscellaneous Commands"],
+        "summary": "PERSIST - Remove expiration time of the key",
+        "operationId": "remove_expiration_time_of_the_key",
+        "description": "Remove the existing timeout on key, turning the key from volatile (a key with an expire set) to persistent (a key that will never expire as no timeout is associated). This command is available since version 2.2.0.",
+        "parameters": [
+          {
+            "name": "PERSIST",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/PERSIST"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/TTL": {
+      "post": {
+        "tags": ["Miscellaneous Commands"],
+        "summary": "TTL - Get expiration time of the key in seconds",
+        "operationId": "get_expiration_time_of_the_key_in_seconds",
+        "description": "Returns the remaining time to live of a key that has a timeout. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "TTL",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/TTL"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/ZUNIONSTORE": {
+      "post": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZUNIONSTORE - Store union of multiple sorted sets in a key",
+        "operationId": "store_union_of_multiple_sorted_sets_in_a_key",
+        "description": "Computes the union of specified NumberOfKeys sorted sets given by the specified keys, and stores the result in destination key. It is mandatory to provide the number of input keys (NumberOfKeys) before passing the input keys and the other (optional) arguments. This command is available since version 2.0.0.\nOptions:\n1. MultiplicationFactors: Specify the multiplication factor in the each MultiplicationFactor parameter for each specified input sorted set key. If MultiplicationFactors parameter is not present, the multiplication factors default to 1.\n2. AggregateUsing: When its value is set to SUM then the score of an element is summed across the inputs where it exists. When its value is set to either MIN or MAX, the resulting set will contain the minimum or maximum score of an element across the inputs where it exists. If this parameter is not present then by default the aggregation is done using SUM",
+        "parameters": [
+          {
+            "name": "ZUNIONSTORE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZUNIONSTORE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/ZINTERSTORE": {
+      "post": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZINTERSTORE - Store intersection of multiple sorted sets in a key",
+        "operationId": "store_intersection_of_multiple_sorted_sets_in_a_key",
+        "description": "Computes the intersection of specified NumberOfKeys sorted sets given by the specified keys, and stores the result in destination key. It is mandatory to provide the number of input keys (NumberOfKeys) before passing the input keys and the other (optional) arguments. This command is available since version 2.0.0.\nOptions:\n1. MultiplicationFactors: Specify the multiplication factor in the each MultiplicationFactor parameter for each specified input sorted set key. If MultiplicationFactors parameter is not present, the multiplication factors default to 1.\n2. AggregateUsing: When its value is set to SUM then the score of an element is summed across the inputs where it exists. When its value is set to either MIN or MAX, the resulting set will contain the minimum or maximum score of an element across the inputs where it exists. If this parameter is not present then by default the aggregation is done using SUM",
+        "parameters": [
+          {
+            "name": "ZINTERSTORE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZINTERSTORE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/RENAME": {
+      "post": {
+        "tags": ["Miscellaneous Commands"],
+        "summary": "RENAME - Rename the specified key",
+        "operationId": "rename_the_specified_key",
+        "description": "Renames ExistingKey to NewKey. It returns an error when ExistingKey does not exist. If NewKey already exists it is overwritten. This command is available since version 1.0.0.",
+        "parameters": [
+          {
+            "name": "RENAME",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/RENAME"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/ZRANGE": {
+      "get": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZRANGE - Get members of a sorted set within specified range",
+        "operationId": "get_members_of_a_sorted_set_within_specified_range",
+        "description": "Returns the specified range of elements in the sorted set stored at key. By default, the command performs an index range query. This command is available since version 1.2.0*.\nOptions:\n1. RangeCriteria: Set its value to BYSCORE to returns the range of elements from the sorted set having scores equal or between start and stop. Set its value to BYLEX to returns the range of elements from the sorted set between the start and stop lexicographical closed range intervals.\n2. ReverseOrder: Set its value to True to reverse the ordering.\n3. Limit: Use this paramneter to obtain a sub-range from the matching elements.\n4. ShowScores: Set its value to True to supplement the command's reply with the scores of elements returned.\nHistory:\nStarting with Redis version 6.2.0: Added the REV, BYSCORE, BYLEX and LIMIT options.",
+        "parameters": [
+          {
+            "name": "ZRANGE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZRANGE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/ZSCAN": {
+      "get": {
+        "tags": [
+          "Sorted Set Commands"
+        ],
+        "summary": "ZSCAN - Iterate over members and scores of a sorted set",
+        "operationId": "iterate_over_members_and_scores_of_a_sorted_set",
+        "description": "ZSCAN iterates elements of Sorted Set types and their associated scores. An iteration starts when the cursor is set to 0, and terminates when the cursor returned by the server is 0. This command is available since version 2.8.0.\nOptions:\n1. Pattern: Use this option to only iterate elements matching the specified glob-style pattern.\n2. Count: Use this option to specify the amount of work that should be done at every call in order to retrieve elements from the sorted set.",
+        "parameters": [
+          {
+            "name": "ZSCAN",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ZSCAN"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/SSCAN": {
+      "get": {
+        "tags": [
+          "Set Commands"
+        ],
+        "summary": "SSCAN - Iterate over members of a set",
+        "operationId": "iterate_over_members_of_a_set",
+        "description": "SSCAN iterates elements of Sets types. An iteration starts when the cursor is set to 0, and terminates when the cursor returned by the server is 0. This command is available since version 2.8.0.\nOptions:\n1. Pattern: Use this option to only iterate elements matching the specified glob-style pattern.\n2. Count: Use this option to specify the amount of work that should be done at every call in order to retrieve elements from the set.",
+        "parameters": [
+          {
+            "name": "SSCAN",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SSCAN"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/HSCAN": {
+      "get": {
+        "tags": [
+          "Hash Commands"
+        ],
+        "summary": "HSCAN - Iterate over fields and values of a hash",
+        "operationId": "iterate_over_fields_and_values_of_a_hash",
+        "description": "HSCAN iterates fields of Hash types and their associated values. An iteration starts when the cursor is set to 0, and terminates when the cursor returned by the server is 0. This command is available since version 2.8.0.\nOptions:\n1. Pattern: Use this option to only iterate elements matching the specified glob-style pattern.\n2. Count: Use this option to specify the amount of work that should be done at every call in order to retrieve elements from the hash.",
+        "parameters": [
+          {
+            "name": "HSCAN",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/HSCAN"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/SCAN": {
+      "get": {
+        "tags": [
+          "Miscellaneous Commands"
+        ],
+        "summary": "SCAN - Iterate over key names in the database",
+        "operationId": "iterate_over_key_names_in_the_database",
+        "description": "SCAN iterates the set of keys in the currently selected Redis database. An iteration starts when the cursor is set to 0, and terminates when the cursor returned by the server is 0. This command is available since version 2.8.0*.\nOptions:\n1. Pattern: Use this option to only iterate elements matching the specified glob-style pattern.\n2. Count: Use this option to specify the amount of work that should be done at every call in order to retrieve elements from the hash.\n3. Type: Use this option to only return objects that match the specified type. The Type argument is the same string name that the TYPE command returns.\nHistory:\nStarting with Redis version 6.0.0: Added the TYPE subcommand.",
+        "parameters": [
+          {
+            "name": "SCAN",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SCAN"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/XADD": {
+      "post": {
+        "tags": [
+          "Stream Commands"
+        ],
+        "summary": "XADD - Append new message to a stream",
+        "operationId": "append_new_message_to_a_stream",
+        "description": "Appends the specified stream entry to the stream at the specified key. If the key does not exist, as a side effect of running this command the key is created with a stream value. This command is available since version 5.0.0*.\nOptions:\n1. DoNotCreateNewKey: Set its value to True to disable the creation of the key if it does not already exists.\n2. StreamId: Set its value to * to auto-generate a unique stream ID. Set its value to a user defined well-formed ID, so that the new entry will be added exactly with the specified ID. ID is specified by two numbers separated by a - character.\nHistory:\nStarting with Redis version 6.2.0: Added the NOMKSTREAM option, MINID trimming strategy and the LIMIT option.\nStarting with Redis version 7.0.0: Added support for the <ms>-* explicit ID form.",
+        "parameters": [
+          {
+            "name": "XADD",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/XADD"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/XDEL": {
+      "get": {
+        "tags": [
+          "Stream Commands"
+        ],
+        "summary": "XDEL - Get number of messages deleted from the stream",
+        "operationId": "get_number_of_messages_deleted_from_the_stream",
+        "description": "Removes the specified entries from a stream, and returns the number of entries deleted. This number may be less than the number of IDs passed to the command in the case where some of the specified StreamIds do not exist in the stream. This command is available since version 5.0.0.",
+        "parameters": [
+          {
+            "name": "XDEL",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/XDEL"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/XLEN": {
+      "get": {
+        "tags": [
+          "Stream Commands"
+        ],
+        "summary": "XLEN - Get number of messages in the stream",
+        "operationId": "get_number_of_messages_in_the_stream",
+        "description": "Returns the number of entries inside a stream. If the specified key does not exist the command returns zero, as if the stream was empty. This command is available since version 5.0.0.",
+        "parameters": [
+          {
+            "name": "XLEN",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/XLEN"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/XRANGE": {
+      "get": {
+        "tags": [
+          "Stream Commands"
+        ],
+        "summary": "XRANGE - Get messages from the stream within the range",
+        "operationId": "get_messages_from_the_stream_within_the_range",
+        "description": "The command returns the stream entries matching a given range of IDs. The range is specified by a minimum and maximum StreamID. This command is available since version 5.0.0*.\nOptions:\n1. Count: Use this option to control the number of entries reported.\nHistory:\nStarting with Redis version 6.2.0: Added exclusive ranges.",
+        "parameters": [
+          {
+            "name": "XRANGE",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/XRANGE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "XRANGE": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "MinStreamId": {
+          "type": "string"
+        },
+        "MaxStreamId": {
+          "type": "string"
+        },
+        "Count": {
+          "type": "integer"
+        }
+      }
+    },
+    "XLEN": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "XDEL": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "StreamIds": {
+          "type": "array",
+              "items": {
+                "$ref":"#/definitions/StreamId"
+              }
+        }
+      }
+    },
+    "StreamId": {
+      "type": "object",
+      "properties": {
+        "StreamId": {
+          "type": "string"
+        }
+      }
+    },
+    "XADD": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "DoNotCreateNewKey": {
+          "type": "boolean"
+        },
+        "StreamId": {
+          "type": "string",
+          "example": "* or User defined ID"
+        },
+        "FieldValuePairs": {
+          "type": "object",
+          "properties": {
+            "FieldValuePair": {
+              "type": "array",
+              "items": {
+                "$ref":"#/definitions/FieldValuePair"
+              }
+            }
+          }
+        }
+      }
+    },
+    "SCAN": {
+      "type": "object",
+      "properties": {
+        "Cursor": {
+          "type": "integer"
+        },
+        "Pattern": {
+          "type": "string"
+        },
+        "Count": {
+          "type": "integer"
+        },
+        "Type": {
+          "type": "string"
+        }
+      }
+    },
+    "HSCAN": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Cursor": {
+          "type": "integer"
+        },
+        "Pattern": {
+          "type": "string"
+        },
+        "Count": {
+          "type": "integer"
+        }
+      }
+    },
+    "SSCAN": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Cursor": {
+          "type": "integer"
+        },
+        "Pattern": {
+          "type": "string"
+        },
+        "Count": {
+          "type": "integer"
+        }
+      }
+    },
+    "ZSCAN": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Cursor": {
+          "type": "integer"
+        },
+        "Pattern": {
+          "type": "string"
+        },
+        "Count": {
+          "type": "integer"
+        }
+      }
+    },
+    "ZRANGE": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "string"
+        },
+        "Stop": {
+          "type": "string"
+        },
+        "RangeCriteria": {
+          "type": "string",
+          "example": "BYSCORE or BYLEX"
+        },
+        "ReverseOrder": {
+          "type": "boolean"
+        },
+        "Limit": {
+          "$ref": "#/definitions/Limit"
+        },
+        "ShowScores": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Limit": {
+      "type": "object",
+      "properties": {
+        "Offset": {
+          "type": "integer"
+        },
+        "NumberOfElements": {
+          "type": "integer"
+        }
+      }
+    },
+    "RENAME": {
+      "type": "object",
+      "properties": {
+        "ExistingKey": {
+          "type": "string"
+        },
+        "NewKey": {
+          "type": "string"
+        }
+      }
+    },
+    "ZINTERSTORE": {
+      "type": "object",
+      "properties": {
+        "DestKey": {
+          "type": "string"
+        },
+        "NumberOfKeys": {
+          "type": "integer"
+        },
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Key"
+          }
+        },
+        "MultiplicationFactors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MultiplicationFactor"
+          }
+        },
+        "AggregateUsing": {
+          "type": "string",
+          "example": "SUM or MIN or MAX"
+        }
+      }
+    },
+    "ZUNIONSTORE": {
+      "type": "object",
+      "properties": {
+        "DestKey": {
+          "type": "string"
+        },
+        "NumberOfKeys": {
+          "type": "integer"
+        },
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Key"
+          }
+        },
+        "MultiplicationFactors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MultiplicationFactor"
+          }
+        },
+        "AggregateUsing": {
+          "type": "string",
+          "example": "SUM or MIN or MAX"
+        }
+      }
+    },
+    "MultiplicationFactor": {
+      "type": "object",
+      "properties": {
+        "MultiplicationFactor": {
+          "type": "number"
+        }
+      }
+    },
+    "TTL": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "PERSIST": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "MOVE": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "DestDB": {
+          "type": "string"
+        }
+      }
+    },
+    "KEYS": {
+      "type": "object",
+      "properties": {
+        "PatternToMatch": {
+          "type": "string"
+        }
+      }
+    },
+    "FLUSHDB": {
+      "type": "object",
+      "properties": {
+        "Mode": {
+          "type": "string",
+          "example": "SYNC or ASYNC"
+        }
+      }
+    },
+    "FLUSHALL": {
+      "type": "object",
+      "properties": {
+        "Mode": {
+          "type": "string",
+          "example": "SYNC or ASYNC"
+        }
+      }
+    },
+    "EXPIRE": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Seconds": {
+          "type": "integer"
+        },
+        "SetWhen": {
+          "type": "string",
+          "example": "NX or XX or GT or LT"
+        }
+      }
+    },
+    "EXISTS": {
+      "type": "object",
+      "properties": {
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Key"
+          }
+        }
+      }
+    },
+    "DBSIZE": {
+      "type": "object"
+    },
+    "DEL": {
+      "type": "object",
+      "properties": {
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Key"
+          }
+        }
+      }
+    },
+    "RPUSHX": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Elements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Element"
+          }
+        }
+      }
+    },
+    "RPUSH": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Elements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Element"
+          }
+        }
+      }
+    },
+    "RPOP": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "NumberOfElements": {
+          "type": "integer"
+        }
+      }
+    },
+    "LTRIM": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "integer"
+        },
+        "Stop": {
+          "type": "integer"
+        }
+      }
+    },
+    "LSET": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Index": {
+          "type": "integer"
+        },
+        "Element": {
+          "type": "string"
+        }
+      }
+    },
+    "LREM": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "NumberOfElements": {
+          "type": "integer"
+        },
+        "Element": {
+          "type": "string"
+        }
+      }
+    },
+    "LRANGE": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "integer"
+        },
+        "Stop": {
+          "type": "integer"
+        }
+      }
+    },
+    "LPUSHX": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Elements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Element"
+          }           
+        }
+      }
+    },
+    "LPUSH": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Elements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Element"
+          }           
+        }
+      }
+    },
+    "LPOP": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "NumberOfElements": {
+          "type": "integer"
+        }
+      }
+    },
+    "LLEN": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "LINSERT": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Position": {
+          "type": "string",
+          "example": "BEFORE or AFTER"
+        },
+        "PivotElement": {
+          "type": "string"
+        },
+        "Element": {
+          "type": "string"
+        }
+      }
+    },
+    "LINDEX": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Index": {
+          "type": "integer"
+        }
+      }
+    },
+    "BRPOP": {
+      "type": "object",
+      "properties": {
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Keys"
+          }
+        },
+        "TimeoutInSecond": {
+          "type": "number"
+        }
+      }
+    },
+    "BLPOP": {
+      "type": "object",
+      "properties": {
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Keys"
+          }
+        },
+        "TimeoutInSecond": {
+          "type": "number"
+        }
+      }
+    },
+    "ZSCORE": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Member": {
+          "type": "string"
+        }
+      }
+    },
+    "ZREVRANK": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Member": {
+          "type": "string"
+        },
+        "ShowScore": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ZREMRANGEBYSCORE": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Min": {
+          "type": "string"
+        },
+        "Max": {
+          "type": "string"
+        }
+      }
+    },
+    "ZREMRANGEBYRANK": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "integer"
+        },
+        "Stop": {
+          "type": "integer"
+        }
+      }
+    },
+    "ZREMRANGEBYLEX": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Min": {
+          "type": "string"
+        },
+        "Max": {
+          "type": "string"
+        }
+      }
+    },
+    "ZREM": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Member"
+          }
+        }
+      }
+    },
+    "ZRANK": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Member": {
+          "type": "string"
+        },
+        "ShowScore": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ZPOPMIN": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "NumberOfMembers": {
+          "type": "integer"
+        }
+      }
+    },
+    "ZPOPMAX": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "NumberOfMembers": {
+          "type": "integer"
+        }
+      }
+    },
+    "ZLEXCOUNT": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Min": {
+          "type": "string"
+        },
+        "Max": {
+          "type": "string"
+        }
+      }
+    },
+    "ZINCRBY": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "IncrementBy": {
+          "type": "number",
+          "format": "double"
+        },
+        "Member": {
+          "type": "string"
+        }
+      }
+    },
+    "ZCOUNT": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Min": {
+          "type": "string"
+        },
+        "Max": {
+          "type": "string"
+        }
+      }
+    },
+    "ZCARD": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "ZADD": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "AddOrUpdate": {
+          "type": "string",
+          "example": "NX or XX"
+        },
+        "UpdateWhen": {
+          "type": "string",
+          "example": "LT or GT"
+        },
+        "ReturnAll": {
+          "type": "boolean"
+        },
+        "IncrementScore": {
+          "type": "boolean"
+        },
+        "ScoreMemberPairs": {
+          "type": "object",
+          "properties": {
+            "ScoreMemberPair": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ScoreMemberPair"
+              }
+            }
+          }
+        }
+      }
+    },
+    "ScoreMemberPair": {
+      "type": "object",
+      "properties": {
+        "Score": {
+          "type": "number",
+          "format": "double"
+        },
+        "Member": {
+          "type": "string"
+        }
+      }
+    },
+    "SETBIT": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "GETBIT": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer"
+        }
+      }
+    },
+    "BITPOS": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Bit": {
+          "type": "integer"
+        },
+        "Start": {
+          "type": "integer"
+        },
+        "End": {
+          "type": "integer"
+        },
+        "IndexType": {
+          "type": "string",
+          "example": "BYTE or BIT"
+        }
+      }
+    },
+    "BITOP": {
+      "type": "object",
+      "properties": {
+        "Operation": {
+          "type": "string",
+          "example": "AND or OR or XOR or NOT"
+        },
+        "DestKey": {
+          "type": "string"
+        },
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Key"
+          }
+        }
+      }
+    },
+    "BITCOUNT": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "integer"
+        },
+        "End": {
+          "type": "integer"
+        },
+        "IndexType": {
+          "type": "string",
+          "example": "BYTE or BIT"
+        }
+      }
+    },
+    "SUNIONSTORE": {
+      "type": "object",
+      "properties": {
+        "DestKey": {
+          "type": "string"
+        },
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Key"
+          }
+        }
+      }
+    },
+    "SUNION": {
+      "type": "object",
+      "properties": {
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Key"
+          }
+        }
+      }
+    },
+    "SREM": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Member"
+          }
+        }
+      }
+    },
+    "SRANDMEMBER": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "NumberOfMembers": {
+          "type": "integer"
+        }
+      }
+    },
+    "SPOP": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "NumberOfMembers": {
+          "type": "integer"
+        }
+      }
+    },
+    "SMOVE": {
+      "type": "object",
+      "properties": {
+        "SourceKey": {
+          "type": "string"
+        },
+        "DestKey": {
+          "type": "string"
+        },
+        "Member": {
+          "type": "string"
+        }
+      }
+    },
+    "SMEMBERS": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "SISMEMBER": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Member": {
+          "type": "string"
+        }
+      }
+    },
+    "SINTERSTORE": {
+      "type": "object",
+      "properties": {
+        "DestKey": {
+          "type": "string"
+        },
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Key"
+          }
+        }
+      }
+    },
+    "SINTER": {
+      "type": "object",
+      "properties": {
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Key"
+          }
+        }
+      }
+    },
+    "SDIFFSTORE": {
+      "type": "object",
+      "properties": {
+        "DestKey": {
+          "type": "string"
+        },
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Key"
+          }
+        }
+      }
+    },
+    "SDIFF": {
+      "type": "object",
+      "properties": {
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Key"
+          }
+        }
+      }
+    },
+    "SCARD": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        }
+      }
+    },
+    "SADD": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "Members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Member"
+          }
+        }
+      }
+    },
+    "PFMERGE": {
+      "type": "object",
+      "properties": {
+        "Destkey": {
+          "type": "string"
+        },
+        "SourceKeys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SourceKey"
+          }
+        }
+      }
+    },
+    "SourceKey": {
+      "type": "object",
+      "properties": {
+        "SourceKey": {
+          "type": "string"
+        }
+      }
+    },
+    "PFCOUNT": {
+      "type": "object",
+      "properties": {
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Key"
+          }
+        }
+      }
+    },
+    "Key": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "PFADD": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Elements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Element"
+          }
+        }
+      }
+    },
+    "Element": {
+      "type": "object",
+      "properties": {
+        "Element": {
+          "type": "string"
+        }
+      }
+    },
+    "GEOPOS": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Member"
+          }
+        }
+      }
+    },
+    "GEOHASH": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Members": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Member"
+          }
+        }
+      }
+    },
+    "Member": {
+      "type": "object",
+      "properties": {
+        "Member": {
+          "type": "string"
+        }
+      }
+    },
+    "GEODIST": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Member1": {
+          "type": "string"
+        },
+        "Member2": {
+          "type": "string"
+        },
+        "Unit": {
+          "type": "string",
+          "example": "M or KM or FT or MI"
+        }
+      }
+    },
+    "GEOADD": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "AddOrUpdate": {
+          "type": "string",
+          "example": "NX or XX"
+        },
+        "ReturnAll": {
+          "type": "boolean"
+        },
+        "CoordinateMemberPairs": {
+          "type": "object",
+          "properties": {
+            "CoordinateMemberPair": {
+              "type": "array",
+              "items": {
+                "$ref":"#/definitions/CoordinateMemberPair"
+              }
+            }
+          }
+        }
+      }
+    },
+    "CoordinateMemberPair": {
+      "type": "object",
+      "properties": {
+        "Longitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "Latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "Member": {
+          "type": "string"
+        }
+      }
+    },
+    "HVALS": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "HSTRLEN": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Field": {
+          "type": "string"
+        }
+      }
+    },
+    "HSETNX": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Field": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "HSET": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "FieldValuePairs": {
+          "type": "object",
+          "properties": {
+            "FieldValuePair": {
+              "type": "array",
+              "items": {
+                "$ref":"#/definitions/FieldValuePair"
+              }
+            }
+          }
+        }
+      }
+    },
+    "FieldValuePair": {
+      "type": "object",
+      "properties": {
+        "Field": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "HMGET": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Field"
+          }
+        }
+      }
+    },
+    "HLEN": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "HKEYS": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "HINCRBYFLOAT": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Field": {
+          "type": "string"
+        },
+        "IncrementBy": {
+          "type": "integer",
+          "format": "double"
+        }
+      }
+    },
+    "HINCRBY": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Field": {
+          "type": "string"
+        },
+        "IncrementBy": {
+          "type": "integer"
+        }
+      }
+    },
+    "HGETALL": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "HGET": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Field": {
+          "type": "string"
+        }
+      }
+    },
+    "HEXISTS": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Field": {
+          "type": "string"
+        }
+      }
+    },
+    "HDEL": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Field"
+          }
+        }
+      }
+    },
+    "Field": {
+      "type": "object",
+      "properties": {
+        "Field": {
+          "type": "string"
+        }
+      }
+    },
+    "STRLEN": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "SETRANGE": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Offset": {
+          "type": "integer"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "SET": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        },
+        "ExistCheck": {
+          "type": "string",
+          "example": "NX or XX"
+        },
+        "GetPreviousValue": {
+          "type": "boolean"
+        },
+        "ExpiryInSecond": {
+          "type": "integer"
+        }
+      }
+    },
+    "INCRBYFLOAT": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "IncrementBy": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "INCR": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "INCRBY": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "IncrementBy": {
+          "type": "integer"
+        }
+      }
+    },
+    "GETRANGE": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Start": {
+          "type": "integer"
+        },
+        "End": {
+          "type": "integer"
+        }
+      }
+    },
+    "GET": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "DECR": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    },
+    "DECRBY": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "DecrementBy": {
+          "type": "integer"
+        }
+      }
+    },
+    "APPEND": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        },
+        "Value": {
+          "type": "string"
+        }
+      }
+    },
+    "MSET": {
+      "type": "object",
+      "properties": {
+        "KeyValuePairs": {
+          "$ref": "#/definitions/KeyValuePairs"
+        }
+      }
+    },
+    "MSETNX": {
+      "type": "object",
+      "properties": {
+        "KeyValuePairs": {
+          "$ref": "#/definitions/KeyValuePairs"
+        }
+      }
+    },
+    "KeyValuePairs": {
+      "type": "object",
+      "properties": {
+        "KeyValuePair": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/APPEND"
+          }
+        }
+      }
+    },
+    "MGET": {
+      "type": "object",
+      "properties": {
+        "Keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Keys"
+          }
+        }
+      }
+    },
+    "Keys": {
+      "type": "object",
+      "properties": {
+        "Key": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

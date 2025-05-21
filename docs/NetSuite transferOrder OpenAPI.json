@@ -1,0 +1,2885 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "NetSuite REST Record API",
+    "description": "NetSuite REST Record API generated 2024-05-24 at 12:35:17 UTC for account TSTDRV1303059, user joe.klug@peregrineconnect.com with role Neuron ESB Integration.",
+    "termsOfService": "http://www.netsuite.com/portal/resource/terms-of-service.shtml",
+    "contact": {
+      "name": "Oracle NetSuite",
+      "url": "http://www.netsuite.com",
+      "email": "info@netsuite.com"
+    },
+    "version": "v1",
+    "x-framework": {
+      "name": "oracle-netsuite-suitetalk-rest"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://tstdrv1303059.suitetalk.api.netsuite.com/services/rest/record/v1"
+    }
+  ],
+  "paths": {
+    "/transferOrder": {
+      "get": {
+        "tags": [
+          "TransferOrder"
+        ],
+        "summary": "Get list of records.",
+        "operationId": "transferOrderGET",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "The search query that is used to filter results.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The limit used to specify the number of results on a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1000
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The offset used for selecting a specific page of results.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of records.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=collection": {
+                "schema": {
+                  "$ref": "#/components/schemas/transferOrderCollection"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "TransferOrder"
+        ],
+        "summary": "Insert record.",
+        "operationId": "transferOrderPOST",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/transferOrder"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Inserted record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transferOrder/{id}": {
+      "get": {
+        "tags": [
+          "TransferOrder"
+        ],
+        "summary": "Get record.",
+        "operationId": "transferOrderGET2",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "expandSubResources",
+            "in": "query",
+            "description": "Set to 'true' to automatically expand all sublists, sublist lines, and subrecords on this record.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "simpleEnumFormat",
+            "in": "query",
+            "description": "Set to true to return enumeration values in a format that only shows the internal ID value.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "The names of the fields and sublists on the record. Only the selected fields and sublists will be returned in the response.",
+            "examples": {
+              "multiple fields": {
+                "value": "field1,field2"
+              },
+              "single field": {
+                "value": "field"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved record.",
+            "headers": {
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/vnd.oracle.resource+json; type=singular": {
+                "schema": {
+                  "$ref": "#/components/schemas/transferOrder"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "TransferOrder"
+        ],
+        "summary": "Insert or update record.",
+        "operationId": "transferOrderPUT",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "External identifier.",
+            "schema": {
+              "type": "string",
+              "pattern": "eid:(.+)"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replaceSelectedFields",
+            "in": "query",
+            "description": "If set to 'true', all fields that should be deleted in the update request, including body fields, must be included in the 'replace' query parameter.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/transferOrder"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Upserted record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TransferOrder"
+        ],
+        "summary": "Remove record.",
+        "operationId": "transferOrderDELETE",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Removed record."
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "TransferOrder"
+        ],
+        "summary": "Update record.",
+        "operationId": "transferOrderPATCH",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replaceSelectedFields",
+            "in": "query",
+            "description": "If set to 'true', all fields that should be deleted in the update request, including body fields, must be included in the 'replace' query parameter.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/transferOrder"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Updated record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transferOrder/{id}/!transform/itemFulfillment": {
+      "post": {
+        "tags": [
+          "TransferOrder"
+        ],
+        "summary": "Transform to itemFulfillment.",
+        "operationId": "itemFulfillment",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/nsResource"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Transformed record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/vnd.oracle.resource+json; type=singular": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsResource"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transferOrder/{id}/!transform/itemReceipt": {
+      "post": {
+        "tags": [
+          "TransferOrder"
+        ],
+        "summary": "Transform to itemReceipt.",
+        "operationId": "itemReceipt",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/nsResource"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Transformed record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/vnd.oracle.resource+json; type=singular": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsResource"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "nsResourceCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/nsResource"
+            }
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          }
+        }
+      },
+      "nsResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Internal identifier",
+            "type": "string"
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "externalId": {
+            "title": "External identifier",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          }
+        }
+      },
+      "nsError": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "type": "string",
+            "readOnly": true,
+            "description": "A URI reference to the documentation about the problem type.",
+            "format": "URI"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string",
+            "readOnly": true,
+            "description": "A human-readable description of the problem type."
+          },
+          "status": {
+            "title": "Status",
+            "type": "integer",
+            "readOnly": true,
+            "description": "The HTTP status code generated by the server the request originates from.",
+            "format": "int32"
+          },
+          "o:errorDetails": {
+            "type": "array",
+            "readOnly": true,
+            "description": "An array containing one or more problem types.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "detail": {
+                  "title": "Detail",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "A detailed, human-readable description of the problem occurrence."
+                },
+                "o:errorPath": {
+                  "title": "Error Path",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The JSON path that indicates where the problem occurs within the request body.",
+                  "format": "JSONPath"
+                },
+                "o:errorUrl": {
+                  "title": "Error URL",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The URI of the first element in the request URL where the problem occurs.",
+                  "format": "URI"
+                },
+                "o:errorHeader": {
+                  "title": "Error Header",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The name of the HTTP header where the problem occurs."
+                },
+                "o:errorQueryParam": {
+                  "title": "Error Query Parameter",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The name of the query parameter where the problem occurs."
+                },
+                "o:errorCode": {
+                  "title": "Error Code",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The application-specific error code. Similar problem types are grouped together."
+                }
+              }
+            }
+          }
+        }
+      },
+      "nsLink": {
+        "type": "object",
+        "properties": {
+          "rel": {
+            "title": "Relationship",
+            "type": "string",
+            "readOnly": true
+          },
+          "href": {
+            "title": "Hypertext Reference",
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
+      "transferOrder-accountingBookDetailElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "exchangeRate": {
+            "title": "Exchange Rate",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "subsidiary": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "accountingBook": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "transferOrder-itemCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transferOrder-itemElement"
+            }
+          }
+        }
+      },
+      "transferOrderCollection": {
+        "type": "object",
+        "properties": {
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "title": "Items",
+            "type": "array",
+            "description": "An array field that represents a collection of elements, for example, sublist lines, multiselect items, or search results.",
+            "items": {
+              "$ref": "#/components/schemas/transferOrder"
+            }
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          }
+        }
+      },
+      "transferOrder-accountingBookDetailCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/transferOrder-accountingBookDetailElement"
+            }
+          }
+        }
+      },
+      "transferOrder-itemElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "custcol_svb_bill_distr_exclude": {
+            "title": "Bill Distribution Exclude",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custcol_establishment_code": {
+            "title": "Establishment Code",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "quantityFulfilled": {
+            "title": "<NULL>",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "custcol9": {
+            "title": "Display Name",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custcol_5892_eutriangulation": {
+            "title": "EU Triangulation",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "commitInventory": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "1",
+                  "2",
+                  "3"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "quantityCommitted": {
+            "title": "Committed",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "options": {
+            "title": "Options",
+            "type": "string",
+            "nullable": true
+          },
+          "custcol1": {
+            "title": "Terms",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custcol_statistical_value": {
+            "title": "Statistical Value",
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custcol_2663_isperson": {
+            "title": "Is Person",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custcol_sii_annual_prorate": {
+            "title": "Annual Prorate",
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "quantityBackOrdered": {
+            "title": "Back Ordered",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "quantityOnHand": {
+            "title": "On Hand",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "itemSubtype": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "Sale",
+                  "Purchase",
+                  "Resale"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "custcol_country_of_origin_name": {
+            "title": "Country of Origin",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custcol_svb_dist_alloc_det_hidden": {
+            "title": "Recent Distribution Details [Hidden]",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custcol_svb_vend_bill_lineno": {
+            "title": "Line #",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custcol_sii_service_date": {
+            "title": "Service Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "billVarianceStatus": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "NOVARIANCES",
+                  "JOURNALNOTPOSTED",
+                  "JOURNALPOSTED"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "matrixType": {
+            "title": "Matrix Type",
+            "type": "string",
+            "nullable": true
+          },
+          "isOpen": {
+            "title": "Is Opened",
+            "type": "boolean"
+          },
+          "line": {
+            "title": "Transaction Line",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "nullable": true
+          },
+          "units": {
+            "title": "Units",
+            "type": "string",
+            "nullable": true
+          },
+          "isClosed": {
+            "title": "Closed",
+            "type": "boolean"
+          },
+          "custcol_adjustment_field": {
+            "title": "Adjustment Field",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custcol_statistical_value_base_curr": {
+            "title": "Statistical Value - Base Currency",
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "orderPriority": {
+            "title": "Order Priority",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "custcol_country_of_origin_code": {
+            "title": "Country of Origin Code",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "quantityReceived": {
+            "title": "Quantity Received",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "rate": {
+            "title": "Rate",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "custcol_2663_lastname": {
+            "title": "Last Name",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "linked": {
+            "title": "Linked",
+            "type": "boolean"
+          },
+          "minQty": {
+            "title": "Minimum Quantity",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "printItems": {
+            "title": "Print Items",
+            "type": "boolean"
+          },
+          "custcol_counterparty_vat": {
+            "title": "Counterparty VAT Number",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "amount": {
+            "title": "Amount",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "quantity": {
+            "title": "Quantity",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "commitmentFirm": {
+            "title": "Commitment Confirmed",
+            "type": "boolean"
+          },
+          "custcol_2663_firstname": {
+            "title": "First Name",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "quantityPacked": {
+            "title": "Quantity Packed",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "itemType": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "Group",
+                  "Description",
+                  "Discount",
+                  "EndGroup",
+                  "GiftCert",
+                  "Subtotal",
+                  "Service",
+                  "ShipItem",
+                  "TaxItem",
+                  "InvtPart",
+                  "Payment",
+                  "Expense",
+                  "NonInvtPart",
+                  "TaxGroup",
+                  "Kit",
+                  "Markup",
+                  "DwnLdItem",
+                  "OthCharge",
+                  "Assembly",
+                  "SubscriPlan"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "quantityAvailable": {
+            "title": "Available",
+            "type": "number",
+            "format": "float",
+            "nullable": true
+          },
+          "custcol_2663_companyname": {
+            "title": "Company Name",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "custcol_svb_item_exp_account": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custcol_nature_of_transaction_codes": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custcol_emirate": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custcol_statistical_procedure_sale": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custcol_2663_eft_file_format": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custcol_nondeductible_account": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "class": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "subsidiary": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custcol_sii_exempt_line_details": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custcol_adjustment_tax_code": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "location": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "item": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/nsResource"
+              }
+            ]
+          },
+          "custcol_expense_code_of_supply": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "department": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custcol_far_trn_relatedasset": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custcol_statistical_procedure_purc": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "transferOrder-shippingAddress": {
+        "type": "object",
+        "properties": {
+          "zip": {
+            "title": "Zip",
+            "type": "string",
+            "description": "Enter the postal code the way it should appear on all forms except checks.",
+            "nullable": true
+          },
+          "country": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "PR",
+                  "PS",
+                  "PT",
+                  "PW",
+                  "PY",
+                  "QA",
+                  "AD",
+                  "AE",
+                  "AF",
+                  "AG",
+                  "AI",
+                  "AL",
+                  "AM",
+                  "AN",
+                  "AO",
+                  "AQ",
+                  "AR",
+                  "AS",
+                  "AT",
+                  "RE",
+                  "AU",
+                  "AW",
+                  "AX",
+                  "AZ",
+                  "RO",
+                  "BA",
+                  "BB",
+                  "RS",
+                  "BD",
+                  "BE",
+                  "RU",
+                  "BF",
+                  "BG",
+                  "RW",
+                  "BH",
+                  "BI",
+                  "BJ",
+                  "BL",
+                  "BM",
+                  "BN",
+                  "BO",
+                  "SA",
+                  "BQ",
+                  "SB",
+                  "BR",
+                  "SC",
+                  "BS",
+                  "SD",
+                  "BT",
+                  "SE",
+                  "BV",
+                  "SG",
+                  "BW",
+                  "SH",
+                  "SI",
+                  "BY",
+                  "SJ",
+                  "BZ",
+                  "SK",
+                  "SL",
+                  "SM",
+                  "SN",
+                  "SO",
+                  "CA",
+                  "SR",
+                  "CC",
+                  "SS",
+                  "CD",
+                  "ST",
+                  "CF",
+                  "SV",
+                  "CG",
+                  "CH",
+                  "SX",
+                  "CI",
+                  "SY",
+                  "SZ",
+                  "CK",
+                  "CL",
+                  "CM",
+                  "CN",
+                  "CO",
+                  "CR",
+                  "TC",
+                  "CS",
+                  "TD",
+                  "CU",
+                  "TF",
+                  "CV",
+                  "TG",
+                  "CW",
+                  "TH",
+                  "CX",
+                  "CY",
+                  "TJ",
+                  "CZ",
+                  "TK",
+                  "TL",
+                  "TM",
+                  "TN",
+                  "TO",
+                  "TR",
+                  "TT",
+                  "DE",
+                  "TV",
+                  "TW",
+                  "DJ",
+                  "TZ",
+                  "DK",
+                  "DM",
+                  "DO",
+                  "UA",
+                  "UG",
+                  "DZ",
+                  "UM",
+                  "EA",
+                  "EC",
+                  "US",
+                  "EE",
+                  "EG",
+                  "EH",
+                  "UY",
+                  "UZ",
+                  "VA",
+                  "ER",
+                  "VC",
+                  "ES",
+                  "ET",
+                  "VE",
+                  "VG",
+                  "VI",
+                  "VN",
+                  "VU",
+                  "FI",
+                  "FJ",
+                  "FK",
+                  "FM",
+                  "FO",
+                  "FR",
+                  "WF",
+                  "GA",
+                  "GB",
+                  "WS",
+                  "GD",
+                  "GE",
+                  "GF",
+                  "GG",
+                  "GH",
+                  "GI",
+                  "GL",
+                  "GM",
+                  "GN",
+                  "GP",
+                  "GQ",
+                  "GR",
+                  "GS",
+                  "GT",
+                  "GU",
+                  "GW",
+                  "GY",
+                  "XK",
+                  "HK",
+                  "HM",
+                  "HN",
+                  "HR",
+                  "HT",
+                  "YE",
+                  "HU",
+                  "IC",
+                  "ID",
+                  "YT",
+                  "IE",
+                  "IL",
+                  "IM",
+                  "IN",
+                  "IO",
+                  "ZA",
+                  "IQ",
+                  "IR",
+                  "IS",
+                  "IT",
+                  "ZM",
+                  "JE",
+                  "ZW",
+                  "JM",
+                  "JO",
+                  "JP",
+                  "KE",
+                  "KG",
+                  "KH",
+                  "KI",
+                  "KM",
+                  "KN",
+                  "KP",
+                  "KR",
+                  "KW",
+                  "KY",
+                  "KZ",
+                  "LA",
+                  "LB",
+                  "LC",
+                  "LI",
+                  "LK",
+                  "LR",
+                  "LS",
+                  "LT",
+                  "LU",
+                  "LV",
+                  "LY",
+                  "MA",
+                  "MC",
+                  "MD",
+                  "ME",
+                  "MF",
+                  "MG",
+                  "MH",
+                  "MK",
+                  "ML",
+                  "MM",
+                  "MN",
+                  "MO",
+                  "MP",
+                  "MQ",
+                  "MR",
+                  "MS",
+                  "MT",
+                  "MU",
+                  "MV",
+                  "MW",
+                  "MX",
+                  "MY",
+                  "MZ",
+                  "NA",
+                  "NC",
+                  "NE",
+                  "NF",
+                  "NG",
+                  "NI",
+                  "NL",
+                  "NO",
+                  "NP",
+                  "NR",
+                  "NU",
+                  "NZ",
+                  "OM",
+                  "PA",
+                  "PE",
+                  "PF",
+                  "PG",
+                  "PH",
+                  "PK",
+                  "PL",
+                  "PM",
+                  "PN"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "addr2": {
+            "title": "Address 2",
+            "type": "string",
+            "description": "Enter an optional second address line the way it should appear on forms. For employees, customers, partners, and vendors, what you enter here autofills on forms if this address is marked default for Shipping or Billing. Enter up to 50 characters.",
+            "nullable": true
+          },
+          "city": {
+            "title": "City",
+            "type": "string",
+            "description": "Enter the city the way it should appear on all forms except checks.",
+            "nullable": true
+          },
+          "addr1": {
+            "title": "Address 1",
+            "type": "string",
+            "description": "Enter the address the way it should appear on forms. For employees, customers, partners, and vendors, what you enter here autofills on forms if this address is marked default for Shipping or Billing. Enter up to 50 characters. This field is required for the Online Bill Pay feature.",
+            "nullable": true
+          },
+          "lastModifiedDate": {
+            "title": "Last Modified Date",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "addr3": {
+            "title": "Address 3",
+            "type": "string",
+            "nullable": true
+          },
+          "externalId": {
+            "title": "External ID",
+            "type": "string",
+            "nullable": true
+          },
+          "addrPhone": {
+            "title": "Phone",
+            "type": "string",
+            "description": "Enter the phone number.",
+            "nullable": true
+          },
+          "addressee": {
+            "title": "Addressee",
+            "type": "string",
+            "description": "Enter the name of the entity that should appear on the shipping label here. This name appears on the shipping label below what you enter in the Attention field.",
+            "nullable": true
+          },
+          "attention": {
+            "title": "Attention",
+            "type": "string",
+            "description": "Enter the name of the person to whom a shipment is addressed, as it should appear on shipping labels. This field is required for UPS Integration.",
+            "nullable": true
+          },
+          "override": {
+            "title": "Override",
+            "type": "boolean",
+            "description": "Check this box to disable the free-form address text field. When this field is disabled, text entered in the other address fields does not display in the Address text field. Clear this box to allow text entered in the address component fields to appear in the free-form address text field."
+          },
+          "state": {
+            "title": "State/Province",
+            "type": "string",
+            "description": "Enter your company&apos;s state or province the way it should appear on all forms except checks.",
+            "nullable": true
+          },
+          "addrText": {
+            "title": "Address",
+            "type": "string",
+            "description": "The values entered in the other address fields are displayed here.",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "transferOrder": {
+        "type": "object",
+        "properties": {
+          "useItemCostAsTransferCost": {
+            "title": "Use Item Cost As Transfer Cost",
+            "type": "boolean",
+            "description": "Check this box to use the transfer price as a declared shipping value for reference only. For example, for insurance or international shipping. * The transfer price is not a charge for the destination location. * The transfer price does not affect inventory costing on transactions. * The transfer price defaults to show the value in the Transfer Price field of item records. * Partial fulfillment and receipt of transfer orders is allowed, but you cannot receive more than you have fulfilled on any date. For example, if you have fulfilled 10 widgets out of 20 on a transfer order, you cannot receive 12 widgets on that order. Clear this box to use the transfer price shown on the transfer order as the item cost on the item receipt. Important: If no transfer price is entered on the transfer order, no cost is recorded on the item receipt. * Any difference between the actual cost and the transfer price posts to a Gain/Loss account when the item is shipped. * The transfer price and the Gain/Loss account are defined on each item record. * The transfer price defaults to show the value in the Transfer Price field of item records. If you use approval routing, this setting can be changed on a transfer order as long as the transfer order is not yet approved. Once the transfer order is approved, this setting cannot be changed."
+          },
+          "orderStatus": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "custbody1": {
+            "title": "Actual Usage",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody3": {
+            "title": "Contract Start Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody4": {
+            "title": "Roll Back",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "tranDate": {
+            "title": "Date",
+            "type": "string",
+            "description": "The current date autofills for this transfer order. You can select or enter a different date.",
+            "format": "date",
+            "nullable": true
+          },
+          "custbody_sii_code_issued_inv": {
+            "title": "SII Code Issued Inv",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "memo": {
+            "title": "Memo",
+            "type": "string",
+            "description": "Enter a memo to identify this transfer order. When you use the Search Transactions feature, you can search for specific words and phrases in the Memo field.",
+            "nullable": true
+          },
+          "startDate": {
+            "title": "Start Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "custbody_opp_prjredflags": {
+            "title": "Potential Red Flags",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_collections_activity_date": {
+            "title": "Collections Activity Date",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_date_of_taxable_supply": {
+            "title": "Date of Taxable Supply",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "id": {
+            "title": "Internal ID",
+            "type": "string",
+            "nullable": true
+          },
+          "custbody_powf_pm_ok": {
+            "title": "Project Manager Approval",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "handlingCost": {
+            "title": "Handling Cost",
+            "type": "number",
+            "description": "The handling cost automatically calculates depending on the shipping method you select in the Ship Via field. To change the cost of handling, go to Lists &gt; Accounting &gt; Shipping Items and select the shipping method with the handling cost you want to change.",
+            "format": "double",
+            "nullable": true
+          },
+          "custbody_sii_land_register": {
+            "title": "Land register/Cadaster reference",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "endDate": {
+            "title": "End Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "subtotal": {
+            "title": "Subtotal",
+            "type": "number",
+            "description": "As you add items, the total shows in this field.",
+            "format": "double",
+            "nullable": true
+          },
+          "custbody_cash_register": {
+            "title": "Cash Register",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody5": {
+            "title": "PS Project Baseline Set",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody6": {
+            "title": "Project Created",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody7": {
+            "title": "Notes",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "shippingCost": {
+            "title": "Shipping Cost",
+            "type": "number",
+            "description": "The shipping cost automatically calculates depending on the shipping method you select in the Ship Via field above. To change the cost of a shipping method, go to Lists &gt; Accounting &gt; Shipping Items and select the shipping method you want to change. If you use UPS Real-Time rates and a package is over 150lbs, the package is charged as multiple packages equal to or less than 150lbs.",
+            "format": "double",
+            "nullable": true
+          },
+          "custbody_svb_sched_in_process": {
+            "title": "SVB Schedule In Process",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_powf_ctrl_dt": {
+            "title": "Controller Approval Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "shipIsResidential": {
+            "title": "Shipping address is residential",
+            "type": "boolean"
+          },
+          "createdDate": {
+            "title": "Date Created",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "custbody_collections_promised_pmt_date": {
+            "title": "Collections Promised Payment Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_code": {
+            "title": "SII Code",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "shipOverride": {
+            "title": "Override",
+            "type": "boolean"
+          },
+          "discountAmount": {
+            "title": "Discount Amount",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "firmed": {
+            "title": "Firmed",
+            "type": "boolean",
+            "description": "When the Firmed box is checked, the line items are no longer eligible for reallocation to another order. The items must remain committed to the firmed order. Firmed transfer orders are not available to be rescheduled or cancelled."
+          },
+          "custbody_svb_schedule_is_intercompany": {
+            "title": "Schedule Is Intercompany",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_adjustment_journal": {
+            "title": "Adjustment Journal",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_my_import_declaration_num": {
+            "title": "Import Declaration No.",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "webSite": {
+            "type": "string",
+            "nullable": true
+          },
+          "custbody_establishment_code": {
+            "title": "Establishment Code",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "linkedTrackingNumbers": {
+            "title": "Linked Tracking Numbers",
+            "type": "string",
+            "nullable": true
+          },
+          "custbody_country_of_origin": {
+            "title": "Country of Origin",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_not_reported_in_time": {
+            "title": "Billing Record Cannot Be Submitted On Time",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_opp_prjrequirements": {
+            "title": "Key Requirements",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "prevDate": {
+            "title": "Previous Effective Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "custbody_itr_nexus": {
+            "title": "ITR Nexus",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "customForm": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "57"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "custbody_document_date": {
+            "title": "Document Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "altHandlingCost": {
+            "title": "Handling Cost",
+            "type": "number",
+            "description": "This field shows handling costs associated with this order.",
+            "format": "double",
+            "nullable": true
+          },
+          "custbody_powf_pm_dt": {
+            "title": "Project Manager Approval Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_report_timestamp": {
+            "title": "Report Timestamp",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "shipComplete": {
+            "title": "Ship Complete",
+            "type": "boolean",
+            "description": "Check this box if you want to ship this order when there are enough items available to fully fulfill the orders. When fulfilling orders in bulk, you can filter the list to include those orders marked Ship Complete that can be completely fulfilled by selecting Respect Ship Complete in the Filter By field."
+          },
+          "custbody_sii_is_third_party": {
+            "title": "Issued By Third Party",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_esc_last_modified_date": {
+            "title": "Last Modified Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_invoice_date": {
+            "title": "Invoice Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_svb_error_logs": {
+            "title": "Shared Vendor Bill Error Logs",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_credit_terms": {
+            "title": "Terms",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_registration_msg": {
+            "title": "Registration Message",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "shipAddress": {
+            "title": "Ship To",
+            "type": "string",
+            "description": "The Ship To Address of the transfer order defaults to the address of the destination location. To enter a different address: * Select another address in the Ship To Select field. * Select New in the Ship To Select field to enter a new billing address.",
+            "nullable": true
+          },
+          "externalId": {
+            "title": "External ID",
+            "type": "string",
+            "nullable": true
+          },
+          "custbody_sii_accounting_date": {
+            "title": "Accounting Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "SuitePhone",
+                  "smbXML",
+                  "CSV",
+                  "ADP",
+                  "QIF",
+                  "QB",
+                  "PERQUEST",
+                  "Yahoo",
+                  "PaymentLink",
+                  "customerCenter",
+                  "webServices",
+                  "eBay",
+                  "restWebServices",
+                  "NLWebStore",
+                  "offlineClient",
+                  "SCIS",
+                  "Sync"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "custbody_opp_prjstart": {
+            "title": "Desired Start Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sale_billexpdetail": {
+            "title": "Billable Expense Detail",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_opportunity_link": {
+            "title": "Opportunity Link",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_4110_customregnum": {
+            "title": "Customs Registration Number",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_ref_no": {
+            "title": "Reference No.",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "discountDate": {
+            "title": "Discount Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "custbody_sii_article_72_73": {
+            "title": "Simplified Invoice Article 7.2 7.3",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "canBeUnapproved": {
+            "title": "Can Be Unapproved",
+            "type": "boolean"
+          },
+          "trackingNumbers": {
+            "title": "Tracking Numbers",
+            "type": "string",
+            "description": "This field displays the tracking number provided by the carrier for the shipment.",
+            "nullable": true
+          },
+          "custbody_4599_sg_import_permit_num": {
+            "title": "Import Permit No.",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "shippingCostOverridden": {
+            "title": "Shipping Cost Overridden",
+            "type": "boolean"
+          },
+          "fob": {
+            "title": "FOB",
+            "type": "string",
+            "nullable": true
+          },
+          "custbody_doc_num_summ_invoice": {
+            "title": "Last Document Number Of Summary Invoice",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "otherRefNum": {
+            "title": "PO/Check Number",
+            "type": "string",
+            "nullable": true
+          },
+          "exchangeRate": {
+            "title": "Exchange Rate",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "custbody_sii_external_reference": {
+            "title": "External Reference",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_itr_doc_number": {
+            "title": "Document Number",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "originator": {
+            "title": "Originator",
+            "type": "string",
+            "nullable": true
+          },
+          "custbody_2663_reference_num": {
+            "title": "ACH/EFT Reference No.",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sesc_approved": {
+            "title": "Approved",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_esc_created_date": {
+            "title": "Created Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "total": {
+            "title": "Total",
+            "type": "number",
+            "description": "This field shows the total amount associated with this order, including shipping and handling costs.",
+            "format": "double",
+            "nullable": true
+          },
+          "custbody_sii_article_61d": {
+            "title": "Invoice With No Counterpart Article 6.1.d",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_nondeductible_processed": {
+            "title": "Non-Deductible Tax Adjusted",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "custbody_reminder": {
+            "title": "Reminder",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "shipDate": {
+            "title": "Ship Date",
+            "type": "string",
+            "description": "The date defaults to show the current date. You can type or pick another shipping date for this order.",
+            "format": "date",
+            "nullable": true
+          },
+          "shippingAddress_text": {
+            "title": "Shipping Address",
+            "type": "string",
+            "nullable": true
+          },
+          "tranId": {
+            "title": "Transaction Number",
+            "type": "string",
+            "description": "Enter the number of this transfer order. If you use autogenerated numbering, the next order number in the sequence shows here. You can enter another number if you choose.",
+            "nullable": true
+          },
+          "custbody_counterparty_vat": {
+            "title": "Counterparty VAT Number",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_refno_originvoice": {
+            "title": "Reference No. of Original Invoice",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_opp_prjopentemplate": {
+            "title": "View template",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_collections_note_id": {
+            "title": "Collections Note Id",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "lastModifiedDate": {
+            "title": "Date Last Modified",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "custbody_collections_note": {
+            "title": "Collections Notes",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custbody_sii_operation_date": {
+            "title": "Operation Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "dueDate": {
+            "title": "Due Date",
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "custbody_powf_ctrl_ok": {
+            "title": "Controller Approval",
+            "type": "boolean",
+            "x-ns-custom-field": true
+          },
+          "altShippingCost": {
+            "title": "Shipping Cost",
+            "type": "number",
+            "description": "This field displays shipping costs associated with this transfer order.",
+            "format": "double",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "custbody_nondeductible_ref_tran": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "employee": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_correction_type": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_regime_code": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_nexus_notc": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_property_location": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_regime_code_of_supply": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "terms": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_svb_vb_to_bell_dist_sched": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_svb_allocation_journal": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "custbody_svb_vend_bill_link": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "location": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_opp_prjtemplate": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_spcl_scheme_code_sales": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_orig_bill": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_notc": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "createdFrom": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "shippingAddress": {
+            "$ref": "#/components/schemas/transferOrder-shippingAddress"
+          },
+          "custbody_esc_campaign_category": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_registration_status": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "transferLocation": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_transaction_region": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "class": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_issued_inv_type": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "department": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "shipAddressList": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_delivery_terms": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_registration_code": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "toSubsidiary": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_4599_mx_operation_type": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_intra_txn_type": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "currency": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_received_inv_type": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_powf_pm": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_nondeductible_ref_genjrnl": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_mode_of_transport": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_powf_ctrl": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_collections_performed_by": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "subsidiary": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_exempt_details": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "accountingBookDetail": {
+            "$ref": "#/components/schemas/transferOrder-accountingBookDetailCollection"
+          },
+          "custbody_collections_activity": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "shipMethod": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "item": {
+            "$ref": "#/components/schemas/transferOrder-itemCollection"
+          },
+          "incoTerm": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody2": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_spcl_scheme_code_purchase": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custbody_sii_orig_invoice": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": [
+          "useItemCostAsTransferCost",
+          "custbody1",
+          "custbody2",
+          "custbody3",
+          "custbody4",
+          "tranDate",
+          "custbody_sii_code_issued_inv",
+          "memo",
+          "custbody_sii_property_location",
+          "custbody_sii_spcl_scheme_code_purchase",
+          "startDate",
+          "custbody_nondeductible_ref_tran",
+          "custbody_esc_campaign_category",
+          "custbody_opp_prjredflags",
+          "custbody_collections_activity_date",
+          "terms",
+          "custbody_date_of_taxable_supply",
+          "id",
+          "custbody_collections_activity",
+          "custbody_nexus_notc",
+          "custbody_powf_pm_ok",
+          "custbody_sii_land_register",
+          "custbody_sii_exempt_details",
+          "endDate",
+          "custbody_cash_register",
+          "custbody_powf_ctrl",
+          "custbody_sii_orig_invoice",
+          "custbody5",
+          "custbody6",
+          "custbody7",
+          "custbody_svb_sched_in_process",
+          "custbody_powf_ctrl_dt",
+          "createdDate",
+          "custbody_sii_spcl_scheme_code_sales",
+          "custbody_collections_promised_pmt_date",
+          "custbody_sii_intra_txn_type",
+          "custbody_powf_pm",
+          "custbody_sii_code",
+          "firmed",
+          "custbody_svb_schedule_is_intercompany",
+          "custbody_adjustment_journal",
+          "currency",
+          "custbody_my_import_declaration_num",
+          "custbody_establishment_code",
+          "custbody_sii_registration_code",
+          "custbody_country_of_origin",
+          "custbody_sii_not_reported_in_time",
+          "custbody_opp_prjtemplate",
+          "custbody_opp_prjrequirements",
+          "custbody_svb_vb_to_bell_dist_sched",
+          "custbody_itr_nexus",
+          "transferLocation",
+          "custbody_document_date",
+          "custbody_powf_pm_dt",
+          "custbody_report_timestamp",
+          "shipComplete",
+          "custbody_regime_code_of_supply",
+          "custbody_sii_is_third_party",
+          "custbody_sii_invoice_date",
+          "custbody_svb_error_logs",
+          "custbody_credit_terms",
+          "custbody_sii_registration_msg",
+          "externalId",
+          "custbody_sii_accounting_date",
+          "employee",
+          "custbody_opp_prjstart",
+          "custbody_regime_code",
+          "custbody_opportunity_link",
+          "custbody_4110_customregnum",
+          "custbody_4599_mx_operation_type",
+          "custbody_sii_ref_no",
+          "custbody_sii_article_72_73",
+          "custbody_4599_sg_import_permit_num",
+          "incoTerm",
+          "custbody_delivery_terms",
+          "custbody_doc_num_summ_invoice",
+          "otherRefNum",
+          "toSubsidiary",
+          "exchangeRate",
+          "custbody_sii_external_reference",
+          "custbody_itr_doc_number",
+          "custbody_2663_reference_num",
+          "custbody_sesc_approved",
+          "custbody_transaction_region",
+          "custbody_nondeductible_ref_genjrnl",
+          "custbody_mode_of_transport",
+          "custbody_collections_performed_by",
+          "custbody_sii_article_61d",
+          "custbody_sii_orig_bill",
+          "custbody_svb_allocation_journal",
+          "custbody_nondeductible_processed",
+          "custbody_sii_received_inv_type",
+          "shipDate",
+          "custbody_svb_vend_bill_link",
+          "tranId",
+          "custbody_counterparty_vat",
+          "custbody_refno_originvoice",
+          "custbody_collections_note_id",
+          "lastModifiedDate",
+          "custbody_collections_note",
+          "custbody_sii_issued_inv_type",
+          "custbody_sii_registration_status",
+          "custbody_sii_correction_type",
+          "custbody_sii_operation_date",
+          "dueDate",
+          "custbody_powf_ctrl_ok",
+          "custbody_notc"
+        ]
+      }
+    },
+    "securitySchemes": {
+      "OAuth_1.0_authorization": {
+        "type": "apiKey",
+        "description": "OAuth 1.0 - https://tools.ietf.org/html/rfc5849",
+        "name": "authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "OAuth_1.0_authorization": []
+    }
+  ]
+}

@@ -1,0 +1,2130 @@
+﻿{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "NetSuite REST Record API",
+    "description": "NetSuite REST Record API generated 2024-05-24 at 12:35:13 UTC for account TSTDRV1303059, user joe.klug@peregrineconnect.com with role Neuron ESB Integration.",
+    "termsOfService": "http://www.netsuite.com/portal/resource/terms-of-service.shtml",
+    "contact": {
+      "name": "Oracle NetSuite",
+      "url": "http://www.netsuite.com",
+      "email": "info@netsuite.com"
+    },
+    "version": "v1",
+    "x-framework": {
+      "name": "oracle-netsuite-suitetalk-rest"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://tstdrv1303059.suitetalk.api.netsuite.com/services/rest/record/v1"
+    }
+  ],
+  "paths": {
+    "/serviceSaleItem": {
+      "get": {
+        "tags": [
+          "ServiceSaleItem"
+        ],
+        "summary": "Get list of records.",
+        "operationId": "serviceSaleItemGET",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "The search query that is used to filter results.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The limit used to specify the number of results on a single page.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1000
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The offset used for selecting a specific page of results.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of records.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=collection": {
+                "schema": {
+                  "$ref": "#/components/schemas/serviceSaleItemCollection"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ServiceSaleItem"
+        ],
+        "summary": "Insert record.",
+        "operationId": "serviceSaleItemPOST",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/serviceSaleItem"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Inserted record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/serviceSaleItem/{id}": {
+      "get": {
+        "tags": [
+          "ServiceSaleItem"
+        ],
+        "summary": "Get record.",
+        "operationId": "serviceSaleItemGET2",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "expandSubResources",
+            "in": "query",
+            "description": "Set to 'true' to automatically expand all sublists, sublist lines, and subrecords on this record.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "simpleEnumFormat",
+            "in": "query",
+            "description": "Set to true to return enumeration values in a format that only shows the internal ID value.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "The names of the fields and sublists on the record. Only the selected fields and sublists will be returned in the response.",
+            "examples": {
+              "multiple fields": {
+                "value": "field1,field2"
+              },
+              "single field": {
+                "value": "field"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved record.",
+            "headers": {
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/vnd.oracle.resource+json; type=singular": {
+                "schema": {
+                  "$ref": "#/components/schemas/serviceSaleItem"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "ServiceSaleItem"
+        ],
+        "summary": "Insert or update record.",
+        "operationId": "serviceSaleItemPUT",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "External identifier.",
+            "schema": {
+              "type": "string",
+              "pattern": "eid:(.+)"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replaceSelectedFields",
+            "in": "query",
+            "description": "If set to 'true', all fields that should be deleted in the update request, including body fields, must be included in the 'replace' query parameter.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/serviceSaleItem"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Upserted record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ServiceSaleItem"
+        ],
+        "summary": "Remove record.",
+        "operationId": "serviceSaleItemDELETE",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Removed record."
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "ServiceSaleItem"
+        ],
+        "summary": "Update record.",
+        "operationId": "serviceSaleItemPATCH",
+        "parameters": [
+          {
+            "name": "Prefer",
+            "in": "header",
+            "description": "The server behavior requested by the client. Use 'respond-async' to execute the request asynchronously. If the request is executed asynchronously, 'Preference-applied: respond-async' is returned in the response.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "respond-async"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-Idempotency-Key",
+            "in": "header",
+            "description": "A user-defined unique idempotency key that is applied to every asynchronous requests to ensure that the request is executed only once. Only one request can be executed with every unique idempotency key. Use UUID in string format as defined by RFC 4122. If the request is executed synchronously, this value is ignored.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Internal identifier.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyNameValidation",
+            "in": "header",
+            "description": "Sets the strictness of property name validation.",
+            "schema": {
+              "type": "string",
+              "default": "Warning",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "X-NetSuite-PropertyValueValidation",
+            "in": "header",
+            "description": "Sets the strictness of property value validation.",
+            "schema": {
+              "type": "string",
+              "default": "Error",
+              "enum": [
+                "Error",
+                "Warning",
+                "Ignore"
+              ]
+            }
+          },
+          {
+            "name": "replace",
+            "in": "query",
+            "description": "The names of sublists on this record. All sublist lines will be replaced with lines specified in the request. The names are delimited by comma.",
+            "examples": {
+              "multiple sublists": {
+                "value": "sublist1,subrecord.sublist2"
+              },
+              "sublist on subrecord": {
+                "value": "subrecord.sublist"
+              },
+              "single sublist": {
+                "value": "sublist"
+              }
+            },
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "replaceSelectedFields",
+            "in": "query",
+            "description": "If set to 'true', all fields that should be deleted in the update request, including body fields, must be included in the 'replace' query parameter.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Request body.",
+          "content": {
+            "application/vnd.oracle.resource+json; type=singular": {
+              "schema": {
+                "$ref": "#/components/schemas/serviceSaleItem"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Updated record.",
+            "headers": {
+              "X-NetSuite-PropertyValidation": {
+                "description": "The description of a property validation failure.",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-NetSuite-Warning": {
+                "description": "Warning messages that occurred during processing.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response.",
+            "content": {
+              "application/vnd.oracle.resource+json; type=error": {
+                "schema": {
+                  "$ref": "#/components/schemas/nsError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "nsResourceCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/nsResource"
+            }
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          }
+        }
+      },
+      "nsResource": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Internal identifier",
+            "type": "string"
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "externalId": {
+            "title": "External identifier",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          }
+        }
+      },
+      "serviceSaleItem-price": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/serviceSaleItem-priceElement"
+            }
+          }
+        }
+      },
+      "serviceSaleItem-translationsElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "featuredDescription": {
+            "title": "Featured Description",
+            "type": "string",
+            "nullable": true
+          },
+          "outOfStockMessage": {
+            "title": "Out Of Stock Message",
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "title": "Display Name",
+            "type": "string",
+            "nullable": true
+          },
+          "specialsDescription": {
+            "title": "Special Description",
+            "type": "string",
+            "nullable": true
+          },
+          "storeDisplayName": {
+            "title": "Store Display Name",
+            "type": "string",
+            "nullable": true
+          },
+          "language": {
+            "title": "Language",
+            "type": "string",
+            "nullable": true
+          },
+          "storeDescription": {
+            "title": "Store Description",
+            "type": "string",
+            "nullable": true
+          },
+          "noPriceMessage": {
+            "title": "No Price Message",
+            "type": "string",
+            "nullable": true
+          },
+          "pageTitle": {
+            "title": "Page Title",
+            "type": "string",
+            "nullable": true
+          },
+          "locale": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "it_CH",
+                  "en_TC",
+                  "af_ZA",
+                  "es_EA",
+                  "es_EC",
+                  "pt_BR",
+                  "en_CY",
+                  "fr_LU",
+                  "nl_AN",
+                  "es_UY",
+                  "en_TT",
+                  "es_ES",
+                  "pt_ST",
+                  "en_DM",
+                  "en_TZ",
+                  "es_ES_EURO",
+                  "fr_ML",
+                  "de_DE_onLQA",
+                  "es_VE",
+                  "nl_BE",
+                  "da_DK",
+                  "pt_AO",
+                  "to_TO",
+                  "en_UG",
+                  "am_ET",
+                  "ss_SZ",
+                  "nl_BQ",
+                  "ar",
+                  "pt_AW",
+                  "ko_KR",
+                  "en_US",
+                  "fr_BE_EURO",
+                  "ko_KP",
+                  "si_AQ",
+                  "fr_MG",
+                  "el_GR",
+                  "be_BY",
+                  "en_AU",
+                  "he_IL",
+                  "en_AW",
+                  "es_SV",
+                  "en_BB",
+                  "ar_YE",
+                  "es_CO",
+                  "es_CL",
+                  "en_BM",
+                  "es_CR",
+                  "pa_IN",
+                  "en_SC",
+                  "en_BS",
+                  "sm_WS",
+                  "it_IT_EURO",
+                  "fr_KM",
+                  "es_CU",
+                  "en_SB",
+                  "en_SG",
+                  "en_BW",
+                  "en_SH",
+                  "en_BZ",
+                  "en_SL",
+                  "az_AZ",
+                  "fi_FI",
+                  "en_SS",
+                  "sr_YU",
+                  "en_CD",
+                  "en_CA",
+                  "ka_GE",
+                  "lv_LV",
+                  "uk_UA",
+                  "es_DO",
+                  "ur_PK",
+                  "ar_IQ",
+                  "fr_LU_EURO",
+                  "pt_PT",
+                  "fr_FR_EURO",
+                  "en_PH",
+                  "th_TH",
+                  "bn_BD",
+                  "si_LK",
+                  "en_PG",
+                  "hu_HU",
+                  "ar_SA",
+                  "ar_SD",
+                  "ru_KZ",
+                  "ar_BH",
+                  "nl_BE_EURO",
+                  "ro_MD",
+                  "en_QA",
+                  "ru_KG",
+                  "es_AR",
+                  "ta_IN",
+                  "sr_RS",
+                  "aa_ER",
+                  "en",
+                  "de_DE_EURO",
+                  "zh_MO",
+                  "en_AE",
+                  "ar_SY",
+                  "es_BO",
+                  "en_AI",
+                  "no_NO",
+                  "en_AG",
+                  "nl_SR",
+                  "fr_VU",
+                  "en_MW",
+                  "gu_AQ",
+                  "ar_TN",
+                  "nl_SX",
+                  "hi_IN",
+                  "en_NA",
+                  "mn_MN",
+                  "en_NG",
+                  "fr_FR",
+                  "ms_MY",
+                  "nl_CW",
+                  "uz_UZ",
+                  "ar_DJ",
+                  "sr_CS",
+                  "de_AT_EURO",
+                  "en_NZ",
+                  "es_PE",
+                  "es_PA",
+                  "fa_IR",
+                  "ar_DZ",
+                  "fr_GN",
+                  "lb_LU",
+                  "xx_US",
+                  "pt_CV",
+                  "sh_RS",
+                  "ht_HT",
+                  "fr_WF",
+                  "es_AR_onLQA",
+                  "es_PR",
+                  "ar_EG",
+                  "es_PY",
+                  "fr_GA",
+                  "en_KW",
+                  "de_AT",
+                  "ro_RO",
+                  "en_KY",
+                  "fr_FR_onLQA",
+                  "fr_DJ",
+                  "ca_ES_EURO",
+                  "cs_CZ",
+                  "en_LC",
+                  "pl_AQ",
+                  "fr_TD",
+                  "fr_TG",
+                  "es_MX",
+                  "sv_AX",
+                  "sk_SK",
+                  "en_LR",
+                  "en_LS",
+                  "ar_OM",
+                  "dz_BT",
+                  "te_IN",
+                  "de_LU_EURO",
+                  "sq_AL",
+                  "sv_SE",
+                  "sn_ZW",
+                  "es_NI",
+                  "en_IE_EURO",
+                  "my_MM",
+                  "en_MF",
+                  "en_MU",
+                  "it_IT",
+                  "pl_PL",
+                  "fr_BE",
+                  "fr_BF",
+                  "tr_TR",
+                  "fr_BI",
+                  "fr_BJ",
+                  "id_ID",
+                  "fr_RW",
+                  "en_ZM",
+                  "km_KH",
+                  "ja_JP",
+                  "de_DE",
+                  "fr_BL",
+                  "tg_TJ",
+                  "ar_QA",
+                  "de_CH",
+                  "zh_HK",
+                  "pt_PT_EURO",
+                  "en_JO",
+                  "en_JM",
+                  "fr_CA",
+                  "nl_NL_EURO",
+                  "fr_CF",
+                  "fr_CG",
+                  "fr_CD",
+                  "pa_AQ",
+                  "fr_CH",
+                  "xx_US_wthId",
+                  "fr_CI",
+                  "pt_GW",
+                  "vi_VN",
+                  "ru_MD",
+                  "fr_CM",
+                  "fr_SC",
+                  "en_KE",
+                  "ne_NP",
+                  "bs_BA",
+                  "sl_SI",
+                  "en_KN",
+                  "fr_SN",
+                  "ar_AE",
+                  "en_GY",
+                  "tl_PH",
+                  "ca_ES",
+                  "es_IC",
+                  "lo_LA",
+                  "kn_IN",
+                  "so_SO",
+                  "fr_PF",
+                  "ar_JO",
+                  "nl_NL",
+                  "is_IS",
+                  "fi_FI_EURO",
+                  "pt_MZ",
+                  "sk_SK_EURO",
+                  "sl_SI_EURO",
+                  "en_IE",
+                  "ms_BN",
+                  "hr_HR",
+                  "ar_KW",
+                  "de_LU",
+                  "lt_LT",
+                  "en_IN",
+                  "ps_AF",
+                  "en_ZA",
+                  "en_VC",
+                  "ru_RU",
+                  "sh_YU",
+                  "ar_LB",
+                  "mr_IN",
+                  "dv_MV",
+                  "fj_FJ",
+                  "zh_TW",
+                  "tk_TM",
+                  "ar_LY",
+                  "en_VU",
+                  "fr_NE",
+                  "en_FK",
+                  "es_GT",
+                  "fr_NC",
+                  "es_GQ",
+                  "fa_AF",
+                  "bg_BG",
+                  "hy_AM",
+                  "en_CY_EURO",
+                  "mk_MK",
+                  "ar_MA",
+                  "en_GD",
+                  "en_GB",
+                  "es_HN",
+                  "gu_IN",
+                  "en_GH",
+                  "et_EE",
+                  "en_GI",
+                  "zh_CN",
+                  "en_GM",
+                  "ar_MR"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "storeDetailedDescription": {
+            "title": "Detailed Description",
+            "type": "string",
+            "nullable": true
+          },
+          "salesDescription": {
+            "title": "Sales Description",
+            "type": "string",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "nsError": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "type": "string",
+            "readOnly": true,
+            "description": "A URI reference to the documentation about the problem type.",
+            "format": "URI"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string",
+            "readOnly": true,
+            "description": "A human-readable description of the problem type."
+          },
+          "status": {
+            "title": "Status",
+            "type": "integer",
+            "readOnly": true,
+            "description": "The HTTP status code generated by the server the request originates from.",
+            "format": "int32"
+          },
+          "o:errorDetails": {
+            "type": "array",
+            "readOnly": true,
+            "description": "An array containing one or more problem types.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "detail": {
+                  "title": "Detail",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "A detailed, human-readable description of the problem occurrence."
+                },
+                "o:errorPath": {
+                  "title": "Error Path",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The JSON path that indicates where the problem occurs within the request body.",
+                  "format": "JSONPath"
+                },
+                "o:errorUrl": {
+                  "title": "Error URL",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The URI of the first element in the request URL where the problem occurs.",
+                  "format": "URI"
+                },
+                "o:errorHeader": {
+                  "title": "Error Header",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The name of the HTTP header where the problem occurs."
+                },
+                "o:errorQueryParam": {
+                  "title": "Error Query Parameter",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The name of the query parameter where the problem occurs."
+                },
+                "o:errorCode": {
+                  "title": "Error Code",
+                  "type": "string",
+                  "readOnly": true,
+                  "description": "The application-specific error code. Similar problem types are grouped together."
+                }
+              }
+            }
+          }
+        }
+      },
+      "nsLink": {
+        "type": "object",
+        "properties": {
+          "rel": {
+            "title": "Relationship",
+            "type": "string",
+            "readOnly": true
+          },
+          "href": {
+            "title": "Hypertext Reference",
+            "type": "string",
+            "readOnly": true
+          }
+        }
+      },
+      "serviceSaleItem": {
+        "type": "object",
+        "properties": {
+          "externalId": {
+            "title": "External ID",
+            "type": "string",
+            "nullable": true
+          },
+          "storeDisplayName": {
+            "title": "Store Display Name",
+            "type": "string",
+            "description": "Enter the name of this item as you want it displayed in your Web site. You can enter up to 250 characters.",
+            "nullable": true
+          },
+          "residual": {
+            "title": "Residual",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "searchKeywords": {
+            "title": "Search Keywords",
+            "type": "string",
+            "description": "Enter alternative search keywords that customers might use to find this item using your Web store’s internal search. These can include synonyms, acronyms, alternate languages or misspellings. These keywords are seen as equally important as the item name when searches are conducted.",
+            "nullable": true
+          },
+          "isOnline": {
+            "title": "Display in Website",
+            "type": "boolean",
+            "description": "Check this box to make this item available online in your Web site. You cannot sell this item online unless you check this box. If the item is of the Other Charge for Sale or Resale subtype, checking this box does not make it available in the web store catalog. However, it becomes available during web store checkout."
+          },
+          "availableToPartners": {
+            "title": "Available to Adv. Partners",
+            "type": "boolean",
+            "description": "Check this box to make this item available to partners with the Advanced Partner Center role for viewing. These items are also available to partners with roles that are customized for the Advanced Partner Center and include view, create or edit access to item records."
+          },
+          "maximumquantity": {
+            "title": "Maximum Order Qty",
+            "type": "integer",
+            "description": "Enter the greatest quantity of this item that customers can purchase. If customers enter an item quantity above the maximum amount, a warning message is displayed. Web store customers are unable to complete checkout unless they enter a quantity equal to or below the maximum quantity. Leave this field empty to allow customers to check out without maximum quantity restrictions. You can edit this warning at Setup &gt; Site Builder/SuiteCommerce Advanced &gt; Customize Text.",
+            "format": "int64",
+            "nullable": true
+          },
+          "minimumquantity": {
+            "title": "Minimum Order Qty",
+            "type": "integer",
+            "description": "Enter the lowest quantity that customers can purchase. Web store customers receive a warning and cannot check out if they enter an item quantity below this minimum. Leave this field empty to allow customers to check out with no minimum quantity restrictions. You can edit this warning at Setup &gt; Site Builder/SuiteCommerce Advanced &gt; Customize Text.",
+            "format": "int64",
+            "nullable": true
+          },
+          "id": {
+            "title": "Internal ID",
+            "type": "string",
+            "nullable": true
+          },
+          "custitem_productreviews2": {
+            "title": "Product Reviews #2",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "storeDetailedDescription": {
+            "title": "Detailed Description",
+            "type": "string",
+            "description": "Enter a detailed description for this item. When your customers click an item&apos;s store display name for more information, they see this description. You can enter letters, numbers or basic HTML code. If you are using Internet Explorer, you can also clear the View Source box below to enter and format text using the formatting options above. This eliminates the need for HTML code. If you do not see the View Source box, make sure Rich Text Editing is enabled at Home &gt; Set Preferences &gt; Appearance.",
+            "nullable": true
+          },
+          "salesDescription": {
+            "title": "Sales Description",
+            "type": "string",
+            "description": "Enter a sales description for this item. You can enter letters and numbers. There is a 999 character limit. The sales description displays on transactions such as sales orders, cash sales and invoices. If you use the Web Store feature, the sales description displays immediately under the item&apos;s store display name on item list pages in your store or site, if you have not entered a store description for an item. Enter the store description on the Store subtab of the item record. The sales description also displays by default when the item is in the Web store shopping cart.",
+            "nullable": true
+          },
+          "custitem_productreviews1": {
+            "title": "Product Reviews #1",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "custitem_custom_altimage1": {
+            "title": "Alternate Image 1",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "baseUnit": {
+            "title": "Primary Base Unit",
+            "type": "string",
+            "nullable": true
+          },
+          "includeChildren": {
+            "title": "Include Children",
+            "type": "boolean",
+            "description": "Check the Include Children box to share the item with all the sub-subsidiaries associated with each subsidiary selected in the Subsidiary field. Note: When sharing items across subsidiaries, all of the options selected on the item record must be compatible across subsidiaries. For example, when entering an inventory item to be shared across subsidiaries, you should select Income and Asset accounts on the item record that are also shared across the same subsidiaries."
+          },
+          "internalId": {
+            "title": "Internal ID",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "featuredDescription": {
+            "title": "Featured Description",
+            "type": "string",
+            "description": "If this item is displayed on the home page of your Web site, enter a featured description for this item. This description appears below the item&apos;s store display name on the Home page of your store or site. You can enter up to 999 characters including basic HTML code. Enter and format text using the formatting options, or click the HTML Source Code link to enter HTML.",
+            "nullable": true
+          },
+          "outOfStockMessage": {
+            "title": "Out Of Stock Message",
+            "type": "string",
+            "description": "You can enter a custom out of stock message for this item. The message here replaces the default out of stock message.",
+            "nullable": true
+          },
+          "storeDescription": {
+            "title": "Store Description",
+            "type": "string",
+            "description": "The store description appears under the item&apos;s store display name on item list pages in your store or site. You can enter letters, numbers, and basic HTML code. Note: To make the store description display when an item is in the Web store shopping cart, go to Setup &gt; Web Site &gt; Set Up Web Site. Click the Cart subtab, and check the box next to Store Description.",
+            "nullable": true
+          },
+          "matrixType": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "",
+                  "PARENT",
+                  "CHILD"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "saleUnit": {
+            "title": "Primary Sale Unit",
+            "type": "string",
+            "description": "Select the unit you use to sell this item to customers on sales transactions.",
+            "nullable": true
+          },
+          "isInactive": {
+            "title": "Inactive",
+            "type": "boolean",
+            "description": "When you check this box, this item will no longer appear on a list unless you check the Show All box at the bottom of the list page."
+          },
+          "metaTagHtml": {
+            "title": "Meta Tag HTML",
+            "type": "string",
+            "description": "Enter the Meta Tag HTML you want to appear in the &lt; head &gt; section of this item page. Meta tags enable your Web site to be found by search engines.",
+            "nullable": true
+          },
+          "createdDate": {
+            "title": "Date Created",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "dontShowPrice": {
+            "title": "Don't Show Price",
+            "type": "boolean",
+            "description": "Check this box to hide the price of this item online. This is useful for items you want to advertise but don&apos;t want to sell or for items that you track inventory for and want to display but are offered in combination with other items."
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "nullable": true
+          },
+          "onSpecial": {
+            "title": "On Special",
+            "type": "boolean",
+            "description": "If you want to put this item on special, check this box. The item then appears in the Specials category in your store or site."
+          },
+          "matrixItemNameTemplate": {
+            "title": "Matrix Item Name Template",
+            "type": "string",
+            "description": "This field is used to control how the matrix item will be displayed in the Matrix Item Name/Number field. Compose the order in which attributes and matrix options are displayed by selecting from the Insert Item Attribute and Insert Matrix Option dropdown lists. Add custom separator characters to easier distinguish the various options. Example: Item Name: Fabric / Color / Waist / Length [Location]",
+            "nullable": true
+          },
+          "itemId": {
+            "title": "Item Name/Number",
+            "type": "string",
+            "description": "Enter up to 250 characters for the name of this item. This name appears in lists on transactions. If you have the option of entering a display name and do not, the item name prints in the Item column of sales forms when Basic printing is used. If you have the option to enter a vendor name and do not, the item name prints in the Item column of purchase forms. If you have entered a display name, it will print on purchases instead of the item name when Basic printing is used.",
+            "nullable": true
+          },
+          "offerSupport": {
+            "title": "Offer Support",
+            "type": "boolean",
+            "description": "Check this box to offer support for this particular item. By offering support for items, customers can select on case records which item they are having trouble with."
+          },
+          "custitem_custom_altimageth": {
+            "title": "Alternate Image 1 (Thumb)",
+            "type": "string",
+            "nullable": true,
+            "x-ns-custom-field": true
+          },
+          "subtype": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "Sale",
+                  "Purchase",
+                  "Resale"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "isFulfillable": {
+            "title": "Can be Fulfilled",
+            "type": "boolean",
+            "description": "Check the Can be Fulfilled/Received box to enable this item to be received and fulfilled during order processing. Clear this box if this item does not require being received and fulfilled. Note: Once this item has been added to transactions, this setting cannot be changed. This field is used when the Advanced Billing and Advanced Shipping features are both enabled."
+          },
+          "noPriceMessage": {
+            "title": "No Price Message",
+            "type": "string",
+            "description": "If you opted to not show a price online, enter the message that should show instead of the price. For example, you might enter &quot;Call for Price.&quot;",
+            "nullable": true
+          },
+          "enforceminqtyinternally": {
+            "title": "Enforce Minimum Internally",
+            "type": "boolean",
+            "description": "Check this box to apply the minimum quantity restriction on sales orders generated from NetSuite. When you clear this box, but enter a number in the Minimum Quantity field, the minimum quantity is only applied to web store orders."
+          },
+          "excludeFromSiteMap": {
+            "title": "Exclude from Sitemap",
+            "type": "boolean",
+            "description": "Check this box to exclude a tab, category or item page from the site map."
+          },
+          "lastModifiedDate": {
+            "title": "Last Modified",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "amortizationPeriod": {
+            "title": "Amortization Period",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "isGCoCompliant": {
+            "title": "Google Checkout Compliant",
+            "type": "boolean"
+          },
+          "matrixItemNameTemplateHelp": {
+            "title": "Matrix Item Name Template",
+            "type": "string",
+            "nullable": true
+          },
+          "createJob": {
+            "title": "Create Project",
+            "type": "boolean",
+            "description": "Check this box to make this item eligible to create a job record when it is sold."
+          },
+          "upcCode": {
+            "title": "UPC Code",
+            "type": "string",
+            "description": "Enter a maximum of 999 characters in this field to identify an internal name or number to store the item&apos;s UPC Code. You can use the text you enter here when adding the item to transactions, searching, or viewing reports. * When you enter text in this field, the SKU/UPC field on item labels displays this UPC Code and prints in UPC bar code format. * When this field is clear, the SKU/UPC field on item labels displays the Item Name/Number and prints in Code-128 bar code format.",
+            "nullable": true
+          },
+          "outOfStockBehavior": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "DISABLE",
+                  "ENABLENMSG",
+                  "REMOVE",
+                  "ENABLE",
+                  "DEFAULT"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "siteMapPriority": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "",
+                  "0.0",
+                  "0.1",
+                  "0.2",
+                  "0.3",
+                  "0.4",
+                  "0.5",
+                  "0.6",
+                  "0.7",
+                  "0.8",
+                  "0.9",
+                  "1.0"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "itemType": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "Group",
+                  "Description",
+                  "Discount",
+                  "EndGroup",
+                  "GiftCert",
+                  "Subtotal",
+                  "Service",
+                  "ShipItem",
+                  "TaxItem",
+                  "InvtPart",
+                  "Payment",
+                  "Expense",
+                  "NonInvtPart",
+                  "TaxGroup",
+                  "Kit",
+                  "Markup",
+                  "DwnLdItem",
+                  "OthCharge",
+                  "Assembly",
+                  "SubscriPlan"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "customForm": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "-210",
+                  "118"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "insertItemAttribute": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "title": "Internal identifier",
+                "type": "string",
+                "enum": [
+                  "class",
+                  "department",
+                  "itemid",
+                  "location",
+                  "issueproduct",
+                  "vendorname"
+                ]
+              },
+              "refName": {
+                "title": "Reference Name",
+                "type": "string"
+              }
+            }
+          },
+          "displayName": {
+            "title": "Display Name/Code",
+            "type": "string",
+            "description": "Enter an optional name of up to 250 characters for this item in addition to the Item Name. If you are integrating with a Yahoo! store, this field is imported from Yahoo!. The display name prints in the Item column of sales forms when Basic printing is used. If this item is a member of a kit, this name appears in the Item column when the Print Items box is checked. If you do not enter a display name, the item name appears on printed forms.",
+            "nullable": true
+          },
+          "pageTitle": {
+            "title": "Page Title",
+            "type": "string",
+            "description": "Enter the text you want to appear as the page&apos;s title for this item. This text appears in the browser tab. Use a descriptive title for the item page, this can help achieve better results with search engine ranking.",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "amortizationTemplate": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "parent": {
+            "$ref": "#/components/schemas/serviceSaleItem"
+          },
+          "expenseAmortizationRule": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custitem_code_of_supply": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "location": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "presentationItem": {
+            "$ref": "#/components/schemas/serviceSaleItem-presentationItemCollection"
+          },
+          "correlatedItems": {
+            "$ref": "#/components/schemas/serviceSaleItem-correlatedItemsCollection"
+          },
+          "siteCategory": {
+            "$ref": "#/components/schemas/serviceSaleItem-siteCategoryCollection"
+          },
+          "custitem4_1": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "pricingGroup": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "deferralAccount": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "projectTemplate": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "subsidiary": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "storeDisplayImage": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "billingSchedule": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "billQtyVarianceAcct": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "price": {
+            "$ref": "#/components/schemas/serviceSaleItem-price"
+          },
+          "unitsType": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "class": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "billExchRateVarianceAcct": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "incomeAccount": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custitem1": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "custitem3": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "custitem2": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "createExpensePlansOn": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "billPriceVarianceAcct": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "storeDisplayThumbnail": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "custitem8": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "custitem5": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "custitem4": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "custitem7": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "custitem6": {
+            "$ref": "#/components/schemas/nsResourceCollection"
+          },
+          "translations": {
+            "$ref": "#/components/schemas/serviceSaleItem-translationsCollection"
+          },
+          "matrixoptioncustitem1": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "matrixoptioncustitem4_1": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "matrixoptioncustitem8": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "department": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "matrixoptioncustitem6": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "matrixoptioncustitem7": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "matrixoptioncustitem4": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "matrixoptioncustitem5": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "matrixoptioncustitem2": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "matrixoptioncustitem3": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "serviceSaleItem-correlatedItemsCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/serviceSaleItem-correlatedItemsElement"
+            }
+          }
+        }
+      },
+      "serviceSaleItem-presentationItemElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "presitemurl": {
+            "title": "Item URL",
+            "type": "string",
+            "nullable": true
+          },
+          "basePrice": {
+            "title": "Base Price",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "presItemId": {
+            "title": "Internal ID",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "onlinePrice": {
+            "title": "Online Price",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "serviceSaleItem-correlatedItemsElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "liftFld": {
+            "title": "Lift %",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "purchaseRateFld": {
+            "title": "Overall Purchase Rate",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "itemNKeyFld": {
+            "title": "Item",
+            "type": "string",
+            "nullable": true
+          },
+          "countFld": {
+            "title": "Count",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "correlationFld": {
+            "title": "Correlation %",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "serviceSaleItem-priceElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "isInactive": {
+            "title": "Inactive",
+            "type": "boolean",
+            "description": "When you check this box, this item will no longer appear on a list unless you check the Show All box at the bottom of the list page."
+          },
+          "priceQty": {
+            "title": "Sequence Number",
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "price": {
+            "title": "Amount",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "discountDisplay": {
+            "title": "Default Discount %",
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "priceLevelName": {
+            "title": "Price Level",
+            "type": "string",
+            "nullable": true
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "currencyPage": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "priceLevel": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "serviceSaleItem-translationsCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/serviceSaleItem-translationsElement"
+            }
+          }
+        }
+      },
+      "serviceSaleItemCollection": {
+        "type": "object",
+        "properties": {
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "title": "Items",
+            "type": "array",
+            "description": "An array field that represents a collection of elements, for example, sublist lines, multiselect items, or search results.",
+            "items": {
+              "$ref": "#/components/schemas/serviceSaleItem"
+            }
+          },
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          }
+        }
+      },
+      "serviceSaleItem-presentationItemCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/serviceSaleItem-presentationItemElement"
+            }
+          }
+        }
+      },
+      "serviceSaleItem-siteCategoryElement": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "refName": {
+            "title": "Reference Name",
+            "type": "string"
+          },
+          "webSite": {
+            "$ref": "#/components/schemas/nsResource"
+          },
+          "category": {
+            "$ref": "#/components/schemas/nsResource"
+          }
+        },
+        "x-ns-filterable": []
+      },
+      "serviceSaleItem-siteCategoryCollection": {
+        "type": "object",
+        "properties": {
+          "links": {
+            "title": "Links",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "$ref": "#/components/schemas/nsLink"
+            }
+          },
+          "totalResults": {
+            "title": "Total Results",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "hasMore": {
+            "title": "Has More Results",
+            "type": "boolean",
+            "readOnly": true
+          },
+          "offset": {
+            "title": "Query Offset",
+            "type": "integer",
+            "readOnly": true,
+            "format": "int64"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/serviceSaleItem-siteCategoryElement"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "OAuth_1.0_authorization": {
+        "type": "apiKey",
+        "description": "OAuth 1.0 - https://tools.ietf.org/html/rfc5849",
+        "name": "authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "OAuth_1.0_authorization": []
+    }
+  ]
+}

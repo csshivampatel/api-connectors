@@ -1,0 +1,3935 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "OneDrive",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://graph.microsoft.com"
+    }
+  ],
+  "schemes": ["https"],
+  "host": "https://graph.microsoft.com",
+  "basePath": "/v1.0",
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "tags": [
+    {
+      "name": "Drives"
+    },
+    {
+      "name": "DriveItems"
+    },
+    {
+      "name": "Lists"
+    },
+    {
+      "name": "ListItems"
+    },
+    {
+      "name": "Permissions"
+    },
+    {
+      "name": "Sites"
+    },
+    {
+      "name": "Webhooks"
+    }
+  ],
+  "paths": {
+    "/drives": {
+      "get": {
+        "tags": ["Drives"],
+        "summary": "List available drives",
+        "operationId": "list_available_drives",
+        "description": "Retrieve the list of Drive resources available.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/drives"
+            }
+          }
+        }
+      }
+    },
+    "/drives/{drive-id}": {
+      "get": {
+        "tags": ["Drives"],
+        "summary": "Get a drive by ID",
+        "operationId": "get_a_drive_by_id",
+        "description": "Retrieve the properties and relationships of a Drive resource.",
+        "parameters": [
+          {
+            "name": "drive-id",
+            "type": "string",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/DriveResource"
+            }
+          }
+        }
+      }
+    },
+    "/drive/root": {
+      "get": {
+        "tags": ["Drives"],
+        "summary": "Get root folder for user's default Drive",
+        "operationId": "Get_root_folder_for_users_default_Drive",
+        "description": "request to the root folder of the user's OneDrive.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/expand"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/DriveItems"
+            }
+          }
+        }
+      }
+    },
+    "/drive/activities": {
+      "get": {
+        "tags": ["Drives"],
+        "summary": "List activities under the Drive",
+        "operationId": "List_activities_under_the_Drive",
+        "description": "List the recent activities that took place on an item or under a hierarchy.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/ItemActivitys"
+            }
+          }
+        }
+      }
+    },
+    "/drive/root/delta": {
+      "get": {
+        "tags": ["Drives"],
+        "summary": "List changes for all Items in the Drive",
+        "operationId": "List_changes_for_all_Items_in_the_Drive",
+        "description": "This method allows your app to track changes to a drive and its children over time.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/expand"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/top"
+          },
+          {
+            "name":"Authorization",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/deltadriveItems"
+            }
+          }
+        }
+      }
+    },
+    "/drive/root/search": {
+      "get": {
+        "tags": ["Drives"],
+        "summary": "Search for Items in the Drive",
+        "operationId": "Search_for_Items_in_the_Drive",
+        "description": "This method allows your app to track changes to a drive and its children over time.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/expand"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/top"
+          },
+          {
+            "$ref": "#/parameters/skipToken"
+          },
+          {
+            "$ref": "#/parameters/orderby"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "The query text used to search for items. Values may be matched across several fields including filename, metadata, and file content.",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/DriveItemsWithNextLink"
+            }
+          }
+        }
+      }
+    },
+    "/drive/special/{name}": {
+      "get": {
+        "tags": ["Drives"],
+        "summary": "Access special folder",
+        "operationId": "Access_special_folder",
+        "description": "Special folders provide simple aliases to access well-known folders in OneDrive without the need to look up the folder by path (which would require localization), or reference the folder with an ID. If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "description": "special-folder-name to access special folder",
+            "type": "string",
+            "enum": [
+              "approot",
+              "cameraroll",
+              "desktop",
+              "documents",
+              "music",
+              "photos"
+            ]
+          },
+          {
+            "$ref": "#/parameters/expand"
+          },
+          {
+            "$ref": "#/parameters/select"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/DriveItems"
+            }
+          }
+        }
+      }
+    },
+    "/drive/root/children": {
+      "post": {
+        "tags": ["DriveItems"],
+        "summary": "Create a new folder in the signed-in user's OneDrive root folder",
+        "operationId": "create_a_new_folder_in_the_signed_in_users_onedrive_root_folder",
+        "description": "create a new folder in the signed-in user's OneDrive root folder.",
+        "parameters": [
+          {
+            "name": "driveItem",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/DriveItemsWithConflict"
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/DriveItems"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["Drives"],
+        "summary": "List children under the Drive",
+        "operationId": "List_children_under_the_Drive",
+        "description": "Return a collection of drive root folder in the children relationship of a root.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/expand"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/skipToken"
+          },
+          {
+            "$ref": "#/parameters/top"
+          },
+          {
+            "$ref": "#/parameters/orderby"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/DriveItemsWithNextLink"
+            }
+          }
+        }
+      }
+    },
+    "/drive/items/{item-id}": {
+      "get": {
+        "tags": ["DriveItems"],
+        "summary": "Get item",
+        "operationId": "Get_item",
+        "description": "Retrieve the metadata for a DriveItem in a Drive by ID.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/expand"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          },
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/DriveItems"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["DriveItems"],
+        "summary": "Update item",
+        "operationId": "Update_item",
+        "description": "Update the metadata for a DriveItem by ID",
+        "parameters": [
+          {
+            "name": "driveItem",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/DriveItemsWithConflict"
+            }
+          },
+          {
+            "$ref": "#/parameters/if-match"
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/DriveItems"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["DriveItems"],
+        "summary": "Delete item",
+        "operationId": "Delete_item",
+        "description": "Delete a DriveItem by using its ID. Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/if-match"
+          },
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/drive/items/{item-id}/activities": {
+      "get": {
+        "tags": ["DriveItems"],
+        "summary": "List activities",
+        "operationId": "List_activities",
+        "description": "List the recent activities that took place on an item",
+        "parameters": [
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/ItemActivitys"
+            }
+          }
+        }
+      }
+    },
+    "/drive/items/{item-id}/children": {
+      "get": {
+        "tags": ["DriveItems"],
+        "summary": "List children",
+        "operationId": "List_children",
+        "description": "Return a collection of DriveItems in the children relationship of a DriveItem.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/expand"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/skipToken"
+          },
+          {
+            "$ref": "#/parameters/top"
+          },
+          {
+            "$ref": "#/parameters/orderby"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          },
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/DriveItemsWithNextLink"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["DriveItems"],
+        "summary": "Create item",
+        "operationId": "Create_item",
+        "description": "Create a new folder or DriveItem in a Drive with a specified parent item.",
+        "parameters": [
+          {
+            "name": "driveItem",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/DriveItemsWithConflict"
+            }
+          },
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/DriveItems"
+            }
+          }
+        }
+      }
+    },
+    "/drive/items/{item-id}/content": {
+      "put": {
+        "tags": ["DriveItems"],
+        "summary": "Upload content",
+        "operationId": "Upload_content",
+        "description": "The simple upload API allows you to provide the contents of a new file or update the contents of an existing file in a single API call. This method only supports files up to 4MB in size.",
+        "parameters": [
+          {
+            "name": "content",
+            "in": "body",
+            "format": "binary",
+            "type": "string"
+          },
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/DriveItems"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": ["DriveItems"],
+        "summary": "Download content",
+        "operationId": "Download_content",
+        "description": "The simple upload API allows you to provide the contents of a new file or update the contents of an existing file in a single API call. This method only supports files up to 4MB in size.",
+        "parameters": [
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          },
+          {
+            "name": "Range",
+            "type": "string",
+            "in": "header",
+            "description": "To download a partial range of bytes from the file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "206": {
+            "description": "Partial Content",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/drive/items/{item-id}/content?format={format}": {
+      "get": {
+        "tags": ["DriveItems"],
+        "summary": "Download specific file format",
+        "operationId": "Download_specific_file_format",
+        "description": "The simple upload API allows you to provide the contents of a new file or update the contents of an existing file in a single API call. This method only supports files up to 4MB in size.",
+        "parameters": [
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "format",
+            "type": "string",
+            "in": "path",
+            "default":"glb",
+            "required":true,
+            "description": "Specify the format the item's content should be downloaded as.",
+            "enum": ["glb", "html", "jpg", "pdf"]
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          }
+        ],
+        "responses": {
+          "301": {
+            "description": "Found",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/drive/items/{item-id}/copy": {
+      "post": {
+        "tags": ["DriveItems"],
+        "summary": "Copy item",
+        "operationId": "Copy_item",
+        "description": "Asynchronously creates a copy of an driveItem (including any children), under a new parent item",
+        "parameters": [
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "requestBody",
+            "type": "string",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/CopyItem"
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/drive/items/{item-id}/createLink": {
+      "post": {
+        "tags": ["Permissions"],
+        "summary": "Create sharing link",
+        "operationId": "Create_sharing_link",
+        "description": "You can use createLink action to share a DriveItem via a sharing link.",
+        "parameters": [
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "requestBody",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ShareLinkRequest"
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Permission"
+            }
+          },
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Permission"
+            }
+          }
+        }
+      }
+    },
+    "/drive/items/{item-id}/invite": {
+      "post": {
+        "tags": ["Permissions"],
+        "summary": "Invite peoples",
+        "operationId": "Invite_people",
+        "description": "Sends a sharing invitation for a DriveItem. A sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link.",
+        "parameters": [
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "requestBody",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/InviteRequest"
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/PermissionCollection"
+            }
+          }
+        }
+      }
+    },
+    "/drive/items/{item-id}/permissions": {
+      "get": {
+        "tags": ["Permissions"],
+        "summary": "List permissions",
+        "operationId": "List_permissions",
+        "description": "List the effective sharing permissions of on a DriveItem.",
+        "parameters": [
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/PermissionCollection"
+            }
+          }
+        }
+      }
+    },
+    "/drive/items/{item-id}/permissions/{perm-id}": {
+      "get": {
+        "tags": ["Permissions"],
+        "summary": "Get permission",
+        "operationId": "Get_permission",
+        "description": "List the effective sharing permissions of on a DriveItem.",
+        "parameters": [
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "perm-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "$ref": "#/parameters/select"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Permission"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Permissions"],
+        "summary": "Update permission",
+        "operationId": "Update_permission",
+        "description": "List the effective sharing permissions of on a DriveItem.",
+        "parameters": [
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "perm-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          },
+          {
+            "$ref":"#/parameters/if-match"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "roles": {
+                  "type": "array",
+                  "items": {},
+                  "description": "An array of permission types."
+                }
+              }
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/Permission"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Permissions"],
+        "summary": "Delete permissions",
+        "operationId": "Delete_permissions",
+        "description": "Remove access to a DriveItem.",
+        "parameters": [
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "perm-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          },
+          {
+            "$ref":"#/parameters/if-match"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/drive/items/{item-id}/preview": {
+      "post": {
+        "tags": ["DriveItems"],
+        "summary": "Preview item",
+        "operationId": "Preview_item",
+        "description": "This action allows you to obtain short-lived embeddable URLs for an item.",
+        "parameters": [
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          },
+          {
+            "name": "requestBody",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/EmbeddableFileRequest"
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/EmbeddableFileResponse"
+            }
+          }
+        }
+      }
+    },
+    "/drive/items/{item-id}/search": {
+      "get": {
+        "tags": ["DriveItems"],
+        "summary": "Search items",
+        "operationId": "Search_items",
+        "description": "Search the hierarchy of items for items matching a query. You can search within a folder hierarchy, a whole drive, or files shared with the current user",
+        "parameters": [
+          {
+            "$ref": "#/parameters/expand"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/top"
+          },
+          {
+            "$ref": "#/parameters/skipToken"
+          },
+          {
+            "$ref": "#/parameters/orderby"
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "The query text used to search for items. Values may be matched across several fields including filename, metadata, and file content.",
+            "type": "string"
+          },
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/DriveItemsWithNextLink"
+            }
+          }
+        }
+      }
+    },
+    "/drive/items/{item-id}/thumbnails": {
+      "get": {
+        "tags": ["DriveItems"],
+        "summary": "List thumbnails",
+        "operationId": "List_thumbnails",
+        "description": "Retrieve a collection of ThumbnailSet resources for a DriveItem resource.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/ThumbnailSets"
+            }
+          }
+        }
+      }
+    },
+
+    "/drive/items/{item-id}/versions": {
+      "get": {
+        "tags": ["DriveItems"],
+        "summary": "List versions",
+        "operationId": "List_versions",
+        "description": "Return a collection of DriveItems in the children relationship of a DriveItem.",
+        "parameters": [
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/DriveItemVersionList"
+            }
+          }
+        }
+      }
+    },
+    "/drives/{drive-id}/items/{item-id}": {
+      "get": {
+        "tags": ["DriveItems"],
+        "summary": "Get a DriveItem resource",
+        "operationId": "get_a_driveitem_resource",
+        "description": "Retrieve the metadata for a DriveItem in a Drive by ID.",
+        "parameters": [
+          {
+            "name": "drive-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "$ref": "#/parameters/expand"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/skipToken"
+          },
+          {
+            "$ref": "#/parameters/top"
+          },
+          {
+            "$ref": "#/parameters/orderby"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/DriveItems"
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["DriveItems"],
+        "summary": "Update DriveItem properties",
+        "operationId": "update_driveitem_properties",
+        "description": "Update the metadata for a DriveItem by ID. You can also use update to move an item to another parent by updating the item's parentReference property.",
+        "parameters": [
+          {
+            "name": "drive-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          },
+          {
+            "$ref":"#/parameters/if-match"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/DriveItems"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["DriveItems"],
+        "summary": "Delete a DriveItem",
+        "operationId": "delete_a_driveitem",
+        "description": "Delete a DriveItem by using its ID. Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.",
+        "parameters": [
+          {
+            "name": "drive-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "$ref":"#/parameters/if-match"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Contents"
+          }
+        }
+      }
+    },
+    "/drives/{drive-id}/items/{parent-item-id}/children": {
+      "post": {
+        "tags": ["DriveItems"],
+        "summary": "Create a new folder in a drive",
+        "operationId": "create_a_new_folder_in_a_drive",
+        "description": "Create a new folder or DriveItem in a Drive with a specified parent item.",
+        "parameters": [
+          {
+            "name": "drive-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "parent-item-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "driveItem",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/driveItemsInput"
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/DriveItemsWithNextLink"
+            }
+          }
+        }
+      }
+    },
+    "/drives/{drive-id}/items/{parent-id}:/{filename}:/content": {
+      "put": {
+        "tags": ["DriveItems"],
+        "summary": "Upload a new file",
+        "operationId": "upload_a_new_file",
+        "description": "Upload a new file with specified name. This method only supports files up to 4MB in size.",
+        "parameters": [
+          {
+            "name": "drive-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "parent-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "filename",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "file",
+            "in": "body",
+            "type": "string",
+            "format": "binary"
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/driveItem"
+            }
+          }
+        }
+      }
+    },
+    "/drives/{drive-id}/items/{item-id}/children": {
+      "get": {
+        "tags": ["DriveItems"],
+        "summary": "List children of a driveItem",
+        "operationId": "list_children_of_a_driveitem",
+        "description": "Return a collection of DriveItems in the children relationship of a DriveItem.",
+        "parameters": [
+          {
+            "name": "drive-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "name": "item-id",
+            "type": "string",
+            "in": "path"
+          },
+          {
+            "$ref":"#/parameters/if-none-match"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.context": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/DriveItemsWithNextLink"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/drives/{drive-id}/items/{item-id}/content": {
+      "get": {
+        "tags": ["DriveItems"],
+        "summary": "Download the contents of a DriveItem",
+        "operationId": "download_the_contents_of_a_driveitem",
+        "description": "Download the contents of the primary stream (file) of a DriveItem. Only DriveItems with the file property can be downloaded.",
+        "parameters": [
+          {
+            "name": "drive-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "item-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          },
+          {
+            "name": "Range",
+            "type": "string",
+            "in": "header",
+            "description": "To download a partial range of bytes from the file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "206": {
+            "description": "Partial Content",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["DriveItems"],
+        "summary": "Replace the contents of a DriveItem",
+        "operationId": "replace_the_contents_of_a_driveitem",
+        "description": "Update the contents of an existing file.",
+        "parameters": [
+          {
+            "name": "drive-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "item-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "format": "binary",
+            "type": "string"
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/driveItem"
+            }
+          }
+        }
+      }
+    },
+    "/drives/{driveId}/items/{itemId}/copy": {
+      "post": {
+        "tags": ["DriveItems"],
+        "summary": "Copy a DriveItem",
+        "operationId": "copy_a_driveitem",
+        "description": "Asynchronously creates a copy of an driveItem (including any children), under a new parent item or with a new name.",
+        "parameters": [
+          {
+            "name": "driveId",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "itemId",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/fileCopy"
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Accepted"
+          }
+        }
+      }
+    },
+    "/sites/root": {
+      "get": {
+        "tags": ["Sites"],
+        "summary": "Get root site",
+        "operationId": "Get_root_site",
+        "description": "Retrieve properties and relationships for a site resource. A site resource represents a team site in SharePoint.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/SharePointSite"
+            }
+          }
+        }
+      }
+    },
+    "/sites/{site-id}": {
+      "get": {
+        "tags": ["Sites"],
+        "summary": "Get site",
+        "operationId": "Get_site",
+        "description": "Retrieve properties and relationships for a site resource. A site resource represents a team site in SharePoint.",
+        "parameters": [
+          {
+            "name": "site-id",
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/SharePointSite"
+            }
+          }
+        }
+      }
+    },
+    "/sites/{hostname}:/{site-path}": {
+      "get": {
+        "tags": ["Sites"],
+        "summary": "Get site by path",
+        "operationId": "Get_site_by_path",
+        "description": "Retrieve properties and relationships for a site resource. A site resource represents a team site in SharePoint.In addition to retrieving a site by ID you can retrieve a site based on server-relative URL path. 1. Site collection hostname (contoso.sharepoint.com). 2. Site path, relative to server hostname.",
+        "parameters": [
+          {
+            "name": "hostname",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "site-path",
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/SharePointSite"
+            }
+          }
+        }
+      }
+    },
+    "/groups/{group-id}/sites/root": {
+      "get": {
+        "tags": ["Sites"],
+        "summary": "Get site for a group",
+        "operationId": "Get_site_for_a_group",
+        "description": "Retrieve properties and relationships for a site resource. A site resource represents a team site in SharePoint.",
+        "parameters": [
+          {
+            "name": "group-id",
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/SharePointSite"
+            }
+          }
+        }
+      }
+    },
+    "/sites?search={query}": {
+      "get": {
+        "tags": ["Sites"],
+        "summary": "Search for sites",
+        "operationId": "Search_for_sites",
+        "description": "Search across a SharePoint tenant for sites that match provided keywords.",
+        "parameters": [
+          {
+            "name": "search-query",
+            "in": "path",
+            "type": "string",
+            "description": "The query text used to search for items."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/SiteCollectionResponse"
+            }
+          }
+        }
+      }
+    },
+    "/sites?filter=siteCollection/root%20ne%20null": {
+      "get": {
+        "tags": ["Sites"],
+        "summary": "List root sites",
+        "operationId": "List_root_sites",
+        "description": "List the available sites in an organization that match provided filter criteria and query options.",
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/select",
+            "enum": ["siteCollection", "webUrl"]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/SiteCollectionResponse"
+            }
+          }
+        }
+      }
+    },
+    "/sites/{site-id}/drive": {
+      "get": {
+        "tags": ["Sites"],
+        "summary": "Access the default document library for a site",
+        "operationId": "Access_the_default_document_library_for_a_site",
+        "description": "To access a Site's default document library, your app requests the drive relationship on the Site.",
+        "parameters": [
+          {
+            "name": "site-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/select"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/DriveResource"
+            }
+          }
+        }
+      }
+    },
+    "/sites/{site-id}/drives": {
+      "get": {
+        "tags": ["Sites"],
+        "summary": "Enumerate the collection of document libraries under site",
+        "operationId": "Enumerate_the_collection_of_document_libraries_under_site",
+        "description": "To list the document libraries for a site, your app requests the drives relationship on the Site.",
+        "parameters": [
+          {
+            "name": "site-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/expand"
+          },
+          {
+            "$ref": "#/parameters/skipToken"
+          },
+          {
+            "$ref": "#/parameters/top"
+          },
+          {
+            "$ref": "#/parameters/orderby"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/drives"
+            }
+          }
+        }
+      }
+    },
+    "/sites/{site-id}/lists": {
+      "get": {
+        "tags": ["Sites"],
+        "summary": "Enumerate the lists under a site",
+        "operationId": "Enumerate_the_lists_under_a_site",
+        "description": "Get the collection of lists for a site.",
+        "parameters": [
+          {
+            "name": "site-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/expand"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/ListCollection"
+            }
+          }
+        }
+      }
+    },
+    "/list/{list-id}": {
+      "get": {
+        "tags": ["Lists"],
+        "summary": "Get list",
+        "operationId": "Get_list",
+        "description": "Returns the metadata for a list.",
+        "parameters": [
+          {
+            "name": "list-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/expand"
+          },
+          {
+            "$ref": "#/parameters/select"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/ListCollection"
+            }
+          }
+        }
+      }
+    },
+    "/list/{list-id}/items": {
+      "post": {
+        "tags": ["Lists"],
+        "summary": "Create list item",
+        "operationId": "Create_list_item",
+        "description": "Create a new listItem in a list.",
+        "parameters": [
+          {
+            "name": "list-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "requestBody",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ListItem"
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/ListItem"
+            }
+          }
+        }
+      }
+    },
+    "/list/{list-id}/item": {
+      "get": {
+        "tags": ["Lists"],
+        "summary": "Enumerate list items",
+        "operationId": "Enumerate_list_items",
+        "description": "Get the collection of items in a list.",
+        "parameters": [
+          {
+            "name": "list-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/expand"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref":"#/parameters/if-match"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/ListItemCollection"
+            }
+          }
+        }
+      }
+    },
+    "/lists/{list-id}/items/{item-id}": {
+      "delete": {
+        "tags": ["Lists"],
+        "summary": "Delete list item",
+        "operationId": "Delete_list_item",
+        "description": "Removes an item from a list.",
+        "parameters": [
+          {
+            "name": "list-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "item-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          },
+          {
+            "$ref":"#/parameters/if-match"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/lists/{list-id}/items/{item-id}/fields": {
+      "patch": {
+        "tags": ["Lists"],
+        "summary": "Update list item",
+        "operationId": "Update_list_item",
+        "description": "Update the properties on a listItem.",
+        "parameters": [
+          {
+            "name": "list-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "item-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          },
+          {
+            "name": "requestBody",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/FieldValueSet"
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/FieldValueSet"
+            }
+          }
+        }
+      }
+    },
+    "/lists/{list-id}/activities": {
+      "get": {
+        "tags": ["Lists"],
+        "summary": "Get recent activities",
+        "operationId": "Get_recent_activities",
+        "description": "List the recent activities that took place on an item or under a hierarchy.",
+        "parameters": [
+          {
+            "name": "list-id",
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/ItemActivitys"
+            }
+          }
+        }
+      }
+    },
+    "/items/{item-id}": {
+      "get": {
+        "tags": ["ListItems"],
+        "summary": "Get an item in a list",
+        "operationId": "Get_an_item_in_a_list",
+        "description": "Returns the metadata for an item in a list.",
+        "parameters": [
+          {
+            "$ref": "#/parameters/expand"
+          },
+          {
+            "name": "item-id",
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "20o": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/ListItem"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["ListItems"],
+        "summary": "Delete an item in a list",
+        "operationId": "Delete_an_item_in_a_list",
+        "description": "Removes an item from a list.",
+        "parameters": [
+          {
+            "name": "item-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          },
+          {
+            "$ref":"#/parameters/if-match"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "items/{item-id}/fields": {
+      "patch": {
+        "tags": ["ListItems"],
+        "summary": "Update an item in a list",
+        "operationId": "Update an item in a list",
+        "description": "Update the properties on a listItem.",
+        "parameters": [
+          {
+            "name": "item-id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/if-none-match"
+          },
+          {
+            "name": "requestBody",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/FieldValueSet"
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          },
+          {
+            "$ref":"#/parameters/if-match"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/FieldValueSet"
+            }
+          }
+        }
+      }
+    },
+    "/items": {
+      "post": {
+        "tags": ["ListItems"],
+        "summary": "Create an item in a list",
+        "operationId": "Create_an_item_in_a_list",
+        "description": "Create a new listItem in a list.",
+        "parameters": [
+          {
+            "name": "requestBody",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/ListItem"
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ListItem"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions": {
+      "post": {
+        "tags": ["Webhooks"],
+        "summary": "Create subscription",
+        "operationId": "Create_subscription",
+        "description": "Subscribes a listener application to receive notifications when data changes.",
+        "parameters": [
+          {
+            "name": "requestBody",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Subscription"
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Subscription"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{id}": {
+      "delete": {
+        "tags": ["Webhooks"],
+        "summary": "Delete subscription",
+        "operationId": "Delete_subscription",
+        "description": "Delete a subscription from a DriveItem. After deleting the subscription additional notifications will not be delivered for this subscription.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Webhooks"],
+        "summary": "Update subscription",
+        "operationId": "Update_subscription",
+        "description": "Subscriptions to resources expire at dates proscribed by the individual resource types. In order not to miss notifications, subscriptions should be renewed well in advance of their expiry date.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "requestBody",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Subscription"
+            }
+          },
+          {
+            "name":"Content-Type",
+            "in":"header",
+            "type":"string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Subscription"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "drives": {
+      "type": "object",
+      "properties": {
+        "@odata.context": {
+          "type": "string"
+        },
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DriveResource"
+          }
+        }
+      }
+    },
+    "drive": {
+      "type": "object",
+      "properties": {
+        "@odata.context": {
+          "type": "string"
+        },
+        "createdDateTime": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "lastModifiedDateTime": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "webUrl": {
+          "type": "string"
+        },
+        "driveType": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "object",
+          "properties": {
+            "user": {
+              "type": "object",
+              "properties": {
+                "displayName": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "owner": {
+          "type": "object",
+          "properties": {
+            "group": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "displayName": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "quota": {
+          "type": "object",
+          "properties": {
+            "deleted": {
+              "type": "integer"
+            },
+            "remaining": {
+              "type": "integer"
+            },
+            "state": {
+              "type": "string"
+            },
+            "total": {
+              "type": "integer"
+            },
+            "used": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "driveItemsInput": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "folder": {
+          "type": "object"
+        },
+        "@microsoft.graph.conflictBehavior": {
+          "type": "string"
+        }
+      }
+    },
+    "driveItem": {
+      "type": "object",
+      "properties": {
+        "@odata.context": {
+          "type": "string"
+        },
+        "@microsoft.graph.downloadUrl": {
+          "type": "string"
+        },
+        "@odata.etag": {
+          "type": "string"
+        },
+        "createdDateTime": {
+          "type": "string"
+        },
+        "eTag": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "lastModifiedDateTime": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "webUrl": {
+          "type": "string"
+        },
+        "cTag": {
+          "type": "string"
+        },
+        "commentSettings": {
+          "type": "object",
+          "properties": {
+            "commentingDisabled": {
+              "type": "object",
+              "properties": {
+                "isDisabled": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "createdBy": {
+          "type": "object",
+          "properties": {
+            "application": {
+              "type": "object",
+              "properties": {
+                "displayName": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                }
+              }
+            },
+            "user": {
+              "type": "object",
+              "properties": {
+                "displayName": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "lastModifiedBy": {
+          "type": "object",
+          "properties": {
+            "application": {
+              "type": "object",
+              "properties": {
+                "displayName": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                }
+              }
+            },
+            "user": {
+              "type": "object",
+              "properties": {
+                "displayName": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "parentReference": {
+          "type": "object",
+          "properties": {
+            "driveId": {
+              "type": "string"
+            },
+            "driveType": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            },
+            "sharepointIds": {
+              "type": "object",
+              "properties": {
+                "listId": {
+                  "type": "string"
+                },
+                "listItemUniqueId": {
+                  "type": "string"
+                },
+                "siteId": {
+                  "type": "string"
+                },
+                "siteUrl": {
+                  "type": "string"
+                },
+                "tenantId": {
+                  "type": "string"
+                },
+                "webId": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "fileSystemInfo": {
+          "type": "object",
+          "properties": {
+            "createdDateTime": {
+              "type": "string"
+            },
+            "lastModifiedDateTime": {
+              "type": "string"
+            }
+          }
+        },
+        "file": {
+          "type": "object",
+          "properties": {
+            "mimeType": {
+              "type": "string"
+            },
+            "hashes": {
+              "type": "object",
+              "properties": {
+                "quickXorHash": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "folder": {
+          "type": "object",
+          "properties": {
+            "childCount": {
+              "type": "integer"
+            }
+          }
+        },
+        "location": {
+          "type": "object"
+        },
+        "shared": {
+          "type": "object",
+          "properties": {
+            "scope": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "fileCopy": {
+      "type": "object",
+      "properties": {
+        "parentReference": {
+          "type": "object",
+          "properties": {
+            "driveId": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "properties": {
+        "album": {
+          "type": "string"
+        },
+        "albumArtist": {
+          "type": "string"
+        },
+        "artist": {
+          "type": "string"
+        },
+        "bitrate": {
+          "type": "integer"
+        },
+        "composers": {
+          "type": "string"
+        },
+        "copyright": {
+          "type": "string"
+        },
+        "disc": {
+          "type": "integer"
+        },
+        "discCount": {
+          "type": "integer"
+        },
+        "duration": {
+          "type": "integer"
+        },
+        "genre": {
+          "type": "string"
+        },
+        "hasDrm": {
+          "type": "boolean"
+        },
+        "isVariableBitrate": {
+          "type": "boolean"
+        },
+        "title": {
+          "type": "string"
+        },
+        "track": {
+          "type": "integer"
+        },
+        "trackCount": {
+          "type": "integer"
+        },
+        "year": {
+          "type": "integer"
+        }
+      }
+    },
+    "CopyItem": {
+      "type": "object",
+      "properties": {
+        "parentReference": {
+          "$ref": "#/definitions/ItemReference"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "CommentAction": {
+      "type": "object",
+      "properties": {
+        "isReply": {
+          "type": "boolean"
+        },
+        "parentAuthor": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IdentitySet"
+          }
+        }
+      }
+    },
+    "ContentTypeInfo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateAction": {
+      "type": "object",
+      "properties": {}
+    },
+    "DeleteAction": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "objectType": {
+          "type": "string",
+          "enum": ["File", "Folder"]
+        }
+      }
+    },
+    "deltadriveItems": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/DriveItems" }
+        },
+        "@odata.nextLink": {
+          "type": "string"
+        },
+        "@odata.deltaLink": {
+          "type": "string"
+        }
+      }
+    },
+    "DriveItemsWithNextLink": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/DriveItems" }
+        },
+        "@odata.nextLink": {
+          "type": "string"
+        }
+      }
+    },
+    "DriveItemsWithConflict": {
+      "type": "object",
+      "properties": {
+        "audio": {
+          "$ref": "#/definitions/audio"
+        },
+        "content": {
+          "type": "string"
+        },
+        "createdBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "createdDateTime": {
+          "type": "string"
+        },
+        "cTag": {
+          "type": "string"
+        },
+        "deleted": {
+          "$ref": "#/definitions/Deleted"
+        },
+        "description": {
+          "type": "string"
+        },
+        "eTag": {
+          "type": "string"
+        },
+        "file": {
+          "$ref": "#/definitions/File"
+        },
+        "fileSystemInfo": {
+          "$ref": "#/definitions/FileSystemInfo"
+        },
+        "folder": {
+          "$ref": "#/definitions/Folder"
+        },
+        "id": {
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "lastModifiedBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "lastModifiedDateTime": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/GeoCoordinates"
+        },
+        "malware": {
+          "$ref": "#/definitions/Malware"
+        },
+        "name": {
+          "type": "string"
+        },
+        "package": {
+          "$ref": "#/definitions/Package"
+        },
+        "parentReference": {
+          "$ref": "#/definitions/ItemReference"
+        },
+        "photo": {
+          "$ref": "#/definitions/Photo"
+        },
+        "publication": {
+          "$ref": "#/definitions/PublicationFacet"
+        },
+        "remoteItem": {
+          "$ref": "#/definitions/RemoteItem"
+        },
+        "root": {
+          "$ref": "#/definitions/Root"
+        },
+        "searchResult": {
+          "$ref": "#/definitions/SearchResult"
+        },
+        "shared": {
+          "$ref": "#/definitions/Shared"
+        },
+        "sharepointIds": {
+          "$ref": "#/definitions/SharepointIds"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "specialFolder": {
+          "$ref": "#/definitions/SpecialFolder"
+        },
+        "video": {
+          "$ref": "#/definitions/Video"
+        },
+        "webDavUrl": {
+          "type": "string"
+        },
+        "webUrl": {
+          "type": "string"
+        },
+        "@microsoft.graph.conflictBehavior": {
+          "type": "string"
+        }
+      }
+    },
+    "DriveItems": {
+      "type": "object",
+      "properties": {
+        "audio": {
+          "$ref": "#/definitions/audio"
+        },
+        "content": {
+          "type": "string"
+        },
+        "createdBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "createdDateTime": {
+          "type": "string"
+        },
+        "cTag": {
+          "type": "string"
+        },
+        "deleted": {
+          "$ref": "#/definitions/Deleted"
+        },
+        "description": {
+          "type": "string"
+        },
+        "eTag": {
+          "type": "string"
+        },
+        "file": {
+          "$ref": "#/definitions/File"
+        },
+        "fileSystemInfo": {
+          "$ref": "#/definitions/FileSystemInfo"
+        },
+        "folder": {
+          "$ref": "#/definitions/Folder"
+        },
+        "id": {
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/definitions/Image"
+        },
+        "lastModifiedBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "lastModifiedDateTime": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/GeoCoordinates"
+        },
+        "malware": {
+          "$ref": "#/definitions/Malware"
+        },
+        "name": {
+          "type": "string"
+        },
+        "package": {
+          "$ref": "#/definitions/Package"
+        },
+        "parentReference": {
+          "$ref": "#/definitions/ItemReference"
+        },
+        "photo": {
+          "$ref": "#/definitions/Photo"
+        },
+        "publication": {
+          "$ref": "#/definitions/PublicationFacet"
+        },
+        "remoteItem": {
+          "$ref": "#/definitions/RemoteItem"
+        },
+        "root": {
+          "$ref": "#/definitions/Root"
+        },
+        "searchResult": {
+          "$ref": "#/definitions/SearchResult"
+        },
+        "shared": {
+          "$ref": "#/definitions/Shared"
+        },
+        "sharepointIds": {
+          "$ref": "#/definitions/SharepointIds"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "specialFolder": {
+          "$ref": "#/definitions/SpecialFolder"
+        },
+        "video": {
+          "$ref": "#/definitions/Video"
+        },
+        "webDavUrl": {
+          "type": "string"
+        },
+        "webUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "DriveItemVersion": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "lastModifiedBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "lastModifiedDateTime": {
+          "type": "string"
+        },
+        "publication": {
+          "$ref": "#/definitions/PublicationFacet"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    },
+    "DriveItemVersionList": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DriveItemVersion"
+          }
+        }
+      }
+    },
+    "DriveRecipient": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "alias": {
+          "type": "string"
+        },
+        "objectId": {
+          "type": "string"
+        }
+      }
+    },
+    "DriveResource": {
+      "type": "object",
+      "properties": {
+        "createdBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "createdDateTime": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "lastModifiedBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "lastModifiedDateTime": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "owner": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "quota": {
+          "$ref": "#/definitions/Quota"
+        },
+        "sharepointIds": {
+          "$ref": "#/definitions/SharepointIds"
+        },
+        "system": {
+          "$ref": "#/definitions/SystemFacet"
+        },
+        "webUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "EditAction": {
+      "type": "object",
+      "properties": {}
+    },
+    "EmbeddableFileRequest": {
+      "type": "object",
+      "properties": {
+        "viewer": {
+          "type": "string",
+          "enum": ["onedrive", "office"]
+        },
+        "chromeless": {
+          "type": "boolean"
+        },
+        "allowEdit": {
+          "type": "boolean"
+        },
+        "page": {
+          "type": "string"
+        },
+        "zoom": {
+          "type": "integer"
+        }
+      }
+    },
+    "EmbeddableFileResponse": {
+      "type": "object",
+      "properties": {
+        "getUrl": {
+          "type": "string"
+        },
+        "postUrl": {
+          "type": "string"
+        },
+        "postParameters": {
+          "type": "string"
+        }
+      }
+    },
+    "ItemActivity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "action": {
+          "$ref": "#/definitions/ItemActionSet"
+        },
+        "actor": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "times": {
+          "$ref": "#/definitions/ItemActivityTimeSet"
+        }
+      }
+    },
+    "ItemActivitys": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ItemActivity"
+          }
+        }
+      }
+    },
+    "ItemActionSet": {
+      "type": "object",
+      "properties": {
+        "comment": {
+          "type": "object",
+          "properties": {
+            "isReply": {
+              "type": "boolean"
+            },
+            "parentAuthor": {
+              "$ref": "#/definitions/IdentitySet"
+            },
+            "participants": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IdentitySet"
+              }
+            }
+          }
+        },
+        "create": {
+          "type": "object",
+          "properties": {}
+        },
+        "delete": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "objectType": {
+              "type": "string",
+              "enum": ["File", "Folder"]
+            }
+          }
+        },
+        "edit": {
+          "type": "object",
+          "properties": {}
+        },
+        "mention": {
+          "type": "object",
+          "properties": {
+            "mentionees": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IdentitySet"
+              }
+            }
+          }
+        },
+        "move": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "string"
+            },
+            "to": {
+              "type": "string"
+            }
+          }
+        },
+        "rename": {
+          "type": "object",
+          "properties": {
+            "oldName": {
+              "type": "string"
+            },
+            "newName": {
+              "type": "string"
+            }
+          }
+        },
+        "restore": {
+          "type": "object",
+          "properties": {}
+        },
+        "share": {
+          "type": "object",
+          "properties": {
+            "recipients": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/IdentitySet"
+              }
+            }
+          }
+        },
+        "version": {
+          "type": "object",
+          "properties": {
+            "newVersion": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "ItemActivityTimeSet": {
+      "type": "object",
+      "properties": {
+        "observedDateTime": {
+          "type": "string"
+        },
+        "recordedDateTime": {
+          "type": "string"
+        }
+      }
+    },
+    "Identity": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "IdentitySet": {
+      "type": "object",
+      "properties": {
+        "application": {
+          "type": "object",
+          "properties": {
+            "displayName": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        },
+        "device": {
+          "type": "object",
+          "properties": {
+            "displayName": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        },
+        "group": {
+          "type": "object",
+          "properties": {
+            "displayName": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        },
+        "user": {
+          "type": "object",
+          "properties": {
+            "displayName": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+
+    "Deleted": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string"
+        }
+      }
+    },
+    "File": {
+      "type": "object",
+      "properties": {
+        "hashes": {
+          "type": "object",
+          "properties": {
+            "sha1Hash": {
+              "type": "string"
+            },
+            "crc32Hash": {
+              "type": "string"
+            },
+            "quickXorHash": {
+              "type": "string"
+            }
+          }
+        },
+        "mimeType": {
+          "type": "string"
+        },
+        "processingMetadata": {
+          "type": "boolean"
+        }
+      }
+    },
+    "FileSystemInfo": {
+      "type": "object",
+      "properties": {
+        "createdDateTime": {
+          "type": "string"
+        },
+        "lastAccessedDateTime": {
+          "type": "string"
+        },
+        "lastModifiedDateTime": {
+          "type": "string"
+        }
+      }
+    },
+    "FieldValueSet": {
+      "type": "object",
+      "properties": {
+        "Author": {
+          "type": "string"
+        },
+        "AuthorLookupId": {
+          "type": "integer"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Color": {
+          "type": "string"
+        },
+        "Quantity": {
+          "type": "integer"
+        }
+      }
+    },
+    "Folder": {
+      "type": "object",
+      "properties": {
+        "childCount": {
+          "type": "integer"
+        },
+        "view": {
+          "type": "object",
+          "properties": {
+            "sortBy": {
+              "type": "string",
+              "enum": [
+                "default",
+                "name",
+                "type",
+                "size",
+                "takenOrCreatedDateTime",
+                "lastModifiedDateTime",
+                "sequence"
+              ]
+            },
+            "sortOrder": {
+              "type": "string",
+              "enum": ["ascending", "descending"]
+            },
+            "viewType": {
+              "type": "string",
+              "enum": ["default", "icons", "details", "thumbnails"]
+            }
+          }
+        }
+      }
+    },
+    "FolderView": {
+      "type": "object",
+      "properties": {
+        "sortBy": {
+          "type": "string",
+          "enum": [
+            "default",
+            "name",
+            "type",
+            "size",
+            "takenOrCreatedDateTime",
+            "lastModifiedDateTime",
+            "sequence"
+          ]
+        },
+        "sortOrder": {
+          "type": "string",
+          "enum": ["ascending", "descending"]
+        },
+        "viewType": {
+          "type": "string",
+          "enum": ["default", "icons", "details", "thumbnails"]
+        }
+      }
+    },
+    "GeoCoordinates": {
+      "type": "object",
+      "properties": {
+        "altitude": {
+          "type": "integer"
+        },
+        "latitude": {
+          "type": "integer"
+        },
+        "longitude": {
+          "type": "integer"
+        }
+      }
+    },
+    "Hashes": {
+      "type": "object",
+      "properties": {
+        "sha1Hash": {
+          "type": "string"
+        },
+        "crc32Hash": {
+          "type": "string"
+        },
+        "quickXorHash": {
+          "type": "string"
+        }
+      }
+    },
+    "Image": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "type": "integer"
+        },
+        "height": {
+          "type": "integer"
+        }
+      }
+    },
+    "InviteRequest": {
+      "type": "object",
+      "properties": {
+        "recipients": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DriveRecipient"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "requireSignIn": {
+          "type": "boolean"
+        },
+        "sendInvitation": {
+          "type": "boolean"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "enum": ["read", "write"]
+          }
+        }
+      }
+    },
+    "ItemReference": {
+      "type": "object",
+      "properties": {
+        "driveId": {
+          "type": "string"
+        },
+        "driveType": {
+          "type": "string",
+          "enum": ["personal", "business", "documentLibrary"]
+        },
+        "id": {
+          "type": "string"
+        },
+        "listId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "shareId": {
+          "type": "string"
+        },
+        "sharepointIds": {
+          "type": "object",
+          "properties": {
+            "listId": {
+              "type": "string"
+            },
+            "listItemId": {
+              "type": "string"
+            },
+            "listItemUniqueId": {
+              "type": "string"
+            },
+            "siteId": {
+              "type": "string"
+            },
+            "siteUrl": {
+              "type": "string"
+            },
+            "tenantId": {
+              "type": "string"
+            },
+            "webId": {
+              "type": "string"
+            }
+          }
+        },
+        "siteId": {
+          "type": "string"
+        }
+      }
+    },
+    "Malware": {
+      "type": "object",
+      "properties": {}
+    },
+    "MentionAction": {
+      "type": "object",
+      "properties": {
+        "mentionees": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IdentitySet"
+          }
+        }
+      }
+    },
+    "MoveAction": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        }
+      }
+    },
+    "List": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string"
+        },
+        "list": {
+          "$ref": "#/definitions/ListInfo"
+        },
+        "system": {
+          "$ref": "#/definitions/SystemFacet"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "createdBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "createdDateTime": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "eTag": {
+          "type": "string"
+        },
+        "lastModifiedBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "lastModifiedDateTime": {
+          "type": "string"
+        },
+        "parentReference": {
+          "$ref": "#/definitions/ItemReference"
+        },
+        "sharepointIds": {
+          "$ref": "#/definitions/SharepointIds"
+        },
+        "webUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "ListItem": {
+      "type": "object",
+      "properties": {
+        "contentType": {
+          "$ref": "#/definitions/ContentTypeInfo"
+        },
+        "activities": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "action": {
+              "$ref": "#/definitions/ItemActionSet"
+            },
+            "actor": {
+              "$ref": "#/definitions/IdentitySet"
+            },
+            "times": {
+              "$ref": "#/definitions/ItemActivityTimeSet"
+            }
+          }
+        },
+        "driveItem": {
+          "$ref": "#/definitions/driveItem"
+        },
+        "fields": {
+          "$ref": "#/definitions/FieldValueSet"
+        },
+        "versions": {
+          "$ref": "#/definitions/ListItemVersion"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "createdBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "createdDateTime": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "eTag": {
+          "type": "string"
+        },
+        "lastModifiedBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "lastModifiedDateTime": {
+          "type": "string"
+        },
+        "parentReference": {
+          "$ref": "#/definitions/ItemReference"
+        },
+        "sharepointIds": {
+          "$ref": "#/definitions/SharepointIds"
+        },
+        "webUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "ListInfo": {
+      "type": "object",
+      "properties": {
+        "contentTypesEnabled": {
+          "type": "boolean"
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "template": {
+          "type": "string"
+        }
+      }
+    },
+    "ListCollection": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/List"
+          }
+        }
+      }
+    },
+    "ListItemCollection": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ListItem"
+          }
+        }
+      }
+    },
+    "ListItemVersion": {
+      "type": "object",
+      "properties": {
+        "fields": {
+          "$ref": "#/definitions/FieldValueSet"
+        },
+        "id": {
+          "type": "string"
+        },
+        "lastModifiedBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "lastModifiedDateTime": {
+          "type": "string"
+        },
+        "published": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "type": "string",
+              "enum": ["published", "checkout"]
+            },
+            "versionId": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "Package": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        }
+      }
+    },
+    "Permission": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "grantedTo": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "grantedToIdentities": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "inheritedFrom": {
+          "$ref": "#/definitions/ItemReference"
+        },
+        "invitation": {
+          "$ref": "#/definitions/SharingInvitation"
+        },
+        "link": {
+          "$ref": "#/definitions/SharingLink"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "shareId": {
+          "type": "string"
+        }
+      }
+    },
+    "PermissionCollection": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Permission"
+          }
+        }
+      }
+    },
+    "Photo": {
+      "type": "object",
+      "properties": {
+        "cameraMake": {
+          "type": "string"
+        },
+        "cameraModel": {
+          "type": "string"
+        },
+        "exposureDenominator": {
+          "type": "integer"
+        },
+        "exposureNumerator": {
+          "type": "integer"
+        },
+        "fNumber": {
+          "type": "integer"
+        },
+        "focalLength": {
+          "type": "integer"
+        },
+        "iso": {
+          "type": "integer"
+        },
+        "takenDateTime": {
+          "type": "string"
+        }
+      }
+    },
+    "PublicationFacet": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["published", "checkout"]
+        },
+        "versionId": {
+          "type": "string"
+        }
+      }
+    },
+    "Quota": {
+      "type": "object",
+      "properties": {
+        "deleted": {
+          "type": "integer"
+        },
+        "fileCount": {
+          "type": "integer"
+        },
+        "remaining": {
+          "type": "integer"
+        },
+        "state": {
+          "type": "string",
+          "enum": ["normal", "nearing", "critical", "exceeded"]
+        },
+        "total": {
+          "type": "integer"
+        },
+        "used": {
+          "type": "integer"
+        }
+      }
+    },
+    "RenameAction": {
+      "type": "object",
+      "properties": {
+        "oldName": {
+          "type": "string"
+        },
+        "newName": {
+          "type": "string"
+        }
+      }
+    },
+    "RestoreAction": {
+      "type": "object",
+      "properties": {}
+    },
+    "RemoteItem": {
+      "type": "object",
+      "properties": {
+        "createdBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "createdDateTime": {
+          "type": "string"
+        },
+        "file": {
+          "$ref": "#/definitions/File"
+        },
+        "fileSystemInfo": {
+          "$ref": "#/definitions/FileSystemInfo"
+        },
+        "folder": {
+          "$ref": "#/definitions/Folder"
+        },
+        "id": {
+          "type": "string"
+        },
+        "lastModifiedBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "lastModifiedDateTime": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "package": {
+          "$ref": "#/definitions/Package"
+        },
+        "parentReference": {
+          "$ref": "#/definitions/ItemReference"
+        },
+        "shared": {
+          "$ref": "#/definitions/Shared"
+        },
+        "sharepointIds": {
+          "$ref": "#/definitions/SharepointIds"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "specialFolder": {
+          "$ref": "#/definitions/SpecialFolder"
+        },
+        "webDavUrl": {
+          "type": "string"
+        },
+        "webUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "Root": {
+      "type": "object",
+      "properties": {}
+    },
+    "SearchResult": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "onClickTelemetryUrl": "string"
+        }
+      }
+    },
+    "Shared": {
+      "type": "object",
+      "properties": {
+        "owner": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "sharedBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "sharedDateTime": {
+          "type": "string"
+        }
+      }
+    },
+    "ShareAction": {
+      "type": "object",
+      "properties": {
+        "recipients": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IdentitySet"
+          }
+        }
+      }
+    },
+    "SharingInvitation": {
+      "type": "string",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "invitedBy": {
+          "$ref": "#/definitions/IdentitySet"
+        },
+        "signInRequired": {
+          "type": "boolean"
+        }
+      }
+    },
+    "SharingLink": {
+      "type": "object",
+      "properties": {
+        "application": {
+          "$ref": "#/definitions/Identity"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["view", "edit", "embed"]
+        },
+        "scope": {
+          "type": "string",
+          "enum": ["anonymous", "organization"]
+        },
+        "webHtml": {
+          "type": "string"
+        },
+        "webUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "ShareLinkRequest": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["view", "edit", "embed"]
+        },
+        "scope": {
+          "type": "string",
+          "enum": ["anonymous", "organization"]
+        }
+      }
+    },
+    "SharepointIds": {
+      "type": "object",
+      "properties": {
+        "listId": {
+          "type": "string"
+        },
+        "listItemId": {
+          "type": "string"
+        },
+        "listItemUniqueId": {
+          "type": "string"
+        },
+        "siteId": {
+          "type": "string"
+        },
+        "siteUrl": {
+          "type": "string"
+        },
+        "tenantId": {
+          "type": "string"
+        },
+        "webId": {
+          "type": "string"
+        }
+      }
+    },
+    "SharePointSite": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "createdDateTime": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "eTag": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "lastModifiedDateTime": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "root": {
+          "$ref": "#/definitions/Root"
+        },
+        "sharepointIds": {
+          "$ref": "#/definitions/SharepointIds"
+        },
+        "siteCollection": {
+          "$ref": "#/definitions/SiteCollection"
+        },
+        "webUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "SiteCollectionResponse": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SharePointSite"
+          }
+        }
+      }
+    },
+    "SiteCollection": {
+      "type": "object",
+      "properties": {
+        "dataLocationCode": {
+          "type": "string"
+        },
+        "hostname": {
+          "type": "string"
+        },
+        "root": {
+          "$ref": "#/definitions/Root"
+        }
+      }
+    },
+    "SpecialFolder": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "Subscription": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "clientState": {
+          "type": "string"
+        },
+        "expirationDateTime": {
+          "type": "string"
+        },
+        "notificationUrl": {
+          "type": "string"
+        },
+        "resource": {
+          "type": "string"
+        },
+        "changeType": {
+          "type": "string"
+        }
+      }
+    },
+    "SystemFacet": {
+      "type": "object",
+      "properties": {}
+    },
+    "Thumbnail": {
+      "type": "object",
+      "properties": {
+        "height": {
+          "type": "integer"
+        },
+        "sourceItemId": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "width": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    },
+    "ThumbnailSet": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "large": {
+          "$ref": "#/definitions/Thumbnail"
+        },
+        "medium": {
+          "$ref": "#/definitions/Thumbnail"
+        },
+        "small": {
+          "$ref": "#/definitions/Thumbnail"
+        },
+        "source": {
+          "$ref": "#/definitions/Thumbnail"
+        }
+      }
+    },
+    "ThumbnailSets": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ThumbnailSet"
+          }
+        }
+      }
+    },
+    "VersionAction": {
+      "type": "object",
+      "properties": {
+        "newVersion": {
+          "type": "string"
+        }
+      }
+    },
+    "Video": {
+      "type": "object",
+      "properties": {
+        "audioBitsPerSample": {
+          "type": "integer"
+        },
+        "audioChannels": {
+          "type": "integer"
+        },
+        "audioFormat": {
+          "type": "string"
+        },
+        "audioSamplesPerSecond": {
+          "type": "integer"
+        },
+        "bitrate": {
+          "type": "integer"
+        },
+        "duration": {
+          "type": "integer"
+        },
+        "fourCC": {
+          "type": "string"
+        },
+        "frameRate": {
+          "type": "integer"
+        },
+        "height": {
+          "type": "integer"
+        },
+        "width": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "parameters": {
+    "expand": {
+      "name": "expand",
+      "in": "query",
+      "description": "Comma-separated list of relationships to expand and include in the response. For example, to retrieve the children of a folder use expand=children.",
+      "type": "string"
+    },
+    "select": {
+      "name": "select",
+      "in": "query",
+      "description": "Comma-separated list of properties to include in the response.",
+      "type": "string"
+    },
+    "skipToken": {
+      "name": "skipToken",
+      "in": "query",
+      "description": "Paging token that is used to get the next set of results.",
+      "type": "string"
+    },
+    "top": {
+      "name": "top",
+      "in": "query",
+      "description": "The number of items to return in a result set. The OneDrive API may have a hard limit that prevents you from asking for more items per response.",
+      "type": "integer"
+    },
+    "orderby": {
+      "name": "orderby",
+      "in": "query",
+      "description": "Comma-separated list of properties that are used to sort the order of items in the response collection. Works for name, size, and lastModifiedDateTime fields.",
+      "type": "string"
+    },
+    "if-none-match": {
+      "name": "if-none-match",
+      "in": "header",
+      "description": "If this request header is included and the eTag (or cTag) provided matches the current tag on the file, an HTTP 304 Not Modified response is returned.",
+      "type": "string"
+    },
+    "if-match": {
+      "name": "if-match",
+      "in": "header",
+      "description": "If this request header is included and the eTag (or cTag) provided doesn't match the current tag on the item, a 412 Precondition Failed response is returned and the item won't be deleted.",
+      "type": "string"
+    }
+  }
+}

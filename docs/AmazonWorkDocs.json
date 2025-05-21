@@ -1,0 +1,3298 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "AmazonWorkDocsAPI",
+    "version": "v1"
+  },
+  "host": "workdocs.{region}.amazonaws.com",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "tags": [
+    {
+      "name": "Activity"
+    },
+    {
+      "name": "Document"
+    },
+    {
+      "name": "Folder"
+    },
+    {
+      "name": "Group"
+    },
+    {
+      "name": "Organization"
+    },
+    {
+      "name": "Resource"
+    },
+    {
+      "name": "User"
+    }
+  ],
+  "paths": {
+    "/api/v1/documents/{DocumentId}/versions/{VersionId}": {
+      "delete": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Abort upload of the specified document version",
+        "description": "Aborts the upload of the specified document version that was previously initiated by InitiateDocumentVersionUpload. The client should make this call only when it no longer intends to upload the document version, or fails to do so.",
+        "operationId": "AbortDocumentVersionUpload",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersDocumentId"
+          },
+          {
+            "$ref": "#/parameters/ParametersVersionId"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Change the status of the document version",
+        "description": "Changes the status of the document version to ACTIVE. Amazon WorkDocs also sets its document container to ACTIVE. his is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by InitiateDocumentVersionUpload.",
+        "operationId": "UpdateDocumentVersion",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersContentType"
+          },
+          {
+            "$ref": "#/parameters/ParametersDocumentId"
+          },
+          {
+            "$ref": "#/parameters/ParametersVersionId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateDocumentVersion"
+            }
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/users/{UserId}/activation": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Activate specified user",
+        "description": "Activates the specified user. Only active users can access Amazon WorkDocs.",
+        "operationId": "ActivateUser",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersUserId"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ActivateUser"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Deactivate the specified user",
+        "description": "Deactivates the specified user, which revokes the user's access to Amazon WorkDocs.",
+        "operationId": "DeactivateUser",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersUserId"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        }
+      }
+    },
+    "/api/v1/resources/{ResourceId}/permissions": {
+      "post": {
+        "tags": [
+          "Resource"
+        ],
+        "summary": "Create permissions for the specified resource",
+        "description": "Creates a set of permissions for the specified folder or document. The resource permissions are overwritten if the principals already have different permissions.",
+        "operationId": "AddResourcePermissions",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersContentType"
+          },
+          {
+            "$ref": "#/parameters/ParametersResourceId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/CreatePermission"
+            }
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CreatePermissionResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Resource"
+        ],
+        "summary": "Remove all the permissions from the specified resource",
+        "description": "Removes all the permissions from the specified resource.",
+        "operationId": "RemoveAllResourcePermissions",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersResourceId"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        }
+      }
+    },
+    "/api/v1/resources/{ResourceId}/permissions/{PrincipalId}?type": {
+      "delete": {
+        "tags": [
+          "Resource"
+        ],
+        "summary": "Remove the permission for the specified principal from the specified resource",
+        "description": "Removes the permission for the specified principal from the specified resource.",
+        "operationId": "RemoveResourcePermission",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersResourceId"
+          },
+          {
+            "name": "PrincipalId",
+            "in": "path",
+            "description": "The principal ID of the resource.",
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "The principal type of the resource.",
+            "type": "string",
+            "enum": [
+              "USER",
+              "GROUP",
+              "INVITE",
+              "ANONYMOUS",
+              "ORGANIZATION"
+            ]
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        }
+      }
+    },
+    "/api/v1/documents/{DocumentId}/versions/{VersionId}/comment": {
+      "post": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Add comment to the specified document version",
+        "description": "Adds a new comment to the specified document version.",
+        "operationId": "CreateComment",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersContentType"
+          },
+          {
+            "$ref": "#/parameters/ParametersDocumentId"
+          },
+          {
+            "$ref": "#/parameters/ParametersVersionId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateComment"
+            }
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CreateCommentResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/documents/{DocumentId}/versions/{VersionId}/comment/{CommentId}": {
+      "delete": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Delete the specified comment",
+        "description": "Deletes the specified comment from the document version.",
+        "operationId": "DeleteComment",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersDocumentId"
+          },
+          {
+            "$ref": "#/parameters/ParametersVersionId"
+          },
+          {
+            "$ref": "#/parameters/ParametersCommentId"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        }
+      }
+    },
+    "/api/v1/resources/{ResourceId}/customMetadata?versionid": {
+      "put": {
+        "tags": [
+          "Resource"
+        ],
+        "summary": "Add custom properties to the specified resource",
+        "description": "Adds one or more custom properties to the specified resource (a folder, document, or version).",
+        "operationId": "CreateCustomMetadata",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersContentType"
+          },
+          {
+            "$ref": "#/parameters/ParametersResourceId"
+          },
+          {
+            "name": "versionid",
+            "in": "query",
+            "type": "string",
+            "description": "The ID of the document version."
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateCustomMetadata"
+            }
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/resources/{ResourceId}/customMetadata?deleteAll&keys&versionId": {
+      "delete": {
+        "tags": [
+          "Resource"
+        ],
+        "summary": "Delete custom metadata",
+        "description": "Deletes custom metadata from the specified resource.",
+        "operationId": "DeleteCustomMetadata",
+        "parameters": [
+          {
+            "name": "deleteAll",
+            "in": "query",
+            "type": "boolean",
+            "description": "Flag to indicate removal of all custom metadata properties from the specified resource."
+          },
+          {
+            "name": "keys",
+            "in": "query",
+            "description": "List of properties to remove.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "ResourceId",
+            "in": "path",
+            "description": "The ID of the document.",
+            "type": "string"
+          },
+          {
+            "name": "versionId",
+            "in": "query",
+            "type": "string",
+            "description": "The ID of the document version."
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/folders": {
+      "post": {
+        "tags": [
+          "Folder"
+        ],
+        "summary": "Create folder",
+        "description": "Creates a folder with the specified name and parent folder.",
+        "operationId": "CreateFolder",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersContentType"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateFolder"
+            }
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CreateFolderResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/folders/{FolderId}": {
+      "delete": {
+        "tags": [
+          "Folder"
+        ],
+        "summary": "Permanently delete the specified folder",
+        "description": "Permanently deletes the specified folder and its contents.",
+        "operationId": "DeleteFolder",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersFolderId"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Folder"
+        ],
+        "summary": "Update the specified attributes of the specified folder",
+        "description": "Updates the specified attributes of the specified folder. The user must have access to both the folder and its parent folder, if applicable.",
+        "operationId": "UpdateFolder",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersContentType"
+          },
+          {
+            "$ref": "#/parameters/ParametersFolderId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateDocument"
+            }
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/folders/{FolderId}/contents": {
+      "delete": {
+        "tags": [
+          "Folder"
+        ],
+        "summary": "Delete specified folder's contents",
+        "description": "Deletes the contents of the specified folder.",
+        "operationId": "DeleteFolderContents",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersFolderId"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        }
+      }
+    },
+    "/api/v1/resources/{ResourceId}/labels": {
+      "put": {
+        "tags": [
+          "Resource"
+        ],
+        "summary": "Add labels to the given resource",
+        "description": "Adds the specified list of labels to the given resource (a document or folder)",
+        "operationId": "CreateLabels",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersContentType"
+          },
+          {
+            "$ref": "#/parameters/ParametersResourceId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateLabel"
+            }
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/resources/{ResourceId}/labels?deleteAll&labels": {
+      "delete": {
+        "tags": [
+          "Resource"
+        ],
+        "summary": "Delete labels from a resource",
+        "description": "Deletes the specified list of labels from a resource.",
+        "operationId": "DeleteLabels",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersResourceId"
+          },
+          {
+            "name": "deleteAll",
+            "in": "query",
+            "type": "boolean",
+            "description": "Flag to request removal of all labels from the specified resource."
+          },
+          {
+            "name": "labels",
+            "in": "query",
+            "description": "List of labels to delete from the resource.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/organizations/{OrganizationId}/subscriptions": {
+      "post": {
+        "tags": [
+          "Organization"
+        ],
+        "summary": "Configure Amazon WorkDocs to use Amazon SNS notifications",
+        "description": "Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must confirm the subscription.",
+        "operationId": "CreateNotificationSubscription",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersContentType"
+          },
+          {
+            "$ref": "#/parameters/ParametersOrganizationId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Notification"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/NotificationResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/organizations/{OrganizationId}/subscriptions/{SubscriptionId}": {
+      "delete": {
+        "tags": [
+          "Organization"
+        ],
+        "summary": "Delete the specified subscription",
+        "description": "Deletes the specified subscription from the specified organization.",
+        "operationId": "DeleteNotificationSubscription",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersOrganizationId"
+          },
+          {
+            "$ref": "#/parameters/ParametersSubscriptionId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/users": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Create user",
+        "description": "Creates a user in a Simple AD or Microsoft AD directory. The status of a newly created user is ACTIVE. New users can access Amazon WorkDocs.",
+        "operationId": "CreateUser",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersContentType"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateUser"
+            }
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ActivateUser"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/{UserId}": {
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Delete the specified user",
+        "description": "Deletes the specified user from a Simple AD or Microsoft AD directory.",
+        "operationId": "DeleteUser",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersUserId"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Update the specified attributes of the specified user",
+        "description": "Updates the specified attributes of the specified user, and grants or revokes administrative privileges to the Amazon WorkDocs site.",
+        "operationId": "UpdateUser",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersContentType"
+          },
+          {
+            "$ref": "#/parameters/ParametersUserId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateUser"
+            }
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/UpdateUserResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/documents/{DocumentId}": {
+      "delete": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Permanently delete the specified document",
+        "description": "Permanently deletes the specified document and its associated metadata.",
+        "operationId": "DeleteDocument",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersDocumentId"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Update the specified attributes of a document",
+        "description": "Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable.",
+        "operationId": "UpdateDocument",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersContentType"
+          },
+          {
+            "$ref": "#/parameters/ParametersDocumentId"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateDocument"
+            }
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/v1/documentVersions/{DocumentId}/versions/{VersionId}?deletePriorVersions": {
+      "delete": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Delete a specific document version",
+        "description": "Deletes a specific version of a document.",
+        "operationId": "DeleteDocumentVersion",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersDocumentId"
+          },
+          {
+            "$ref": "#/parameters/ParametersVersionId"
+          },
+          {
+            "name": "deletePriorVersions",
+            "in": "query",
+            "type": "boolean",
+            "required":true,
+            "description": "Deletes all versions of a document prior to the current version."
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        }
+      }
+    },
+    "/api/v1/activities?activityTypes&endTime&includeIndirectActivities&limit&marker&organizationId&resourceId&startTime&userId": {
+      "get": {
+        "tags": [
+          "Activity"
+        ],
+        "summary": "Describe the user activities",
+        "description": "Describes the user activities in a specified time period.",
+        "operationId": "DescribeActivities",
+        "parameters": [
+          {
+            "name": "activityTypes",
+            "in": "query",
+            "type": "string",
+            "description": "Specifies which activity types to include in the response. If this field is left empty, all activity types are returned."
+          },
+          {
+            "name": "endTime",
+            "in": "query",
+            "type": "string",
+            "format": "date-time",
+            "description": "The timestamp that determines the end time of the activities."
+          },
+          {
+            "name": "includeIndirectActivities",
+            "in": "query",
+            "type": "boolean",
+            "description": "Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource."
+          },
+          {
+            "$ref": "#/parameters/ParametersLimit"
+          },
+          {
+            "$ref": "#/parameters/ParametersMarker"
+          },
+          {
+            "name": "organizationId",
+            "in": "query",
+            "type": "string",
+            "description": "The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests."
+          },
+          {
+            "name": "resourceId",
+            "in": "query",
+            "type": "string",
+            "description": "The document or folder ID for which to describe activity types."
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "type": "string",
+            "description": "The ID of the user who performed the action. The response includes activities pertaining to this user."
+          },
+          {
+            "name": "startTime",
+            "in": "query",
+            "type": "string",
+            "format": "date-time",
+            "description": "The timestamp that determines the starting time of the activities."
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Activities"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/documents/{DocumentId}/versions/{VersionId}/comments?limit&marker": {
+      "get": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "List comments for the specified document version",
+        "description": "List all the comments for the specified document version.",
+        "operationId": "DescribeComments",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersLimit"
+          },
+          {
+            "$ref": "#/parameters/ParametersMarker"
+          },
+          {
+            "$ref": "#/parameters/ParametersVersionId"
+          },
+          {
+            "$ref": "#/parameters/ParametersDocumentId"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/DescribeCommentsResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/documents/{DocumentId}/versions?fields&include&limit&marker": {
+      "get": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Retrieve document versions for the specified document",
+        "description": "Retrieves the document versions for the specified document. By default, only active versions are returned.",
+        "operationId": "DescribeDocumentVersions",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersDocumentId"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "type": "string",
+            "description": "Specify SOURCE to include initialized versions and a URL for the source document."
+          },
+          {
+            "$ref": "#/parameters/ParametersInclude"
+          },
+          {
+            "$ref": "#/parameters/ParametersLimit"
+          },
+          {
+            "$ref": "#/parameters/ParametersMarker"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/DocumentVersion"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/folders/{FolderId}/contents?include&limit&marker&order&sort&type": {
+      "get": {
+        "tags": [
+          "Folder"
+        ],
+        "summary": "Describe specified folder's contents",
+        "description": "Describes the contents of the specified folder, including its documents and subfolders. By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more results, the response includes a marker that you can use to request the next set of results. You can also request initialized documents.",
+        "operationId": "DescribeFolderContents",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersFolderId"
+          },
+          {
+            "$ref": "#/parameters/ParametersInclude"
+          },
+          {
+            "$ref": "#/parameters/ParametersLimit"
+          },
+          {
+            "$ref": "#/parameters/ParametersMarker"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "ASCENDING",
+              "DESCENDING"
+            ]
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "DATE",
+              "NAME"
+            ],
+            "description": "The sorting criteria."
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "ALL",
+              "DOCUMENT",
+              "FOLDER"
+            ],
+            "description": "The type of items."
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/FolderContents"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/groups?limit&marker&organizationId&searchQuery": {
+      "get": {
+        "tags": [
+          "Group"
+        ],
+        "summary": "Describe groups",
+        "description": "Describes the groups specified by the query. Groups are defined by the underlying Active Directory.",
+        "operationId": "DescribeGroups",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersLimit"
+          },
+          {
+            "$ref": "#/parameters/ParametersMarker"
+          },
+          {
+            "name": "organizationId",
+            "in": "query",
+            "type": "string",
+            "description": "The ID of the organization."
+          },
+          {
+            "$ref": "#/parameters/ParametersSearchQuery"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/DescribeGroups"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/organizations/{OrganizationId}/subscriptions?limit&marker": {
+      "get": {
+        "tags": [
+          "Organization"
+        ],
+        "summary": "List the specified notification subscriptions",
+        "description": "Lists the specified notification subscriptions.",
+        "operationId": "DescribeNotificationSubscriptions",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersLimit"
+          },
+          {
+            "$ref": "#/parameters/ParametersMarker"
+          },
+          {
+            "$ref": "#/parameters/ParametersOrganizationId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/NotificationSubscription"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/resources/{ResourceId}/permissions?limit&marker&principalId": {
+      "get": {
+        "tags": [
+          "Resource"
+        ],
+        "summary": "Describe permissions of a specified resource",
+        "description": "Describes the permissions of a specified resource.",
+        "operationId": "DescribeResourcePermissions",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersLimit"
+          },
+          {
+            "$ref": "#/parameters/ParametersMarker"
+          },
+          {
+            "$ref": "#/parameters/ParametersPrincipalId"
+          },
+          {
+            "$ref": "#/parameters/ParametersResourceId"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ResourcePermissions"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/me/root?limit&marker": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Describe current user's special folders",
+        "description": "Describes the current user's special folders; the RootFolder and the RecycleBin. RootFolder is the root of user's files and folders and RecycleBin is the root of recycled items. This is not a valid action for SigV4 (administrative API) clients.",
+        "operationId": "DescribeRootFolders",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersLimit"
+          },
+          {
+            "$ref": "#/parameters/ParametersMarker"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/RootFolders"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users?fields&include&limit&marker&order&organizationId&query&sort&userIds": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Describe the specified users",
+        "description": "Describes the specified users. You can describe all users or filter the results (for example, by status or organization). By default, Amazon WorkDocs returns the first 24 active or pending users. If there are more results, the response includes a marker that you can use to request the next set of results.",
+        "operationId": "DescribeUsers",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "type": "string",
+            "description": "A comma-separated list of values. Specify STORAGE_METADATA to include the user storage quota and utilization information."
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "type": "string",
+            "description": "The state of the users. Specify ALL to include inactive users.",
+            "enum": [
+              "ALL",
+              "ACTIVE_PENDING"
+            ]
+          },
+          {
+            "$ref": "#/parameters/ParametersLimit"
+          },
+          {
+            "$ref": "#/parameters/ParametersMarker"
+          },
+          {
+            "name": "organizationId",
+            "in": "query",
+            "type": "string",
+            "description": "The ID of the organization."
+          },
+          {
+            "$ref": "#/parameters/ParametersOrder"
+          },
+          {
+            "$ref": "#/parameters/ParametersQuery"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "type": "string",
+            "description": "The sorting criteria.",
+            "enum": [
+              "USER_NAME",
+              "FULL_NAME",
+              "STORAGE_LIMIT",
+              "USER_STATUS",
+              "STORAGE_USED"
+            ]
+          },
+          {
+            "name": "userIds",
+            "in": "query",
+            "type": "string",
+            "description": "The IDs of the users."
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/DescribeUser"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/me": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Retrieve details of the current user",
+        "description": "Retrieves details of the current user for whom the authentication token was generated. This is not a valid action for SigV4 (administrative API) clients.",
+        "operationId": "GetCurrentUser",
+        "parameters": [
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "User": {
+                  "$ref": "#/definitions/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/documents/{DocumentId}?includeCustomMetadata": {
+      "get": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Retrieve details of a document",
+        "description": "Retrieves details of a document.",
+        "operationId": "GetDocument",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersDocumentId"
+          },
+          {
+            "name": "includeCustomMetadata",
+            "in": "query",
+            "description": "Set this to TRUE to include custom metadata in the response.",
+            "type": "boolean"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/DescribeDocuments"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/documents/{DocumentId}/path?fields&limit&marker": {
+      "get": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Retrieve the requested document's path information",
+        "description": "Retrieves the path information (the hierarchy from the root folder) for the requested document. By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested document and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the names of the parent folders.",
+        "operationId": "GetDocumentPath",
+        "parameters": [
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "A comma-separated list of values. Specify NAME to include the names of the parent folders.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "$ref": "#/parameters/ParametersDocumentId"
+          },
+          {
+            "$ref": "#/parameters/ParametersLimit"
+          },
+          {
+            "$ref": "#/parameters/ParametersMarker"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/DocumentPath"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/documents/{DocumentId}/versions/{VersionId}?fields&includeCustomMetadata": {
+      "get": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Retrieve version metadata for the specified document",
+        "description": "Retrieves version metadata for the specified document.",
+        "operationId": "GetDocumentVersion",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersDocumentId"
+          },
+          {
+            "$ref": "#/parameters/ParametersVersionId"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "type": "string",
+            "description": "A comma-separated list of values. Specify SOURCE to include a URL for the source document."
+          },
+          {
+            "name": "includeCustomMetadata",
+            "in": "query",
+            "description": "Set this to TRUE to include custom metadata in the response.",
+            "type": "boolean"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/DocumentMetadata"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/folders/{FolderId}?includeCustomMetadata": {
+      "get": {
+        "tags": [
+          "Folder"
+        ],
+        "summary": "Retrieve the specified folder's metadata",
+        "description": "Retrieves the metadata of the specified folder.",
+        "operationId": "GetFolder",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersFolderId"
+          },
+          {
+            "name": "includeCustomMetadata",
+            "in": "query",
+            "description": "Set this to TRUE to include custom metadata in the response.",
+            "type": "boolean"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/GetFolder"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/folders/{FolderId}/path?fields&limit&marker": {
+      "get": {
+        "tags": [
+          "Folder"
+        ],
+        "summary": "Retrieve the specified folder's path information",
+        "description": "Retrieves the path information (the hierarchy from the root folder) for the specified folder. By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested folder and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the parent folder names.",
+        "operationId": "GetFolderPath",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersFolderId"
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "type": "string",
+            "description": "A comma-separated list of values. Specify NAME to include the names of the parent folders."
+          },
+          {
+            "$ref": "#/parameters/ParametersLimit"
+          },
+          {
+            "$ref": "#/parameters/ParametersMarker"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/DocumentPath"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/resources?collectionType&limit&marker&userId": {
+      "get": {
+        "tags": [
+          "Resource"
+        ],
+        "summary": "Retrieve a collection of resources",
+        "description": "Retrieves a collection of resources, including folders and documents. The only CollectionType supported is SHARED_WITH_ME.",
+        "operationId": "GetResources",
+        "parameters": [
+          {
+            "name": "collectionType",
+            "in": "query",
+            "type": "string",
+            "description": "The collection type.",
+            "enum": [
+              "SHARED_WITH_ME"
+            ]
+          },
+          {
+            "$ref": "#/parameters/ParametersLimit"
+          },
+          {
+            "$ref": "#/parameters/ParametersMarker"
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "type": "string",
+            "description": "The user ID for the resource collection."
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/FolderContents"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/documents": {
+      "post": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Create new document and version object",
+        "description": "Creates a new document object and version object. The client specifies the parent folder ID and name of the document to upload. The ID is optionally specified when creating a new version of an existing document. This is the first step to upload a document. Next, upload the document to the URL returned from the call, and then call UpdateDocumentVersion. To cancel the document upload, call AbortDocumentVersionUpload.",
+        "operationId": "InitiateDocumentVersionUpload",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersContentType"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/DocumentVersionUpload"
+            }
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/DocumentVersionUploadResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/documentVersions/restore/{DocumentId}": {
+      "post": {
+        "tags": [
+          "Document"
+        ],
+        "summary": "Recover a deleted version",
+        "description": "Recovers a deleted version of an Amazon WorkDocs document.",
+        "operationId": "RestoreDocumentVersions",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersDocumentId"
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          }
+        }
+      }
+    },
+    "/api/v1/search": {
+      "post": {
+        "tags": [
+          "Resource"
+        ],
+        "summary": "Search metadata and content of resources",
+        "description": "Searches metadata and the content of folders, documents, document versions, and comments.",
+        "operationId": "SearchResources",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ParametersContentType"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/SearchResources"
+            }
+          },
+          {
+            "$ref":"#/parameters/ParametersAuthentication"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/SearchResourcesResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "SearchResourcesResponse": {
+      "type": "object",
+      "properties": {
+        "Items": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "CommentMetadata": {
+                  "type": "object",
+                  "properties": {
+                    "CommentId": {
+                      "type": "string"
+                    },
+                    "CommentStatus": {
+                      "type": "string"
+                    },
+                    "Contributor": {
+                      "type": "object",
+                      "properties": {
+                        "CreatedTimestamp": {
+                          "type": "number"
+                        },
+                        "EmailAddress": {
+                          "type": "string"
+                        },
+                        "GivenName": {
+                          "type": "string"
+                        },
+                        "Id": {
+                          "type": "string"
+                        },
+                        "Locale": {
+                          "type": "string"
+                        },
+                        "ModifiedTimestamp": {
+                          "type": "number"
+                        },
+                        "OrganizationId": {
+                          "type": "string"
+                        },
+                        "RecycleBinFolderId": {
+                          "type": "string"
+                        },
+                        "RootFolderId": {
+                          "type": "string"
+                        },
+                        "Status": {
+                          "type": "string"
+                        },
+                        "Storage": {
+                          "type": "object",
+                          "properties": {
+                            "StorageRule": {
+                              "type": "object",
+                              "properties": {
+                                "StorageAllocatedInBytes": {
+                                  "type": "number"
+                                },
+                                "StorageType": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "StorageUtilizedInBytes": {
+                              "type": "number"
+                            }
+                          }
+                        },
+                        "Surname": {
+                          "type": "string"
+                        },
+                        "TimeZoneId": {
+                          "type": "string"
+                        },
+                        "Type": {
+                          "type": "string"
+                        },
+                        "Username": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "ContributorId": {
+                      "type": "string"
+                    },
+                    "CreatedTimestamp": {
+                      "type": "number"
+                    },
+                    "RecipientId": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "DocumentMetadata": {
+                  "type": "object",
+                  "properties": {
+                    "CreatedTimestamp": {
+                      "type": "number"
+                    },
+                    "CreatorId": {
+                      "type": "string"
+                    },
+                    "Id": {
+                      "type": "string"
+                    },
+                    "Labels": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "LatestVersionMetadata": {
+                      "type": "object",
+                      "properties": {
+                        "ContentCreatedTimestamp": {
+                          "type": "number"
+                        },
+                        "ContentModifiedTimestamp": {
+                          "type": "number"
+                        },
+                        "ContentType": {
+                          "type": "string"
+                        },
+                        "CreatedTimestamp": {
+                          "type": "number"
+                        },
+                        "CreatorId": {
+                          "type": "string"
+                        },
+                        "Id": {
+                          "type": "string"
+                        },
+                        "ModifiedTimestamp": {
+                          "type": "number"
+                        },
+                        "Name": {
+                          "type": "string"
+                        },
+                        "Signature": {
+                          "type": "string"
+                        },
+                        "Size": {
+                          "type": "number"
+                        },
+                        "Source": {
+                          "type": "object",
+                          "properties": {
+                            "string": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "Status": {
+                          "type": "string"
+                        },
+                        "Thumbnail": {
+                          "type": "object",
+                          "properties": {
+                            "string": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "ModifiedTimestamp": {
+                      "type": "number"
+                    },
+                    "ParentFolderId": {
+                      "type": "string"
+                    },
+                    "ResourceState": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "DocumentVersionMetadata": {
+                  "type": "object",
+                  "properties": {
+                    "ContentCreatedTimestamp": {
+                      "type": "number"
+                    },
+                    "ContentModifiedTimestamp": {
+                      "type": "number"
+                    },
+                    "ContentType": {
+                      "type": "string"
+                    },
+                    "CreatedTimestamp": {
+                      "type": "number"
+                    },
+                    "CreatorId": {
+                      "type": "string"
+                    },
+                    "Id": {
+                      "type": "string"
+                    },
+                    "ModifiedTimestamp": {
+                      "type": "number"
+                    },
+                    "Name": {
+                      "type": "string"
+                    },
+                    "Signature": {
+                      "type": "string"
+                    },
+                    "Size": {
+                      "type": "number"
+                    },
+                    "Source": {
+                      "type": "object",
+                      "properties": {
+                        "string": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "Status": {
+                      "type": "string"
+                    },
+                    "Thumbnail": {
+                      "type": "object",
+                      "properties": {
+                        "string": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "FolderMetadata": {
+                  "type": "object",
+                  "properties": {
+                    "CreatedTimestamp": {
+                      "type": "number"
+                    },
+                    "CreatorId": {
+                      "type": "string"
+                    },
+                    "Id": {
+                      "type": "string"
+                    },
+                    "Labels": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "LatestVersionSize": {
+                      "type": "number"
+                    },
+                    "ModifiedTimestamp": {
+                      "type": "number"
+                    },
+                    "Name": {
+                      "type": "string"
+                    },
+                    "ParentFolderId": {
+                      "type": "string"
+                    },
+                    "ResourceState": {
+                      "type": "string"
+                    },
+                    "Signature": {
+                      "type": "string"
+                    },
+                    "Size": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "ResourceType": {
+                  "type": "string"
+                },
+                "WebUrl": {
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        },
+        "Marker": {
+          "type": "string"
+        }
+      }
+    },
+    "PrincipalItems": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "Roles": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    "SearchResources": {
+      "type": "object",
+      "properties": {
+        "AdditionalResponseFields": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "Filters": {
+          "type": "object",
+          "properties": {
+            "AncestorIds": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "ContentCategories": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "CreatedRange": {
+              "type": "object",
+              "properties": {
+                "EndValue": {
+                  "type": "number"
+                },
+                "StartValue": {
+                  "type": "number"
+                }
+              }
+            },
+            "Labels": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "ModifiedRange": {
+              "type": "object",
+              "properties": {
+                "EndValue": {
+                  "type": "number"
+                },
+                "StartValue": {
+                  "type": "number"
+                }
+              }
+            },
+            "Principals": {
+              "type": "array",
+              "items": [
+                {
+                  "$ref": "#/definitions/PrincipalItems"
+                }
+              ]
+            },
+            "ResourceTypes": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "SearchCollectionTypes": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "SizeRange": {
+              "type": "object",
+              "properties": {
+                "EndValue": {
+                  "type": "number"
+                },
+                "StartValue": {
+                  "type": "number"
+                }
+              }
+            },
+            "TextLocales": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        },
+        "Limit": {
+          "type": "number"
+        },
+        "Marker": {
+          "type": "string"
+        },
+        "OrderBy": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "Field": {
+                  "type": "string"
+                },
+                "Order": {
+                  "type": "string"
+                }
+              }
+            }
+          ]
+        },
+        "OrganizationId": {
+          "type": "string"
+        },
+        "QueryScopes": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "QueryText": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateUserResponse": {
+      "type": "object",
+      "properties": {
+        "User": {
+          "$ref": "#/definitions/User"
+        }
+      }
+    },
+    "UpdateUser": {
+      "type": "object",
+      "properties": {
+        "GivenName": {
+          "type": "string",
+          "description": "The given name of the user."
+        },
+        "GrantPoweruserPrivileges": {
+          "type": "string",
+          "enum": [
+            "TRUE",
+            "FALSE"
+          ],
+          "description": "Boolean value to determine whether the user is granted Power user privileges."
+        },
+        "Locale": {
+          "type": "string",
+          "description": "The locale of the user.",
+          "enum": [
+            "en",
+            "fr",
+            "ko",
+            "de",
+            "es",
+            "ja",
+            "ru",
+            "zh_CN",
+            "zh_TW",
+            "pt_BR",
+            "default"
+          ]
+        },
+        "StorageRule": {
+          "$ref": "#/definitions/StorageRule"
+        },
+        "Surname": {
+          "type": "string",
+          "description": "The surname of the user."
+        },
+        "TimeZoneId": {
+          "type": "string",
+          "description": "The time zone ID of the user."
+        },
+        "Type": {
+          "type": "string",
+          "description": "The type of the user.",
+          "enum": [
+            "USER",
+            "ADMIN",
+            "POWERUSER",
+            "MINIMALUSER",
+            "WORKSPACESUSER"
+          ]
+        }
+      }
+    },
+    "UpdateDocumentVersion": {
+      "type": "object",
+      "properties": {
+        "VersionStatus": {
+          "type": "string",
+          "enum": [
+            "ACTIVE"
+          ],
+          "description": "The status of the version."
+        }
+      }
+    },
+    "UpdateDocument": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string",
+          "description": "The name of the document."
+        },
+        "ParentFolderId": {
+          "type": "string",
+          "description": "The ID of the parent folder."
+        },
+        "ResourceState": {
+          "type": "string",
+          "description": "The resource state of the document. Only ACTIVE and RECYCLED are supported.",
+          "enum": [
+            "ACTIVE",
+            "RESTORING",
+            "RECYCLING",
+            "RECYCLED"
+          ]
+        }
+      }
+    },
+    "DocumentVersionUploadResponse": {
+      "type": "object",
+      "properties": {
+        "Metadata": {
+          "$ref": "#/definitions/Documents"
+        },
+        "UploadMetadata": {
+          "type": "object",
+          "properties": {
+            "SignedHeaders": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "UploadUrl": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "DocumentVersionUpload": {
+      "type": "object",
+      "properties": {
+        "ContentCreatedTimestamp": {
+          "type": "number",
+          "description": "The timestamp when the content of the document was originally created."
+        },
+        "ContentModifiedTimestamp": {
+          "type": "number",
+          "description": "The timestamp when the content of the document was modified."
+        },
+        "ContentType": {
+          "type": "string",
+          "description": "The content type of the document."
+        },
+        "DocumentSizeInBytes": {
+          "type": "number",
+          "description": "The size of the document, in bytes"
+        },
+        "Id": {
+          "type": "string",
+          "description": "The ID of the document."
+        },
+        "Name": {
+          "type": "string"
+        },
+        "ParentFolderId": {
+          "type": "string"
+        }
+      }
+    },
+    "DocumentMetadata": {
+      "type": "object",
+      "properties": {
+        "CustomMetadata": {
+          "$ref": "#/definitions/CustomMetadata"
+        },
+        "Metadata": {
+          "$ref": "#/definitions/DocumentVersionArray"
+        }
+      }
+    },
+    "GetFolder": {
+      "type": "object",
+      "properties": {
+        "CustomMetadata": {
+          "$ref": "#/definitions/CustomMetadata"
+        },
+        "Metadata": {
+          "$ref": "#/definitions/FolderMetadata"
+        }
+      }
+    },
+    "DocumentPath": {
+      "type": "object",
+      "properties": {
+        "Path": {
+          "$ref": "#/definitions/ResourcePath"
+        }
+      }
+    },
+    "ResourcePath": {
+      "type": "object",
+      "properties": {
+        "Components": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Id": {
+                "type": "string"
+              },
+              "Name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "DescribeDocuments": {
+      "type": "object",
+      "properties": {
+        "CustomMetadata": {
+          "$ref": "#/definitions/CustomMetadata"
+        },
+        "Metadata": {
+          "$ref": "#/definitions/Documents"
+        }
+      }
+    },
+    "DescribeUser": {
+      "type": "object",
+      "properties": {
+        "Marker": {
+          "type": "string"
+        },
+        "TotalNumberOfUsers": {
+          "type": "number"
+        },
+        "Users": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/User"
+          }
+        }
+      }
+    },
+    "RootFolders": {
+      "type": "object",
+      "properties": {
+        "Folders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Folders"
+          }
+        },
+        "Marker": {
+          "type": "string"
+        }
+      }
+    },
+    "ResourcePermissions": {
+      "type": "object",
+      "properties": {
+        "Marker": {
+          "type": "string"
+        },
+        "Principals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Principal"
+          }
+        }
+      }
+    },
+    "Principal": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "Roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Roles"
+          }
+        },
+        "Type": {
+          "type": "string"
+        }
+      }
+    },
+    "Roles": {
+      "type": "object",
+      "properties": {
+        "Role": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        }
+      }
+    },
+    "NotificationSubscription": {
+      "type": "object",
+      "properties": {
+        "Marker": {
+          "type": "string"
+        },
+        "Subscriptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Subscriptions"
+          }
+        }
+      }
+    },
+    "Subscriptions": {
+      "type": "object",
+      "properties": {
+        "EndPoint": {
+          "type": "string"
+        },
+        "Protocol": {
+          "type": "string"
+        },
+        "SubscriptionId": {
+          "type": "string"
+        }
+      }
+    },
+    "DescribeGroups": {
+      "type": "object",
+      "properties": {
+        "Groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/GroupMetadata"
+          }
+        },
+        "Marker": {
+          "type": "string"
+        }
+      }
+    },
+    "FolderContents": {
+      "type": "object",
+      "properties": {
+        "Documents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Documents"
+          }
+        },
+        "Folders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Folders"
+          }
+        },
+        "Marker": {
+          "type": "string"
+        }
+      }
+    },
+    "Folders": {
+      "type": "object",
+      "properties": {
+        "CreatedTimestamp": {
+          "type": "number"
+        },
+        "CreatorId": {
+          "type": "string"
+        },
+        "Id": {
+          "type": "string"
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "LatestVersionSize": {
+          "type": "number"
+        },
+        "ModifiedTimestamp": {
+          "type": "number"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "ParentFolderId": {
+          "type": "string"
+        },
+        "ResourceState": {
+          "type": "string"
+        },
+        "Signature": {
+          "type": "string"
+        },
+        "Size": {
+          "type": "number"
+        }
+      }
+    },
+    "Documents": {
+      "type": "object",
+      "properties": {
+        "CreatedTimestamp": {
+          "type": "number"
+        },
+        "CreatorId": {
+          "type": "string"
+        },
+        "Id": {
+          "type": "string"
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "LatestVersionMetadata": {
+          "$ref": "#/definitions/DocumentVersionArray"
+        },
+        "ModifiedTimestamp": {
+          "type": "number"
+        },
+        "ParentFolderId": {
+          "type": "string"
+        },
+        "ResourceState": {
+          "type": "string"
+        }
+      }
+    },
+    "DocumentVersion": {
+      "type": "object",
+      "properties": {
+        "DocumentVersion": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DocumentVersionArray"
+          }
+        },
+        "Marker": {
+          "type": "string"
+        }
+      }
+    },
+    "DocumentVersionArray": {
+      "type": "object",
+      "properties": {
+        "ContentCreatedTimestamp": {
+          "type": "number"
+        },
+        "ContentModifiedTimestamp": {
+          "type": "number"
+        },
+        "ContentType": {
+          "type": "string"
+        },
+        "CreatedTimestamp": {
+          "type": "number"
+        },
+        "CreatorId": {
+          "type": "string"
+        },
+        "Id": {
+          "type": "string"
+        },
+        "ModifiedTimestamp": {
+          "type": "number"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Signature": {
+          "type": "string"
+        },
+        "Size": {
+          "type": "number"
+        },
+        "Source": {
+          "type": "object",
+          "properties": {
+            "Prop1": {
+              "type": "string"
+            },
+            "Prop2": {
+              "type": "string"
+            },
+            "Prop3": {
+              "type": "string"
+            }
+          }
+        },
+        "Status": {
+          "type": "string"
+        },
+        "Thumbnail": {
+          "type": "object",
+          "properties": {
+            "Prop1": {
+              "type": "string"
+            },
+            "Prop2": {
+              "type": "string"
+            },
+            "Prop3": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "Activities": {
+      "type": "object",
+      "properties": {
+        "Marker": {
+          "type": "string"
+        },
+        "UserActivities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserActivities"
+          }
+        }
+      }
+    },
+    "UserActivities": {
+      "type": "object",
+      "properties": {
+        "CommentMetadata": {
+          "$ref": "#/definitions/CommentMetadata"
+        },
+        "Initiator": {
+          "$ref": "#/definitions/Initiator"
+        },
+        "IsIndirectActivity": {
+          "type": "boolean"
+        },
+        "OrganizationId": {
+          "type": "string"
+        },
+        "OriginalParent": {
+          "$ref": "#/definitions/OriginalParent"
+        },
+        "Participants": {
+          "type": "object",
+          "properties": {
+            "Groups": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/GroupMetadata"
+              }
+            },
+            "Users": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Users"
+              }
+            }
+          }
+        },
+        "ResourceMetadata": {
+          "$ref": "#/definitions/ResourceMetadata"
+        },
+        "TimeStamp": {
+          "type": "number"
+        },
+        "Type": {
+          "type": "string"
+        }
+      }
+    },
+    "ResourceMetadata": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "OriginalName": {
+          "type": "string"
+        },
+        "Owner": {
+          "$ref": "#/definitions/Owner"
+        },
+        "ParentId": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "VersionId": {
+          "type": "string"
+        }
+      }
+    },
+    "Users": {
+      "type": "object",
+      "properties": {
+        "EmailAddress": {
+          "type": "string"
+        },
+        "GivenName": {
+          "type": "string"
+        },
+        "Id": {
+          "type": "string"
+        },
+        "Surname": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        }
+      }
+    },
+    "GroupMetadata": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        }
+      }
+    },
+    "OriginalParent": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "OriginalName": {
+          "type": "string"
+        },
+        "Owner": {
+          "$ref": "#/definitions/Owner"
+        },
+        "ParentId": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "VersionId": {
+          "type": "string"
+        }
+      }
+    },
+    "Owner": {
+      "type": "object",
+      "properties": {
+        "EmailAddress": {
+          "type": "string"
+        },
+        "GivenName": {
+          "type": "string"
+        },
+        "Id": {
+          "type": "string"
+        },
+        "Surname": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        }
+      }
+    },
+    "Initiator": {
+      "type": "object",
+      "properties": {
+        "EmailAddress": {
+          "type": "string"
+        },
+        "GivenName": {
+          "type": "string"
+        },
+        "Id": {
+          "type": "string"
+        },
+        "Surname": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        }
+      }
+    },
+    "CommentMetadata": {
+      "type": "object",
+      "properties": {
+        "CommentId": {
+          "type": "string"
+        },
+        "CommentStatus": {
+          "type": "string"
+        },
+        "Contributor": {
+          "$ref": "#/definitions/Contributor"
+        },
+        "CreatedTimestamp": {
+          "type": "number"
+        },
+        "RecipientId": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateUser": {
+      "type": "object",
+      "properties": {
+        "EmailAddress": {
+          "type": "string"
+        },
+        "GivenName": {
+          "type": "string"
+        },
+        "OrganizationId": {
+          "type": "string"
+        },
+        "Password": {
+          "type": "string"
+        },
+        "StorageRule": {
+          "$ref": "#/definitions/StorageRule"
+        },
+        "Surname": {
+          "type": "string"
+        },
+        "TimeZoneId": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        }
+      }
+    },
+    "NotificationResponse": {
+      "type": "object",
+      "properties": {
+        "Subscription": {
+          "$ref": "#/definitions/Subscription"
+        }
+      }
+    },
+    "Subscription": {
+      "type": "object",
+      "properties": {
+        "EndPoint": {
+          "type": "string"
+        },
+        "Protocol": {
+          "type": "string"
+        },
+        "SubscriptionId": {
+          "type": "string"
+        }
+      }
+    },
+    "Notification": {
+      "type": "object",
+      "properties": {
+        "Endpoint": {
+          "type": "string"
+        },
+        "Protocol": {
+          "type": "string",
+          "enum": [
+            "HTTPS",
+            "SQS"
+          ]
+        },
+        "SubscriptionType": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateLabel": {
+      "type": "object",
+      "properties": {
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "CreateFolderResponse": {
+      "type": "object",
+      "properties": {
+        "Metadata": {
+          "$ref": "#/definitions/FolderMetadata"
+        }
+      }
+    },
+    "FolderMetadata": {
+      "type": "object",
+      "properties": {
+        "CreatedTimestamp": {
+          "type": "number"
+        },
+        "CreatorId": {
+          "type": "string"
+        },
+        "Id": {
+          "type": "string"
+        },
+        "Labels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "LatestVersionSize": {
+          "type": "number"
+        },
+        "ModifiedTimestamp": {
+          "type": "number"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "ParentFolderId": {
+          "type": "string"
+        },
+        "ResourceState": {
+          "type": "string"
+        },
+        "Signature": {
+          "type": "string"
+        },
+        "Size": {
+          "type": "number"
+        }
+      }
+    },
+    "CreateFolder": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "description": "The name of the new folder.",
+          "type": "string"
+        },
+        "ParentFolderId": {
+          "description": "The ID of the parent folder.",
+          "type": "string"
+        }
+      }
+    },
+    "CreateCustomMetadata": {
+      "type": "object",
+      "properties": {
+        "CustomMetadata": {
+          "$ref": "#/definitions/CustomMetadata"
+        }
+      }
+    },
+    "CustomMetadata": {
+      "type": "object",
+      "properties":{
+        "string":{
+          "type":"string"
+        }
+      },
+      "additionalProperties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "CreatedTimestamp": {
+          "type": "number"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "GivenName": {
+          "type": "string"
+        },
+        "Id": {
+          "type": "string"
+        },
+        "Locale": {
+          "type": "string"
+        },
+        "ModifiedTimestamp": {
+          "type": "number"
+        },
+        "OrganizationId": {
+          "type": "string"
+        },
+        "RecycleBinFolderId": {
+          "type": "string"
+        },
+        "RootFolderId": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "Storage": {
+          "$ref": "#/definitions/Storage"
+        },
+        "Surname": {
+          "type": "string"
+        },
+        "TimeZoneId": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        }
+      }
+    },
+    "ActivateUser": {
+      "type": "object",
+      "description": "Result returned by methods that poll for the status of an asynchronous job. Upon completion of the job, no additional information is returned.\nin_progress:  The asynchronous job is still in progress.\ncomplete:  The asynchronous job has completed successfully.\n",
+      "properties": {
+        "User": {
+          "$ref": "#/definitions/User"
+        }
+      }
+    },
+    "CreatePermission": {
+      "type": "object",
+      "description": "Request",
+      "properties": {
+        "NotificationOptions": {
+          "type": "object",
+          "properties": {
+            "EmailMessage": {
+              "type": "string"
+            },
+            "SendEmail": {
+              "type": "boolean"
+            }
+          }
+        },
+        "Principals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Role"
+          }
+        }
+      }
+    },
+    "CreatePermissionResponse": {
+      "type": "object",
+      "properties": {
+        "ShareResults": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "InviteePrincipalId": {
+                "type": "string"
+              },
+              "PrincipalId": {
+                "type": "string"
+              },
+              "Role": {
+                "type": "string"
+              },
+              "ShareId": {
+                "type": "string"
+              },
+              "Status": {
+                "type": "string"
+              },
+              "StatusMessage": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Role": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "Role": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        }
+      }
+    },
+    "Contributor": {
+      "type": "object",
+      "properties": {
+        "CreatedTimestamp": {
+          "type": "number"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "GivenName": {
+          "type": "string"
+        },
+        "Id": {
+          "type": "string"
+        },
+        "Locale": {
+          "type": "string"
+        },
+        "ModifiedTimestamp": {
+          "type": "number"
+        },
+        "OrganizationId": {
+          "type": "string"
+        },
+        "RecycleBinFolderId": {
+          "type": "string"
+        },
+        "RootFolderId": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "Storage": {
+          "$ref": "#/definitions/Storage"
+        },
+        "Surname": {
+          "type": "string"
+        },
+        "TimeZoneId": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Username": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateComment": {
+      "type": "object",
+      "properties": {
+        "NotifyCollaborators": {
+          "type": "boolean"
+        },
+        "ParentId": {
+          "type": "string"
+        },
+        "Text": {
+          "type": "string"
+        },
+        "ThreadId": {
+          "type": "string"
+        },
+        "Visibility": {
+          "type": "string",
+          "enum": [
+            "PUBLIC",
+            "PRIVATE"
+          ]
+        }
+      }
+    },
+    "DescribeCommentsResponse": {
+      "type": "object",
+      "properties": {
+        "Comments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CommentObject"
+          }
+        },
+        "Marker": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateCommentResponse": {
+      "type": "object",
+      "properties": {
+        "Comment": {
+          "$ref": "#/definitions/CommentObject"
+        }
+      }
+    },
+    "CommentObject": {
+      "type": "object",
+      "properties": {
+        "CommentId": {
+          "type": "string"
+        },
+        "Contributor": {
+          "$ref": "#/definitions/Contributor"
+        },
+        "CreatedTimestamp": {
+          "type": "number"
+        },
+        "ParentId": {
+          "type": "string"
+        },
+        "RecipientId": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "Text": {
+          "type": "string"
+        },
+        "ThreadId": {
+          "type": "string"
+        },
+        "Visibility": {
+          "type": "string"
+        }
+      }
+    },
+    "StorageRule": {
+      "type": "object",
+      "properties": {
+        "StorageAllocatedInBytes": {
+          "type": "number"
+        },
+        "StorageType": {
+          "type": "string"
+        }
+      }
+    },
+    "Storage": {
+      "type": "object",
+      "properties": {
+        "StorageRule": {
+          "$ref": "#/definitions/StorageRule"
+        },
+        "StorageUtilizedInBytes": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "parameters": {
+    "ParametersAuthentication": {
+      "name": "Authentication",
+      "in": "header",
+      "type": "string",
+      "description": "Amazon WorkDocs authentication token."
+    },
+    "ParametersContentType": {
+      "name": "Content-Type",
+      "in": "header",
+      "required":true,
+      "type": "string",
+      "description": "Amazon WorkDocs content-type.",
+      "default": "application/json"
+    },
+    "ParametersVersionId": {
+      "name": "VersionId",
+      "type": "string",
+      "in": "path",
+      "description": "The ID of the version."
+    },
+    "ParametersDocumentId": {
+      "name": "DocumentId",
+      "in": "path",
+      "type": "string",
+      "description": "The ID of the document."
+    },
+    "ParametersUserId": {
+      "name": "UserId",
+      "in": "path",
+      "type": "string",
+      "description": "The ID of the user."
+    },
+    "ParametersResourceId": {
+      "name": "ResourceId",
+      "in": "path",
+      "type": "string",
+      "description": "The ID of the resource."
+    },
+    "ParametersCommentId": {
+      "name": "CommentId",
+      "in": "path",
+      "type": "string",
+      "description": "The ID of the comment"
+    },
+    "ParametersFolderId": {
+      "name": "FolderId",
+      "in": "path",
+      "type": "string",
+      "description": "The ID of the folder."
+    },
+    "ParametersOrganizationId": {
+      "name": "OrganizationId",
+      "in": "path",
+      "type": "string",
+      "description": "The ID of the organization."
+    },
+    "ParametersSubscriptionId": {
+      "name": "SubscriptionId",
+      "in": "path",
+      "type": "string",
+      "description": "The ID of the subscription."
+    },
+    "ParametersMarker": {
+      "name": "marker",
+      "in": "query",
+      "type": "string",
+      "description": "The marker for the next set of results."
+    },
+    "ParametersLimit": {
+      "name": "limit",
+      "in": "query",
+      "type": "number",
+      "description": "The maximum number of items to return."
+    },
+    "ParametersInclude": {
+      "name": "include",
+      "in": "query",
+      "type": "string",
+      "description": "A comma-separated list of values. Specify INITIALIZED to include incomplete versions."
+    },
+    "ParametersSearchQuery": {
+      "name": "searchQuery",
+      "in": "query",
+      "type": "string",
+      "required":true,
+      "description": "A query to describe groups by group name."
+    },
+    "ParametersPrincipalId": {
+      "name": "principalId",
+      "in": "query",
+      "type": "string",
+      "description": "The ID of the principal to filter permissions by."
+    },
+    "ParametersQuery": {
+      "name": "query",
+      "in": "query",
+      "type": "string",
+      "description": "A query to filter users by user name."
+    },
+    "ParametersOrder": {
+      "name": "order",
+      "in": "query",
+      "description": "The order for the results.",
+      "type": "string",
+      "enum": [
+        "ASCENDING",
+        "DESCENDING"
+      ]
+    }
+  }
+}

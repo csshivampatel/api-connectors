@@ -1,0 +1,3002 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "M-Files",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://{host}/REST"
+        }
+    ],
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "host": "{host}",
+    "basePath": "/REST",
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "tags": [
+        {
+            "name": "Session"
+        },
+        {
+            "name": "Server Resources"
+        },
+        {
+            "name": "Vault Structure"
+        },
+        {
+            "name": "Value List"
+        },
+        {
+            "name": "Workflows"
+        },
+        {
+            "name": "Shared Links"
+        },
+        {
+            "name": "Objects"
+        }
+    ],
+    "paths": {       
+        "/session/vaults": {
+            "get": {
+                "tags": [
+                    "Session"
+                ],
+                "summary": "Get Vaults Accessible by Current User",
+                "operationId": "get_vaults_accessible_by_current_user",
+                "description": "Retrieves a list of vaults that are accessible by the current user.",
+                "parameters": [
+                    {
+                        "name": "X-Authentication",
+                        "in": "header",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "Name": {
+                                    "type": "string"
+                                    },
+                                    "GUID": {
+                                    "type": "string"
+                                    },
+                                    "Authentication": {
+                                    "type": "string"
+                                    }
+                                }
+                            }
+                       
+                         }
+                   }
+                }
+            }
+        },
+        "/session/vault": {
+            "get": {
+                "tags": [
+                    "Session"
+                ],
+                "summary": "Get Current Vault",
+                "operationId": "get_current_vault",
+                "description": "Fetch the document vault attached to the current session.",
+                "parameters": [
+                    {
+                        "name": "X-Authentication",
+                        "in": "header",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "Name": {
+                                    "type": "string"
+                                    },
+                                    "GUID": {
+                                    "type": "string"
+                                    },
+                                    "Authentication": {
+                                    "type": "string"
+                                    }
+                                }
+                            }
+                       }
+                   }
+               }
+            },
+        "/session/userid": {
+            "get": {
+                "tags": [
+                    "Session"
+                ],
+                "summary": "Get Logged in User ID",
+                "operationId": "get_logged_in_user_id",
+                "description": "Retrieves the user id of the current logged in user.",
+                "parameters": [
+                    {
+                        "name": "X-Authentication",
+                        "in": "header",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "Value": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/session/authenticationtoken": {
+            "get": {
+                "tags": [
+                    "Session"
+                ],
+                "summary": "Get Authentication Token for Current Session",
+                "operationId": "get_auth_token_for_current_session",
+                "description": "Retrieves the authentication token for the current session.",
+                "parameters": [
+                    {
+                        "name": "X-Authentication",
+                        "in": "header",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "Value": {
+                                "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/server/authenticationtokens": {
+            "post": {
+                "tags": [
+                    "Server Resources"
+                ],
+                "summary": "Create Authentication Token",
+                "operationId": "create_authentication_token",
+                "description": "Creates a new authentication token based on the authentication information.",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "Username": {
+                                "type": "string"
+                                },
+                                "Password": {
+                                "type": "string"
+                                },
+                                "Domain": {
+                                "type": "string"
+                                },
+                                "ComputerName": {
+                                "type": "string"
+                                },
+                                "VaultGuid": {
+                                "type": "string"
+                                },
+                                "Expiration": {
+                                "type": "string",
+                                "format": "date-time"
+                                },
+                                "ReadOnly": {
+                                "type": "boolean"
+                                },
+                                "URL": {
+                                "type": "string"
+                                },
+                                "Method": {
+                                "type": "string"
+                                },
+                                "SessionID": {
+                                "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "Value": {
+                                "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/server/capabilities": {
+            "get": {
+                "tags": [
+                    "Server Resources"
+                ],
+                "summary": "Get Server Capabilities",
+                "operationId": "get_server_capabilities",
+                "description": "Retrieves a list of capabilities supported by the server.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "ApplicationTaskQueueSupported": {
+                                  "type": "boolean"
+                                },
+                                "AsyncModifyObjectClassSupported": {
+                                  "type": "boolean"
+                                },
+                                "AsyncNACLChangePropagationSupported": {
+                                  "type": "boolean"
+                                },
+                                "AsyncTasksRetrievalSupported": {
+                                  "type": "boolean"
+                                },
+                                "AutomaticMetadataSupported": {
+                                  "type": "boolean"
+                                },
+                                "ClientHttpApiSupported": {
+                                  "type": "boolean"
+                                },
+                                "DetectTextLanguageSupported": {
+                                  "type": "boolean"
+                                },
+                                "EmbeddingToSalesforceSupported": {
+                                  "type": "boolean"
+                                },
+                                "EmbeddingToSharePointSupported": {
+                                  "type": "boolean"
+                                },
+                                "ExternalRepositoryObjectMigrationSupported": {
+                                  "type": "boolean"
+                                },
+                                "FacetSearchSupported": {
+                                  "type": "boolean"
+                                },
+                                "FavorFullTextSearchSupported": {
+                                  "type": "boolean"
+                                },
+                                "FileStreamingSupported": {
+                                  "type": "boolean"
+                                },
+                                "FindDuplicatesSupported": {
+                                  "type": "boolean"
+                                },
+                                "GetTextContentWithOptionsSupported": {
+                                  "type": "boolean"
+                                },
+                                "HierarchicalObjectTypePropertiesSupported": {
+                                  "type": "boolean"
+                                },
+                                "JSONExtApplicationsSupported": {
+                                  "type": "boolean"
+                                },
+                                "LatestVersionPublicLinkSharingSupported": {
+                                  "type": "boolean"
+                                },
+                                "NamedValueStorageConflictDetectionSupported": {
+                                  "type": "boolean"
+                                },
+                                "ObjectDataRetrievalInChunksSupported": {
+                                  "type": "boolean"
+                                },
+                                "ObjectPermissionsForClientSupported": {
+                                  "type": "boolean"
+                                },
+                                "PropertyDefSearchabilitySupported": {
+                                  "type": "boolean"
+                                },
+                                "PublicLinkSharingSupported": {
+                                  "type": "boolean"
+                                },
+                                "RemoveFromRecentsSupported": {
+                                  "type": "boolean"
+                                },
+                                "ReplicationConfigurationIDSupported": {
+                                  "type": "boolean"
+                                },
+                                "ReverseGroupingLevelSupported": {
+                                  "type": "boolean"
+                                },
+                                "SearchOptionsSupported": {
+                                  "type": "boolean"
+                                },
+                                "SearchReferencedValueListItemsSupported": {
+                                  "type": "boolean"
+                                },
+                                "SettingsManagerSupported": {
+                                  "type": "boolean"
+                                },
+                                "UndeleteUserAccountByGUIDSupported": {
+                                  "type": "boolean"
+                                },
+                                "UseUserVisibleACLInSearches": {
+                                  "type": "boolean"
+                                },
+                                "VaultLoginAccountsSupported": {
+                                  "type": "boolean"
+                                },
+                                "WebUserInterfaceSupported": {
+                                  "type": "boolean"
+                                },
+                                "EmbeddingToGoogleGSuiteSupported": {
+                                  "type": "boolean"
+                                },
+                                "WebClientsProductionTelemetryEnabled": {
+                                  "type": "boolean"
+                                },
+                                "SharedLinkBasedWOPIOperationSupported": {
+                                  "type": "boolean"
+                                },
+                                "MdccResolvedOnServer": {
+                                  "type": "boolean"
+                                },
+                                "NewWebWOPICoAuthoringSupported": {
+                                  "type": "boolean"
+                                }
+                              }
+                        }
+                    }
+                }
+            }
+        },
+        "/server/publickey": {
+            "get": {
+                "tags": [
+                    "Server Resources"
+                ],
+                "summary": "Get Server Public Key",
+                "operationId": "get_server_public_key",
+                "description": "The server public key used to secure messages between the client and the server.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "Exponent": {
+                                  "type": "string"
+                                },
+                                "Modulus": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                        }
+                    }
+                }
+            },
+            "/server/status": {
+                "get": {
+                    "tags": [
+                        "Server Resources"
+                    ],
+                    "summary": "Get Server Status",
+                    "operationId": "get_server_status",
+                    "description": "Retrieves the server status. If the M-Files server is unavailable the service responds with 503.",
+                    "parameters": [],
+                    "responses": {
+                        "200": {
+                            "description": "Ok",
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "Successful": {
+                                      "type": "boolean"
+                                    },
+                                    "Message": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/server/vaults": {
+                    "get": {
+                        "tags": [
+                            "Server Resources"
+                        ],
+                        "summary": "Get Vaults",
+                        "operationId": "get_vaults",
+                        "description": "Retrieves the vaults that are on-line and available for the user on the server.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Name": {
+                                            "type": "string"
+                                            },
+                                            "GUID": {
+                                            "type": "string"
+                                            },
+                                            "Authentication": {
+                                            "type": "string"
+                                            }
+                                        }
+                                    }
+                               
+                                 }
+                           }
+                        }
+                    }
+                },
+                "/structure/classes": {
+                    "get": {
+                        "tags": [
+                            "Vault Structure"
+                        ],
+                        "summary": "Get Object Classes",
+                        "operationId": "get_object_classes",
+                        "description": "Retrieves information on all object classes.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objtype",
+                                "in": "query",
+                                "type": "number",
+                                "description": "Object type ID. Filters the returned classes by object type. Only classes belonging to the object type are returned."
+                            },
+                            {
+                                "name": "bygroup",
+                                "in": "query",
+                                "type": "boolean",
+                                "description": "If true, returns the object classes in class groups."
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ObjectClass"
+                                    }
+                               
+                                 }
+                           }
+                        }
+                    }
+                },
+                "/structure/classes/{classId}": {
+                    "get": {
+                        "tags": [
+                            "Vault Structure"
+                        ],
+                        "summary": "Get Object Class",
+                        "operationId": "get_object_class",
+                        "description": "Retrieves information on an object class.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "classId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "include",
+                                "in": "query",
+                                "type": "string",
+                                "description": "Comma separated list of additional data sets to return. Currently only templates is supported which will will cause the response to include a list of available templates available to the class."
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                        "$ref": "#/definitions/ObjectClass"
+                                    }
+                           }
+                        }
+                    }
+                },
+                "/structure/classes/{classId}/icon": {
+                    "get": {
+                        "tags": [
+                            "Vault Structure"
+                        ],
+                        "summary": "Get Class Icon",
+                        "operationId": "get_class_icon",
+                        "description": "Retrieves the icon for a single class.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "classId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "size",
+                                "in": "query",
+                                "type": "number",
+                                "description": "Icon dimension. Default is 16."
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                           }
+                        }
+                    }
+                },
+                "/structure/objecttypes": {
+                    "get": {
+                        "tags": [
+                            "Vault Structure"
+                        ],
+                        "summary": "Get Object Types",
+                        "operationId": "get_object_types",
+                        "description": "Retrieves information on real object types.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/definitions/ObjType"
+                                        }
+                                    }
+                           }
+                        }
+                    }
+                },
+                "/structure/objecttypes/{objectTypeId}": {
+                    "get": {
+                        "tags": [
+                            "Vault Structure"
+                        ],
+                        "summary": "Get Object Type",
+                        "operationId": "get_object_type",
+                        "description": "Retrieves information on an object type.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objectTypeId",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                            "$ref": "#/definitions/ObjTypeDetails"
+                                        }
+                           }
+                        }
+                    }
+                },
+                "/structure/objecttypes/{objectTypeId}/classes": {
+                    "get": {
+                        "tags": [
+                            "Vault Structure"
+                        ],
+                        "summary": "Get Object Type Classes",
+                        "operationId": "get_object_type_classes",
+                        "description": "Retrieves a collection of object classes for the provided object type.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objectTypeId",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/definitions/ObjectClass"
+                                        }
+                                    }
+                           }
+                        }
+                    }
+                },
+                "/structure/objecttypes/{objectTypeId}/refreshstatus": {
+                    "put": {
+                        "tags": [
+                            "Vault Structure"
+                        ],
+                        "summary": "Set the refresh status for an external object type",
+                        "operationId": "set_the_refresh_status_for_an_external_object_type",
+                        "description": "Sets the refresh status to either Full or Quick. A request body containing 1 would execute a quick refresh, but a body containing 2 would execute a full refresh. Note that this call simply initiates the refresh process, which could continue for several minutes depending on the data source and volume of content to synchronise.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objectTypeId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "MFRefreshStatus",
+                                "in": "body",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Value": {
+                                                "type": "number"
+                                            }
+                                        }
+                                    }
+                           }
+                        }
+                    }
+                },
+                "/structure/objecttypes/{objectTypeId}/icon": {
+                    "get": {
+                        "tags": [
+                            "Vault Structure"
+                        ],
+                        "summary": "Get Object Type Icon",
+                        "operationId": "get_object_type_icon",
+                        "description": "Retrieves the object type icon.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objectTypeId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "size",
+                                "in": "query",
+                                "type": "number",
+                                "description": "Icon dimension. Default is 16."
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                           }
+                        }
+                    }
+                },
+                "/structure/properties": {
+                    "get": {
+                        "tags": [
+                            "Vault Structure"
+                        ],
+                        "summary": "Get Property Definitions",
+                        "operationId": "get_property_definitions",
+                        "description": "Retrieves information on all property definitions.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                    "$ref": "#/definitions/PropertyDef"
+                                    }
+                                }
+                           }
+                       }
+                    }
+                },
+                "/structure/properties/{propertyId}": {
+                    "get": {
+                        "tags": [
+                            "Vault Structure"
+                        ],
+                        "summary": "Get Property Definition",
+                        "operationId": "get_property_definition",
+                        "description": "Retrieves information on a single property definition.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "propertyId",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "$ref": "#/definitions/PropertyDef"
+                                }
+                           }
+                       }
+                    }
+                },
+                "/structure/properties/{propertyId}/valuelist/items": {
+                    "get": {
+                        "tags": [
+                            "Vault Structure"
+                        ],
+                        "summary": "Get Property Definition Value List Items",
+                        "operationId": "get_property_definition_value_list_items",
+                        "description": "Retrieves value list item information. Only valid for property definitions based on object types. Filters returned data as configured by the property definition.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "propertyId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "filter",
+                                "in": "query",
+                                "type": "string",
+                                "description": "Filter using name. Supports wildcards."
+                            },
+                            {
+                                "name": "limit",
+                                "in": "query",
+                                "type": "number",
+                                "description": "The number of items to return. Defaults to 500."
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ValueListItem"
+                                    }
+                                }
+                           }
+                       }
+                    }
+                },
+                "/valuelists": {
+                    "get": {
+                        "tags": [
+                            "Value List"
+                        ],
+                        "summary": "Get Value Lists",
+                        "operationId": "get_value_lists",
+                        "description": "Retrieves information on all value lists.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/ObjValueList"
+                                    }
+                                }
+                           }
+                       }
+                    }
+                },
+                "/valuelists/{id}": {
+                    "get": {
+                        "tags": [
+                            "Value List"
+                        ],
+                        "summary": "Get Value List",
+                        "operationId": "get_value_list",
+                        "description": "Retrieves information on a single value list.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "id",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                        "$ref": "#/definitions/ObjValue"
+                                }
+                           }
+                       }
+                    }
+                },
+                "/valuelists/{id}/items": {
+                    "get": {
+                        "tags": [
+                            "Value List"
+                        ],
+                        "summary": "Get Value List Items",
+                        "operationId": "get_value_list_items",
+                        "description": "Retrieves collection of value list items for a single value list.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "id",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "filter",
+                                "in": "query",
+                                "type": "string",
+                                "description": "Filter using name. Supports wildcards."
+                            },
+                            {
+                                "name": "limit",
+                                "in": "query",
+                                "type": "number",
+                                "description": "The number of items to return. Defaults to 500."
+                            },
+                            {
+                                "name": "filterItem",
+                                "in": "query",
+                                "type": "string",
+                                "description": "The filterItem querystring parameter can be used to filter a sub-value-list by parents. The value of the querystring parameter should be the ID of the parent value list followed by a colon followed by a comma-separated list of IDs to filter by."
+                            },
+                            {
+                                "name": "conditionType",
+                                "in": "query",
+                                "type": "number",
+                                "description": "One of the following values: 1 means Equal to, 2 means Not equal to, 3 means Greater than and 4 means Less than."
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "Items": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/ValueListItem"
+                                            }
+                                        },
+                                        "MoreResults": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                        
+                                }
+                           }
+                       }
+                    },
+                    "post": {
+                        "tags": [
+                            "Value List"
+                        ],
+                        "summary": "Create Value List Item",
+                        "operationId": "create_value_list_item",
+                        "description": "Creates a new value list item in the value list.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "valueListItem",
+                                "in": "body",
+                                "schema": {
+                                    "$ref": "#/definitions/ValueListItem"
+                                }
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "$ref": "#/definitions/ValueListItem"
+                                }
+                           }
+                       }
+                    }
+                },
+                "/valuelists/{id}/items/{objectId}": {
+                    "get": {
+                        "tags": [
+                            "Value List"
+                        ],
+                        "summary": "Get Value List Item",
+                        "operationId": "get_value_list_item",
+                        "description": "Retrieves a single value list item information.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "id",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objectId",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "$ref": "#/definitions/ValueListItem"
+                                }
+                           }
+                       }
+                    },
+                    "delete": {
+                        "tags": [
+                            "Value List"
+                        ],
+                        "summary": "Delete Value List Item",
+                        "operationId": "delete_value_list_item",
+                        "description": "Deletes a value list item.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "id",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objectId",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "string"
+                                }
+                           }
+                       }
+                    }
+                },
+                "/valuelists/{id}/items/{objectId}/title": {
+                    "get": {
+                        "tags": [
+                            "Value List"
+                        ],
+                        "summary": "Get Value List Item Title",
+                        "operationId": "get_value_list_item_title",
+                        "description": "Retrieves the value list item title.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "id",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objectId",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "Value": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                           }
+                       }
+                    },
+                    "put": {
+                        "tags": [
+                            "Value List"
+                        ],
+                        "summary": "Change Value List Item Title",
+                        "operationId": "change_value_list_item_title",
+                        "description": "Changes the value list item title.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "id",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objectId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "body",
+                                "in": "body",
+                                "type": "string"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "$ref": "#/definitions/ValueListItem"
+                                }
+                           }
+                       }
+                    }
+                },
+                "/structure/workflows": {
+                    "get": {
+                        "tags": [
+                            "Workflows"
+                        ],
+                        "summary": "Get Workflows",
+                        "operationId": "get_workflows",
+                        "description": "Retrieves information on all workflows.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Workflow"
+                                    }   
+                                }
+                           }
+                       }
+                    }
+                },
+                "/structure/workflows/{workflowId}": {
+                    "get": {
+                        "tags": [
+                            "Workflows"
+                        ],
+                        "summary": "Get Workflow",
+                        "operationId": "get_workflow",
+                        "description": "Retrieves information on a single workflow.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "workflowId",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                        "$ref": "#/definitions/Workflow" 
+                                }
+                           }
+                       }
+                    }
+                },
+                "/structure/workflows/{workflowId}/statetransitions": {
+                    "get": {
+                        "tags": [
+                            "Workflows"
+                        ],
+                        "summary": "Get Workflow State Transitions",
+                        "operationId": "get_workflow_state_transitions",
+                        "description": "Retrieves information on valid state transitions in the current workflow.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "workflowId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "currentstate",
+                                "in": "query",
+                                "type": "number",
+                                "description": "null or state ID. Restricts the list of returned states to those that are available as valid states from the current state."
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/WorkflowState"
+                                    }       
+                                }
+                           }
+                       }
+                    }
+                },
+                "/structure/workflows/{workflowId}/states": {
+                    "get": {
+                        "tags": [
+                            "Workflows"
+                        ],
+                        "summary": "Get Workflow States",
+                        "operationId": "get_workflow_states",
+                        "description": "Retrieves information on all workflow states of the given workflow.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "workflowId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "currentstate",
+                                "in": "query",
+                                "type": "number",
+                                "description": "null or state ID. Restricts the list of returned states to those that are available as valid states from the current state."
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/WorkflowState"
+                                    }       
+                                }
+                           }
+                       }
+                    }
+                },
+                "/structure/workflows/{workflowId}/states/{stateId}": {
+                    "get": {
+                        "tags": [
+                            "Workflows"
+                        ],
+                        "summary": "Get Workflow State",
+                        "operationId": "get_workflow_state",
+                        "description": "Retrieves information on the specific workflow state",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "workflowId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "stateId",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                        "$ref": "#/definitions/WorkflowState"     
+                                }
+                           }
+                       }
+                    }
+                },
+                "/sharedlinks": {
+                    "get": {
+                        "tags": [
+                            "Shared Links"
+                        ],
+                        "summary": "Get Shared Links",
+                        "operationId": "get_shared_links",
+                        "description": "Retrieves all the shared links created by the current user or (if the user is an admin) returns all shared links in the vault.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/SharedLinkInfo"
+                                    }                                            
+                                }
+                           }
+                       }
+                    },
+                    "post": {
+                        "tags": [
+                            "Shared Links"
+                        ],
+                        "summary": "Create Shared Links",
+                        "operationId": "create_shared_links",
+                        "description": "Creates a shared link for the file information provided.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "body",
+                                "in": "body",
+                                "type": "object",
+                                "schema": {
+                                    "$ref": "#/definitions/SharedLinkInfo"
+                                }
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                        "$ref": "#/definitions/SharedLinkInfo"                                           
+                                }
+                           }
+                       }
+                    }
+                },
+                "/sharedlinks/{VaultGUID}/{SharePublicAccessKey}/content": {
+                    "get": {
+                        "tags": [
+                            "Shared Links"
+                        ],
+                        "summary": "Download Shared File",
+                        "operationId": "download_shared_file",
+                        "description": "Retrieves the (file) content of a given shared link. Note that authentication is not required to access this endpoint; provided the vault GUID and access token are valid and not expired, the endpoint will return the shared file content.",
+                        "parameters": [
+                            {
+                                "name": "VaultGUID",
+                                "in": "path",
+                                "type": "string"
+                            },
+                            {
+                                "name": "SharePublicAccessKey",
+                                "in": "path",
+                                "type": "string"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "string",
+                                    "format": "binary"                                           
+                                }
+                           }
+                       }
+                    }
+                },
+                "/sharedlinks/{SharePublicAccessKey}": {
+                    "delete": {
+                        "tags": [
+                            "Shared Links"
+                        ],
+                        "summary": "Delete Shared File Link",
+                        "operationId": "delete_shared_file_link",
+                        "description": "Deletes an existing shared file link, causing it to become invalid.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "SharePublicAccessKey",
+                                "in": "path",
+                                "type": "string"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok"
+                           }
+                       }
+                    }
+                },
+                "/objects": {
+                    "get": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Get Collection of Objects in the Document Vault",
+                        "operationId": "get_collection_of_objects_in_the_document_vault",
+                        "description": "Retrieves objects. The amount of returned objects is limited by the server, by default to 500 items.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "Items": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/ObjectVersion"
+                                            }
+                                        },
+                                        "MoreResults": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                           }
+                       }
+                    }
+                },
+                "/objects/{objType}": {
+                    "get": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Get Collection of Objects Filtered by Object Type",
+                        "operationId": "get_collection_of_objects_filtered_by_object_type",
+                        "description": "Retrieves objects of the given type. The amount of returned objects is limited by the server.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objType",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "Items": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/ObjectVersion"
+                                            }
+                                        },
+                                        "MoreResults": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                           }
+                       }
+                    }
+                },
+                "/objects/{objType}/{objId}": {
+                    "get": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Get a Single Object",
+                        "operationId": "get_a_single_object",
+                        "description": "Retrieves information of the given object.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objType",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objId",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "$ref": "#/definitions/ObjectVersion"
+                                }
+                           }
+                       }
+                    }
+                },
+                "/objects/{objType}/{objId}/{objVersion}/files": {
+                    "get": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Get Files Belonging to an Object",
+                        "operationId": "get_files_belonging_to_an_object",
+                        "description": "Retrieves the object file information for all the files on an object.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objType",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objVersion",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "array",
+                                    "items":{
+                                        "$ref": "#/definitions/ObjectFile"
+                                    }
+                                }
+                           }
+                       }
+                    }
+                },
+                "/objects/{objType}/{objId}/{objVersion}/files/{fileId}": {
+                    "get": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Get a Single File on an Object",
+                        "operationId": "get_a_single_file_on_an_object",
+                        "description": "Retrieves the object file infromation for the object file.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objType",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objVersion",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "fileId",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "$ref": "#/definitions/ObjectFile"
+                                }
+                           }
+                       }
+                    }
+                },
+                "/objects/{objType}/{objId}/{objVersion}/files/{fileId}/content": {
+                    "get": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Get the Contents of a Single File",
+                        "operationId": "get_the_contents_of_a_single_file",
+                        "description": "Retrieves the object file contents.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objType",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objVersion",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "fileId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "X-Hmac",
+                                "in": "query",
+                                "type": "string",
+                                "description": "Specifies the HMAC key"
+                            },
+                            {
+                                "name": "mac",
+                                "in": "query",
+                                "type": "boolean",
+                                "description": "If true, appends a SHA-512 message authentication code at the end of the stream."
+                            },
+                            {
+                                "name": "format",
+                                "in": "query",
+                                "type": "string",
+                                "description": "Defaulting to native if not provided. It can have following values: native, pdf and displaypdfonly."
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "string",
+                                    "format": "binary"
+                                }
+                           }
+                       }
+                    }
+                },
+                "/objects/{objType}/{objId}/{objVersion}/files/{fileId}/title": {
+                    "get": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Get the File Name of an Object File",
+                        "operationId": "get_the_filename_of_an_object_file",
+                        "description": "Retrieves the current object file name.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objType",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objVersion",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "fileId",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "string"
+                                }
+                           }
+                       }
+                    },
+                    "put": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Change the Name on the Object File",
+                        "operationId": "change_the_name_on_the_object_file",
+                        "description": "Sets the name on the object file.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objType",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objVersion",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "fileId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "body",
+                                "in": "body",
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "$ref": "#/definitions/ObjectVersion"
+                                }
+                           }
+                       }
+                    }
+                },
+                "/objects/{objType}/{objId}/deleted": {
+                    "get": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Get the Deleted Status of the Object",
+                        "operationId": "get_the_deleted_status_of_the_object",
+                        "description": "Retrieves the deleted status of the object.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objType",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objId",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "value": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                           }
+                       }
+                    },
+                    "put": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Set the Deleted Status of the Object",
+                        "operationId": "set_the_deleted_status_of_the_object",
+                        "description": "Sets the deleted status of the object.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objType",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "body",
+                                "in": "body",
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "value": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                }
+                            }                            
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "$ref": "#/definitions/ObjectVersion"
+                                }
+                           }
+                       }
+                    }
+                },
+                "/objects/{objType}/{objId}/{objVersion}/checkedout": {
+                    "get": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Get the Current Check Out Status of the Object",
+                        "operationId": "get_the_current_checkout_status_of_the_object",
+                        "description": "Retrieves the current check out status.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objType",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objVersion",
+                                "in": "path",
+                                "type": "number"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "value": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                           }
+                       }
+                    },
+                    "put": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Set the Check Out Status of the Object",
+                        "operationId": "set_the_checkout_status_of_the_object",
+                        "description": "Sets the check out status. This is allowed only when the object isn't checked out to someone else, that is when the check out status isn't CheckedOut.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objType",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objVersion",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "body",
+                                "in": "body",
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "value": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }        
+                            }                            
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "$ref": "#/definitions/ObjectVersion"
+                                }
+                           }
+                       }
+                    }
+                },
+                "/objects/{objType}/{objId}/{objVersion}": {
+                    "get": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Get Objects Filtered by Object Version",
+                        "operationId": "get_objects_filtered_by_object_version",
+                        "description": "Retrieves the object information.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objType",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objVersion",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "include",
+                                "in": "query",
+                                "type": "string",
+                                "description": "A list of additional fields to include in the ExtendedObjectVersion. Currently only properties is supported."
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "$ref": "#/definitions/ObjectVersion"
+                                }
+                           }
+                       }
+                    },
+                    "delete": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Destroy the Object Version",
+                        "operationId": "destroy_the_object_version",
+                        "description": "Destroys the object version. As checked in versions cannot be destroyed this can only be performed on a checked out version and is equivalent to an undo checkout. Returns the new ObjectVersion information if it is still visible to the user.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "objType",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objId",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "objVersion",
+                                "in": "path",
+                                "type": "number"
+                            },
+                            {
+                                "name": "force",
+                                "in": "query",
+                                "type": "boolean",
+                                "description": "If true, DELETE will perform an undo checkout even if the object isn’t checked out to the current user on this computer."
+                            },
+                            {
+                                "name": "allVersions",
+                                "in": "query",
+                                "type": "boolean",
+                                "description": "If true, DELETE will destroy the whole object. Unlike normal DELETE, this will not require the object to be checked out."
+                            }                       
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "$ref": "#/definitions/ObjectVersion"
+                                }
+                           }
+                       }
+                    }
+                },
+                "/files": {
+                    "post": {
+                        "tags": [
+                            "Objects"
+                        ],
+                        "summary": "Create Collection of Temporary Uploads",
+                        "operationId": "create_collection_of_temporary_uploads",
+                        "description": "Stores a temporary file on the server and assigns an ID for it.",
+                        "parameters": [
+                            {
+                                "name": "X-Authentication",
+                                "in": "header",
+                                "type": "string"
+                            },
+                            {
+                                "name": "body",
+                                "in": "body",
+                                "type": "string",
+                                "format": "binary"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Ok",
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "UploadID": {
+                                            "type": "number"
+                                        },
+                                        "Size": {
+                                            "type": "number"
+                                        },
+                                        "FileInformationType": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                           }
+                       }
+                    }
+                }
+            },
+            "definitions": {
+                "ObjectVersion": {
+                    "type": "object",
+                    "properties": {
+                        "Title": {
+                        "type": "string"
+                        },
+                        "EscapedTitleWithID": {
+                        "type": "string"
+                        },
+                        "DisplayID": {
+                        "type": "string"
+                        },
+                        "ObjVer": {
+                        "type": "object",
+                        "properties": {
+                            "Version": {
+                            "type": "integer"
+                            },
+                            "VersionType": {
+                            "type": "integer"
+                            },
+                            "ID": {
+                            "type": "integer"
+                            },
+                            "Type": {
+                            "type": "integer"
+                            }
+                        }
+                    },
+                    "Class": {
+                        "type": "integer"
+                      },
+                      "CheckedOutAtUtc": {
+                        "type": "string"
+                      },
+                      "CheckedOutAt": {
+                        "type": "string"
+                      },
+                      "LastModifiedUtc": {
+                        "type": "string"
+                      },
+                      "LastModified": {
+                        "type": "string"
+                      },
+                      "ObjectCheckedOut": {
+                        "type": "boolean"
+                      },
+                      "ObjectCheckedOutToThisUser": {
+                        "type": "boolean"
+                      },
+                      "CheckedOutTo": {
+                        "type": "integer"
+                      },
+                      "CheckedOutToUserName": {
+                        "type": "string"
+                      },
+                      "CheckedOutFrom": {
+                        "type": "string"
+                      },
+                      "SingleFile": {
+                        "type": "boolean"
+                      },
+                      "HasRelationshipsFrom": {
+                        "type": "boolean"
+                      },
+                      "HasRelationshipsTo": {
+                        "type": "boolean"
+                      },
+                      "HasRelationshipsFromThis": {
+                        "type": "boolean"
+                      },
+                      "HasRelationshipsToThis": {
+                        "type": "boolean"
+                      },
+                      "HasAssignments": {
+                        "type": "boolean"
+                      },
+                      "Deleted": {
+                        "type": "boolean"
+                      },
+                      "IsStub": {
+                        "type": "boolean"
+                      },
+                      "ThisVersionLatestToThisUser": {
+                        "type": "boolean"
+                      },
+                      "CreatedUtc": {
+                        "type": "string"
+                      },
+                      "Created": {
+                        "type": "string"
+                      },
+                      "Files": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/ObjectFile"
+                        }
+                      },
+                      "VisibleAfterOperation": {
+                        "type": "boolean"
+                      },
+                      "PathInIDView": {
+                        "type": "string"
+                      },
+                      "LastModifiedDisplayValue": {
+                        "type": "string"
+                      },
+                      "CheckedOutAtDisplayValue": {
+                        "type": "string"
+                      },
+                      "CreatedDisplayValue": {
+                        "type": "string"
+                      },
+                      "ObjectVersionFlags": {
+                        "type": "integer"
+                      },
+                      "Score": {
+                        "type": "integer"
+                      },
+                      "LastAccessedByMe": {
+                        "type": "string"
+                      },
+                      "AccessedByMeUtc": {
+                        "type": "string"
+                      },
+                      "AccessedByMe": {
+                        "type": "string"
+                      },
+                      "ObjectGUID": {
+                        "type": "string"
+                      },
+                      "ObjectCapabilityFlags": {
+                        "type": "integer"
+                      },
+                      "ObjectFlags": {
+                        "type": "integer"
+                      },
+                      "propertyID": {
+                        "type": "integer"
+                      },
+                      "LatestCheckedInVersion": {
+                        "type": "integer"
+                      },
+                      "BaseProperties": {
+                        "type": "array",
+                        "items": {}
+                      }                  
+                }
+            },
+            "ObjectFile": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                    "type": "string"
+                    },
+                    "EscapedName": {
+                    "type": "string"
+                    },
+                    "Extension": {
+                    "type": "string"
+                    },
+                    "Size": {
+                    "type": "integer"
+                    },
+                    "LastModified": {
+                    "type": "string"
+                    },
+                    "ChangeTimeUtc": {
+                    "type": "string"
+                    },
+                    "ChangeTime": {
+                    "type": "string"
+                    },
+                    "CreatedUtc": {
+                    "type": "string"
+                    },
+                    "CreatedDisplayValue": {
+                    "type": "string"
+                    },
+                    "LastModifiedDisplayValue": {
+                    "type": "string"
+                    },
+                    "FileGUID": {
+                    "type": "string"
+                    },
+                    "ID": {
+                    "type": "integer"
+                    },
+                    "Version": {
+                    "type": "integer"
+                    },
+                    "FileVersionType": {
+                    "type": "integer"
+                    }
+                }
+            },
+                "SharedLinkInfo": {
+                    "type": "object",
+                    "properties": {
+                        "AccessKey": {
+                        "type": "string"
+                        },
+                        "ObjVer": {
+                        "type": "object",
+                        "properties": {
+                            "ID": {
+                            "type": "integer"
+                            },
+                            "Type": {
+                            "type": "integer"
+                            },
+                            "Version": {
+                            "type": "integer"
+                            },
+                            "VersionType": {
+                            "type": "integer"
+                            },
+                            "ExternalRepositoryName": {
+                            "type": "string"
+                            },
+                            "ExternalRepositoryObjectID": {
+                                "type": "string"
+                            },
+                            "ExternalRepositoryObjectVersionID": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "FileVer": {
+                        "type": "object",
+                        "properties": {
+                          "ID": {
+                            "type": "integer"
+                          },
+                          "Version": {
+                            "type": "integer"
+                          },
+                          "ExternalRepositoryFileID": {
+                            "type": "string"
+                          },
+                          "ExternalRepositoryFileVersionID": {
+                            "type": "string"
+                          },
+                          "FileVersionType": {
+                            "type": "integer"
+                          }
+                        }
+                    },
+                    "Description": {
+                        "type": "string"
+                      },
+                      "ExpirationTime": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "CreatedByUser": {
+                        "type": "integer"
+                      },
+                      "CreatedByUserName": {
+                        "type": "string"
+                      },
+                      "CreationTime": {
+                        "type": "string",
+                        "format": "date-time"
+                      }
+                }
+            },
+                "WorkflowState": {
+                    "type": "object",
+                    "properties": {
+                        "Name": {
+                            "type": "string"
+                        },
+                        "ID": {
+                            "type": "number"
+                        },
+                        "Selectable": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "Workflow": {
+                    "type": "object",
+                    "properties": {
+                        "ID": {
+                        "type": "integer"
+                        },
+                        "Name": {
+                        "type": "string"
+                        },
+                        "ObjectClass": {
+                        "type": "integer"
+                        }
+                    }
+                },
+                "ObjValue": {
+                    "type": "object",
+                    "properties": {
+                        "Name": {
+                        "type": "string"
+                        },
+                        "NamePlural": {
+                        "type": "string"
+                        },
+                        "ID": {
+                        "type": "integer"
+                        },
+                        "CanHaveFiles": {
+                        "type": "boolean"
+                        },
+                        "HasOwner": {
+                        "type": "boolean"
+                        },
+                        "Owner": {
+                        "type": "integer"
+                        },
+                        "Hierarchial": {
+                        "type": "boolean"
+                        },
+                        "RealObjectType": {
+                        "type": "boolean"
+                        },
+                        "ShowInTaskPane": {
+                        "type": "boolean"
+                        },
+                        "objectTypeTargetsForBrowsing": {
+                        "type": "array",
+                        "items": {}
+                        },
+                        "AllowAdding": {
+                        "type": "boolean"
+                        },
+                        "DefaultPropertyDef": {
+                        "type": "integer"
+                        },
+                        "OwnerPropertyDef": {
+                        "type": "integer"
+                        },
+                        "External": {
+                        "type": "boolean"
+                        },
+                        "ReadOnlyPropertiesDuringUpdate": {
+                        "type": "array",
+                        "items": {}
+                        },
+                        "ReadOnlyPropertiesDuringInsert": {
+                        "type": "array",
+                        "items": {}
+                        },
+                        "IsAddingAllowedForUser": {
+                        "type": "boolean"
+                        }
+                    }
+                },
+                "ObjValueList": {
+                    "type": "object",
+                    "properties": {
+                        "Name": {
+                        "type": "string"
+                        },
+                        "NamePlural": {
+                        "type": "string"
+                        },
+                        "ID": {
+                        "type": "integer"
+                        },
+                        "CanHaveFiles": {
+                        "type": "boolean"
+                        },
+                        "HasOwner": {
+                        "type": "boolean"
+                        },
+                        "Owner": {
+                        "type": "integer"
+                        },
+                        "Hierarchial": {
+                        "type": "boolean"
+                        },
+                        "RealObjectType": {
+                        "type": "boolean"
+                        },
+                        "ShowInTaskPane": {
+                        "type": "boolean"
+                        },
+                        "objectTypeTargetsForBrowsing": {
+                        "type": "array",
+                        "items": {}
+                        },
+                        "AllowAdding": {
+                        "type": "boolean"
+                        },
+                        "Permission": {
+                            "type": "object",
+                            "properties": {
+                              "CanRead": {
+                                "type": "boolean"
+                              },
+                              "CanEdit": {
+                                "type": "boolean"
+                              },
+                              "CanAttachObjects": {
+                                "type": "boolean"
+                              }
+                            }
+                        },
+                        "DefaultPropertyDef": {
+                            "type": "integer"
+                          },
+                          "OwnerPropertyDef": {
+                            "type": "integer"
+                          },
+                          "External": {
+                            "type": "boolean"
+                          },
+                          "ReadOnlyPropertiesDuringUpdate": {
+                            "type": "array",
+                            "items": {}
+                          },
+                          "ReadOnlyPropertiesDuringInsert": {
+                            "type": "array",
+                            "items": {}
+                          },
+                          "IsAddingAllowedForUser": {
+                            "type": "boolean"
+                          }
+                    }
+                },
+                "ValueListItem": {
+                    "type": "object",
+                    "properties": {
+                        "Name": {
+                        "type": "string"
+                        },
+                        "ID": {
+                        "type": "integer"
+                        },
+                        "ParentID": {
+                        "type": "integer"
+                        },
+                        "OwnerID": {
+                        "type": "integer"
+                        },
+                        "HasParent": {
+                        "type": "boolean"
+                        },
+                        "HasOwner": {
+                        "type": "boolean"
+                        },
+                        "ValueListID": {
+                        "type": "integer"
+                        },
+                        "DisplayID": {
+                        "type": "string"
+                        },
+                        "HasIcon": {
+                        "type": "boolean"
+                        },
+                        "HasAutomaticPermission": {
+                        "type": "boolean"
+                        },
+                        "IsDeleted": {
+                        "type": "boolean"
+                        },
+                        "ItemGUID": {
+                        "type": "string"
+                        }
+                    }
+                },
+                "PropertyDef": {
+                    "type": "object",
+                    "properties": {
+                        "IsCreatePermissionAllowed": {
+                        "type": "boolean"
+                        },
+                        "Permissions": {
+                        "type": "object",
+                        "properties": {
+                            "CanRead": {
+                            "type": "boolean"
+                            },
+                            "CanEdit": {
+                            "type": "boolean"
+                            },
+                            "CanAttachObjects": {
+                            "type": "boolean"
+                            }
+                        }
+                    },
+                    "AllObjectTypes": {
+                        "type": "boolean"
+                      },
+                      "AutomaticValueType": {
+                        "type": "integer"
+                      },
+                      "BasedOnValueList": {
+                        "type": "boolean"
+                      },
+                      "ContentType": {
+                        "type": "integer"
+                      },
+                      "DataType": {
+                        "type": "integer"
+                      },
+                      "DependencyPD": {
+                        "type": "integer"
+                      },
+                      "DependencyRelation": {
+                        "type": "integer"
+                      },
+                      "GUID": {
+                        "type": "string"
+                      },
+                      "ID": {
+                        "type": "integer"
+                      },
+                      "Name": {
+                        "type": "string"
+                      },
+                      "ObjectType": {
+                        "type": "integer"
+                      },
+                      "OwnerPropertyDef": {
+                        "type": "object",
+                        "properties": {
+                          "ID": {
+                            "type": "integer"
+                          },
+                          "DependencyRelation": {
+                            "type": "integer"
+                          },
+                          "IsRelationFiltering": {
+                            "type": "boolean"
+                          }
+                        }
+                    },
+                    "Predefined": {
+                        "type": "boolean"
+                      },
+                      "SortAscending": {
+                        "type": "boolean"
+                      },
+                      "HasStaticFilter": {
+                        "type": "boolean"
+                      },
+                      "ThisIsConflictPD": {
+                        "type": "boolean"
+                      },
+                      "ThisIsDefaultPD": {
+                        "type": "boolean"
+                      },
+                      "ThisIsOwnerPD": {
+                        "type": "boolean"
+                      },
+                      "UpdateType": {
+                        "type": "integer"
+                      },
+                      "ValueList": {
+                        "type": "integer"
+                      },
+                      "ValueListSortingType": {
+                        "type": "integer"
+                      },
+                      "IsOwnerPropertyDef": {
+                        "type": "boolean"
+                      },
+                      "SortingType": {
+                        "type": "integer"
+                      }
+                }
+            },
+                "ObjTypeDetails": {
+                    "type": "object",
+                    "properties": {
+                        "Name": {
+                        "type": "string"
+                        },
+                        "NamePlural": {
+                        "type": "string"
+                        },
+                        "ID": {
+                        "type": "integer"
+                        },
+                        "CanHaveFiles": {
+                        "type": "boolean"
+                        },
+                        "HasOwner": {
+                        "type": "boolean"
+                        },
+                        "Owner": {
+                        "type": "integer"
+                        },
+                        "Hierarchial": {
+                        "type": "boolean"
+                        },
+                        "RealObjectType": {
+                        "type": "boolean"
+                        },
+                        "ShowInTaskPane": {
+                        "type": "boolean"
+                        },
+                        "objectTypeTargetsForBrowsing": {
+                        "type": "array",
+                        "items": {}
+                        },
+                        "AllowAdding": {
+                        "type": "boolean"
+                        },
+                        "Permission": {
+                            "type": "object",
+                            "properties": {
+                              "CanRead": {
+                                "type": "boolean"
+                              },
+                              "CanEdit": {
+                                "type": "boolean"
+                              },
+                              "CanAttachObjects": {
+                                "type": "boolean"
+                              }
+                            }
+                        },
+                        "DefaultPropertyDef": {
+                            "type": "integer"
+                          },
+                          "OwnerPropertyDef": {
+                            "type": "integer"
+                          },
+                          "External": {
+                            "type": "boolean"
+                          },
+                          "AccessControlList1": {
+                            "$ref": "#/definitions/AccessControlList1"
+                          },
+                          "IsAddingAllowedForUser": {
+                            "type": "boolean"
+                          }
+                    }
+                },
+                "AccessControlList1": {
+                    "type": "object",
+                    "properties": {
+                        "IsUnSpecified": {
+                        "type": "boolean"
+                        },
+                        "CheckedOutToUserID": {
+                        "type": "integer"
+                        },
+                        "HasCheckedOutToUserID": {
+                        "type": "boolean"
+                        },
+                        "IsFullyAuthoritative": {
+                        "type": "boolean"
+                        },
+                        "AutomaticComponents": {
+                        "type": "array",
+                        "items": {}
+                        },
+                        "CustomComponent": {
+                            "$ref": "#/definitions/CustomComponent"
+                        }
+                    }
+                },
+                "CustomComponent": {
+                    "type": "object",
+                    "properties": {
+                        "AccessControlEntries": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/AccessControlEntries"
+                        }
+                    },
+                    "CanDeactivate": {
+                        "type": "boolean"
+                      },
+                      "CurrentUserBinding": {
+                        "type": "integer"
+                      },
+                      "HasCurrentUser": {
+                        "type": "boolean"
+                      },
+                      "HasCurrentUserBinding": {
+                        "type": "boolean"
+                      },
+                      "HasNamedACLLink": {
+                        "type": "boolean"
+                      },
+                      "HasPseudoUsers": {
+                        "type": "boolean"
+                      },
+                      "IsActive": {
+                        "type": "boolean"
+                      },
+                      "NamedACLLink": {
+                        "type": "integer"
+                      }
+                }
+            },
+            "AccessControlEntries": {
+                "type": "object",
+                  "properties": {
+                    "ChangePermissionsPermission": {
+                      "type": "integer"
+                    },
+                    "EditPermission": {
+                      "type": "integer"
+                    },
+                    "ReadPermission": {
+                      "type": "integer"
+                    },
+                    "DeletePermission": {
+                      "type": "integer"
+                    },
+                    "IsGroup": {
+                      "type": "boolean"
+                    },
+                    "UserOrGroupID": {
+                      "type": "integer"
+                    },
+                    "IsPsudoUser": {
+                      "type": "boolean"
+                    },
+                    "HasConcreteUserOrGruopID": {
+                      "type": "boolean"
+                    }
+                  }
+            },
+                "ObjType": {
+                    "type": "object",
+                    "properties": {
+                        "Name": {
+                        "type": "string"
+                        },
+                        "NamePlural": {
+                        "type": "string"
+                        },
+                        "ID": {
+                        "type": "integer"
+                        },
+                        "CanHaveFiles": {
+                        "type": "boolean"
+                        },
+                        "HasOwner": {
+                        "type": "boolean"
+                        },
+                        "Owner": {
+                        "type": "integer"
+                        },
+                        "Hierarchial": {
+                        "type": "boolean"
+                        },
+                        "RealObjectType": {
+                        "type": "boolean"
+                        },
+                        "ShowInTaskPane": {
+                        "type": "boolean"
+                        },
+                        "objectTypeTargetsForBrowsing": {
+                        "type": "array",
+                        "items": {}
+                        },
+                        "AllowAdding": {
+                        "type": "boolean"
+                        },
+                        "DefaultPropertyDef": {
+                        "type": "integer"
+                        },
+                        "OwnerPropertyDef": {
+                        "type": "integer"
+                        },
+                        "External": {
+                        "type": "boolean"
+                        },
+                        "IsAddingAllowedForUser": {
+                        "type": "boolean"
+                        }
+                    }
+                },
+                "ObjectClass": {
+                    "type": "object",
+                    "properties": {
+                        "Name": {
+                          "type": "string"
+                        },
+                        "ID": {
+                          "type": "integer"
+                        },
+                        "DefaultClass": {
+                          "type": "boolean"
+                        },
+                        "NamePropertyDef": {
+                          "type": "integer"
+                        },
+                        "ObjType": {
+                          "type": "integer"
+                        },
+                        "ObjectType": {
+                          "type": "integer"
+                        },
+                        "Workflow": {
+                          "type": "integer"
+                        },
+                        "AccessControlList": {
+                            "type": "array",
+                            "items": {
+                                "type": "object"
+                              }
+                          },
+                          "AssociatedPropertyDefs": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/AssociatedPropertyDefs"
+                            }
+                        },
+                        "CanAttachObjects": {
+                            "type": "boolean"
+                          },
+                          "HasIcon": {
+                            "type": "boolean"
+                          },
+                          "Permissions": {
+                            "type": "object",
+                            "properties": {
+                              "CanRead": {
+                                "type": "boolean"
+                              },
+                              "CanEdit": {
+                                "type": "boolean"
+                              },
+                              "CanAttachObjects": {
+                                "type": "boolean"
+                              }
+                            }
+                        },
+                        "HasAutomaticPermission": {
+                            "type": "boolean"
+                          },
+                          "HasForcedWorkflow": {
+                            "type": "boolean"
+                          },
+                          "AssignmentClassInfo": {
+                            "type": "object",
+                            "properties": {
+                              "AssignmentType": {
+                                "type": "integer"
+                              },
+                              "AnyAssigneeCompletes": {
+                                "type": "boolean"
+                              },
+                              "AnyAssigneeApproves": {
+                                "type": "boolean"
+                              }
+                            }
+                        }
+                    }
+                },
+                "AssociatedPropertyDefs": {
+                    "type": "object",
+                    "properties": {
+                        "PropertyDef": {
+                        "type": "integer"
+                        },
+                        "Required": {
+                        "type": "boolean"
+                        }
+                    }
+                }
+            }
+}
