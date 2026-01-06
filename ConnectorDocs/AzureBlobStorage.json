@@ -1,0 +1,1359 @@
+[
+  {
+    "operation": "List Containers",
+    "description": "The List Containers operation returns a list of the containers under the specified storage account.",
+    "operationId": "Service_ListContainers",
+    "operationApiType": "GET",
+    "operationPath": "/",
+    "operationSummary": "List Containers",
+    "operationDescription": "The List Containers operation returns a list of the containers under the specified storage account.",
+    "deprecated": false,
+    "OperationCategory": "Container",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "comp",
+        "value": "list",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Set Blob Hot Tier",
+    "description": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
+    "operationId": "Blob_SetTier",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Set Blob Tier",
+    "operationDescription": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "x-ms-access-tier",
+        "value": "Hot",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "comp",
+        "value": "tier",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Set Blob Cool Tier",
+    "description": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
+    "operationId": "Blob_SetTier",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Set Blob Tier",
+    "operationDescription": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "x-ms-access-tier",
+        "value": "Cool",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "comp",
+        "value": "tier",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Set Blob Cold Tier",
+    "description": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
+    "operationId": "Blob_SetTier",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Set Blob Tier",
+    "operationDescription": "The Set Blob Tier operation sets the access tier on a blob. The operation is allowed on a page blob in a premium storage account and on a block blob in a blob storage or general purpose v2 account.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "x-ms-access-tier",
+        "value": "Cold",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-version",
+        "value": "2021-12-02",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "comp",
+        "value": "tier",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Blobs",
+    "description": "The List Blobs operation returns a list of the blobs under the specified container.",
+    "operationId": "Container_ListBlob",
+    "operationApiType": "GET",
+    "operationPath": "/{containerName}",
+    "operationSummary": "List Blobs",
+    "operationDescription": "The List Blobs operation returns a list of the blobs under the specified container.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "restype",
+        "value": "container",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "comp",
+        "value": "list",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "maxresults",
+        "value": "20",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Specify the maximum number of items to return in the response.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Maximum Results"
+      },
+      {
+        "name": "prefix",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "A filter that limits the results to only those blobs whose names begin with the specified text.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Prefix"
+      },
+      {
+        "name": "include",
+        "value": "metadata",
+        "param_type": "UrlParam",
+        "isVisible": false,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "A BlockId is a unique identifier for a block of data uploaded to an Azure Blob. It is a Base64-encoded string used to keep track of the block's sequence and to commit the blocks into a blob.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Include"
+      }
+    ]
+  },
+  {
+    "operation": "Get Blob",
+    "description": "The Get Blob operation reads or downloads a blob from the system, including its metadata and properties. You can also call Get Blob to read a snapshot.",
+    "operationId": "Blob_Get",
+    "operationApiType": "GET",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Get Blob",
+    "operationDescription": "The Get Blob operation reads or downloads a blob from the system, including its metadata and properties. You can also call Get Blob to read a snapshot.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      }
+    ]
+  },
+  {
+    "operation": "Get Blob Properties",
+    "description": "The Get Properties operation returns all user-defined metadata, standard HTTP properties, and system properties for the blob. It does not return the content of the blob.",
+    "operationId": "Blob_GetProperties",
+    "operationApiType": "HEAD",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Get Blob Properties",
+    "operationDescription": "The Get Properties operation returns all user-defined metadata, standard HTTP properties, and system properties for the blob. It does not return the content of the blob.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Blob",
+    "description": "The Delete Blob operation marks the specified blob or snapshot for deletion. The blob is later deleted during garbage collection.",
+    "operationId": "Blob_Delete",
+    "operationApiType": "DELETE",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Delete Blob",
+    "operationDescription": "The Delete Blob operation marks the specified blob or snapshot for deletion. The blob is later deleted during garbage collection.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      }
+    ]
+  },
+  {
+    "operation": "Get Blob Metadata",
+    "description": "The Get Blob Metadata operation returns all user-defined metadata for the specified blob or snapshot.",
+    "operationId": "Blob_GetMetadata",
+    "operationApiType": "GET",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Get Blob Metadata",
+    "operationDescription": "The Get Blob Metadata operation returns all user-defined metadata for the specified blob or snapshot.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "comp",
+        "value": "metadata",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Put Block",
+    "description": "The Put Block operation creates a new block to be committed as part of a blob.",
+    "operationId": "BlockBlob_PutBlock",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Put Block",
+    "operationDescription": "The Put Block operation creates a new block to be committed as part of a blob.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "ui_category": "Subscribe Mode Properties",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "comp",
+        "value": "block",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "blockid",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "A BlockId is a unique identifier for a block of data uploaded to an Azure Blob. It is a Base64-encoded string used to keep track of the block's sequence and to commit the blocks into a blob.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Block Id"
+      },
+      {
+        "name": "x-ms-lease-id",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Required if the blob has an active lease. To perform this operation on a blob with an active lease, specify the valid lease ID for this header.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Lease Id"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/octet-stream",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
+      }
+    ]
+  },
+  {
+    "operation": "Put Block List",
+    "description": "The Put Block List operation writes a blob by specifying the list of block IDs that make up the blob. To be written as part of a blob, a block must have been successfully written to the server in an earlier Put Block operation.",
+    "operationId": "Blob_PutBlockList",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Put Block List",
+    "operationDescription": "The Put Block List operation writes a blob by specifying the list of block IDs that make up the blob. To be written as part of a blob, a block must have been successfully written to the server in an earlier Put Block operation.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "ui_category": "Subscribe Mode Properties",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "comp",
+        "value": "blocklist",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Length",
+        "value": "512",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "description": "Specify Content of the blob",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/octet-stream",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
+      }
+    ]
+  },
+  {
+    "operation": "Get Block List",
+    "description": "Specifies one or more datasets to include in the response:- User specify blocklisttype include={snapshots,metadata,uncommittedblobs,copy,deleted,tags,versions, deletedwithversions,immutabilitypolicy,legalhold,permissions}",
+    "operationId": "BlockBlob_GetBlockList",
+    "operationApiType": "GET",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Get Block List",
+    "operationDescription": "Specifies one or more datasets to include in the response:- User specify blocklisttype include={snapshots,metadata,uncommittedblobs,copy,deleted,tags,versions, deletedwithversions,immutabilitypolicy,legalhold,permissions}",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "ui_category": "Subscribe Mode Properties",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "Content-Length",
+        "value": "42",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "blocklisttype",
+        "value": "all",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the type of block list to return. 'committed': Only committed blocks, 'uncommitted': Only uncommitted blocks, 'all': Both committed and uncommitted blocks.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Block List Type"
+      },
+      {
+        "name": "comp",
+        "value": "blocklist",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Put Page",
+    "description": "The Put Page operation writes a range of pages to a page blob.",
+    "operationId": "PageBlob_PutPage",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Put Page",
+    "operationDescription": "The Put Page operation writes a range of pages to a page blob.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "description": "Specify name of the container to create.",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Container name"
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "description": "Strictly Specify Content in chunks of 512 bytes or multiples thereof.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "x-ms-page-write",
+        "value": "update",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the operation type on a Page Blob, either to update (write data to a byte range) or clear (delete a byte range).",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "x-ms-page-write"
+      },
+      {
+        "name": "x-ms-range",
+        "value": "bytes=0-511",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the byte range of the pages (e.g., bytes=0-4194303).",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Range"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/octet-stream",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
+      },
+      {
+        "name": "comp",
+        "value": "page",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Copy Blob",
+    "description": "The Copy Blob operation copies a blob to a destination within the storage account. In version 2012-02-12 and later, the source for a Copy Blob operation can be a committed blob in any Azure storage account. Beginning with version 2015-02-21, the source for a Copy Blob operation can be an Azure file in any Azure storage account.",
+    "operationId": "Blob_Copy",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{copyToBlob}",
+    "operationSummary": "Copy Blob",
+    "operationDescription": "The Copy Blob operation copies a blob to a destination within the storage account. In version 2012-02-12 and later, the source for a Copy Blob operation can be a committed blob in any Azure storage account. Beginning with version 2015-02-21, the source for a Copy Blob operation can be an Azure file in any Azure storage account.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{copyToBlob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Enter the name for the destination blob to which the data will be copied.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Destination Blob"
+      },
+      {
+        "name": "x-ms-copy-source",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the URL of the source blob (e.g., https://<source-storage-account>.blob.core.windows.net/<source-container>/<source-blob-name>)",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "param_type": "Header",
+        "ui_displayName": "Source Blob URL",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create Block Blob",
+    "description": "This operation uploads a Block blob with content to Azure Blob Storage.",
+    "operationId": "CreateFile_V2",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Put Blob",
+    "operationDescription": "The Put Blob operation creates a new block or updates the content of an existing block blob.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DSDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "x-ms-blob-type",
+        "value": "BlockBlob",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-meta-name",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "description": "Custom metadata for the blob.",
+        "ui_displayName": "x-ms-meta-name"
+      },
+      {
+        "name": "x-ms-lease-id",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Required if the blob has an active lease. To perform this operation on a blob with an active lease, specify the valid lease ID for this header.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Lease Id"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/octet-stream",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create Page Blob",
+    "description": "This operation uploads a Page blob without content to Azure Blob Storage.",
+    "operationId": "CreateFile_V2",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Put Blob",
+    "operationDescription": "The Put Blob operation creates a new append blob, or updates the content of an existing page blob.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DsDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "DeleteMessageBody",
+        "value": true,
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-blob-type",
+        "value": "PageBlob",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-meta-name",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "description": "Custom metadata for the blob.",
+        "ui_displayName": "x-ms-meta-name"
+      },
+      {
+        "name": "x-ms-lease-id",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Required if the blob has an active lease. To perform this operation on a blob with an active lease, specify the valid lease ID for this header.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Lease Id"
+      },
+      {
+        "name": "x-ms-blob-content-length",
+        "value": "512",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "description": "Specify the maximum size of the blob in bytes.",
+        "ui_displayName": "x-ms-blob-content-length"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/octet-stream",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
+      }
+    ]
+  },
+  {
+    "operation": "Create Append Blob",
+    "description": "This operation uploads a Append blob without content to Azure Blob Storage.",
+    "operationId": "CreateFile_V2",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Put Blob",
+    "operationDescription": "The Put Blob operation creates a new append blob, or updates the content of an existing append blob.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DsDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "x-ms-blob-type",
+        "value": "AppendBlob",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-meta-name",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "description": "Custom metadata for the blob.",
+        "ui_displayName": "x-ms-meta-name"
+      },
+      {
+        "name": "x-ms-lease-id",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Required if the blob has an active lease. To perform this operation on a blob with an active lease, specify the valid lease ID for this header.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Lease Id"
+      },
+      {
+        "name": "DeleteMessageBody",
+        "value": true,
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/octet-stream",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
+      }
+    ]
+  },
+  {
+    "operation": "Append Block",
+    "description": "Append Block operation in Azure Blob Storage provides functionality to append block as per Azure Storage REST API.",
+    "operationId": "AppendBlob_AppendBlock",
+    "operationApiType": "PUT",
+    "operationPath": "/{containerName}/{blob}",
+    "operationSummary": "Append Block",
+    "operationDescription": "The Append Block operation commits a new block of data to the end of an existing append blob. The Append Block operation is permitted only if the blob was created with x-ms-blob-type set to AppendBlob. Append Block is supported only on version 2015-02-21 version or later.",
+    "deprecated": false,
+    "OperationCategory": "Blob",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{containerName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_EditorType": "DsDialogue",
+        "ui_source": "adapter",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
+      },
+      {
+        "name": "{blob}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify name of the blob to create.",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob name"
+      },
+      {
+        "name": "Content-Length",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": false,
+        "ui_category": "Misc"
+      },
+      {
+        "name": "comp",
+        "value": "appendblock",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/octet-stream",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.Byte[]",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]

@@ -1,0 +1,3104 @@
+[
+  {
+    "operation": "Get Audit Report",
+    "description": "Get Audit Report operation performs the get audit report functionality using AlphaTrust API.",
+    "operationId": "GetAuditReports",
+    "operationApiType": "POST",
+    "operationPath": "auditreports",
+    "operationSummary": "Get Audit Report.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Audit",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Verify API Credentials",
+    "description": "ServiceAuthenticationTest - Verify API Credentials operation performs the serviceauthenticationtest - verify api credentials functionality using AlphaTrust API.",
+    "operationId": "ServiceAuthenticationTest",
+    "operationApiType": "POST",
+    "operationPath": "communications/serviceauthenticationtest",
+    "operationSummary": "ServiceAuthenticationTest - Verify API Credentials",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Authentication",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get an existing Document",
+    "description": "Get an existing Document operation performs the get an existing document functionality using AlphaTrust API.",
+    "operationId": "GetDocuments",
+    "operationApiType": "POST",
+    "operationPath": "documents",
+    "operationSummary": "Get an existing Document.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Document",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update an existing Document",
+    "description": "Update an existing Document operation performs the update an existing document functionality using AlphaTrust API.",
+    "operationId": "UpdateDocuments",
+    "operationApiType": "PUT",
+    "operationPath": "documents",
+    "operationSummary": "Update an existing Document.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Document",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Retrieve Document Files",
+    "description": "Retrieve Document Files operation performs the retrieve document files functionality using AlphaTrust API.",
+    "operationId": "GetDocumentFiles",
+    "operationApiType": "POST",
+    "operationPath": "documents/files",
+    "operationSummary": "Retrieve Document Files.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Document",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Insert a Document",
+    "description": "Insert a Document operation performs the insert a document functionality using AlphaTrust API.",
+    "operationId": "InsertDocuments",
+    "operationApiType": "POST",
+    "operationPath": "documents/insert",
+    "operationSummary": "Insert a Document.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Document",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get the Document object",
+    "description": "Get the Document object that you can use to update with the UpdateDocuments() method operation performs the get the document object that you can use to update with the updatedocuments() method functionality using AlphaTrust API.",
+    "operationId": "GetDocumentsUpdateable",
+    "operationApiType": "POST",
+    "operationPath": "documentsupdateable",
+    "operationSummary": "Get the Document object that you can use to update with the UpdateDocuments() method.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Document",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get File Attachments",
+    "description": "Get File Attachments operation performs the get file attachments functionality using AlphaTrust API.",
+    "operationId": "GetFileAttachments",
+    "operationApiType": "POST",
+    "operationPath": "fileattachments",
+    "operationSummary": "Get File Attachments.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Document",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Insert File Attachments",
+    "description": "Insert File Attachments operation performs the insert file attachments functionality using AlphaTrust API.",
+    "operationId": "InsertFileAttachments",
+    "operationApiType": "POST",
+    "operationPath": "fileattachments/insert",
+    "operationSummary": "Insert File Attachments.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Document",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Group",
+    "description": "Delete a Group operation performs the delete a group functionality using AlphaTrust API.",
+    "operationId": "DeleteGroupsAsync",
+    "operationApiType": "DELETE",
+    "operationPath": "groups",
+    "operationSummary": "Delete a Group.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Group Management",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Insert a Group",
+    "description": "Insert a Group operation performs the insert a group functionality using AlphaTrust API.",
+    "operationId": "InsertGroupsAsync",
+    "operationApiType": "POST",
+    "operationPath": "groups/insert",
+    "operationSummary": "Insert a Group.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Group Management",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update an existing Group",
+    "description": "Update an existing Group operation performs the update an existing group functionality using AlphaTrust API.",
+    "operationId": "UpdateGroupsAsync",
+    "operationApiType": "PUT",
+    "operationPath": "groups",
+    "operationSummary": "Update an existing Group.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Group Management",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get a Participant",
+    "description": "Get a Participant operation performs the get a participant functionality using AlphaTrust API.",
+    "operationId": "GetParticipants",
+    "operationApiType": "POST",
+    "operationPath": "participants",
+    "operationSummary": "Get a Participant.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Participants",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update Participant",
+    "description": "Update Participant operation performs the update participant functionality using AlphaTrust API.",
+    "operationId": "UpdateParticipants",
+    "operationApiType": "PUT",
+    "operationPath": "participants",
+    "operationSummary": "Update Participant.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Participants",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update Participant Workflow Action Status",
+    "description": "Update Participant Workflow Action Status operation performs the update participant workflow action status functionality using AlphaTrust API.",
+    "operationId": "UpdateParticipantWorkflowActionStatus",
+    "operationApiType": "PUT",
+    "operationPath": "participants/workflowactionstatus",
+    "operationSummary": "Update Participant Workflow Action Status.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Participants",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Re-send Participant Email Notification",
+    "description": "Re-send Participant Email Notification operation performs the re-send participant email notification functionality using AlphaTrust API.",
+    "operationId": "ResendParticipantEmailNotifications",
+    "operationApiType": "POST",
+    "operationPath": "participants/emailnotification",
+    "operationSummary": "Re-send Participant Email Notification.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Participants",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Seal PDF",
+    "description": "Seal PDF operation performs the seal pdf functionality using AlphaTrust API.",
+    "operationId": "SealPdfs",
+    "operationApiType": "POST",
+    "operationPath": "pdf/seal",
+    "operationSummary": "Seal PDF",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "PDF",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Certify PDF",
+    "description": "Certify PDF operation performs the certify pdf functionality using AlphaTrust API.",
+    "operationId": "CertifyPdfs",
+    "operationApiType": "POST",
+    "operationPath": "pdf/certify",
+    "operationSummary": "Certify PDF",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "PDF",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get PDF Data Files",
+    "description": "Get PDF Data Files operation performs the get pdf data files functionality using AlphaTrust API.",
+    "operationId": "GetPdfDataFiles",
+    "operationApiType": "POST",
+    "operationPath": "pdf/dataFiles",
+    "operationSummary": "Get PDF Data Files.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "PDF",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Transaction Security Token Data",
+    "description": "Get Transaction Security Token Data operation performs the get transaction security token data functionality using AlphaTrust API.",
+    "operationId": "GetTransactionTokenData",
+    "operationApiType": "POST",
+    "operationPath": "securitytoken",
+    "operationSummary": "Get Transaction Security Token Data.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Security Token",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Task",
+    "description": "Get Task operation performs the get task functionality using AlphaTrust API.",
+    "operationId": "GetTasks",
+    "operationApiType": "POST",
+    "operationPath": "tasks",
+    "operationSummary": "Get Task.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Tasks",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update Task",
+    "description": "Update Task operation performs the update task functionality using AlphaTrust API.",
+    "operationId": "UpdateTasks",
+    "operationApiType": "PUT",
+    "operationPath": "tasks",
+    "operationSummary": "Update Task.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Tasks",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Insert a Task",
+    "description": "Insert a Task operation performs the insert a task functionality using AlphaTrust API.",
+    "operationId": "InsertTasks",
+    "operationApiType": "POST",
+    "operationPath": "tasks/insert",
+    "operationSummary": "Insert a Task.",
+    "operationDescription": "",
+    "OperationCategory": "Tasks",
+    "deprecated": false,
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Transaction",
+    "description": "Get Transaction operation performs the get transaction functionality using AlphaTrust API.",
+    "operationId": "GetTransactions",
+    "operationApiType": "POST",
+    "operationPath": "transactions",
+    "operationSummary": "Get Transaction.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Transactions",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update an existing Transaction",
+    "description": "Update an existing Transaction operation performs the update an existing transaction functionality using AlphaTrust API.",
+    "operationId": "UpdateTransactions",
+    "operationApiType": "PUT",
+    "operationPath": "transactions",
+    "operationSummary": "Update an existing Transaction.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Transactions",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Close Transaction",
+    "description": "Close Transaction operation performs the close transaction functionality using AlphaTrust API.",
+    "operationId": "CloseTransactions",
+    "operationApiType": "PUT",
+    "operationPath": "transactions/close",
+    "operationSummary": "Close Transaction",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Transactions",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create Transaction",
+    "description": "Create Transaction operation performs the create transaction functionality using AlphaTrust API.",
+    "operationId": "CreateTransactions",
+    "operationApiType": "POST",
+    "operationPath": "transactions/create",
+    "operationSummary": "Create Transaction.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Transactions",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a User",
+    "description": "Delete a User operation performs the delete a user functionality using AlphaTrust API.",
+    "operationId": "DeleteUsersAsync",
+    "operationApiType": "DELETE",
+    "operationPath": "users",
+    "operationSummary": "Delete a User.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "User Management",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get User",
+    "description": "Get User operation performs the get user functionality using AlphaTrust API.",
+    "operationId": "GetUsers",
+    "operationApiType": "POST",
+    "operationPath": "users",
+    "operationSummary": "Get User.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "User Management",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update an existing User",
+    "description": "Update an existing User operation performs the update an existing user functionality using AlphaTrust API.",
+    "operationId": "UpdateUsersAsync",
+    "operationApiType": "PUT",
+    "operationPath": "users",
+    "operationSummary": "Update an existing User.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "User Management",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Insert User",
+    "description": "Insert User operation performs the insert user functionality using AlphaTrust API.",
+    "operationId": "InsertUsersAsync",
+    "operationApiType": "POST",
+    "operationPath": "users/insert",
+    "operationSummary": "Insert User.",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "User Management",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Workflows",
+    "description": "Get Workflows operation performs the get workflows functionality using AlphaTrust API.",
+    "operationId": "GetWorkflows",
+    "operationApiType": "POST",
+    "operationPath": "workflows",
+    "operationSummary": "Get Workflows",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Workflows",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get Workflow List",
+    "description": "Get Workflow List operation performs the get workflow list functionality using AlphaTrust API.",
+    "operationId": "GetWorkflowList",
+    "operationApiType": "POST",
+    "operationPath": "workflows/list",
+    "operationSummary": "Get Workflow List",
+    "operationDescription": "",
+    "deprecated": false,
+    "OperationCategory": "Workflows",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "ApiKey",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
+      },
+      {
+        "name": "ApiSecret",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
+      },
+      {
+        "name": "ApiUsername",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
+      },
+      {
+        "name": "ApiPassword",
+        "value": "",
+        "param_type": "Header",
+        "required": true,
+        "isVisible": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]

@@ -1,0 +1,784 @@
+[
+  {
+    "operation": "Creates an account record",
+    "description": "Creates an account record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "POST",
+    "operationPath": "/accounts",
+    "operationSummary": "Creates an account record",
+    "operationDescription": "Creates an account record",
+    "deprecated": false,
+    "OperationCategory": "Accounts",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get list of account records",
+    "description": "Get list of account records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "GET",
+    "operationPath": "/accounts",
+    "operationSummary": "Get list of account records",
+    "operationDescription": "Get list of account records",
+    "deprecated": false,
+    "OperationCategory": "Accounts",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Creates an campaign record",
+    "description": "Creates an campaign record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "POST",
+    "operationPath": "/campaigns",
+    "operationSummary": "Creates an campaign record",
+    "operationDescription": "Creates an campaign record",
+    "deprecated": false,
+    "OperationCategory": "Campaigns",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get list of campaign records",
+    "description": "Get list of campaign records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "GET",
+    "operationPath": "/campaigns",
+    "operationSummary": "Get list of campaign records",
+    "operationDescription": "Get list of campaign recordsd",
+    "deprecated": false,
+    "OperationCategory": "Campaigns",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Creates an campaign response record",
+    "description": "Creates an campaign response record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "POST",
+    "operationPath": "/campaignresponses",
+    "operationSummary": "Creates an campaign response record",
+    "operationDescription": "Creates an campaign response record",
+    "deprecated": false,
+    "OperationCategory": "Campaigns",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get list of campaign response records",
+    "description": "Get list of campaign response records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "GET",
+    "operationPath": "/campaignresponses",
+    "operationSummary": "Get list of campaign response records",
+    "operationDescription": "Get list of campaign response records",
+    "deprecated": false,
+    "OperationCategory": "Campaigns",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Creates an subject record",
+    "description": "Creates an subject record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "POST",
+    "operationPath": "/subjects",
+    "operationSummary": "Creates an subject record",
+    "operationDescription": "Creates an subject record",
+    "deprecated": false,
+    "OperationCategory": "Subjects",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get list of subject records",
+    "description": "Get list of subject records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "GET",
+    "operationPath": "/subjects",
+    "operationSummary": "Get list of subject records",
+    "operationDescription": "Get list of subject records",
+    "deprecated": false,
+    "OperationCategory": "Subjects",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Creates an incident record",
+    "description": "Creates an incident record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "POST",
+    "operationPath": "/incidents",
+    "operationSummary": "Creates an incident record",
+    "operationDescription": "Creates an incident record",
+    "deprecated": false,
+    "OperationCategory": "Incidents",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get list of incident records",
+    "description": "Get list of incident records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "GET",
+    "operationPath": "/incidents",
+    "operationSummary": "Get list of incident records",
+    "operationDescription": "Get list of incident records",
+    "deprecated": false,
+    "OperationCategory": "Incidents",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Creates an contact record",
+    "description": "Creates an contact record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "POST",
+    "operationPath": "/contacts",
+    "operationSummary": "Creates an contact record",
+    "operationDescription": "Creates an contact record",
+    "deprecated": false,
+    "OperationCategory": "Contacts",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get list of contact records",
+    "description": "Get list of contact records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "GET",
+    "operationPath": "/contacts",
+    "operationSummary": "Get list of contact records",
+    "operationDescription": "Get list of contact records",
+    "deprecated": false,
+    "OperationCategory": "Contacts",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Creates an invoice record",
+    "description": "Creates an invoice record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "POST",
+    "operationPath": "/invoices",
+    "operationSummary": "Creates an invoice record",
+    "operationDescription": "Creates an invoice record",
+    "deprecated": false,
+    "OperationCategory": "Invoices",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get list of invoice records",
+    "description": "Get list of invoice records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "GET",
+    "operationPath": "/invoices",
+    "operationSummary": "Get list of invoice records",
+    "operationDescription": "Get list of invoice records",
+    "deprecated": false,
+    "OperationCategory": "Invoices",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Creates an lead record",
+    "description": "Creates an lead record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "POST",
+    "operationPath": "/leads",
+    "operationSummary": "Creates an lead record",
+    "operationDescription": "Creates an lead record",
+    "deprecated": false,
+    "OperationCategory": "Leads",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get list of lead records",
+    "description": "Get list of lead records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "GET",
+    "operationPath": "/leads",
+    "operationSummary": "Get list of lead records",
+    "operationDescription": "Get list of lead records",
+    "deprecated": false,
+    "OperationCategory": "Leads",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Creates an opportunity record",
+    "description": "Creates an opportunity record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "POST",
+    "operationPath": "/opportunities",
+    "operationSummary": "Creates an opportunity record",
+    "operationDescription": "Creates an opportunity record",
+    "deprecated": false,
+    "OperationCategory": "Opportunities",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get list of opportunity records",
+    "description": "Get list of opportunity records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "GET",
+    "operationPath": "/opportunities",
+    "operationSummary": "Get list of opportunity records",
+    "operationDescription": "Get list of opportunity records",
+    "deprecated": false,
+    "OperationCategory": "Opportunities",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Create an item record",
+    "description": "Create an item record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "POST",
+    "operationPath": "/products",
+    "operationSummary": "Create an item record",
+    "operationDescription": "Create an item record",
+    "deprecated": false,
+    "OperationCategory": "Items",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get list of item records",
+    "description": "Get list of item records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "GET",
+    "operationPath": "/products",
+    "operationSummary": "Get list of item records",
+    "operationDescription": "Get list of item records",
+    "deprecated": false,
+    "OperationCategory": "Items",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Create an report record",
+    "description": "Create an report record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "POST",
+    "operationPath": "/reports",
+    "operationSummary": "Create an report record",
+    "operationDescription": "Create an report record",
+    "deprecated": false,
+    "OperationCategory": "Reports",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get list of report card records",
+    "description": "Get list of report card records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "GET",
+    "operationPath": "/reports",
+    "operationSummary": "Get list of report card records",
+    "operationDescription": "Get list of report card records",
+    "deprecated": false,
+    "OperationCategory": "Reports",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get list of record filter records",
+    "description": "Get list of record filter records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "GET",
+    "operationPath": "/recordfilters",
+    "operationSummary": "Get list of record filter records",
+    "operationDescription": "Get list of record filter records",
+    "deprecated": false,
+    "OperationCategory": "Records",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get list of calendar records",
+    "description": "Get list of calendar records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "GET",
+    "operationPath": "/calendars",
+    "operationSummary": "Get list of calendar records",
+    "operationDescription": "Get list of calendar records",
+    "deprecated": false,
+    "OperationCategory": "Records",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Create an task record",
+    "description": "Create an task record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "POST",
+    "operationPath": "/tasks",
+    "operationSummary": "Create an task record",
+    "operationDescription": "Create an task record",
+    "deprecated": false,
+    "OperationCategory": "Records",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Subscribe Mode Properties"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get list of task records",
+    "description": "Get list of task records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
+    "operationId": "",
+    "operationApiType": "GET",
+    "operationPath": "/tasks",
+    "operationSummary": "Get list of task records",
+    "operationDescription": "Get list of task records",
+    "deprecated": false,
+    "OperationCategory": "Records",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  }
+]

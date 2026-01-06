@@ -1,0 +1,1841 @@
+[
+  {
+    "operation": "Search for Items in the Drive",
+    "description": "Search for Items in the Drive operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Search_for_Items_in_the_Drive",
+    "operationApiType": "GET",
+    "operationPath": "/drive/root/search",
+    "operationSummary": "Search for Items in the Drive",
+    "operationDescription": "This method allows your app to track changes to a drive and its children over time.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "q",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "The query text used to search for items. Values may be matched across several fields including filename, metadata, and file content.",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Query Text",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List children under the Drive",
+    "description": "Create a new folder in the signed-in user's OneDrive root folder operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "List_children_under_the_Drive",
+    "operationApiType": "GET",
+    "operationPath": "/drive/root/children",
+    "operationSummary": "Create a new folder in the signed-in user's OneDrive root folder",
+    "operationDescription": "Return a collection of drive root folder in the children relationship of a root.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Create a new folder in the signed-in user's OneDrive root folder",
+    "description": "Create a new folder in the signed-in user's OneDrive root folder operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "create_a_new_folder_in_the_signed_in_users_onedrive_root_folder",
+    "operationApiType": "POST",
+    "operationPath": "/drive/root/children",
+    "operationSummary": "Create a new folder in the signed-in user's OneDrive root folder",
+    "operationDescription": "create a new folder in the signed-in user's OneDrive root folder.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get item",
+    "description": "Get item operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Get_item",
+    "operationApiType": "GET",
+    "operationPath": "/drive/items/{item-id}",
+    "operationSummary": "Get item",
+    "operationDescription": "Retrieve the metadata for a DriveItem in a Drive by ID.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to retrieve or download.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Update item",
+    "description": "Update item operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Update_item",
+    "operationApiType": "PATCH",
+    "operationPath": "/drives/items/{item-id}",
+    "operationSummary": "Update item",
+    "operationDescription": "Update the metadata for a DriveItem by ID",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to be updated.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete item",
+    "description": "Delete item operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Delete_item",
+    "operationApiType": "DELETE",
+    "operationPath": "/drives/items/{item-id}",
+    "operationSummary": "Delete item",
+    "operationDescription": "Delete a DriveItem by using its ID. Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to be deleted.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "List children",
+    "description": "List children operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "List_children",
+    "operationApiType": "GET",
+    "operationPath": "/drive/items/{item-id}/children",
+    "operationSummary": "List children",
+    "operationDescription": "Return a collection of DriveItems in the children relationship of a DriveItem.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item relevant to the operation.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Create item",
+    "description": "Create item operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Create_item",
+    "operationApiType": "POST",
+    "operationPath": "/drive/root/children",
+    "operationSummary": "Create item",
+    "operationDescription": "Create a new folder or DriveItem in a Drive with a specified parent item.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Upload content",
+    "description": "Upload content operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Upload_content",
+    "operationApiType": "PUT",
+    "operationPath": "/drive/items/{item-id}/content",
+    "operationSummary": "Upload content",
+    "operationDescription": "The simple upload API allows you to provide the contents of a new file or update the contents of an existing file in a single API call. This method only supports files up to 4MB in size.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item relevant to the operation.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Download content",
+    "description": "Download content operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Download_content",
+    "operationApiType": "GET",
+    "operationPath": "/drive/items/{item-id}/content",
+    "operationSummary": "Download content",
+    "operationDescription": "The simple upload API allows you to provide the contents of a new file or update the contents of an existing file in a single API call. This method only supports files up to 4MB in size.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to retrieve or download.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Download specific file format",
+    "description": "Download specific file format operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Download_specific_file_format",
+    "operationApiType": "GET",
+    "operationPath": "/drive/items/{item-id}/content",
+    "operationSummary": "Download specific file format",
+    "operationDescription": "The simple upload API allows you to provide the contents of a new file or update the contents of an existing file in a single API call. This method only supports files up to 4MB in size.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to retrieve or download.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "format",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The format to which the file should be converted before downloading (e.g., pdf, csv, txt).",
+        "ui_EditorType": "Textbox",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Format"
+      }
+    ]
+  },
+  {
+    "operation": "Copy item",
+    "description": "Copy item operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Copy_item",
+    "operationApiType": "POST",
+    "operationPath": "/drive/items/{item-id}/copy",
+    "operationSummary": "Copy item",
+    "operationDescription": "Asynchronously creates a copy of an driveItem (including any children), under a new parent item",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to be copied.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Search items",
+    "description": "Search items operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Search_items",
+    "operationApiType": "GET",
+    "operationPath": "/drive/items/{item-id}/search",
+    "operationSummary": "Search items",
+    "operationDescription": "Search the hierarchy of items for items matching a query. You can search within a folder hierarchy, a whole drive, or files shared with the current user",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item relevant to the operation.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "q",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "The query text used to search for items. Values may be matched across several fields including filename, metadata, and file content.",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Query Text",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List thumbnails",
+    "description": "List thumbnails operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "List_thumbnails",
+    "operationApiType": "GET",
+    "operationPath": "/drive/items/{item-id}/thumbnails",
+    "operationSummary": "List thumbnails",
+    "operationDescription": "Retrieve a collection of ThumbnailSet resources for a DriveItem resource.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item relevant to the operation.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get a DriveItem resource",
+    "description": "Get a DriveItem resource operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "get_a_driveitem_resource",
+    "operationApiType": "GET",
+    "operationPath": "/drives/{drive-id}/items/{item-id}",
+    "operationSummary": "Get a DriveItem resource",
+    "operationDescription": "Retrieve the metadata for a DriveItem in a Drive by ID.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to retrieve or download.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "{drive-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive drive containing the item.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Drive ID"
+      }
+    ]
+  },
+  {
+    "operation": "Update DriveItem properties",
+    "description": "Update DriveItem properties operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "update_driveitem_properties",
+    "operationApiType": "PATCH",
+    "operationPath": "/drives/{drive-id}/items/{item-id}",
+    "operationSummary": "Update DriveItem properties",
+    "operationDescription": "Update the metadata for a DriveItem by ID. You can also use update to move an item to another parent by updating the item's parentReference property.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to be updated.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "{drive-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive drive containing the item.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Drive ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a DriveItem",
+    "description": "Delete a DriveItem operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "delete_a_driveitem",
+    "operationApiType": "DELETE",
+    "operationPath": "/drives/{drive-id}/items/{item-id}",
+    "operationSummary": "Delete a DriveItem",
+    "operationDescription": "Delete a DriveItem by using its ID. Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{drive-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive drive containing the item.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Drive ID"
+      },
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to be deleted.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Create a new folder in a drive",
+    "description": "Create a new folder in a drive operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "create_a_new_folder_in_a_drive",
+    "operationApiType": "POST",
+    "operationPath": "/drives/{drive-id}/items/{parent-item-id}/children",
+    "operationSummary": "Create a new folder in a drive",
+    "operationDescription": "Create a new folder or DriveItem in a Drive with a specified parent item.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{parent-item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the parent item (typically a folder) in which the new folder will be created.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Parent-Item ID"
+      },
+      {
+        "name": "{drive-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive drive where the folder will be created.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Drive ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+  "operation": "Upload a New File",
+  "description": "The 'Upload a New File' operation for Microsoft OneDrive enables seamless integration with cloud storage by allowing you to upload files, define their location, and manage associated metadata within a specified drive and folder.",
+  "operationId": "upload_a_new_file",
+  "operationApiType": "PUT",
+  "operationPath": "/drives/{drive-id}/items/{parent-id}:/{filename}:/content",
+  "operationSummary": "Upload a New File",
+  "operationDescription": "Uploads a file with the specified name to the given parent folder within the designated drive. This method supports files up to 4 MB in size. For larger files, use the resumable upload session API.",
+  "deprecated": false,
+  "OperationCategory": "Item",
+  "adapterProperties": [
+    {
+      "name": "AdapterMode",
+      "key": "",
+      "value": "API"
+    }
+  ],
+  "parameters": [
+    {
+      "name": "{drive-id}",
+      "value": "",
+      "isVisible": true,
+      "bindable": true,
+      "required": true,
+      "description": "The unique identifier of the OneDrive drive where the file will be uploaded.",
+      "ui_EditorType": "Textbox",
+      "param_type": "Path",
+      "ui_category": "Subscribe Mode Properties",
+      "ui_source": "operation",
+      "datatype": "System.String",
+      "ui_displayName": "Drive ID"
+    },
+    {
+      "name": "{parent-id}",
+      "value": "",
+      "isVisible": true,
+      "bindable": true,
+      "required": true,
+      "description": "The unique identifier of the folder (parent item) where the file will be uploaded.",
+      "ui_EditorType": "Textbox",
+      "param_type": "Path",
+      "ui_category": "Subscribe Mode Properties",
+      "ui_source": "operation",
+      "datatype": "System.String",
+      "ui_displayName": "Parent ID"
+    },
+    {
+      "name": "{filename}",
+      "value": "",
+      "isVisible": true,
+      "bindable": true,
+      "required": true,
+      "description": "The name of the file to be uploaded, including its extension (e.g., document.pdf).",
+      "ui_EditorType": "Textbox",
+      "param_type": "Path",
+      "ui_category": "Subscribe Mode Properties",
+      "ui_source": "operation",
+      "datatype": "System.String",
+      "ui_displayName": "Filename"
+    }
+  ]
+},
+  {
+    "operation": "List children of a driveItem",
+    "description": "Retrieves the list of immediate child items (files and folders) under a specified parent folder or drive item in Microsoft OneDrive. Useful for navigating directory structures and enumerating contents.",
+    "operationId": "list_children_of_a_driveitem",
+    "operationApiType": "GET",
+    "operationPath": "/drives/{drive-id}/items/{item-id}/children",
+    "operationSummary": "List children of a driveItem",
+    "operationDescription": "Return a collection of DriveItems in the children relationship of a DriveItem.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{drive-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive drive containing the item.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Drive ID"
+      },
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item relevant to the operation.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Download the contents of a DriveItem",
+    "description": "Downloads the binary contents of a file from OneDrive. This operation is applicable only to DriveItems that represent files, not folders.",
+    "operationId": "download_the_contents_of_a_driveitem",
+    "operationApiType": "GET",
+    "operationPath": "/drives/{drive-id}/items/{item-id}/content",
+    "operationSummary": "Download the contents of a DriveItem",
+    "operationDescription": "Download the contents of the primary stream (file) of a DriveItem. Only DriveItems with the file property can be downloaded.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{drive-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive drive containing the item.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Drive ID"
+      },
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to retrieve or download.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Copy a DriveItem",
+    "description": "Creates an asynchronous copy of a file or folder (including its children, if any) within OneDrive. The copied item can be placed under a new parent or renamed during the operation.",
+    "operationId": "copy_a_driveitem",
+    "operationApiType": "POST",
+    "operationPath": "/drives/{drive-id}/items/{item-id}/copy",
+    "operationSummary": "Copy a DriveItem",
+    "operationDescription": "Asynchronously creates a copy of a driveItem (including any children), under a new parent item or with a new name.",
+    "deprecated": false,
+    "OperationCategory": "Item",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{drive-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive drive containing the item.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Drive ID"
+      },
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item to be copied.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get list without site id",
+    "description": "Get list operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Get_list",
+    "operationApiType": "GET",
+    "operationPath": "/list/{list-id}",
+    "operationSummary": "Get list",
+     "operationDescription": "Returns the metadata for a SharePoint list using the list ID directly. Note: In Microsoft Graph, list metadata typically requires a site context.",
+    "deprecated": false,
+    "OperationCategory": "List",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{list-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the SharePoint list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "List ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get list with site id",
+    "description": "Get list operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Get_list",
+    "operationApiType": "GET",
+    "operationPath": "/sites/{site-id}/lists/{list-id}",
+    "operationSummary": "Get list",
+    "operationDescription": "Returns the metadata for a list.",
+    "deprecated": false,
+    "OperationCategory": "List",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{list-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the SharePoint list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "List ID"
+      },
+      {
+        "name": "{site-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+         "description": "Specify the Site ID that hosts the list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Site ID"
+      }
+    ]
+  },
+  {
+    "operation": "Create list item",
+    "description": "Create list item operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Create_list_item",
+    "operationApiType": "POST",
+    "operationPath": "/sites/{site-id}/lists/{list-id}/items",
+    "operationSummary": "Create list item",
+    "operationDescription": "Create a new listItem in a list.",
+    "deprecated": false,
+    "OperationCategory": "List",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{list-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the SharePoint list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "List ID"
+      },
+      {
+        "name": "{site-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+         "description": "Specify the Site ID that hosts the list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Site ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Enumerate list items without site id",
+    "description": "Enumerate list items operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Enumerate_list_items",
+    "operationApiType": "GET",
+    "operationPath": "/list/{list-id}/item",
+    "operationSummary": "Enumerate list items",
+    "operationDescription": "Get the collection of items in a list.",
+    "deprecated": false,
+    "OperationCategory": "List",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{list-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the SharePoint list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "List ID"
+      }
+    ]
+  },
+  {
+    "operation": "Enumerate list items with site id",
+    "description": "Enumerate list items operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Enumerate_list_items",
+    "operationApiType": "GET",
+    "operationPath": "sites/{site-id}/lists/{list-id}/items",
+    "operationSummary": "Enumerate list items",
+    "operationDescription": "Get the collection of items in a list.",
+    "deprecated": false,
+    "OperationCategory": "List",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{list-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the SharePoint list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "List ID"
+      },
+      {
+        "name": "{site-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify the Site ID that hosts the list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Site ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete list item",
+    "description": "Delete list item operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Delete_list_item",
+    "operationApiType": "DELETE",
+    "operationPath": "/lists/{list-id}/items/{item-id}",
+    "operationSummary": "Delete list item",
+    "operationDescription": "Removes an item from a list.",
+    "deprecated": false,
+    "OperationCategory": "List",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to be deleted.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "{list-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the SharePoint list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "List ID"
+      }
+    ]
+  },
+  {
+    "operation": "Update list item",
+    "description": "Update list item operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Update_list_item",
+    "operationApiType": "PATCH",
+    "operationPath": "/lists/{list-id}/items/{item-id}/fields",
+    "operationSummary": "Update list item",
+    "operationDescription": "Update the properties on a listItem.",
+    "deprecated": false,
+    "OperationCategory": "List",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to be updated.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "{list-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the SharePoint list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "List ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get an item in a list without site id",
+    "description": "Get an item in a list operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Get_an_item_in_a_list",
+    "operationApiType": "GET",
+    "operationPath": "/items/{item-id}",
+    "operationSummary": "Get an item in a list",
+    "operationDescription": "Returns the metadata for an item in a list.",
+    "deprecated": false,
+    "OperationCategory": "List",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to retrieve or download.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get an item in a list with site id",
+    "description": "Get an item in a list operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Get_an_item_in_a_list",
+    "operationApiType": "GET",
+    "operationPath": "/sites/{site-id}/lists/{list-id}/items/{item-id}",
+    "operationSummary": "Get an item in a list",
+    "operationDescription": "Returns the metadata for an item in a list.",
+    "deprecated": false,
+    "OperationCategory": "List",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to retrieve or download.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "{site-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify the Site ID that hosts the list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Site ID"
+      },
+      {
+        "name": "{list-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the SharePoint list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "List ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete an item in a list",
+    "description": "Delete an item in a list operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Delete_an_item_in_a_list",
+    "operationApiType": "DELETE",
+    "operationPath": "/items/{item-id}",
+    "operationSummary": "Delete an item in a list",
+    "operationDescription": "Removes an item from a list.",
+    "deprecated": false,
+    "OperationCategory": "List",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to be deleted.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      }
+    ]
+  },
+  {
+    "operation": "Update an item in a list without site id",
+    "description": "Update an item in a list operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Update an item in a list",
+    "operationApiType": "PATCH",
+    "operationPath": "/lists/{list-id}/items/{item-id}/fields",
+    "operationSummary": "Update an item in a list",
+    "operationDescription": "Update the properties on a listItem.",
+    "deprecated": false,
+    "OperationCategory": "List",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to be updated.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update column values on a listitem with site id",
+    "description": "Update an item in a list operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Update column values on a listitem",
+    "operationApiType": "PATCH",
+    "operationPath": "/sites/{site-id}/lists/{list-id}/items/{item-id}/fields",
+    "operationSummary": "Update an item in a list",
+    "operationDescription": "Update the column value on a listItem.",
+    "deprecated": false,
+    "OperationCategory": "List",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item (file or folder) to be updated.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "{list-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the SharePoint list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "List ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "{site-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify the Site ID that hosts the list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Site ID"
+      }
+    ]
+  },
+  {
+    "operation": "Create an item in a list",
+    "description": "Create an item in a list operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Create_an_item_in_a_list",
+    "operationApiType": "POST",
+    "operationPath": " /sites/{site-id}/lists/{list-id}/items",
+    "operationSummary": "Create an item in a list",
+    "operationDescription": "Create a new listItem in a list.",
+    "deprecated": false,
+    "OperationCategory": "List",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{list-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the SharePoint list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "List ID"
+      },
+      {
+        "name": "{site-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify the Site ID that hosts the list.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Site ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create sharing link",
+    "description": "Create sharing link operation in Microsoft OneDrive enables file, folder, and metadata interactions for seamless cloud storage management.",
+    "operationId": "Create_sharing_link",
+    "operationApiType": "POST",
+    "operationPath": "/drive/items/{item-id}/createLink",
+    "operationSummary": "Create sharing link",
+    "operationDescription": "You can use createLink action to share a DriveItem via a sharing link.",
+    "deprecated": false,
+    "OperationCategory": "List",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{item-id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the OneDrive item relevant to the operation.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Item ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1720 @@
+[
+  {
+    "operation": "Send a New Email",
+    "description": "Composes and delivers a new email message from the authenticated user's account. Requires valid recipient addresses and message content.",
+    "operationId": "Send_New _Email",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/send",
+    "operationSummary": "Send a New Email",
+    "operationDescription": "Send a New Email",
+    "deprecated": false,
+    "OperationCategory": "Emails",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Search Email",
+    "description": "Searches messages in the user's mailbox using Gmail's advanced query syntax (e.g., 'from:name@domain.com', 'subject:urgent')",
+    "operationId": "Search_Email",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/messages",
+    "operationSummary": "Search Email",
+    "operationDescription": "Search Email",
+    "deprecated": false,
+    "OperationCategory": "Emails",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "q",
+        "value": "subject:",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Search query using Gmail filter operators to find specific messages",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Search Email by Keyword"
+      }
+    ]
+  },
+  {
+    "operation": "New Labeled Email",
+    "description": "Retrieves messages associated with specific label IDs. Labels must be pre-configured in Gmail",
+    "operationId": "New_Labeled_Email",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/messages",
+    "operationSummary": "New Labeled Email",
+    "operationDescription": "New Labeled Email",
+    "deprecated": false,
+    "OperationCategory": "Emails",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "labelIds",
+        "value": "",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Comma-separated list of label identifiers to filter messages",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Search label by keyword"
+      },
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      }
+    ]
+  },
+  {
+    "operation": "New Starred Email",
+    "description": "Retrieves all messages marked with a star in the user's mailbox",
+    "operationId": "New_Starred_Email",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/messages",
+    "operationSummary": "New Starred Email",
+    "operationDescription": "New Starred Email",
+    "deprecated": false,
+    "OperationCategory": "Emails",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "q",
+        "value": "is:starred",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Pre-configured search filter for starred messages",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Search Starred Email"
+      },
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Email",
+    "description": "Permanently removes a specific message from the mailbox, bypassing the Trash folder",
+    "operationId": "Delete_Email",
+    "operationApiType": "DELETE",
+    "operationPath": "/users/{userId}/messages/{messageID}",
+    "operationSummary": "Delete Email",
+    "operationDescription": "Delete Email",
+    "deprecated": false,
+    "OperationCategory": "Emails",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Unique identifier of the message to be permanently deleted",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      }
+    ]
+  },
+  {
+    "operation": "Trash Email",
+    "description": "Moves a message to the Trash folder where it will be automatically deleted after 30 days",
+    "operationId": "Trash_Email",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/{messageID}/trash",
+    "operationSummary": "Trash Email",
+    "operationDescription": "Trash Email",
+    "deprecated": false,
+    "OperationCategory": "Emails",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Unique identifier of the message to move to Trash",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Untrash Email",
+    "description": "Restores a message from Trash back to its original mailbox location",
+    "operationId": "Untrash_Email",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/{messageID}/untrash",
+    "operationSummary": "Untrash Email",
+    "operationDescription": "Untrash Email",
+    "deprecated": false,
+    "OperationCategory": "Emails",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Unique identifier of the message to restore from Trash",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Messages",
+    "description": "Retrieves a paginated list of message metadata including IDs, subjects, and senders.",
+    "operationId": "list_messsages",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/messages",
+    "operationSummary": "List Messages",
+    "operationDescription": "List all the messages along with message id",
+    "deprecated": false,
+    "OperationCategory": "Emails",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "q",
+        "value": "",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Search query using Gmail syntax (e.g., 'subject:\"Weekly Report\"')",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Search Query"
+      },
+      {
+        "name": "labelIds",
+        "value": "INBOX",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Comma-separated list of label IDs to filter messages",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Filter by Label IDs"
+      },
+      {
+        "name": "maxResults",
+        "value": "50",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Maximum number of messages to return (max 500)",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Maximum Results"
+      },
+      {
+        "name": "pageToken",
+        "value": "",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Token to retrieve a specific page of results",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Page Token"
+      },
+      {
+        "name": "includeSpamTrash",
+        "value": "false",
+        "param_type": "UrlParam",
+        "ui_source": "operation",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Include messages from SPAM and TRASH folders",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Include Spam and Trash"
+      }
+    ]
+  },
+  {
+    "operation": "Get the Specified Message",
+    "description": "Retrieves complete message details including headers, body content, and attachments",
+    "operationId": "Get_Specified_Message",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/messages/{messageID}",
+    "operationSummary": "Get the Specified Message",
+    "operationDescription": "Get the Specified Message",
+    "deprecated": false,
+    "OperationCategory": "Emails",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Unique identifier of the message to retrieve",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete the Specified Message",
+    "description": "Permanently removes a specific message from the mailbox (alias for Delete Email)",
+    "operationId": "Delete_Specified_Message",
+    "operationApiType": "DELETE",
+    "operationPath": "/users/{userId}/messages/{messageID}",
+    "operationSummary": "Delete the Specified Message",
+    "operationDescription": "Delete the Specified Message",
+    "deprecated": false,
+    "OperationCategory": "Emails",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Unique identifier of the message to delete",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      }
+    ]
+  },
+  {
+    "operation": "Deletes many messages by message ID",
+    "description": "Bulk deletion of multiple messages using their unique identifiers in a single operation",
+    "operationId": "Deletes_many_messages_by_message_ID.",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/batchDelete",
+    "operationSummary": "Deletes many messages by message ID.",
+    "operationDescription": "Deletes many messages by message ID.",
+    "deprecated": false,
+    "OperationCategory": "Emails",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Batch Modify Labels",
+    "description": "Applies label changes to multiple messages simultaneously (add/remove labels)",
+    "operationId": "Batch_Modify_Labels",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/batchModify",
+    "operationSummary": "Batch Modify Labels",
+    "operationDescription": "Batch Modify Labels",
+    "deprecated": false,
+    "OperationCategory": "Labels",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create Label",
+    "description": "Defines a new custom label for organizing messages in the user's mailbox",
+    "operationId": "Create_Label",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/labels",
+    "operationSummary": "Create Label",
+    "operationDescription": "Create Label",
+    "deprecated": false,
+    "OperationCategory": "Labels",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Labels",
+    "description": "Retrieves all labels associated with the user's account including system and custom labels",
+    "operationId": "List_Labels",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/labels",
+    "operationSummary": "List Labels",
+    "operationDescription": "List Labels",
+    "deprecated": false,
+    "OperationCategory": "Labels",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      }
+    ]
+  },
+  {
+    "operation": "Add Label to Email",
+    "description": "Applies one or more labels to a specific message for categorization",
+    "operationId": "Add_Label_to_Email",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/{messageID}/modify",
+    "operationSummary": "Add Label to Email",
+    "operationDescription": "Add Label to Email",
+    "deprecated": false,
+    "OperationCategory": "Labels",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Unique identifier of the message to label",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Label",
+    "description": "Permanently removes a custom label from the user's account",
+    "operationId": "Delete_Label",
+    "operationApiType": "DELETE",
+    "operationPath": "/users/{userId}/labels/{labelID}",
+    "operationSummary": "Delete a Label",
+    "operationDescription": "Delete a Label",
+    "deprecated": false,
+    "OperationCategory": "Labels",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{labelID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Unique identifier of the label to delete",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Label ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Remove Label From Email",
+    "description": "Removes specific labels from a designated message while preserving other labels",
+    "operationId": "Remove_Label_From_Email",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/{messageID}/modify",
+    "operationSummary": "Remove Label From Email",
+    "operationDescription": "Remove Label From Email",
+    "deprecated": false,
+    "OperationCategory": "Labels",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Unique identifier of the message to modify",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Modify Message",
+    "description": "Updates message properties and metadata while preserving the original content",
+    "operationId": "Modify_Message",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/{messageID}/modify",
+    "operationSummary": "Modify Message",
+    "operationDescription": "Modify Message",
+    "deprecated": false,
+    "OperationCategory": "Labels",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Unique identifier of the message to modify",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Retrieve Attachment",
+    "description": "Retrieves the metadata and content of a specific attachment within a user's email message. Requires the user ID, message ID, and attachment ID.",
+    "operationId": "Retrieve_Attachment",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/messages/{messageID}/attachments/{attachmentId}",
+    "operationSummary": "Retrieve Attachment",
+    "operationDescription": "Retrieve Attachment",
+    "deprecated": false,
+    "OperationCategory": "Attachments",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{messageID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the specific email message.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Message ID"
+      },
+      {
+        "name": "{attachmentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an attachment within an email.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Attachment ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get Thread Details",
+    "description": "Retrieves detailed information about a specific email thread, including messages, participants, timestamps, and labels. Requires the user ID and thread ID.",
+    "operationId": "Get_Thread_Details",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/threads/{threadID}",
+    "operationSummary": "Get Thread Details",
+    "operationDescription": "Get Thread Details",
+    "deprecated": false,
+    "OperationCategory": "Threads",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "format",
+        "value": "full",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{threadID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email thread.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Thread ID"
+      }
+    ]
+  },
+  {
+    "operation": "List Threads",
+    "description": "Lists all email threads in the user's mailbox, providing summaries such as subject, participants, and snippet of the most recent message.",
+    "operationId": "List_Threads",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/threads",
+    "operationSummary": "List Threads",
+    "operationDescription": "List Threads",
+    "deprecated": false,
+    "OperationCategory": "Threads",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a Thread",
+    "description": "Permanently deletes a specific email thread from the user's mailbox. Requires the user ID and thread ID.",
+    "operationId": "Delete_Thread",
+    "operationApiType": "DELETE",
+    "operationPath": "/users/{userId}/threads/{threadID}",
+    "operationSummary": "Delete a Thread",
+    "operationDescription": "Delete a Thread",
+    "deprecated": false,
+    "OperationCategory": "Threads",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{threadID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email thread.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Thread ID"
+      }
+    ]
+  },
+  {
+    "operation": "Modify a Thread (Labels)",
+    "description": "Modifies the labels applied to a specific email thread, allowing addition or removal of labels. Requires the user ID, thread ID, and a request body specifying label changes.",
+    "operationId": "Modify_Thread_(Labels)",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/threads/{threadID}/modify",
+    "operationSummary": "Modify a Thread (Labels)",
+    "operationDescription": "Modify a Thread (Labels)",
+    "deprecated": false,
+    "OperationCategory": "Threads",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{threadID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of an email thread.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Thread ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Drafts",
+    "description": "Lists all email drafts in the user's mailbox, including draft IDs and basic message details.",
+    "operationId": "List_Drafts",
+    "operationApiType": "GET",
+    "operationPath": "/users/{userId}/drafts",
+    "operationSummary": "List Drafts",
+    "operationDescription": "List Drafts",
+    "deprecated": false,
+    "OperationCategory": "Drafts",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      }
+    ]
+  },
+  {
+    "operation": "Update Draft",
+    "description": "Updates the content or metadata of an existing email draft. Requires the user ID, draft ID, and updated draft content in the request body.",
+    "operationId": "Update_Draft",
+    "operationApiType": "PUT",
+    "operationPath": "/users/{userId}/drafts/{draftID}",
+    "operationSummary": "Update Draft",
+    "operationDescription": "Update Draft",
+    "deprecated": false,
+    "OperationCategory": "Drafts",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{draftID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The ID of the draft to update.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Draft ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create Draft",
+    "description": "Creates a new email draft with the specified content. Requires the user ID and draft content in the request body.",
+    "operationId": "Create_Draft",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/drafts",
+    "operationSummary": "Create Draft",
+    "operationDescription": "Create Draft",
+    "deprecated": false,
+    "OperationCategory": "Drafts",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Draft",
+    "description": "Permanently deletes a specific email draft. Requires the user ID and draft ID.",
+    "operationId": "Delete_Draft",
+    "operationApiType": "DELETE",
+    "operationPath": "/users/{userId}/drafts/{draftID}",
+    "operationSummary": "Delete Draft",
+    "operationDescription": "Delete Draft",
+    "deprecated": false,
+    "OperationCategory": "Drafts",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "{draftID}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The ID of the draft to delete.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Draft ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Import message",
+    "description": "Imports an email message into the user's mailbox, allowing control over the internal date (e.g., received time). Requires the user ID and message content in the request body.",
+    "operationId": "Import_message",
+    "operationApiType": "POST",
+    "operationPath": "/users/{userId}/messages/import",
+    "operationSummary": "Import message",
+    "operationDescription": "Import message",
+    "deprecated": false,
+    "OperationCategory": "Import",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "internalDateSource",
+        "value": "receivedTime",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "{userId}",
+        "value": "me",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The email address or unique ID of the authenticated Gmail account.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "adapter",
+        "datatype": "System.String",
+        "ui_displayName": "User ID",
+        "sourceProperty": "MailboxAddress"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]

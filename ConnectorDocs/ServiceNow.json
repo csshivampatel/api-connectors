@@ -1,0 +1,682 @@
+[
+  {
+    "operation": "Get an specified attachment",
+    "description": "Retrieves the binary content of a file attachment by its `sys_id`.",
+    "operationId": "get_specified_attachment",
+    "operationApiType": "GET",
+    "operationPath": "/now/attachment/{sys_id}/file",
+    "operationSummary": "Retrieve a specific attachment by sys_id",
+    "operationDescription": "Retrieve a specific attachment by sys_id.",
+    "deprecated": false,
+    "OperationCategory": "Attachments",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{sys_id}",
+        "description": "The sys_id of the attachment record to retrieve.",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
+      }
+    ]
+  },
+  {
+    "operation": "Delete an attachment",
+    "description": "Deletes an attachment from the instance using its `sys_id`. This action is permanent.",
+    "operationId": "delete_an_attachment",
+    "operationApiType": "DELETE",
+    "operationPath": "/now/attachment/{sys_id}",
+    "operationSummary": "Delete a specific attachment by sys_id",
+    "operationDescription": "Delete a specific attachment by sys_id.",
+    "deprecated": false,
+    "OperationCategory": "Attachments",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{sys_id}",
+        "description": "The sys_id of the attachment record to delete.",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Upload an attachment",
+    "description": "Uploads a file and attaches it to a specified record in a given table using `table_name` and `table_sys_id`.",
+    "operationId": "upload_an_attachment",
+    "operationApiType": "POST",
+    "operationPath": "/now/attachment/file",
+    "operationSummary": "Upload a new attachment to a table record",
+    "operationDescription": "Upload a new attachment to a table record.",
+    "deprecated": false,
+    "OperationCategory": "Attachments",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "The content of the file to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Misc",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "file_name",
+        "description": "The name to assign to the attachment.",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "File Name"
+      },
+      {
+        "name": "table_name",
+        "description": "The name of the table to associate the attachment with.",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "Table Name"
+      },
+      {
+        "name": "table_sys_id",
+        "description": "The sys_id of the record in the specified table to attach the file to.",
+        "value": "",
+        "param_type": "UrlParam",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "Table System Id"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get all attachment",
+    "description": "Returns metadata for all attachments in the instance. Does not include actual file content.",
+    "operationId": "get_all_attachment",
+    "operationApiType": "GET",
+    "operationPath": "/now/attachment",
+    "operationSummary": "List all attachments",
+    "operationDescription": "List all attachments.",
+    "deprecated": false,
+    "OperationCategory": "Attachments",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Create a new email",
+    "description": "Sends a new email using the email API. The request body must include recipients and message content.",
+    "operationId": "create_new_email",
+    "operationApiType": "POST",
+    "operationPath": "/now/v1/email",
+    "operationSummary": "Create and send a new email",
+    "operationDescription": "Create and send a new email.",
+    "deprecated": false,
+    "OperationCategory": "Emails",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "The JSON content of the email, including recipients and message body.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Misc",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get an email",
+    "description": "Retrieves metadata of a specific email using its `sys_id`.",
+    "operationId": "get_an_email",
+    "operationApiType": "GET",
+    "operationPath": "/now/v1/email/{sys_id}",
+    "operationSummary": "Retrieve an email by sys_id",
+    "operationDescription": "Retrieve an email by sys_id.",
+    "deprecated": false,
+    "OperationCategory": "Emails",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{sys_id}",
+        "description": "The sys_id of the email record to retrieve.",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
+      }
+    ]
+  },
+  {
+    "operation": "Create a record",
+    "description": "Creates a new record in the specified table. The request body must contain the field data in JSON format.",
+    "operationId": "create_record",
+    "operationApiType": "POST",
+    "operationPath": "/now/table/{tableName}",
+    "operationSummary": "Create a new record in a table",
+    "operationDescription": "Create a new record in a table.",
+    "deprecated": false,
+    "OperationCategory": "Records",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{tableName}",
+        "description": "The name of the table where the new record will be created.",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "tableName",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "Table Name"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "The JSON content of the record to create.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Misc",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Retrieve a record",
+    "description": "Retrieves a record from a table using its `sys_id`. Returns all fields of the record.",
+    "operationId": "retrieve_record",
+    "operationApiType": "GET",
+    "operationPath": "/now/table/{tableName}/{sys_id}",
+    "operationSummary": "Retrieve a record by sys_id",
+    "operationDescription": "Retrieve a record by sys_id.",
+    "deprecated": false,
+    "OperationCategory": "Records",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{sys_id}",
+        "description": "The sys_id of the record to retrieve.",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
+      },
+      {
+        "name": "{tableName}",
+        "description": "The name of the table containing the record.",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "tableName",
+        "ui_category": "Misc",
+        "datatype": "System.String"
+      }
+    ]
+  },
+  {
+    "operation": "Delete a record",
+    "description": "Deletes a record from a table using its `sys_id`. This operation is irreversible.",
+    "operationId": "delete_record",
+    "operationApiType": "DELETE",
+    "operationPath": "/now/table/{tableName}/{sys_id}",
+    "operationSummary": "Delete a record by sys_id",
+    "operationDescription": "Delete a record by sys_id.",
+    "deprecated": false,
+    "OperationCategory": "Records",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{sys_id}",
+        "description": "The sys_id of the record to delete.",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
+      },
+      {
+        "name": "{tableName}",
+        "description": "The name of the table containing the record to delete.",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "tableName",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "Table Name"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update a record",
+    "description": "Updates specific fields of a record in a table using its `sys_id`. Only provided fields in the request body will be updated.",
+    "operationId": "update_record",
+    "operationApiType": "PATCH",
+    "operationPath": "/now/table/{tableName}/{sys_id}",
+    "operationSummary": "Update a record by sys_id",
+    "operationDescription": "Update a record by sys_id.",
+    "deprecated": false,
+    "OperationCategory": "Records",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{sys_id}",
+        "description": "The sys_id of the record to update.",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
+      },
+      {
+        "name": "{tableName}",
+        "description": "The name of the table containing the record to update.",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "sourceProperty": "tableName",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "Table Name"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "The JSON content specifying the fields to update.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Misc",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get incidents",
+    "description": "Retrieves a list of all incident records with basic details.",
+    "operationId": "get_incidents",
+    "operationApiType": "GET",
+    "operationPath": "/now/table/incident",
+    "operationSummary": "List all incidents",
+    "operationDescription": "List all incidents.",
+    "deprecated": false,
+    "OperationCategory": "Incidents",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": []
+  },
+  {
+    "operation": "Get incident",
+    "description": "Retrieves full details of a specific incident using its `sys_id`.",
+    "operationId": "get_incident",
+    "operationApiType": "GET",
+    "operationPath": "/now/table/incident/{sys_id}",
+    "operationSummary": "Retrieve an incident by sys_id",
+    "operationDescription": "Retrieve an incident by sys_id.",
+    "deprecated": false,
+    "OperationCategory": "Incidents",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{sys_id}",
+        "description": "The sys_id of the incident record to retrieve.",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
+      }
+    ]
+  },
+  {
+    "operation": "Create incident",
+    "description": "Creates a new incident record. JSON body must contain required incident fields.",
+    "operationId": "create_incident",
+    "operationApiType": "POST",
+    "operationPath": "/now/table/incident",
+    "operationSummary": "Create a new incident",
+    "operationDescription": "Create a new incident.",
+    "deprecated": false,
+    "OperationCategory": "Incidents",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "The JSON content of the incident to create.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Misc",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update Incident",
+    "description": "Updates an existing incident by its `sys_id`. Replaces all specified fields with new values provided in the request body.",
+    "operationId": "update_incident",
+    "operationApiType": "PUT",
+    "operationPath": "/now/table/incident/{sys_id}",
+    "operationSummary": "Update an incident by sys_id",
+    "operationDescription": "Update an incident by sys_id.",
+    "deprecated": false,
+    "OperationCategory": "Incidents",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "Solicit Response"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{sys_id}",
+        "description": "The sys_id of the incident record to update.",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "datatype": "System.String",
+        "ui_displayName": "System Id"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "The JSON content specifying the fields to update.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Misc",
+        "ui_displayName": "Body"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]

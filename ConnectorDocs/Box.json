@@ -1,0 +1,1040 @@
+[
+  {
+    "operation": "Get file information",
+    "description": "Retrieves details about a specific file in Box, including metadata such as name, size, type, and creation date.",
+    "operationId": "get_files_id",
+    "operationApiType": "GET",
+    "operationPath": "/files/{file_id}",
+    "operationSummary": "Get file information",
+    "operationDescription": "Retrieves the details about a file, including its metadata and properties. The response can be customized using the fields parameter to request specific information.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier that represents a file. The ID for any file can be determined by visiting that file in the web application and copying the ID from the URL.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      },
+      {
+        "name": "fields",
+        "value": "name,type,size,created_at",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "A comma-separated list of attributes to include in the response. This can be used to request specific fields or reduce the payload size. Available fields include: name, description, size, path_collection, created_at, modified_at, trashed_at, purged_at, content_created_at, content_modified_at, created_by, modified_by, owned_by, shared_link, parent, item_status, version_number, comment_count, permissions, tags, lock, extension, is_package, file_version, collections, and more.",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Fields",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Restore file",
+    "description": "Restores a file that has been moved to the trash to its original location or to a specified new parent folder.",
+    "operationId": "post_files_id",
+    "operationApiType": "POST",
+    "operationPath": "/files/{file_id}",
+    "operationSummary": "Restore a file from trash",
+    "operationDescription": "Restores a file that has been moved to the trash. The file can be restored to its original parent folder or to a different folder specified in the request body. If the original parent folder no longer exists, a new parent folder must be specified.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier that represents a file. The ID for any file can be determined by visiting that file in the web application and copying the ID from the URL.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      },
+      {
+        "name": "fields",
+        "value": "name,type,size,created_at",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "A comma-separated list of attributes to include in the response. This can be used to request specific fields or reduce the payload size.",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Fields",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "JSON body specifying restoration parameters. Example: {\"name\": \"newfilename.pdf\", \"parent\": {\"id\": \"12345\"}} to rename the file and/or specify a new parent folder.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Restoration Parameters"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "DeleteMessageBody",
+        "value": true,
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update file",
+    "description": "Updates file attributes including renaming, moving, changing description, or modifying shared link settings.",
+    "operationId": "put_files_id",
+    "operationApiType": "PUT",
+    "operationPath": "/files/{file_id}",
+    "operationSummary": "Update file information",
+    "operationDescription": "Updates one or more attributes of a file, including its name, description, parent folder, shared link settings, and lock status. This endpoint can also be used to create or update the file's shared link.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier that represents a file. The ID for any file can be determined by visiting that file in the web application and copying the ID from the URL.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "JSON body containing the update parameters. Example: {\"name\": \"newname.pdf\", \"description\": \"Updated file description\", \"parent\": {\"id\": \"12345\"}, \"shared_link\": {\"access\": \"collaborators\", \"permissions\": {\"can_download\": true}}}",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Update Parameters"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "fields",
+        "value": "name,type,size,created_at",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "A comma-separated list of attributes to include in the response. This can be used to request specific fields or reduce the payload size.",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Fields",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete file",
+    "description": "Permanently deletes a file or moves it to the trash based on enterprise settings.",
+    "operationId": "delete_files_id",
+    "operationApiType": "DELETE",
+    "operationPath": "/files/{file_id}",
+    "operationSummary": "Delete a file",
+    "operationDescription": "Deletes a file either by moving it to the trash or permanently deleting it, depending on the enterprise's retention policies. If the enterprise is configured to retain deleted items, the file will be moved to the trash and can be recovered. Otherwise, it will be permanently deleted.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier that represents a file. The ID for any file can be determined by visiting that file in the web application and copying the ID from the URL.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      }
+    ]
+  },
+  {
+    "operation": "Download file",
+    "description": "Downloads the binary contents of a file from Box.",
+    "operationId": "get_files_id_content",
+    "operationApiType": "GET",
+    "operationPath": "/files/{file_id}/content",
+    "operationSummary": "Download file content",
+    "operationDescription": "Retrieves the actual file content in binary format. For very large files, consider using the range header to download the file in chunks. The response includes standard HTTP caching headers.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier that represents a file. The ID for any file can be determined by visiting that file in the web application and copying the ID from the URL.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      },
+      {
+        "name": "boxapi",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Header for accessing shared links or acting as another user. Format: 'shared_link=[URL-encoded shared link URL]' or 'as-user=[user ID]'. For password-protected links: 'shared_link=[URL]&shared_link_password=[password]'.",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Box API Header",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "range",
+        "value": "bytes=0-1024",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Copy file",
+    "description": "Creates a copy of a file in a specified destination folder.",
+    "operationId": "post_files_id_copy",
+    "operationApiType": "POST",
+    "operationPath": "/files/{file_id}/copy",
+    "operationSummary": "Copy a file",
+    "operationDescription": "Creates a copy of an existing file in another folder. The original version of the file will not be altered. The new copy will have its own unique ID and version history.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier that represents the file to be copied.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Source File ID"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "JSON body specifying copy parameters. Must include 'parent' object with 'id' of destination folder. May include new 'name' for the copy. Example: {\"parent\": {\"id\": \"12345\"}, \"name\": \"copy_of_file.pdf\"}",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Copy Parameters"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "fields",
+        "value": "name,type,size,created_at",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "A comma-separated list of attributes to include in the response. This can be used to request specific fields or reduce the payload size.",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Fields",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get metadata instance on file",
+    "description": "Retrieves metadata associated with a file using a specific metadata template.",
+    "operationId": "get_files_id_metadata_id_id",
+    "operationApiType": "GET",
+    "operationPath": "/files/{file_id}/metadata/{scope}/{template_key}",
+    "operationSummary": "Get file metadata",
+    "operationDescription": "Retrieves all metadata instances associated with a file. Metadata provides a way to add custom key-value pairs to files in Box. The global properties template allows for arbitrary key-value pairs, while enterprise templates enforce specific schemas.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier that represents the file.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      },
+      {
+        "name": "{scope}",
+        "value": "global",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The scope of the metadata template. Typically 'global' for standard metadata or 'enterprise' for custom enterprise templates.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Scope"
+      },
+      {
+        "name": "{template_key}",
+        "value": "properties",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The key of the metadata template. Use 'properties' for the global metadata template or the specific key for enterprise templates.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Template Key"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create metadata instance on file",
+    "description": "Applies metadata to a file using a specified metadata template.",
+    "operationId": "post_files_id_metadata_id_id",
+    "operationApiType": "post",
+    "operationPath": "/files/{file_id}/metadata/{scope}/{template_key}",
+    "operationSummary": "Add metadata to file",
+    "operationDescription": "Creates a new metadata instance on a file. For the global properties template, any key-value pairs can be added. For enterprise templates, the values must conform to the template's predefined schema.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier that represents the file.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      },
+      {
+        "name": "{scope}",
+        "value": "global",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The scope of the metadata template. Typically 'global' for standard metadata or 'enterprise' for custom enterprise templates.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Scope"
+      },
+      {
+        "name": "{template_key}",
+        "value": "properties",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The key of the metadata template. Use 'properties' for the global metadata template or the specific key for enterprise templates.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Template Key"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "JSON body containing the metadata key-value pairs. For global scope: {\"key1\": \"value1\", \"key2\": \"value2\"}. For enterprise templates, follow the template's schema.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Metadata"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Remove metadata instance from file",
+    "description": "Deletes a specific metadata instance from a file.",
+    "operationId": "delete_files_id_metadata_id_id",
+    "operationApiType": "DELETE",
+    "operationPath": "/files/{file_id}/metadata/{scope}/{template_key}",
+    "operationSummary": "Remove metadata from file",
+    "operationDescription": "Permanently deletes a metadata instance from a file. This operation cannot be undone. For the global properties template, individual key-value pairs cannot be deleted - the entire instance must be removed.",
+    "deprecated": false,
+    "OperationCategory": "File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier that represents the file.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      },
+      {
+        "name": "{scope}",
+        "value": "global",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The scope of the metadata template. Typically 'global' for standard metadata or 'enterprise' for custom enterprise templates.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Scope"
+      },
+      {
+        "name": "{template_key}",
+        "value": "properties",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The key of the metadata template. Use 'properties' for the global metadata template or the specific key for enterprise templates.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Template Key"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List items in folder",
+    "description": "Retrieves a paginated list of files, folders, and web links contained within a specified Box folder.",
+    "operationId": "get_folders_id_items",
+    "operationApiType": "GET",
+    "operationPath": "/folders/{folder_id}/items",
+    "operationSummary": "List folder contents",
+    "operationDescription": "Retrieves a page of items (files, folders, and web links) contained within a folder. The response can be paginated using the limit and offset parameters, and the returned fields can be customized. Use '0' for the folder_id parameter to list the contents of the root folder.",
+    "deprecated": false,
+    "OperationCategory": "Folder",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{folder_id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier that represents the folder. Use '0' for the root folder. The ID for any folder can be determined by visiting that folder in the web application and copying the ID from the URL.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+      },
+      {
+        "name": "boxapi",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "Header for accessing shared folders or acting as another user. Format: 'shared_link=[URL-encoded shared link URL]' or 'as-user=[user ID]'. For password-protected links: 'shared_link=[URL]&shared_link_password=[password]'.",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Box API Header",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "fields",
+        "value": "name,type,size,created_at",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "A comma-separated list of attributes to include in the response. This can be used to request specific fields or reduce the payload size. Available fields include: name, description, size, path_collection, created_at, modified_at, trashed_at, purged_at, content_created_at, content_modified_at, created_by, modified_by, owned_by, shared_link, parent, item_status, version_number, comment_count, permissions, tags, lock, extension, is_package, file_version, collections, and more.",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Fields",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "limit",
+        "value": "100",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "The maximum number of items to return per page. The default is 100 and the maximum is 1000. Values above 1000 will be coerced to 1000.",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Limit",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "offset",
+        "value": "0",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "The offset at which to begin the response. Used for paging through large result sets. The default is 0.",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Offset",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Find file for shared link",
+    "description": "Retrieves information about a file or folder that has been shared via a shared link, without requiring authentication.",
+    "operationId": "shared_links_files",
+    "operationApiType": "GET",
+    "operationPath": "/shared_items",
+    "operationSummary": "Get shared item information",
+    "operationDescription": "Returns information about a file or folder that is represented by a shared link. This endpoint allows accessing shared content without requiring authentication to Box. For password-protected links, the password must be included in the boxapi header.",
+    "deprecated": false,
+    "OperationCategory": "Folder",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "boxapi",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Header containing the shared link. Format: 'shared_link=[URL-encoded shared link URL]'. For password-protected links: 'shared_link=[URL]&shared_link_password=[password]'.",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Box API",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "fields",
+        "value": "name,type,size,created_at",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "A comma-separated list of attributes to include in the response. This can be used to request specific fields or reduce the payload size.",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Fields",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get shared link for file",
+    "description": "Retrieves information about an existing shared link on a file.",
+    "operationId": "get_files_id#get_shared_link",
+    "operationApiType": "GET",
+    "operationPath": "/files/{file_id}#get_shared_link",
+    "operationSummary": "Get file shared link",
+    "operationDescription": "Retrieves information about an existing shared link on a file, including its access level, permissions, and expiration date (if set). The response can be customized using the fields parameter.",
+    "deprecated": false,
+    "OperationCategory": "Folder",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier that represents the file.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "fields",
+        "value": "name,type,size,created_at",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "A comma-separated list of attributes to include in the response. Must include 'shared_link' to get shared link information. Example: 'shared_link.access,shared_link.url,shared_link.permissions'",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Fields",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Add shared link to file",
+    "description": "Creates a shared link for a file with specified access and permission settings.",
+    "operationId": "put_files_id#add_shared_link",
+    "operationApiType": "PUT",
+    "operationPath": "/files/{file_id}#add_shared_link",
+    "operationSummary": "Create shared link for file",
+    "operationDescription": "Creates a shared link for the specified file. The shared link can be configured with different access levels (open, company, collaborators) and permissions (can_download, can_preview, can_edit). An expiration date can also be set.",
+    "deprecated": false,
+    "OperationCategory": "Folder",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier that represents the file.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "fields",
+        "value": "name,type,size,created_at",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "A comma-separated list of attributes to include in the response. Must include 'shared_link' to get shared link information in the response.",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Fields",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "JSON body containing shared link configuration. Example: {\"shared_link\": {\"access\": \"company\", \"permissions\": {\"can_download\": true, \"can_preview\": true}, \"password\": \"mypassword\", \"unshared_at\": \"2023-12-31T00:00:00Z\"}}",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Shared Link Configuration"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update shared link on file",
+    "description": "Updates the properties of an existing shared link for a specified file.",
+    "operationId": "put_files_id#update_shared_link",
+    "operationApiType": "PUT",
+    "operationPath": "/files/{file_id}#update_shared_link",
+    "operationSummary": "Update shared link on file",
+    "operationDescription": "Updates the configuration and permissions of an existing shared link for the specified file. This can include modifying access levels, expiration dates, or other sharing settings.",
+    "deprecated": false,
+    "OperationCategory": "Folder",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the file whose shared link will be updated.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "fields",
+        "value": "name,type,size,created_at",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Comma-separated list of fields to include in the response. Select specific metadata fields to optimize response size and include only needed information.",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Fields",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "JSON payload containing the updated shared link configuration including permissions, access levels, and other sharing settings.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Shared Link Configuration"
+      },
+      {
+        "name": "BodyType",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Remove shared link from file",
+    "description": "Permanently removes an existing shared link from a specified file.",
+    "operationId": "put_files_id#remove_shared_link",
+    "operationApiType": "PUT",
+    "operationPath": "/files/{file_id}#remove_shared_link",
+    "operationSummary": "Remove shared link from file",
+    "operationDescription": "Disables and removes an existing shared link from the specified file. After removal, the link will no longer provide access to the file.",
+    "deprecated": false,
+    "OperationCategory": "Folder",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{file_id}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "The unique identifier of the file whose shared link will be removed.",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "File ID"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "fields",
+        "value": "name,type,size,created_at",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Comma-separated list of fields to include in the response. Select specific metadata fields to optimize response size and include only needed information.",
+        "ui_EditorType": "Textbox",
+        "ui_displayName": "Fields",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "JSON payload confirming the removal of the shared link (may contain additional parameters for the operation).",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Removal Confirmation"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "JSON",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]

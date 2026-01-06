@@ -1,0 +1,570 @@
+[
+  {
+    "operation": "List Shares",
+    "description": "List Shares operation enables Azure File Storage to list shares, based on REST API standards.",
+    "operationId": "Service_ListShares",
+    "operationApiType": "GET",
+    "operationPath": "/",
+    "operationSummary": "List Shares",
+    "operationDescription": "The List Shares operation returns a list of the shares and share snapshots under the specified account. ",
+    "deprecated": false,
+    "OperationCategory": "Share",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "comp",
+        "value": "list",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "List Directories and Files",
+    "description": "List Directories and Files operation enables Azure File Storage to list directories and files, based on REST API standards.",
+    "operationId": "Directory_ListFilesAndDirectoriesSegment",
+    "operationApiType": "GET",
+    "operationPath": "/{shareName}/{directoryPath}",
+    "operationSummary": "List Directories and Files",
+    "operationDescription": "The List Directories and Files operation returns a list of files or directories under the specified share or directory. It lists the contents only for a single level of the directory hierarchy.",
+    "deprecated": false,
+    "OperationCategory": "Directory and File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
+      },
+      {
+        "name": "restype",
+        "value": "directory",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "comp",
+        "value": "list",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create File",
+    "description": "Create File operation enables Azure File Storage to create file, based on REST API standards.",
+    "operationId": "File_Create",
+    "operationApiType": "PUT",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
+    "operationSummary": "Create File",
+    "operationDescription": "The Create File operation creates a new file or replaces a file. When you call Create File, you only initialize the file. To add content to a file, you call the Put Range operation.",
+    "deprecated": false,
+    "OperationCategory": "Directory and File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
+      },
+      {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name",
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
+      },
+      {
+        "name": "DeleteMessageBody",
+        "value": true,
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-content-length",
+        "value": "1024",
+        "param_type": "Header",
+        "ui_source": "operation",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_EditorType": "Textbox",
+        "description": "Specify the length of the data to append (max 4 MB per request).",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "x-ms-type",
+        "value": "file",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/xml",
+        "isVisible": false,
+        "param_type": "Header",
+        "ui_source": "operation",
+        "datatype": "System.String"
+      }
+    ]
+  },
+  {
+    "operation": "Put Range",
+    "description": "Put Range operation enables Azure File Storage to put range, based on REST API standards.",
+    "operationId": "File_UploadRange",
+    "operationApiType": "PUT",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
+    "operationSummary": "Put Range",
+    "operationDescription": "The Put Range operation writes a range of bytes to a file.",
+    "deprecated": false,
+    "OperationCategory": "Directory and File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
+      },
+      {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name",
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/xml",
+        "isVisible": false,
+        "param_type": "Header",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "Content-Length",
+        "value": "",
+        "param_type": "Header",
+        "ui_source": "operation",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "x-ms-range",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc"
+      },
+      {
+        "name": "comp",
+        "value": "range",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-write",
+        "value": "update",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "bindable": true,
+        "isVisible": false,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the body to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Publish Mode Properties",
+        "ui_displayName": "Body content to append"
+      },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Get File",
+    "description": "Get File operation enables Azure File Storage to get file, based on REST API standards.",
+    "operationId": "File_Download",
+    "operationApiType": "GET",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
+    "operationSummary": "Get File",
+    "operationDescription": "The Get File operation reads or downloads a file from the system, including its metadata and properties.",
+    "deprecated": false,
+    "OperationCategory": "Directory and File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
+      },
+      {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name",
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
+      }
+    ]
+  },
+  {
+    "operation": "Delete File",
+    "description": "Delete File operation enables Azure File Storage to delete file, based on REST API standards.",
+    "operationId": "File_Delete",
+    "operationApiType": "DELETE",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
+    "operationSummary": "Delete File",
+    "operationDescription": "The Delete File operation immediately removes the file from the storage account.",
+    "deprecated": false,
+    "OperationCategory": "Directory and File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
+      },
+      {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name",
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
+      }
+    ]
+  },
+  {
+    "operation": "Get File Properties",
+    "description": "Delete File operation enables Azure File Storage to delete file, based on REST API standards.",
+    "operationId": "File_Delete",
+    "operationApiType": "HEAD",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
+    "operationSummary": "Delete File",
+    "operationDescription": "The Delete File operation immediately removes the file from the storage account.",
+    "deprecated": false,
+    "OperationCategory": "Directory and File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
+      },
+      {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name",
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
+      }
+    ]
+  },
+  {
+    "operation": "Set File Metadata",
+    "description": "Set File Metadata operation enables Azure File Storage to set file metadata, based on REST API standards.",
+    "operationId": "File_SetMetadata",
+    "operationApiType": "PUT",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
+    "operationSummary": "Set File Metadata",
+    "operationDescription": "The Set File Metadata operation sets user-defined metadata for the specified file.",
+    "deprecated": false,
+    "OperationCategory": "Directory and File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
+      },
+      {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name",
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
+      },
+      {
+        "name": "comp",
+        "value": "metadata",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "x-ms-meta-name",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "Meta Data Name",
+        "ui_category": "Misc",
+        "description": "User-defined metadata to be associated with the file as a key-value pair."
+      }
+    ]
+  },
+  {
+    "operation": "Get File Metadata",
+    "description": "Set File Metadata operation enables Azure File Storage to set file metadata, based on REST API standards.",
+    "operationId": "File_GetMetadata",
+    "operationApiType": "GET",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
+    "operationSummary": "Set File Metadata",
+    "operationDescription": "The Get File Metadata operation returns all user-defined metadata for the specified file.",
+    "deprecated": false,
+    "OperationCategory": "Directory and File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
+      },
+      {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name",
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
+      },
+      {
+        "name": "comp",
+        "value": "metadata",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Copy File",
+    "description": "Abort Copy File operation enables Azure File Storage to abort copy file, based on REST API standards.",
+    "operationId": "File_AbortCopy",
+    "operationApiType": "PUT",
+    "operationPath": "/{shareName}/{directoryPath}/{fileName}",
+    "operationSummary": "Abort Copy File",
+    "operationDescription": "The Copy File operation from source file to destination.",
+    "deprecated": false,
+    "OperationCategory": "Directory and File",
+    "adapterProperties": [
+      {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "{shareName}",
+        "value": "",
+        "param_type": "Path",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "ui_source": "adapter",
+        "ui_EditorType": "DsDialogue",
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
+      },
+      {
+        "name": "{fileName}",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_displayName": "File Name",
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
+      },
+      {
+        "name": "x-ms-copy-source",
+        "value": "",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "description": "Specifies the source URL of the file to be copied. This must include the full path to the source file."
+      }
+    ]
+  }
+]

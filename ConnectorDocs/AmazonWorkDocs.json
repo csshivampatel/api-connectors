@@ -1,0 +1,798 @@
+[
+  {
+    "operation": "Delete Document",
+    "description": "",
+    "operationId": "DeleteDocument",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/v1/documents/{DocumentId}",
+    "operationSummary": "Permanently delete the specified document",
+    "operationDescription": "Permanently deletes the specified document and its associated metadata.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{DocumentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Document ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Document ID"
+      }
+    ]
+  },
+  {
+    "operation": "Delete Document with version",
+    "description": "",
+    "operationId": "AbortDocumentVersionUpload",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/v1/documents/{DocumentId}/versions/{VersionId}",
+    "operationSummary": "Abort upload of the specified document version",
+    "operationDescription": "Aborts the upload of the specified document version that was previously initiated by InitiateDocumentVersionUpload. The client should make this call only when it no longer intends to upload the document version, or fails to do so.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{DocumentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Document ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Document ID"
+      },{
+      "name": "{VersionId}",
+      "value": "",
+      "isVisible": true,
+      "bindable": true,
+      "required": true,
+      "description": "Specify Version ID .",
+      "ui_EditorType": "Textbox",
+      "param_type": "Path",
+      "ui_category": "Subscribe Mode Properties",
+      "ui_source": "operation",
+      "datatype": "System.String",
+      "ui_displayName": "Version ID"
+      }
+    ]
+  },
+  {
+    "operation": "Update Document",
+    "description": "",
+    "operationId": "UpdateDocument",
+    "operationApiType": "PATCH",
+    "operationPath": "/api/v1/documents/{DocumentId}",
+    "operationSummary": "Update the specified attributes of a document",
+    "operationDescription": "Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{DocumentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Document ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Document ID"
+      },{
+      "name": "{VersionId}",
+      "value": "",
+      "isVisible": true,
+      "bindable": true,
+      "required": false,
+      "description": "Specify Version ID .",
+      "ui_EditorType": "Textbox",
+      "param_type": "Path",
+      "ui_category": "Subscribe Mode Properties",
+      "ui_source": "operation",
+      "datatype": "System.String",
+      "ui_displayName": "Version ID"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+        },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Update Document with Version",
+    "description": "",
+    "operationId": "UpdateDocumentVersion",
+    "operationApiType": "PATCH",
+    "operationPath": "/api/v1/documents/{DocumentId}/versions/{VersionId}",
+    "operationSummary": "Change the status of the document version",
+    "operationDescription": "Changes the status of the document version to ACTIVE. Amazon WorkDocs also sets its document container to ACTIVE. his is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by InitiateDocumentVersionUpload.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{DocumentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Document ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Document ID"
+      },
+      {
+        "name": "{VersionId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Version ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Version ID"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+        },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create Custom Metadata",
+    "description": "",
+    "operationId": "CreateCustomMetadata",
+    "operationApiType": "PUT",
+    "operationPath": "/api/v1/resources/{ResourceId}/customMetadata",
+    "operationSummary": "Add custom properties to the specified resource",
+    "operationDescription": "Adds one or more custom properties to the specified resource (a folder, document, or version).",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{ResourceId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Resource ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Resource ID"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+        },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete custom metadata",
+    "description": "",
+    "operationId": "DeleteCustomMetadata",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/v1/resources/{ResourceId}/customMetadata",
+    "operationSummary": "Delete custom metadata",
+    "operationDescription": "Deletes custom metadata from the specified resource.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{ResourceId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Resource ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Resource ID"
+      },
+      {
+        "name": "deleteAll",
+        "value": "true",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "keys",
+        "value": "8",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Create folder",
+    "description": "",
+    "operationId": "CreateFolder",
+    "operationApiType": "POST",
+    "operationPath": "/api/v1/folders",
+    "operationSummary": "Create folder",
+    "operationDescription": "Creates a folder with the specified name and parent folder.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+        },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete folder",
+    "description": "",
+    "operationId": "DeleteFolder",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/v1/folders/{FolderId}",
+    "operationSummary": "Permanently delete the specified folder",
+    "operationDescription": "Permanently deletes the specified folder and its contents.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{FolderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Folder ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+    }
+    ]
+  },
+  {
+    "operation": "Update folder",
+    "description": "",
+    "operationId": "UpdateFolder",
+    "operationApiType": "PATCH",
+    "operationPath": "/api/v1/folders/{FolderId}",
+    "operationSummary": "Update the specified attributes of the specified folder",
+    "operationDescription": "Updates the specified attributes of the specified folder. The user must have access to both the folder and its parent folder, if applicable.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{FolderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Folder ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+    },
+    {
+      "name": "Content-Type",
+      "value": "application/json",
+      "param_type": "Header",
+      "ui_source": "operation"
+    },
+    {
+      "name": "Body",
+      "value": "",
+      "param_type": "Param",
+      "isVisible": false,
+      "bindable": true,
+      "required": true,
+      "datatype": "System.String",
+      "description": "Specify the content of the blob to upload.",
+      "ui_source": "operation",
+      "ui_EditorType": "TextArea",
+      "ui_category": "Subscribe Mode Properties",
+      "ui_displayName": "Blob Content"
+      },
+    {
+      "name": "BodyType",
+      "value": "Raw",
+      "param_type": "Param",
+      "ui_source": "operation"
+    },
+    {
+      "name": "BodyFormat",
+      "value": "XML",
+      "param_type": "Param",
+      "ui_source": "operation"
+    }
+    ]
+  },
+  {
+    "operation": "Create Labels",
+    "description": "",
+    "operationId": "CreateLabels",
+    "operationApiType": "PUT",
+    "operationPath": "/api/v1/resources/{ResourceId}/labels",
+    "operationSummary": "Add labels to the given resource",
+    "operationDescription": "Adds the specified list of labels to the given resource (a document or folder)",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{ResourceId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Resource ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Resource ID"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+        },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Delete labels",
+    "description": "",
+    "operationId": "DeleteLabels",
+    "operationApiType": "DELETE",
+    "operationPath": "/api/v1/resources/{ResourceId}/labels",
+    "operationSummary": "Delete labels from a resource",
+    "operationDescription": "Deletes the specified list of labels from a resource.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{ResourceId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Resource ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Resource ID"
+      },
+      {
+        "name": "deleteAll",
+        "value": "false",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "labels",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify block ID",
+        "ui_EditorType": "Textbox",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Labels",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      }
+    ]
+  },
+  {
+    "operation": "Describe Folder Contents",
+    "description": "",
+    "operationId": "DescribeFolderContents",
+    "operationApiType": "GET",
+    "operationPath": "/api/v1/folders/{FolderId}/contents",
+    "operationSummary": "Describe specified folder's contents",
+    "operationDescription": "Describes the contents of the specified folder, including its documents and subfolders. By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If there are more results, the response includes a marker that you can use to request the next set of results. You can also request initialized documents.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{FolderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Folder ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get document",
+    "description": "",
+    "operationId": "GetDocument",
+    "operationApiType": "GET",
+    "operationPath": "/api/v1/documents/{DocumentId}",
+    "operationSummary": "Retrieve details of a document",
+    "operationDescription": "Retrieves details of a document.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{DocumentId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Document ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Document ID"
+      }
+    ]
+  },
+  {
+    "operation": "Get Folder",
+    "description": "",
+    "operationId": "GetFolder",
+    "operationApiType": "GET",
+    "operationPath": "/api/v1/folders/{FolderId}",
+    "operationSummary": "Retrieve the specified folder's metadata",
+    "operationDescription": "Retrieves the metadata of the specified folder.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{FolderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Folder ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+    }
+    ]
+  },
+  {
+    "operation": "Get Folder's path",
+    "description": "",
+    "operationId": "GetFolderPath",
+    "operationApiType": "GET",
+    "operationPath": "/api/v1/folders/{FolderId}/path",
+    "operationSummary": "Retrieve the specified folder's path information",
+    "operationDescription": "Retrieves the path information (the hierarchy from the root folder) for the specified folder. By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested folder and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the parent folder names.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "{FolderId}",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": true,
+        "description": "Specify Folder ID .",
+        "ui_EditorType": "Textbox",
+        "param_type": "Path",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Folder ID"
+    }
+    ]
+  },
+  {
+    "operation": "Initiate Document Version Upload",
+    "description": "",
+    "operationId": "InitiateDocumentVersionUpload",
+    "operationApiType": "POST",
+    "operationPath": "/api/v1/documents",
+    "operationSummary": "Create new document and version object",
+    "operationDescription": "Creates a new document object and version object. The client specifies the parent folder ID and name of the document to upload. The ID is optionally specified when creating a new version of an existing document. This is the first step to upload a document. Next, upload the document to the URL returned from the call, and then call UpdateDocumentVersion. To cancel the document upload, call AbortDocumentVersionUpload.",
+    "deprecated": false,
+    "adapterProperties": [
+    {
+        "name": "AdapterMode",
+        "key": "",
+        "value": "API"
+    }
+    ],
+    "parameters": [
+      {
+        "name": "Body",
+        "value": "",
+        "param_type": "Param",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "description": "Specify the content of the blob to upload.",
+        "ui_source": "operation",
+        "ui_EditorType": "TextArea",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_displayName": "Blob Content"
+        },
+      {
+        "name": "BodyType",
+        "value": "Raw",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "BodyFormat",
+        "value": "XML",
+        "param_type": "Param",
+        "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/json",
+        "param_type": "Header",
+        "ui_source": "operation"
+      }
+    ]
+  }
+]
