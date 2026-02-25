@@ -1,7 +1,7 @@
 [
   {
     "operation": "Creates an account record",
-    "description": "",
+    "description": "Creates an account record in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to creates an account record.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/accounts",
@@ -44,7 +44,7 @@
   },
   {
     "operation": "Get list of account records",
-    "description": "",
+    "description": "Get list of account records in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to get list of account records.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/accounts",
@@ -63,7 +63,7 @@
   },
   {
     "operation": "Creates an campaign record",
-    "description": "",
+    "description": "Creates an campaign record in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to creates an campaign record.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/campaigns",
@@ -106,7 +106,7 @@
   },
   {
     "operation": "Get list of campaign records",
-    "description": "",
+    "description": "Get list of campaign records in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to get list of campaign records.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/campaigns",
@@ -125,7 +125,7 @@
   },
   {
     "operation": "Creates an campaign response record",
-    "description": "",
+    "description": "Creates an campaign response record in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to creates an campaign response record.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/campaignresponses",
@@ -168,7 +168,7 @@
   },
   {
     "operation": "Get list of campaign response records",
-    "description": "",
+    "description": "Get list of campaign response records in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to get list of campaign response records.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/campaignresponses",
@@ -187,7 +187,7 @@
   },
   {
     "operation": "Creates an subject record",
-    "description": "",
+    "description": "Creates an subject record in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to creates an subject record.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/subjects",
@@ -230,7 +230,7 @@
   },
   {
     "operation": "Get list of subject records",
-    "description": "",
+    "description": "Get list of subject records in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to get list of subject records.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/subjects",
@@ -249,7 +249,7 @@
   },
   {
     "operation": "Creates an incident record",
-    "description": "",
+    "description": "Creates an incident record in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to creates an incident record.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/incidents",
@@ -292,7 +292,7 @@
   },
   {
     "operation": "Get list of incident records",
-    "description": "",
+    "description": "Get list of incident records in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to get list of incident records.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/incidents",
@@ -311,7 +311,7 @@
   },
   {
     "operation": "Creates an contact record",
-    "description": "",
+    "description": "Creates an contact record in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to creates an contact record.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/contacts",
@@ -354,7 +354,7 @@
   },
   {
     "operation": "Get list of contact records",
-    "description": "",
+    "description": "Get list of contact records in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to get list of contact records.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/contacts",
@@ -373,7 +373,7 @@
   },
   {
     "operation": "Creates an invoice record",
-    "description": "",
+    "description": "Creates an invoice record in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to creates an invoice record.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/invoices",
@@ -416,7 +416,7 @@
   },
   {
     "operation": "Get list of invoice records",
-    "description": "",
+    "description": "Get list of invoice records in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to get list of invoice records.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/invoices",
@@ -435,7 +435,7 @@
   },
   {
     "operation": "Creates an lead record",
-    "description": "",
+    "description": "Creates an lead record in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to creates an lead record.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/leads",
@@ -478,7 +478,7 @@
   },
   {
     "operation": "Get list of lead records",
-    "description": "",
+    "description": "Get list of lead records in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to get list of lead records.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/leads",
@@ -497,7 +497,7 @@
   },
   {
     "operation": "Creates an opportunity record",
-    "description": "",
+    "description": "Creates an opportunity record in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to creates an opportunity record.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/opportunities",
@@ -540,7 +540,7 @@
   },
   {
     "operation": "Get list of opportunity records",
-    "description": "",
+    "description": "Get list of opportunity records in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to get list of opportunity records.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/opportunities",
@@ -559,7 +559,7 @@
   },
   {
     "operation": "Create an item record",
-    "description": "",
+    "description": "Create an item record in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to create an item record.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/products",
@@ -602,7 +602,7 @@
   },
   {
     "operation": "Get list of item records",
-    "description": "",
+    "description": "Get list of item records in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to get list of item records.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/products",
@@ -621,7 +621,7 @@
   },
   {
     "operation": "Create an report record",
-    "description": "",
+    "description": "Create an report record in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to create an report record.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/reports",
@@ -664,7 +664,7 @@
   },
   {
     "operation": "Get list of report card records",
-    "description": "",
+    "description": "Get list of report card records in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to get list of report card records.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/reports",
@@ -683,7 +683,7 @@
   },
   {
     "operation": "Get list of record filter records",
-    "description": "",
+    "description": "Get list of record filter records in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to get list of record filter records.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/recordfilters",
@@ -702,7 +702,7 @@
   },
   {
     "operation": "Get list of calendar records",
-    "description": "",
+    "description": "Get list of calendar records in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to get list of calendar records.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/calendars",
@@ -721,7 +721,7 @@
   },
   {
     "operation": "Create an task record",
-    "description": "",
+    "description": "Create an task record in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to create an task record.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/tasks",
@@ -764,7 +764,7 @@
   },
   {
     "operation": "Get list of task records",
-    "description": "",
+    "description": "Get list of task records in Microsoft Dynamics 365 Customer Service allows for integration with CRM records related to get list of task records.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/tasks",

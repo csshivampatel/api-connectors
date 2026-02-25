@@ -1,7 +1,7 @@
 [
   {
     "operation": "List Shares",
-    "description": "",
+    "description": "List Shares operation enables Azure File Storage to list shares, based on REST API standards.",
     "operationId": "Service_ListShares",
     "operationApiType": "GET",
     "operationPath": "/",
@@ -27,7 +27,7 @@
   },
   {
     "operation": "List Directories and Files",
-    "description": "",
+    "description": "List Directories and Files operation enables Azure File Storage to list directories and files, based on REST API standards.",
     "operationId": "Directory_ListFilesAndDirectoriesSegment",
     "operationApiType": "GET",
     "operationPath": "/{shareName}/{directoryPath}",
@@ -52,7 +52,8 @@
         "required": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
       },
       {
         "name": "restype",
@@ -70,7 +71,7 @@
   },
   {
     "operation": "Create File",
-    "description": "",
+    "description": "Create File operation enables Azure File Storage to create file, based on REST API standards.",
     "operationId": "File_Create",
     "operationApiType": "PUT",
     "operationPath": "/{shareName}/{directoryPath}/{fileName}",
@@ -95,7 +96,8 @@
         "required": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
       },
       {
         "name": "{fileName}",
@@ -107,13 +109,27 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_displayName": "File Name",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
+      },
+      {
+        "name": "DeleteMessageBody",
+        "value": true,
+        "param_type": "Param",
+        "ui_source": "operation"
       },
       {
         "name": "x-ms-content-length",
         "value": "1024",
         "param_type": "Header",
-        "ui_source": "operation"
+        "ui_source": "operation",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_EditorType": "Textbox",
+        "description": "Specify the length of the data to append (max 4 MB per request).",
+        "ui_category": "Misc"
       },
       {
         "name": "x-ms-type",
@@ -133,7 +149,7 @@
   },
   {
     "operation": "Put Range",
-    "description": "",
+    "description": "Put Range operation enables Azure File Storage to put range, based on REST API standards.",
     "operationId": "File_UploadRange",
     "operationApiType": "PUT",
     "operationPath": "/{shareName}/{directoryPath}/{fileName}",
@@ -158,7 +174,8 @@
         "required": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
       },
       {
         "name": "{fileName}",
@@ -170,7 +187,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_displayName": "File Name",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
       },
       {
         "name": "Content-Type",
@@ -185,7 +203,12 @@
         "name": "Content-Length",
         "value": "",
         "param_type": "Header",
-        "ui_source": "operation"
+        "ui_source": "operation",
+        "isVisible": false,
+        "bindable": true,
+        "required": true,
+        "datatype": "System.String",
+        "ui_category": "Misc"
       },
       {
         "name": "x-ms-range",
@@ -240,7 +263,7 @@
   },
   {
     "operation": "Get File",
-    "description": "",
+    "description": "Get File operation enables Azure File Storage to get file, based on REST API standards.",
     "operationId": "File_Download",
     "operationApiType": "GET",
     "operationPath": "/{shareName}/{directoryPath}/{fileName}",
@@ -265,7 +288,8 @@
         "required": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
       },
       {
         "name": "{fileName}",
@@ -277,13 +301,14 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_displayName": "File Name",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
       }
     ]
   },
   {
     "operation": "Delete File",
-    "description": "",
+    "description": "Delete File operation enables Azure File Storage to delete file, based on REST API standards.",
     "operationId": "File_Delete",
     "operationApiType": "DELETE",
     "operationPath": "/{shareName}/{directoryPath}/{fileName}",
@@ -308,7 +333,8 @@
         "required": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
       },
       {
         "name": "{fileName}",
@@ -320,13 +346,14 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_displayName": "File Name",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
       }
     ]
   },
   {
     "operation": "Get File Properties",
-    "description": "",
+    "description": "Delete File operation enables Azure File Storage to delete file, based on REST API standards.",
     "operationId": "File_Delete",
     "operationApiType": "HEAD",
     "operationPath": "/{shareName}/{directoryPath}/{fileName}",
@@ -351,7 +378,8 @@
         "required": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
       },
       {
         "name": "{fileName}",
@@ -363,13 +391,14 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_displayName": "File Name",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
       }
     ]
   },
   {
     "operation": "Set File Metadata",
-    "description": "",
+    "description": "Set File Metadata operation enables Azure File Storage to set file metadata, based on REST API standards.",
     "operationId": "File_SetMetadata",
     "operationApiType": "PUT",
     "operationPath": "/{shareName}/{directoryPath}/{fileName}",
@@ -394,7 +423,8 @@
         "required": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
       },
       {
         "name": "{fileName}",
@@ -406,7 +436,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_displayName": "File Name",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
       },
       {
         "name": "comp",
@@ -423,13 +454,14 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_displayName": "Meta Data Name",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "User-defined metadata to be associated with the file as a key-value pair."
       }
     ]
   },
   {
     "operation": "Get File Metadata",
-    "description": "",
+    "description": "Set File Metadata operation enables Azure File Storage to set file metadata, based on REST API standards.",
     "operationId": "File_GetMetadata",
     "operationApiType": "GET",
     "operationPath": "/{shareName}/{directoryPath}/{fileName}",
@@ -454,7 +486,8 @@
         "required": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
       },
       {
         "name": "{fileName}",
@@ -466,7 +499,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_displayName": "File Name",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
       },
       {
         "name": "comp",
@@ -478,7 +512,7 @@
   },
   {
     "operation": "Copy File",
-    "description": "",
+    "description": "Abort Copy File operation enables Azure File Storage to abort copy file, based on REST API standards.",
     "operationId": "File_AbortCopy",
     "operationApiType": "PUT",
     "operationPath": "/{shareName}/{directoryPath}/{fileName}",
@@ -503,7 +537,8 @@
         "required": true,
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the file share within Azure Storage account where the operation will be performed."
       },
       {
         "name": "{fileName}",
@@ -515,7 +550,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_displayName": "File Name",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "The name of the file to operate on (create, read, write, delete)."
       },
       {
         "name": "x-ms-copy-source",
@@ -526,7 +562,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "Specifies the source URL of the file to be copied. This must include the full path to the source file."
       }
     ]
   }

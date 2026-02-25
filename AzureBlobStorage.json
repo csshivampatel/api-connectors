@@ -52,7 +52,8 @@
         "required": true,
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{blob}",
@@ -109,7 +110,8 @@
         "required": true,
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{blob}",
@@ -166,7 +168,8 @@
         "required": true,
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{blob}",
@@ -229,7 +232,8 @@
         "required": true,
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "restype",
@@ -314,7 +318,8 @@
         "required": true,
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{blob}",
@@ -359,7 +364,8 @@
         "required": true,
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{blob}",
@@ -404,7 +410,8 @@
         "required": true,
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{blob}",
@@ -449,7 +456,8 @@
         "required": true,
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{blob}",
@@ -501,7 +509,8 @@
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
         "ui_category": "Subscribe Mode Properties",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{blob}",
@@ -550,6 +559,20 @@
         "ui_source": "operation",
         "ui_category": "Misc",
         "ui_displayName": "Lease Id"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/octet-stream",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
       }
     ]
   },
@@ -581,7 +604,8 @@
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
         "ui_category": "Subscribe Mode Properties",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{blob}",
@@ -634,6 +658,20 @@
         "value": "XML",
         "param_type": "Param",
         "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/octet-stream",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
       }
     ]
   },
@@ -665,7 +703,8 @@
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
         "ui_category": "Subscribe Mode Properties",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{blob}",
@@ -798,6 +837,20 @@
         "ui_displayName": "Range"
       },
       {
+        "name": "Content-Type",
+        "value": "application/octet-stream",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
+      },
+      {
         "name": "comp",
         "value": "page",
         "param_type": "UrlParam",
@@ -844,7 +897,8 @@
         "required": true,
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{copyToBlob}",
@@ -903,7 +957,8 @@
         "required": true,
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{blob}",
@@ -967,10 +1022,18 @@
         "ui_displayName": "Lease Id"
       },
       {
-        "name": "x-ms-blob-content-type",
-        "value": "application/json",
+        "name": "Content-Type",
+        "value": "application/octet-stream",
         "param_type": "Header",
-        "ui_source": "operation"
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
       },
       {
         "name": "BodyType",
@@ -1013,7 +1076,8 @@
         "required": true,
         "ui_EditorType": "DsDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{blob}",
@@ -1080,6 +1144,20 @@
         "ui_source": "operation",
         "description": "Specify the maximum size of the blob in bytes.",
         "ui_displayName": "x-ms-blob-content-length"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/octet-stream",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
       }
     ]
   },
@@ -1110,7 +1188,8 @@
         "required": true,
         "ui_EditorType": "DsDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{blob}",
@@ -1164,12 +1243,26 @@
         "value": true,
         "param_type": "Param",
         "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/octet-stream",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
       }
     ]
   },
   {
     "operation": "Append Block",
-    "description": "",
+    "description": "Append Block operation in Azure Blob Storage provides functionality to append block as per Azure Storage REST API.",
     "operationId": "AppendBlob_AppendBlock",
     "operationApiType": "PUT",
     "operationPath": "/{containerName}/{blob}",
@@ -1194,7 +1287,8 @@
         "required": true,
         "ui_EditorType": "DsDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "SendFolder"
+        "sourceProperty": "SendFolder",
+        "description": "The name of the container within the storage account. A container organizes a set of blobs, similar to a directory."
       },
       {
         "name": "{blob}",
@@ -1214,14 +1308,7 @@
         "name": "Content-Length",
         "value": "",
         "param_type": "Header",
-        "isVisible": true,
-        "bindable": true,
-        "required": true,
-        "datatype": "System.String",
-        "ui_EditorType": "Textbox",
-        "ui_source": "operation",
-        "description": "Specify the length of the data to append (max 4 MB per request).",
-        "ui_displayName": "Content-Length",
+        "isVisible": false,
         "ui_category": "Misc"
       },
       {
@@ -1229,6 +1316,20 @@
         "value": "appendblock",
         "param_type": "UrlParam",
         "ui_source": "operation"
+      },
+      {
+        "name": "Content-Type",
+        "value": "application/octet-stream",
+        "param_type": "Header",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
       },
       {
         "name": "Body",

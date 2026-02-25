@@ -1,7 +1,7 @@
 [
   {
     "operation": "Get Vaults Accessible by Current User",
-    "description": "",
+    "description": "Get Vaults Accessible by Current User operation provides the ability to get vaults accessible by current user using M-Files REST API.",
     "operationId": "get_vaults_accessible_by_current_user",
     "operationApiType": "GET",
     "operationPath": "/session/vaults",
@@ -28,13 +28,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Current Vault",
-    "description": "",
+    "description": "Get Current Vault operation provides the ability to get current vault using M-Files REST API.",
     "operationId": "get_current_vault",
     "operationApiType": "GET",
     "operationPath": "/session/vault",
@@ -61,13 +62,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Vaults",
-    "description": "",
+    "description": "Get Vaults operation provides the ability to get vaults using M-Files REST API.",
     "operationId": "get_vaults",
     "operationApiType": "GET",
     "operationPath": "/server/vaults",
@@ -94,13 +96,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Object Classes",
-    "description": "",
+    "description": "Get Object Classes operation provides the ability to get object classes using M-Files REST API.",
     "operationId": "get_object_classes",
     "operationApiType": "GET",
     "operationPath": "/structure/classes",
@@ -127,13 +130,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Object Class",
-    "description": "",
+    "description": "Get Object Class operation provides the ability to get object class using M-Files REST API.",
     "operationId": "get_object_class",
     "operationApiType": "GET",
     "operationPath": "/structure/classes/{classId}",
@@ -173,13 +177,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Class Icon",
-    "description": "",
+    "description": "Get Class Icon operation provides the ability to get class icon using M-Files REST API.",
     "operationId": "get_class_icon",
     "operationApiType": "GET",
     "operationPath": "/structure/classes/{classId}/icon",
@@ -219,13 +224,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Object Types",
-    "description": "",
+    "description": "Get Object Types operation provides the ability to get object types using M-Files REST API.",
     "operationId": "get_object_types",
     "operationApiType": "GET",
     "operationPath": "/structure/objecttypes",
@@ -252,13 +258,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Object Type",
-    "description": "",
+    "description": "Get Object Type operation provides the ability to get object type using M-Files REST API.",
     "operationId": "get_object_type",
     "operationApiType": "GET",
     "operationPath": "/structure/objecttypes/{objectTypeId}",
@@ -298,13 +305,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Object Type Classes",
-    "description": "",
+    "description": "Get Object Type Classes operation provides the ability to get object type classes using M-Files REST API.",
     "operationId": "get_object_type_classes",
     "operationApiType": "GET",
     "operationPath": "/structure/objecttypes/{objectTypeId}/classes",
@@ -344,13 +352,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Value Lists",
-    "description": "",
+    "description": "Get Value Lists operation provides the ability to get value lists using M-Files REST API.",
     "operationId": "get_value_lists",
     "operationApiType": "GET",
     "operationPath": "/valuelists",
@@ -377,13 +386,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Value List",
-    "description": "",
+    "description": "Get Value List operation provides the ability to get value list using M-Files REST API.",
     "operationId": "get_value_list",
     "operationApiType": "GET",
     "operationPath": "/valuelists/{id}",
@@ -423,13 +433,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Value List Items",
-    "description": "",
+    "description": "Get Value List Items operation provides the ability to get value list items using M-Files REST API.",
     "operationId": "get_value_list_items",
     "operationApiType": "GET",
     "operationPath": "/valuelists/{id}/items",
@@ -469,13 +480,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Create Value List Item",
-    "description": "",
+    "description": "Create Value List Item operation provides the ability to create value list item using M-Files REST API.",
     "operationId": "create_value_list_item",
     "operationApiType": "POST",
     "operationPath": "/valuelists/{id}/items",
@@ -541,13 +553,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Value List Item",
-    "description": "",
+    "description": "Get Value List Item operation provides the ability to get value list item using M-Files REST API.",
     "operationId": "get_value_list_item",
     "operationApiType": "GET",
     "operationPath": "/valuelists/{id}/items/{objectId}",
@@ -600,13 +613,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Deletes a value list item",
-    "description": "",
+    "description": "Delete Value List Item operation provides the ability to delete value list item using M-Files REST API.",
     "operationId": "delete_value_list_item",
     "operationApiType": "DELETE",
     "operationPath": "/valuelists/{id}/items/{objectId}",
@@ -659,13 +673,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Value List Item Title",
-    "description": "",
+    "description": "Get Value List Item Title operation provides the ability to get value list item title using M-Files REST API.",
     "operationId": "get_value_list_item_title",
     "operationApiType": "GET",
     "operationPath": "/valuelists/{id}/items/{objectId}/title",
@@ -718,13 +733,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Collection of Objects in the Document Vault",
-    "description": "",
+    "description": "Get Collection of Objects in the Document Vault operation provides the ability to get collection of objects in the document vault using M-Files REST API.",
     "operationId": "get_collection_of_objects_in_the_document_vault",
     "operationApiType": "GET",
     "operationPath": "/objects",
@@ -751,13 +767,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Collection of Objects Filtered by Object Type",
-    "description": "",
+    "description": "Get Collection of Objects Filtered by Object Type operation provides the ability to get collection of objects filtered by object type using M-Files REST API.",
     "operationId": "get_collection_of_objects_filtered_by_object_type",
     "operationApiType": "GET",
     "operationPath": "/objects/{objType}",
@@ -783,7 +800,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Object Type"
+        "ui_displayName": "Object Type",
+        "description": "Specifies the value for {objType} required for the M-Files operation."
       },
       {
         "name": "APIVaultName",
@@ -796,13 +814,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get a Single Object",
-    "description": "",
+    "description": "Get a Single Object operation provides the ability to get a single object using M-Files REST API.",
     "operationId": "get_a_single_object",
     "operationApiType": "GET",
     "operationPath": "/objects/{objType}/{objId}",
@@ -855,13 +874,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Files Belonging to an Object",
-    "description": "",
+    "description": "Get Files Belonging to an Object operation provides the ability to get files belonging to an object using M-Files REST API.",
     "operationId": "get_files_belonging_to_an_object",
     "operationApiType": "GET",
     "operationPath": "/objects/{objType}/{objId}/{objVersion}/files",
@@ -927,13 +947,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get a Single File on an Object",
-    "description": "",
+    "description": "Get a Single File on an Object operation provides the ability to get a single file on an object using M-Files REST API.",
     "operationId": "get_a_single_file_on_an_object",
     "operationApiType": "GET",
     "operationPath": "/objects/{objType}/{objId}/{objVersion}/files/{fileId}",
@@ -998,7 +1019,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "File Id"
+        "ui_displayName": "File Id",
+        "description": "Specifies the value for {fileId} required for the M-Files operation."
       },
       {
         "name": "APIVaultName",
@@ -1011,13 +1033,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get the Contents of a Single File",
-    "description": "",
+    "description": "Get the Contents of a Single File operation provides the ability to get the contents of a single file using M-Files REST API.",
     "operationId": "get_the_contents_of_a_single_file",
     "operationApiType": "GET",
     "operationPath": "/objects/{objType}/{objId}/{objVersion}/files/{fileId}/content",
@@ -1082,7 +1105,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "File Id"
+        "ui_displayName": "File Id",
+        "description": "Specifies the value for {fileId} required for the M-Files operation."
       },
       {
         "name": "APIVaultName",
@@ -1095,13 +1119,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get the File Name of an Object File",
-    "description": "",
+    "description": "Get the File Name of an Object File operation provides the ability to get the file name of an object file using M-Files REST API.",
     "operationId": "get_the_filename_of_an_object_file",
     "operationApiType": "GET",
     "operationPath": "/objects/{objType}/{objId}/{objVersion}/files/{fileId}/title",
@@ -1166,7 +1191,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "File Id"
+        "ui_displayName": "File Id",
+        "description": "Specifies the value for {fileId} required for the M-Files operation."
       },
       {
         "name": "APIVaultName",
@@ -1179,13 +1205,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Change the Name on the Object File",
-    "description": "",
+    "description": "Change the Name on the Object File operation provides the ability to change the name on the object file using M-Files REST API.",
     "operationId": "change_the_name_on_the_object_file",
     "operationApiType": "PUT",
     "operationPath": "/objects/{objType}/{objId}/{objVersion}/files/{fileId}/title",
@@ -1250,7 +1277,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "File Id"
+        "ui_displayName": "File Id",
+        "description": "Specifies the value for {fileId} required for the M-Files operation."
       },
       {
         "name": "Body",
@@ -1289,13 +1317,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get the Deleted Status of the Object",
-    "description": "",
+    "description": "Get the Deleted Status of the Object operation provides the ability to get the deleted status of the object using M-Files REST API.",
     "operationId": "get_the_deleted_status_of_the_object",
     "operationApiType": "GET",
     "operationPath": "/objects/{objType}/{objId}/deleted",
@@ -1348,13 +1377,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Set the Deleted Status of the Object",
-    "description": "",
+    "description": "Set the Deleted Status of the Object operation provides the ability to set the deleted status of the object using M-Files REST API.",
     "operationId": "set_the_deleted_status_of_the_object",
     "operationApiType": "PUT",
     "operationPath": "/objects/{objType}/{objId}/deleted",
@@ -1433,13 +1463,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get the Current Check Out Status of the Object",
-    "description": "",
+    "description": "Get the Current Check Out Status of the Object operation provides the ability to get the current check out status of the object using M-Files REST API.",
     "operationId": "get_the_current_checkout_status_of_the_object",
     "operationApiType": "GET",
     "operationPath": "/objects/{objType}/{objId}/{objVersion}/checkedout",
@@ -1505,13 +1536,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Set the Check Out Status of the Object",
-    "description": "",
+    "description": "Set the Check Out Status of the Object operation provides the ability to set the check out status of the object using M-Files REST API.",
     "operationId": "set_the_checkout_status_of_the_object",
     "operationApiType": "PUT",
     "operationPath": "/objects/{objType}/{objId}/{objVersion}/checkedout",
@@ -1603,13 +1635,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Get Objects Filtered by Object Version",
-    "description": "",
+    "description": "Get Objects Filtered by Object Version operation provides the ability to get objects filtered by object version using M-Files REST API.",
     "operationId": "get_objects_filtered_by_object_version",
     "operationApiType": "GET",
     "operationPath": "/objects/{objType}/{objId}/{objVersion}",
@@ -1675,13 +1708,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Destroy the Object Version",
-    "description": "",
+    "description": "Destroy the Object Version operation provides the ability to destroy the object version using M-Files REST API.",
     "operationId": "destroy_the_object_version",
     "operationApiType": "DELETE",
     "operationPath": "/objects/{objType}/{objId}/{objVersion}",
@@ -1747,13 +1781,14 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   },
   {
     "operation": "Create Collection of Temporary Uploads",
-    "description": "",
+    "description": "Create Collection of Temporary Uploads operation provides the ability to create collection of temporary uploads using M-Files REST API.",
     "operationId": "create_collection_of_temporary_uploads",
     "operationApiType": "POST",
     "operationPath": "/files",
@@ -1780,7 +1815,8 @@
         "sourceProperty": "APIVaultName",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "VaultListConverter",
-        "ui_displayName": "Vault"
+        "ui_displayName": "Vault",
+        "description": "Specifies the name of the vault in the M-Files system to which the operation applies."
       }
     ]
   }

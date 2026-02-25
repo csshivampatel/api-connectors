@@ -1,7 +1,7 @@
 [
   {
     "operation": "Send an Email",
-    "description": "",
+    "description": "Send a new email message from the specified account.",
     "operationId": "SendEmail",
     "operationApiType": "POST",
     "operationPath": "/accounts/{accountId}/messages",
@@ -61,7 +61,7 @@
   },
   {
     "operation": "Send Reply to an Email",
-    "description": "",
+    "description": "Send a reply to an existing email message in the specified account.",
     "operationId": "SendReplyToEmail",
     "operationApiType": "POST",
     "operationPath": "/accounts/{accountId}/messages/{messageId}",
@@ -135,7 +135,7 @@
   },
   {
     "operation": "List Emails",
-    "description": "",
+    "description": "Retrieve a list of email messages from the specified account.",
     "operationId": "ListEmails",
     "operationApiType": "GET",
     "operationPath": "/accounts/{accountId}/messages/view",
@@ -169,7 +169,7 @@
   },
   {
     "operation": "List Emails based on Search Parameters",
-    "description": "",
+    "description": "Search and retrieve email messages based on specified criteria like search key, received time, etc.",
     "operationId": "ListEmailBasedOnSearchParameter",
     "operationApiType": "GET",
     "operationPath": "/accounts/{accountId}/messages/search",
@@ -200,16 +200,17 @@
         "ui_displayName": "Account ID"
       },
       {
-        "name": "seachKey",
+        "name": "searchKey",
         "value": "",
         "param_type": "UrlParam",
         "isVisible": true,
         "bindable": true,
-        "required": false,
+        "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "description": "pecifies the filter criteria for searching emails"
+        "description": "Specifies the filter criteria for searching emails",
+        "ui_displayName": "Search Key"
       },
       {
         "name": "receivedTime",
@@ -221,7 +222,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "description": "Filters emails based on the received time"
+        "description": "Filters emails based on the received time",
+        "ui_displayName": "Received Time"
       },
       {
         "name": "start",
@@ -233,7 +235,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "description": "The starting index of emails to fetch."
+        "description": "The starting index of emails to fetch.",
+        "ui_displayName": "Start"
       },
       {
         "name": "limit",
@@ -245,7 +248,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "description": "The maximum number of emails to retrieve in one request."
+        "description": "The maximum number of emails to retrieve in one request.",
+        "ui_displayName": "Limit"
       },
       {
         "name": "includeto",
@@ -257,13 +261,14 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "description": "Boolean parameter (true or false), determining whether to include recipient details in the response."
+        "description": "Boolean parameter (true or false), determining whether to include recipient details in the response.",
+        "ui_displayName": "Include To"
       }
     ]
   },
   {
     "operation": "Get Email Content of an Email",
-    "description": "",
+    "description": "Retrieve the full content of a specific email message from a folder in the specified account.",
     "operationId": "GetEmailContentofanEmail",
     "operationApiType": "GET",
     "operationPath": "/accounts/{accountId}/folders/{folderId}/messages/{messageId}/content",
@@ -325,7 +330,7 @@
   },
   {
     "operation": "Get Original Message of an Email",
-    "description": "",
+    "description": "Retrieve the original content of a specific email message in the specified account.",
     "operationId": "GetOriginalMessageofEmail",
     "operationApiType": "GET",
     "operationPath": "/accounts/{accountId}/messages/{messageId}/originalmessage",
@@ -373,7 +378,7 @@
   },
   {
     "operation": "Get Meta Data of an Email",
-    "description": "",
+    "description": "Retrieve metadata information about a specific email message in a folder from the specified account.",
     "operationId": "GetMetaDataofEmail",
     "operationApiType": "GET",
     "operationPath": "/accounts/{accountId}/folders/{folderId}/messages/{messageId}/details",
@@ -435,7 +440,7 @@
   },
   {
     "operation": "Get Email Attachment Info",
-    "description": "",
+    "description": "Retrieve information about attachments for a specific email message in a folder from the specified account.",
     "operationId": "GetEmailAttachmentInfo",
     "operationApiType": "GET",
     "operationPath": "/accounts/{accountId}/folders/{folderId}/messages/{messageId}/attachmentinfo",
@@ -497,7 +502,7 @@
   },
   {
     "operation": "Get Email Attachment Content",
-    "description": "",
+    "description": "Retrieve the content of a specific attachment from an email message in a folder from the specified account.",
     "operationId": "GetEmailAttachmentContent",
     "operationApiType": "GET",
     "operationPath": "/accounts/{accountId}/folders/{folderId}/messages/{messageId}/attachments/{attachmentId}",
@@ -573,7 +578,7 @@
   },
   {
     "operation": "Update Message",
-    "description": "",
+    "description": "Update properties or content of an email message in the specified account.",
     "operationId": "updatemessage",
     "operationApiType": "PUT",
     "operationPath": "/accounts/{accountId}/updatemessage",
@@ -607,10 +612,10 @@
   },
   {
     "operation": "Delete an Email",
-    "description": "",
+    "description": "Delete a specific email message from a folder in the specified account.",
     "operationId": "DeleteEmail",
     "operationApiType": "DELETE",
-    "operationPath": "/accounts/{accountId}/folders/{folderId}/messages/{messageId}/content",
+    "operationPath": "/accounts/{accountId}/folders/{folderId}/messages/{messageId}",
     "operationSummary": "Delete an Email",
     "operationDescription": "Delete an Email",
     "deprecated": false,
@@ -669,7 +674,7 @@
   },
   {
     "operation": "Create a New Folder",
-    "description": "",
+    "description": "Create a new email folder in the specified account.",
     "operationId": "CreateNewFolder",
     "operationApiType": "POST",
     "operationPath": "/accounts/{accountId}/folders",
@@ -703,7 +708,7 @@
   },
   {
     "operation": "Get all folders",
-    "description": "",
+    "description": "Retrieve a list of all email folders in the specified account.",
     "operationId": "Getallfolders",
     "operationApiType": "GET",
     "operationPath": "/accounts/{accountId}/folders",
@@ -737,7 +742,7 @@
   },
   {
     "operation": "Get a Specific Folder",
-    "description": "",
+    "description": "Retrieve details of a specific email folder in the specified account.",
     "operationId": "GetSpecificFolder",
     "operationApiType": "GET",
     "operationPath": "/accounts/{accountId}/folders/{folderId}",
@@ -785,7 +790,7 @@
   },
   {
     "operation": "Move or Rename Folder",
-    "description": "",
+    "description": "Move or rename an existing email folder in the specified account.",
     "operationId": "MoveorRenameFolder",
     "operationApiType": "PUT",
     "operationPath": "/accounts/{accountId}/folders/{folderId}",
@@ -833,7 +838,7 @@
   },
   {
     "operation": "Delete a Folder",
-    "description": "",
+    "description": "Delete a specific email folder from the specified account.",
     "operationId": "DeleteaFolder",
     "operationApiType": "DELETE",
     "operationPath": "/accounts/{accountId}/folders/{folderId}",
@@ -881,7 +886,7 @@
   },
   {
     "operation": "Create a New Label",
-    "description": "",
+    "description": "Create a new email label in the specified account.",
     "operationId": "CreateNewlabels",
     "operationApiType": "POST",
     "operationPath": "/accounts/{accountId}/labels",
@@ -915,7 +920,7 @@
   },
   {
     "operation": "Get all labels",
-    "description": "",
+    "description": "Retrieve a list of all email labels in the specified account.",
     "operationId": "Getalllabels",
     "operationApiType": "GET",
     "operationPath": "/accounts/{accountId}/labels",
@@ -949,7 +954,7 @@
   },
   {
     "operation": "Get a Specific labels",
-    "description": "",
+    "description": "Retrieve details of a specific email label in the specified account.",
     "operationId": "GetSpecificlabels",
     "operationApiType": "GET",
     "operationPath": "/accounts/{accountId}/labels/{labelId}",
@@ -997,7 +1002,7 @@
   },
   {
     "operation": "Update Label Details",
-    "description": "",
+    "description": "Update properties of an existing email label in the specified account.",
     "operationId": "UpdateLabelDetails",
     "operationApiType": "PUT",
     "operationPath": "/accounts/{accountId}/labels/{labelId}",
@@ -1045,7 +1050,7 @@
   },
   {
     "operation": "Delete a Label",
-    "description": "",
+    "description": "Delete a specific email label from the specified account.",
     "operationId": "DeleteaLabel",
     "operationApiType": "DELETE",
     "operationPath": "/accounts/{accountId}/labels/{labelId}",
@@ -1093,7 +1098,7 @@
   },
   {
     "operation": "Manage Labels for Thread(s)",
-    "description": "",
+    "description": "Add or remove labels from email threads. Allows modifying labels associated with specific message threads using account and label identifiers.",
     "operationId": "ManageLabelsforThread(s)",
     "operationApiType": "PUT",
     "operationPath": "/accounts/{accountId}/updatethread",
@@ -1127,7 +1132,7 @@
   },
   {
     "operation": "Get All Accounts of a User",
-    "description": "",
+    "description": "Retrieve a list of all email accounts associated with the authenticated user, including account metadata and configuration details.",
     "operationId": "GetAllAccountsofaUser",
     "operationApiType": "GET",
     "operationPath": "/accounts",
@@ -1146,14 +1151,14 @@
   },
   {
     "operation": "Get a Specific Account Details",
-    "description": "",
+    "description": "Fetch detailed information about a single email account using its unique identifier, including settings and status.",
     "operationId": "GetSpecificAccountDetails",
     "operationApiType": "GET",
     "operationPath": "/accounts/{accountId}",
     "operationSummary": "Get a Specific Account Detailss",
     "operationDescription": "Get a Specific Account Details",
     "deprecated": false,
-    "OperationCategory": "Labels",
+    "OperationCategory": "Accounts",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1180,7 +1185,7 @@
   },
   {
     "operation": "Add a New Group Task",
-    "description": "",
+    "description": "Create a new collaborative task within a specified group workspace. Requires group ID for task association.",
     "operationId": "AddNewGroupTask",
     "operationApiType": "POST",
     "operationPath": "tasks/groups/{zgid}",
@@ -1214,7 +1219,7 @@
   },
   {
     "operation": "Add a New Personal Task",
-    "description": "",
+    "description": "Create a private task visible only to the authenticated user in their personal task space.",
     "operationId": "AddNewPersonalTask",
     "operationApiType": "POST",
     "operationPath": "tasks/me",
@@ -1233,7 +1238,7 @@
   },
   {
     "operation": "Add a New Project under a Group",
-    "description": "",
+    "description": "Establish a new project container within a group workspace to organize related tasks and collaborations.",
     "operationId": "AddNewGroupTask",
     "operationApiType": "POST",
     "operationPath": "tasks/groups/{zgid}/projects",
@@ -1267,7 +1272,7 @@
   },
   {
     "operation": "Get All Tasks in a Group Tasks",
-    "description": "",
+    "description": "List all tasks and sub-tasks within a specified group workspace, including completion status and metadata.",
     "operationId": "GetAllTasksinGroupTasks",
     "operationApiType": "GET",
     "operationPath": "tasks/groups/{zgid}",
@@ -1301,7 +1306,7 @@
   },
   {
     "operation": "Get All Tasks in a Personal Tasks",
-    "description": "",
+    "description": "Retrieve all tasks from the authenticated user's personal task space, including status and priority information.",
     "operationId": "GetAllTasksinPersonalTasks",
     "operationApiType": "GET",
     "operationPath": "tasks/me",
@@ -1319,11 +1324,11 @@
     "parameters": []
   },
   {
-    "operation": "Get All Tasks Assigned or Created by Me",
-    "description": "",
+    "operation": "Get All Tasks Created by You",
+    "description": "List all tasks created by the authenticated user across all workspaces, filtered by creation ownership.",
     "operationId": "GetAllTasksAssignedorCreatedbyMe",
     "operationApiType": "GET",
-    "operationPath": "tasks",
+    "operationPath": "tasks/",
     "operationSummary": "Get All Tasks Assigned or Created by Me",
     "operationDescription": "Get All Tasks Assigned or Created by Me",
     "deprecated": false,
@@ -1335,11 +1340,38 @@
         "value": "API"
       }
     ],
-    "parameters": []
+    "parameters": [
+      {
+        "name": "view",
+        "value": "createdbyme",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "action",
+        "value": "view",
+        "param_type": "UrlParam",
+        "ui_source": "operation"
+      },
+      {
+        "name": "limit",
+        "value": "",
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "description": "Specifies the number of tasks to retrieve.",
+        "ui_EditorType": "Textbox",
+        "param_type": "UrlParam",
+        "ui_category": "Subscribe Mode Properties",
+        "ui_source": "operation",
+        "datatype": "System.String",
+        "ui_displayName": "Limit"
+      }
+    ]
   },
   {
     "operation": "Get a Specific Task - Group Task",
-    "description": "",
+    "description": "Retrieve detailed information about a specific group task using its unique group and task identifiers.",
     "operationId": "GetSpecificTaskGroupTask",
     "operationApiType": "GET",
     "operationPath": "tasks/groups/{zgid}/{taskId}",
@@ -1387,7 +1419,7 @@
   },
   {
     "operation": "Get a Specific Task - Personal Task",
-    "description": "",
+    "description": "Fetch detailed metadata and status information for a specific personal task using its unique identifier.",
     "operationId": "GetSpecificTaskPersonalTask",
     "operationApiType": "GET",
     "operationPath": "tasks/me/{taskId}",
@@ -1421,7 +1453,7 @@
   },
   {
     "operation": "Change Group Task Title",
-    "description": "",
+    "description": "Update the title or name of an existing group task while maintaining its other properties and associations.",
     "operationId": "ChangeGroupTaskTitle",
     "operationApiType": "PUT",
     "operationPath": "tasks/groups/{zgid}/{taskId}",
@@ -1469,7 +1501,7 @@
   },
   {
     "operation": "Change Personal Task Title",
-    "description": "",
+    "description": "Modify the title of a personal task while preserving its other attributes and relationships.",
     "operationId": "ChangePersonalTaskTitle",
     "operationApiType": "PUT",
     "operationPath": "tasks/me/{taskId}",
@@ -1503,7 +1535,7 @@
   },
   {
     "operation": "Delete a Project",
-    "description": "",
+    "description": "Permanently remove a project and its associated tasks from a group workspace using group and project identifiers.",
     "operationId": "DeleteProject",
     "operationApiType": "DELETE",
     "operationPath": "tasks/groups/{zgid}/projects/{projectId}",
@@ -1551,7 +1583,7 @@
   },
   {
     "operation": "Delete a Group Task",
-    "description": "",
+    "description": "Permanently remove a task from a group workspace using its group and task identifiers.",
     "operationId": "DeleteGroupTask",
     "operationApiType": "DELETE",
     "operationPath": "tasks/groups/{zgid}/{taskId}",
@@ -1599,7 +1631,7 @@
   },
   {
     "operation": "Delete a Personal Task",
-    "description": "",
+    "description": "Permanently remove a task from the user's personal task space using its unique identifier.",
     "operationId": "DeletePersonalTask",
     "operationApiType": "DELETE",
     "operationPath": "tasks/me/{taskId}",
@@ -1633,7 +1665,7 @@
   },
   {
     "operation": "Create a Group Bookmark",
-    "description": "",
+    "description": "Add a new shared bookmark to a group collection for collaborative access and organization.",
     "operationId": "CreateGroupBookmark",
     "operationApiType": "POST",
     "operationPath": "links/groups/{groupId}",
@@ -1667,7 +1699,7 @@
   },
   {
     "operation": "Create a Personal Bookmark",
-    "description": "",
+    "description": "Add a new private bookmark to the authenticated user's personal collection.",
     "operationId": "CreatePersonalBookmark",
     "operationApiType": "POST",
     "operationPath": "links/me",
@@ -1686,7 +1718,7 @@
   },
   {
     "operation": "Create a Group Collection",
-    "description": "",
+    "description": "Establish a new organizational container for bookmarks within a group workspace.",
     "operationId": "CreateGroup Collection",
     "operationApiType": "POST",
     "operationPath": "links/groups/{groupId}/collections",
@@ -1720,7 +1752,7 @@
   },
   {
     "operation": "Get All Groups in Bookmarks",
-    "description": "",
+    "description": "List all bookmark groups available to the authenticated user, including shared and personal groups.",
     "operationId": "GetAllGroupsinBookmarks",
     "operationApiType": "GET",
     "operationPath": "links/groups",
@@ -1739,7 +1771,7 @@
   },
   {
     "operation": "Get Group Bookmark",
-    "description": "",
+    "description": "Retrieve details and contents of a specific group bookmark collection using its group identifier.",
     "operationId": "GetGroupBookmark",
     "operationApiType": "GET",
     "operationPath": "links/groups/{groupId}",
@@ -1773,7 +1805,7 @@
   },
   {
     "operation": "Get Group Bookmark by BookmarkId",
-    "description": "",
+    "description": "Fetch specific bookmark details within a group collection using group and bookmark identifiers.",
     "operationId": "GetGroupBookmarkbybookmarkid",
     "operationApiType": "GET",
     "operationPath": "links/groups/{groupId}/{bookmarkId}",
@@ -1821,7 +1853,7 @@
   },
   {
     "operation": "Get Personal Bookmark",
-    "description": "",
+    "description": "Retrieve all bookmarks from the authenticated user's personal bookmark collection.",
     "operationId": "GetPersonalBookmark",
     "operationApiType": "GET",
     "operationPath": "links/me",
@@ -1840,7 +1872,7 @@
   },
   {
     "operation": "Get Personal Bookmark by BookmarkId",
-    "description": "",
+    "description": "Fetch detailed information about a specific personal bookmark using its unique identifier.",
     "operationId": "GetPersonalBookmarkbyBookmarkId",
     "operationApiType": "GET",
     "operationPath": "links/me/{bookmarkId}",
@@ -1874,7 +1906,7 @@
   },
   {
     "operation": "Edit a Group Bookmark",
-    "description": "",
+    "description": "Update properties or content of an existing group bookmark using group and bookmark identifiers.",
     "operationId": "EditGroupBookmark",
     "operationApiType": "PUT",
     "operationPath": "links/groups/{groupId}/{bookmarkId}",
@@ -1922,7 +1954,7 @@
   },
   {
     "operation": "Edit a Personal Bookmark",
-    "description": "",
+    "description": "Modify properties or content of an existing personal bookmark using its unique identifier.",
     "operationId": "EditPersonalBookmark",
     "operationApiType": "PUT",
     "operationPath": "links/me/{bookmarkId}",
@@ -1956,7 +1988,7 @@
   },
   {
     "operation": "Edit a Group Collection",
-    "description": "",
+    "description": "Update metadata or properties of a group bookmark collection using group and collection identifiers.",
     "operationId": "EditGroupCollection",
     "operationApiType": "PUT",
     "operationPath": "links/groups/{groupId}/collections/{collectionId}",
@@ -2004,7 +2036,7 @@
   },
   {
     "operation": "Edit a Personal Collection",
-    "description": "",
+    "description": "Modify properties or organization of a personal bookmark collection using its unique identifier.",
     "operationId": "EditPersonalCollection",
     "operationApiType": "PUT",
     "operationPath": "links/me/collections/{collectionId}",
@@ -2038,7 +2070,7 @@
   },
   {
     "operation": "Delete a Group Bookmark",
-    "description": "",
+    "description": "Permanently remove a bookmark from a group collection using group and bookmark identifiers.",
     "operationId": "DeleteGroupBookmark",
     "operationApiType": "DELETE",
     "operationPath": "links/groups/{groupId}/{bookmarkId}",
@@ -2086,7 +2118,7 @@
   },
   {
     "operation": "Delete a Personal Bookmark",
-    "description": "",
+    "description": "Permanently remove a bookmark from the user's personal collection using its unique identifier.",
     "operationId": "DeletePersonalBookmark",
     "operationApiType": "DELETE",
     "operationPath": "links/me/{bookmarkId}",
@@ -2120,7 +2152,7 @@
   },
   {
     "operation": "Delete a Group Collection",
-    "description": "",
+    "description": "Permanently remove a bookmark collection and its contents from a group workspace.",
     "operationId": "DeleteGroupCollection",
     "operationApiType": "DELETE",
     "operationPath": "links/groups/{groupId}/collections/{collectionId}",

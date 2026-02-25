@@ -1,7 +1,7 @@
 [
   {
     "operation": "Get Folders",
-    "description": "",
+    "description": "Get Folders operation in Marketo API enables the client to get folders in the context of marketing assets or lead management.",
     "operationId": "getFolderUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/folders.json",
@@ -20,7 +20,7 @@
   },
   {
     "operation": "Create Folder",
-    "description": "",
+    "description": "Create Folder operation in Marketo API enables the client to create folder in the context of marketing assets or lead management.",
     "operationId": "createFolderUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/folders.json",
@@ -94,7 +94,7 @@
   },
   {
     "operation": "Update Folder Metadata",
-    "description": "",
+    "description": "Update Folder Metadata operation in Marketo API enables the client to update folder metadata in the context of marketing assets or lead management.",
     "operationId": "updateFolderUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/folder/{id}.json",
@@ -142,7 +142,7 @@
   },
   {
     "operation": "Delete Folder",
-    "description": "",
+    "description": "Delete Folder operation in Marketo API enables the client to delete folder in the context of marketing assets or lead management.",
     "operationId": "deleteFolderUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/folder/{id}/delete.json",
@@ -176,7 +176,7 @@
   },
   {
     "operation": "Get Folder by Id",
-    "description": "",
+    "description": "Get Folder by Id operation in Marketo API enables the client to get folder by id in the context of marketing assets or lead management.",
     "operationId": "getFolderByIdUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/folder/{id}.json",
@@ -224,7 +224,7 @@
   },
   {
     "operation": "Get Folder by Name",
-    "description": "",
+    "description": "Get Folder by Name operation in Marketo API enables the client to get folder by name in the context of marketing assets or lead management.",
     "operationId": "getFolderByNameUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/folder/byName.json",
@@ -258,7 +258,7 @@
   },
   {
     "operation": "Describe Lead",
-    "description": "",
+    "description": "Describe Lead operation in Marketo API enables the client to describe lead in the context of marketing assets or lead management.",
     "operationId": "describeUsingGET_2",
     "operationApiType": "GET",
     "operationPath": "/rest/v1/leads/describe.json",
@@ -277,7 +277,7 @@
   },
   {
     "operation": "Describe Lead2",
-    "description": "",
+    "description": "Describe Lead2 operation in Marketo API enables the client to describe lead2 in the context of marketing assets or lead management.",
     "operationId": "describeUsingGET_6",
     "operationApiType": "GET",
     "operationPath": "/rest/v1/leads/describe2.json",
@@ -296,7 +296,7 @@
   },
   {
     "operation": "Create or Update Lead",
-    "description": "",
+    "description": "Create or Update Lead operation in Marketo API enables the client to create or update lead in the context of marketing assets or lead management.",
     "operationId": "syncLeadUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/v1/leads.json",
@@ -342,7 +342,7 @@
   },
   {
     "operation": "Create Lead Fields",
-    "description": "",
+    "description": "Create Lead Fields operation in Marketo API enables the client to create lead fields in the context of marketing assets or lead management.",
     "operationId": "createLeadFieldUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/v1/leads/schema/fields.json",
@@ -388,7 +388,7 @@
   },
   {
     "operation": "Delete Leads",
-    "description": "",
+    "description": "Delete Leads operation in Marketo API enables the client to delete leads in the context of marketing assets or lead management.",
     "operationId": "deleteLeadsUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/v1/leads/delete.json",
@@ -434,7 +434,7 @@
   },
   {
     "operation": "Update Lead Field",
-    "description": "",
+    "description": "Update Lead Field operation in Marketo API enables the client to update lead field in the context of marketing assets or lead management.",
     "operationId": "updateLeadFieldUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/v1/leads/schema/fields/{fieldApiName}.json",
@@ -494,7 +494,7 @@
   },
   {
     "operation": "Get Lead Field by Name",
-    "description": "",
+    "description": "Get Lead Field by Name operation in Marketo API enables the client to get lead field by name in the context of marketing assets or lead management.",
     "operationId": "getLeadFieldByNameUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/v1/leads/schema/fields/{fieldApiName}.json",
@@ -528,7 +528,7 @@
   },
   {
     "operation": "Get Leads by Filter Type",
-    "description": "",
+    "description": "Get Leads by Filter Type operation in Marketo API enables the client to get leads by filter type in the context of marketing assets or lead management.",
     "operationId": "getLeadsByFilterUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/v1/leads.json",
@@ -576,7 +576,7 @@
   },
   {
     "operation": "Get Leads by Program Id",
-    "description": "",
+    "description": "Get Leads by Program Id operation in Marketo API enables the client to get leads by program id in the context of marketing assets or lead management.",
     "operationId": "getLeadsByProgramIdUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/v1/leads/programs/{programId}.json",
@@ -610,7 +610,7 @@
   },
   {
     "operation": "Get Lead by Id",
-    "description": "",
+    "description": "Get Lead by Id operation in Marketo API enables the client to get lead by id in the context of marketing assets or lead management.",
     "operationId": "getLeadByIdUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/v1/lead/{leadId}.json",
@@ -644,7 +644,7 @@
   },
   {
     "operation": "Get Lists by Lead Id",
-    "description": "",
+    "description": "Get Lists by Lead Id operation in Marketo API enables the client to get lists by lead id in the context of marketing assets or lead management.",
     "operationId": "getListMembershipUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/v1/leads/{leadId}/listMembership.json",
@@ -678,7 +678,7 @@
   },
   {
     "operation": "Get Lead Fields",
-    "description": "",
+    "description": "Get Lead Fields operation in Marketo API enables the client to get lead fields in the context of marketing assets or lead management.",
     "operationId": "getLeadFieldsUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/v1/leads/schema/fields.json",
@@ -697,7 +697,7 @@
   },
   {
     "operation": "Create Export Lead Job",
-    "description": "",
+    "description": "Create Export Lead Job operation in Marketo API enables the client to create export lead job in the context of marketing assets or lead management.",
     "operationId": "createExportLeadsUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/bulk/v1/leads/export/create.json",
@@ -743,7 +743,7 @@
   },
   {
     "operation": "Enqueue Export lead Job",
-    "description": "",
+    "description": "Enqueue Export lead Job operation in Marketo API enables the client to enqueue export lead job in the context of marketing assets or lead management.",
     "operationId": "enqueueExportLeadsUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/bulk/v1/leads/export/{exportId}/enqueue.json",
@@ -777,7 +777,7 @@
   },
   {
     "operation": "Get Export Lead Job Status",
-    "description": "",
+    "description": "Get Export Lead Job Status operation in Marketo API enables the client to get export lead job status in the context of marketing assets or lead management.",
     "operationId": "getExportLeadsStatusUsingGET",
     "operationApiType": "GET",
     "operationPath": "/bulk/v1/leads/export/{exportId}/status.json",
@@ -811,7 +811,7 @@
   },
   {
     "operation": "Get Program by Id",
-    "description": "",
+    "description": "Get Program by Id operation in Marketo API enables the client to get program by id in the context of marketing assets or lead management.",
     "operationId": "getProgramByIdUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/program/{id}.json",
@@ -845,7 +845,7 @@
   },
   {
     "operation": "Get Program by Name",
-    "description": "",
+    "description": "Get Program by Name operation in Marketo API enables the client to get program by name in the context of marketing assets or lead management.",
     "operationId": "getProgramByNameUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/program/byName.json",
@@ -907,7 +907,7 @@
   },
   {
     "operation": "Get Programs",
-    "description": "",
+    "description": "Get Programs operation in Marketo API enables the client to get programs in the context of marketing assets or lead management.",
     "operationId": "browseProgramsUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/programs.json",
@@ -926,7 +926,7 @@
   },
   {
     "operation": "Create Program",
-    "description": "",
+    "description": "Create Program operation in Marketo API enables the client to create program in the context of marketing assets or lead management.",
     "operationId": "createProgramUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/programs.json",
@@ -1030,7 +1030,7 @@
   },
   {
     "operation": "Delete Program",
-    "description": "",
+    "description": "Delete Program operation in Marketo API enables the client to delete program in the context of marketing assets or lead management.",
     "operationId": "deleteProgramUsingPOS",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/program/{id}/delete.json",
@@ -1064,7 +1064,7 @@
   },
   {
     "operation": "Clone Program",
-    "description": "",
+    "description": "Clone Program operation in Marketo API enables the client to clone program in the context of marketing assets or lead management.",
     "operationId": "cloneProgramUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/program/{id}/clone.json",
@@ -1140,7 +1140,7 @@
   },
   {
     "operation": "Approve Program",
-    "description": "",
+    "description": "Approve Program operation in Marketo API enables the client to approve program in the context of marketing assets or lead management.",
     "operationId": "approveProgramUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/program/{id}/approve.json",
@@ -1174,7 +1174,7 @@
   },
   {
     "operation": "Unapprove Program",
-    "description": "",
+    "description": "Unapprove Program operation in Marketo API enables the client to unapprove program in the context of marketing assets or lead management.",
     "operationId": "unapproveProgramUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/program/{id}/unapprove.json",
@@ -1208,7 +1208,7 @@
   },
   {
     "operation": "Update Program Metadata",
-    "description": "",
+    "description": "Update Program Metadata operation in Marketo API enables the client to update program metadata in the context of marketing assets or lead management.",
     "operationId": "updateProgramUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/program/{id}.json",
@@ -1242,7 +1242,7 @@
   },
   {
     "operation": "Create Export Program Member Job",
-    "description": "",
+    "description": "Create Export Program Member Job operation in Marketo API enables the client to create export program member job in the context of marketing assets or lead management.",
     "operationId": "createExportProgramMembersUsingPOS",
     "operationApiType": "POST",
     "operationPath": "/bulk/v1/program/members/export/create.json",
@@ -1288,7 +1288,7 @@
   },
   {
     "operation": "Enqueue Export Program Member Job",
-    "description": "",
+    "description": "Enqueue Export Program Member Job operation in Marketo API enables the client to enqueue export program member job in the context of marketing assets or lead management.",
     "operationId": "enqueueExportProgramMembersUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/bulk/v1/program/members/export/{exportId}/enqueue.json",
@@ -1348,7 +1348,7 @@
   },
   {
     "operation": "Get Export Program Member Job Status",
-    "description": "",
+    "description": "Get Export Program Member Job Status operation in Marketo API enables the client to get export program member job status in the context of marketing assets or lead management.",
     "operationId": "getExportProgramMembersStatusUsingGET",
     "operationApiType": "GET",
     "operationPath": "/bulk/v1/program/members/export/{exportId}/status.json",
@@ -1382,7 +1382,7 @@
   },
   {
     "operation": "Get Smart List by Id",
-    "description": "",
+    "description": "Get Smart List by Id operation in Marketo API enables the client to get smart list by id in the context of marketing assets or lead management.",
     "operationId": "getSmartListByIdUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/smartList/{id}.json",
@@ -1430,7 +1430,7 @@
   },
   {
     "operation": "Get Smart List by Name",
-    "description": "",
+    "description": "Get Smart List by Name operation in Marketo API enables the client to get smart list by name in the context of marketing assets or lead management.",
     "operationId": "getSmartListByNameUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/smartList/byName.json",
@@ -1464,7 +1464,7 @@
   },
   {
     "operation": "Get Smart List by Program Id",
-    "description": "",
+    "description": "Get Smart List by Program Id operation in Marketo API enables the client to get smart list by program id in the context of marketing assets or lead management.",
     "operationId": "getSmartListByProgramIdUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/program/{programId}/smartList.json",
@@ -1498,7 +1498,7 @@
   },
   {
     "operation": "Get Smart Lists",
-    "description": "",
+    "description": "Get Smart Lists operation in Marketo API enables the client to get smart lists in the context of marketing assets or lead management.",
     "operationId": "getSmartListsUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/smartLists.json",
@@ -1517,7 +1517,7 @@
   },
   {
     "operation": "Clone Smart List",
-    "description": "",
+    "description": "Clone Smart List operation in Marketo API enables the client to clone smart list in the context of marketing assets or lead management.",
     "operationId": "cloneSmartListUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/smartList/{id}/clone.json",
@@ -1579,7 +1579,7 @@
   },
   {
     "operation": "Delete Smart List",
-    "description": "",
+    "description": "Delete Smart List operation in Marketo API enables the client to delete smart list in the context of marketing assets or lead management.",
     "operationId": "deleteSmartListByIdUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/smartList/{id}/delete.json",
@@ -1613,7 +1613,7 @@
   },
   {
     "operation": "Get Files",
-    "description": "",
+    "description": "Get Files operation in Marketo API enables the client to get files in the context of marketing assets or lead management.",
     "operationId": "getFilesUsingGET",
     "operationApiType": "GET",
     "operationPath": "rest/asset/v1/files.json",
@@ -1632,7 +1632,7 @@
   },
   {
     "operation": "Get File by Name",
-    "description": "",
+    "description": "Get File by Name operation in Marketo API enables the client to get file by name in the context of marketing assets or lead management.",
     "operationId": "getFileByNameUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/file/byName.json",
@@ -1666,7 +1666,7 @@
   },
   {
     "operation": "Get File by Id",
-    "description": "",
+    "description": "Get File by Id operation in Marketo API enables the client to get file by id in the context of marketing assets or lead management.",
     "operationId": "getFileByIdUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/file/{id}.json",
@@ -1700,7 +1700,7 @@
   },
   {
     "operation": "Create File",
-    "description": "",
+    "description": "Create File operation in Marketo API enables the client to create file in the context of marketing assets or lead management.",
     "operationId": "createFileUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/files.json",
@@ -1736,7 +1736,6 @@
         "param_type": "BodyParam",
         "ui_source": "operation"
       },
-
       {
         "name": "description",
         "value": "",
@@ -1755,7 +1754,7 @@
   },
   {
     "operation": "Get Static Lists",
-    "description": "",
+    "description": "Get Static Lists operation in Marketo API enables the client to get static lists in the context of marketing assets or lead management.",
     "operationId": "getStaticListsUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/staticLists.json",
@@ -1774,7 +1773,7 @@
   },
   {
     "operation": "Get Static List by Id",
-    "description": "",
+    "description": "Get Static List by Id operation in Marketo API enables the client to get static list by id in the context of marketing assets or lead management.",
     "operationId": "getStaticListByIdUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/staticList/{id}.json",
@@ -1808,7 +1807,7 @@
   },
   {
     "operation": "Get Static List by Name",
-    "description": "",
+    "description": "Get Static List by Name operation in Marketo API enables the client to get static list by name in the context of marketing assets or lead management.",
     "operationId": "getStaticListByNameUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/asset/v1/staticList/byName.json",
@@ -1842,7 +1841,7 @@
   },
   {
     "operation": "Create Static List",
-    "description": "",
+    "description": "Create Static List operation in Marketo API enables the client to create static list in the context of marketing assets or lead management.",
     "operationId": "createStaticListUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/staticLists.json",
@@ -1902,7 +1901,7 @@
   },
   {
     "operation": "Update Static List Metadata",
-    "description": "",
+    "description": "Update Static List Metadata operation in Marketo API enables the client to update static list metadata in the context of marketing assets or lead management.",
     "operationId": "updateStaticListUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/staticList/{id}.json",
@@ -1964,7 +1963,7 @@
   },
   {
     "operation": "Delete Static List",
-    "description": "",
+    "description": "Delete Static List operation in Marketo API enables the client to delete static list in the context of marketing assets or lead management.",
     "operationId": "deleteStaticListByIdUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/asset/v1/staticList/{id}/delete.json",
@@ -1998,7 +1997,7 @@
   },
   {
     "operation": "Add Leads to List",
-    "description": "",
+    "description": "Add Leads to List operation in Marketo API enables the client to add leads to list in the context of marketing assets or lead management.",
     "operationId": "addLeadsToListUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/v1/lists/{listId}/leads.json",
@@ -2046,7 +2045,7 @@
   },
   {
     "operation": "Remove from List",
-    "description": "",
+    "description": "Remove from List operation in Marketo API enables the client to remove from list in the context of marketing assets or lead management.",
     "operationId": "removeLeadsFromListUsingDELETE",
     "operationApiType": "DELETE",
     "operationPath": "/rest/v1/lists/{listId}/leads.json",
@@ -2094,7 +2093,7 @@
   },
   {
     "operation": "Delete Program Members",
-    "description": "",
+    "description": "Delete Program Members operation in Marketo API enables the client to delete program members in the context of marketing assets or lead management.",
     "operationId": "deleteProgramMemberUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/v1/programs/{programId}/members/delete.json",
@@ -2154,7 +2153,7 @@
   },
   {
     "operation": "Create Program Member Fields",
-    "description": "",
+    "description": "Create Program Member Fields operation in Marketo API enables the client to create program member fields in the context of marketing assets or lead management.",
     "operationId": "createProgramMemberFieldUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/v1/programs/members/schema/fields.json",
@@ -2200,7 +2199,7 @@
   },
   {
     "operation": "Update Program Member Field",
-    "description": "",
+    "description": "Update Program Member Field operation in Marketo API enables the client to update program member field in the context of marketing assets or lead management.",
     "operationId": "updateProgramMemberFieldUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/v1/programs/members/schema/fields/{fieldApiName}.json",
@@ -2260,7 +2259,7 @@
   },
   {
     "operation": "Describe Program Member",
-    "description": "",
+    "description": "Describe Program Member operation in Marketo API enables the client to describe program member in the context of marketing assets or lead management.",
     "operationId": "describeProgramMemberUsingGET2",
     "operationApiType": "GET",
     "operationPath": "/rest/v1/programs/members/describe.json",
@@ -2279,7 +2278,7 @@
   },
   {
     "operation": "Sync Program Member Data",
-    "description": "",
+    "description": "Sync Program Member Data operation in Marketo API enables the client to sync program member data in the context of marketing assets or lead management.",
     "operationId": "syncProgramMemberDataUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/v1/programs/{programId}/members.json",
@@ -2339,7 +2338,7 @@
   },
   {
     "operation": "Sync Program Member Status",
-    "description": "",
+    "description": "Sync Program Member Status operation in Marketo API enables the client to sync program member status in the context of marketing assets or lead management.",
     "operationId": "syncProgramMemberDataUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/v1/programs/{programId}/members/status.json",
@@ -2399,7 +2398,7 @@
   },
   {
     "operation": "Get Program Member Field by Name",
-    "description": "",
+    "description": "Get Program Member Field by Name operation in Marketo API enables the client to get program member field by name in the context of marketing assets or lead management.",
     "operationId": "getProgramMemberFieldByNameUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/v1/programs/members/schema/fields/{fieldApiName}.json",
@@ -2433,7 +2432,7 @@
   },
   {
     "operation": "Get Program Member Fields",
-    "description": "",
+    "description": "Get Program Member Fields operation in Marketo API enables the client to get program member fields in the context of marketing assets or lead management.",
     "operationId": "getProgramMemberFieldsUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/v1/programs/members/schema/fields.json",
@@ -2467,7 +2466,7 @@
   },
   {
     "operation": "Get Campaigns",
-    "description": "",
+    "description": "Get Campaigns operation in Marketo API enables the client to get campaigns in the context of marketing assets or lead management.",
     "operationId": "getCampaignsUsingGET",
     "operationApiType": "GET",
     "operationPath": "/rest/v1/campaigns.json",
@@ -2486,7 +2485,7 @@
   },
   {
     "operation": "Get Campaign By Id",
-    "description": "",
+    "description": "Get Campaign By Id operation in Marketo API enables the client to get campaign by id in the context of marketing assets or lead management.",
     "operationId": "getCampaignByIdUsingGET",
     "operationApiType": "GET",
     "operationPath": "rest/v1/campaigns/{campaignId}.json",
@@ -2520,7 +2519,7 @@
   },
   {
     "operation": "Request Campaign",
-    "description": "",
+    "description": "Request Campaign operation in Marketo API enables the client to request campaign in the context of marketing assets or lead management.",
     "operationId": "triggerCampaignUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/v1/campaigns/{campaignId}/trigger.json",
@@ -2580,7 +2579,7 @@
   },
   {
     "operation": "Schedule Campaign",
-    "description": "",
+    "description": "Schedule Campaign operation in Marketo API enables the client to schedule campaign in the context of marketing assets or lead management.",
     "operationId": "scheduleCampaignUsingPOST",
     "operationApiType": "POST",
     "operationPath": "/rest/v1/campaigns/{campaignId}/schedule.json",

@@ -1,7 +1,7 @@
 [
   {
     "operation": "Copy File or Folder",
-    "description": "",
+    "description": "Copy File or Folder allows the Dropbox API to copy file or folder.",
     "operationId": "FilesCopyV2",
     "operationApiType": "POST",
     "operationPath": "/files/copy_v2",
@@ -47,7 +47,7 @@
   },
   {
     "operation": "Delete File or Folder",
-    "description": "",
+    "description": "Delete File or Folder allows the Dropbox API to delete file or folder.",
     "operationId": "FilesDeleteV2",
     "operationApiType": "POST",
     "operationPath": "/files/delete_v2",
@@ -93,7 +93,7 @@
   },
   {
     "operation": "Get Metadata For a File or Folder",
-    "description": "",
+    "description": "Get Metadata For a File or Folder allows the Dropbox API to get metadata for a file or folder.",
     "operationId": "FilesGetMetadata",
     "operationApiType": "POST",
     "operationPath": "/files/get_metadata",
@@ -139,7 +139,7 @@
   },
   {
     "operation": "Get Contents of a Folder",
-    "description": "",
+    "description": "Get Contents of a Folder allows the Dropbox API to get contents of a folder.",
     "operationId": "FilesListFolder",
     "operationApiType": "POST",
     "operationPath": "/files/list_folder",
@@ -185,7 +185,7 @@
   },
   {
     "operation": "Move File/Folder",
-    "description": "",
+    "description": "Move File/Folder allows the Dropbox API to move file/folder.",
     "operationId": "FilesMoveV2",
     "operationApiType": "POST",
     "operationPath": "/files/move_v2",
@@ -231,7 +231,7 @@
   },
   {
     "operation": "List Shared Folders Accessible by Current User",
-    "description": "",
+    "description": "List Shared Folders Accessible by Current User allows the Dropbox API to list shared folders accessible by current user.",
     "operationId": "SharingListFolders",
     "operationApiType": "POST",
     "operationPath": "/sharing/list_folders",
@@ -277,7 +277,7 @@
   },
   {
     "operation": "List Files Shared With Current User",
-    "description": "",
+    "description": "List Files Shared With Current User allows the Dropbox API to list files shared with current user.",
     "operationId": "SharingListReceivedFiles",
     "operationApiType": "POST",
     "operationPath": "/sharing/list_received_files",
@@ -323,7 +323,7 @@
   },
   {
     "operation": "List Shared Links of User",
-    "description": "",
+    "description": "List Shared Links of User allows the Dropbox API to list shared links of user.",
     "operationId": "SharingListSharedLinks",
     "operationApiType": "POST",
     "operationPath": "/sharing/list_shared_links",

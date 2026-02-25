@@ -1,7 +1,7 @@
 [
   {
     "operation": "Create an Associations",
-    "description": "",
+    "description": "Create an Associations operation provides the ability to create an associations within the HubSpot platform using its CRM or CMS API.",
     "operationId": "post-/crm/v4/associations/{fromObjectType}/{toObjectType}/labels",
     "operationApiType": "POST",
     "operationPath": "/crm/v4/associations/{fromObjectType}/{toObjectType}/labels",
@@ -75,7 +75,7 @@
   },
   {
     "operation": "Create a Company",
-    "description": "",
+    "description": "Create a company operation provides the ability to create a company within the HubSpot platform using its CRM or CMS API.",
     "operationId": "post-/crm/v3/objects/companies",
     "operationApiType": "POST",
     "operationPath": "/crm/v3/objects/companies",
@@ -121,7 +121,7 @@
   },
   {
     "operation": "Create a Contact",
-    "description": "",
+    "description": "Create a contact with the given properties operation provides the ability to create a contact with the given properties within the HubSpot platform using its CRM or CMS API.",
     "operationId": "post-/crm/v3/objects/contacts_create",
     "operationApiType": "POST",
     "operationPath": "/crm/v3/objects/contacts",
@@ -167,7 +167,7 @@
   },
   {
     "operation": "Create COS Blog Post",
-    "description": "",
+    "description": "Create COS Blog Post operation provides the ability to create cos blog post within the HubSpot platform using its CRM or CMS API.",
     "operationId": "post-/cms/v3/blogs/posts",
     "operationApiType": "POST",
     "operationPath": "/cms/v3/blogs/posts",
@@ -213,7 +213,7 @@
   },
   {
     "operation": "Create a Deal",
-    "description": "",
+    "description": "Create a Deal operation provides the ability to create a deal within the HubSpot platform using its CRM or CMS API.",
     "operationId": "post-/crm/v3/objects/deals_create",
     "operationApiType": "POST",
     "operationPath": "/crm/v3/objects/deals",
@@ -259,7 +259,7 @@
   },
   {
     "operation": "Create a Line Item",
-    "description": "",
+    "description": "Create a Line Item operation provides the ability to create a line item within the HubSpot platform using its CRM or CMS API.",
     "operationId": "post-/crm/v3/objects/line-items_create",
     "operationApiType": "POST",
     "operationPath": "/crm/v3/objects/line_items",
@@ -305,7 +305,7 @@
   },
   {
     "operation": "Get Line Items",
-    "description": "",
+    "description": "List Line Items operation provides the ability to list line items within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/crm/v3/objects/line-items_getPage",
     "operationApiType": "GET",
     "operationPath": "/crm/v3/objects/line_items",
@@ -324,7 +324,7 @@
   },
   {
     "operation": "Get a Line Item by Line Item ID",
-    "description": "",
+    "description": "Get a line item by lineItemId operation provides the ability to get a line item by lineitemid within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/crm/v3/objects/line-item/{lineItemId}_getById",
     "operationApiType": "GET",
     "operationPath": "/crm/v3/objects/line_items/{lineItemId}",
@@ -357,7 +357,7 @@
   },
   {
     "operation": "Update a line item",
-    "description": "",
+    "description": "Update a line item operation provides the ability to update a line item within the HubSpot platform using its CRM or CMS API.",
     "operationId": "patch-/crm/v3/objects/line-item/{lineItemId}_update",
     "operationApiType": "PATCH",
     "operationPath": "/crm/v3/objects/line_items/{lineItemId}",
@@ -416,7 +416,7 @@
   },
   {
     "operation": "Create a Product",
-    "description": "",
+    "description": "Create a Product operation provides the ability to create a product within the HubSpot platform using its CRM or CMS API.",
     "operationId": "post-/crm/v3/objects/products_create",
     "operationApiType": "POST",
     "operationPath": "/crm/v3/objects/products",
@@ -462,7 +462,7 @@
   },
   {
     "operation": "Create a Ticket",
-    "description": "",
+    "description": "Create Ticket operation provides the ability to create ticket within the HubSpot platform using its CRM or CMS API.",
     "operationId": "post-/crm/v3/objects/tickets_create",
     "operationApiType": "POST",
     "operationPath": "/crm/v3/objects/tickets",
@@ -508,7 +508,7 @@
   },
   {
     "operation": "Get All Companies",
-    "description": "",
+    "description": "Get All Companies operation provides the ability to get all companies within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/crm/v3/objects/companies_getPage",
     "operationApiType": "GET",
     "operationPath": "/crm/v3/objects/companies",
@@ -527,7 +527,7 @@
   },
   {
     "operation": "Get a Company by Id",
-    "description": "",
+    "description": "Get a Company by Id operation provides the ability to get a company by id within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/crm/v3/objects/companies/{companyId}_getById",
     "operationApiType": "GET",
     "operationPath": "/crm/v3/objects/companies/{companyId}",
@@ -560,7 +560,7 @@
   },
   {
     "operation": "Get all Contacts",
-    "description": "",
+    "description": "Read a page of contacts operation provides the ability to read a page of contacts within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/crm/v3/objects/contacts_getPage",
     "operationApiType": "GET",
     "operationPath": "/crm/v3/objects/contacts",
@@ -579,7 +579,7 @@
   },
   {
     "operation": "Get a Contact By Id",
-    "description": "",
+    "description": "Read a Contact operation provides the ability to read a contact within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/crm/v3/objects/contacts/{contactId}_getById",
     "operationApiType": "GET",
     "operationPath": "/crm/v3/objects/contacts/{contactId}",
@@ -613,7 +613,7 @@
   },
   {
     "operation": "Get all schemas",
-    "description": "",
+    "description": "Get all Custom Objects operation provides the ability to get all custom objects within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/crm-object-schemas/v3/schemas_getAll",
     "operationApiType": "GET",
     "operationPath": "/crm/v3/schemas",
@@ -632,7 +632,7 @@
   },
   {
     "operation": "Get Deals",
-    "description": "",
+    "description": "Read a page of deals operation provides the ability to read a page of deals within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/crm/v3/objects/deals_getPage",
     "operationApiType": "GET",
     "operationPath": "/crm/v3/objects/deals",
@@ -651,7 +651,7 @@
   },
   {
     "operation": "Get Products",
-    "description": "",
+    "description": "List Products operation provides the ability to list products within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/crm/v3/objects/products_getPage",
     "operationApiType": "GET",
     "operationPath": "/crm/v3/objects/products",
@@ -670,7 +670,7 @@
   },
   {
     "operation": "Get all Tickets",
-    "description": "",
+    "description": "List Tickets operation provides the ability to list tickets within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/crm/v3/objects/tickets_getPage",
     "operationApiType": "GET",
     "operationPath": "/crm/v3/objects/tickets",
@@ -689,7 +689,7 @@
   },
   {
     "operation": "Get Ticket By ID",
-    "description": "",
+    "description": "Get Ticket operation provides the ability to get ticket within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/crm/v3/objects/tickets/{ticketId}_getById",
     "operationApiType": "GET",
     "operationPath": "/crm/v3/objects/tickets/{ticketId}",
@@ -723,7 +723,7 @@
   },
   {
     "operation": "Delete Contacts",
-    "description": "",
+    "description": "Archive a Contact operation provides the ability to archive a contact within the HubSpot platform using its CRM or CMS API.",
     "operationId": "delete-/crm/v3/objects/contacts/{contactId}_archive",
     "operationApiType": "DELETE",
     "operationPath": "/crm/v3/objects/contacts/{contactId}",
@@ -783,7 +783,7 @@
   },
   {
     "operation": "Update a Company",
-    "description": "",
+    "description": "Update a Company operation provides the ability to update a company within the HubSpot platform using its CRM or CMS API.",
     "operationId": "patch-/crm/v3/objects/companies/{companyId}_update",
     "operationApiType": "PATCH",
     "operationPath": "/crm/v3/objects/companies/{companyId}",
@@ -843,7 +843,7 @@
   },
   {
     "operation": "Delete a Company",
-    "description": "",
+    "description": "Archive a Company operation provides the ability to archive a company within the HubSpot platform using its CRM or CMS API.",
     "operationId": "delete-/crm/v3/objects/companies/{companyId}_archive",
     "operationApiType": "DELETE",
     "operationPath": "/crm/v3/objects/companies/{companyId}",
@@ -877,7 +877,7 @@
   },
   {
     "operation": "Update a Contact",
-    "description": "",
+    "description": "Update a Contact operation provides the ability to update a contact within the HubSpot platform using its CRM or CMS API.",
     "operationId": "patch-/crm/v3/objects/contacts/{contactId}_update",
     "operationApiType": "PATCH",
     "operationPath": "/crm/v3/objects/contacts/{contactId}",
@@ -937,7 +937,7 @@
   },
   {
     "operation": "Update Existing Custom Object",
-    "description": "",
+    "description": "Update a schema operation provides the ability to update a schema within the HubSpot platform using its CRM or CMS API.",
     "operationId": "patch-/crm-object-schemas/v3/schemas/{objectType}_update",
     "operationApiType": "PATCH",
     "operationPath": "/crm/v3/schemas/{objectType}",
@@ -997,7 +997,7 @@
   },
   {
     "operation": "Update a Deal",
-    "description": "",
+    "description": "Update a schema operation provides the ability to update a schema within the HubSpot platform using its CRM or CMS API.",
     "operationId": "patch-/crm/v3/objects/deals/{dealId}_update",
     "operationApiType": "PATCH",
     "operationPath": "/crm/v3/objects/deals/{dealId}",
@@ -1057,7 +1057,7 @@
   },
   {
     "operation": "Update a Product",
-    "description": "",
+    "description": "Update a product operation provides the ability to update a product within the HubSpot platform using its CRM or CMS API.",
     "operationId": "patch-/crm/v3/objects/products/{productId}_update",
     "operationApiType": "PATCH",
     "operationPath": "/crm/v3/objects/products/{productid}",
@@ -1117,7 +1117,7 @@
   },
   {
     "operation": "Update a Ticket",
-    "description": "",
+    "description": "Update a ticket operation provides the ability to update a ticket within the HubSpot platform using its CRM or CMS API.",
     "operationId": "patch-/crm/v3/objects/tickets/{ticketId}_update",
     "operationApiType": "PATCH",
     "operationPath": "/crm/v3/objects/tickets/{ticketId}",
@@ -1177,7 +1177,7 @@
   },
   {
     "operation": "Get All Associations",
-    "description": "",
+    "description": "Get All Associations operation provides the ability to get all associations within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/crm/v4/associations/{fromObjectType}/{toObjectType}/labels",
     "operationApiType": "GET",
     "operationPath": "/crm/v4/associations/{fromObjectType}/{toObjectType}/labels",
@@ -1251,7 +1251,7 @@
   },
   {
     "operation": "Get Custom Object by Object Type",
-    "description": "",
+    "description": "Get an existing schema operation provides the ability to get an existing schema within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/crm-object-schemas/v3/schemas/{objectType}_getById",
     "operationApiType": "GET",
     "operationPath": "/crm/v3/schemas/{objectType}",
@@ -1285,7 +1285,7 @@
   },
   {
     "operation": "Get Product By Id",
-    "description": "",
+    "description": "Read Product By Id operation provides the ability to read product by id within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/crm/v3/objects/products/{productId}_getById",
     "operationApiType": "GET",
     "operationPath": "/crm/v3/objects/products/{productid}",
@@ -1319,7 +1319,7 @@
   },
   {
     "operation": "Get Blogs",
-    "description": "",
+    "description": "Get Blogs operation provides the ability to get blogs within the HubSpot platform using its CRM or CMS API.",
     "operationId": "get-/cms/v3/blogs/posts",
     "operationApiType": "GET",
     "operationPath": "/cms/v3/blogs/posts",

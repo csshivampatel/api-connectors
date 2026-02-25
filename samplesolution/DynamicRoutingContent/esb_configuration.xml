@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ESBConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Version>35</Version>
+  <Version>31</Version>
   <EnvironmentName>DynamicRoutingContent</EnvironmentName>
   <NeuronBuildVersion>4.0.0.0</NeuronBuildVersion>
   <DesignerBuildVersion>4.0.0.0</DesignerBuildVersion>
@@ -12,15 +12,12 @@
   <ChangeList>
     <Additions />
     <Revisions>
-      <string>Edit,(All Zones),database,localhost.dbnewmssql1</string>
       <string>Edit,Enterprise,deployment group,Dev</string>
     </Revisions>
-    <Deletions>
-      <string>Remove,(All Zones),database,localhost.</string>
-    </Deletions>
+    <Deletions />
     <LastModifiedBy>Admin\Admin</LastModifiedBy>
-    <LastModifiedDate>2026-02-06T06:27:14.9317685Z</LastModifiedDate>
-    <Comments>Edited database named 'localhost.dbnewmssql1' in (All Zones)", Edited deployment group named 'Dev' in Enterprise"</Comments>
+    <LastModifiedDate>2026-02-06T09:24:18.2453198Z</LastModifiedDate>
+    <Comments>Edited deployment group named 'Dev' in Enterprise"</Comments>
   </ChangeList>
   <NeuronEnvironmentVariables />
   <ProcessFolders />

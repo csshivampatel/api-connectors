@@ -1,7 +1,7 @@
 [
   {
     "operation": "Creates an account record",
-    "description": "",
+    "description": "Creates an account record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/accounts",
@@ -44,7 +44,7 @@
   },
   {
     "operation": "Get list of account records",
-    "description": "",
+    "description": "Get list of account records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/accounts",
@@ -63,7 +63,7 @@
   },
   {
     "operation": "Creates an campaign record",
-    "description": "",
+    "description": "Creates an campaign record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/campaigns",
@@ -106,7 +106,7 @@
   },
   {
     "operation": "Get list of campaign records",
-    "description": "",
+    "description": "Get list of campaign records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/campaigns",
@@ -125,7 +125,7 @@
   },
   {
     "operation": "Creates an campaign response record",
-    "description": "",
+    "description": "Creates an campaign response record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/campaignresponses",
@@ -168,7 +168,7 @@
   },
   {
     "operation": "Get list of campaign response records",
-    "description": "",
+    "description": "Get list of campaign response records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/campaignresponses",
@@ -187,7 +187,7 @@
   },
   {
     "operation": "Creates an subject record",
-    "description": "",
+    "description": "Creates an subject record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/subjects",
@@ -230,7 +230,7 @@
   },
   {
     "operation": "Get list of subject records",
-    "description": "",
+    "description": "Get list of subject records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/subjects",
@@ -249,7 +249,7 @@
   },
   {
     "operation": "Creates an incident record",
-    "description": "",
+    "description": "Creates an incident record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/incidents",
@@ -292,7 +292,7 @@
   },
   {
     "operation": "Get list of incident records",
-    "description": "",
+    "description": "Get list of incident records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/incidents",
@@ -311,7 +311,7 @@
   },
   {
     "operation": "Creates an contact record",
-    "description": "",
+    "description": "Creates an contact record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/contacts",
@@ -354,7 +354,7 @@
   },
   {
     "operation": "Get list of contact records",
-    "description": "",
+    "description": "Get list of contact records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/contacts",
@@ -373,7 +373,7 @@
   },
   {
     "operation": "Creates an invoice record",
-    "description": "",
+    "description": "Creates an invoice record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/invoices",
@@ -416,7 +416,7 @@
   },
   {
     "operation": "Get list of invoice records",
-    "description": "",
+    "description": "Get list of invoice records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/invoices",
@@ -435,7 +435,7 @@
   },
   {
     "operation": "Creates an lead record",
-    "description": "",
+    "description": "Creates an lead record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/leads",
@@ -478,7 +478,7 @@
   },
   {
     "operation": "Get list of lead records",
-    "description": "",
+    "description": "Get list of lead records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/leads",
@@ -497,7 +497,7 @@
   },
   {
     "operation": "Creates an opportunity record",
-    "description": "",
+    "description": "Creates an opportunity record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/opportunities",
@@ -540,7 +540,7 @@
   },
   {
     "operation": "Get list of opportunity records",
-    "description": "",
+    "description": "Get list of opportunity records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/opportunities",
@@ -559,7 +559,7 @@
   },
   {
     "operation": "Create an item record",
-    "description": "",
+    "description": "Create an item record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/products",
@@ -602,7 +602,7 @@
   },
   {
     "operation": "Get list of item records",
-    "description": "",
+    "description": "Get list of item records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/products",
@@ -621,7 +621,7 @@
   },
   {
     "operation": "Create an report record",
-    "description": "",
+    "description": "Create an report record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/reports",
@@ -664,7 +664,7 @@
   },
   {
     "operation": "Get list of report card records",
-    "description": "",
+    "description": "Get list of report card records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/reports",
@@ -683,7 +683,7 @@
   },
   {
     "operation": "Get list of record filter records",
-    "description": "",
+    "description": "Get list of record filter records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/recordfilters",
@@ -702,7 +702,7 @@
   },
   {
     "operation": "Get list of calendar records",
-    "description": "",
+    "description": "Get list of calendar records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/calendars",
@@ -721,7 +721,7 @@
   },
   {
     "operation": "Create an task record",
-    "description": "",
+    "description": "Create an task record using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "POST",
     "operationPath": "/tasks",
@@ -764,7 +764,7 @@
   },
   {
     "operation": "Get list of task records",
-    "description": "",
+    "description": "Get list of task records using the Microsoft Dataverse Web API. This allows operations on entities like accounts, campaigns, contacts, leads, and more.",
     "operationId": "",
     "operationApiType": "GET",
     "operationPath": "/tasks",

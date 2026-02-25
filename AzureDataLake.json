@@ -1,7 +1,7 @@
 [
   {
     "operation": "List Paths",
-    "description": "",
+    "description": "Retrieves all paths and their metadata within a specified filesystem. Useful for browsing the directory structure.",
     "operationId": "Path_List",
     "operationApiType": "GET",
     "operationPath": "/{filesystem}",
@@ -39,13 +39,14 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       }
     ]
   },
   {
     "operation": "List Filesystems",
-    "description": "",
+    "description": "Lists all filesystems available in the current Azure Storage account.",
     "operationId": "Filesystem_List",
     "operationApiType": "GET",
     "operationPath": "/",
@@ -71,7 +72,7 @@
   },
   {
     "operation": "Create File",
-    "description": "",
+    "description": "Creates a new file or overwrites an existing file in the specified filesystem path.",
     "operationId": "Path_Create",
     "operationApiType": "PUT",
     "operationPath": "/{filesystem}/{path}",
@@ -109,7 +110,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -120,7 +122,15 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
+      },
+      {
+        "name": "DeleteMessageBody",
+        "value": true,
+        "param_type": "Param",
+        "ui_source": "operation"
       }
     ]
   },
@@ -157,7 +167,8 @@
         "isVisible": true,
         "datatype": "System.String",
         "ui_displayName": "Rename File Or Directory Name",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "The source path (to be renamed), relative to the filesystem."
       },
       {
         "name": "{filesystem}",
@@ -169,7 +180,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -181,13 +193,14 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Rename to"
+        "ui_displayName": "Rename to",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       }
     ]
   },
   {
     "operation": "Create Directory",
-    "description": "",
+    "description": "Creates a new directory in the given filesystem and path.",
     "operationId": "Path_Create",
     "operationApiType": "PUT",
     "operationPath": "/{filesystem}/{path}",
@@ -225,7 +238,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -236,13 +250,15 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       }
     ]
   },
   {
     "operation": "Delete File",
-    "description": "",
+    "description": "Deletes the specified file from the given filesystem path.",
     "operationId": "Path_Delete",
     "operationApiType": "DELETE",
     "operationPath": "/{filesystem}/{path}",
@@ -268,7 +284,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -279,13 +296,15 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       }
     ]
   },
   {
     "operation": "Delete Directory",
-    "description": "",
+    "description": "Recursively deletes a directory and all of its contents from the filesystem.",
     "operationId": "Path_Delete",
     "operationApiType": "DELETE",
     "operationPath": "/{filesystem}/{path}",
@@ -311,7 +330,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -322,7 +342,9 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       },
       {
         "name": "recursive",
@@ -334,7 +356,7 @@
   },
   {
     "operation": "Get Properties",
-    "description": "",
+    "description": "Retrieves system and user-defined properties for a specified file or directory path.",
     "operationId": "Path_GetProperties",
     "operationApiType": "HEAD",
     "operationPath": "/{filesystem}/{path}",
@@ -360,7 +382,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -371,13 +394,15 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       }
     ]
   },
   {
     "operation": "Get Status",
-    "description": "",
+    "description": "Returns system-defined metadata such as file size, creation date, and modification time.",
     "operationId": "Path_GetProperties",
     "operationApiType": "HEAD",
     "operationPath": "/{filesystem}/{path}",
@@ -409,7 +434,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -420,13 +446,15 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       }
     ]
   },
   {
     "operation": "Get Access Control List",
-    "description": "",
+    "description": "Retrieves the access control list (ACL) of a given file or directory.",
     "operationId": "Path_GetProperties",
     "operationApiType": "HEAD",
     "operationPath": "/{filesystem}/{path}",
@@ -458,7 +486,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -469,13 +498,15 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       }
     ]
   },
   {
     "operation": "Renew Lease Path",
-    "description": "",
+    "description": "Renews an existing lease on a file or directory to extend exclusive access.",
     "operationId": "Path_Lease",
     "operationApiType": "POST",
     "operationPath": "/{filesystem}/{path}",
@@ -506,7 +537,8 @@
         "isVisible": true,
         "datatype": "System.String",
         "ui_displayName": "Lease Id",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "A valid lease ID required to perform operations on a leased file or directory (used in renew, release, change, or break actions)."
       },
       {
         "name": "{filesystem}",
@@ -518,7 +550,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -529,13 +562,15 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       }
     ]
   },
   {
     "operation": "Release Lease Path",
-    "description": "",
+    "description": "Releases an acquired lease, allowing others to modify or delete the path.",
     "operationId": "Path_Lease",
     "operationApiType": "POST",
     "operationPath": "/{filesystem}/{path}",
@@ -566,7 +601,8 @@
         "isVisible": true,
         "datatype": "System.String",
         "ui_displayName": "Lease Id",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "A valid lease ID required to perform operations on a leased file or directory (used in renew, release, change, or break actions)."
       },
       {
         "name": "{filesystem}",
@@ -578,7 +614,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -589,13 +626,15 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       }
     ]
   },
   {
     "operation": "Change Lease Path",
-    "description": "",
+    "description": "Changes the lease ID associated with a file or directory lease.",
     "operationId": "Path_Lease",
     "operationApiType": "POST",
     "operationPath": "/{filesystem}/{path}",
@@ -626,7 +665,8 @@
         "isVisible": true,
         "datatype": "System.String",
         "ui_displayName": "Lease Id",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "A valid lease ID required to perform operations on a leased file or directory (used in renew, release, change, or break actions)."
       },
       {
         "name": "x-ms-proposed-lease-id",
@@ -637,7 +677,8 @@
         "isVisible": true,
         "datatype": "System.String",
         "ui_displayName": "Proposed Lease Id",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "A GUID value proposed for the new lease ID when changing an existing lease. Must be in valid GUID format."
       },
       {
         "name": "{filesystem}",
@@ -649,7 +690,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -660,13 +702,15 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       }
     ]
   },
   {
     "operation": "Break Lease Path",
-    "description": "",
+    "description": "Breaks an existing lease on a file or directory.",
     "operationId": "Path_Lease",
     "operationApiType": "POST",
     "operationPath": "/{filesystem}/{path}",
@@ -698,7 +742,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -709,13 +754,15 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       }
     ]
   },
   {
     "operation": "Append Data",
-    "description": "",
+    "description": "Appends raw data to an existing file at a specified byte position.",
     "operationId": "Path_Update",
     "operationApiType": "PATCH",
     "operationPath": "/{filesystem}/{path}",
@@ -741,7 +788,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -752,7 +800,9 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       },
       {
         "name": "Body",
@@ -792,16 +842,18 @@
         "param_type": "UrlParam",
         "ui_source": "operation",
         "required": true,
+        "bindable": true,
         "isVisible": true,
         "datatype": "System.String",
         "ui_displayName": "Append From Position",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "The byte position in the file where the append or flush operation starts. Required for appending data sequentially."
       }
     ]
   },
   {
     "operation": "Flush Data",
-    "description": "",
+    "description": "Writes previously appended data to a file making it available for reading.",
     "operationId": "Path_Update",
     "operationApiType": "PATCH",
     "operationPath": "/{filesystem}/{path}",
@@ -827,7 +879,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -838,17 +891,27 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       },
       {
         "name": "Content-Type",
-        "value": "application/xml",
+        "value": "application/octet-stream",
         "param_type": "Header",
-        "ui_source": "operation"
+        "isVisible": true,
+        "bindable": true,
+        "required": false,
+        "datatype": "System.String",
+        "description": "MIME type of the blob content (e.g., 'text/plain', 'application/json')",
+        "ui_EditorType": "Textbox",
+        "ui_source": "operation",
+        "ui_category": "Misc",
+        "ui_displayName": "Content Type"
       },
       {
         "name": "Content-Length",
-        "value": "0",
+        "value": "",
         "param_type": "Header",
         "ui_source": "operation"
       },
@@ -864,22 +927,30 @@
         "param_type": "UrlParam",
         "ui_source": "operation",
         "required": true,
+        "bindable": true,
         "isVisible": true,
         "datatype": "System.String",
         "ui_displayName": "Flush From Position",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "The byte position in the file where the append or flush operation starts. Required for appending data sequentially."
       },
       {
         "name": "flush",
         "value": "true",
         "param_type": "UrlParam",
         "ui_source": "operation"
+      },
+      {
+        "name": "DeleteMessageBody",
+        "value": true,
+        "param_type": "Param",
+        "ui_source": "operation"
       }
     ]
   },
   {
     "operation": "Set Properties for a file or directory",
-    "description": "",
+    "description": "Updates the properties and metadata for a file or directory.",
     "operationId": "Path_Update",
     "operationApiType": "PATCH",
     "operationPath": "/{filesystem}/{path}",
@@ -905,7 +976,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -916,7 +988,9 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       },
       {
         "name": "x-ms-lease-action",
@@ -934,7 +1008,8 @@
         "required": true,
         "datatype": "System.String",
         "ui_displayName": "File Properties",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "User-defined metadata in key=value format separated by commas, to be set on a file or directory (e.g., key1=value1,key2=value2)."
       },
       {
         "name": "action",
@@ -948,10 +1023,12 @@
         "param_type": "UrlParam",
         "ui_source": "operation",
         "required": true,
+        "bindable": true,
         "isVisible": true,
         "datatype": "System.String",
         "ui_displayName": "Flush From Position",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "description": "The byte position in the file where the append or flush operation starts. Required for appending data sequentially."
       },
       {
         "name": "flush",
@@ -963,7 +1040,7 @@
   },
   {
     "operation": "Read File",
-    "description": "",
+    "description": "Reads the contents of a file. Supports partial reads using range headers.",
     "operationId": "Path_Read",
     "operationApiType": "GET",
     "operationPath": "/{filesystem}/{path}",
@@ -989,7 +1066,8 @@
         "ui_source": "adapter",
         "ui_EditorType": "DsDialogue",
         "sourceProperty": "ReceiveFolder",
-        "ui_category": "Publish Mode Properties"
+        "ui_category": "Publish Mode Properties",
+        "description": "The container or file system name (similar to a folder)."
       },
       {
         "name": "{path}",
@@ -1000,7 +1078,9 @@
         "required": true,
         "datatype": "System.String",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "ui_displayName": "Path",
+        "description": "Path to the file you want to read (relative to the filesystem root)."
       }
     ]
   }

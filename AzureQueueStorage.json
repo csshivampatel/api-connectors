@@ -52,7 +52,8 @@
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
         "datatype": "System.String",
-        "sourceProperty": "PublishQueue"
+        "sourceProperty": "PublishQueue",
+        "description": "Name of the queue in Azure Storage account. Queue names must be lowercase and can contain only letters, numbers, and hyphens."
       },
       {
         "name": "comp",
@@ -89,7 +90,8 @@
         "datatype": "System.String",
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "PublishQueue"
+        "sourceProperty": "PublishQueue",
+        "description": "Name of the queue in Azure Storage account. Queue names must be lowercase and can contain only letters, numbers, and hyphens."
       },
       {
         "name": "numofmessages",
@@ -153,7 +155,8 @@
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
         "datatype": "System.String",
-        "sourceProperty": "PublishQueue"
+        "sourceProperty": "PublishQueue",
+        "description": "Name of the queue in Azure Storage account. Queue names must be lowercase and can contain only letters, numbers, and hyphens."
       },
       {
         "name": "timeout",
@@ -190,7 +193,8 @@
         "datatype": "System.String",
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "PublishQueue"
+        "sourceProperty": "PublishQueue",
+        "description": "Name of the queue in Azure Storage account. Queue names must be lowercase and can contain only letters, numbers, and hyphens."
       },
       {
         "name": "visibilitytimeout",
@@ -240,7 +244,7 @@
   },
   {
     "operation": "Peek Messages",
-    "description": "",
+    "description": "Peek Messages operation in Azure Queue Storage allows the system to peek messages using REST API endpoints.",
     "operationId": "Messages_Peek",
     "operationApiType": "GET",
     "operationPath": "/{queueName}/messages",
@@ -265,7 +269,8 @@
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
         "datatype": "System.String",
-        "sourceProperty": "PublishQueue"
+        "sourceProperty": "PublishQueue",
+        "description": "Name of the queue in Azure Storage account. Queue names must be lowercase and can contain only letters, numbers, and hyphens."
       },
       {
         "name": "peekonly",
@@ -316,7 +321,8 @@
         "datatype": "System.String",
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
-        "sourceProperty": "PublishQueue"
+        "sourceProperty": "PublishQueue",
+        "description": "Name of the queue in Azure Storage account. Queue names must be lowercase and can contain only letters, numbers, and hyphens."
       },
       {
         "name": "{messageid}",
@@ -327,7 +333,8 @@
         "ui_source": "operation",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Message ID",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "description": "The unique identifier of the message to update or delete."
       },
       {
         "name": "Body",
@@ -405,7 +412,8 @@
         "ui_EditorType": "DSDialogue",
         "ui_source": "adapter",
         "ui_category": "Subscribe Mode Properties",
-        "sourceProperty": "PublishQueue"
+        "sourceProperty": "PublishQueue",
+        "description": "Name of the queue in Azure Storage account. Queue names must be lowercase and can contain only letters, numbers, and hyphens."
       },
       {
         "name": "{messageid}",
@@ -416,7 +424,8 @@
         "ui_source": "operation",
         "ui_category": "Subscribe Mode Properties",
         "ui_displayName": "Message ID",
-        "datatype": "System.String"
+        "datatype": "System.String",
+        "description": "The unique identifier of the message to update or delete."
       },
       {
         "name": "popreceipt",

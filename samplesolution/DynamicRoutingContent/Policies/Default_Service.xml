@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ESBPolicy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Id>f0c3bd2d-23b5-423d-b772-d771e066c984</Id>
-  <Version>e234713e-cfe0-4b23-9079-3e4b0bcc11a1</Version>
+  <Id>949fbafb-014f-472d-890e-16c922bb6ae3</Id>
+  <Version>2f9ad314-893d-4568-b292-64e726439d70</Version>
   <BusinessFlows />
   <ProcessFlows />
-  <Description>Default policy</Description>
-  <Name>Default</Name>
+  <Description>Default service policy</Description>
+  <Name>Default_Service</Name>
   <Group>General</Group>
   <IsSystemObject>false</IsSystemObject>
   <IsPrivate>false</IsPrivate>
-  <OnErrorAuditToDatabase>true</OnErrorAuditToDatabase>
-  <OnErrorAuditToFile>false</OnErrorAuditToFile>
+  <IsInvalid>false</IsInvalid>
+  <OnErrorAuditToDatabase>false</OnErrorAuditToDatabase>
+  <OnErrorAuditToFile>true</OnErrorAuditToFile>
   <OnErrorRepublishMessage>false</OnErrorRepublishMessage>
   <RepublishTopic />
   <OnErrorRollback>false</OnErrorRollback>

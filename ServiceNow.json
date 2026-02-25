@@ -1,12 +1,12 @@
 [
   {
     "operation": "Get an specified attachment",
-    "description": "",
+    "description": "Retrieves the binary content of a file attachment by its `sys_id`.",
     "operationId": "get_specified_attachment",
     "operationApiType": "GET",
     "operationPath": "/now/attachment/{sys_id}/file",
-    "operationSummary": "Get an specified attachment.",
-    "operationDescription": "Get an specified attachment.",
+    "operationSummary": "Retrieve a specific attachment by sys_id",
+    "operationDescription": "Retrieve a specific attachment by sys_id.",
     "deprecated": false,
     "OperationCategory": "Attachments",
     "adapterProperties": [
@@ -19,7 +19,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
-        "description": "Specify System Id of the attachment record you want to retrieve",
+        "description": "The sys_id of the attachment record to retrieve.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -34,12 +34,12 @@
   },
   {
     "operation": "Delete an attachment",
-    "description": "",
+    "description": "Deletes an attachment from the instance using its `sys_id`. This action is permanent.",
     "operationId": "delete_an_attachment",
     "operationApiType": "DELETE",
     "operationPath": "/now/attachment/{sys_id}",
-    "operationSummary": "Delete an attachment.",
-    "operationDescription": "Delete an attachment",
+    "operationSummary": "Delete a specific attachment by sys_id",
+    "operationDescription": "Delete a specific attachment by sys_id.",
     "deprecated": false,
     "OperationCategory": "Attachments",
     "adapterProperties": [
@@ -52,7 +52,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
-        "description": "Specify System Id of the attachment record you want to retrieve",
+        "description": "The sys_id of the attachment record to delete.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -73,12 +73,12 @@
   },
   {
     "operation": "Upload an attachment",
-    "description": "",
+    "description": "Uploads a file and attaches it to a specified record in a given table using `table_name` and `table_sys_id`.",
     "operationId": "upload_an_attachment",
     "operationApiType": "POST",
     "operationPath": "/now/attachment/file",
-    "operationSummary": "Upload an attachement",
-    "operationDescription": "Upload an attachment",
+    "operationSummary": "Upload a new attachment to a table record",
+    "operationDescription": "Upload a new attachment to a table record.",
     "deprecated": false,
     "OperationCategory": "Attachments",
     "adapterProperties": [
@@ -97,7 +97,7 @@
         "isVisible": false,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify the content of the body to upload.",
+        "description": "The content of the file to upload.",
         "ui_source": "operation",
         "ui_EditorType": "TextArea",
         "ui_category": "Misc",
@@ -117,7 +117,7 @@
       },
       {
         "name": "file_name",
-        "description": "Required, Name to give the attachment",
+        "description": "The name to assign to the attachment.",
         "value": "",
         "param_type": "UrlParam",
         "isVisible": true,
@@ -130,7 +130,7 @@
       },
       {
         "name": "table_name",
-        "description": "Required, Name of the table to attach the file to",
+        "description": "The name of the table to associate the attachment with.",
         "value": "",
         "param_type": "UrlParam",
         "isVisible": true,
@@ -143,7 +143,7 @@
       },
       {
         "name": "table_sys_id",
-        "description": "Required. Sys_id of the record in the table specified in table_name that you want to attach the file to.",
+        "description": "The sys_id of the record in the specified table to attach the file to.",
         "value": "",
         "param_type": "UrlParam",
         "isVisible": true,
@@ -164,12 +164,12 @@
   },
   {
     "operation": "Get all attachment",
-    "description": "",
+    "description": "Returns metadata for all attachments in the instance. Does not include actual file content.",
     "operationId": "get_all_attachment",
     "operationApiType": "GET",
     "operationPath": "/now/attachment",
-    "operationSummary": "Get all attachement",
-    "operationDescription": "Get all attachment",
+    "operationSummary": "List all attachments",
+    "operationDescription": "List all attachments.",
     "deprecated": false,
     "OperationCategory": "Attachments",
     "adapterProperties": [
@@ -183,12 +183,12 @@
   },
   {
     "operation": "Create a new email",
-    "description": "",
+    "description": "Sends a new email using the email API. The request body must include recipients and message content.",
     "operationId": "create_new_email",
     "operationApiType": "POST",
     "operationPath": "/now/v1/email",
-    "operationSummary": "create a new email.",
-    "operationDescription": "create a new email",
+    "operationSummary": "Create and send a new email",
+    "operationDescription": "Create and send a new email.",
     "deprecated": false,
     "OperationCategory": "Emails",
     "adapterProperties": [
@@ -207,7 +207,7 @@
         "isVisible": false,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify the content of the body to upload.",
+        "description": "The JSON content of the email, including recipients and message body.",
         "ui_source": "operation",
         "ui_EditorType": "TextArea",
         "ui_category": "Misc",
@@ -235,12 +235,12 @@
   },
   {
     "operation": "Get an email",
-    "description": "",
+    "description": "Retrieves metadata of a specific email using its `sys_id`.",
     "operationId": "get_an_email",
     "operationApiType": "GET",
     "operationPath": "/now/v1/email/{sys_id}",
-    "operationSummary": "Get an email.",
-    "operationDescription": "Get an email.",
+    "operationSummary": "Retrieve an email by sys_id",
+    "operationDescription": "Retrieve an email by sys_id.",
     "deprecated": false,
     "OperationCategory": "Emails",
     "adapterProperties": [
@@ -253,7 +253,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
-        "description": "Specify System Id of the email record you want to retrieve",
+        "description": "The sys_id of the email record to retrieve.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -268,12 +268,12 @@
   },
   {
     "operation": "Create a record",
-    "description": "",
+    "description": "Creates a new record in the specified table. The request body must contain the field data in JSON format.",
     "operationId": "create_record",
     "operationApiType": "POST",
     "operationPath": "/now/table/{tableName}",
-    "operationSummary": "Create a record",
-    "operationDescription": "Create a record",
+    "operationSummary": "Create a new record in a table",
+    "operationDescription": "Create a new record in a table.",
     "deprecated": false,
     "OperationCategory": "Records",
     "adapterProperties": [
@@ -286,7 +286,7 @@
     "parameters": [
       {
         "name": "{tableName}",
-        "description": "Specify the table name where you want to create a new record",
+        "description": "The name of the table where the new record will be created.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -306,7 +306,7 @@
         "isVisible": false,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify the content of the body to upload.",
+        "description": "The JSON content of the record to create.",
         "ui_source": "operation",
         "ui_EditorType": "TextArea",
         "ui_category": "Misc",
@@ -334,12 +334,12 @@
   },
   {
     "operation": "Retrieve a record",
-    "description": "",
+    "description": "Retrieves a record from a table using its `sys_id`. Returns all fields of the record.",
     "operationId": "retrieve_record",
     "operationApiType": "GET",
     "operationPath": "/now/table/{tableName}/{sys_id}",
-    "operationSummary": "Retrieve a record",
-    "operationDescription": "Retrieve a record",
+    "operationSummary": "Retrieve a record by sys_id",
+    "operationDescription": "Retrieve a record by sys_id.",
     "deprecated": false,
     "OperationCategory": "Records",
     "adapterProperties": [
@@ -352,7 +352,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
-        "description": "Specify System Id of the record you want to retrieve",
+        "description": "The sys_id of the record to retrieve.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -365,7 +365,7 @@
       },
       {
         "name": "{tableName}",
-        "description": "Specify the table name where you want to retrieve records",
+        "description": "The name of the table containing the record.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -379,13 +379,13 @@
     ]
   },
   {
-    "operation": "Detete a record",
-    "description": "",
+    "operation": "Delete a record",
+    "description": "Deletes a record from a table using its `sys_id`. This operation is irreversible.",
     "operationId": "delete_record",
     "operationApiType": "DELETE",
     "operationPath": "/now/table/{tableName}/{sys_id}",
-    "operationSummary": "Delete a record",
-    "operationDescription": "Delete a record",
+    "operationSummary": "Delete a record by sys_id",
+    "operationDescription": "Delete a record by sys_id.",
     "deprecated": false,
     "OperationCategory": "Records",
     "adapterProperties": [
@@ -398,7 +398,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
-        "description": "Specify System Id of the record you want to delete",
+        "description": "The sys_id of the record to delete.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -411,7 +411,7 @@
       },
       {
         "name": "{tableName}",
-        "description": "Specify the table name where you want to delete a record",
+        "description": "The name of the table containing the record to delete.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -433,12 +433,12 @@
   },
   {
     "operation": "Update a record",
-    "description": "",
+    "description": "Updates specific fields of a record in a table using its `sys_id`. Only provided fields in the request body will be updated.",
     "operationId": "update_record",
     "operationApiType": "PATCH",
     "operationPath": "/now/table/{tableName}/{sys_id}",
-    "operationSummary": "Update a record ",
-    "operationDescription": "update a record",
+    "operationSummary": "Update a record by sys_id",
+    "operationDescription": "Update a record by sys_id.",
     "deprecated": false,
     "OperationCategory": "Records",
     "adapterProperties": [
@@ -451,7 +451,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
-        "description": "Specify System Id of the record you want to update",
+        "description": "The sys_id of the record to update.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -464,7 +464,7 @@
       },
       {
         "name": "{tableName}",
-        "description": "Specify the table name where you want to update a record",
+        "description": "The name of the table containing the record to update.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -484,7 +484,7 @@
         "isVisible": false,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify the content of the body to upload.",
+        "description": "The JSON content specifying the fields to update.",
         "ui_source": "operation",
         "ui_EditorType": "TextArea",
         "ui_category": "Misc",
@@ -512,12 +512,12 @@
   },
   {
     "operation": "Get incidents",
-    "description": "",
+    "description": "Retrieves a list of all incident records with basic details.",
     "operationId": "get_incidents",
     "operationApiType": "GET",
     "operationPath": "/now/table/incident",
-    "operationSummary": "Get incidents",
-    "operationDescription": "Get incidents",
+    "operationSummary": "List all incidents",
+    "operationDescription": "List all incidents.",
     "deprecated": false,
     "OperationCategory": "Incidents",
     "adapterProperties": [
@@ -531,12 +531,12 @@
   },
   {
     "operation": "Get incident",
-    "description": "",
+    "description": "Retrieves full details of a specific incident using its `sys_id`.",
     "operationId": "get_incident",
     "operationApiType": "GET",
     "operationPath": "/now/table/incident/{sys_id}",
-    "operationSummary": "Get incident",
-    "operationDescription": "Get incident",
+    "operationSummary": "Retrieve an incident by sys_id",
+    "operationDescription": "Retrieve an incident by sys_id.",
     "deprecated": false,
     "OperationCategory": "Incidents",
     "adapterProperties": [
@@ -549,7 +549,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
-        "description": "Specify System Id of the incident record you want to retrieve",
+        "description": "The sys_id of the incident record to retrieve.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -564,12 +564,12 @@
   },
   {
     "operation": "Create incident",
-    "description": "",
+    "description": "Creates a new incident record. JSON body must contain required incident fields.",
     "operationId": "create_incident",
     "operationApiType": "POST",
     "operationPath": "/now/table/incident",
-    "operationSummary": "Create incident",
-    "operationDescription": "Create incident",
+    "operationSummary": "Create a new incident",
+    "operationDescription": "Create a new incident.",
     "deprecated": false,
     "OperationCategory": "Incidents",
     "adapterProperties": [
@@ -588,7 +588,7 @@
         "isVisible": false,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify the content of the body to upload.",
+        "description": "The JSON content of the incident to create.",
         "ui_source": "operation",
         "ui_EditorType": "TextArea",
         "ui_category": "Misc",
@@ -616,12 +616,12 @@
   },
   {
     "operation": "Update Incident",
-    "description": "",
+    "description": "Updates an existing incident by its `sys_id`. Replaces all specified fields with new values provided in the request body.",
     "operationId": "update_incident",
     "operationApiType": "PUT",
     "operationPath": "/now/table/incident/{sys_id}",
-    "operationSummary": "Update incident",
-    "operationDescription": "Update incident",
+    "operationSummary": "Update an incident by sys_id",
+    "operationDescription": "Update an incident by sys_id.",
     "deprecated": false,
     "OperationCategory": "Incidents",
     "adapterProperties": [
@@ -634,7 +634,7 @@
     "parameters": [
       {
         "name": "{sys_id}",
-        "description": "Specify System Id of the Incident record you want to update",
+        "description": "The sys_id of the incident record to update.",
         "value": "",
         "param_type": "Path",
         "isVisible": true,
@@ -653,7 +653,7 @@
         "isVisible": false,
         "required": true,
         "datatype": "System.String",
-        "description": "Specify the content of the body to upload.",
+        "description": "The JSON content specifying the fields to update.",
         "ui_source": "operation",
         "ui_EditorType": "TextArea",
         "ui_category": "Misc",

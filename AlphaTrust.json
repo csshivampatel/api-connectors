@@ -1,7 +1,7 @@
 [
   {
     "operation": "Get Audit Report",
-    "description": "",
+    "description": "Get Audit Report operation performs the get audit report functionality using AlphaTrust API.",
     "operationId": "GetAuditReports",
     "operationApiType": "POST",
     "operationPath": "auditreports",
@@ -26,7 +26,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -37,7 +38,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -48,7 +50,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -59,7 +62,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -91,7 +95,7 @@
   },
   {
     "operation": "Verify API Credentials",
-    "description": "",
+    "description": "ServiceAuthenticationTest - Verify API Credentials operation performs the serviceauthenticationtest - verify api credentials functionality using AlphaTrust API.",
     "operationId": "ServiceAuthenticationTest",
     "operationApiType": "POST",
     "operationPath": "communications/serviceauthenticationtest",
@@ -116,7 +120,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -127,7 +132,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -138,7 +144,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -149,7 +156,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -181,7 +189,7 @@
   },
   {
     "operation": "Get an existing Document",
-    "description": "",
+    "description": "Get an existing Document operation performs the get an existing document functionality using AlphaTrust API.",
     "operationId": "GetDocuments",
     "operationApiType": "POST",
     "operationPath": "documents",
@@ -206,7 +214,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -217,7 +226,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -228,7 +238,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -239,7 +250,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -271,7 +283,7 @@
   },
   {
     "operation": "Update an existing Document",
-    "description": "",
+    "description": "Update an existing Document operation performs the update an existing document functionality using AlphaTrust API.",
     "operationId": "UpdateDocuments",
     "operationApiType": "PUT",
     "operationPath": "documents",
@@ -296,7 +308,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -307,7 +320,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -318,7 +332,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -329,7 +344,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -361,7 +377,7 @@
   },
   {
     "operation": "Retrieve Document Files",
-    "description": "",
+    "description": "Retrieve Document Files operation performs the retrieve document files functionality using AlphaTrust API.",
     "operationId": "GetDocumentFiles",
     "operationApiType": "POST",
     "operationPath": "documents/files",
@@ -386,7 +402,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -397,7 +414,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -408,7 +426,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -419,7 +438,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -451,7 +471,7 @@
   },
   {
     "operation": "Insert a Document",
-    "description": "",
+    "description": "Insert a Document operation performs the insert a document functionality using AlphaTrust API.",
     "operationId": "InsertDocuments",
     "operationApiType": "POST",
     "operationPath": "documents/insert",
@@ -476,7 +496,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -487,7 +508,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -498,7 +520,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -509,7 +532,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -541,7 +565,7 @@
   },
   {
     "operation": "Get the Document object",
-    "description": "",
+    "description": "Get the Document object that you can use to update with the UpdateDocuments() method operation performs the get the document object that you can use to update with the updatedocuments() method functionality using AlphaTrust API.",
     "operationId": "GetDocumentsUpdateable",
     "operationApiType": "POST",
     "operationPath": "documentsupdateable",
@@ -566,7 +590,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -577,7 +602,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -588,7 +614,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -599,7 +626,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -631,7 +659,7 @@
   },
   {
     "operation": "Get File Attachments",
-    "description": "",
+    "description": "Get File Attachments operation performs the get file attachments functionality using AlphaTrust API.",
     "operationId": "GetFileAttachments",
     "operationApiType": "POST",
     "operationPath": "fileattachments",
@@ -656,7 +684,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -667,7 +696,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -678,7 +708,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -689,7 +720,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -721,7 +753,7 @@
   },
   {
     "operation": "Insert File Attachments",
-    "description": "",
+    "description": "Insert File Attachments operation performs the insert file attachments functionality using AlphaTrust API.",
     "operationId": "InsertFileAttachments",
     "operationApiType": "POST",
     "operationPath": "fileattachments/insert",
@@ -746,7 +778,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -757,7 +790,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -768,7 +802,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -779,7 +814,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -811,7 +847,7 @@
   },
   {
     "operation": "Delete a Group",
-    "description": "",
+    "description": "Delete a Group operation performs the delete a group functionality using AlphaTrust API.",
     "operationId": "DeleteGroupsAsync",
     "operationApiType": "DELETE",
     "operationPath": "groups",
@@ -836,7 +872,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -847,7 +884,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -858,7 +896,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -869,7 +908,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -901,7 +941,7 @@
   },
   {
     "operation": "Insert a Group",
-    "description": "",
+    "description": "Insert a Group operation performs the insert a group functionality using AlphaTrust API.",
     "operationId": "InsertGroupsAsync",
     "operationApiType": "POST",
     "operationPath": "groups/insert",
@@ -926,7 +966,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -937,7 +978,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -948,7 +990,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -959,7 +1002,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -991,7 +1035,7 @@
   },
   {
     "operation": "Update an existing Group",
-    "description": "",
+    "description": "Update an existing Group operation performs the update an existing group functionality using AlphaTrust API.",
     "operationId": "UpdateGroupsAsync",
     "operationApiType": "PUT",
     "operationPath": "groups",
@@ -1016,7 +1060,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -1027,7 +1072,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -1038,7 +1084,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -1049,7 +1096,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -1081,7 +1129,7 @@
   },
   {
     "operation": "Get a Participant",
-    "description": "",
+    "description": "Get a Participant operation performs the get a participant functionality using AlphaTrust API.",
     "operationId": "GetParticipants",
     "operationApiType": "POST",
     "operationPath": "participants",
@@ -1106,7 +1154,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -1117,7 +1166,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -1128,7 +1178,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -1139,7 +1190,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -1171,7 +1223,7 @@
   },
   {
     "operation": "Update Participant",
-    "description": "",
+    "description": "Update Participant operation performs the update participant functionality using AlphaTrust API.",
     "operationId": "UpdateParticipants",
     "operationApiType": "PUT",
     "operationPath": "participants",
@@ -1196,7 +1248,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -1207,7 +1260,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -1218,7 +1272,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -1229,7 +1284,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -1261,7 +1317,7 @@
   },
   {
     "operation": "Update Participant Workflow Action Status",
-    "description": "",
+    "description": "Update Participant Workflow Action Status operation performs the update participant workflow action status functionality using AlphaTrust API.",
     "operationId": "UpdateParticipantWorkflowActionStatus",
     "operationApiType": "PUT",
     "operationPath": "participants/workflowactionstatus",
@@ -1286,7 +1342,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -1297,7 +1354,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -1308,7 +1366,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -1319,7 +1378,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -1351,7 +1411,7 @@
   },
   {
     "operation": "Re-send Participant Email Notification",
-    "description": "",
+    "description": "Re-send Participant Email Notification operation performs the re-send participant email notification functionality using AlphaTrust API.",
     "operationId": "ResendParticipantEmailNotifications",
     "operationApiType": "POST",
     "operationPath": "participants/emailnotification",
@@ -1376,7 +1436,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -1387,7 +1448,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -1398,7 +1460,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -1409,7 +1472,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -1441,7 +1505,7 @@
   },
   {
     "operation": "Seal PDF",
-    "description": "",
+    "description": "Seal PDF operation performs the seal pdf functionality using AlphaTrust API.",
     "operationId": "SealPdfs",
     "operationApiType": "POST",
     "operationPath": "pdf/seal",
@@ -1466,7 +1530,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -1477,7 +1542,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -1488,7 +1554,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -1499,7 +1566,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -1531,7 +1599,7 @@
   },
   {
     "operation": "Certify PDF",
-    "description": "",
+    "description": "Certify PDF operation performs the certify pdf functionality using AlphaTrust API.",
     "operationId": "CertifyPdfs",
     "operationApiType": "POST",
     "operationPath": "pdf/certify",
@@ -1556,7 +1624,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -1567,7 +1636,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -1578,7 +1648,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -1589,7 +1660,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -1621,7 +1693,7 @@
   },
   {
     "operation": "Get PDF Data Files",
-    "description": "",
+    "description": "Get PDF Data Files operation performs the get pdf data files functionality using AlphaTrust API.",
     "operationId": "GetPdfDataFiles",
     "operationApiType": "POST",
     "operationPath": "pdf/dataFiles",
@@ -1646,7 +1718,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -1657,7 +1730,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -1668,7 +1742,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -1679,7 +1754,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -1711,7 +1787,7 @@
   },
   {
     "operation": "Get Transaction Security Token Data",
-    "description": "",
+    "description": "Get Transaction Security Token Data operation performs the get transaction security token data functionality using AlphaTrust API.",
     "operationId": "GetTransactionTokenData",
     "operationApiType": "POST",
     "operationPath": "securitytoken",
@@ -1736,7 +1812,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -1747,7 +1824,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -1758,7 +1836,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -1769,7 +1848,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -1801,7 +1881,7 @@
   },
   {
     "operation": "Get Task",
-    "description": "",
+    "description": "Get Task operation performs the get task functionality using AlphaTrust API.",
     "operationId": "GetTasks",
     "operationApiType": "POST",
     "operationPath": "tasks",
@@ -1826,7 +1906,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -1837,7 +1918,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -1848,7 +1930,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -1859,7 +1942,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -1891,7 +1975,7 @@
   },
   {
     "operation": "Update Task",
-    "description": "",
+    "description": "Update Task operation performs the update task functionality using AlphaTrust API.",
     "operationId": "UpdateTasks",
     "operationApiType": "PUT",
     "operationPath": "tasks",
@@ -1916,7 +2000,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -1927,7 +2012,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -1938,7 +2024,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -1949,7 +2036,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -1981,7 +2069,7 @@
   },
   {
     "operation": "Insert a Task",
-    "description": "",
+    "description": "Insert a Task operation performs the insert a task functionality using AlphaTrust API.",
     "operationId": "InsertTasks",
     "operationApiType": "POST",
     "operationPath": "tasks/insert",
@@ -2006,7 +2094,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -2017,7 +2106,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -2028,7 +2118,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -2039,7 +2130,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -2071,7 +2163,7 @@
   },
   {
     "operation": "Get Transaction",
-    "description": "",
+    "description": "Get Transaction operation performs the get transaction functionality using AlphaTrust API.",
     "operationId": "GetTransactions",
     "operationApiType": "POST",
     "operationPath": "transactions",
@@ -2096,7 +2188,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -2107,7 +2200,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -2118,7 +2212,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -2129,7 +2224,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -2161,7 +2257,7 @@
   },
   {
     "operation": "Update an existing Transaction",
-    "description": "",
+    "description": "Update an existing Transaction operation performs the update an existing transaction functionality using AlphaTrust API.",
     "operationId": "UpdateTransactions",
     "operationApiType": "PUT",
     "operationPath": "transactions",
@@ -2186,7 +2282,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -2197,7 +2294,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -2208,7 +2306,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -2219,7 +2318,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -2251,7 +2351,7 @@
   },
   {
     "operation": "Close Transaction",
-    "description": "",
+    "description": "Close Transaction operation performs the close transaction functionality using AlphaTrust API.",
     "operationId": "CloseTransactions",
     "operationApiType": "PUT",
     "operationPath": "transactions/close",
@@ -2276,7 +2376,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -2287,7 +2388,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -2298,7 +2400,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -2309,7 +2412,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -2341,7 +2445,7 @@
   },
   {
     "operation": "Create Transaction",
-    "description": "",
+    "description": "Create Transaction operation performs the create transaction functionality using AlphaTrust API.",
     "operationId": "CreateTransactions",
     "operationApiType": "POST",
     "operationPath": "transactions/create",
@@ -2366,7 +2470,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -2377,7 +2482,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -2388,7 +2494,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -2399,7 +2506,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -2431,7 +2539,7 @@
   },
   {
     "operation": "Delete a User",
-    "description": "",
+    "description": "Delete a User operation performs the delete a user functionality using AlphaTrust API.",
     "operationId": "DeleteUsersAsync",
     "operationApiType": "DELETE",
     "operationPath": "users",
@@ -2456,7 +2564,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -2467,7 +2576,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -2478,7 +2588,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -2489,7 +2600,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -2521,7 +2633,7 @@
   },
   {
     "operation": "Get User",
-    "description": "",
+    "description": "Get User operation performs the get user functionality using AlphaTrust API.",
     "operationId": "GetUsers",
     "operationApiType": "POST",
     "operationPath": "users",
@@ -2546,7 +2658,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -2557,7 +2670,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -2568,7 +2682,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -2579,7 +2694,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -2611,7 +2727,7 @@
   },
   {
     "operation": "Update an existing User",
-    "description": "",
+    "description": "Update an existing User operation performs the update an existing user functionality using AlphaTrust API.",
     "operationId": "UpdateUsersAsync",
     "operationApiType": "PUT",
     "operationPath": "users",
@@ -2636,7 +2752,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -2647,7 +2764,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -2658,7 +2776,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -2669,7 +2788,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -2701,7 +2821,7 @@
   },
   {
     "operation": "Insert User",
-    "description": "",
+    "description": "Insert User operation performs the insert user functionality using AlphaTrust API.",
     "operationId": "InsertUsersAsync",
     "operationApiType": "POST",
     "operationPath": "users/insert",
@@ -2726,7 +2846,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -2737,7 +2858,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -2748,7 +2870,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -2759,7 +2882,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -2791,7 +2915,7 @@
   },
   {
     "operation": "Get Workflows",
-    "description": "",
+    "description": "Get Workflows operation performs the get workflows functionality using AlphaTrust API.",
     "operationId": "GetWorkflows",
     "operationApiType": "POST",
     "operationPath": "workflows",
@@ -2816,7 +2940,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -2827,7 +2952,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -2838,7 +2964,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -2849,7 +2976,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",
@@ -2881,7 +3009,7 @@
   },
   {
     "operation": "Get Workflow List",
-    "description": "",
+    "description": "Get Workflow List operation performs the get workflow list functionality using AlphaTrust API.",
     "operationId": "GetWorkflowList",
     "operationApiType": "POST",
     "operationPath": "workflows/list",
@@ -2906,7 +3034,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Key"
+        "ui_displayName": "Api Key",
+        "description": "The unique API key provided by AlphaTrust to authenticate requests. This must be kept secure."
       },
       {
         "name": "ApiSecret",
@@ -2917,7 +3046,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Secret"
+        "ui_displayName": "Api Secret",
+        "description": "The secret key paired with the API key, used for secure request authentication."
       },
       {
         "name": "ApiUsername",
@@ -2928,7 +3058,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Username"
+        "ui_displayName": "Api Username",
+        "description": "The username credential for the API user account, required for authentication."
       },
       {
         "name": "ApiPassword",
@@ -2939,7 +3070,8 @@
         "datatype": "System.String",
         "ui_source": "operation",
         "ui_category": "Misc",
-        "ui_displayName": "Api Password"
+        "ui_displayName": "Api Password",
+        "description": "The password credential for the API user account, used along with the username for authentication."
       },
       {
         "name": "Body",

@@ -1,7 +1,7 @@
 [
   {
     "operation": "Get Apps for Current User",
-    "description": "",
+    "description": "Get Apps for Current User operation allows users to perform get apps for current user through Citrix ShareFile API.",
     "operationId": "get_apps_for_current_user",
     "operationApiType": "GET",
     "operationPath": "/Apps",
@@ -20,7 +20,7 @@
   },
   {
     "operation": "Get Device Users for Current User",
-    "description": "",
+    "description": "Get Device Users for Current User operation allows users to perform get device users for current user through Citrix ShareFile API.",
     "operationId": "get_device_users_for_current_user",
     "operationApiType": "GET",
     "operationPath": "/Devices",
@@ -39,7 +39,7 @@
   },
   {
     "operation": "Get HomeFolder for Current User",
-    "description": "",
+    "description": "Get HomeFolder for Current User operation allows users to perform get homefolder for current user through Citrix ShareFile API.",
     "operationId": "get_homeFolder_for_current_user",
     "operationApiType": "GET",
     "operationPath": "/Items",
@@ -58,7 +58,7 @@
   },
   {
     "operation": "Get Item by ID or TreeView",
-    "description": "",
+    "description": "Get Item by ID or TreeView operation allows users to perform get item by id or treeview through Citrix ShareFile API.",
     "operationId": "get_item_by_id_or_treeView",
     "operationApiType": "GET",
     "operationPath": "/Items({itemId})",
@@ -92,7 +92,7 @@
   },
   {
     "operation": "Update Item",
-    "description": "",
+    "description": "Update Item operation allows users to perform update item through Citrix ShareFile API.",
     "operationId": "update_item",
     "operationApiType": "PATCH",
     "operationPath": "/Items({itemId})",
@@ -152,7 +152,7 @@
   },
   {
     "operation": "Delete Item",
-    "description": "",
+    "description": "Delete Item operation allows users to perform delete item through Citrix ShareFile API.",
     "operationId": "delete_item",
     "operationApiType": "DELETE",
     "operationPath": "/Items({itemId})",
@@ -186,7 +186,7 @@
   },
   {
     "operation": "Get TreeView",
-    "description": "",
+    "description": "Get TreeView operation allows users to perform get treeview through Citrix ShareFile API.",
     "operationId": "get_treeView",
     "operationApiType": "GET",
     "operationPath": "/Items({itemId})/TreeView",
@@ -220,7 +220,7 @@
   },
   {
     "operation": "Get Stream",
-    "description": "",
+    "description": "Get Stream operation allows users to perform get stream through Citrix ShareFile API.",
     "operationId": "get_stream",
     "operationApiType": "GET",
     "operationPath": "/Items({itemId})/Stream",
@@ -254,7 +254,7 @@
   },
   {
     "operation": "Get Item by Path",
-    "description": "",
+    "description": "Get Item by Path operation allows users to perform get item by path through Citrix ShareFile API.",
     "operationId": "get_item_by_path",
     "operationApiType": "GET",
     "operationPath": "/Items/ByPath",
@@ -288,7 +288,7 @@
   },
   {
     "operation": "Get Item by relative Path from ID",
-    "description": "",
+    "description": "Get Item by relative Path from ID operation allows users to perform get item by relative path from id through Citrix ShareFile API.",
     "operationId": "get_item_relative_by_path_from_id",
     "operationApiType": "GET",
     "operationPath": "/Items({itemId})/ByPath",
@@ -336,7 +336,7 @@
   },
   {
     "operation": "Get Parent Item",
-    "description": "",
+    "description": "Get Parent Item operation allows users to perform get parent item through Citrix ShareFile API.",
     "operationId": "get_parent_item",
     "operationApiType": "GET",
     "operationPath": "/Items({itemId})/Parent",
@@ -370,7 +370,7 @@
   },
   {
     "operation": "Get Children",
-    "description": "",
+    "description": "Get Children operation allows users to perform get children through Citrix ShareFile API.",
     "operationId": "get_children",
     "operationApiType": "GET",
     "operationPath": "/Items({itemId})/Children",
@@ -404,7 +404,7 @@
   },
   {
     "operation": "Get Folder Access Info",
-    "description": "",
+    "description": "Get Folder Access Info operation allows users to perform get folder access info through Citrix ShareFile API.",
     "operationId": "get_folder_access_info",
     "operationApiType": "GET",
     "operationPath": "/Items({itemId})/Info",
@@ -438,7 +438,7 @@
   },
   {
     "operation": "Download Item Content",
-    "description": "",
+    "description": "Download Item Content operation allows users to perform download item content through Citrix ShareFile API.",
     "operationId": "download_item_content",
     "operationApiType": "GET",
     "operationPath": "/Items({itemId})/Download",
@@ -472,7 +472,7 @@
   },
   {
     "operation": "Download Item content in bulk",
-    "description": "",
+    "description": "Download Items Content in bulk operation allows users to perform download items content in bulk through Citrix ShareFile API.",
     "operationId": "download_multiple_items",
     "operationApiType": "POST",
     "operationPath": "/Items({itemId})/BulkDownload",
@@ -538,7 +538,7 @@
   },
   {
     "operation": "Create Folder",
-    "description": "",
+    "description": "Create Folder operation allows users to perform create folder through Citrix ShareFile API.",
     "operationId": "create_folder",
     "operationApiType": "POST",
     "operationPath": "/Items({parentId})/Folder",
@@ -598,7 +598,7 @@
   },
   {
     "operation": "Create Note",
-    "description": "",
+    "description": "Create Note operation allows users to perform create note through Citrix ShareFile API.",
     "operationId": "create_note",
     "operationApiType": "POST",
     "operationPath": "/Items({parentId})/Note",
@@ -658,7 +658,7 @@
   },
   {
     "operation": "Create Link",
-    "description": "",
+    "description": "Create Link operation allows users to perform create link through Citrix ShareFile API.",
     "operationId": "create_link",
     "operationApiType": "POST",
     "operationPath": "/Items({parentId})/Link",
@@ -718,7 +718,7 @@
   },
   {
     "operation": "Update Link",
-    "description": "",
+    "description": "Update Link operation allows users to perform update link through Citrix ShareFile API.",
     "operationId": "update_link",
     "operationApiType": "PATCH",
     "operationPath": "/Items/Link({itemId})",
@@ -784,7 +784,7 @@
   },
   {
     "operation": "Update Note",
-    "description": "",
+    "description": "Update Note operation allows users to perform update note through Citrix ShareFile API.",
     "operationId": "update_note",
     "operationApiType": "POST",
     "operationPath": "/Items/({itemId})/Note",
@@ -844,7 +844,7 @@
   },
   {
     "operation": "Delete Multiple Items",
-    "description": "",
+    "description": "Delete Multiple Items operation allows users to perform delete multiple items through Citrix ShareFile API.",
     "operationId": "delete_multiple_items",
     "operationApiType": "POST",
     "operationPath": "/Items({parentId})/BulkDelete",
@@ -916,7 +916,7 @@
   },
   {
     "operation": "Get Thumbnail",
-    "description": "",
+    "description": "Get Thumbnail operation allows users to perform get thumbnail through Citrix ShareFile API.",
     "operationId": "get_thumbnail",
     "operationApiType": "GET",
     "operationPath": "/Items({parentId})/Thumbnail",
@@ -950,7 +950,7 @@
   },
   {
     "operation": "Get Breadcrumbs",
-    "description": "",
+    "description": "Get Breadcrumbs operation allows users to perform get breadcrumbs through Citrix ShareFile API.",
     "operationId": "get_breadcrumbs",
     "operationApiType": "GET",
     "operationPath": "/Items({parentId})/Breadcrumbs",
@@ -1004,7 +1004,7 @@
   },
   {
     "operation": "Copy Item",
-    "description": "",
+    "description": "Copy Item operation allows users to perform copy item through Citrix ShareFile API.",
     "operationId": "copy_item",
     "operationApiType": "POST",
     "operationPath": "/Items({itemId})/Copy",
@@ -1058,7 +1058,7 @@
   },
   {
     "operation": "Search In Item",
-    "description": "",
+    "description": "Search In Item operation allows users to perform search in item through Citrix ShareFile API.",
     "operationId": "search_in_item",
     "operationApiType": "GET",
     "operationPath": "/Items({itemId})/Search",
@@ -1164,7 +1164,7 @@
   },
   {
     "operation": "Advanced Simple Search",
-    "description": "",
+    "description": "Advanced Simple Search operation allows users to perform advanced simple search through Citrix ShareFile API.",
     "operationId": "advanced_simple_search",
     "operationApiType": "POST",
     "operationPath": "/Items/AdvancedSimpleSearch",
@@ -1210,7 +1210,7 @@
   },
   {
     "operation": "Advanced Search",
-    "description": "",
+    "description": "Advanced Search operation allows users to perform advanced search through Citrix ShareFile API.",
     "operationApiType": "POST",
     "operationPath": "/Items/AdvancedSearch",
     "operationSummary": "Advanced Search",

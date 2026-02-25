@@ -1,7 +1,7 @@
 [
   {
     "operation": "Aborts a Multipart Upload",
-    "description": "",
+    "description": "Aborts a multipart upload operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "AbortMultipartUpload",
     "operationApiType": "DELETE",
     "operationPath": "/{bucket}/{Key}",
@@ -27,7 +27,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "{Key}",
@@ -82,7 +83,7 @@
   },
   {
     "operation": "Completes a Multipart Upload",
-    "description": "",
+    "description": "Completes a multipart upload operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "CompleteMultipartUpload",
     "operationApiType": "POST",
     "operationPath": "/{bucket}/{Key}",
@@ -108,7 +109,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "{Key}",
@@ -163,7 +165,7 @@
   },
   {
     "operation": "Upload Part",
-    "description": "",
+    "description": "Upload Part operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "CompleteMultipartUpload",
     "operationApiType": "PUT",
     "operationPath": "/{bucket}/{Key}",
@@ -189,7 +191,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "{Key}",
@@ -257,7 +260,7 @@
   },
   {
     "operation": "List Parts",
-    "description": "",
+    "description": "List Parts operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "ListParts",
     "operationApiType": "GET",
     "operationPath": "/{bucket}/{Key}",
@@ -283,7 +286,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "{Key}",
@@ -315,7 +319,7 @@
   },
   {
     "operation": "Copy Object",
-    "description": "",
+    "description": "Copy object operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "CopyObject",
     "operationApiType": "PUT",
     "operationPath": "/{bucket}/{Key}",
@@ -341,7 +345,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "{Key}",
@@ -373,7 +378,7 @@
   },
   {
     "operation": "Create Bucket",
-    "description": "",
+    "description": "Create Bucket operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "CreateBucket",
     "operationApiType": "PUT",
     "operationPath": "/{bucket}",
@@ -429,7 +434,7 @@
   },
   {
     "operation": "Delete Bucket",
-    "description": "",
+    "description": "Delete Bucket operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "DeleteBucket",
     "operationApiType": "DELETE",
     "operationPath": "/{bucket}",
@@ -455,13 +460,14 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       }
     ]
   },
   {
     "operation": "List Buckets",
-    "description": "",
+    "description": "List Buckets operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "ListBucket",
     "operationApiType": "GET",
     "operationPath": "/",
@@ -507,7 +513,7 @@
   },
   {
     "operation": "List Objects",
-    "description": "",
+    "description": "List Objects operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "ListObjects",
     "operationApiType": "GET",
     "operationPath": "/{bucket}",
@@ -533,7 +539,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "list-type",
@@ -653,7 +660,7 @@
   },
   {
     "operation": "Initiates a Multipart Upload",
-    "description": "",
+    "description": "Initiates a multipart upload operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "CreateMultipartUpload",
     "operationApiType": "POST",
     "operationPath": "/{bucket}/{Key}",
@@ -679,7 +686,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "{Key}",
@@ -699,13 +707,20 @@
         "value": "",
         "param_type": "UrlParam",
         "ui_source": "operation",
-        "ui_category": "Misc"
+        "ui_category": "Misc",
+        "hasvalue": false
+      },
+      {
+        "name": "DeleteMessageBody",
+        "value": true,
+        "param_type": "Param",
+        "ui_source": "operation"
       }
     ]
   },
   {
     "operation": "Delete Object",
-    "description": "",
+    "description": "Delete Object operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "DeleteObject",
     "operationApiType": "DELETE",
     "operationPath": "/{bucket}/{Key}",
@@ -731,7 +746,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "{Key}",
@@ -763,7 +779,7 @@
   },
   {
     "operation": "Delete Objects",
-    "description": "",
+    "description": "Delete Objects operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "DeleteObjects",
     "operationApiType": "POST",
     "operationPath": "/{bucket}/{Key}",
@@ -789,7 +805,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "{Key}",
@@ -814,7 +831,7 @@
   },
   {
     "operation": "Get Object from Bucket",
-    "description": "",
+    "description": "Get Object operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "GetObjectFromBucket",
     "operationApiType": "GET",
     "operationPath": "/{bucket}/{Key}",
@@ -840,7 +857,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "{Key}",
@@ -859,7 +877,7 @@
   },
   {
     "operation": "Retrieves Object Metadata",
-    "description": "",
+    "description": "Retrieves metadata of object operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "HeadObject",
     "operationApiType": "HEAD",
     "operationPath": "/{bucket}/{Key}",
@@ -885,7 +903,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "{Key}",
@@ -904,7 +923,7 @@
   },
   {
     "operation": "Add Object to Bucket",
-    "description": "",
+    "description": "Adds object to bucket operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "PutObject",
     "operationApiType": "PUT",
     "operationPath": "/{bucket}/{Key}",
@@ -930,7 +949,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "{Key}",
@@ -972,7 +992,7 @@
   },
   {
     "operation": "Get Object Access Control List",
-    "description": "",
+    "description": "Get Access Control List Of Bucket operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "GetObjectAcl",
     "operationApiType": "GET",
     "operationPath": "/{bucket}",
@@ -998,7 +1018,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "{Key}",
@@ -1050,7 +1071,7 @@
   },
   {
     "operation": "Set Object Access Control List",
-    "description": "",
+    "description": "Get Access Control List Of Bucket operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "SetObjectAcl",
     "operationApiType": "PUT",
     "operationPath": "/{bucket}",
@@ -1076,7 +1097,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "{Key}",
@@ -1248,7 +1270,7 @@
   },
   {
     "operation": "Get Bucket Access Control List",
-    "description": "",
+    "description": "Get Access Control List Of Bucket operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "GetBucketAcl",
     "operationApiType": "GET",
     "operationPath": "/{bucket}",
@@ -1281,7 +1303,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "x-amz-expected-bucket-owner",
@@ -1300,7 +1323,7 @@
   },
   {
     "operation": "Set Bucket Access Control List",
-    "description": "",
+    "description": "Sets Access Control List Of Bucket operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "PutBucketAcl",
     "operationApiType": "PUT",
     "operationPath": "/{bucket}",
@@ -1333,7 +1356,8 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "Body",
@@ -1463,7 +1487,7 @@
   },
   {
     "operation": "List Multipart Uploads",
-    "description": "",
+    "description": "List Multipart Uploads operation using the Amazon S3 API. Refer to AWS S3 REST documentation for full details.",
     "operationId": "ListMultipartUploads",
     "operationApiType": "GET",
     "operationPath": "/{bucket}",
@@ -1489,13 +1513,15 @@
         "ui_source": "adapter",
         "ui_category": "Publish Mode Properties",
         "typeConverter": "CloudFolderTypeConverter",
-        "sourceProperty": "ReceiveFolder"
+        "sourceProperty": "ReceiveFolder",
+        "description": "The name of the Amazon S3 bucket to perform the operation on."
       },
       {
         "name": "uploads",
         "value": "",
         "param_type": "UrlParam",
-        "ui_source": "operation"
+        "ui_source": "operation",
+        "hasvalue": false
       }
     ]
   }
