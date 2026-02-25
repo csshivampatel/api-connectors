@@ -8,7 +8,7 @@
     "operationSummary": "Retrieve a list of account records",
     "operationDescription": "Fetches a paginated list of account records from the NetSuite system. Supports filtering via query parameters and asynchronous execution.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Account",
     "OperationSubCategory": "Accounts",
     "adapterProperties": [
       {
@@ -76,7 +76,7 @@
     "operationSummary": "Create a new account record",
     "operationDescription": "Inserts a new account record into the NetSuite system. The request body must contain the account details in XML format, with optional validation settings for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Account",
     "OperationSubCategory": "Accounts",
     "adapterProperties": [
       {
@@ -190,7 +190,7 @@
     "operationSummary": "Delete an account record by ID",
     "operationDescription": "Removes an account record from the NetSuite system using the specified account ID. Requires an idempotency key for asynchronous execution.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Account",
     "OperationSubCategory": "Accounts",
     "adapterProperties": [
       {
@@ -248,7 +248,7 @@
     "operationSummary": "Retrieve an account record by ID",
     "operationDescription": "Fetches a specific account record from the NetSuite system using the provided account ID. Supports options to expand sub-resources and simplify enumeration formats.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Account",
     "OperationSubCategory": "Accounts",
     "adapterProperties": [
       {
@@ -330,7 +330,7 @@
     "operationSummary": "Update an account record by ID",
     "operationDescription": "Modifies an existing account record in the NetSuite system using the specified account ID. The request body contains the updated fields in XML format, with options for validation and field replacement.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Account",
     "OperationSubCategory": "Accounts",
     "adapterProperties": [
       {
@@ -458,7 +458,7 @@
     "operationSummary": "Retrieve a list of customer records",
     "operationDescription": "Fetches a paginated list of customer records from the NetSuite system. No additional parameters are required for basic retrieval.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Customer",
     "OperationSubCategory": "Customers",
     "adapterProperties": [
       {
@@ -478,7 +478,7 @@
     "operationSummary": "Create a new customer record",
     "operationDescription": "Inserts a new customer record into the NetSuite system. The request body must contain the customer details in XML format.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Customer",
     "OperationSubCategory": "Customers",
     "adapterProperties": [
       {
@@ -533,7 +533,7 @@
     "operationSummary": "Retrieve a customer record by ID",
     "operationDescription": "Fetches a specific customer record from the NetSuite system using the provided customer ID.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Customer",
     "OperationSubCategory": "Customers",
     "adapterProperties": [
       {
@@ -568,7 +568,7 @@
     "operationSummary": "Delete a customer record by ID",
     "operationDescription": "Removes a customer record from the NetSuite system using the specified customer ID.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Customer",
     "OperationSubCategory": "Customers",
     "adapterProperties": [
       {
@@ -603,7 +603,7 @@
     "operationSummary": "Update a customer record by ID",
     "operationDescription": "Modifies an existing customer record in the NetSuite system using the specified customer ID. The request body contains the updated fields in XML format.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Customer",
     "OperationSubCategory": "Customers",
     "adapterProperties": [
       {
@@ -672,7 +672,7 @@
     "operationSummary": "Retrieve customer records by filter",
     "operationDescription": "Fetches a list of customer records from the NetSuite system that match the specified search query provided in the 'q' parameter.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Customer",
     "OperationSubCategory": "Customers",
     "adapterProperties": [
       {
@@ -705,7 +705,7 @@
     "operationSummary": "Create a new campaign record",
     "operationDescription": "Inserts a new campaign record into the NetSuite system. The request body must contain the campaign details in XML format, with optional validation settings for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Campaign",
     "OperationSubCategory": "Campaigns",
     "adapterProperties": [
       {
@@ -819,7 +819,7 @@
     "operationSummary": "Delete a campaign record by ID",
     "operationDescription": "Removes a campaign record from the NetSuite system using the specified campaign ID. Requires an idempotency key for asynchronous execution.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Campaign",
     "OperationSubCategory": "Campaigns",
     "adapterProperties": [
       {
@@ -877,7 +877,7 @@
     "operationSummary": "Retrieve a campaign record by ID",
     "operationDescription": "Fetches a specific campaign record from the NetSuite system using the provided campaign ID. Supports options to expand sub-resources and simplify enumeration formats.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Campaign",
     "OperationSubCategory": "Campaigns",
     "adapterProperties": [
       {
@@ -959,7 +959,7 @@
     "operationSummary": "Update a campaign record by ID",
     "operationDescription": "Modifies an existing campaign record in the NetSuite system using the specified campaign ID. The request body contains the updated fields in XML format, with options for validation and field replacement.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Campaign",
     "OperationSubCategory": "Campaigns",
     "adapterProperties": [
       {
@@ -1087,7 +1087,7 @@
     "operationSummary": "Retrieve a list of invoice records",
     "operationDescription": "Fetches a paginated list of invoice records from the NetSuite system. Supports filtering via query parameters and asynchronous execution.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Invoice",
     "OperationSubCategory": "Invoices",
     "adapterProperties": [
       {
@@ -1155,7 +1155,7 @@
     "operationSummary": "Create a new invoice record",
     "operationDescription": "Inserts a new invoice record into the NetSuite system. The request body must contain the invoice details in XML format, with optional validation settings for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Invoice",
     "OperationSubCategory": "Invoices",
     "adapterProperties": [
       {
@@ -1269,7 +1269,7 @@
     "operationSummary": "Delete an invoice record by ID",
     "operationDescription": "Removes an invoice record from the NetSuite system using the specified invoice ID. Requires an idempotency key for asynchronous execution.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Invoice",
     "OperationSubCategory": "Invoices",
     "adapterProperties": [
       {
@@ -1327,7 +1327,7 @@
     "operationSummary": "Retrieve an invoice record by ID",
     "operationDescription": "Fetches a specific invoice record from the NetSuite system using the provided invoice ID. Supports options to expand sub-resources and simplify enumeration formats.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Invoice",
     "OperationSubCategory": "Invoices",
     "adapterProperties": [
       {
@@ -1409,7 +1409,7 @@
     "operationSummary": "Update an invoice record by ID",
     "operationDescription": "Modifies an existing invoice record in the NetSuite system using the specified invoice ID. The request body contains the updated fields in XML format, with options for validation and field replacement.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Invoice",
     "OperationSubCategory": "Invoices",
     "adapterProperties": [
       {
@@ -1537,7 +1537,7 @@
     "operationSummary": "Retrieve a list of credit memo records",
     "operationDescription": "Fetches a paginated list of credit memo records from the NetSuite system. Supports filtering via query parameters and asynchronous execution.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "CreditMemo",
     "OperationSubCategory": "Credit Memos",
     "adapterProperties": [
       {
@@ -1605,7 +1605,7 @@
     "operationSummary": "Create a new credit memo record",
     "operationDescription": "Inserts a new credit memo record into the NetSuite system. The request body must contain the credit memo details in XML format, with optional validation settings for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "CreditMemo",
     "OperationSubCategory": "Credit Memos",
     "adapterProperties": [
       {
@@ -1719,7 +1719,7 @@
     "operationSummary": "Delete a credit memo record by ID",
     "operationDescription": "Removes a credit memo record from the NetSuite system using the specified credit memo ID. Requires an idempotency key for asynchronous execution.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "CreditMemo",
     "OperationSubCategory": "Credit Memos",
     "adapterProperties": [
       {
@@ -1777,7 +1777,7 @@
     "operationSummary": "Retrieve a credit memo record by ID",
     "operationDescription": "Fetches a specific credit memo record from the NetSuite system using the provided credit memo ID. Supports options to expand sub-resources and simplify enumeration formats.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "CreditMemo",
     "OperationSubCategory": "Credit Memos",
     "adapterProperties": [
       {
@@ -1859,7 +1859,7 @@
     "operationSummary": "Update a credit memo record by ID",
     "operationDescription": "Modifies an existing credit memo record in the NetSuite system using the specified credit memo ID. The request body contains the updated fields in XML format, with options for validation and field replacement.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "CreditMemo",
     "OperationSubCategory": "Credit Memos",
     "adapterProperties": [
       {
@@ -1987,8 +1987,8 @@
     "operationSummary": "Retrieve a list of expense report records",
     "operationDescription": "Fetches a paginated list of expense report records from the NetSuite system. Supports filtering via query parameters and asynchronous execution for efficient retrieval of expense data.",
     "deprecated": false,
-    "OperationCategory": "Records",
-    "OperationSubCategory": "Expense Reports",
+    "OperationCategory": "ExpenseReport",
+    "OperationSubCategory": "Credit Memos",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2055,8 +2055,8 @@
     "operationSummary": "Create a new expense report record",
     "operationDescription": "Inserts a new expense report record into the NetSuite system. The request body must contain the expense report details in XML format, with optional validation settings for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
-    "OperationSubCategory": "Expense Reports",
+    "OperationCategory": "ExpenseReport",
+    "OperationSubCategory": "Credit Memos",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2169,8 +2169,8 @@
     "operationSummary": "Delete an expense report record by ID",
     "operationDescription": "Removes an expense report record from the NetSuite system using the specified expense report ID. Requires an idempotency key for asynchronous execution to ensure safe deletion.",
     "deprecated": false,
-    "OperationCategory": "Records",
-    "OperationSubCategory": "Expense Reports",
+    "OperationCategory": "ExpenseReport",
+    "OperationSubCategory": "Credit Memos",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2227,8 +2227,8 @@
     "operationSummary": "Retrieve an expense report record by ID",
     "operationDescription": "Fetches a specific expense report record from the NetSuite system using the provided expense report ID. Supports options to expand sub-resources and simplify enumeration formats for detailed record retrieval.",
     "deprecated": false,
-    "OperationCategory": "Records",
-    "OperationSubCategory": "Expense Reports",
+    "OperationCategory": "ExpenseReport",
+    "OperationSubCategory": "Credit Memos",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2309,8 +2309,8 @@
     "operationSummary": "Update an expense report record by ID",
     "operationDescription": "Modifies an existing expense report record in the NetSuite system using the specified expense report ID. The request body contains the updated fields in XML format, with options for validation and field replacement.",
     "deprecated": false,
-    "OperationCategory": "Records",
-    "OperationSubCategory": "Expense Reports",
+    "OperationCategory": "ExpenseReport",
+    "OperationSubCategory": "Credit Memos",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -2437,7 +2437,7 @@
     "operationSummary": "Retrieve a list of payment item records",
     "operationDescription": "Fetches a paginated list of payment item records from the NetSuite system. Supports filtering via query parameters and asynchronous execution for efficient retrieval of payment data.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PaymentItem",
     "OperationSubCategory": "Payment Items",
     "adapterProperties": [
       {
@@ -2505,7 +2505,7 @@
     "operationSummary": "Create a new payment item record",
     "operationDescription": "Inserts a new payment item record into the NetSuite system. The request body must contain the payment item details in XML format, with optional validation settings for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PaymentItem",
     "OperationSubCategory": "Payment Items",
     "adapterProperties": [
       {
@@ -2619,7 +2619,7 @@
     "operationSummary": "Delete a payment item record by ID",
     "operationDescription": "Removes a payment item record from the NetSuite system using the specified payment item ID. Requires an idempotency key for asynchronous execution to ensure safe deletion.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PaymentItem",
     "OperationSubCategory": "Payment Items",
     "adapterProperties": [
       {
@@ -2677,7 +2677,7 @@
     "operationSummary": "Retrieve a payment item record by ID",
     "operationDescription": "Fetches a specific payment item record from the NetSuite system using the provided payment item ID. Supports options to expand sub-resources and simplify enumeration formats for detailed record retrieval.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PaymentItem",
     "OperationSubCategory": "Payment Items",
     "adapterProperties": [
       {
@@ -2759,7 +2759,7 @@
     "operationSummary": "Update a payment item record by ID",
     "operationDescription": "Modifies an existing payment item record in the NetSuite system using the specified payment item ID. The request body contains the updated fields in XML format, with options for validation and field replacement.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PaymentItem",
     "OperationSubCategory": "Payment Items",
     "adapterProperties": [
       {
@@ -2887,7 +2887,7 @@
     "operationSummary": "Retrieve a list of sales order records",
     "operationDescription": "Fetches a paginated list of sales order records from the NetSuite system. Supports filtering via query parameters and asynchronous execution for efficient retrieval of sales data.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "SalesOrder",
     "OperationSubCategory": "Sales Orders",
     "adapterProperties": [
       {
@@ -2955,7 +2955,7 @@
     "operationSummary": "Create a new sales order record",
     "operationDescription": "Inserts a new sales order record into the NetSuite system. The request body must contain the sales order details in XML format, with optional validation settings for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "SalesOrder",
     "OperationSubCategory": "Sales Orders",
     "adapterProperties": [
       {
@@ -3069,7 +3069,7 @@
     "operationSummary": "Delete a sales order record by ID",
     "operationDescription": "Removes a sales order record from the NetSuite system using the specified sales order ID. Requires an idempotency key for asynchronous execution to ensure safe deletion.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "SalesOrder",
     "OperationSubCategory": "Sales Orders",
     "adapterProperties": [
       {
@@ -3127,7 +3127,7 @@
     "operationSummary": "Retrieve a sales order record by ID",
     "operationDescription": "Fetches a specific sales order record from the NetSuite system using the provided sales order ID. Supports options to expand sub-resources and simplify enumeration formats for detailed record retrieval.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "SalesOrder",
     "OperationSubCategory": "Sales Orders",
     "adapterProperties": [
       {
@@ -3209,7 +3209,7 @@
     "operationSummary": "Update a sales order record by ID",
     "operationDescription": "Modifies an existing sales order record in the NetSuite system using the specified sales order ID. The request body contains the updated fields in XML format, with options for validation and field replacement.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "SalesOrder",
     "OperationSubCategory": "Sales Orders",
     "adapterProperties": [
       {
@@ -3337,7 +3337,7 @@
     "operationSummary": "Retrieve a list of estimate records",
     "operationDescription": "Fetches a paginated list of estimate records from the NetSuite system. Supports filtering via query parameters and asynchronous execution for efficient retrieval of estimate data.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Estimate",
     "OperationSubCategory": "Estimates",
     "adapterProperties": [
       {
@@ -3405,7 +3405,7 @@
     "operationSummary": "Create a new estimate record",
     "operationDescription": "Inserts a new estimate record into the NetSuite system. The request body must contain the estimate details in XML format, with optional validation settings for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Estimate",
     "OperationSubCategory": "Estimates",
     "adapterProperties": [
       {
@@ -3519,7 +3519,7 @@
     "operationSummary": "Delete an estimate record by ID",
     "operationDescription": "Removes an estimate record from the NetSuite system using the specified estimate ID. Requires an idempotency key for asynchronous execution to ensure safe deletion.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Estimate",
     "OperationSubCategory": "Estimates",
     "adapterProperties": [
       {
@@ -3577,7 +3577,7 @@
     "operationSummary": "Retrieve an estimate record by ID",
     "operationDescription": "Fetches a specific estimate record from the NetSuite system using the provided estimate ID. Supports options to expand sub-resources and simplify enumeration formats for detailed record retrieval.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Estimate",
     "OperationSubCategory": "Estimates",
     "adapterProperties": [
       {
@@ -3659,7 +3659,7 @@
     "operationSummary": "Update an estimate record by ID",
     "operationDescription": "Modifies an existing estimate record in the NetSuite system using the specified estimate ID. The request body contains the updated fields in XML format, with options for validation and field replacement.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Estimate",
     "OperationSubCategory": "Estimates",
     "adapterProperties": [
       {
@@ -3787,7 +3787,7 @@
     "operationSummary": "Retrieve a list of fulfillment request records",
     "operationDescription": "Fetches a paginated list of fulfillment request records from the NetSuite system. Supports filtering via query parameters and asynchronous execution for efficient retrieval of fulfillment data.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "FulfillmentRequest",
     "OperationSubCategory": "Fulfillment Requests",
     "adapterProperties": [
       {
@@ -3855,7 +3855,7 @@
     "operationSummary": "Create a new fulfillment request record",
     "operationDescription": "Inserts a new fulfillment request record into the NetSuite system. The request body must contain the fulfillment request details in XML format, with optional validation settings for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "FulfillmentRequest",
     "OperationSubCategory": "Fulfillment Requests",
     "adapterProperties": [
       {
@@ -3969,7 +3969,7 @@
     "operationSummary": "Delete a fulfillment request record by ID",
     "operationDescription": "Removes a fulfillment request record from the NetSuite system using the specified fulfillment request ID. Requires an idempotency key for asynchronous execution to ensure safe deletion.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "FulfillmentRequest",
     "OperationSubCategory": "Fulfillment Requests",
     "adapterProperties": [
       {
@@ -4027,7 +4027,7 @@
     "operationSummary": "Retrieve a fulfillment request record by ID",
     "operationDescription": "Fetches a specific fulfillment request record from the NetSuite system using the provided fulfillment request ID. Supports options to expand sub-resources and simplify enumeration formats for detailed record retrieval.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "FulfillmentRequest",
     "OperationSubCategory": "Fulfillment Requests",
     "adapterProperties": [
       {
@@ -4109,7 +4109,7 @@
     "operationSummary": "Update a fulfillment request record by ID",
     "operationDescription": "Modifies an existing fulfillment request record in the NetSuite system using the specified fulfillment request ID. The request body contains the updated fields in XML format, with options for validation and field replacement.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "FulfillmentRequest",
     "OperationSubCategory": "Fulfillment Requests",
     "adapterProperties": [
       {
@@ -4237,7 +4237,7 @@
     "operationSummary": "Retrieve a list of vendor records",
     "operationDescription": "Fetches a paginated list of vendor records from the NetSuite system. Supports filtering via query parameters and asynchronous execution for efficient retrieval of vendor data.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Vendor",
     "OperationSubCategory": "Vendors",
     "adapterProperties": [
       {
@@ -4305,7 +4305,7 @@
     "operationSummary": "Create a new vendor record",
     "operationDescription": "Inserts a new vendor record into the NetSuite system. The request body must contain the vendor details in XML format, with optional validation settings for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Vendor",
     "OperationSubCategory": "Vendors",
     "adapterProperties": [
       {
@@ -4419,7 +4419,7 @@
     "operationSummary": "Delete a vendor record by ID",
     "operationDescription": "Removes a vendor record from the NetSuite system using the specified vendor ID. Requires an idempotency key for asynchronous execution to ensure safe deletion.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Vendor",
     "OperationSubCategory": "Vendors",
     "adapterProperties": [
       {
@@ -4477,7 +4477,7 @@
     "operationSummary": "Retrieve a vendor record by ID",
     "operationDescription": "Fetches a specific vendor record from the NetSuite system using the provided vendor ID. Supports options to expand sub-resources and simplify enumeration formats for detailed record retrieval.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Vendor",
     "OperationSubCategory": "Vendors",
     "adapterProperties": [
       {
@@ -4559,7 +4559,7 @@
     "operationSummary": "Update a vendor record by ID",
     "operationDescription": "Modifies an existing vendor record in the NetSuite system using the specified vendor ID. The request body contains the updated fields in XML format, with options for validation and field replacement.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Vendor",
     "OperationSubCategory": "Vendors",
     "adapterProperties": [
       {
@@ -4687,7 +4687,7 @@
     "operationSummary": "Retrieve a list of vendor bill records",
     "operationDescription": "Fetches a paginated list of vendor bill records from the NetSuite system. Supports filtering via query parameters and asynchronous execution for efficient retrieval of vendor bill data.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Vendorbill",
     "OperationSubCategory": "Vendor Bills",
     "adapterProperties": [
       {
@@ -4755,7 +4755,7 @@
     "operationSummary": "Create a new vendor bill record",
     "operationDescription": "Inserts a new vendor bill record into the NetSuite system. The request body must contain the vendor bill details in XML format, with optional validation settings for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Vendorbill",
     "OperationSubCategory": "Vendor Bills",
     "adapterProperties": [
       {
@@ -4869,7 +4869,7 @@
     "operationSummary": "Delete a vendor bill record by ID",
     "operationDescription": "Removes a vendor bill record from the NetSuite system using the specified vendor bill ID. Requires an idempotency key for asynchronous execution to ensure safe deletion.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Vendorbill",
     "OperationSubCategory": "Vendor Bills",
     "adapterProperties": [
       {
@@ -4927,7 +4927,7 @@
     "operationSummary": "Retrieve a vendor bill record by ID",
     "operationDescription": "Fetches a specific vendor bill record from the NetSuite system using the provided vendor bill ID. Supports options to expand sub-resources and simplify enumeration formats for detailed record retrieval.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Vendorbill",
     "OperationSubCategory": "Vendor Bills",
     "adapterProperties": [
       {
@@ -5009,7 +5009,7 @@
     "operationSummary": "Update a vendor bill record by ID",
     "operationDescription": "Modifies an existing vendor bill record in the NetSuite system using the specified vendor bill ID. The request body contains the updated fields in XML format, with options for validation and field replacement.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Vendorbill",
     "OperationSubCategory": "Vendor Bills",
     "adapterProperties": [
       {
@@ -5137,7 +5137,7 @@
     "operationSummary": "Retrieve a list of purchase order records",
     "operationDescription": "Fetches a paginated list of purchase order records from the NetSuite system. Supports filtering via query parameters and asynchronous execution for efficient retrieval of purchase order data.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PurchaseOrder",
     "OperationSubCategory": "Purchase Orders",
     "adapterProperties": [
       {
@@ -5205,7 +5205,7 @@
     "operationSummary": "Create a new purchase order record",
     "operationDescription": "Inserts a new purchase order record into the NetSuite system. The request body must contain the purchase order details in XML format, with optional validation settings for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PurchaseOrder",
     "OperationSubCategory": "Purchase Orders",
     "adapterProperties": [
       {
@@ -5319,7 +5319,7 @@
     "operationSummary": "Delete a purchase order record by ID",
     "operationDescription": "Removes a purchase order record from the NetSuite system using the specified purchase order ID. Requires an idempotency key for asynchronous execution to ensure safe deletion.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PurchaseOrder",
     "OperationSubCategory": "Purchase Orders",
     "adapterProperties": [
       {
@@ -5377,7 +5377,7 @@
     "operationSummary": "Retrieve a purchase order record by ID",
     "operationDescription": "Fetches a specific purchase order record from the NetSuite system using the provided purchase order ID. Supports options to expand sub-resources and simplify enumeration formats for detailed record retrieval.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PurchaseOrder",
     "OperationSubCategory": "Purchase Orders",
     "adapterProperties": [
       {
@@ -5459,7 +5459,7 @@
     "operationSummary": "Update purchase order record",
     "operationDescription": "Update purchase order record",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PurchaseOrder",
     "OperationSubCategory": "Purchase Orders",
     "adapterProperties": [
       {
@@ -5587,7 +5587,7 @@
     "operationSummary": "Get list of inventory item records",
     "operationDescription": "Get list of inventory item records",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "InventoryItem",
     "OperationSubCategory": "Inventory Items",
     "adapterProperties": [
       {
@@ -5655,7 +5655,7 @@
     "operationSummary": "Insert inventory item record",
     "operationDescription": "Insert inventory item record",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "InventoryItem",
     "OperationSubCategory": "Inventory Items",
     "adapterProperties": [
       {
@@ -5769,7 +5769,7 @@
     "operationSummary": "Remove inventory item record",
     "operationDescription": "Remove inventory item record",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "InventoryItem",
     "OperationSubCategory": "Inventory Items",
     "adapterProperties": [
       {
@@ -5827,7 +5827,7 @@
     "operationSummary": "Get inventory item record by id",
     "operationDescription": "Get inventory item record by id",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "InventoryItem",
     "OperationSubCategory": "Inventory Items",
     "adapterProperties": [
       {
@@ -5909,7 +5909,7 @@
     "operationSummary": "Update inventory item record",
     "operationDescription": "Update inventory item record",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "InventoryItem",
     "OperationSubCategory": "Inventory Items",
     "adapterProperties": [
       {
@@ -6037,7 +6037,7 @@
     "operationSummary": "Get list of inventory adjustment records",
     "operationDescription": "Get list of inventory adjustment records",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "InventoryAdjustment",
     "OperationSubCategory": "Inventory Adjustments",
     "adapterProperties": [
       {
@@ -6105,7 +6105,7 @@
     "operationSummary": "Insert inventory adjustment record",
     "operationDescription": "Insert inventory adjustment record",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "InventoryAdjustment",
     "OperationSubCategory": "Inventory Adjustments",
     "adapterProperties": [
       {
@@ -6219,7 +6219,7 @@
     "operationSummary": "Remove inventory adjustment record",
     "operationDescription": "Remove inventory adjustment record",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "InventoryAdjustment",
     "OperationSubCategory": "Inventory Adjustments",
     "adapterProperties": [
       {
@@ -6277,7 +6277,7 @@
     "operationSummary": "Get inventory adjustment record by id",
     "operationDescription": "Get inventory adjustment record by id",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "InventoryAdjustment",
     "OperationSubCategory": "Inventory Adjustments",
     "adapterProperties": [
       {
@@ -6359,7 +6359,7 @@
     "operationSummary": "Update inventory adjustment record",
     "operationDescription": "Update inventory adjustment record",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "InventoryAdjustment",
     "OperationSubCategory": "Inventory Adjustments",
     "adapterProperties": [
       {
@@ -6487,7 +6487,7 @@
     "operationSummary": "Get list of transfer order records",
     "operationDescription": "Get list of transfer order records",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "TransferOrder",
     "OperationSubCategory": "Transfer Orders",
     "adapterProperties": [
       {
@@ -6555,7 +6555,7 @@
     "operationSummary": "Insert transfer order record",
     "operationDescription": "Insert transfer order record",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "TransferOrder",
     "OperationSubCategory": "Transfer Orders",
     "adapterProperties": [
       {
@@ -6669,7 +6669,7 @@
     "operationSummary": "Deletes a transfer order record by ID",
     "operationDescription": "This endpoint allows the deletion of a transfer order record by specifying its unique ID in the path. The operation is irreversible, and the record will be removed from the system. An idempotency key is required for asynchronous requests to prevent duplicate executions.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "TransferOrder",
     "OperationSubCategory": "Transfer Orders",
     "adapterProperties": [
       {
@@ -6727,7 +6727,7 @@
     "operationSummary": "Retrieves a transfer order record by ID",
     "operationDescription": "This endpoint fetches a transfer order record by its unique ID. It supports optional parameters to include all sublists, sublist lines, and subrecords, or to return enumeration values in a simplified format. Asynchronous execution is supported with appropriate headers.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "TransferOrder",
     "OperationSubCategory": "Transfer Orders",
     "adapterProperties": [
       {
@@ -6809,7 +6809,7 @@
     "operationSummary": "Updates a transfer order record by ID",
     "operationDescription": "This endpoint modifies a transfer order record using its unique ID. It supports partial updates via a JSON or XML body, with options for asynchronous execution, field replacement, and validation strictness for property names and values. The request body must contain the fields to update.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "TransferOrder",
     "OperationSubCategory": "Transfer Orders",
     "adapterProperties": [
       {
@@ -6937,7 +6937,7 @@
     "operationSummary": "Fetches a list of project task records",
     "operationDescription": "This endpoint returns a paginated list of project task records. Users can filter results using a search query and control the number of records returned with limit and offset parameters. Asynchronous execution is supported with appropriate headers.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ProjectTask",
     "OperationSubCategory": "Project Tasks",
     "adapterProperties": [
       {
@@ -7005,7 +7005,7 @@
     "operationSummary": "Creates a new project task record",
     "operationDescription": "This endpoint inserts a new project task record using the data provided in the request body in XML or JSON format. It supports asynchronous execution, sublist replacement, and validation options for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ProjectTask",
     "OperationSubCategory": "Project Tasks",
     "adapterProperties": [
       {
@@ -7119,7 +7119,7 @@
     "operationSummary": "Deletes a project task record by ID",
     "operationDescription": "This endpoint removes a project task record by specifying its unique ID in the path. The deletion is permanent, and the record will no longer be available. Asynchronous execution is supported with an idempotency key to prevent duplicate requests.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ProjectTask",
     "OperationSubCategory": "Project Tasks",
     "adapterProperties": [
       {
@@ -7177,7 +7177,7 @@
     "operationSummary": "Retrieves a project task record by ID",
     "operationDescription": "This endpoint fetches a project task record by its unique ID. It supports optional parameters to include all sublists, sublist lines, and subrecords, or to return enumeration values in a simplified format. Asynchronous execution is supported with appropriate headers.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ProjectTask",
     "OperationSubCategory": "Project Tasks",
     "adapterProperties": [
       {
@@ -7259,7 +7259,7 @@
     "operationSummary": "Updates a project task record by ID",
     "operationDescription": "This endpoint modifies a project task record using its unique ID. It supports partial updates via a JSON or XML body, with options for asynchronous execution, field replacement, and validation strictness for property names and values. The request body must contain the fields to update.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ProjectTask",
     "OperationSubCategory": "Project Tasks",
     "adapterProperties": [
       {
@@ -7387,7 +7387,7 @@
     "operationSummary": "Fetches a list of task records",
     "operationDescription": "This endpoint returns a paginated list of task records. Users can filter results using a search query and control the number of records returned with limit and offset parameters. Asynchronous execution is supported with appropriate headers.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Task",
     "OperationSubCategory": "Tasks",
     "adapterProperties": [
       {
@@ -7455,7 +7455,7 @@
     "operationSummary": "Creates a new task record",
     "operationDescription": "This endpoint inserts a new task record using the data provided in the request body in XML or JSON format. It supports asynchronous execution, sublist replacement, and validation options for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Task",
     "OperationSubCategory": "Tasks",
     "adapterProperties": [
       {
@@ -7569,7 +7569,7 @@
     "operationSummary": "Deletes a task record by ID",
     "operationDescription": "This endpoint removes a task record by specifying its unique ID in the path. The deletion is permanent, and the record will no longer be available. Asynchronous execution is supported with an idempotency key to prevent duplicate requests.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Task",
     "OperationSubCategory": "Tasks",
     "adapterProperties": [
       {
@@ -7627,7 +7627,7 @@
     "operationSummary": "Retrieves a task record by ID",
     "operationDescription": "This endpoint fetches a task record by its unique ID. It supports optional parameters to include all sublists, sublist lines, and subrecords, or to return enumeration values in a simplified format. Asynchronous execution is supported with appropriate headers.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Task",
     "OperationSubCategory": "Tasks",
     "adapterProperties": [
       {
@@ -7709,7 +7709,7 @@
     "operationSummary": "Updates a task record by ID",
     "operationDescription": "This endpoint modifies a task record using its unique ID. It supports partial updates via a JSON or XML body, with options for asynchronous execution, field replacement, and validation strictness for property names and values. The request body must contain the fields to update.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Task",
     "OperationSubCategory": "Tasks",
     "adapterProperties": [
       {
@@ -7837,7 +7837,7 @@
     "operationSummary": "Fetches a list of service sale item records",
     "operationDescription": "This endpoint returns a paginated list of service sale item records. Users can filter results using a search query and control the number of records returned with limit and offset parameters. Asynchronous execution is supported with appropriate headers.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ServiceSaleItem",
     "OperationSubCategory": "Service Sale Items",
     "adapterProperties": [
       {
@@ -7905,7 +7905,7 @@
     "operationSummary": "Creates a new service sale item record",
     "operationDescription": "This endpoint inserts a new service sale item record using the data provided in the request body in XML or JSON format. It supports asynchronous execution, sublist replacement, and validation options for property names and values.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ServiceSaleItem",
     "OperationSubCategory": "Service Sale Items",
     "adapterProperties": [
       {
@@ -8019,7 +8019,7 @@
     "operationSummary": "Deletes a service sale item record by ID",
     "operationDescription": "This endpoint removes a service sale item record by specifying its unique ID in the path. The deletion is permanent, and the record will no longer be available. Asynchronous execution is supported with an idempotency key to prevent duplicate requests.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ServiceSaleItem",
     "OperationSubCategory": "Service Sale Items",
     "adapterProperties": [
       {
@@ -8077,7 +8077,7 @@
     "operationSummary": "Retrieves a service sale item record by ID",
     "operationDescription": "This endpoint fetches a service sale item record by its unique ID. It supports optional parameters to include all sublists, sublist lines, and subrecords, or to return enumeration values in a simplified format. Asynchronous execution is supported with appropriate headers.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ServiceSaleItem",
     "OperationSubCategory": "Service Sale Items",
     "adapterProperties": [
       {
@@ -8159,7 +8159,7 @@
     "operationSummary": "Modify an existing service sale item record",
     "operationDescription": "This endpoint allows partial updates to a service sale item record using the HTTP PATCH method. The request modifies only the specified fields of the service sale item identified by the {id} path parameter. Use the request body to provide the updated field values in XML format. Optional headers and parameters allow for asynchronous processing and validation control.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ServiceSaleItem",
     "OperationSubCategory": "Service Sale Items",
     "adapterProperties": [
       {
@@ -8287,7 +8287,7 @@
     "operationSummary": "Fetch a list of service resale item records",
     "operationDescription": "This endpoint retrieves a paginated list of service resale item records using the HTTP GET method. Optional query parameters allow filtering results with a search query and controlling pagination with limit and offset. Headers support asynchronous processing and idempotency for reliable request handling.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ServiceResaleItem",
     "OperationSubCategory": "Service Resale Items",
     "adapterProperties": [
       {
@@ -8355,7 +8355,7 @@
     "operationSummary": "Create a new service resale item record",
     "operationDescription": "This endpoint allows the creation of a new service resale item record using the HTTP POST method. The request body must contain all required fields in XML format. Optional headers support asynchronous processing and validation control to ensure data integrity.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ServiceResaleItem",
     "OperationSubCategory": "Service Resale Items",
     "adapterProperties": [
       {
@@ -8469,7 +8469,7 @@
     "operationSummary": "Delete a service resale item record",
     "operationDescription": "This endpoint deletes a service resale item record identified by the {id} path parameter using the HTTP DELETE method. Headers support asynchronous processing and idempotency to ensure the request is processed only once.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ServiceResaleItem",
     "OperationSubCategory": "Service Resale Items",
     "adapterProperties": [
       {
@@ -8527,7 +8527,7 @@
     "operationSummary": "Fetch a service resale item record by ID",
     "operationDescription": "This endpoint retrieves the details of a service resale item record identified by the {id} path parameter using the HTTP GET method. Optional parameters allow for expanding subresources and controlling the format of enumeration values. Headers support asynchronous processing and idempotency.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ServiceResaleItem",
     "OperationSubCategory": "Service Resale Items",
     "adapterProperties": [
       {
@@ -8609,7 +8609,7 @@
     "operationSummary": "Modify an existing service resale item record",
     "operationDescription": "This endpoint allows partial updates to a service resale item record using the HTTP PATCH method. The request modifies only the specified fields of the service resale item identified by the {id} path parameter. The request body must contain the updated fields in XML format. Optional headers and parameters support asynchronous processing and validation control.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "ServiceResaleItem",
     "OperationSubCategory": "Service Resale Items",
     "adapterProperties": [
       {
@@ -8737,7 +8737,7 @@
     "operationSummary": "Fetch a list of employee records",
     "operationDescription": "This endpoint retrieves a paginated list of employee records using the HTTP GET method. Optional query parameters allow filtering results with a search query and controlling pagination with limit and offset. Headers support asynchronous processing and idempotency for reliable request handling.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Employee",
     "OperationSubCategory": "Employees",
     "adapterProperties": [
       {
@@ -8805,7 +8805,7 @@
     "operationSummary": "Create a new employee record",
     "operationDescription": "This endpoint allows the creation of a new employee record using the HTTP POST method. The request body must contain all required fields in XML format. Optional headers support asynchronous processing and validation control to ensure data integrity.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Employee",
     "OperationSubCategory": "Employees",
     "adapterProperties": [
       {
@@ -8919,7 +8919,7 @@
     "operationSummary": "Delete an employee record",
     "operationDescription": "This endpoint deletes an employee record identified by the {id} path parameter using the HTTP DELETE method. Headers support asynchronous processing and idempotency to ensure the request is processed only once.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Employee",
     "OperationSubCategory": "Employees",
     "adapterProperties": [
       {
@@ -8977,7 +8977,7 @@
     "operationSummary": "Fetch an employee record by ID",
     "operationDescription": "This endpoint retrieves the details of an employee record identified by the {id} path parameter using the HTTP GET method. Optional parameters allow for expanding subresources and controlling the format of enumeration values. Headers support asynchronous processing and idempotency.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Employee",
     "OperationSubCategory": "Employees",
     "adapterProperties": [
       {
@@ -9059,7 +9059,7 @@
     "operationSummary": "Modify an existing employee record",
     "operationDescription": "This endpoint allows partial updates to an employee record using the HTTP PATCH method. The request modifies only the specified fields of the employee record identified by the {id} path parameter. The request body must contain the updated fields in XML format. Optional headers and parameters support asynchronous processing and validation control.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "Employee",
     "OperationSubCategory": "Employees",
     "adapterProperties": [
       {
@@ -9187,7 +9187,7 @@
     "operationSummary": "Fetch a list of time sheet records",
     "operationDescription": "This endpoint retrieves a paginated list of time sheet records using the HTTP GET method. Optional query parameters allow filtering results with a search query and controlling pagination with limit and offset. Headers support asynchronous processing and idempotency for reliable request handling.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "TimeSheet",
     "OperationSubCategory": "Time Sheets",
     "adapterProperties": [
       {
@@ -9255,7 +9255,7 @@
     "operationSummary": "Create a new time sheet record",
     "operationDescription": "This endpoint allows the creation of a new time sheet record using the HTTP POST method. The request body must contain all required fields in XML format. Optional headers support asynchronous processing and validation control to ensure data integrity.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "TimeSheet",
     "OperationSubCategory": "Time Sheets",
     "adapterProperties": [
       {
@@ -9369,7 +9369,7 @@
     "operationSummary": "Delete a time sheet record",
     "operationDescription": "This endpoint deletes a time sheet record identified by the {id} path parameter using the HTTP DELETE method. Headers support asynchronous processing and idempotency to ensure the request is processed only once.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "TimeSheet",
     "OperationSubCategory": "Time Sheets",
     "adapterProperties": [
       {
@@ -9427,7 +9427,7 @@
     "operationSummary": "Fetch a time sheet record by ID",
     "operationDescription": "This endpoint retrieves the details of a time sheet record identified by the {id} path parameter using the HTTP GET method. Optional parameters allow for expanding subresources and controlling the format of enumeration values. Headers support asynchronous processing and idempotency.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "TimeSheet",
     "OperationSubCategory": "Time Sheets",
     "adapterProperties": [
       {
@@ -9509,7 +9509,7 @@
     "operationSummary": "Modify an existing time sheet record",
     "operationDescription": "This endpoint allows partial updates to a time sheet record using the HTTP PATCH method. The request modifies only the specified fields of the time sheet record identified by the {id} path parameter. The request body must contain the updated fields in XML format. Optional headers and parameters support asynchronous processing and validation control.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "TimeSheet",
     "OperationSubCategory": "Time Sheets",
     "adapterProperties": [
       {
@@ -9637,7 +9637,7 @@
     "operationSummary": "Fetches a list of promotion code records.",
     "operationDescription": "Returns a paginated list of promotion code records, supporting asynchronous execution and search query filtering for targeted results.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PromotionCode",
     "OperationSubCategory": "Promotion Codes",
     "adapterProperties": [
       {
@@ -9705,7 +9705,7 @@
     "operationSummary": "Inserts a new promotion code record.",
     "operationDescription": "Adds a new promotion code record to the NetSuite system using the provided request body, with options for asynchronous execution and validation settings.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PromotionCode",
     "OperationSubCategory": "Promotion Codes",
     "adapterProperties": [
       {
@@ -9819,7 +9819,7 @@
     "operationSummary": "Deletes a promotion code record.",
     "operationDescription": "Removes a promotion code record identified by the provided ID, with options for asynchronous execution and idempotency control.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PromotionCode",
     "OperationSubCategory": "Promotion Codes",
     "adapterProperties": [
       {
@@ -9877,7 +9877,7 @@
     "operationSummary": "Fetches a promotion code record by ID.",
     "operationDescription": "Returns the details of a promotion code record identified by the provided ID, with options to expand subresources and control enumeration formats.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PromotionCode",
     "OperationSubCategory": "Promotion Codes",
     "adapterProperties": [
       {
@@ -9959,7 +9959,7 @@
     "operationSummary": "Updates a promotion code record.",
     "operationDescription": "Modifies an existing promotion code record identified by the provided ID, with options for asynchronous execution, validation settings, and selective field updates.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "PromotionCode",
     "OperationSubCategory": "Promotion Codes",
     "adapterProperties": [
       {
@@ -10087,7 +10087,7 @@
     "operationSummary": "Fetches a list of customer message records.",
     "operationDescription": "Returns a paginated list of customer message records, supporting asynchronous execution and search query filtering for targeted results.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "CustomerMessage",
     "OperationSubCategory": "Customer Messages",
     "adapterProperties": [
       {
@@ -10155,7 +10155,7 @@
     "operationSummary": "Inserts a new customer message record.",
     "operationDescription": "Adds a new customer message record to the NetSuite system using the provided request body, with options for asynchronous execution and validation settings.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "CustomerMessage",
     "OperationSubCategory": "Customer Messages",
     "adapterProperties": [
       {
@@ -10269,7 +10269,7 @@
     "operationSummary": "Deletes a customer message record.",
     "operationDescription": "Removes a customer message record identified by the provided ID, with options for asynchronous execution and idempotency control.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "CustomerMessage",
     "OperationSubCategory": "Customer Messages",
     "adapterProperties": [
       {
@@ -10327,7 +10327,7 @@
     "operationSummary": "Fetches a customer message record by ID.",
     "operationDescription": "Returns the details of a customer message record identified by the provided ID, with options to expand subresources and control enumeration formats.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "CustomerMessage",
     "OperationSubCategory": "Customer Messages",
     "adapterProperties": [
       {
@@ -10409,7 +10409,7 @@
     "operationSummary": "Updates a customer message record.",
     "operationDescription": "Modifies an existing customer message record identified by the provided ID, with options for asynchronous execution, validation settings, and selective field updates.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "CustomerMessage",
     "OperationSubCategory": "Customer Messages",
     "adapterProperties": [
       {
@@ -10537,7 +10537,7 @@
     "operationSummary": "Fetches a list of support case records.",
     "operationDescription": "Returns a paginated list of support case records, supporting asynchronous execution and search query filtering for targeted results.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "SupportCase",
     "OperationSubCategory": "Support Cases",
     "adapterProperties": [
       {
@@ -10605,7 +10605,7 @@
     "operationSummary": "Inserts a new support case record.",
     "operationDescription": "Adds a new support case record to the NetSuite system using the provided request body, with options for asynchronous execution and validation settings.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "SupportCase",
     "OperationSubCategory": "Support Cases",
     "adapterProperties": [
       {
@@ -10719,7 +10719,7 @@
     "operationSummary": "Deletes a support case record.",
     "operationDescription": "Removes a support case record identified by the provided ID, with options for asynchronous execution and idempotency control.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "SupportCase",
     "OperationSubCategory": "Support Cases",
     "adapterProperties": [
       {
@@ -10777,7 +10777,7 @@
     "operationSummary": "Fetches a support case record by ID.",
     "operationDescription": "Returns the details of a support case record identified by the provided ID, with options to expand subresources and control enumeration formats.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "SupportCase",
     "OperationSubCategory": "Support Cases",
     "adapterProperties": [
       {
@@ -10859,7 +10859,7 @@
     "operationSummary": "Updates a support case record.",
     "operationDescription": "Modifies an existing support case record identified by the provided ID, with options for asynchronous execution, validation settings, and selective field updates.",
     "deprecated": false,
-    "OperationCategory": "Records",
+    "OperationCategory": "SupportCase",
     "OperationSubCategory": "Support Cases",
     "adapterProperties": [
       {
