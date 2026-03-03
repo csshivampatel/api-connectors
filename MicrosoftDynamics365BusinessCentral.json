@@ -212,7 +212,7 @@
     "operationSummary": "Get entities from sales orders",
     "operationDescription": "Get entities from sales orders",
     "deprecated": false,
-    "OperationCategory": "Sales Orders",
+    "OperationCategory": "SalesOrders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -231,7 +231,7 @@
     "operationSummary": "Add new entity to sales orders",
     "operationDescription": "Add new entity to sales orders",
     "deprecated": false,
-    "OperationCategory": "Sales Orders",
+    "OperationCategory": "SalesOrders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -280,7 +280,7 @@
     "operationSummary": "Get entities from purchase orders",
     "operationDescription": "Get entities from purchase orders",
     "deprecated": false,
-    "OperationCategory": "Purchase Orders",
+    "OperationCategory": "PurchaseOrders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -299,7 +299,7 @@
     "operationSummary": "Add new entity to purchase orders",
     "operationDescription": "Add new entity to purchase orders",
     "deprecated": false,
-    "OperationCategory": "Purchase Orders",
+    "OperationCategory": "PurchaseOrders",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -348,7 +348,7 @@
     "operationSummary": "Get entities from sales invoices",
     "operationDescription": "Get entities from sales invoices",
     "deprecated": false,
-    "OperationCategory": "Sales Invoices",
+    "OperationCategory": "SalesInvoices",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -367,7 +367,7 @@
     "operationSummary": "Add new entity to sales invoices",
     "operationDescription": "Add new entity to sales invoices",
     "deprecated": false,
-    "OperationCategory": "Sales Invoices",
+    "OperationCategory": "SalesInvoices",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -416,7 +416,7 @@
     "operationSummary": "Add new entity to journal lines",
     "operationDescription": "Add new entity journal lines",
     "deprecated": false,
-    "OperationCategory": "Journal Lines",
+    "OperationCategory": "JournalLines",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -533,7 +533,7 @@
     "operationSummary": "Get entities from payment terms",
     "operationDescription": "Get entities from payment terms",
     "deprecated": false,
-    "OperationCategory": "Payment Terms",
+    "OperationCategory": "PaymentTerms",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -552,7 +552,7 @@
     "operationSummary": "Add new entity to payment terms",
     "operationDescription": "Add new entity to payment terms",
     "deprecated": false,
-    "OperationCategory": "Payment Terms",
+    "OperationCategory": "PaymentTerms",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -737,7 +737,7 @@
     "operationSummary": "Get entities from item categories",
     "operationDescription": "Get entities from item categories",
     "deprecated": false,
-    "OperationCategory": "Item Categories",
+    "OperationCategory": "ItemCategories",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -756,7 +756,7 @@
     "operationSummary": "Add new entity to item categories",
     "operationDescription": "Add new entity to item categories",
     "deprecated": false,
-    "OperationCategory": "Item Categories",
+    "OperationCategory": "ItemCategories",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -805,7 +805,7 @@
     "operationSummary": "Get entities from shipment methods",
     "operationDescription": "Get entities from shipment methods",
     "deprecated": false,
-    "OperationCategory": "Shipment Methods",
+    "OperationCategory": "ShipmentMethods",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -824,7 +824,7 @@
     "operationSummary": "Add new entity to shipment methods",
     "operationDescription": "Add new entity to shipment methods",
     "deprecated": false,
-    "OperationCategory": "Shipment Methods",
+    "OperationCategory": "ShipmentMethods",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -873,7 +873,7 @@
     "operationSummary": "Get entities from sales quotes",
     "operationDescription": "Get entities from sales quotes",
     "deprecated": false,
-    "OperationCategory": "Sales Quotes",
+    "OperationCategory": "SalesQuotes",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -892,7 +892,7 @@
     "operationSummary": "Add new entity to sales quotes",
     "operationDescription": "Add new entity to sales quotes",
     "deprecated": false,
-    "OperationCategory": "Sales Quotes",
+    "OperationCategory": "SalesQuotes",
     "adapterProperties": [
       {
         "name": "AdapterMode",
