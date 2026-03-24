@@ -9,7 +9,7 @@
     "operationDescription": "Create record",
     "deprecated": false,
     "OperationSubCategory":"Account",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Account",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -56,7 +56,7 @@
     "operationDescription": "Get records",
     "deprecated": false,
     "OperationSubCategory":"Account",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Account/{Id}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -91,7 +91,7 @@
     "operationDescription": "Delete record",
     "deprecated": false,
     "OperationSubCategory":"Account",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Account/{Id}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -126,7 +126,7 @@
     "operationDescription": "Update record",
     "deprecated": false,
     "OperationSubCategory":"Account",
-    "OperationCategory": "Records",
+    "OperationCategory":"/sobjects/Account/{Id}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -187,7 +187,7 @@
     "operationDescription": "Execute SOSL search query",
     "deprecated": false,
     "OperationSubCategory":"Query",
-    "OperationCategory": "Queries",
+    "OperationCategory": "/query",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -222,7 +222,7 @@
     "operationDescription": "Search for a String",
     "deprecated": false,
     "OperationSubCategory":"Query",
-    "OperationCategory": "Queries",
+    "OperationCategory": "/search",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -257,7 +257,7 @@
     "operationDescription": "Retrieves a specific record from Salesforce using an external ID.",
     "deprecated": false,
     "OperationSubCategory":"Record by External ID",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/{Object_Name}/{ExternalIdField}/{ExternalValue}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -320,7 +320,7 @@
     "operationDescription": "Inserts or updates a Salesforce record based on an external ID. If a record with the specified external ID exists, it will be updated; otherwise, a new record will be created.",
     "deprecated": false,
     "OperationSubCategory":"Record by External ID",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/{Object_Name}/{ExternalIdField}/{ExternalValue}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -409,7 +409,7 @@
     "operationDescription": "Get object types",
     "deprecated": false,
     "OperationSubCategory":"Object Describe",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/{Object_Name}/describe",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -444,7 +444,7 @@
     "operationDescription": "Closes or aborts an existing job in Salesforce's Bulk API. This operation changes the status of the job to 'Closed' or 'Aborted' depending on the request.",
     "deprecated": false,
     "OperationSubCategory":"Job",
-    "OperationCategory": "Jobs",
+    "OperationCategory": "/jobs/ingest/{JobId}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -505,7 +505,7 @@
     "operationDescription": "Create a job",
     "deprecated": false,
     "OperationSubCategory":"Job",
-    "OperationCategory": "Jobs",
+    "OperationCategory": "/jobs/ingest",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -552,7 +552,7 @@
     "operationDescription": "Delete a job",
     "deprecated": false,
     "OperationSubCategory":"Job",
-    "OperationCategory": "Jobs",
+    "OperationCategory": "/jobs/ingest/{JobId}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -613,7 +613,7 @@
     "operationDescription": "Get Information About an Ingest Job",
     "deprecated": false,
     "OperationSubCategory":"Job",
-    "OperationCategory": "Jobs",
+    "OperationCategory": "/jobs/ingest/{JobId}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -648,7 +648,7 @@
     "operationDescription": "Get job results",
     "deprecated": false,
     "OperationSubCategory":"Job",
-    "OperationCategory": "Jobs",
+    "OperationCategory": "/jobs/ingest",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -668,7 +668,7 @@
     "operationDescription": "Creates a query job",
     "deprecated": false,
     "OperationSubCategory":"Job",
-    "OperationCategory": "Jobs",
+    "OperationCategory": "/jobs/query",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -715,7 +715,7 @@
     "operationDescription": "Gets information about all query jobs in the org",
     "deprecated": false,
     "OperationSubCategory":"Job",
-    "OperationCategory": "Jobs",
+    "OperationCategory": "/jobs/query",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -735,7 +735,7 @@
     "operationDescription": "Gets information about one query job",
     "deprecated": false,
     "OperationSubCategory":"Job",
-    "OperationCategory": "Jobs",
+    "OperationCategory": "/jobs/query/{JobId}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -770,7 +770,7 @@
     "operationDescription": "Gets the results for a query job",
     "deprecated": false,
     "OperationSubCategory":"Job",
-    "OperationCategory": "Jobs",
+    "OperationCategory": "/jobs/query/{JobId}/results",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -805,7 +805,7 @@
     "operationDescription": "Aborts a query job",
     "deprecated": false,
     "OperationSubCategory":"Job",
-    "OperationCategory": "Jobs",
+    "OperationCategory": "/jobs/query/{JobId}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -866,7 +866,7 @@
     "operationDescription": "Aborts a query job",
     "deprecated": false,
     "OperationSubCategory":"Job",
-    "OperationCategory": "Jobs",
+    "OperationCategory": "/jobs/query/{JobId}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -901,7 +901,7 @@
     "operationDescription": "Create Attachment",
     "deprecated": false,
     "OperationSubCategory":"Attachments",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Attachment/",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -948,7 +948,7 @@
     "operationDescription": "Create folder",
     "deprecated": false,
     "OperationSubCategory":"Folders",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Folder",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -995,7 +995,7 @@
     "operationDescription": "Get folder by Id",
     "deprecated": false,
     "OperationSubCategory":"Folders",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Folder/{Id}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1056,7 +1056,7 @@
     "operationDescription": "Create a Content Version Record",
     "deprecated": false,
     "OperationSubCategory":"Record by External ID",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/ContentVersion/",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1103,7 +1103,7 @@
     "operationDescription": "Create a ContentDocumentLink",
     "deprecated": false,
     "OperationSubCategory":"Content",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/ContentDocumentLink",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1150,7 +1150,7 @@
     "operationDescription": "Create Lead",
     "deprecated": false,
     "OperationSubCategory":"Leads",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Lead",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1197,7 +1197,7 @@
     "operationDescription": "update Lead",
     "deprecated": false,
     "OperationSubCategory":"Leads",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Lead/{Id}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1258,7 +1258,7 @@
     "operationDescription": "Delete Lead",
     "deprecated": false,
     "OperationSubCategory":"Leads",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Lead/{Id}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1293,7 +1293,7 @@
     "operationDescription": "Get Lead",
     "deprecated": false,
     "OperationSubCategory":"Leads",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Lead",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1303,7 +1303,6 @@
     ],
     "parameters": []
   },
-
   {
     "operation": "Create Contact",
     "description": "",
@@ -1314,7 +1313,7 @@
     "operationDescription": "Create Contact",
     "deprecated": false,
     "OperationSubCategory":"Contacts",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Contact",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1361,7 +1360,7 @@
     "operationDescription": "Update Contact",
     "deprecated": false,
     "OperationSubCategory":"Contacts",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Contact/{Id}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1422,7 +1421,7 @@
     "operationDescription": "Delete Contact",
     "deprecated": false,
     "OperationSubCategory":"Contacts",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Contact/{Id}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1457,7 +1456,7 @@
     "operationDescription": "Get Contact",
     "deprecated": false,
     "OperationSubCategory":"Contacts",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Contact",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1504,7 +1503,7 @@
     "operationDescription": "Create Note",
     "deprecated": false,
     "OperationSubCategory":"Notes",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Note",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1551,7 +1550,7 @@
     "operationDescription": "Update Note",
     "deprecated": false,
     "OperationSubCategory":"Notes",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Note/{Id}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1612,7 +1611,7 @@
     "operationDescription": "Delete Note",
     "deprecated": false,
     "OperationSubCategory":"Notes",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Note/{Id}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
@@ -1647,7 +1646,7 @@
     "operationDescription": "Get Note",
     "deprecated": false,
     "OperationSubCategory":"Notes",
-    "OperationCategory": "Records",
+    "OperationCategory": "/sobjects/Note/{Id}",
     "adapterProperties": [
       {
         "name": "AdapterMode",
